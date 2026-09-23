@@ -1,5 +1,17 @@
 # Active scope - 2026-09-23
 
+## Authorized shock-study continuation
+
+The latest user instruction authorizes the bounded local-demand shock study.
+It supersedes the earlier proposed boundary-only follow-up; the prior negative
+results remain unchanged. Use the fixed training model, 16-group observation
+interface and selective fine reads. Separate additional data, acquisition policy
+and representation. See [the frozen protocol](REGIONAL_SHOCK_STUDY_PROTOCOL.md).
+The new ledger adds all elapsed allocation to the closed 76.2333-minute regional
+charge, capped at 90 additional minutes and the original remaining allowance.
+The four development weeks remain exploratory; all outcome seals persist.
+No new hardware, CPU solver campaign, RJD rerun or original main study.
+
 ## Completed refinement stage
 
 The authorized bounded continuation is complete. See

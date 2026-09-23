@@ -26,7 +26,7 @@ def overlay(background, model, family, magnitude, seed, warmup=24):
         shift[onset:end]=magnitude*.15*scale[None,:]*wave[:,None]
     elif family in ('localized','ramp','sensor_fault'):
         minus=np.array([],dtype=int)
-        sign=-1 if family=='localized' and seed%2 else 1
+        sign=-1 if family=='localized' and (seed//1000)%2 else 1
         wave=np.linspace(0.,1.,end-onset) if family=='ramp' else np.ones(end-onset)
         requested=magnitude*scale[plus][None,:]*wave[:,None]
         if sign<0:

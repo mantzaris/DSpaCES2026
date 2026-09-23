@@ -140,6 +140,8 @@ def run_episode(engine,model,background,slot,metadata,readings,targets,shift,sig
             alarm_rows.append(dict(episode=episode_id,step=step,method=method,score=continuous,
                 macro_score=float(macro_z.max()),fine_score=fine_max,probe_score=float(sequential.score.max()),
                 alarm=continuous>1.,in_event=in_event,house_alarms=len(alarming_house),
+                alarming_households=' '.join(map(str,alarming_house)),
+                alarming_groups=' '.join(map(str,alarming_groups)),
                 correct_house_alarms=len(np.intersect1d(alarming_house,currently_affected)) if in_event else 0,
                 false_house_alarms=len(np.setdiff1d(alarming_house,currently_affected)) if in_event else len(alarming_house),
                 group_alarms=len(alarming_groups),correct_group_alarms=len(np.intersect1d(alarming_groups,currently_affected_groups)) if in_event else 0,
@@ -252,9 +254,19 @@ def main():
                 raise ValueError('Configuration differs from comparative freeze')
             if immutable_digest(root/'calibration.json')!=frozen['calibration_sha256']:
                 raise ValueError('Calibration changed after freeze')
+            if immutable_digest('data/regional/refinement/model.npz')!=frozen['model_sha256']:
+                raise ValueError('Training model changed after freeze')
         all_rows={k:[] for k in ('metrics','alarms','costs','figure','checks','access')};episodes=[]
+        written={k:0 for k in all_rows}
+        if args.mode=='run' and (folder/'episodes.json').exists():
+            raise RuntimeError('Comparative outputs already exist; preserve them, do not overwrite')
         def save():
-            for name,rows in all_rows.items():pd.DataFrame(rows).to_csv(folder/(name+'.csv.gz'),index=False,compression='gzip')
+            for name,rows in all_rows.items():
+                fresh=rows[written[name]:]
+                if fresh:
+                    path=folder/(name+'.csv.gz')
+                    pd.DataFrame(fresh).to_csv(path,index=False,compression='gzip',mode='a',header=not path.exists())
+                    written[name]=len(rows)
             (folder/'episodes.json').write_text(json.dumps(episodes,indent=2)+'\n')
         backgrounds=range(len(cfg['background_origin_indices'])) if args.mode=='run' else range(1)
         for bg in backgrounds:
@@ -263,7 +275,8 @@ def main():
             if args.mode=='smoke':settings=[('cancel_exact',cfg['magnitudes'][0])]
             for si,(family,mag) in enumerate(settings):
                 eid=('b%02d_'%bg)+family+'_'+str(mag)
-                seed=cfg['episode_seed']+1000*bg+si if args.mode=='run' else cfg['smoke_seed']
+                family_index=cfg['families'].index(family) if family in cfg['families'] else 6 if family=='none' else 7
+                seed=cfg['episode_seed']+1000*bg+10*family_index if args.mode=='run' else cfg['smoke_seed']
                 readings,targets,shift,signature,meta=overlay(background,model,family,mag,seed,cfg['window'])
                 meta.update(episode=eid,background=bg,source_sha256=immutable_digest('data/regional/shock/background_%02d.npz'%bg))
                 print('episode',eid,'start',flush=True)
@@ -278,7 +291,7 @@ def main():
         if args.mode=='run':
             with np.load('data/regional/shock/background_00.npz') as p:background=p['values'];slot=p['slots']
             family='cancel_exact';mag=cfg['magnitudes'][-1]
-            si=[(f,m) for f in cfg['families'] for m in cfg['magnitudes']].index((family,mag))
+            si=10*cfg['families'].index(family)
             readings,targets,shift,signature,meta=overlay(background,model,family,mag,cfg['episode_seed']+si,cfg['window'])
             result=run_episode(engine,model,background,slot,meta,readings,targets,shift,signature,cfg,cal,
                 'boundary_diagnostic',methods=['M0','M1','M3_delay','M_uncertainty'])

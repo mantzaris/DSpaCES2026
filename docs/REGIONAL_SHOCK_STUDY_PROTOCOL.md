@@ -147,8 +147,8 @@ previous frozen list. Each has a 23-step aggregate-only warm-up, 48 sequential
 half-hour updates and 12 future target steps. There is no free fine warm start.
 Locations are sampled among the frozen household IDs, balanced across training
 consumption-size quartiles within a seeded group. All methods use identical
-episodes. Seeds 930000+1000*background+scenario are reserved for comparison;
-700001 is smoke-only. No injected waveform is used to fit a detector or model.
+episodes. Seeds 930000+1000*background+10*family_index are reserved for comparison;
+700001 is smoke-only. Magnitudes share the same locations, onsets and seed within a family/background; localized signs alternate by background. No injected waveform is used to fit a detector or model.
 
 | Family | Frozen mechanism and what should be visible |
 |---|---|
@@ -164,7 +164,7 @@ episodes. Seeds 930000+1000*background+scenario are reserved for comparison;
 Two magnitudes, 1 and 3 residual SD, are moderate/large controlled stress settings,
 not estimates of real event frequencies. Onset is 6-10 steps after the stored
 warm-up index; durations and exact indexing are saved per episode. For negative
-changes, use at most 80% of available baseline consumption. Pairwise scaling,+rather than independent clipping, preserves cancellation; record realized sizes,
+changes, use at most 80% of available baseline consumption. Pairwise scaling, rather than independent clipping, preserves cancellation; record realized sizes,
 zero-effect cases, missing support and actual S_t d_t. Keep unmodified inputs intact.
 
 ## Monitoring, budgets and calibration
