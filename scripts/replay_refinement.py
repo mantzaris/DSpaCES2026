@@ -66,7 +66,10 @@ def write_scores(rows, predictions, model, count, origin, policy, active, output
 
 def main():
     parser = argparse.ArgumentParser(); parser.add_argument('--smoke', action='store_true')
+    parser.add_argument('--profile', action='store_true')
     args = parser.parse_args()
+    if args.profile and not args.smoke:
+        raise ValueError('Profiling is bounded to the smoke workload')
     cfg = json.loads(Path('configs/regional_refinement.json').read_text())
     frozen = json.loads(Path('results/refinement/frozen_manifest.json').read_text())
     if immutable_digest('configs/regional_refinement.json') != frozen['config_sha256']:
@@ -75,9 +78,10 @@ def main():
     if immutable_digest(folder/'model.npz') != frozen['model_sha256']:
         raise ValueError('model changed after freeze')
     model = dict(np.load(folder/'model.npz', allow_pickle=False))
-    out = Path('results/refinement/smoke' if args.smoke else 'results/refinement/replay')
+    out = Path('results/refinement/profile_smoke' if args.profile else
+               'results/refinement/smoke' if args.smoke else 'results/refinement/replay')
     out.mkdir(parents=True, exist_ok=True)
-    snapshots = folder/'snapshots'; snapshots.mkdir(exist_ok=True)
+    snapshots = folder/('snapshots_smoke' if args.smoke else 'snapshots'); snapshots.mkdir(exist_ok=True)
     torch.set_num_threads(4)
     torch.backends.cuda.matmul.allow_tf32 = False
     torch.backends.cudnn.allow_tf32 = False
@@ -357,4 +361,22 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    import sys
+    if '--profile' in sys.argv:
+        from torch.profiler import profile, ProfilerActivity
+        with profile(activities=[ProfilerActivity.CPU, ProfilerActivity.CUDA]) as profiler:
+            main()
+        durations = {}
+        for event in profiler.events():
+            if event.device_type == torch.autograd.DeviceType.CUDA:
+                durations[event.name] = durations.get(event.name, 0.)+event.device_time_total
+        summary = dict(scope='1,024-household smoke only; instrumentation costs excluded from main timings',
+                       cuda_event_count=sum(e.device_type == torch.autograd.DeviceType.CUDA for e in profiler.events()),
+                       cuda_activity_seconds=sum(durations.values())/1e6,
+                       kernel_seconds=sum(v for k,v in durations.items() if 'memcpy' not in k.lower() and 'memset' not in k.lower())/1e6,
+                       transfer_or_memset_seconds=sum(v for k,v in durations.items() if 'memcpy' in k.lower() or 'memset' in k.lower())/1e6,
+                       top_activities_us=sorted(durations.items(), key=lambda kv:-kv[1])[:20])
+        Path('results/refinement/profile_smoke/cuda_activity.json').write_text(json.dumps(summary, indent=2)+'\n')
+        print(json.dumps(summary, indent=2))
+    else:
+        main()
