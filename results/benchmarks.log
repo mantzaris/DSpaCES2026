@@ -1,0 +1,49 @@
+{
+  "precision": "FP64 throughout; TF32 disabled; no compilation",
+  "summary": [
+    {
+      "backend": "cpu",
+      "batch": 1,
+      "warm_replicates": 5,
+      "p50_seconds": 0.012242422439157963,
+      "p95_seconds": 0.013034328259527684,
+      "queries_per_second": 81.6831803484785,
+      "messages_per_second": 326.732721393914
+    },
+    {
+      "backend": "cpu",
+      "batch": 256,
+      "warm_replicates": 5,
+      "p50_seconds": 2.7927186833694577,
+      "p95_seconds": 2.967144605331123,
+      "queries_per_second": 91.66694859903758,
+      "messages_per_second": 366.6677943961503
+    },
+    {
+      "backend": "gpu",
+      "batch": 1,
+      "warm_replicates": 5,
+      "p50_seconds": 0.022596847265958786,
+      "p95_seconds": 0.022889725118875503,
+      "queries_per_second": 44.25396110485105,
+      "messages_per_second": 177.0158444194042
+    },
+    {
+      "backend": "gpu",
+      "batch": 256,
+      "warm_replicates": 5,
+      "p50_seconds": 2.809785366989672,
+      "p95_seconds": 2.846232523582876,
+      "queries_per_second": 91.11016201008673,
+      "messages_per_second": 364.4406480403469
+    }
+  ],
+  "cuda_initialization_seconds": 0.2745993807911873,
+  "max_cpu_gpu_mean_absolute_difference": 4.263256414560601e-14,
+  "max_cpu_gpu_variance_absolute_difference": 5.684341886080802e-14,
+  "peak_vram_allocated_bytes": 185325568,
+  "peak_vram_reserved_bytes": 199229440,
+  "peak_process_rss_bytes": 1426522112,
+  "total_device_event_seconds": 0.5704535431042314,
+  "limitations": "Single host replay, no network latency; cold means uncached operators, OS cache not evicted. Source parsing, canonical IDs and projection generation measured separately in pilot/data audit; add once for full cold study cost."
+}

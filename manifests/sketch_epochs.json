@@ -1,0 +1,24 @@
+[
+  {
+    "name": "pilot-k512-v1",
+    "seed": 310512,
+    "k": 512,
+    "query_cap": 12288,
+    "actual_queries": 12288,
+    "provider_cap": 4,
+    "delta": 0.005,
+    "epsilon": 0.46334100987305527,
+    "query_set_digest": "b512be054c52d8b1c21973af3efd028adb992af1bc40e26466ba9a5c6a997521"
+  },
+  {
+    "name": "pilot-k2048-v1",
+    "seed": 312048,
+    "k": 2048,
+    "query_cap": 12288,
+    "actual_queries": 12288,
+    "provider_cap": 4,
+    "delta": 0.005,
+    "epsilon": 0.20747679467669367,
+    "query_set_digest": "2713dc0cb58652141190f9a9073c98a49a15760f57879a79b0e02099258a818f"
+  }
+]

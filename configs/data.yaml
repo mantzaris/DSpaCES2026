@@ -1,0 +1,18 @@
+release: BDG2-v1.0
+url: https://zenodo.org/records/3887306/files/buds-lab/building-data-genome-project-2-v1.0.zip?download=1
+md5: 44393dc4cf61e84dec105e955368c890
+max_download_bytes: 2000000000
+max_cache_bytes: 10000000000
+training_start: '2016-01-01'
+training_end_exclusive: '2016-10-01'
+validation_start: '2016-10-01'
+validation_end_exclusive: '2016-11-01'
+calibration_covariance: ['2016-11-01', '2016-12-01']
+calibration_intervals: ['2016-12-01', '2017-01-01']
+sealed_test: ['2017-01-01', '2018-01-01']
+min_training_valid_fraction: 0.95
+pilot_buildings: 16
+provider_days: 42
+providers: 4
+units: kWh
+time_convention: local labeled intervals; DST-ambiguous/nonexistent targets and predecessors excluded

@@ -1,0 +1,38 @@
+{
+  "families": 54,
+  "projection_evaluations": 108,
+  "distinct_projection_draws": 36,
+  "noise_settings_per_draw": 3,
+  "allocation_note": "delta=.01/108 for every evaluation is conservative; some projections are shared across noise settings",
+  "total_synthetic_failure_allocation": 0.01,
+  "projection_event_failures": 0,
+  "within_event_inequality_failures": 0,
+  "gaussian_error_draws": 0,
+  "precision": "FP64 numerical checks, not a floating-point certificate",
+  "example": {
+    "weights": [
+      0.2666666666666666,
+      0.2666666666666668,
+      0.4666666666666667
+    ],
+    "mean": 105.20000000000002,
+    "variance": 2.8666666666666667,
+    "equal_actual_variance": 2.9999999999999996
+  },
+  "assumption_violations": {
+    "correlated_distinct_innovations": {
+      "reported": 0.25,
+      "actual": 0.85
+    },
+    "omitted_future_noise": {
+      "reported": 0.25,
+      "actual": 9.25
+    },
+    "projection_dependent_row": {
+      "actual": 1.0,
+      "sketched": 1.79027225392946e-31,
+      "illustrative_inflation": 0.25,
+      "statement": "Vector chosen after observing G; outside the theorem"
+    }
+  }
+}

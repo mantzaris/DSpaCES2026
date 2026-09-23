@@ -1,0 +1,27 @@
+stage: 1
+seed: 20260922
+allocation_seed: 71021
+providers: 4
+provider_days: 42
+common_days: [0, 21, 38]
+buildings: 16
+max_origins_per_building: 256
+sketch_dimensions: [512, 2048]
+projection_seeds: [310512, 312048]
+epoch_query_cap: 12288
+epoch_provider_cap: 4
+delta_per_epoch: 0.005
+total_projection_failure_budget: 0.01
+validation_covariance: ['2016-10-01', '2016-10-11']
+validation_intervals: ['2016-10-11', '2016-10-21']
+validation_score: ['2016-10-21', '2016-11-01']
+residual_multiplier: 0.0
+residual_sensitivity: [0.5, 1.0]
+cpu_threads: 4
+solver_relative_gap: 1.0e-8
+gpu_memory_gib: 24
+host_ram_bytes: 20000000000
+gpu_allocation_cap_seconds: 7200
+allocation_start_utc: '2026-09-22T23:25:34+00:00'
+allocation_deadline_utc: '2026-09-23T01:25:34+00:00'
+main_study_authorized: false

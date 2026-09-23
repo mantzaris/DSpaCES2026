@@ -1,0 +1,12 @@
+.venv/
+.cache/
+.deps/
+data/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+*.partial
+/results/pilot_predictions.csv

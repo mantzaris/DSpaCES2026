@@ -1,0 +1,36 @@
+{
+  "summary": [
+    {
+      "backend": "cpu",
+      "batch": 1,
+      "replicates": 5,
+      "p50_seconds": 0.29999362025409937,
+      "p95_seconds": 0.30067345276474955
+    },
+    {
+      "backend": "cpu",
+      "batch": 256,
+      "replicates": 5,
+      "p50_seconds": 3.018595516681671,
+      "p95_seconds": 3.078184298798442
+    },
+    {
+      "backend": "gpu",
+      "batch": 1,
+      "replicates": 5,
+      "p50_seconds": 0.3064767373725772,
+      "p95_seconds": 0.5351227631792426
+    },
+    {
+      "backend": "gpu",
+      "batch": 256,
+      "replicates": 5,
+      "p50_seconds": 2.9915843410417438,
+      "p95_seconds": 3.016519719362259
+    }
+  ],
+  "cuda_initialization_seconds": 0.00011160876601934433,
+  "max_cpu_gpu_absolute_difference": 5.684341886080802e-14,
+  "device_event_seconds": 0.571027099609375,
+  "scope": "Cold model-state: cache read, canonical IDs, fresh Gaussian columns, projection operators, wire protocol, transfers, solver and output. Model fitting and archive preparation are separately measured study setup; OS disk cache not evicted."
+}

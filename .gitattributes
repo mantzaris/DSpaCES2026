@@ -1,0 +1,4 @@
+# Preserve upstream plan/license bytes and plotting-library SVG serialization.
+docs/RESEARCH_PLAN.md -whitespace
+manifests/BDG2*_LICENSE.txt -whitespace
+reports/figures/*.svg -whitespace

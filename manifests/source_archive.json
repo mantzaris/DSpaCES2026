@@ -1,0 +1,667 @@
+{
+  "url": "https://zenodo.org/records/3887306/files/buds-lab/building-data-genome-project-2-v1.0.zip?download=1",
+  "version": "v1.0",
+  "bytes": 595266464,
+  "md5": "44393dc4cf61e84dec105e955368c890",
+  "sha256": "50ef5178c5d4ce18b0d0480140e83349d1b058f10b4b1e59b9e8698a7b8e417b",
+  "entries": [
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": 0
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/.gitattributes",
+      "bytes": 42,
+      "compressed_bytes": 37,
+      "crc32": 1152304371
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/.gitignore",
+      "bytes": 120,
+      "compressed_bytes": 95,
+      "crc32": 295874572
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/LICENSE",
+      "bytes": 1101,
+      "compressed_bytes": 648,
+      "crc32": 1991483852
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/README.md",
+      "bytes": 3997,
+      "compressed_bytes": 1892,
+      "crc32": 966120902
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/data/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": 0
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/data/metadata/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": 0
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/data/metadata/metadata.csv",
+      "bytes": 272024,
+      "compressed_bytes": 41059,
+      "crc32": 3641457352
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/data/meters/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": 0
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/data/meters/cleaned/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": 0
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/data/meters/cleaned/chilledwater_cleaned.csv",
+      "bytes": 77005463,
+      "compressed_bytes": 33018037,
+      "crc32": 531979892
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/data/meters/cleaned/electricity_cleaned.csv",
+      "bytes": 177466613,
+      "compressed_bytes": 68021848,
+      "crc32": 1975948332
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/data/meters/cleaned/gas_cleaned.csv",
+      "bytes": 22002654,
+      "compressed_bytes": 4683276,
+      "crc32": 2229836193
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/data/meters/cleaned/hotwater_cleaned.csv",
+      "bytes": 24362948,
+      "compressed_bytes": 7696536,
+      "crc32": 3251053798
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/data/meters/cleaned/irrigation_cleaned.csv",
+      "bytes": 3072060,
+      "compressed_bytes": 297419,
+      "crc32": 1203899710
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/data/meters/cleaned/solar_cleaned.csv",
+      "bytes": 736027,
+      "compressed_bytes": 131401,
+      "crc32": 750447170
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/data/meters/cleaned/steam_cleaned.csv",
+      "bytes": 45422530,
+      "compressed_bytes": 16890442,
+      "crc32": 1415933993
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/data/meters/cleaned/water_cleaned.csv",
+      "bytes": 15394905,
+      "compressed_bytes": 2842433,
+      "crc32": 493196131
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/data/meters/kaggle/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": 0
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/data/meters/kaggle/kaggle.csv",
+      "bytes": 896816677,
+      "compressed_bytes": 183629832,
+      "crc32": 2532778156
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/data/meters/raw/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": 0
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/data/meters/raw/chilledwater.csv",
+      "bytes": 78842043,
+      "compressed_bytes": 33605385,
+      "crc32": 18807689
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/data/meters/raw/electricity.csv",
+      "bytes": 174239039,
+      "compressed_bytes": 67476924,
+      "crc32": 1493172642
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/data/meters/raw/gas.csv",
+      "bytes": 20181931,
+      "compressed_bytes": 4632663,
+      "crc32": 2127627871
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/data/meters/raw/hotwater.csv",
+      "bytes": 24943565,
+      "compressed_bytes": 7865480,
+      "crc32": 203114984
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/data/meters/raw/irrigation.csv",
+      "bytes": 3154282,
+      "compressed_bytes": 321099,
+      "crc32": 2293444111
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/data/meters/raw/solar.csv",
+      "bytes": 743887,
+      "compressed_bytes": 134138,
+      "crc32": 533446611
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/data/meters/raw/steam.csv",
+      "bytes": 46742607,
+      "compressed_bytes": 17217586,
+      "crc32": 1021834201
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/data/meters/raw/water.csv",
+      "bytes": 15641460,
+      "compressed_bytes": 2909027,
+      "crc32": 434149497
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/data/weather/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": 0
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/data/weather/weather.csv",
+      "bytes": 19457782,
+      "compressed_bytes": 3259859,
+      "crc32": 3395326882
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": 0
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/NewWay.png",
+      "bytes": 68172,
+      "compressed_bytes": 63792,
+      "crc32": 2788378856
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/Oldway.png",
+      "bytes": 49820,
+      "compressed_bytes": 47744,
+      "crc32": 986134986
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/breakOut_all.jpg",
+      "bytes": 1372261,
+      "compressed_bytes": 1091139,
+      "crc32": 2741632434
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/buildingdatagenome1.png",
+      "bytes": 128070,
+      "compressed_bytes": 117932,
+      "crc32": 4253399168
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/buildingdatagenome2.png",
+      "bytes": 115110,
+      "compressed_bytes": 114446,
+      "crc32": 1502841249
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/dataQuality_all.jpg",
+      "bytes": 2647053,
+      "compressed_bytes": 2283607,
+      "crc32": 3269068215
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/heatmap.png",
+      "bytes": 128809,
+      "compressed_bytes": 122660,
+      "crc32": 1195147089
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/map.pdf",
+      "bytes": 98355,
+      "compressed_bytes": 96191,
+      "crc32": 4144986225
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/map.png",
+      "bytes": 81359,
+      "compressed_bytes": 79751,
+      "crc32": 3250591904
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/metadata_features.pdf",
+      "bytes": 32578,
+      "compressed_bytes": 25952,
+      "crc32": 4280617972
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/metadata_features.png",
+      "bytes": 367225,
+      "compressed_bytes": 324469,
+      "crc32": 3818484811
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/meters_hist.pdf",
+      "bytes": 22171,
+      "compressed_bytes": 17786,
+      "crc32": 3511861924
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/meters_hist.png",
+      "bytes": 42237,
+      "compressed_bytes": 40253,
+      "crc32": 596597442
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/meters_hour.pdf",
+      "bytes": 10843041,
+      "compressed_bytes": 10836197,
+      "crc32": 515001328
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/meters_hour.png",
+      "bytes": 42552,
+      "compressed_bytes": 39210,
+      "crc32": 1124562410
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/meters_hour_metertype.pdf",
+      "bytes": 16414,
+      "compressed_bytes": 12365,
+      "crc32": 3621648698
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/meters_hour_metertype.png",
+      "bytes": 32482,
+      "compressed_bytes": 29660,
+      "crc32": 2055156402
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/meters_hour_usage.pdf",
+      "bytes": 24845,
+      "compressed_bytes": 19256,
+      "crc32": 3608068403
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/meters_hour_usage.png",
+      "bytes": 70237,
+      "compressed_bytes": 63395,
+      "crc32": 1300748499
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/meters_month.pdf",
+      "bytes": 10266136,
+      "compressed_bytes": 10261420,
+      "crc32": 2196764797
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/meters_month.png",
+      "bytes": 45590,
+      "compressed_bytes": 42375,
+      "crc32": 3259583013
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/meters_month_metertype.pdf",
+      "bytes": 17283,
+      "compressed_bytes": 13014,
+      "crc32": 2621536145
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/meters_month_metertype.png",
+      "bytes": 32752,
+      "compressed_bytes": 29045,
+      "crc32": 3240443996
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/meters_month_usage.pdf",
+      "bytes": 25431,
+      "compressed_bytes": 19407,
+      "crc32": 1891859722
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/meters_month_usage.png",
+      "bytes": 72370,
+      "compressed_bytes": 64987,
+      "crc32": 4273055300
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/meters_weekday.pdf",
+      "bytes": 10342153,
+      "compressed_bytes": 10339263,
+      "crc32": 2513886914
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/meters_weekday.png",
+      "bytes": 43416,
+      "compressed_bytes": 39406,
+      "crc32": 3265307984
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/meters_weekday_metertype.pdf",
+      "bytes": 15328,
+      "compressed_bytes": 11168,
+      "crc32": 672724346
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/meters_weekday_metertype.png",
+      "bytes": 26954,
+      "compressed_bytes": 24064,
+      "crc32": 141637509
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/meters_weekday_usage.pdf",
+      "bytes": 22505,
+      "compressed_bytes": 16956,
+      "crc32": 230007708
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/meters_weekday_usage.png",
+      "bytes": 59086,
+      "compressed_bytes": 51377,
+      "crc32": 358040532
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/normalizedConsumption_all.jpg",
+      "bytes": 3819818,
+      "compressed_bytes": 3618879,
+      "crc32": 4208975955
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/pred_longterm1.pdf",
+      "bytes": 3087630,
+      "compressed_bytes": 3079912,
+      "crc32": 2672064165
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/pred_longterm1.png",
+      "bytes": 574953,
+      "compressed_bytes": 553824,
+      "crc32": 2214169158
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/pred_longterm2.pdf",
+      "bytes": 83816985,
+      "compressed_bytes": 83538884,
+      "crc32": 3810258509
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/pred_longterm2.png",
+      "bytes": 692334,
+      "compressed_bytes": 666511,
+      "crc32": 689938756
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/pred_shortterm-summer1.pdf",
+      "bytes": 46683,
+      "compressed_bytes": 41996,
+      "crc32": 3129065579
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/pred_shortterm-summer1.png",
+      "bytes": 418267,
+      "compressed_bytes": 392990,
+      "crc32": 3021166787
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/pred_shortterm-summer2.pdf",
+      "bytes": 961815,
+      "compressed_bytes": 954415,
+      "crc32": 1299290206
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/pred_shortterm-summer2.png",
+      "bytes": 349141,
+      "compressed_bytes": 322029,
+      "crc32": 2410459717
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/pred_shortterm-winter1.pdf",
+      "bytes": 48971,
+      "compressed_bytes": 44117,
+      "crc32": 1861137315
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/pred_shortterm-winter1.png",
+      "bytes": 585250,
+      "compressed_bytes": 567842,
+      "crc32": 3738000908
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/pred_shortterm-winter2.pdf",
+      "bytes": 1084699,
+      "compressed_bytes": 1077801,
+      "crc32": 2455793289
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/pred_shortterm-winter2.png",
+      "bytes": 397000,
+      "compressed_bytes": 369337,
+      "crc32": 1951498153
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/split_longterm.png",
+      "bytes": 4105,
+      "compressed_bytes": 3734,
+      "crc32": 3316637607
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/split_shorterm.png",
+      "bytes": 10072,
+      "compressed_bytes": 9216,
+      "crc32": 3415135973
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/weatherSensitivity_all.jpg",
+      "bytes": 2262001,
+      "compressed_bytes": 2007521,
+      "crc32": 1549890716
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/weather_cont.pdf",
+      "bytes": 39850,
+      "compressed_bytes": 33741,
+      "crc32": 3526001719
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/weather_cont.png",
+      "bytes": 119521,
+      "compressed_bytes": 111109,
+      "crc32": 255395113
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/weather_corr.pdf",
+      "bytes": 17499,
+      "compressed_bytes": 12621,
+      "crc32": 3909639100
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/weather_corr.png",
+      "bytes": 42013,
+      "compressed_bytes": 38419,
+      "crc32": 3096712675
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/weather_features.pdf",
+      "bytes": 98693,
+      "compressed_bytes": 93089,
+      "crc32": 3994403450
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/weather_features.png",
+      "bytes": 209153,
+      "compressed_bytes": 198246,
+      "crc32": 2235199846
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/weather_hour.pdf",
+      "bytes": 20218,
+      "compressed_bytes": 14991,
+      "crc32": 1569846306
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/weather_hour.png",
+      "bytes": 48994,
+      "compressed_bytes": 46787,
+      "crc32": 2520397246
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/weather_month.pdf",
+      "bytes": 19336,
+      "compressed_bytes": 14126,
+      "crc32": 3612675058
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/weather_month.png",
+      "bytes": 47287,
+      "compressed_bytes": 44779,
+      "crc32": 817095344
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/weather_year.pdf",
+      "bytes": 36197,
+      "compressed_bytes": 30962,
+      "crc32": 103438689
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/figures/weather_year.png",
+      "bytes": 139497,
+      "compressed_bytes": 131773,
+      "crc32": 3425464064
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/notebooks/",
+      "bytes": 0,
+      "compressed_bytes": 0,
+      "crc32": 0
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/notebooks/00_All-meters-dataset.ipynb",
+      "bytes": 9605,
+      "compressed_bytes": 1953,
+      "crc32": 1675220277
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/notebooks/01_EDA-metadata.ipynb",
+      "bytes": 700794,
+      "compressed_bytes": 483768,
+      "crc32": 2725725356
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/notebooks/02_EDA-weather.ipynb",
+      "bytes": 1849988,
+      "compressed_bytes": 1342171,
+      "crc32": 223256418
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/notebooks/03_EDA-meter-reading.ipynb",
+      "bytes": 971725,
+      "compressed_bytes": 680837,
+      "crc32": 2638899072
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/notebooks/04_Normalized-consumption.ipynb",
+      "bytes": 424377,
+      "compressed_bytes": 318023,
+      "crc32": 3250651105
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/notebooks/05_Anomaly-detection.ipynb",
+      "bytes": 3048,
+      "compressed_bytes": 1184,
+      "crc32": 1423846036
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/notebooks/06_Data-quality.ipynb",
+      "bytes": 87932,
+      "compressed_bytes": 63076,
+      "crc32": 2007100920
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/notebooks/07_Weather-sensitivity.ipynb",
+      "bytes": 248155,
+      "compressed_bytes": 180523,
+      "crc32": 3070593523
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/notebooks/08_BreakOut-detection.ipynb",
+      "bytes": 3481,
+      "compressed_bytes": 1309,
+      "crc32": 3383971466
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/notebooks/09_BreakOut-plot.ipynb",
+      "bytes": 112396,
+      "compressed_bytes": 80645,
+      "crc32": 1054978295
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/notebooks/10_Cleaned-dataset.ipynb",
+      "bytes": 16165,
+      "compressed_bytes": 3344,
+      "crc32": 2148682446
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/notebooks/11_Models.ipynb",
+      "bytes": 190723,
+      "compressed_bytes": 68786,
+      "crc32": 358984732
+    },
+    {
+      "name": "buds-lab-building-data-genome-project-2-3d0cbaf/notebooks/12_Models-evaluation.ipynb",
+      "bytes": 4068896,
+      "compressed_bytes": 2980085,
+      "crc32": 361161609
+    }
+  ],
+  "extracted": {
+    "electricity_pretest.csv": {
+      "archive_member": "buds-lab-building-data-genome-project-2-3d0cbaf/data/meters/raw/electricity.csv",
+      "path": "data/electricity_pretest.csv",
+      "bytes": 70800236,
+      "sha256": "cc9601d747cc3e323f45b344a953db451f046c736e9625fb7719bae4ce216aad"
+    },
+    "cleaned_pretest.csv": {
+      "archive_member": "buds-lab-building-data-genome-project-2-3d0cbaf/data/meters/cleaned/electricity_cleaned.csv",
+      "path": "data/cleaned_pretest.csv",
+      "bytes": 72101629,
+      "sha256": "6869350d1d6377af4ade0aeb0dbaa04d6e6b49c49db4a4e4c5ac5be5bd4fad85"
+    },
+    "metadata.csv": {
+      "archive_member": "buds-lab-building-data-genome-project-2-3d0cbaf/data/metadata/metadata.csv",
+      "path": "data/metadata.csv",
+      "bytes": 272024,
+      "sha256": "992d0b29f24f96ad4332bc4dbb534b7bdd7dd2689aad093f94e93068ecddca02"
+    },
+    "BDG2_LICENSE.txt": {
+      "archive_member": "buds-lab-building-data-genome-project-2-3d0cbaf/LICENSE",
+      "path": "manifests/BDG2_LICENSE.txt",
+      "bytes": 1101,
+      "sha256": "993c6e1211fabe1623e577c506a277a0d4c670fd6036b55c0607b5f1cf48887c"
+    }
+  },
+  "test_values_parsed": false,
+  "cutoff_exclusive": "2016-11-01"
+}

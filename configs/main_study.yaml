@@ -1,0 +1,9 @@
+authorized: false
+reason: Stage 1 only; main scientific gates and a later explicit authorization are required
+maximum_total_gpu_hours: 24
+maximum_buildings: 128
+providers: 4
+overlap: [0, 0.5, 0.9]
+allocation_seeds: [71021, 71022, 71023]
+sketch_dimension: 2048
+test: ['2017-01-01', '2018-01-01']

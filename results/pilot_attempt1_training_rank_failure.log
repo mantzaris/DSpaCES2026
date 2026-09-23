@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/workspace/DSpaCES2026-stage1/scripts/run_pilot.py", line 251, in <module>
+    main(parser.parse_args().config)
+  File "/workspace/DSpaCES2026-stage1/scripts/run_pilot.py", line 113, in main
+    models=[fit_ols(x,y,support,days.to_numpy()) for support in supports]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/DSpaCES2026-stage1/src/evidence_fusion/provider_models.py", line 64, in fit_ols
+    part, _ = qr_operator(xx[train])
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/DSpaCES2026-stage1/src/evidence_fusion/provider_models.py", line 43, in qr_operator
+    raise ValueError('Insufficient full-rank provider design')
+ValueError: Insufficient full-rank provider design

@@ -1,0 +1,369 @@
+{
+  "start_timestamp": 1790119534.0,
+  "start_utc": "2026-09-22T23:25:34+00:00",
+  "cap_seconds": 7200,
+  "events": [
+    {
+      "event": "data_download_start",
+      "utc": "2026-09-22T23:28:05.007429+00:00"
+    },
+    {
+      "event": "data_download_failed",
+      "utc": "2026-09-22T23:28:14.846361+00:00",
+      "error": "ValueError('Missing/ambiguous archive member: data/meters/cleaned/electricity.csv')"
+    },
+    {
+      "event": "data_download_start",
+      "utc": "2026-09-22T23:34:30.553748+00:00"
+    },
+    {
+      "event": "data_download_complete",
+      "utc": "2026-09-22T23:34:32.911209+00:00",
+      "bytes": 595266464
+    },
+    {
+      "event": "pilot_start",
+      "utc": "2026-09-22T23:41:16.280532+00:00",
+      "config_sha256": "340601eed669a58a41db0b52703ad31f5f534afe3dc558ac4bdd1680eac96e1d"
+    },
+    {
+      "event": "pilot_start",
+      "utc": "2026-09-22T23:45:39.873440+00:00",
+      "config_sha256": "340601eed669a58a41db0b52703ad31f5f534afe3dc558ac4bdd1680eac96e1d"
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:45:45.982597+00:00",
+      "building": "Bear_assembly_Beatrice",
+      "common_days": 0
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:45:50.123776+00:00",
+      "building": "Bear_assembly_Beatrice",
+      "common_days": 21
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:45:54.199621+00:00",
+      "building": "Bear_assembly_Beatrice",
+      "common_days": 38
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:45:58.795393+00:00",
+      "building": "Bobcat_assembly_Adam",
+      "common_days": 0
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:46:03.116859+00:00",
+      "building": "Bobcat_assembly_Adam",
+      "common_days": 21
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:46:07.192133+00:00",
+      "building": "Bobcat_assembly_Adam",
+      "common_days": 38
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:46:11.811877+00:00",
+      "building": "Bull_assembly_Amalia",
+      "common_days": 0
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:46:16.009243+00:00",
+      "building": "Bull_assembly_Amalia",
+      "common_days": 21
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:46:20.309279+00:00",
+      "building": "Bull_assembly_Amalia",
+      "common_days": 38
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:46:24.868999+00:00",
+      "building": "Crow_education_Kate",
+      "common_days": 0
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:46:29.050720+00:00",
+      "building": "Crow_education_Kate",
+      "common_days": 21
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:46:33.064269+00:00",
+      "building": "Crow_education_Kate",
+      "common_days": 38
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:46:37.922759+00:00",
+      "building": "Eagle_assembly_Benny",
+      "common_days": 0
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:46:42.074846+00:00",
+      "building": "Eagle_assembly_Benny",
+      "common_days": 21
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:46:46.135471+00:00",
+      "building": "Eagle_assembly_Benny",
+      "common_days": 38
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:46:50.526443+00:00",
+      "building": "Fox_assembly_Adrianne",
+      "common_days": 0
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:46:54.438288+00:00",
+      "building": "Fox_assembly_Adrianne",
+      "common_days": 21
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:46:58.445447+00:00",
+      "building": "Fox_assembly_Adrianne",
+      "common_days": 38
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:47:03.638987+00:00",
+      "building": "Gator_assembly_Alexa",
+      "common_days": 0
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:47:08.372242+00:00",
+      "building": "Gator_assembly_Alexa",
+      "common_days": 21
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:47:12.787439+00:00",
+      "building": "Gator_assembly_Alexa",
+      "common_days": 38
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:47:17.294641+00:00",
+      "building": "Hog_assembly_Colette",
+      "common_days": 0
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:47:21.283720+00:00",
+      "building": "Hog_assembly_Colette",
+      "common_days": 21
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:47:25.266956+00:00",
+      "building": "Hog_assembly_Colette",
+      "common_days": 38
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:47:30.185655+00:00",
+      "building": "Lamb_assembly_Alden",
+      "common_days": 0
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:47:34.608915+00:00",
+      "building": "Lamb_assembly_Alden",
+      "common_days": 21
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:47:38.978709+00:00",
+      "building": "Lamb_assembly_Alden",
+      "common_days": 38
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:47:43.584284+00:00",
+      "building": "Moose_education_Abbie",
+      "common_days": 0
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:47:47.615508+00:00",
+      "building": "Moose_education_Abbie",
+      "common_days": 21
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:47:51.651098+00:00",
+      "building": "Moose_education_Abbie",
+      "common_days": 38
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:47:56.397728+00:00",
+      "building": "Mouse_health_Buddy",
+      "common_days": 0
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:48:00.494171+00:00",
+      "building": "Mouse_health_Buddy",
+      "common_days": 21
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:48:04.444193+00:00",
+      "building": "Mouse_health_Buddy",
+      "common_days": 38
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:48:08.973584+00:00",
+      "building": "Panther_assembly_Carrol",
+      "common_days": 0
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:48:12.971492+00:00",
+      "building": "Panther_assembly_Carrol",
+      "common_days": 21
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:48:16.929825+00:00",
+      "building": "Panther_assembly_Carrol",
+      "common_days": 38
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:48:21.433985+00:00",
+      "building": "Peacock_assembly_Dena",
+      "common_days": 0
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:48:25.617527+00:00",
+      "building": "Peacock_assembly_Dena",
+      "common_days": 21
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:48:29.720725+00:00",
+      "building": "Peacock_assembly_Dena",
+      "common_days": 38
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:48:34.272907+00:00",
+      "building": "Rat_assembly_Adolfo",
+      "common_days": 0
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:48:38.293620+00:00",
+      "building": "Rat_assembly_Adolfo",
+      "common_days": 21
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:48:42.269838+00:00",
+      "building": "Rat_assembly_Adolfo",
+      "common_days": 38
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:48:46.782884+00:00",
+      "building": "Robin_assembly_Colleen",
+      "common_days": 0
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:48:50.810290+00:00",
+      "building": "Robin_assembly_Colleen",
+      "common_days": 21
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:48:54.843922+00:00",
+      "building": "Robin_assembly_Colleen",
+      "common_days": 38
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:48:59.486767+00:00",
+      "building": "Shrew_office_Doris",
+      "common_days": 0
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:49:03.565548+00:00",
+      "building": "Shrew_office_Doris",
+      "common_days": 21
+    },
+    {
+      "event": "allocation_complete",
+      "utc": "2026-09-22T23:49:07.590964+00:00",
+      "building": "Shrew_office_Doris",
+      "common_days": 38
+    },
+    {
+      "event": "pilot_complete",
+      "utc": "2026-09-22T23:49:07.932294+00:00",
+      "wall_seconds": 206.39933953713626,
+      "max_relative_projection_error": 0.2552685284197736,
+      "max_fp32_relative_gram_error": 2.758690809396618e-06,
+      "test_values_opened": false
+    },
+    {
+      "event": "benchmarks_start",
+      "utc": "2026-09-22T23:50:47.254078+00:00"
+    },
+    {
+      "event": "benchmarks_complete",
+      "utc": "2026-09-22T23:51:22.959674+00:00",
+      "device_seconds": 0.5704535431042314,
+      "peak_vram": 185325568
+    },
+    {
+      "event": "stage_completed",
+      "utc": "2026-09-23T00:09:59.874320+00:00",
+      "no_active_research_worker": true,
+      "cache_bytes": 848184301,
+      "project_file_bytes": 1203983947,
+      "pod_remains_allocated": true
+    },
+    {
+      "event": "cold_percentile_completion_start",
+      "utc": "2026-09-23T00:14:06.492990+00:00",
+      "reason": "Complete required cold p50/p95 and include canonical-ID construction and Gaussian generation"
+    },
+    {
+      "event": "cold_percentiles_complete",
+      "utc": "2026-09-23T00:14:40.226549+00:00",
+      "device_seconds": 0.571027099609375
+    },
+    {
+      "event": "stage_completed",
+      "utc": "2026-09-23T00:14:40.962292+00:00",
+      "no_active_research_worker": true,
+      "cache_bytes": 848184301,
+      "project_file_bytes": 1204004212,
+      "pod_remains_allocated": true
+    }
+  ],
+  "allocated_wall_seconds": 2946.962302207947,
+  "peak_process_rss_bytes": 1426522112
+}
