@@ -115,7 +115,33 @@
       "start_utc": "2026-09-23T05:04:30.819916+00:00",
       "exit_code": 0,
       "wall_seconds": 1.5192138429993065
+    },
+    {
+      "label": "regional_key_audit",
+      "command": [
+        "python3",
+        "scripts/audit_regional_artifacts.py"
+      ],
+      "timeout": 180,
+      "status": "passed",
+      "start_utc": "2026-09-23T05:07:11.420303+00:00",
+      "exit_code": 0,
+      "wall_seconds": 6.076294586004224
+    },
+    {
+      "label": "timing_revision_tests",
+      "command": [
+        "python3",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "timeout": 120,
+      "status": "passed",
+      "start_utc": "2026-09-23T05:10:03.848912+00:00",
+      "exit_code": 0,
+      "wall_seconds": 1.5177270830026828
     }
   ],
-  "cumulative_job_wall_seconds": 640.9285842220197
+  "cumulative_job_wall_seconds": 648.5226058910266
 }

@@ -1,0 +1,283 @@
+{
+  "distinct_meter_time_keys": 167817021,
+  "physical_households": 5566,
+  "duplicate_excess": 115453,
+  "accessible_quality": {
+    "train": {
+      "distinct_keys": 60368495,
+      "invalid_or_null_readings": 5548,
+      "duplicate_keys_excluded": 41565,
+      "off_grid_keys": 5548,
+      "first_label": "2012-01-01 00:00:00",
+      "last_label": "2012-12-31 23:30:00"
+    },
+    "development": {
+      "distinct_keys": 23598556,
+      "invalid_or_null_readings": 4,
+      "duplicate_keys_excluded": 16379,
+      "off_grid_keys": 4,
+      "first_label": "2013-01-01 00:00:00",
+      "last_label": "2013-03-31 23:30:00"
+    }
+  },
+  "files": [
+    {
+      "path": "data/regional/LCL-FullData.zip",
+      "bytes": 801674949,
+      "sha256": "68a35598cc8e70898a7651c482216fb096a0a6910c2d180c616632dfc7a9b014"
+    },
+    {
+      "path": "data/regional/model/model.npz",
+      "bytes": 8649028,
+      "sha256": "abb696d052853d9a4cd888a0c8eb361d5861238814c0d1cfd44848055b87293e"
+    },
+    {
+      "path": "data/regional/parquet/development/bucket=00/records.parquet",
+      "bytes": 4339009,
+      "sha256": "1b8271c7fb9113335569dbb75c086fee84db6c3e1f9ba243f7995cd77fca2dc2"
+    },
+    {
+      "path": "data/regional/parquet/development/bucket=01/records.parquet",
+      "bytes": 4400639,
+      "sha256": "61fd888a19f8e7831933495ee2f1ff25681a09a16947f259a3955e4014d24310"
+    },
+    {
+      "path": "data/regional/parquet/development/bucket=02/records.parquet",
+      "bytes": 4307777,
+      "sha256": "bfdd8dffb41a2d6694308c9e705bedd483c89c518cd322f2b3262679e34049e8"
+    },
+    {
+      "path": "data/regional/parquet/development/bucket=03/records.parquet",
+      "bytes": 4402474,
+      "sha256": "098960aed089824ff8ae5d41c4f1b163970fc20b31816ffe569c1d6cb94cb1c2"
+    },
+    {
+      "path": "data/regional/parquet/development/bucket=04/records.parquet",
+      "bytes": 4302816,
+      "sha256": "91693b7b9e3c68846dd1cf6cdf64aebc1eb774f89b5f3984f5c61b67a401e367"
+    },
+    {
+      "path": "data/regional/parquet/development/bucket=05/records.parquet",
+      "bytes": 4343191,
+      "sha256": "34a7caa2cea281c323669c78d6ac89c97949bf403bf303001f358149be278e85"
+    },
+    {
+      "path": "data/regional/parquet/development/bucket=06/records.parquet",
+      "bytes": 4278989,
+      "sha256": "d9a6fcc795a0e811156b371ac22994a32023cfa86546ae19fe49704f062e6643"
+    },
+    {
+      "path": "data/regional/parquet/development/bucket=07/records.parquet",
+      "bytes": 4354801,
+      "sha256": "7d2a07e596e1a4e5d6b53b73f8b41c1559fb055458053b93aacc8ccbdb0e3a84"
+    },
+    {
+      "path": "data/regional/parquet/development/bucket=08/records.parquet",
+      "bytes": 4340508,
+      "sha256": "50fc3a0689655a4e433f3ff464e8ec62c26abfce94620cfcef6afb42115c3117"
+    },
+    {
+      "path": "data/regional/parquet/development/bucket=09/records.parquet",
+      "bytes": 4347427,
+      "sha256": "0c329565b2053a89405ffc8fef93a0c2ed507e88d518248125ae37437a8a187b"
+    },
+    {
+      "path": "data/regional/parquet/development/bucket=10/records.parquet",
+      "bytes": 4334349,
+      "sha256": "c77b85c3bb58782b358047f801887fb1a0f9a2d1268dd079b0842ad4c88ea3db"
+    },
+    {
+      "path": "data/regional/parquet/development/bucket=11/records.parquet",
+      "bytes": 4342972,
+      "sha256": "df2348d41622e4899c9c46ca8bf47d5bf2f9cc59c01d72d45c091667512f2bb7"
+    },
+    {
+      "path": "data/regional/parquet/development/bucket=12/records.parquet",
+      "bytes": 4395861,
+      "sha256": "feb3f43f38771f5b7efdca529475cfd52cc6b7a07c308de6482cb8d71ed184b5"
+    },
+    {
+      "path": "data/regional/parquet/development/bucket=13/records.parquet",
+      "bytes": 4358325,
+      "sha256": "54a278061fdf6cfaba1daa7be39e154a1fa3d081a16d249af415775218e850ca"
+    },
+    {
+      "path": "data/regional/parquet/development/bucket=14/records.parquet",
+      "bytes": 4326518,
+      "sha256": "4fa55409b0227134eb0c66a4b94a4a94e16316222932baf1510352161b261dd7"
+    },
+    {
+      "path": "data/regional/parquet/development/bucket=15/records.parquet",
+      "bytes": 4322147,
+      "sha256": "214b84dca77c9d02c7e3aaff2a4a758cb2f6ecc09a6f2f64b9ad67730b0afa5c"
+    },
+    {
+      "path": "data/regional/parquet/sealed/bucket=00/records.parquet",
+      "bytes": 16783395,
+      "sha256": "5ff7d33cd58d124336167685be67b78d5749b9514c9ca26e9558a1edf85ddf74"
+    },
+    {
+      "path": "data/regional/parquet/sealed/bucket=01/records.parquet",
+      "bytes": 16819083,
+      "sha256": "8c89cd9ad4dd7e95bd3637a29b08c94fab00bc8bad95791b20d2a90e2fd283f3"
+    },
+    {
+      "path": "data/regional/parquet/sealed/bucket=02/records.parquet",
+      "bytes": 16490503,
+      "sha256": "d1b894209e2b672582e8eafd26957970864441e1630ff347c02b6788cf030057"
+    },
+    {
+      "path": "data/regional/parquet/sealed/bucket=03/records.parquet",
+      "bytes": 17101898,
+      "sha256": "dbc3dd4695be65cce81ba729878a45284e3188578ac158470798b2259104864e"
+    },
+    {
+      "path": "data/regional/parquet/sealed/bucket=04/records.parquet",
+      "bytes": 16801744,
+      "sha256": "b42ef9577803541dea1cd364fec8b85350b41097c6dc51440cdd7fe064cb3796"
+    },
+    {
+      "path": "data/regional/parquet/sealed/bucket=05/records.parquet",
+      "bytes": 17158950,
+      "sha256": "7b3f3862558301049090286c4885294e319704453b2ce54216ee3c827979d4c3"
+    },
+    {
+      "path": "data/regional/parquet/sealed/bucket=06/records.parquet",
+      "bytes": 16748169,
+      "sha256": "92ea572cecc60ec5ba3d3004fa1d5e6beb52b73c4b1feb729596f4939f9b626e"
+    },
+    {
+      "path": "data/regional/parquet/sealed/bucket=07/records.parquet",
+      "bytes": 16646103,
+      "sha256": "c1fcb09ec6221cae3da0be617fea19cad3763271c6976ae7d2c1526d9e222aea"
+    },
+    {
+      "path": "data/regional/parquet/sealed/bucket=08/records.parquet",
+      "bytes": 16845461,
+      "sha256": "10c9bb1be157194b6b61f3a69df96170d33fe8259a194372899790aa54c92f26"
+    },
+    {
+      "path": "data/regional/parquet/sealed/bucket=09/records.parquet",
+      "bytes": 16828996,
+      "sha256": "8dc6a9060b03af49626de60d5e77276f384404a8a66b8ec0d8c40b977edf4bcd"
+    },
+    {
+      "path": "data/regional/parquet/sealed/bucket=10/records.parquet",
+      "bytes": 16884924,
+      "sha256": "27d858533d69ae5f77e1601d74aeb3febfbe167ba3ffa92a11fc414ecc7c8c28"
+    },
+    {
+      "path": "data/regional/parquet/sealed/bucket=11/records.parquet",
+      "bytes": 17186473,
+      "sha256": "bab4bba1a1bb14347a89f5383a0a0dbea402f13bb044b97eb4adb2829d721f59"
+    },
+    {
+      "path": "data/regional/parquet/sealed/bucket=12/records.parquet",
+      "bytes": 16980319,
+      "sha256": "49a2dbf7e5bdfeb3e38f70e5b4e2fd74147176c1e684e6c080a655659e41a04f"
+    },
+    {
+      "path": "data/regional/parquet/sealed/bucket=13/records.parquet",
+      "bytes": 17143576,
+      "sha256": "5c7166cb638361db0500584b44a92c7e12c15fd2572d9c6cd12fbf4cd8a94c1d"
+    },
+    {
+      "path": "data/regional/parquet/sealed/bucket=14/records.parquet",
+      "bytes": 16794700,
+      "sha256": "801b9637ddd5369c8ae208669695d5bba69e8e649bc64faef74c068eb76e5515"
+    },
+    {
+      "path": "data/regional/parquet/sealed/bucket=15/records.parquet",
+      "bytes": 16287778,
+      "sha256": "4aa86e23e7e5b7ae1dcbb3ffe7110de9699a0c972e9d0d6dd70c05be19667c08"
+    },
+    {
+      "path": "data/regional/parquet/train/bucket=00/records.parquet",
+      "bytes": 11811764,
+      "sha256": "c14c6e545ba63a87643cfd1196b2c9f981817ae9070068b1a74cbc59862039a1"
+    },
+    {
+      "path": "data/regional/parquet/train/bucket=01/records.parquet",
+      "bytes": 11992087,
+      "sha256": "d22257adb54580f0ce7e2048b7311694d20a71e9aaf1b065e01fdf59a82cc5eb"
+    },
+    {
+      "path": "data/regional/parquet/train/bucket=02/records.parquet",
+      "bytes": 11957386,
+      "sha256": "b029d9c40c02f6b54f21f2c2f50faa95ae96a1547c79a50b20029c7aecc13323"
+    },
+    {
+      "path": "data/regional/parquet/train/bucket=03/records.parquet",
+      "bytes": 12058269,
+      "sha256": "19cc80d3e4e4d4a58df6bc7e4c626981aed7b87f8160f6ebbb0a271c8be24a39"
+    },
+    {
+      "path": "data/regional/parquet/train/bucket=04/records.parquet",
+      "bytes": 11849966,
+      "sha256": "38499cf8a7d2a3f1ee1b3880334d54e977e36d10d1d86bc08ac358fe61077982"
+    },
+    {
+      "path": "data/regional/parquet/train/bucket=05/records.parquet",
+      "bytes": 11760453,
+      "sha256": "1a602476eec02e5007d4560563cdd886cf1537cc291d4df63c991d0712fd105e"
+    },
+    {
+      "path": "data/regional/parquet/train/bucket=06/records.parquet",
+      "bytes": 11802511,
+      "sha256": "7da9acb8b4484e75cc55e2393e15f08058b7967d4d12dfbddc955b5b4af65cd9"
+    },
+    {
+      "path": "data/regional/parquet/train/bucket=07/records.parquet",
+      "bytes": 11912844,
+      "sha256": "5646fe4d913d3e7d62484df9dbe0316079006fce5ba984798dca72195dea2df1"
+    },
+    {
+      "path": "data/regional/parquet/train/bucket=08/records.parquet",
+      "bytes": 11763961,
+      "sha256": "6dc9d2023b9fd511a2ddd651cd3039f410cf955b72bffbd4f6c333f61456aae7"
+    },
+    {
+      "path": "data/regional/parquet/train/bucket=09/records.parquet",
+      "bytes": 11835587,
+      "sha256": "7780a866851605552642808704d8b3f96c819db3edd1cc6d4f3ea67397df5269"
+    },
+    {
+      "path": "data/regional/parquet/train/bucket=10/records.parquet",
+      "bytes": 11881906,
+      "sha256": "06ad5b3d3c8235cb1b256909770a47b2ca589e89c155b5bdc16f5d792a3d2297"
+    },
+    {
+      "path": "data/regional/parquet/train/bucket=11/records.parquet",
+      "bytes": 11823479,
+      "sha256": "acfc5ce791a88fe4975e168e95fc238b0b27db3b657f563d10f435bcc18ab802"
+    },
+    {
+      "path": "data/regional/parquet/train/bucket=12/records.parquet",
+      "bytes": 11871702,
+      "sha256": "99c7c669ce5e7ef7c9093a78a9f73987faba2916a08a275faf8990258a27842e"
+    },
+    {
+      "path": "data/regional/parquet/train/bucket=13/records.parquet",
+      "bytes": 11781127,
+      "sha256": "9c2828dc0dc996f00c770f745df27dd3be1e700f2ad9fed6a0654aee683a4f7f"
+    },
+    {
+      "path": "data/regional/parquet/train/bucket=14/records.parquet",
+      "bytes": 11886654,
+      "sha256": "1a53a9f9248944a8c6ed66b33b34fa3429e1fcad2488b8d1945d7f6cccac0353"
+    },
+    {
+      "path": "data/regional/parquet/train/bucket=15/records.parquet",
+      "bytes": 11832542,
+      "sha256": "e2c00597aa978fc08f911269884ecd176ae3c5a129eff3a7e2f4085530cf7c49"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_000.npz",
+      "bytes": 129366,
+      "sha256": "6b6788d6b6f32362559a36179a67e7160b638eec1fa855a7d43a93e8654e8f4a"
+    }
+  ],
+  "total_bytes": 1339275456,
+  "heldout_access": "identity/count columns and opaque file hashing only; no sealed kWh summaries",
+  "seconds": 5.934375986005762
+}

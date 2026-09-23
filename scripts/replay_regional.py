@@ -118,7 +118,8 @@ def main():
         json.loads(payload)
         measure_seconds=time.perf_counter()-measurement_start
         t=time.perf_counter(); matrices,rhs,augmented=assemble(cs,bs,w,lam); assembly=time.perf_counter()-t
-        keys=[hashlib.sha256(a.tobytes()).hexdigest() for a in matrices]
+        t=time.perf_counter(); keys=[hashlib.sha256(a.tobytes()).hexdigest() for a in matrices]
+        key_seconds=time.perf_counter()-t
         t=time.perf_counter(); reference=[]; cold=0
         for a,b,key in zip(matrices,rhs,keys):
             if key not in factors:
@@ -136,11 +137,16 @@ def main():
         t=time.perf_counter(); methods['cpu_information_smoother']=np.array([information_smoother(a,b,d) for a,b in zip(matrices,rhs)])
         method_times['cpu_information_smoother']=time.perf_counter()-t
         t=time.perf_counter(); methods['cpu_pcg'],_=batched_pcg(matrices,rhs); method_times['cpu_pcg']=time.perf_counter()-t
-        families={}; ds={}; init={}; family_times={}; init_times={}; audit_times={}
+        families={}; ds={}; init={}; family_times={}; init_times={}; audit_times={}; fallback_counts={}
+        family_stages={}
         for name,q in basis.items():
             t=time.perf_counter(); fam=Family(cs,q,lam,cfg['certificate_blocks']); families[name]=fam
             certs=[fam.certificate(a) for a in augmented]; ds[name]=np.array([x[0] for x in certs])
             family_times[name]=time.perf_counter()-t
+            family_stages[name]=dict(transform_seconds=fam.transform_seconds,global_gram_seconds=fam.global_gram_seconds,
+                                    block_gram_seconds=fam.block_gram_seconds,
+                                    global_queries_seconds=sum(x[1]['global_query_seconds'] for x in certs),
+                                    block_queries_seconds=sum(x[1]['block_query_seconds'] for x in certs))
             t=time.perf_counter(); init[name]=np.array([fam.initialize(b,a) for b,a in zip(rhs,augmented)])
             init_times[name]=time.perf_counter()-t
             t=time.perf_counter()
@@ -153,6 +159,7 @@ def main():
                 if metric['relative_residual']>1e-5 or metric['weighted_relative_error']>1e-4:
                     z[k]=cho_solve(factors[keys[k]],rhs[k],check_finite=False); fallback+=1
             methods['cpu_'+name+'_corrected']=z
+            fallback_counts['cpu_'+name+'_corrected']=fallback
             audit_times[name]=time.perf_counter()-t
             method_times['cpu_'+name+'_corrected']=correction_time+init_times[name]+audit_times[name]+family_times[name]
             for k,((diagonal,cert),a,b) in enumerate(zip(certs,augmented,rhs)):
@@ -162,7 +169,9 @@ def main():
                 degree=cfg['max_correction_degree']
                 bound=delta**(degree+1)/(1-delta)*np.linalg.norm(h)*multiplier if delta<1 else np.inf
                 # Execute the polynomial itself when the family test is informative.
+                poly_start=time.perf_counter()
                 poly,ph=fam.polynomial(b,a,degree) if delta<1 else (init[name][k],h)
+                polynomial_seconds=time.perf_counter()-poly_start
                 actual=abs(j@(poly-reference[k]))
                 exact_delta=None
                 if origin_id==0 and k<4:
@@ -173,13 +182,16 @@ def main():
                         raise AssertionError('Family norm audit failed')
                 certificates.append(dict(origin=origin_id,profile=k,basis=name,**cert,
                     spectral_delta_audit=exact_delta,
+                    polynomial_seconds=polynomial_seconds,
                     output_bound_kwh=bound,polynomial_output_error_kwh=float(actual),degree=degree,
                     conclusive=bool(delta<1 and bound<=output_tolerance),fallback_count_batch=fallback,
                     initial_relative_residual=accuracy(matrices[k],b,init[name][k],reference[k])['relative_residual']))
         if torch is not None:
             t=time.perf_counter(); ta=torch.as_tensor(matrices,device='cuda'); tb=torch.as_tensor(rhs,device='cuda')
+            torch.cuda.synchronize(); transfer=time.perf_counter()-t
+            t=time.perf_counter()
             tq=torch.as_tensor(basis['rjd'],device='cuda'); td=torch.as_tensor(ds['rjd'],device='cuda')
-            tx=torch.as_tensor(init['rjd'],device='cuda'); torch.cuda.synchronize(); transfer=time.perf_counter()-t
+            tx=torch.as_tensor(init['rjd'],device='cuda'); torch.cuda.synchronize(); rjd_transfer=time.perf_counter()-t
             t=time.perf_counter()
             # Cache and batch only genuinely new matrices; all repeats get factor reuse.
             unseen=[i for i,key in enumerate(keys) if key not in gpu_factors]
@@ -192,18 +204,22 @@ def main():
             method_times['gpu_cholesky']=transfer+kernel+back
             costs.append(dict(origin=origin_id,method='gpu_cholesky_kernel',seconds=kernel,queries=len(w),complete_seconds=None))
             t=time.perf_counter(); gx=torch.cholesky_solve(tb.unsqueeze(-1),tf).squeeze(-1); torch.cuda.synchronize(); gpu_warm=time.perf_counter()-t
+            t=time.perf_counter(); warm_host=gx.cpu().numpy(); torch.cuda.synchronize(); warm_back=time.perf_counter()-t
             for name,initial,qq,dd in [('gpu_pcg',None,None,None),('gpu_rjd_corrected',tx,tq,td)]:
                 t=time.perf_counter(); gx,steps=torch_pcg(torch,ta,tb,initial,qq,dd); torch.cuda.synchronize()
                 kernel=time.perf_counter()-t; t=time.perf_counter(); arr=gx.cpu().numpy(); torch.cuda.synchronize(); back=time.perf_counter()-t
                 audit_start=time.perf_counter()
+                fallback=0
                 for k in range(len(w)):
                     metric=accuracy(matrices[k],rhs[k],arr[k],reference[k])
                     if metric['relative_residual']>1e-5 or metric['weighted_relative_error']>1e-4:
-                        arr[k]=cho_solve(factors[keys[k]],rhs[k],check_finite=False)
+                        arr[k]=cho_solve(factors[keys[k]],rhs[k],check_finite=False); fallback+=1
                 audit=time.perf_counter()-audit_start
-                methods[name]=arr; method_times[name]=transfer+kernel+back+audit+(family_times['rjd']+init_times['rjd'] if 'rjd' in name else 0)
+                fallback_counts[name]=fallback
+                methods[name]=arr; method_times[name]=transfer+kernel+back+audit+(family_times['rjd']+init_times['rjd']+rjd_transfer if 'rjd' in name else 0)
                 costs.append(dict(origin=origin_id,method=name+'_kernel',seconds=kernel,queries=len(w),complete_seconds=None))
-            costs.append(dict(origin=origin_id,method='gpu_cholesky_cached',seconds=gpu_warm,queries=len(w),complete_seconds=measure_seconds+assembly+transfer+gpu_warm))
+            costs.append(dict(origin=origin_id,method='gpu_cholesky_cached',seconds=gpu_warm,queries=len(w),
+                              complete_seconds=measure_seconds+assembly+key_seconds+transfer+gpu_warm+warm_back))
         prediction_start=time.perf_counter()
         household_predictions=np.empty((len(w),len(cfg['horizons_steps']),len(meters)))
         for hi,horizon in enumerate(cfg['horizons_steps']):
@@ -246,17 +262,22 @@ def main():
                             household_predictions=household_predictions,group_predictions=group_predictions,
                             regional_predictions=household_predictions.sum(2),horizons=cfg['horizons_steps'])
         persistence=time.perf_counter()-persist
+        if torch is not None:
+            for row in costs:
+                if row['origin']==origin_id and row['method']=='gpu_cholesky_cached':
+                    row['complete_seconds']+=prediction_seconds+persistence
         snapshot_manifest.append(dict(origin=origin_id,cutoff=str(origin),version=origin_id,mask_digest=native_hash,
             native_matrix_recomputed=fresh,available_window_cells=int(mask.sum()),matrix_new_factors=cold,
             provider_payload_bytes=len(payload.encode()),measurement_seconds=measure_seconds,
-            assembly_seconds=assembly,family_seconds=family_times,initialization_seconds=init_times,
+            assembly_seconds=assembly,matrix_key_seconds=key_seconds,family_seconds=family_times,
+            family_stage_seconds=family_stages,fallback_counts=fallback_counts,initialization_seconds=init_times,
             acceptance_audit_seconds=audit_times,scoring_seconds=scoring,
             prediction_seconds=prediction_seconds,persistence_seconds=persistence,elapsed_all_methods_seconds=time.perf_counter()-origin_start))
         for name,seconds in method_times.items():
             costs.append(dict(origin=origin_id,method=name,seconds=seconds,queries=len(w),
-                              complete_seconds=measure_seconds+assembly+seconds+persistence+prediction_seconds,
-                              amortized_complete_seconds=measure_seconds+assembly+seconds+persistence+prediction_seconds+parsed_seconds/len(origins)+(basis_cost['rjd']/len(origins) if 'rjd' in name else basis_cost['reference_eigen']/len(origins) if 'reference_eigen' in name else 0)+(cuda_init/len(origins) if name.startswith('gpu') else 0)))
-        costs.append(dict(origin=origin_id,method='cpu_cholesky_cached',seconds=warm_chol,queries=len(w),complete_seconds=measure_seconds+assembly+warm_chol+persistence))
+                              complete_seconds=measure_seconds+assembly+key_seconds+seconds+persistence+prediction_seconds,
+                              amortized_complete_seconds=measure_seconds+assembly+key_seconds+seconds+persistence+prediction_seconds+parsed_seconds/len(origins)+(basis_cost['rjd']/len(origins) if 'rjd' in name else basis_cost['reference_eigen']/len(origins) if 'reference_eigen' in name else 0)+(cuda_init/len(origins) if name.startswith('gpu') else 0)))
+        costs.append(dict(origin=origin_id,method='cpu_cholesky_cached',seconds=warm_chol,queries=len(w),complete_seconds=measure_seconds+assembly+key_seconds+warm_chol+persistence+prediction_seconds))
         prior_state=reference[0,-d:].copy(); previous_origin=origin
         # Identical matrices across origins reuse factors. A common 64-matrix
         # FIFO budget is applied to every factor cache (including the GPU).

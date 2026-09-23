@@ -4,6 +4,7 @@ Bounds are exact-arithmetic results with FP64 numerical audits, not a formal
 floating-point certificate. Negative/cancelled Gram forms fail closed.
 """
 import numpy as np
+import time
 from scipy.linalg import eigh, cho_factor, cho_solve, cholesky_banded, cho_solve_banded
 
 
@@ -55,6 +56,7 @@ def joint_basis(cs, seed, trials=3):
 
 class Family:
     def __init__(self, cs, q, lam, blocks=8):
+        start=time.perf_counter()
         self.q=q; self.lam=lam
         transformed=q.T@cs@q
         self.diag=np.diagonal(transformed,axis1=1,axis2=2).copy()
@@ -62,9 +64,13 @@ class Family:
         n=q.shape[0]; g=len(cs)
         self.e[:,np.arange(n),np.arange(n)]=0
         self.parts=np.array_split(np.arange(n),blocks)
+        self.transform_seconds=time.perf_counter()-start
+        start=time.perf_counter()
         flat=self.e.reshape(g,-1)
         self.k=flat@flat.T
         self.ka=np.abs(flat)@np.abs(flat).T
+        self.global_gram_seconds=time.perf_counter()-start
+        start=time.perf_counter()
         self.kblocks=np.empty((blocks,blocks,g,g))
         self.kabs=np.empty_like(self.kblocks)
         for p,ip in enumerate(self.parts):
@@ -72,6 +78,7 @@ class Family:
                 block=self.e[:,ip[:,None],ir].reshape(g,-1)
                 self.kblocks[p,r]=block@block.T
                 self.kabs[p,r]=np.abs(block)@np.abs(block).T
+        self.block_gram_seconds=time.perf_counter()-start
 
     @staticmethod
     def quadratic_upper(k, absolute_products, a, length):
@@ -91,7 +98,10 @@ class Family:
         if np.min(d)<=0:
             return d,dict(global_delta=np.inf,block_delta=np.inf,row_delta=np.inf,delta=np.inf)
         n=len(d)
+        start=time.perf_counter()
         global_delta=np.sqrt(self.quadratic_upper(self.k,self.ka,a,n*n))/np.min(d)
+        global_seconds=time.perf_counter()-start
+        start=time.perf_counter()
         mins=np.array([min(d[i]) for i in self.parts])
         m=np.empty((len(mins),len(mins)))
         for p,ip in enumerate(self.parts):
@@ -100,7 +110,8 @@ class Family:
         block_delta=float(eigh(m,eigvals_only=True)[-1])
         row_delta=float(np.max(m.sum(1)))
         return d,dict(global_delta=float(global_delta),block_delta=block_delta,
-                      row_delta=row_delta,delta=min(float(global_delta),block_delta))
+                      row_delta=row_delta,delta=min(float(global_delta),block_delta),
+                      global_query_seconds=global_seconds,block_query_seconds=time.perf_counter()-start)
 
     def initialize(self,b,a):
         d=self.lam+a@self.diag
