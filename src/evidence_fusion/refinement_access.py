@@ -15,6 +15,10 @@ class ProviderArchive:
         self.model = model
         self.window = window
         self.trace = trace
+        checked_window(window, 24)
+        manifest = json.loads(Path('results/refinement/frozen_manifest.json').read_text())
+        if origin < 0 or origin >= len(manifest['origins']) or manifest['origins'][origin] != window:
+            raise ValueError('source origin and information cutoff disagree')
 
     def read(self, group, kind='aggregate'):
         if kind not in ('aggregate', 'fine'):

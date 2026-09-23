@@ -123,7 +123,7 @@ def test_same_joint_mean_covariance_and_forecasts(example, kinds):
                                      regional_variance_abs_error=abs(float(pred['region_var'][0]-expected_var))))
 
 
-def test_replacement_orders_roundtrips_and_negative_control(example):
+def test_replacement_orders_roundtrips_and_negative_control(example, tmp_path):
     engine, y = example
     a = MessageState(engine, '2013-01-07'); b = MessageState(engine, '2013-01-07')
     for g in range(2):
@@ -146,6 +146,11 @@ def test_replacement_orders_roundtrips_and_negative_control(example):
         a.activate(0)
         assert torch.equal(a.predictions(0)['region_var'], original)
     assert a.version == version
+    checkpoint = tmp_path/'state.npz'
+    a.checkpoint(checkpoint, 'test-model-v1', np.array(['a','b','c','d']))
+    restored = MessageState.restore(engine, checkpoint, 'test-model-v1')
+    assert float((restored.predictions(0)['region_var']-original).abs().max()) < 1e-10
+    with pytest.raises(ValueError): MessageState.restore(engine, checkpoint, 'wrong-model')
     wrong_j = a.precision+message(engine, y, 0, 'aggregate').precision
     correct_cov = torch.linalg.solve(a.precision, torch.eye(engine.dimension, device='cuda', dtype=torch.float64))
     wrong_cov = torch.linalg.solve(wrong_j, torch.eye(engine.dimension, device='cuda', dtype=torch.float64))
@@ -181,5 +186,13 @@ def test_schur_elimination_order_and_lost_conditionals(example):
     assert float((info-hm).abs().max()) < 1e-10
     # Identical c~N(0,1), but d|c~N(c,1) versus N(-c,2): c marginal
     # alone cannot reconstruct either detail mean map or its covariance.
-    c_variance = torch.tensor(1., device='cuda')
-    assert c_variance == 1 and 1+c_variance != 2+c_variance
+    covariance1 = torch.tensor([[1., 1.], [1., 2.]], device='cuda', dtype=torch.float64)
+    covariance2 = torch.tensor([[1., -1.], [-1., 3.]], device='cuda', dtype=torch.float64)
+    eye = torch.eye(2, device='cuda', dtype=torch.float64)
+    precision1 = torch.linalg.solve(covariance1, eye)
+    precision2 = torch.linalg.solve(covariance2, eye)
+    zero = torch.zeros(2, device='cuda', dtype=torch.float64)
+    marginal1 = gaussian_marginal(precision1, zero, [0])[0]
+    marginal2 = gaussian_marginal(precision2, zero, [0])[0]
+    assert torch.allclose(marginal1, marginal2)
+    assert covariance1[1, 0] != covariance2[1, 0]

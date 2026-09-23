@@ -262,6 +262,37 @@ class MessageState:
             base += tensor_bytes(self._posterior)
         return base+sum(m.bytes() for m in self.messages.values())
 
+    def checkpoint(self, path, model_hash, meter_ids):
+        """Persist exactly the retained state, without hidden leaf caches."""
+        messages = [self.messages[g] for g in sorted(self.messages)]
+        payload = dict(model_hash=model_hash, meter_ids=meter_ids, window=self.window,
+                       groups=np.array([m.group for m in messages]),
+                       households=np.array([m.households for m in messages]),
+                       evidence_ids=np.array([m.evidence_id for m in messages]),
+                       kinds=np.array([m.kind for m in messages]), version=self.version,
+                       precision=np.stack([m.precision.cpu().numpy() for m in messages]),
+                       information=np.stack([m.information.cpu().numpy() for m in messages]))
+        for field in ('intercept', 'coefficient', 'residual_covariance', 'future_loading', 'baseline'):
+            payload[field] = np.stack([[getattr(p, field).cpu().numpy() for p in m.forecasts] for m in messages])
+        np.savez_compressed(path, **payload)
+
+    @classmethod
+    def restore(cls, model, path, model_hash):
+        with np.load(path, allow_pickle=False) as stored:
+            if str(stored['model_hash']) != model_hash:
+                raise ValueError('checkpoint model version mismatch')
+            state = cls(model, str(stored['window']))
+            for i, group in enumerate(stored['groups']):
+                forecasts = [ForecastConditional(*[tensor(stored[field][i, h], model.device)
+                    for field in ('intercept', 'coefficient', 'residual_covariance', 'future_loading', 'baseline')])
+                    for h in range(2)]
+                msg = GroupMessage(int(group), state.window, str(stored['evidence_ids'][i]),
+                    str(stored['kinds'][i]), tensor(stored['precision'][i], model.device),
+                    tensor(stored['information'][i], model.device), forecasts, {}, int(stored['households'][i]))
+                state.replace(msg)
+            state.version = int(stored['version'])
+            return state
+
     def activate(self, group):
         """Expose an actual trajectory and its covariance, not just a display."""
         msg = self.messages[group]

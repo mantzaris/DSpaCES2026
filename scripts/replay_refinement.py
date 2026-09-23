@@ -198,6 +198,12 @@ def main():
                     resident_bytes = state.bytes()
                     resident_cuda = torch.cuda.memory_allocated()
                     peak = torch.cuda.max_memory_allocated()
+                    cache_start = time.perf_counter()
+                    for _ in range(2):
+                        state.activate(selected[0])
+                        cpu_prediction(state.predictions(0))
+                    torch.cuda.synchronize()
+                    cached_rerefine_seconds = time.perf_counter()-cache_start
                     acquired_rows = sum(x['returned_rows'] for x in trace if x['operation']=='fine')
                     acquired_bytes = sum(x['file_bytes'] for x in trace)
                     accesses.extend(dict(x, policy=policy, active_groups=active, phase='acquisition_B') for x in trace)
@@ -279,6 +285,7 @@ def main():
                         cuda_resident_bytes=resident_cuda, cuda_after_eviction_bytes=evicted_cuda,
                         gpu_peak_bytes=peak, gpu_reserved_bytes=torch.cuda.memory_reserved(),
                         coarsen_seconds=coarsen_seconds, two_rerefine_seconds=restore_time,
+                        two_cached_rerefine_seconds=cached_rerefine_seconds,
                         source_access_rows=acquired_rows, source_file_bytes=acquired_bytes,
                         acquired_households=int(sizes[selected].sum()),
                         access_budget_cells=int(active*int(np.ceil(count/16))*cfg['window_steps']),
@@ -299,6 +306,15 @@ def main():
                             registered_covariances=np.stack([p.residual_covariance.cpu().numpy() for m in state.messages.values() for p in m.forecasts]),
                             regional_mean=outputs[0]['region_mean'], regional_variance=outputs[0]['region_var'])
                         del mean, chol
+                        if oi == len(origins)-1:
+                            state.checkpoint(snapshots/'retained_state_latest.npz', frozen['model_sha256'], model['meters'][:count])
+                            restored = MessageState.restore(engine, snapshots/'retained_state_latest.npz', frozen['model_sha256'])
+                            error = maximum_difference(outputs[0], cpu_prediction(restored.predictions(0)))
+                            checks.append(dict(population=count, origin=oi, policy='durable_restore', active_groups=0,
+                                cycle_error=error, retained_checkpoint_bytes=(snapshots/'retained_state_latest.npz').stat().st_size))
+                            if error > cfg['consistency_absolute_tolerance']:
+                                raise ArithmeticError('durable snapshot failed to restore the same posterior')
+                            del restored
                     del state
             # Added coverage: admit the final training-eligible group after starting
             # with 15. Other likelihoods are unchanged; common posterior updates.
