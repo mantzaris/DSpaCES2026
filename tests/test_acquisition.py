@@ -89,3 +89,17 @@ def test_gpu_same_evidence_restore_and_boundary_discrepancy(tmp_path):
     assert difference>1e-6
     out=Path('results/acquisition');out.mkdir(exist_ok=True)
     (out/'correctness.json').write_text(json.dumps(dict(same_evidence_max_abs=discrepancy,moved_evidence_forecast_change=difference),indent=2)+'\n')
+
+def test_rank_variant_acts_on_subthreshold_available_change():
+    from evidence_fusion.acquisition_policy import RankedProbePolicy
+    groups=np.arange(1024)%16
+    a=ProbePolicy(groups,probes=10,budget=51,trigger=TRIGGER)
+    b=RankedProbePolicy(groups,probes=10,budget=51,trigger=TRIGGER)
+    ids=a.probe_ids(0);z=np.zeros(10);z[0]=3.
+    for p in [a,b]:p.update(ids,z)
+    assert np.array_equal(a.score,b.score) and a.active==-1 and b.active==groups[ids[0]]
+    assert b.decision_reason()=='positive_rank'
+    ax=a.refinement_ids(0,ids);bx=b.refinement_ids(0,ids)
+    assert len(ax)==len(bx)==41 and not np.array_equal(ax,bx)
+    assert len(np.unique(groups[bx]))>1
+    b.update(ids,np.zeros(10));assert b.score.max()==.8

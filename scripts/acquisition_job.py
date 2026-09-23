@@ -36,8 +36,8 @@ def main():
         if path.exists():
             ledger = json.loads(path.read_text())
         else:
-            ledger = dict(stage='regional_acquisition', start_epoch=now,
-                start_utc=dt.datetime.now(dt.timezone.utc).isoformat(),
+            ledger = dict(stage='regional_acquisition', start_epoch=now-90, preledger_setup_seconds=90,
+                start_utc=dt.datetime.fromtimestamp(now-90, dt.timezone.utc).isoformat(),
                 prior_gpu_seconds=60*prior['cumulative_regional_allocation_minutes'],
                 prior_cpu_seconds=60*prior['cumulative_cpu_job_minutes'],
                 cap_seconds=min(1800, 60*prior['remaining_original_allocation_minutes']), jobs=[], closed=False,

@@ -1,0 +1,22 @@
+{
+  "version": "rank-allocation-1",
+  "source_stage3": "031bdd6f0535413ecfc9ac025083fcc3300b19bc",
+  "backgrounds": [0, 2, 4, 6],
+  "families": ["localized", "cancel_exact", "delayed", "none"],
+  "magnitude": 3.0,
+  "seed_base": 1040000,
+  "steps": 48,
+  "diagnostic_original_background": 0,
+  "policy": "same acquired-probe score; direct extra budget to current positive argmax; retain 25% exploration",
+  "methods": ["M0", "M2", "M3", "M3b", "M3b_fixed", "M4"],
+  "per_update_attempts": 209,
+  "probe_attempts": 41,
+  "exploration_extra_attempts": 42,
+  "calibration_segment": "existing 2013-01-03 unmodified 96 updates; exclude first 8 alarm steps",
+  "alarm_target_per_update_any_channel": 0.02,
+  "detection_limit_steps": 6,
+  "miss_delay_steps": 7,
+  "stage_cap_seconds": 1800,
+  "reserved_final_seconds": 300,
+  "main_study_authorized": false
+}

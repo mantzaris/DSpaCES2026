@@ -127,7 +127,7 @@ def main():
             for key in ['exposed_value_difference','exposed_probe_difference','innovation_difference','score_difference','assimilation_value_difference']:
                 summary['first_'+key]=first(rows,key);summary['max_'+key]=max(r[key] for r in rows)
             summary.update(max_affected_probe_z=max(r['affected_probe_z'] for r in rows),
-                max_score=max(r['best_score'] for r in event),score_reproduction_max=max(r['score_error'] for r in rows),
+                max_score=max((r['best_score'] for r in event),default=0.),score_reproduction_max=max(r['score_error'] for r in rows),
                 budget_block_steps=sum(r['budget_blocked'] for r in rows),
                 requested=sum(r['requested'] for r in rows),read=sum(r['read'] for r in rows),assimilated=sum(r['assimilated'] for r in rows))
             episodes.append(summary)

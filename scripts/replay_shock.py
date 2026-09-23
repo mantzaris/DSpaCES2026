@@ -34,14 +34,15 @@ def metric_values(y,mean,var,scale):
 
 
 def run_episode(engine,model,background,slot,metadata,readings,targets,shift,signature,
-                cfg,calibration,episode_id,methods=METHODS,steps=None,collect_calibration=False,phase1=False):
+                cfg,calibration,episode_id,methods=METHODS,steps=None,collect_calibration=False,phase1=False,policy_overrides=None,same_trace_source=None):
     length=cfg['window']; n=len(model['meters']); groups=model['groups']; steps=steps or cfg['steps']
     budget=int(n*cfg['fine_budget_fraction']); probes=int(n*cfg['probe_fraction'])
     event_threshold=calibration.get('trigger',float('inf'))
     histories={m:EvidenceWindow(n,length) for m in methods}
-    policies={m:ProbePolicy(groups,cfg['probe_seed'],probes,budget,event_threshold) for m in methods}
+    policies={m:(policy_overrides or {}).get(m,ProbePolicy)(groups,cfg['probe_seed'],probes,budget,event_threshold) for m in methods}
+    same_trace_source=same_trace_source or {'M3_fixed':'M3'}
     traces={m:[] for m in methods}
-    channels={m:ObservationChannel(readings,groups,n if m=='M4' else 0 if m=='M0' else budget,traces[m]) for m in methods if m!='M3_fixed'}
+    channels={m:ObservationChannel(readings,groups,n if m=='M4' else 0 if m=='M0' else budget,traces[m]) for m in methods if m not in same_trace_source}
     # Warm-up is aggregate-only. No free household initialization/history reads.
     sums=[];masks=[]
     for t in range(length-1):
@@ -73,13 +74,13 @@ def run_episode(engine,model,background,slot,metadata,readings,targets,shift,sig
         macro_expected=np.bincount(groups,weights=prev_mean*native,minlength=16)
         macro_z=abs(total-macro_expected)/np.sqrt(np.maximum(prev_group_var,1e-12))
         probe_ids=sequential.probe_ids(step)
-        probe_values=None;probe_z=None;selected_trace=None
+        probe_values=None;probe_z=None;selected_trace={}
         outputs_this={};payloads={}
         for method in methods:
             start=time.perf_counter();begin=torch.cuda.Event(enable_timing=True);end=torch.cuda.Event(enable_timing=True);begin.record()
             cache=histories[method];expired=cache.advance(step)
             retained_values=int(np.isfinite(cache.values).sum())
-            if method!='M3_fixed':
+            if method not in same_trace_source:
                 channel=channels[method]
                 # Channel holds a sliced causal clock; skip warmup without reads.
                 if step==0:channel.cutoff=length-2
@@ -87,25 +88,28 @@ def run_episode(engine,model,background,slot,metadata,readings,targets,shift,sig
             chosen=np.array([],dtype=int);observed=np.array([],dtype=float);active=[]
             if method=='M4':
                 chosen=np.arange(n);observed=channel.read(chosen,'fine_all')
-            elif method!='M0' and method!='M3_fixed':
+            elif method!='M0' and method not in same_trace_source:
                 pv=channel.read(probe_ids,'probe')
                 pz=abs(pv-prev_mean[probe_ids])/np.sqrt(np.maximum(prev_var[probe_ids],1e-12))
                 if probe_values is None:
                     probe_values=pv;probe_z=pz;sequential.update(probe_ids,pz)
-                policy=policies[method];policy.score=sequential.score.copy();policy.active=sequential.active;policy.ttl=sequential.ttl
+                policy=policies[method]
+                if method in (policy_overrides or {}):policy.update(probe_ids,pz)
+                else:policy.score=sequential.score.copy();policy.active=sequential.active;policy.ttl=sequential.ttl
                 chosen=probe_ids;observed=pv
-                if method in ('M2','M3','M3_delay','M_uncertainty') and not (method=='M3_delay' and step<26):
+                if method in ('M2','M3','M3b','M3_delay','M_uncertainty') and not (method=='M3_delay' and step<26):
                     mode='random' if method=='M2' else 'uncertainty' if method=='M_uncertainty' else 'event'
                     if method=='M3_delay' and step==26:policy.active=int(np.argmax(policy.score))
                     extra=policy.refinement_ids(step,probe_ids,mode,prev_group_var/np.bincount(groups,minlength=16))
                     ev=channel.read(extra,'refinement')
                     chosen=np.r_[probe_ids,extra];observed=np.r_[pv,ev]
                     if policy.active>=0:active=[policy.active]
-            elif method=='M3_fixed':
-                if selected_trace is None:raise RuntimeError('Sequential M3 trace has not arrived')
-                chosen,observed=selected_trace
+            elif method in same_trace_source:
+                source=same_trace_source[method]
+                if source not in selected_trace:raise RuntimeError('Sequential acquired trace has not arrived')
+                chosen,observed=selected_trace[source]
                 active=list(range(16))  # Retains all conditional blocks; same evidence.
-            if method=='M3':selected_trace=(chosen.copy(),observed.copy())
+            if method in same_trace_source.values():selected_trace[method]=(chosen.copy(),observed.copy())
             if len(chosen):cache.add(chosen,observed-model['profile'][slot[cutoff],chosen],step)
             coarse=(method=='M0')
             outputs,state=engine.infer(window_native,cache.values,aggregate,supports,future_base,
@@ -116,8 +120,8 @@ def run_episode(engine,model,background,slot,metadata,readings,targets,shift,sig
             end.record();torch.cuda.synchronize();seconds=time.perf_counter()-start
             detail_bytes=tensor_bytes(state['leaves'])
             state_bytes=tensor_bytes(state)
-            if method=='M3_fixed':
-                error=max(float(np.max(abs(pred[h][k]-outputs_this['M3'][h][k]))) for h in range(3) for k in pred[h])
+            if method in same_trace_source:
+                error=max(float(np.max(abs(pred[h][k]-outputs_this[same_trace_source[method]][h][k]))) for h in range(3) for k in pred[h])
                 checks.append(dict(episode=episode_id,step=step,same_information_max_abs=error))
                 if error>cfg['consistency_tolerance']:raise ArithmeticError('Same-information representation mismatch')
             # Test explicit detail eviction leaves the returned fixed-evidence law unchanged.
@@ -149,7 +153,7 @@ def run_episode(engine,model,background,slot,metadata,readings,targets,shift,sig
                 current_group_signature=float(np.max(abs(signature[cutoff]))),
                 current_regional_signature=float(signature[cutoff].sum()),
                 observed_affected=len(np.intersect1d(chosen,affected)),attempts=len(chosen),
-                active_group=active[0] if active and method!='M3_fixed' else -1))
+                active_group=active[0] if active and method not in same_trace_source else -1))
             if collect_calibration:
                 score_cal.append(dict(step=step,method=method,macro=float(macro_z.max()),fine=fine_max,
                     trigger=float(sequential.score.max())))
@@ -183,7 +187,7 @@ def run_episode(engine,model,background,slot,metadata,readings,targets,shift,sig
                         region_sd=float(np.sqrt(p['region_variance'])),
                         target_plus=finite_mean(y[plus]),forecast_plus=finite_mean(p['mean'][plus]),
                         target_minus=finite_mean(y[minus]),forecast_minus=finite_mean(p['mean'][minus]),
-                        active_group=active[0] if active and method!='M3_fixed' else -1))
+                        active_group=active[0] if active and method not in same_trace_source else -1))
             costs.append(dict(episode=episode_id,step=step,method=method,complete_seconds=seconds+summary_seconds,
                 cuda_event_ms=begin.elapsed_time(end),provider_summary_seconds=summary_seconds,
                 provider_summary_scan_rows=n,summary_bytes=16*8+len(np.packbits(native))+64,
