@@ -4,6 +4,13 @@
 approach is stopped. The evidence does not yet justify its narrow paper fallback
 or an event-time pivot. The main study remains disabled; no Stage 3 is proposed.
 
+A subsequent September 23 planning request produced
+[When Forecast Contracts Disagree](DSpaCES_2026_Research_Plan.md), a complete
+conditional design for a separate compatibility-contract feasibility study.
+It attributes the mathematical ingredients to existing work and proposes early
+novelty and usefulness gates. This planning addendum does not reverse Stage 2's
+decision, authorize another pilot, or unseal calibration/test outcomes.
+
 Read the [Stage 2 decision](reports/STAGE2_DECISION.md),
 [evidence audit and dated corrections](reports/STAGE1_EVIDENCE_AUDIT.md),
 [current literature comparison](docs/STAGE2_NOVELTY_AUDIT.md), and

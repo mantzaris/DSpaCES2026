@@ -1,0 +1,104 @@
+{
+  "scope": "Illustrative eight-state LPs, dimensions, dates and budget arithmetic only",
+  "bdcc_source": "/home/resort/Documents/repos/EAI-BDCC2026/research_plan/EAI_BDCC_2026_Research_Plan.md",
+  "bdcc_sha256": "9404b1c201287562368c4eefa6a4cd0658f2a14a8b88877e5cc2ce3f542c9b8f",
+  "states": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      1
+    ]
+  ],
+  "minimum_cell_repair": 0.11666666666666663,
+  "even_parity_action_losses": [
+    6.0,
+    3.25,
+    0.5,
+    1.5
+  ],
+  "odd_parity_action_losses": [
+    6.0,
+    2.0,
+    1.75,
+    1.5
+  ],
+  "worst_case_regret_by_action": [
+    5.5,
+    2.75,
+    0.25,
+    1.0
+  ],
+  "worst_case_loss_by_action": [
+    6.0,
+    3.25,
+    1.75,
+    1.5
+  ],
+  "deadline_utc": "2026-10-16T11:59:00+00:00",
+  "gpu_budget_hours": [
+    2,
+    3,
+    3,
+    5,
+    3,
+    3,
+    2,
+    3
+  ],
+  "paper_pages": [
+    0.8,
+    0.9,
+    1.2,
+    1.6,
+    1.2,
+    2.6,
+    0.5,
+    1.2
+  ],
+  "primary_max_targets": 140160,
+  "primary_max_provider_messages": 1681920,
+  "primary_max_meter_positions": 1121280,
+  "fp32_state_buffer_bytes": {
+    "2048_by_256": 2097152,
+    "256_by_4096": 4194304,
+    "128_by_65536": 33554432
+  },
+  "no_observational_data_read": true,
+  "gpu_used": false,
+  "cpu_wall_seconds": 0.013782804999209475
+}
