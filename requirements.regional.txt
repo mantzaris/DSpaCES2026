@@ -1,0 +1,5 @@
+# Verified local Python 3.8 columnar additions. The pod uses Python 3.12.
+# Core numeric dependencies remain the project's installed scientific stack.
+pyarrow==17.0.0
+duckdb==1.1.3
+# 7z system executable is required for streaming the official Deflate64 ZIP.

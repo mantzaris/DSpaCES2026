@@ -1,0 +1,33 @@
+[
+  {
+    "origin": 0,
+    "cutoff": "2013-01-07 12:00:00",
+    "version": 0,
+    "mask_digest": "4277bd657cdfa67f71e22176560fe7447507b98021ae1adb3ac38a21c5dc49fe",
+    "native_matrix_recomputed": true,
+    "available_window_cells": 100002,
+    "matrix_new_factors": 2,
+    "provider_payload_bytes": 307,
+    "measurement_seconds": 0.08879792399966391,
+    "assembly_seconds": 0.0030913880036678165,
+    "family_seconds": {
+      "identity": 0.08086554599867668,
+      "reference_eigen": 0.07738815899938345,
+      "rjd": 0.07625052199728088
+    },
+    "initialization_seconds": {
+      "identity": 0.00013039199984632432,
+      "reference_eigen": 0.0001611360057722777,
+      "rjd": 0.00018517100397730246
+    },
+    "acceptance_audit_seconds": {
+      "identity": 0.0015500459994655102,
+      "reference_eigen": 0.001629901998967398,
+      "rjd": 0.0013595080017694272
+    },
+    "scoring_seconds": 0.256620918000408,
+    "prediction_seconds": 0.12402149899571668,
+    "persistence_seconds": 0.010195000002568122,
+    "elapsed_all_methods_seconds": 0.7813976870020269
+  }
+]

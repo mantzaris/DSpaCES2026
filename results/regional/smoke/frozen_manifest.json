@@ -1,0 +1,88 @@
+{
+  "config": {
+    "version": "london-regional-1",
+    "source_commit": "09ae274",
+    "seed": 20260923,
+    "training_start": "2012-01-01",
+    "training_end": "2013-01-01",
+    "development_start": "2013-01-01",
+    "development_end": "2013-04-01",
+    "sealed_start": "2013-04-01",
+    "minimum_training_readings": 8760,
+    "latent_dimension": 16,
+    "window_steps": 24,
+    "provider_groups": 16,
+    "development_weeks": [
+      "2013-01-07",
+      "2013-01-28",
+      "2013-02-18",
+      "2013-03-11"
+    ],
+    "origins_per_week": 8,
+    "provider_profiles": 16,
+    "horizons_steps": [
+      2,
+      12
+    ],
+    "regularization": 0.01,
+    "rjd_trials": 3,
+    "certificate_blocks": 8,
+    "max_correction_degree": 12,
+    "relative_residual_tolerance": 1e-05,
+    "weighted_relative_error_tolerance": 0.0001,
+    "regional_output_fraction_tolerance": 0.001,
+    "cpu_threads": 4,
+    "download_cap_bytes": 4000000000,
+    "cache_cap_bytes": 30000000000,
+    "cpu_cap_seconds": 21600,
+    "gpu_allocation_cap_seconds": 10800,
+    "host_working_target_bytes": 8000000000,
+    "gpu_working_target_bytes": 24000000000,
+    "original_main_authorized": false
+  },
+  "origins": [
+    "2013-01-07 12:00:00"
+  ],
+  "profiles": [
+    [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "households": 4194,
+  "config_sha256": "beb34b0389ef6d9566308e0d4c62e9140243192fa9e0c6e15522d19ade481338",
+  "model_sha256": "abb696d052853d9a4cd888a0c8eb361d5861238814c0d1cfd44848055b87293e",
+  "timing_started": false
+}

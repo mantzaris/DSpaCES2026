@@ -1,0 +1,37 @@
+{
+  "hardware": {
+    "cpu": "x86_64",
+    "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.29",
+    "threads": 4
+  },
+  "households": 4194,
+  "origins": 1,
+  "profiles": 2,
+  "queries": 2,
+  "development_valid_readings": 17612617,
+  "native_mask_families": 1,
+  "parsing_seconds": 10.377548267002567,
+  "basis_setup_seconds": {
+    "identity": 6.515399581985548e-05,
+    "reference_eigen": 0.019809848003205843,
+    "rjd": 0.1758605479990365
+  },
+  "setup_seconds": 0.21900584400282241,
+  "cuda_initialization_seconds": 0.0,
+  "total_seconds": 11.443632777001767,
+  "peak_rss_bytes": 623919104,
+  "peak_gpu_allocated_bytes": 0,
+  "output_tolerance_kwh": 0.833708693386888,
+  "precision": "FP64 all matrix solves; source panel FP32 then FP64 algebra",
+  "snapshot_storage_bytes": 129366,
+  "maximum_numerical_residual": 8.621026058326512e-08,
+  "failures": 0,
+  "limitations": [
+    "bounds exact-arithmetic plus numerical audits, not formal floating-point certificates",
+    "observed-support sums; no full cohort outcome when readings missing",
+    "counterfactual provider access only; no physical outage effect",
+    "GPU PCG is vectorized PyTorch, not a tuned Ginkgo fused kernel",
+    "full information smoother is timing reference; banded Cholesky supplies optimized equivalent",
+    "all source statistics prepared by trusted providers; masked provider statistics multiplied only by zero weight"
+  ]
+}

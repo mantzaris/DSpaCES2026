@@ -1,0 +1,121 @@
+{
+  "kind": "cpu",
+  "cap_seconds": 21600,
+  "jobs": [
+    {
+      "label": "london_ingestion",
+      "command": [
+        "python3",
+        "scripts/prepare_london.py"
+      ],
+      "timeout": 5400,
+      "status": "failed",
+      "start_utc": "2026-09-23T04:47:49.712008+00:00",
+      "exit_code": 1,
+      "wall_seconds": 0.1649993640021421
+    },
+    {
+      "label": "london_ingestion_retry",
+      "command": [
+        "python3",
+        "scripts/prepare_london.py"
+      ],
+      "timeout": 5400,
+      "status": "failed",
+      "start_utc": "2026-09-23T04:48:19.416728+00:00",
+      "exit_code": 1,
+      "wall_seconds": 36.649506014997314
+    },
+    {
+      "label": "london_ingestion_deflate64",
+      "command": [
+        "python3",
+        "scripts/prepare_london.py"
+      ],
+      "timeout": 5400,
+      "status": "failed",
+      "start_utc": "2026-09-23T04:50:09.243486+00:00",
+      "exit_code": 1,
+      "wall_seconds": 191.9699124980034
+    },
+    {
+      "label": "solver_tests",
+      "command": [
+        "python3",
+        "-m",
+        "pytest",
+        "tests/test_regional.py",
+        "-q"
+      ],
+      "timeout": 120,
+      "status": "passed",
+      "start_utc": "2026-09-23T04:53:21.214207+00:00",
+      "exit_code": 0,
+      "wall_seconds": 0.8661048980065971
+    },
+    {
+      "label": "london_training",
+      "command": [
+        "python3",
+        "scripts/fit_regional_model.py"
+      ],
+      "timeout": 5400,
+      "status": "failed",
+      "start_utc": "2026-09-23T04:56:10.136954+00:00",
+      "exit_code": 1,
+      "wall_seconds": 0.7657526670009247
+    },
+    {
+      "label": "london_ingestion_columnar_retry",
+      "command": [
+        "python3",
+        "scripts/prepare_london.py"
+      ],
+      "timeout": 3600,
+      "status": "passed",
+      "start_utc": "2026-09-23T04:56:33.464385+00:00",
+      "exit_code": 0,
+      "wall_seconds": 358.05447567000374
+    },
+    {
+      "label": "london_training_ready",
+      "command": [
+        "python3",
+        "scripts/fit_regional_model.py"
+      ],
+      "timeout": 5400,
+      "status": "passed",
+      "start_utc": "2026-09-23T05:02:42.224802+00:00",
+      "exit_code": 0,
+      "wall_seconds": 38.99994194100145
+    },
+    {
+      "label": "regional_smoke",
+      "command": [
+        "python3",
+        "scripts/replay_regional.py",
+        "--smoke"
+      ],
+      "timeout": 900,
+      "status": "passed",
+      "start_utc": "2026-09-23T05:03:21.225716+00:00",
+      "exit_code": 0,
+      "wall_seconds": 11.938677326004836
+    },
+    {
+      "label": "all_tests_before_gpu",
+      "command": [
+        "python3",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "timeout": 180,
+      "status": "passed",
+      "start_utc": "2026-09-23T05:04:30.819916+00:00",
+      "exit_code": 0,
+      "wall_seconds": 1.5192138429993065
+    }
+  ],
+  "cumulative_job_wall_seconds": 640.9285842220197
+}

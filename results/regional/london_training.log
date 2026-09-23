@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "scripts/fit_regional_model.py", line 91, in <module>
+    main()
+  File "scripts/fit_regional_model.py", line 15, in main
+    y,times,meters,tariffs=load_panel('train')
+  File "/home/resort/Documents/repos/DSpaCES2026/src/evidence_fusion/regional_data.py", line 21, in load_panel
+    meters = [r[0] for r in con.execute('SELECT DISTINCT meter FROM read_parquet(?) ORDER BY meter',[files]).fetchall()]
+duckdb.duckdb.IOException: IO Error: No files found that match the pattern "data/regional/parquet/train/*/*.parquet"
