@@ -22,6 +22,13 @@ def main():
     costs=pd.read_csv(run/'costs.csv.gz');access=pd.read_csv(run/'access.csv.gz',keep_default_na=False)
     checks=pd.read_csv(run/'checks.csv.gz');figdata=pd.read_csv(run/'figure.csv.gz')
     model=dict(np.load('data/regional/refinement/model.npz',allow_pickle=False))
+    # The channel trace is authoritative for simulated framing. M4 makes one
+    # request, so its header is 64 bytes, not the two-request 128-byte estimate.
+    payload=access[access.kind!='summary'].groupby(['episode','method','step']).payload_bytes.sum().to_dict()
+    costs['raw_fine_bytes']=costs.fine_bytes
+    costs['fine_bytes']=[payload.get((r.episode,'M3' if r.method=='M3_fixed' else r.method,
+        int(r.step)+cfg['window']-1),0) for r in costs.itertuples()]
+    costs.to_csv(out/'audited_costs.csv.gz',index=False,compression='gzip')
     # Bookkeeping audit: old raw observed_affected counts attempted IDs. Derive
     # actually informative *valid current* records from the immutable acquisition
     # trace, native masks and reversible evaluator overlay, without rerunning inference.
@@ -67,10 +74,18 @@ def main():
                 ids=set(np.fromstring(str(row.alarming_households),sep=' ',dtype=int)) if pd.notna(row.alarming_households) else set()
                 acquired_house.update(ids&truth);false_house.update(ids-truth)
             delay=int(hit.step.min()-ep.onset) if len(hit) else cfg['miss_delay_steps']
+            sham=alarms[(alarms.episode=='b%02d_none_0.0'%ep.background)&(alarms.method==method)
+                &(alarms.step>=ep.onset)&(alarms.step<ep.onset+cfg['detection_limit_steps'])]
+            sham_group=any(len(set(np.fromstring(str(v),sep=' ',dtype=int))&set(ep.affected_groups))>0
+                for v in sham.alarming_groups if pd.notna(v))
             event_rows.append(dict(episode=ep.episode,background=ep.background,week=int(ep.background)//2,
                 family=ep.family,magnitude=ep.magnitude,method=method,event_duration=ep.duration,
                 detected=bool(len(hit)),correct_group_detected=bool(len(local)),delay_steps=delay,
                 missed=not bool(len(hit)),negative_steps=len(negative),negative_alarms=int(negative.alarm.sum()),
+                matched_background_detected=bool(sham.alarm.any()),
+                matched_background_group_detected=sham_group,
+                detection_minus_matched_background=int(bool(len(hit)))-int(bool(sham.alarm.any())),
+                localization_minus_matched_background=int(bool(len(local)))-int(sham_group),
                 peak_score_in_detection_window=float(limit.score.max()),
                 median_negative_score=float(negative.score.median()) if len(negative) else np.nan,
                 negative_alarm_rate=float(negative.alarm.mean()) if len(negative) else np.nan,
@@ -87,6 +102,9 @@ def main():
     agg=events.groupby(['family','magnitude','method']).agg(
         backgrounds=('background','nunique'),detection_rate=('detected','mean'),
         correct_group_rate=('correct_group_detected','mean'),mean_delay_including_misses=('delay_steps','mean'),
+        matched_background_detection_rate=('matched_background_detected','mean'),
+        detection_excess_over_background=('detection_minus_matched_background','mean'),
+        localization_excess_over_background=('localization_minus_matched_background','mean'),
         missed_fraction=('missed','mean'),house_recall=('house_localization_recall','mean'),
         false_house_instances=('false_house_instances','mean'),false_group_instances=('false_group_instances','mean'),
         median_peak_detection_score=('peak_score_in_detection_window','median'),
@@ -148,6 +166,25 @@ def main():
         nominal_alarm_budget_per_step=cfg['alarm_probability_per_step_target'],
         no_point_adjustment=True,no_independent_hour_inference=True)
     (out/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
+    boundary_cost=pd.read_csv(run/'boundary_costs.csv.gz')
+    boundary_access=pd.read_csv(run/'boundary_access.csv.gz',keep_default_na=False)
+    boundary_metrics=pd.read_csv(run/'boundary_metrics.csv.gz')
+    diagnostic=[]
+    for method,bc in boundary_cost.groupby('method'):
+        ba=boundary_access[(boundary_access.method==method)&(boundary_access.kind=='refinement')]
+        selected=[]
+        for row in ba.itertuples():
+            ids=np.fromstring(row.households,sep=' ',dtype=int)
+            selected.append(int(np.bincount(model['groups'][ids],minlength=16).argmax()))
+        bm=boundary_metrics[(boundary_metrics.method==method)&(boundary_metrics.level=='affected')&(boundary_metrics.horizon==2)]
+        diagnostic.append(dict(method=method,fine_attempts=int(bc.fine_attempts.sum()),
+            extra_read_first_update=int(ba.step.min()-cfg['window']+1) if len(ba) else None,
+            dominant_refinement_groups=sorted(set(selected)),
+            expired_cells=int(bc.expired_fine_cells.sum()),rereads=int(bc.source_rereads.sum()),
+            groups_rebuilt=int(bc.groups_rebuilt.sum()),mean_affected_one_hour_mae=float(bm.mae.mean()),
+            total_inference_seconds=float(bc.complete_seconds.sum()),
+            caveat='One declared boundary episode; no separate alarm calibration, not pooled into primary detection rates'))
+    (out/'boundary_diagnostic.json').write_text(json.dumps(diagnostic,indent=2)+'\n')
     plot(out,meta,alarms,agg,per,m,cost_summary,events,figdata,cfg,cal)
     print(json.dumps(summary,indent=2),flush=True)
 

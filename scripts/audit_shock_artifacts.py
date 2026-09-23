@@ -40,7 +40,7 @@ def main():
         new_ignored_background_bytes=sum(r['bytes'] for r in files if r['path'].startswith('data/')),
         durable_location='Existing local project disk; original raw archive and previous snapshots preserved',
         irreplaceable_completed_pod_only_artifacts=[],
-        frozen_GPU_source_sha=frozen.get('source_sha',frozen.get('source_sha256',frozen.get('source_commit'))),
+        frozen_GPU_source=frozen['source'],
         original_main_authorized=False,london_holdout_opened=False,bdg2_outcomes_opened=False,
         copy_verification='Transport archive SHA-256 verified separately; source NPZ/model/config/calibration hashes verified here')
     Path('manifests/regional_shock_durable.json').write_text(json.dumps(report,indent=2)+'\n')
