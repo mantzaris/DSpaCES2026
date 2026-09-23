@@ -155,6 +155,14 @@ c posterior by total expectation/covariance. This is a Gaussian sufficient-
 information corollary, not a new filtering theorem. New local queries, revised
 observations, parameters, coverage or windows may need reconstruction.
 
+The implementation registers three output queries **separately at each lead**:
+the full group, its evaluator-defined observed support, and its first physical
+household. It retains their 3 by 3 within-lead residual covariance. It does not
+retain the cross-lead covariance between the one-hour and six-hour query sets.
+A joint decision using both leads would require additional conditional summaries
+or restoration. Coherence here covers the reported same-lead macro/micro laws;
+there is no claim that arbitrary future joint queries are free after eviction.
+
 Macro-to-micro: changing c's posterior changes an unopened household's conditional
 prediction through B_g. Micro-to-macro: local fine evidence replaces a group message
 and changes c and aggregate moments. These are predictive updates, not interventions.

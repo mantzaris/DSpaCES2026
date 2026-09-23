@@ -48,11 +48,13 @@ def write_scores(rows, predictions, model, count, origin, policy, active, output
             sd = np.sqrt(variance[ok])
             radius = 1.6448536269514722*sd
             score = 2*radius+20*np.maximum(np.abs(error)-radius, 0)
+            def average(values):
+                return float(np.mean(values)) if len(values) else float('nan')
             rows.append(dict(population=count, origin=origin, policy=policy, active_groups=active,
                 horizon_steps=horizon, level=level, queries=int(ok.sum()),
-                mae=float(np.mean(np.abs(error))), mse=float(np.mean(error**2)),
-                coverage90=float(np.mean(np.abs(error)<=radius)), width90=float(np.mean(2*radius)),
-                interval_score90=float(np.mean(score)), seasonal_mae=float(np.mean(np.abs(baseline[ok]-y[ok]))),
+                mae=average(np.abs(error)), mse=average(error**2),
+                coverage90=average(np.abs(error)<=radius), width90=average(2*radius),
+                interval_score90=average(score), seasonal_mae=average(np.abs(baseline[ok]-y[ok])),
                 missing_queries=int((~ok).sum()), observed_households=int(finite.sum())))
             # Every regional result and the first deterministic local query are saved.
             idx = 0
