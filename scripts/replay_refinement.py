@@ -37,7 +37,7 @@ def write_scores(rows, predictions, model, count, origin, policy, active, output
             valid_house.append(bool(finite[first]))
             house_y.append(float(actual[first]))
         definitions = [
-            ('regional', np.array([np.nansum(actual)]), p['region_mean'][1:2], p['region_var'][1:2],
+            ('regional', np.array([np.nansum(actual) if finite.any() else np.nan]), p['region_mean'][1:2], p['region_var'][1:2],
              np.array([sum(seasonal)])),
             ('group', np.array(group_actual), p['group_mean'][:, 1], p['group_var'][:, 1], np.array(seasonal)),
             ('household', np.array(house_y), p['group_mean'][:, 2], p['group_var'][:, 2],

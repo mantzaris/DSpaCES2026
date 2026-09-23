@@ -27,6 +27,17 @@ def test_missing_partition_is_not_an_empty_dataset(tmp_path, monkeypatch):
         load_panel('train', ['MAC000001'])
 
 
+def test_provider_cannot_relabel_a_future_window(tmp_path, monkeypatch):
+    from evidence_fusion.refinement_access import ProviderArchive
+    monkeypatch.chdir(tmp_path)
+    path = Path('results/refinement'); path.mkdir(parents=True)
+    (path/'frozen_manifest.json').write_text(json.dumps({'origins':['2013-01-07 12:00:00']}))
+    with pytest.raises(ValueError):
+        ProviderArchive(tmp_path, 0, 1024, {}, '2013-01-06 12:00:00', [])
+    with pytest.raises(ValueError):
+        ProviderArchive(tmp_path, 0, 1024, {}, '2013-04-01 12:00:00', [])
+
+
 @pytest.fixture
 def example():
     if not torch.cuda.is_available():
@@ -174,6 +185,17 @@ def test_missing_cutoffs_stale_cache_and_moving_window(example):
     for g in range(2): moved.replace(message(engine, shifted, g, 'fine', '2013-01-08'))
     direct = explicit_joint(engine, shifted, ['fine', 'fine'])[2]
     assert float((moved.posterior()[0]-direct[:engine.dimension]).abs().max()) < 1e-10
+
+
+def test_all_missing_measurements_recover_prior(example):
+    engine, y = example
+    absent = np.full_like(y, np.nan)
+    state = MessageState(engine, '2013-01-07')
+    state.replace(message(engine, absent, 0, 'aggregate'))
+    state.replace(message(engine, absent, 1, 'fine'))
+    assert torch.equal(state.precision, engine.prior)
+    assert torch.equal(state.information, torch.zeros_like(state.information))
+    assert bool((state.predictions(0)['region_var'] > 0).all())
 
 
 def test_schur_elimination_order_and_lost_conditionals(example):
