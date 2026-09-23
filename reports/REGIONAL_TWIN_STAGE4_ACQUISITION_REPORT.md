@@ -161,7 +161,11 @@ The [freeze](../results/acquisition/frozen.json) predates comparative outcomes:
 exact-cancellation, delayed-aggregate and no-shock conditions; nonzero magnitude3
 under the existing feasibility reductions. Four original b00 episodes are a
 separate explanatory diagnostic. Fresh seeds on reused backgrounds are not an
-independent held-out study. M0,M2,M3,M3b,M3b_fixed,M4 receive comparable numerical
+independent held-out study. The four chosen backgrounds are the first replay
+context in each development week; they do not span every time-of-day context.
+The frozen seed parity makes these four localized disturbances increases, so
+the fresh check does not independently test localized decreases. No episode
+was dropped or replaced after scoring. M0,M2,M3,M3b,M3b_fixed,M4 receive comparable numerical
 precision and cache opportunities. M3b_fixed receives the exact acquired trace
 sequentially, never future decisions. M3/M2/M4 original-episode outputs are reused
 only after matching source, seed, model and target conventions.
