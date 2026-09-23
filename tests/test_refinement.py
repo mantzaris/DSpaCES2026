@@ -38,6 +38,22 @@ def test_provider_cannot_relabel_a_future_window(tmp_path, monkeypatch):
         ProviderArchive(tmp_path, 0, 1024, {}, '2013-04-01 12:00:00', [])
 
 
+def test_all_missing_targets_are_not_scored_as_zero():
+    import importlib.util
+    source = Path(__file__).resolve().parents[1]/'scripts/replay_refinement.py'
+    spec = importlib.util.spec_from_file_location('refinement_replay_test', source)
+    replay = importlib.util.module_from_spec(spec); spec.loader.exec_module(replay)
+    model = dict(groups=np.arange(16), profile=np.ones((336,16)))
+    output = dict(region_mean=np.ones(3), region_var=np.ones(3),
+                  group_mean=np.ones((16,3)), group_var=np.ones((16,3)))
+    rows, predictions = [], []
+    with np.errstate(invalid='ignore'):
+        replay.write_scores(rows, predictions, model, 16, 0, 'test', 0,
+                            [output, output], np.full((2,16),np.nan), [0,1], [output,output])
+    assert all(row['queries']==0 for row in rows)
+    assert all(np.isnan(row['actual']) for row in predictions)
+
+
 @pytest.fixture
 def example():
     if not torch.cuda.is_available():
