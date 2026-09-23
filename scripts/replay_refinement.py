@@ -189,6 +189,8 @@ def main():
                     start = time.perf_counter(); begin.record()
                     for g in selected:
                         state.replace(make(g, 'fine'))
+                    for g in selected:
+                        state.activate(g)
                     outputs = [cpu_prediction(state.predictions(h)) for h in range(2)]
                     end.record(); torch.cuda.synchronize()
                     update_seconds = time.perf_counter()-start
@@ -301,17 +303,21 @@ def main():
             # Added coverage: admit the final training-eligible group after starting
             # with 15. Other likelihoods are unchanged; common posterior updates.
             if oi == 0:
-                start = time.perf_counter()
                 partial = MessageState(engine, origin)
                 for msg in aggregate[:15]:
                     partial.replace(copy.copy(msg))
                 old_mean = partial.posterior()[0].clone()
-                partial.replace(copy.copy(aggregate[15]))
+                start = time.perf_counter()
+                partial.replace(make(15, 'aggregate'))
                 added_mean = partial.posterior()[0]
                 torch.cuda.synchronize()
                 checks.append(dict(population=count, origin=oi, policy='added_coverage', active_groups=0,
                     added_households=int(sizes[15]), reused_group_factors=15, updated_separator=True,
-                    seconds=time.perf_counter()-start, separator_change=float((added_mean-old_mean).abs().max())))
+                    seconds=time.perf_counter()-start, new_summary_bytes=trace[-1]['file_bytes'],
+                    provenance_rows=trace[-1]['returned_rows'],
+                    separator_change=float((added_mean-old_mean).abs().max())))
+                accesses.extend(dict(x, policy='added_coverage', active_groups=0, phase='admission') for x in trace)
+                trace.clear()
                 del partial, old_mean, added_mean
             with np.load(folder/('origin_%03d' % oi)/'evaluation.npz') as evaluation:
                 targets = evaluation['targets']

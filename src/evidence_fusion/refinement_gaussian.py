@@ -149,7 +149,7 @@ class HierarchicalGaussian:
             solved_y = (solve @ safe_y[:, :, None]).squeeze(-1)
             j = torch.einsum('htu,hi,hj->tiuj', solve, h, h).reshape(self.dimension, self.dimension)
             rhs = torch.einsum('ht,hi->ti', solved_y, h).reshape(-1)
-            leaf = dict(solve=solve, residual=safe_y, mask=mask, covariance=k)
+            leaf = dict(solve=solve, residual=safe_y, mask=mask, covariance=k, ids=ids)
         else:
             # Sum covariance must not include the per-household dummy coordinates.
             v_sum = (k*m[:, :, None]*m[:, None, :]).sum(0) + torch.diag((self.nugget[ids, None]*m).sum(0))
@@ -267,6 +267,15 @@ class MessageState:
         msg = self.messages[group]
         if not msg.leaf:
             raise ValueError('conditional evicted: reread evidence before refinement')
+        if msg.kind == 'fine' and msg.leaf.get('posterior_version') != self.version:
+            mean, _ = self.posterior()
+            leaf = msg.leaf
+            expected = self.model.loading[leaf['ids']] @ mean.reshape(self.model.length, self.model.d).T
+            gain = leaf['covariance'] @ leaf['solve']
+            leaf['conditional_mean'] = (gain @ (leaf['residual']-expected)[:, :, None]).squeeze(-1)
+            leaf['conditional_covariance'] = leaf['covariance']-gain @ leaf['covariance']
+            leaf['conditional_gain'] = gain
+            leaf['posterior_version'] = self.version
         return msg.leaf
 
     def expose_aggregate_detail(self, group, ids, mask, aggregate):

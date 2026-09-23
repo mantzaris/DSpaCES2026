@@ -1,11 +1,23 @@
 """Independent explicit-joint Gaussian references on small FP64 GPU cases."""
 import copy
+import json
+from pathlib import Path
 import numpy as np
 import pytest
 torch = pytest.importorskip('torch')
 from evidence_fusion.refinement_gaussian import (
     HierarchicalGaussian, MessageState, gaussian_marginal, evidence_fingerprint)
 from evidence_fusion.refinement_access import checked_window
+
+REFERENCE_ERRORS = []
+
+
+@pytest.fixture(scope='session', autouse=True)
+def save_reference_errors():
+    yield
+    if REFERENCE_ERRORS:
+        folder = Path('results/refinement'); folder.mkdir(parents=True, exist_ok=True)
+        (folder/'explicit_joint_checks.json').write_text(json.dumps(REFERENCE_ERRORS, indent=2)+'\n')
 
 
 def test_missing_partition_is_not_an_empty_dataset(tmp_path, monkeypatch):
@@ -80,6 +92,9 @@ def test_same_joint_mean_covariance_and_forecasts(example, kinds):
     inferred_cov = torch.cholesky_solve(torch.eye(engine.dimension, device='cuda', dtype=torch.float64), factor)
     assert float((inferred-mean[:engine.dimension]).abs().max()) < 1e-10
     assert float((inferred_cov-cov[:engine.dimension, :engine.dimension]).abs().max()) < 1e-10
+    REFERENCE_ERRORS.append(dict(evidence=list(kinds),
+        separator_mean_max_abs=float((inferred-mean[:engine.dimension]).abs().max()),
+        separator_covariance_max_abs=float((inferred_cov-cov[:engine.dimension, :engine.dimension]).abs().max())))
     for hi, horizon in enumerate((2, 12)):
         pred = state.predictions(hi)
         weights = torch.tensor([[1., 1.], [1., 0.], [0., 1.]], device='cuda', dtype=torch.float64)
@@ -104,6 +119,8 @@ def test_same_joint_mean_covariance_and_forecasts(example, kinds):
         expected_var = total@cov@total + future@engine.future_noise[horizon]@future
         expected_var += (engine.variance*(1-engine.rho**(2*horizon))+engine.nugget).sum()
         assert abs(float(pred['region_var'][0]-expected_var)) < 1e-9
+        REFERENCE_ERRORS.append(dict(evidence=list(kinds), horizon=horizon,
+                                     regional_variance_abs_error=abs(float(pred['region_var'][0]-expected_var))))
 
 
 def test_replacement_orders_roundtrips_and_negative_control(example):
