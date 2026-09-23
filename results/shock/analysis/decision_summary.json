@@ -1,0 +1,55 @@
+{
+  "demand_shock_episodes": 96,
+  "demand_shock_episodes_with_changed_M3_acquisition_trace": 0,
+  "measurement_fault_episodes_with_changed_M3_trace": 0,
+  "M3_active_step_fraction": 0.049479166666666664,
+  "local_event_affected_group_selected_steps": 0,
+  "negative_control_alarm_rates": {
+    "M0": 0.09375,
+    "M1": 0.0390625,
+    "M2": 0.06510416666666667,
+    "M3": 0.078125,
+    "M3_fixed": 0.078125,
+    "M4": 0.10677083333333333
+  },
+  "negative_control_alarm_rates_excluding_initial_step": {
+    "M0": 0.07446808510638298,
+    "M1": 0.023936170212765957,
+    "M2": 0.04521276595744681,
+    "M3": 0.05851063829787234,
+    "M3_fixed": 0.05851063829787234,
+    "M4": 0.08776595744680851
+  },
+  "local_MAE_one_hour": {
+    "M0": 0.17770166475734553,
+    "M1": 0.1762059998032441,
+    "M2": 0.17104777672095392,
+    "M3": 0.16959472700198724,
+    "M3_fixed": 0.16959472700198724,
+    "M4": 0.1385861241579701
+  },
+  "local_MAE_six_hours": {
+    "M0": 0.19252138285372628,
+    "M1": 0.18826833061596943,
+    "M2": 0.18634644136600464,
+    "M3": 0.18583761459583034,
+    "M3_fixed": 0.18583761459583034,
+    "M4": 0.18256884088012937
+  },
+  "M3_vs_M2_local_one_hour_percent": -0.8494993310185883,
+  "M3_vs_M1_local_one_hour_percent": -3.7520134437188157,
+  "M3_vs_M4_local_one_hour_percent": 22.37496937909267,
+  "paired_background_local_MAE_difference_min": -0.008071789944587173,
+  "paired_background_local_MAE_difference_max": 0.0010706139123844189,
+  "effective_standardized_fine_alarm_threshold": {
+    "M1": 15.169915406402172,
+    "M2": 26.023468027962803,
+    "M3": 19.707997666856514,
+    "M3_fixed": 19.707997666856514,
+    "M4": 34.35812120221476
+  },
+  "no_new_outcomes_or_inference": true,
+  "independent_backgrounds": 8,
+  "development_weeks": 4,
+  "caveat": "Descriptive paired development results. Same ID traces do not imply identical received values under a shock."
+}

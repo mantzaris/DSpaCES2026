@@ -1,0 +1,23 @@
+{
+  "archives": [
+    {
+      "path": "/tmp/shock-analysis-source.tar",
+      "bytes": 18739200,
+      "sha256": "18702545d324ccf3462e504627dfd3a954a9ca4682ab1e72b06f4ed7073acaf6",
+      "remote_sha256_matched": true
+    },
+    {
+      "path": "/tmp/shock-completed-artifacts.tar.gz",
+      "bytes": 29207745,
+      "sha256": "d82fb4149ea548ab61f776d2f1be2fec0674000779bd45b1ea96f0b865ef93d4",
+      "remote_sha256_matched": true
+    },
+    {
+      "path": "/tmp/shock-results-final.tar.gz",
+      "bytes": 23041283,
+      "sha256": "14136b5a42fe11c6c985e4c803b5751e473e5cfbcf062216f8ddb1ac08a5711a",
+      "remote_sha256_matched": true
+    }
+  ],
+  "note": "Scientific artifacts copied and SHA-256 matched. Final operational ledger copied separately at closure. Original 9 NPZ source hashes also independently verified."
+}

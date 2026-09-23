@@ -1,0 +1,75 @@
+{
+  "config": {
+    "version": "regional-shock-1",
+    "households": 4194,
+    "groups": 16,
+    "window": 24,
+    "steps": 48,
+    "horizons": [
+      1,
+      2,
+      12
+    ],
+    "background_origin_indices": [
+      0,
+      4,
+      8,
+      12,
+      16,
+      20,
+      24,
+      28
+    ],
+    "calibration_start": "2013-01-03 00:00:00",
+    "calibration_steps": 96,
+    "magnitudes": [
+      1.0,
+      3.0
+    ],
+    "families": [
+      "regional",
+      "localized",
+      "cancel_exact",
+      "cancel_approx",
+      "delayed",
+      "ramp"
+    ],
+    "episode_seed": 930000,
+    "smoke_seed": 700001,
+    "probe_seed": 1729,
+    "fine_budget_fraction": 0.05,
+    "probe_fraction": 0.01,
+    "rounding": "floor; attempted records including native missing values consume the budget",
+    "burst": "none; per-step and cumulative budgets both enforced",
+    "exploration_fraction_of_extra_reads": 0.25,
+    "group_score_decay": 0.8,
+    "group_score_drift": 2.0,
+    "exit_steps": 4,
+    "alarm_probability_per_step_target": 0.02,
+    "detection_limit_steps": 6,
+    "miss_delay_steps": 7,
+    "precision": "float64",
+    "consistency_tolerance": 1e-07,
+    "macro_interface": "16 derived group sums with current native-availability mask",
+    "interval_calibration": "one scale per method, horizon, and query level; absolute standardized-error 90th percentile on earlier unmodified development",
+    "stage_cap_seconds": 5400,
+    "handoff_reserve_seconds": 900,
+    "main_study_authorized": false
+  },
+  "config_sha256": "60d9a17abac78639de7a76ce1ec47a89a2b4b2c313dd3c9d8072526192c0c902",
+  "protocol_sha256": "cd40e1170135439d4f13e438fbff4b81804df5830f03d2c0825a07d414a19115",
+  "calibration_sha256": "ec6b9b6d98d8eeeeb1f8958aa1901247f925945eef0aeb25a33b1df1b824e511",
+  "model_sha256": "d2c15c50bbfa77c7b4c46180c853cf27854a154ac6c97b653fa5f667f448fe0e",
+  "source": {
+    "source_sha": "031bdd6f0535413ecfc9ac025083fcc3300b19bc"
+  },
+  "frozen_utc": "2026-09-23T15:29:08.509527+00:00",
+  "episodes": 112,
+  "physical_demand_episodes": 104,
+  "independent_backgrounds": 8,
+  "development_weeks": 4,
+  "projected_replay_seconds": 2566.2545312047005,
+  "remaining_allocation_at_freeze_seconds": 5127.7435936927795,
+  "no_comparative_outcomes_opened": true,
+  "smoke_before_shock_onset": true
+}

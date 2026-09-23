@@ -4,6 +4,12 @@ September 23, 2026. These notes preserve the frozen protocol/configuration and
 original numeric outputs. None changes a detector, observation trace, model or
 comparative prediction.
 
+- The frozen field `physical_demand_episodes=104` includes the eight unmodified
+  backgrounds. The actual nonzero demand-shock count is 96; the report separates
+  these from eight background and eight fault controls. Background time blocks
+  are not assumed statistically independent merely because a legacy manifest
+  calls them `independent_backgrounds`.
+
 - Episode metadata gives the authoritative onset. The generator uses array index
   `24 + randint(6, 11)` while update zero is array index 23. Thus onset update
   indices are **7-11**, not 6-10. The protocol's prose described the offset loosely;
@@ -13,6 +19,10 @@ comparative prediction.
   feasible overlay is zero. Analysis creates `informative_valid_reads` from
   the immutable access trace, native mask and actual current perturbation. The
   original column is retained and not used to claim a first informative reading.
+- Pandas initially inferred a single-alarm ID column as numeric, causing NumPy
+  integer-string parsing warnings. Explicit string dtypes remove the ambiguity.
+  The original analysis directory/log are preserved; episode detection and
+  forecast summary files are byte-identical after the parsing correction.
 - Per-method `complete_seconds` includes channel/policy work, GPU inference,
   output transfer and the current provider-summary scan. It excludes common
   window construction, scoring and file serialization. The episode and whole-job

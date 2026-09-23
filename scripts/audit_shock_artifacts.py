@@ -23,8 +23,8 @@ def main():
     for record in prep['backgrounds']:
         assert digest(record['path'])==record['sha256']
         with np.load(record['path']) as a:
-            dates=a['timestamps']
-            assert dates.min()>='2013-01-01' and dates.max()<'2013-04-01'
+            dates=a['timestamps'].tolist()
+            assert min(dates)>='2013-01-01' and max(dates)<'2013-04-01'
     assert not yaml.safe_load(Path('configs/main_study.yaml').read_text()).get('authorized',False)
     checks=pd.read_csv('results/shock/run/checks.csv.gz')
     assert checks.same_information_max_abs.max()<=1e-7

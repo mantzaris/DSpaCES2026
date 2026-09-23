@@ -1,0 +1,64 @@
+[
+  {
+    "method": "M0",
+    "fine_attempts": 0,
+    "extra_read_first_update": null,
+    "dominant_refinement_groups": [],
+    "expired_cells": 0,
+    "rereads": 0,
+    "groups_rebuilt": 768,
+    "mean_affected_one_hour_mae": 0.14374812025989384,
+    "total_inference_seconds": 3.6171274213120324,
+    "caveat": "One declared boundary episode; no separate alarm calibration, not pooled into primary detection rates"
+  },
+  {
+    "method": "M1",
+    "fine_attempts": 1968,
+    "extra_read_first_update": null,
+    "dominant_refinement_groups": [],
+    "expired_cells": 978,
+    "rereads": 0,
+    "groups_rebuilt": 768,
+    "mean_affected_one_hour_mae": 0.14556387702231766,
+    "total_inference_seconds": 3.617888452485202,
+    "caveat": "One declared boundary episode; no separate alarm calibration, not pooled into primary detection rates"
+  },
+  {
+    "method": "M3_delay",
+    "fine_attempts": 5664,
+    "extra_read_first_update": 26,
+    "dominant_refinement_groups": [
+      0,
+      2,
+      4,
+      5,
+      6,
+      7,
+      9,
+      10,
+      13,
+      14,
+      15
+    ],
+    "expired_cells": 978,
+    "rereads": 0,
+    "groups_rebuilt": 768,
+    "mean_affected_one_hour_mae": 0.14383887323155065,
+    "total_inference_seconds": 3.6091297129169084,
+    "caveat": "One declared boundary episode; no separate alarm calibration, not pooled into primary detection rates"
+  },
+  {
+    "method": "M_uncertainty",
+    "fine_attempts": 10032,
+    "extra_read_first_update": 0,
+    "dominant_refinement_groups": [
+      12
+    ],
+    "expired_cells": 4999,
+    "rereads": 0,
+    "groups_rebuilt": 768,
+    "mean_affected_one_hour_mae": 0.14339421878166772,
+    "total_inference_seconds": 3.615995901636777,
+    "caveat": "One declared boundary episode; no separate alarm calibration, not pooled into primary detection rates"
+  }
+]

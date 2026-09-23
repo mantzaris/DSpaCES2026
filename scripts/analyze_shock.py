@@ -18,7 +18,8 @@ def main():
     cfg=json.loads(Path('configs/regional_shock.json').read_text())
     cal=json.loads((root/'calibration.json').read_text())
     meta=pd.DataFrame(json.loads((run/'episodes.json').read_text()))
-    metrics=pd.read_csv(run/'metrics.csv.gz');alarms=pd.read_csv(run/'alarms.csv.gz')
+    metrics=pd.read_csv(run/'metrics.csv.gz');alarms=pd.read_csv(run/'alarms.csv.gz',
+        dtype={'alarming_households':str,'alarming_groups':str})
     costs=pd.read_csv(run/'costs.csv.gz');access=pd.read_csv(run/'access.csv.gz',keep_default_na=False)
     checks=pd.read_csv(run/'checks.csv.gz');figdata=pd.read_csv(run/'figure.csv.gz')
     corrected=root/'figure_common_support.csv'
@@ -250,6 +251,7 @@ def plot(out,meta,alarms,agg,per,m,cost,events,data,cfg,cal):
         axes[1].scatter(cc.loc[method,'median_state_bytes']/1e6,cc.loc[method,'median_update_seconds']*1000,color=COLORS[method],marker=marker,s=65)
     axes[0].set_xscale('symlog',linthresh=50);axes[0].set_xlabel('Fine readings attempted per half-hour');axes[0].set_ylabel('Mean delay (hours); misses assigned 3.5 h')
     axes[1].set_xlabel('Separator + retained detail (MB)\nShared model/cache excluded');axes[1].set_ylabel('Acquisition + GPU inference median (ms)')
+    axes[1].set_ylim(0,float(cc.p95_update_seconds.max())*1100)
     during=per[(per.level=='affected')&(per.phase=='during')&(per.horizon==2)&per.family.isin(['localized','cancel_exact','cancel_approx','delayed','ramp'])]
     local=during.groupby('method').mae.mean().reindex(list(COLORS))
     axes[2].bar(range(len(local)),local.values,color=[COLORS[k] for k in local.index]);axes[2].set_xticks(range(len(local)));axes[2].set_xticklabels(local.index,rotation=30)

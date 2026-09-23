@@ -1,6 +1,37 @@
 # DSpaCES research pilots
 
-**Completed active stage: Refinement Without Rebuilding, the bounded Greater
+**Completed active stage: When Regional Totals Hide Local Change.** The bounded
+GPU shock study ran 112 episodes on 4,194 real households, using eight exploratory
+development backgrounds and reversible synthetic disturbances. All 16 focused
+shock tests pass; previous results remain preserved.
+
+The result does **not** establish a shock-targeted refinement advantage. None of
+the 96 demand shocks changed the event policy's acquired-ID trace relative to its
+unmodified background. Exact-cancellation events were not correctly localized.
+Local one-hour MAE was 0.1696 kWh for event refinement, 0.1710 for random selection
+and 0.1386 for streamed fine inference. Same-information fixed/adaptive inference
+agreed exactly; negative-control alarms exceeded the calibration target.
+
+Read the [measured shock report](reports/REGIONAL_TWIN_STAGE3_SHOCK_REPORT.md),
+[frozen protocol and primary-source comparison](docs/REGIONAL_SHOCK_STUDY_PROTOCOL.md),
+[four PDF/SVG figures](reports/figures/shock/), and
+[decision summaries](results/shock/analysis/decision_summary.json).
+The report separates additional data, acquisition policy, representation, physical
+measurements and synthetic interventions. No full paper or next stage is started.
+
+Executable preparation, calibration, GPU replay, trace reconstruction and analysis
+commands are in the report. Saved-output analysis uses `scripts/analyze_shock.py`
+and `scripts/shock_decision_summary.py`. The
+[shock ledger](results/shock/resource_ledger.json) retains the original regional
+allowance; a closed ledger refuses further execution. Completed artifacts are
+copied and hash-verified on existing local storage in the
+[durable inventory](manifests/regional_shock_durable.json).
+London April-December 2013 and all earlier BDG2 seals remain intact. The original
+main study is disabled. The existing pod remains allocated; no experiment is running.
+
+## Previous regional refinement stage
+
+**Refinement Without Rebuilding was the preceding bounded Greater
 London regional twin refinement pilot.** The GPU implementation uses 4,194 real
 households, with nested 1,024/2,048-household comparisons. It preserves registered
 posterior queries through detail eviction and evidence replacement. All 49 tests

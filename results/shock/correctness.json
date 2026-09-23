@@ -1,0 +1,95 @@
+[
+  {
+    "selection": "none",
+    "horizon": 1,
+    "mean_error": 1.1102230246251565e-15,
+    "covariance_error": 7.771561172376096e-16,
+    "forecast_mean_error": 8.881784197001252e-16,
+    "forecast_variance_error": 2.220446049250313e-16,
+    "regional_variance_error": 8.881784197001252e-16
+  },
+  {
+    "selection": "none",
+    "horizon": 2,
+    "mean_error": 1.1102230246251565e-15,
+    "covariance_error": 7.771561172376096e-16,
+    "forecast_mean_error": 5.551115123125783e-16,
+    "forecast_variance_error": 0.0,
+    "regional_variance_error": 8.881784197001252e-16
+  },
+  {
+    "selection": "none",
+    "horizon": 12,
+    "mean_error": 1.1102230246251565e-15,
+    "covariance_error": 7.771561172376096e-16,
+    "forecast_mean_error": 5.551115123125783e-17,
+    "forecast_variance_error": 1.1102230246251565e-16,
+    "regional_variance_error": 0.0
+  },
+  {
+    "selection": "partial",
+    "horizon": 1,
+    "mean_error": 1.1102230246251565e-15,
+    "covariance_error": 9.43689570931383e-16,
+    "forecast_mean_error": 5.551115123125783e-16,
+    "forecast_variance_error": 1.1102230246251565e-16,
+    "regional_variance_error": 0.0
+  },
+  {
+    "selection": "partial",
+    "horizon": 2,
+    "mean_error": 1.1102230246251565e-15,
+    "covariance_error": 9.43689570931383e-16,
+    "forecast_mean_error": 4.440892098500626e-16,
+    "forecast_variance_error": 4.440892098500626e-16,
+    "regional_variance_error": 8.881784197001252e-16
+  },
+  {
+    "selection": "partial",
+    "horizon": 12,
+    "mean_error": 1.1102230246251565e-15,
+    "covariance_error": 9.43689570931383e-16,
+    "forecast_mean_error": 5.551115123125783e-17,
+    "forecast_variance_error": 2.220446049250313e-16,
+    "regional_variance_error": 8.881784197001252e-16
+  },
+  {
+    "selection": "all",
+    "horizon": 1,
+    "mean_error": 7.771561172376096e-16,
+    "covariance_error": 7.216449660063518e-16,
+    "forecast_mean_error": 4.440892098500626e-16,
+    "forecast_variance_error": 1.1102230246251565e-16,
+    "regional_variance_error": 8.881784197001252e-16
+  },
+  {
+    "selection": "all",
+    "horizon": 2,
+    "mean_error": 7.771561172376096e-16,
+    "covariance_error": 7.216449660063518e-16,
+    "forecast_mean_error": 2.220446049250313e-16,
+    "forecast_variance_error": 1.1102230246251565e-16,
+    "regional_variance_error": 0.0
+  },
+  {
+    "selection": "all",
+    "horizon": 12,
+    "mean_error": 7.771561172376096e-16,
+    "covariance_error": 7.216449660063518e-16,
+    "forecast_mean_error": 2.0816681711721685e-17,
+    "forecast_variance_error": 1.1102230246251565e-16,
+    "regional_variance_error": 0.0
+  },
+  {
+    "theory_delayed_signatures": [
+      0.0,
+      0.20000000000000007,
+      0.3200000000000001,
+      0.3860000000000002
+    ]
+  },
+  {
+    "current_record_mean_error": 2.220446049250313e-16,
+    "current_record_variance_error": 4.440892098500626e-16
+  }
+]

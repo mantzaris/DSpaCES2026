@@ -1,0 +1,17 @@
+{
+  "completed": true,
+  "mode": "run",
+  "episodes": 112,
+  "backgrounds": 8,
+  "households": 4194,
+  "episode_updates": 5376,
+  "seconds": 2457.611538573168,
+  "device": "NVIDIA RTX PRO 4500 Blackwell",
+  "vram_bytes": 33685569536,
+  "peak_gpu_bytes": 182486528,
+  "peak_host_bytes": 1731706880,
+  "config_sha256": "60d9a17abac78639de7a76ce1ec47a89a2b4b2c313dd3c9d8072526192c0c902",
+  "model_sha256": "d2c15c50bbfa77c7b4c46180c853cf27854a154ac6c97b653fa5f667f448fe0e",
+  "london_holdout_sealed": true,
+  "bdg2_seals_unchanged": true
+}

@@ -1,0 +1,13 @@
+{
+  "utc": "2026-09-23T16:24:22.762623+00:00",
+  "gpu": "NVIDIA RTX PRO 4500 Blackwell, 32623 MiB, 2 MiB, 0 %, 580.159.04",
+  "gpu_compute_processes": "",
+  "process_names": "PID COMMAND\n      1 docker-init\n     51 start.sh\n     82 nginx\n     83 nginx\n    130 sshd\n    135 start.sh\n    141 jupyter-lab\n    143 sleep\n 313686 sshd\n 313697 python\n 313702 ps",
+  "disk": "Filesystem       1B-blocks       Used   Available Use% Mounted on\noverlay        80530636800 2521452544 78009184256   4% /",
+  "project_data_bytes": 393366100,
+  "project_result_bytes": 42012027,
+  "active_ledger_jobs": [],
+  "pod_allocated": true,
+  "terminated": false,
+  "sealed_paths_opened": false
+}

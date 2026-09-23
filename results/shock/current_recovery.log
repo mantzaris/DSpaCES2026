@@ -1,0 +1,17 @@
+             episode  step method  affected_valid  currently_observed_affected  affected_mae  unread_affected_mae  min_current_variance  seconds  new_observations  revealed_record_reconstruction_error
+b00_cancel_exact_3.0    12     M0              60                            0  2.811628e-01             0.281163          9.999999e-07 0.205945                 0                          0.000000e+00
+b00_cancel_exact_3.0    12     M1              60                            0  2.792886e-01             0.279289         -3.469447e-18 0.043462                 0                          0.000000e+00
+b00_cancel_exact_3.0    12     M2              60                            1  2.728298e-01             0.277454         -5.551115e-17 0.049050                 0                          0.000000e+00
+b00_cancel_exact_3.0    12     M3              60                            3  2.648496e-01             0.278789         -5.551115e-17 0.042756                 0                          5.551115e-17
+b00_cancel_exact_3.0    12     M4              60                           60  5.487509e-17                  NaN         -2.220446e-16 0.045785                 0                          4.440892e-16
+b00_cancel_exact_3.0    26     M0              60                            0  1.242110e-01             0.124211          9.999999e-07 0.044390                 0                          0.000000e+00
+b00_cancel_exact_3.0    26     M1              60                            0  1.409023e-01             0.140902         -1.040834e-17 0.046171                 0                          0.000000e+00
+b00_cancel_exact_3.0    26     M2              60                            2  1.285792e-01             0.133013         -2.220446e-16 0.045862                 0                          2.775558e-17
+b00_cancel_exact_3.0    26     M3              60                            2  1.288650e-01             0.133309         -5.551115e-17 0.046662                 0                          1.734723e-17
+b00_cancel_exact_3.0    26     M4              60                           60  4.408450e-17                  NaN         -2.775558e-16 0.045221                 0                          7.008283e-16
+b00_cancel_exact_3.0    38     M0              60                            0  8.330353e-02             0.083304          9.999999e-07 0.047406                 0                          0.000000e+00
+b00_cancel_exact_3.0    38     M1              60                            0  9.231869e-02             0.092319         -2.775558e-17 0.045937                 0                          0.000000e+00
+b00_cancel_exact_3.0    38     M2              60                            3  7.822568e-02             0.082343         -5.551115e-17 0.046153                 0                          0.000000e+00
+b00_cancel_exact_3.0    38     M3              60                            2  6.700070e-02             0.069311         -2.775558e-17 0.045568                 0                          0.000000e+00
+b00_cancel_exact_3.0    38     M4              60                           60  2.983340e-17                  NaN         -2.775558e-16 0.044875                 0                          4.440892e-16
+Figure support reconstruction maximum regional difference 1.0231815394945443e-12

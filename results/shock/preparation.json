@@ -1,0 +1,87 @@
+{
+  "model_sha256": "d2c15c50bbfa77c7b4c46180c853cf27854a154ac6c97b653fa5f667f448fe0e",
+  "config_sha256": "60d9a17abac78639de7a76ce1ec47a89a2b4b2c313dd3c9d8072526192c0c902",
+  "backgrounds": [
+    {
+      "path": "data/regional/shock/calibration.npz",
+      "origin": "2013-01-03 00:00:00",
+      "updates": 96,
+      "rows": 545736,
+      "bytes": 1018583,
+      "sha256": "5ff3586640183dfde6caacd12c09d37660b12a9a6b5438ed6c37656b639aeeeb"
+    },
+    {
+      "path": "data/regional/shock/background_00.npz",
+      "origin": "2013-01-07 12:00:00",
+      "updates": 48,
+      "rows": 345863,
+      "bytes": 640712,
+      "sha256": "c3998459447d5c2401766813988996b39cca004c8f5b4afb75419b94962297cd"
+    },
+    {
+      "path": "data/regional/shock/background_01.npz",
+      "origin": "2013-01-10 22:00:00",
+      "updates": 48,
+      "rows": 345460,
+      "bytes": 652755,
+      "sha256": "0840f7d967c493591a90693403a3b9c2f41bc7043140a8ec4333033ab133d9dc"
+    },
+    {
+      "path": "data/regional/shock/background_02.npz",
+      "origin": "2013-01-28 12:00:00",
+      "updates": 48,
+      "rows": 344499,
+      "bytes": 645620,
+      "sha256": "a8d83f4845739a078e41a94468f067f3f2cd2fd41d278114ae4788e2c6f355e0"
+    },
+    {
+      "path": "data/regional/shock/background_03.npz",
+      "origin": "2013-01-31 22:00:00",
+      "updates": 48,
+      "rows": 343786,
+      "bytes": 646935,
+      "sha256": "3687377e3369a3bef6f3be4fbd4ff7233f64846d362f5cc30c61a725d64e5077"
+    },
+    {
+      "path": "data/regional/shock/background_04.npz",
+      "origin": "2013-02-18 12:00:00",
+      "updates": 48,
+      "rows": 342490,
+      "bytes": 641714,
+      "sha256": "c27bf975f0f956edffaf2c70a15a85e0e89c9b36f6afb60fd23cea7ea1143093"
+    },
+    {
+      "path": "data/regional/shock/background_05.npz",
+      "origin": "2013-02-21 22:00:00",
+      "updates": 48,
+      "rows": 341885,
+      "bytes": 657828,
+      "sha256": "651bd1ac7a20fab256bb4ffc4c21cbf6e742cedb15fcee0832c76c98e07baf5c"
+    },
+    {
+      "path": "data/regional/shock/background_06.npz",
+      "origin": "2013-03-11 12:00:00",
+      "updates": 48,
+      "rows": 339437,
+      "bytes": 650551,
+      "sha256": "a3bdb4b5088753f34187b12b55fd9fe1f51e7837b3dbe2a61e2b6982162005a4"
+    },
+    {
+      "path": "data/regional/shock/background_07.npz",
+      "origin": "2013-03-14 22:00:00",
+      "updates": 48,
+      "rows": 339199,
+      "bytes": 647017,
+      "sha256": "a703b38184c6b08c6cb0e554dc1fbde7739f3deb4ede621a1a1361d9e25fadc6"
+    }
+  ],
+  "development_parse_seconds": 9.90299405157566,
+  "total_seconds": 10.678433205932379,
+  "compressed_parquet_bytes": 69497803,
+  "actual_valid_development_readings": 17612617,
+  "training_rows_reused": 52109356,
+  "new_training": false,
+  "new_dataset_download_bytes": 0,
+  "london_holdout_opened": false,
+  "bdg2_outcomes_opened": false
+}

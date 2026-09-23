@@ -1,5 +1,23 @@
 # Active scope - 2026-09-23
 
+## Completed shock study: no automatic continuation
+
+The bounded shock study completed 112 episodes, 5,376 sequential updates and
+16 focused tests on the existing GPU. See the
+[measured report](../reports/REGIONAL_TWIN_STAGE3_SHOCK_REPORT.md). Exact macro
+cancellation and same-evidence consistency were verified. Added household readings
+help local forecasts, but no injected demand shock changed M3's acquisition-ID
+trace from its unmodified background. Its 0.85% mean local-MAE advantage over
+random does not establish targeted adaptation; same-information representations
+are identical and false alarms exceed the empirical target.
+
+Do not claim a new refinement algorithm, capacity advantage over streamed fine
+inference, successful shock localization or established publishability. The
+executed prototype and negative results are retained. No further stage, full
+study, hardware change or held-out outcome evaluation is authorized. The closed
+shock ledger carries forward all original charges. The pod/storage remain intact
+and allocated, with completed artifacts copied locally and no experiment running.
+
 ## Authorized shock-study continuation
 
 The latest user instruction authorizes the bounded local-demand shock study.
