@@ -8,6 +8,9 @@ import duckdb
 def load_panel(split, meters=None):
     if split not in ('train', 'development'):
         raise ValueError('Held-out London outcomes are sealed')
+    parts = sorted((Path('data/regional/parquet')/split).glob('*/*.parquet'))
+    if not parts:
+        raise FileNotFoundError('No accessible Parquet partitions for '+split)
     con = duckdb.connect()
     con.execute("SET memory_limit='2GB'; SET threads=4")
     files = str(Path('data/regional/parquet')/split/'*/*.parquet')
@@ -23,7 +26,7 @@ def load_panel(split, meters=None):
     times = pd.date_range(start,end,freq='30min')[:-1]
     values = np.full((len(times),len(meters)),np.nan,dtype=np.float32)
     tariffs = {}
-    for part in sorted((Path('data/regional/parquet')/split).glob('*/*.parquet')):
+    for part in parts:
         frame = con.execute(query,[str(part)]).fetchdf()
         index = pd.Index(meters).get_indexer(frame.meter)
         tindex = times.get_indexer(frame.timestamp)

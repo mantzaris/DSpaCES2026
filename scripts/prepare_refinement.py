@@ -30,6 +30,8 @@ def main():
     device = 'cuda'
     start = time.perf_counter()
     y, times, meters, _ = load_panel('train', model['meters'])
+    if int(np.isfinite(y).sum()) != 52109356:
+        raise RuntimeError('Training rows differ from the sealed Stage 1 cohort audit')
     parse = time.perf_counter()-start
     # Reuse seasonal/loadings/dynamics; fit only the added residual AR layer.
     loading = torch.as_tensor(model['loadings'], dtype=torch.float64, device=device)

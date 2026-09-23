@@ -8,6 +8,13 @@ from evidence_fusion.refinement_gaussian import (
 from evidence_fusion.refinement_access import checked_window
 
 
+def test_missing_partition_is_not_an_empty_dataset(tmp_path, monkeypatch):
+    from evidence_fusion.regional_data import load_panel
+    monkeypatch.chdir(tmp_path)
+    with pytest.raises(FileNotFoundError):
+        load_panel('train', ['MAC000001'])
+
+
 @pytest.fixture
 def example():
     if not torch.cuda.is_available():
