@@ -1,0 +1,41 @@
+{
+  "hardware": {
+    "cpu": "x86_64",
+    "platform": "Linux-6.8.0-136-generic-x86_64-with-glibc2.39",
+    "threads": 4,
+    "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+    "vram_bytes": 33685569536,
+    "torch": "2.8.0+cu128",
+    "cuda": "12.8"
+  },
+  "households": 4194,
+  "origins": 32,
+  "profiles": 16,
+  "queries": 512,
+  "development_valid_readings": 17612617,
+  "native_mask_families": 32,
+  "parsing_seconds": 10.82135255355388,
+  "basis_setup_seconds": {
+    "identity": 4.0368176996707916e-05,
+    "reference_eigen": 0.01666617952287197,
+    "rjd": 0.14628712087869644
+  },
+  "setup_seconds": 0.17544427141547203,
+  "cuda_initialization_seconds": 1.4974164962768555,
+  "total_seconds": 205.60833006352186,
+  "peak_rss_bytes": 1831399424,
+  "peak_gpu_allocated_bytes": 176373760,
+  "output_tolerance_kwh": 0.833708693386888,
+  "precision": "FP64 all matrix solves; source panel FP32 then FP64 algebra",
+  "snapshot_storage_bytes": 34498815,
+  "maximum_numerical_residual": 9.9988514092592e-08,
+  "failures": 0,
+  "limitations": [
+    "bounds exact-arithmetic plus numerical audits, not formal floating-point certificates",
+    "observed-support sums; no full cohort outcome when readings missing",
+    "counterfactual provider access only; no physical outage effect",
+    "GPU PCG is vectorized PyTorch, not a tuned Ginkgo fused kernel",
+    "full information smoother is timing reference; banded Cholesky supplies optimized equivalent",
+    "provider statistics prepared separately; zero-availability RHS is removed at the per-query access boundary"
+  ]
+}

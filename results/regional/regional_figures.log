@@ -1,0 +1,18 @@
+/usr/lib/python3/dist-packages/matplotlib/cbook/__init__.py:1402: FutureWarning: Support for multi-dimensional indexing (e.g. `obj[:, None]`) is deprecated and will be removed in a future version.  Convert to a numpy array before indexing instead.
+  ndim = x[:, None].ndim
+/usr/lib/python3/dist-packages/matplotlib/axes/_base.py:278: FutureWarning: Support for multi-dimensional indexing (e.g. `obj[:, None]`) is deprecated and will be removed in a future version.  Convert to a numpy array before indexing instead.
+  y = y[:, np.newaxis]
+Traceback (most recent call last):
+  File "scripts/plot_regional.py", line 81, in <module>
+    if __name__=='__main__': main()
+  File "scripts/plot_regional.py", line 70, in main
+    axes[1].set_xscale('log',base=2); axes[1].set_yscale('log'); axes[1].set_xlabel('Hypothetical reuse of measured query package'); axes[1].set_ylabel('Projected amortized seconds / query'); axes[1].legend(fontsize=7)
+  File "/usr/lib/python3/dist-packages/matplotlib/axes/_base.py", line 3327, in set_xscale
+    ax.xaxis._set_scale(value, **kwargs)
+  File "/usr/lib/python3/dist-packages/matplotlib/axis.py", line 799, in _set_scale
+    self._scale = mscale.scale_factory(value, self, **kwargs)
+  File "/usr/lib/python3/dist-packages/matplotlib/scale.py", line 733, in scale_factory
+    return _scale_mapping[scale](axis, **kwargs)
+  File "/usr/lib/python3/dist-packages/matplotlib/scale.py", line 386, in __init__
+    raise ValueError(("provided too many kwargs, can only pass "
+ValueError: provided too many kwargs, can only pass {'basex', 'subsx', nonposx'} or {'basey', 'subsy', nonposy'}.  You passed {'base': 2}

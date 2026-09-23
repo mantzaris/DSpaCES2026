@@ -1,0 +1,26 @@
+{
+  "distinct_meter_time_keys": 167817021,
+  "physical_households": 5566,
+  "duplicate_excess": 115453,
+  "accessible_quality": {
+    "train": {
+      "distinct_keys": 60368495,
+      "invalid_or_null_readings": 5548,
+      "duplicate_keys_excluded": 41565,
+      "off_grid_keys": 5548,
+      "first_label": "2012-01-01 00:00:00",
+      "last_label": "2012-12-31 23:30:00"
+    },
+    "development": {
+      "distinct_keys": 23598556,
+      "invalid_or_null_readings": 4,
+      "duplicate_keys_excluded": 16379,
+      "off_grid_keys": 4,
+      "first_label": "2013-01-01 00:00:00",
+      "last_label": "2013-03-31 23:30:00"
+    }
+  },
+  "total_bytes": 1373644905,
+  "heldout_access": "identity/count columns and opaque file hashing only; no sealed kWh summaries",
+  "seconds": 5.980931548001536
+}

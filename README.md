@@ -1,4 +1,41 @@
-# When Agreement Reuses Evidence
+# DSpaCES research pilots
+
+**Active work: Greater London regional household twin and shared-matrix solver.**
+The user selected and authorized this bounded implementation after planning
+handoff `09ae274`. It uses Low Carbon London observations, a training-only
+seasonal/factor state-space model, and finite-window source-access queries.
+The compatibility-contract document remains an unchanged candidate at
+[DSpaCES_2026_Research_Plan.md](DSpaCES_2026_Research_Plan.md).
+
+Read [active scope and caps](docs/ACTIVE_RESEARCH_SCOPE.md),
+[matrix derivations and numerical limits](docs/REGIONAL_MATRIX_PROOFS.md),
+[primary-source comparison](docs/REGIONAL_SOURCES.md), and the
+[measured regional handoff](reports/REGIONAL_TWIN_STAGE1_REPORT.md).
+The original BDG2 study and its main-study launcher remain stopped/disabled.
+London April–December 2013 outcomes and the earlier BDG2 seals remain intact.
+
+The regional commands below reproduce the authorized bounded package; closed
+allocation ledgers refuse new compute. They do not authorize another allocation.
+Use Python with the project scientific dependencies, `requirements.regional.txt`,
+and the `7z` executable. The recorded local interpreter was Python 3.8; the
+existing pod used Python 3.12 and PyTorch 2.8.0+cu128.
+
+```bash
+python3 scripts/regional_job.py --label ingest --timeout 5400 -- python3 scripts/prepare_london.py
+python3 scripts/regional_job.py --label fit --timeout 5400 -- python3 scripts/fit_regional_model.py
+python3 scripts/regional_job.py --label smoke --timeout 900 -- python3 scripts/replay_regional.py --smoke
+python3 scripts/regional_job.py --kind gpu --label replay --timeout 3600 -- python3 scripts/replay_regional.py --gpu
+python3 scripts/regional_job.py --label artifact_audit --timeout 180 -- python3 scripts/audit_regional_artifacts.py
+python3 scripts/plot_regional.py
+```
+
+The immutable configuration has 16 latent variables, a 24-step window, 16
+simulated providers, 32 origins across four development weeks and 16 access
+profiles. Per-household/cohort/regional predictions and model/state snapshots
+are under ignored `data/regional/`; small measurements and manifests are in git.
+Figures use retained numeric outputs only. No raw readings are redistributed.
+
+## Earlier weighted-provenance study
 
 **Stage 2 decision C: stop/defer this DSpaCES project.** The original sketch
 approach is stopped. The evidence does not yet justify its narrow paper fallback

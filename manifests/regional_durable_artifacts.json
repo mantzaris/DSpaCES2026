@@ -273,11 +273,166 @@
     },
     {
       "path": "data/regional/snapshots/snapshot_000.npz",
-      "bytes": 129366,
-      "sha256": "6b6788d6b6f32362559a36179a67e7160b638eec1fa855a7d43a93e8654e8f4a"
+      "bytes": 1062396,
+      "sha256": "2a3ee6ec2c8b4eebb9e6bbf6d4d6c65537bf84cbb46ed7ae2b60e8992d544296"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_001.npz",
+      "bytes": 1078447,
+      "sha256": "0b708431d00c667bd1b836c223de142dca6e0600a9b3392cc1877f9fe54ace92"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_002.npz",
+      "bytes": 1078252,
+      "sha256": "95e8fea6a730b94bf700248cf9b434e70448e1463edd0f4aafd2af071d0dfe76"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_003.npz",
+      "bytes": 1078899,
+      "sha256": "d196be3a2f73bec4a5e1d592ffe29ae2625006b8ecae0af7aafa90e0cd3cf5f7"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_004.npz",
+      "bytes": 1078680,
+      "sha256": "d2e02e8738483d67d57f4a2a35ee1d0cddc85162418e24866465bebdf238db52"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_005.npz",
+      "bytes": 1079008,
+      "sha256": "f3de11a08b5c64a8dc579be06c99ea6dc1362658e48a8c811ceb790fca19e812"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_006.npz",
+      "bytes": 1078236,
+      "sha256": "48f62aa643eb3d706c7fc1771b66f04be121c83905708ce873849f4c1df9b53b"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_007.npz",
+      "bytes": 1078492,
+      "sha256": "75514f15ff2ecea30d5dda023a2497624e83b7d8aaaa5e1caf2090ae459bf970"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_008.npz",
+      "bytes": 1078440,
+      "sha256": "755a70642f7cf7ed852fbc1a53f99708b3b435b23ed22db805cb060a10fbc6cc"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_009.npz",
+      "bytes": 1078693,
+      "sha256": "cb5a641a6f359804886cba36fb06984b3b7c0b6dd4e79b0ff87652fa5f8e0759"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_010.npz",
+      "bytes": 1078224,
+      "sha256": "a709d23bacd05f6804f0795b770c93a88ea1237c8ad35005e5a4895ae8e9e0ba"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_011.npz",
+      "bytes": 1078642,
+      "sha256": "5e875eee52a735def6d82deff0b922feee9238e17bf0dfc296cdc1c9b9967501"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_012.npz",
+      "bytes": 1078478,
+      "sha256": "d6d67080ecf85712c37f66222af6613d08567d709f89e82474c1ebf456016af1"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_013.npz",
+      "bytes": 1078623,
+      "sha256": "5023c31977130ea331b703d9ce927225c5d4c704aa3b89f71228cb091c0871d2"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_014.npz",
+      "bytes": 1078345,
+      "sha256": "d4ee213404b1838dead4dd5664601e29bf6863ec8ee0d8a3a2fd35fd5cf975ad"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_015.npz",
+      "bytes": 1078468,
+      "sha256": "03906b04b65ac8cf328dd901938263182b3a70fb6911a11f25586679621275bc"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_016.npz",
+      "bytes": 1078252,
+      "sha256": "9013605ad4b37c533176f31bae0047615c732de37c597b9c8e0d875ed128faae"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_017.npz",
+      "bytes": 1078697,
+      "sha256": "6deba4c1d8e652a464dce16c0b31820b56d7fe3fab607700c478e4bdaced6487"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_018.npz",
+      "bytes": 1078553,
+      "sha256": "6f586f2786e9835a7c3894b85d1fa84a01d829e7a396366591ae430cdc139f60"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_019.npz",
+      "bytes": 1078861,
+      "sha256": "f900e11c6793deb12f18c0e1039cff1c3b2c6cbc9feecf3630a9d03d369d312d"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_020.npz",
+      "bytes": 1079014,
+      "sha256": "8886bb4fbfbbdfe28c30fd1af0732ddd6dcb175933dda32c927110a0158215ce"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_021.npz",
+      "bytes": 1079215,
+      "sha256": "deb5bef6516bd4f51a439484b2a484e8b4ad2fed30ed29fb18431f39e4d28a7d"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_022.npz",
+      "bytes": 1078419,
+      "sha256": "c8ab4a3d81919273d3b31ccf2af1840996debb0968bfe64e77b7119bfa506248"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_023.npz",
+      "bytes": 1078616,
+      "sha256": "e43a31c67b99bd9f1ed228cacc5ffaa1736c20f49f7d7c0605b06bab20085169"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_024.npz",
+      "bytes": 1078552,
+      "sha256": "133dffa7f3495a4305c2ee73034d9518b0a54013ea564e8d00efd8a92b7c4127"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_025.npz",
+      "bytes": 1078652,
+      "sha256": "a42ef10dfa18e12fb1a8c09937aaa4317d18523c1f8af9f93808243366f6b9a4"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_026.npz",
+      "bytes": 1078817,
+      "sha256": "bddef43c11ec74e5959254a11b6bd6a4b4bc530d35407692afe9fb0abed7bcaa"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_027.npz",
+      "bytes": 1078921,
+      "sha256": "d5085829185b1775b9b490cab8772cba5e4266ab99ac409322042f10f138e338"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_028.npz",
+      "bytes": 1078669,
+      "sha256": "50302c221d396c19e1611dc786415d9ebca097b9263e56053cc8e6bd16a2378c"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_029.npz",
+      "bytes": 1078880,
+      "sha256": "cac1b4a4d372b27b705f228906740109d30c7425b9ca5e8e93dd6962e6c3d807"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_030.npz",
+      "bytes": 1078197,
+      "sha256": "e8d306cb8593856a66d7f9d6414527c558b93bf423e3f0c86cec47d5ac07595b"
+    },
+    {
+      "path": "data/regional/snapshots/snapshot_031.npz",
+      "bytes": 1078177,
+      "sha256": "57781e01b7f5cc23dcc1940ebdb88bdebb8c8bf01a8fe240b6acfb897aad7eaa"
     }
   ],
-  "total_bytes": 1339275456,
+  "total_bytes": 1373644905,
   "heldout_access": "identity/count columns and opaque file hashing only; no sealed kWh summaries",
-  "seconds": 5.934375986005762
+  "seconds": 5.980931548001536
 }

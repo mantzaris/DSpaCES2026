@@ -12,9 +12,12 @@ factor model, bounded January-March 2013 replay, CPU/GPU solver comparison,
 proofs, tests, measured report, and normal commit/push on main. No branches.
 
 Limits: 4 GB downloaded, 30 GB new data/cache, 6 cumulative CPU job-hours,
-3 cumulative GPU-allocated hours including tests/retries/setup. The GPU ledger
-uses the elapsed allocation from the first regional GPU job to explicit close,
-including intervening idle time. CPU jobs have persistent cumulative accounting.
+3 cumulative GPU-allocated hours including tests/retries/setup. The per-GPU-job
+ledger measures first pod execution to close. The final resource handoff also
+conservatively charges the existing pod's allocation from the very first local
+regional job through stage closure, including preparation, analysis and idle time;
+this larger total is compared with the three-hour cap. CPU jobs have persistent
+cumulative accounting, including whole GPU job durations and failed attempts.
 Host target 8 GB, GPU target 24 GB. No earlier regional jobs were found locally
 or on the existing pod at preflight. The earlier BDG2 allocation is separate.
 
@@ -27,3 +30,8 @@ compatibility-contract experiment, main study, or manuscript is authorized.
 
 Hardware assumption in the request: RTX PRO 4500 with 48 GB. Runtime preflight:
 RTX PRO 4500 Blackwell, 32,623 MiB total. Configure to measured hardware.
+
+Completion: the regional pipeline and twin were executed, with 4,194 households
+and 52.1 million training readings. The shared-basis speed/certificate gate failed
+against banded CPU Cholesky. See the measured Stage 1 report. Execution ledgers
+are closed, the pod remains allocated and idle, and no next study is authorized.

@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "scripts/verify_regional_handoff.py", line 66, in <module>
+    if __name__=='__main__':main()
+  File "scripts/verify_regional_handoff.py", line 47, in main
+    provider_rank+=int(np.linalg.matrix_rank(h[row])); blocks+=1
+  File "<__array_function__ internals>", line 180, in matrix_rank
+  File "/home/resort/.local/lib/python3.8/site-packages/numpy/linalg/linalg.py", line 1891, in matrix_rank
+    tol = S.max(axis=-1, keepdims=True) * max(A.shape[-2:]) * finfo(S.dtype).eps
+  File "/home/resort/.local/lib/python3.8/site-packages/numpy/core/_methods.py", line 40, in _amax
+    return umr_maximum(a, axis, None, out, keepdims, initial, where)
+ValueError: zero-size array to reduction operation maximum which has no identity

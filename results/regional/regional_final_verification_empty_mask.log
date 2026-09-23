@@ -1,0 +1,14 @@
+{
+  "executed_source_hashes_verified": 5,
+  "compatibility_candidate_unchanged": true,
+  "original_main_disabled": true,
+  "timing_repeat_max_forecast_difference": 0.0,
+  "real_spectral_bound_audits": 12,
+  "finite_polynomial_bound_audits": 62,
+  "native_measurement_blocks_rank_checked": 12288,
+  "provider_trajectory_rank_min": 368,
+  "provider_trajectory_rank_max": 384,
+  "trajectory_dimension": 384,
+  "persistent_snapshots_checked": 32,
+  "heldout_policy": "No sealed demand values loaded; analysis accessor restricted to train/development"
+}

@@ -1,0 +1,17 @@
+{
+  "source_commit": "bf2896254ae93d85dc58619b46b3a8642c5f1af2",
+  "original_replay_source_commit": "2dd63f2",
+  "source_hashes": {
+    "scripts/replay_regional.py": "a7b83f6dd4dabc6c1af7cc95afe3e175157bd00afafb87bdd888eee6288f5a1a",
+    "scripts/regional_job.py": "7671d2fc2f032fe587c6e76669723db040c4e302ef61ef1563934b0f02998264",
+    "src/evidence_fusion/regional_solver.py": "21bbff4c4fa32f23921be1e1a4addb16f869add941a4f2dd7fcc2acbc2a8801e",
+    "src/evidence_fusion/regional_data.py": "3dbf95980f1f3077090573296ac89354b8bee9b71cd767d152fb579cc6b075f5",
+    "configs/regional_pilot.json": "beb34b0389ef6d9566308e0d4c62e9140243192fa9e0c6e15522d19ade481338"
+  },
+  "gpu": "NVIDIA RTX PRO 4500 Blackwell, 580.159.04, 32623 MiB",
+  "active_cuda_processes": "",
+  "cpu_model": "AMD EPYC 7443P 24-Core Processor",
+  "cpu_quota": "1020000 100000",
+  "memory_limit": "61999996928",
+  "pod_status": "allocated; no experiment running; no stop/delete request executed"
+}

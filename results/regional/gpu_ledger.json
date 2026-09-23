@@ -1,0 +1,66 @@
+{
+  "kind": "gpu",
+  "cap_seconds": 10800,
+  "jobs": [
+    {
+      "label": "regional_dependencies",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/pip",
+        "install",
+        "-r",
+        "requirements.regional.txt"
+      ],
+      "timeout": 300,
+      "status": "passed",
+      "start_utc": "2026-09-23T05:05:58.543531+00:00",
+      "exit_code": 0,
+      "wall_seconds": 3.9712854623794556
+    },
+    {
+      "label": "regional_pod_tests",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "timeout": 180,
+      "status": "passed",
+      "start_utc": "2026-09-23T05:06:27.887912+00:00",
+      "exit_code": 0,
+      "wall_seconds": 1.7669535912573338
+    },
+    {
+      "label": "regional_full_replay",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "scripts/replay_regional.py",
+        "--gpu"
+      ],
+      "timeout": 3600,
+      "status": "passed",
+      "start_utc": "2026-09-23T05:06:29.690633+00:00",
+      "exit_code": 0,
+      "wall_seconds": 206.5897512063384
+    },
+    {
+      "label": "timing_corrected_replay",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "scripts/replay_regional.py",
+        "--gpu"
+      ],
+      "timeout": 3600,
+      "status": "passed",
+      "start_utc": "2026-09-23T05:10:46.089111+00:00",
+      "exit_code": 0,
+      "wall_seconds": 200.76964783947915
+    }
+  ],
+  "allocation_start": 1790139958.5434275,
+  "cumulative_job_wall_seconds": 413.09763809945434,
+  "allocated_wall_seconds": 554.5958523750305,
+  "closed": true,
+  "closed_utc": "2026-09-23T05:15:13.139269+00:00",
+  "pod_lifecycle_action": "none; remains allocated"
+}

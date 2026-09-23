@@ -14,5 +14,7 @@
   "download_and_hash_seconds": 1.7268360080051934,
   "units": "kWh per half-hour",
   "timestamp": "Source clock labels; UTC/DST convention not documented by catalog",
-  "heldout_policy": "Only structural typing/partitioning/deduplication; no held-out demand summaries"
+  "heldout_policy": "Only structural typing/partitioning/deduplication; no held-out demand summaries",
+  "retrieval_accounting_note": "The stored download_and_hash_seconds is the final invocation cache rehash, not network transfer. The first successful transfer+hash was 36.373980565993406 seconds, retained in results/regional/london_ingestion_retry.log. No second representation was downloaded.",
+  "first_successful_download_and_hash_seconds": 36.373980565993406
 }

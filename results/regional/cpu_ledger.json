@@ -141,7 +141,93 @@
       "start_utc": "2026-09-23T05:10:03.848912+00:00",
       "exit_code": 0,
       "wall_seconds": 1.5177270830026828
+    },
+    {
+      "label": "regional_analysis",
+      "command": [
+        "python3",
+        "scripts/analyze_regional.py"
+      ],
+      "timeout": 180,
+      "status": "passed",
+      "start_utc": "2026-09-23T05:15:42.228074+00:00",
+      "exit_code": 0,
+      "wall_seconds": 0.5153922239987878
+    },
+    {
+      "label": "regional_figures",
+      "command": [
+        "python3",
+        "scripts/plot_regional.py"
+      ],
+      "timeout": 180,
+      "status": "failed",
+      "start_utc": "2026-09-23T05:15:42.881058+00:00",
+      "exit_code": 1,
+      "wall_seconds": 4.974230776002514
+    },
+    {
+      "label": "final_artifact_inventory",
+      "command": [
+        "python3",
+        "scripts/audit_regional_artifacts.py"
+      ],
+      "timeout": 180,
+      "status": "passed",
+      "start_utc": "2026-09-23T05:15:47.856501+00:00",
+      "exit_code": 0,
+      "wall_seconds": 6.126144141999248
+    },
+    {
+      "label": "regional_figures_compatibility",
+      "command": [
+        "python3",
+        "scripts/plot_regional.py"
+      ],
+      "timeout": 180,
+      "status": "passed",
+      "start_utc": "2026-09-23T05:16:45.346510+00:00",
+      "exit_code": 0,
+      "wall_seconds": 5.7752426770020975
+    },
+    {
+      "label": "regional_figures_axis_audit",
+      "command": [
+        "python3",
+        "scripts/plot_regional.py"
+      ],
+      "timeout": 180,
+      "status": "passed",
+      "start_utc": "2026-09-23T05:17:32.614555+00:00",
+      "exit_code": 0,
+      "wall_seconds": 5.975845166998624
+    },
+    {
+      "label": "regional_final_verification",
+      "command": [
+        "python3",
+        "scripts/verify_regional_handoff.py"
+      ],
+      "timeout": 180,
+      "status": "failed",
+      "start_utc": "2026-09-23T05:22:16.949454+00:00",
+      "exit_code": 1,
+      "wall_seconds": 12.089055721000477
+    },
+    {
+      "label": "regional_final_verification_empty_mask",
+      "command": [
+        "python3",
+        "scripts/verify_regional_handoff.py"
+      ],
+      "timeout": 180,
+      "status": "passed",
+      "start_utc": "2026-09-23T05:22:51.650088+00:00",
+      "exit_code": 0,
+      "wall_seconds": 13.641524182996363
     }
   ],
-  "cumulative_job_wall_seconds": 648.5226058910266
+  "cumulative_job_wall_seconds": 697.6200407810247,
+  "closed": true,
+  "closed_utc": "2026-09-23T05:25:15.261704+00:00"
 }

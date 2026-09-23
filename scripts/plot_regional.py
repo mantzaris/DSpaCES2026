@@ -47,7 +47,12 @@ def main():
     if not np.isfinite(cert.output_bound_kwh).any():
         axes[2].text(.5,.5,'No finite family-certified\npolynomial output bound',ha='center',va='center',transform=axes[2].transAxes)
     else:
-        axes[2].set_xscale('symlog',linthresh=1e-10); axes[2].set_yscale('log')
+        finite=cert[np.isfinite(cert.output_bound_kwh)]
+        axes[2].set_xscale('log'); axes[2].set_yscale('log')
+        axes[2].set_xlim(float(finite.polynomial_output_error_kwh[finite.polynomial_output_error_kwh>0].min())/2,
+                         float(finite.polynomial_output_error_kwh.max())*2)
+        axes[2].set_ylim(float(finite.output_bound_kwh[finite.output_bound_kwh>0].min())/2,
+                         float(finite.output_bound_kwh.max())*2)
     axes[2].set_xlabel('Actual polynomial output error (kWh)'); axes[2].set_ylabel('Exact-arithmetic bound (kWh)'); axes[2].legend(fontsize=7)
     save(fig,'numerical_accuracy_bounds')
     selected=['cpu_banded','cpu_cholesky','gpu_cholesky','cpu_pcg','gpu_pcg','cpu_rjd_corrected','gpu_rjd_corrected']
@@ -67,7 +72,7 @@ def main():
         frame=costs[costs.method==m]; each=float((frame.complete_seconds/frame.queries).median())
         setup=summary['parsing_seconds']+(summary['basis_setup_seconds']['rjd'] if 'rjd' in m else 0)+(summary['cuda_initialization_seconds'] if m.startswith('gpu') else 0)
         axes[1].plot(repeats,each+setup/(repeats*summary['queries']),label=m,color=color)
-    axes[1].set_xscale('log',base=2); axes[1].set_yscale('log'); axes[1].set_xlabel('Hypothetical reuse of measured query package'); axes[1].set_ylabel('Projected amortized seconds / query'); axes[1].legend(fontsize=7)
+    axes[1].set_xscale('log'); axes[1].set_yscale('log'); axes[1].set_xlabel('Hypothetical reuse of measured query package'); axes[1].set_ylabel('Projected amortized seconds / query'); axes[1].legend(fontsize=7)
     axes[1].set_title('Projection from measured setup and replay; not new runs')
     save(fig,'speed_amortization')
     stages=pd.DataFrame(ingest['stages']); parse=stages[stages.stage=='stream_parse']

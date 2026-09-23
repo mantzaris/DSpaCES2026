@@ -1,0 +1,11 @@
+Collecting pyarrow==17.0.0 (from -r requirements.regional.txt (line 3))
+  Downloading pyarrow-17.0.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (3.3 kB)
+Collecting duckdb==1.1.3 (from -r requirements.regional.txt (line 4))
+  Downloading duckdb-1.1.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (762 bytes)
+Requirement already satisfied: numpy>=1.16.6 in /usr/local/lib/python3.12/dist-packages (from pyarrow==17.0.0->-r requirements.regional.txt (line 3)) (2.1.2)
+Downloading pyarrow-17.0.0-cp312-cp312-manylinux_2_28_x86_64.whl (39.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 39.9/39.9 MB 36.8 MB/s eta 0:00:00
+Downloading duckdb-1.1.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (20.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 20.2/20.2 MB 132.2 MB/s eta 0:00:00
+Installing collected packages: pyarrow, duckdb
+Successfully installed duckdb-1.1.3 pyarrow-17.0.0

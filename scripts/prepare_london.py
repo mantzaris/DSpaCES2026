@@ -25,11 +25,16 @@ def main():
     if shutil.disk_usage(ROOT).free < 15_000_000_000:
         raise RuntimeError('Need 15 GB free before starting')
     start = time.perf_counter()
+    downloaded=False
+    download_seconds=0.0
     if not archive.exists():
+        transfer_start=time.perf_counter()
         partial = archive.with_suffix('.partial')
         subprocess.run(['curl', '--fail', '--location', '--max-time', '1800',
                         '--max-filesize', '1000000000', '--output', str(partial), URL], check=True)
         partial.rename(archive)
+        downloaded=True
+        download_seconds=time.perf_counter()-transfer_start
     sha = hashlib.sha256()
     with archive.open('rb') as f:
         for chunk in iter(lambda: f.read(8*1024**2), b''):
@@ -41,6 +46,7 @@ def main():
         bytes=archive.stat().st_size, sha256=sha.hexdigest(),
         files=[dict(name=x.filename, bytes=x.file_size) for x in z.infolist()],
         download_and_hash_seconds=time.perf_counter()-start,
+        downloaded_this_invocation=downloaded,download_seconds=download_seconds,
         units='kWh per half-hour', timestamp='Source clock labels; UTC/DST convention not documented by catalog',
         heldout_policy='Only structural typing/partitioning/deduplication; no held-out demand summaries')
     Path('manifests/regional_source.json').write_text(json.dumps(manifest, indent=2)+'\n')

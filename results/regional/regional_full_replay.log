@@ -1,0 +1,73 @@
+completed origin 0 2013-01-07 12:00:00 seconds 3.36
+completed origin 1 2013-01-08 08:30:00 seconds 6.25
+completed origin 2 2013-01-09 05:00:00 seconds 6.04
+completed origin 3 2013-01-10 01:30:00 seconds 6.29
+completed origin 4 2013-01-10 22:00:00 seconds 6.39
+completed origin 5 2013-01-11 18:30:00 seconds 7.05
+completed origin 6 2013-01-12 15:00:00 seconds 7.01
+completed origin 7 2013-01-13 12:00:00 seconds 5.56
+completed origin 8 2013-01-28 12:00:00 seconds 5.85
+completed origin 9 2013-01-29 08:30:00 seconds 5.82
+completed origin 10 2013-01-30 05:00:00 seconds 5.86
+completed origin 11 2013-01-31 01:30:00 seconds 5.42
+completed origin 12 2013-01-31 22:00:00 seconds 5.91
+completed origin 13 2013-02-01 18:30:00 seconds 5.88
+completed origin 14 2013-02-02 15:00:00 seconds 5.59
+completed origin 15 2013-02-03 12:00:00 seconds 5.67
+completed origin 16 2013-02-18 12:00:00 seconds 6.46
+completed origin 17 2013-02-19 08:30:00 seconds 5.73
+completed origin 18 2013-02-20 05:00:00 seconds 5.87
+completed origin 19 2013-02-21 01:30:00 seconds 5.71
+completed origin 20 2013-02-21 22:00:00 seconds 5.91
+completed origin 21 2013-02-22 18:30:00 seconds 6.68
+completed origin 22 2013-02-23 15:00:00 seconds 6.13
+completed origin 23 2013-02-24 12:00:00 seconds 5.9
+completed origin 24 2013-03-11 12:00:00 seconds 6.74
+completed origin 25 2013-03-12 08:30:00 seconds 6.9
+completed origin 26 2013-03-13 05:00:00 seconds 6.77
+completed origin 27 2013-03-14 01:30:00 seconds 6.47
+completed origin 28 2013-03-14 22:00:00 seconds 5.72
+completed origin 29 2013-03-15 18:30:00 seconds 5.8
+completed origin 30 2013-03-16 15:00:00 seconds 5.86
+completed origin 31 2013-03-17 12:00:00 seconds 6.37
+{
+  "hardware": {
+    "cpu": "x86_64",
+    "platform": "Linux-6.8.0-136-generic-x86_64-with-glibc2.39",
+    "threads": 4,
+    "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+    "vram_bytes": 33685569536,
+    "torch": "2.8.0+cu128",
+    "cuda": "12.8"
+  },
+  "households": 4194,
+  "origins": 32,
+  "profiles": 16,
+  "queries": 512,
+  "development_valid_readings": 17612617,
+  "native_mask_families": 32,
+  "parsing_seconds": 10.82135255355388,
+  "basis_setup_seconds": {
+    "identity": 4.0368176996707916e-05,
+    "reference_eigen": 0.01666617952287197,
+    "rjd": 0.14628712087869644
+  },
+  "setup_seconds": 0.17544427141547203,
+  "cuda_initialization_seconds": 1.4974164962768555,
+  "total_seconds": 205.60833006352186,
+  "peak_rss_bytes": 1831399424,
+  "peak_gpu_allocated_bytes": 176373760,
+  "output_tolerance_kwh": 0.833708693386888,
+  "precision": "FP64 all matrix solves; source panel FP32 then FP64 algebra",
+  "snapshot_storage_bytes": 34498815,
+  "maximum_numerical_residual": 9.9988514092592e-08,
+  "failures": 0,
+  "limitations": [
+    "bounds exact-arithmetic plus numerical audits, not formal floating-point certificates",
+    "observed-support sums; no full cohort outcome when readings missing",
+    "counterfactual provider access only; no physical outage effect",
+    "GPU PCG is vectorized PyTorch, not a tuned Ginkgo fused kernel",
+    "full information smoother is timing reference; banded Cholesky supplies optimized equivalent",
+    "provider statistics prepared separately; zero-availability RHS is removed at the per-query access boundary"
+  ]
+}
