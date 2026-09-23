@@ -1,0 +1,57 @@
+..................................                                       [100%]
+34 passed in 0.91s
+{
+  "status": "passed",
+  "allocations": 48,
+  "real_queries_per_sketch_epoch": 12288,
+  "theoretical_projection_allocations_sum": 0.02,
+  "within_event_failures": 0,
+  "main_test_opened": false,
+  "exact_reconstructions": 48
+}
+{
+  "config_authorized": false,
+  "stage1_decision": "stop_sketch_branch",
+  "projections": [
+    {
+      "buildings": 16,
+      "unique_targets_upper_bound": 140160,
+      "primary_queries_upper_bound": 1261440,
+      "warm_replay_hours": 3.822533697861945,
+      "with_25pct_margin_and_8h_other_packages": 12.784405208509835,
+      "under_total_24h": true,
+      "full_wire_bytes": 86644049977.96875,
+      "caveat": "Linear projection of measured FP64 CPU replay, no missing-target savings; margin and other-package allowance are assumptions"
+    },
+    {
+      "buildings": 32,
+      "unique_targets_upper_bound": 280320,
+      "primary_queries_upper_bound": 2522880,
+      "warm_replay_hours": 7.64506739572389,
+      "with_25pct_margin_and_8h_other_packages": 17.56881041701967,
+      "under_total_24h": true,
+      "full_wire_bytes": 173288099955.9375,
+      "caveat": "Linear projection of measured FP64 CPU replay, no missing-target savings; margin and other-package allowance are assumptions"
+    },
+    {
+      "buildings": 64,
+      "unique_targets_upper_bound": 560640,
+      "primary_queries_upper_bound": 5045760,
+      "warm_replay_hours": 15.29013479144778,
+      "with_25pct_margin_and_8h_other_packages": 27.137620834039343,
+      "under_total_24h": false,
+      "full_wire_bytes": 346576199911.875,
+      "caveat": "Linear projection of measured FP64 CPU replay, no missing-target savings; margin and other-package allowance are assumptions"
+    },
+    {
+      "buildings": 128,
+      "unique_targets_upper_bound": 1121280,
+      "primary_queries_upper_bound": 10091520,
+      "warm_replay_hours": 30.58026958289556,
+      "with_25pct_margin_and_8h_other_packages": 46.275241668078685,
+      "under_total_24h": false,
+      "full_wire_bytes": 693152399823.75,
+      "caveat": "Linear projection of measured FP64 CPU replay, no missing-target savings; margin and other-package allowance are assumptions"
+    }
+  ]
+}

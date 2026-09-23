@@ -10,3 +10,5 @@ build/
 dist/
 *.partial
 /results/pilot_predictions.csv
+/results/stage2/.diagnostic.lock
+/results/stage2/pod_inventory.log

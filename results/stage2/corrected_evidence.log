@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "buildings": 16,
+  "sites": 16,
+  "unique_score_targets": 1856,
+  "saved_prediction_rows": 33408,
+  "score_start": "2016-10-21 00:00:00",
+  "score_end": "2016-10-31 23:00:00",
+  "scored_dates": [
+    "2016-10-21",
+    "2016-10-22",
+    "2016-10-23",
+    "2016-10-24",
+    "2016-10-25",
+    "2016-10-26",
+    "2016-10-27",
+    "2016-10-28",
+    "2016-10-29",
+    "2016-10-30",
+    "2016-10-31"
+  ],
+  "unique_score_target_counts_by_week": {
+    "2016-10-17/2016-10-23": 511,
+    "2016-10-24/2016-10-30": 1181,
+    "2016-10-31/2016-11-06": 164
+  },
+  "max_saved_metric_absolute_discrepancy": 1.7763568394002505e-15,
+  "csv_parser_correction": {
+    "method": "seasonal_naive",
+    "building": "Lamb_assembly_Alden",
+    "corrected_unique_targets": 30,
+    "original_main_metrics_valid": true,
+    "effect_on_exact_common_or_sketch_contrasts": "none",
+    "corrected_blocks": "corrected_pilot_block_sums.csv"
+  },
+  "covariance_observations_range": [
+    32,
+    33
+  ],
+  "calibration_observations_range": [
+    101,
+    107
+  ],
+  "mean_training_influence_fraction": 0.04275864564915497,
+  "paired_methods": [
+    "ci",
+    "common_corrected",
+    "exact_lineage",
+    "seasonal_naive",
+    "shrinkage",
+    "sketch_2048"
+  ],
+  "no_raw_meter_read": true,
+  "no_new_fit": true,
+  "no_gpu_execution": true,
+  "november_december_and_2017_opened": false,
+  "cold_initialization_not_in_percentiles": true,
+  "timing_replicates": 5
+}

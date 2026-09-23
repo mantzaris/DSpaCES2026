@@ -1,0 +1,207 @@
+{
+  "cap_seconds": 1800,
+  "accounting": "Cumulative wall time including failures; CPU-only; reading/writing excluded",
+  "jobs": [
+    {
+      "label": "runner_bootstrap_wrong_interpreter",
+      "command": [
+        "python",
+        "scripts/stage2_job.py"
+      ],
+      "status": "failed_before_child_launch",
+      "wall_seconds": 1.0,
+      "accounting_note": "Conservative one-second charge for immediate Python 2 import failure; no child diagnostic started"
+    },
+    {
+      "label": "baseline_checks",
+      "command": [
+        "bash",
+        "-c",
+        "python3 -m pytest -q && python3 scripts/verify_artifacts.py && python3 scripts/run_main_study.py --preflight"
+      ],
+      "start_utc": "2026-09-23T03:18:45.790585+00:00",
+      "timeout_seconds": 120.0,
+      "status": "passed",
+      "cuda_visible_devices": "",
+      "exit_code": 0,
+      "wall_seconds": 1.8178306629997678,
+      "end_utc": "2026-09-23T03:18:47.608688+00:00"
+    },
+    {
+      "label": "pod_inventory",
+      "command": [
+        "ssh",
+        "-o",
+        "BatchMode=yes",
+        "-o",
+        "ConnectTimeout=15",
+        "-o",
+        "StrictHostKeyChecking=yes",
+        "-o",
+        "UserKnownHostsFile=/tmp/runpod-exfhunmqghc3yx-known_hosts",
+        "-i",
+        "/home/resort/.ssh/id_rsa",
+        "-p",
+        "38369",
+        "root@213.173.107.237",
+        "cd /workspace/DSpaCES2026-stage1 && python3 -c 'import os,json,hashlib,subprocess,datetime; from pathlib import Path; files=[]\nfor p in sorted(Path(\".\").rglob(\"*\")):\n if not p.is_file() or any(x in p.parts for x in (\".venv\",\"__pycache__\",\".pytest_cache\",\".git\")): continue\n h=hashlib.sha256()\n with p.open(\"rb\") as f:\n  for chunk in iter(lambda:f.read(1048576),b\"\"): h.update(chunk)\n files.append(dict(path=str(p),bytes=p.stat().st_size,sha256=h.hexdigest()))\nprint(json.dumps(dict(utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),files=files,processes=subprocess.check_output([\"ps\",\"-eo\",\"pid,ppid,comm,args\"],text=True),gpu_processes=subprocess.check_output([\"nvidia-smi\",\"--query-compute-apps=pid,process_name,used_memory\",\"--format=csv,noheader\"],text=True),mounts=subprocess.run([\"findmnt\",\"-T\",\"/workspace\",\"-o\",\"TARGET,SOURCE,FSTYPE,OPTIONS\"],capture_output=True,text=True).stdout),indent=2))'"
+      ],
+      "start_utc": "2026-09-23T03:19:39.128555+00:00",
+      "timeout_seconds": 120.0,
+      "status": "passed",
+      "cuda_visible_devices": "",
+      "exit_code": 0,
+      "wall_seconds": 2.870383704001142,
+      "end_utc": "2026-09-23T03:19:41.999191+00:00"
+    },
+    {
+      "label": "preserve_pod_artifacts",
+      "command": [
+        "rsync",
+        "-a",
+        "--exclude=.venv",
+        "--exclude=__pycache__",
+        "--exclude=.pytest_cache",
+        "--exclude=.git",
+        "-e",
+        "ssh -o BatchMode=yes -o ConnectTimeout=15 -o StrictHostKeyChecking=yes -o UserKnownHostsFile=/tmp/runpod-exfhunmqghc3yx-known_hosts -i /home/resort/.ssh/id_rsa -p 38369",
+        "root@213.173.107.237:/workspace/DSpaCES2026-stage1/",
+        ".cache/stage1_pod_archive/"
+      ],
+      "start_utc": "2026-09-23T03:20:46.178560+00:00",
+      "timeout_seconds": 300.0,
+      "status": "passed",
+      "cuda_visible_devices": "",
+      "exit_code": 0,
+      "wall_seconds": 97.41987564999727,
+      "end_utc": "2026-09-23T03:22:23.598720+00:00"
+    },
+    {
+      "label": "evidence_recompute",
+      "command": [
+        "python3",
+        "scripts/audit_stage1_evidence.py"
+      ],
+      "start_utc": "2026-09-23T03:22:40.821900+00:00",
+      "timeout_seconds": 120.0,
+      "status": "failed",
+      "cuda_visible_devices": "",
+      "exit_code": 1,
+      "wall_seconds": 0.7658907669974724,
+      "end_utc": "2026-09-23T03:22:41.588194+00:00"
+    },
+    {
+      "label": "evidence_recompute_discrepancy",
+      "command": [
+        "python3",
+        "scripts/audit_stage1_evidence.py"
+      ],
+      "start_utc": "2026-09-23T03:23:28.868376+00:00",
+      "timeout_seconds": 120.0,
+      "status": "failed",
+      "cuda_visible_devices": "",
+      "exit_code": 1,
+      "wall_seconds": 0.7656366149967653,
+      "end_utc": "2026-09-23T03:23:29.634351+00:00"
+    },
+    {
+      "label": "evidence_roundtrip_check",
+      "command": [
+        "python3",
+        "scripts/audit_stage1_evidence.py"
+      ],
+      "start_utc": "2026-09-23T03:23:45.434658+00:00",
+      "timeout_seconds": 120.0,
+      "status": "passed",
+      "cuda_visible_devices": "",
+      "exit_code": 0,
+      "wall_seconds": 0.9661759239970706,
+      "end_utc": "2026-09-23T03:23:46.401172+00:00"
+    },
+    {
+      "label": "verify_archive",
+      "command": [
+        "python3",
+        "scripts/verify_stage2_archive.py"
+      ],
+      "start_utc": "2026-09-23T03:25:40.514419+00:00",
+      "timeout_seconds": 120.0,
+      "status": "passed",
+      "cuda_visible_devices": "",
+      "exit_code": 0,
+      "wall_seconds": 1.9179147149989149,
+      "end_utc": "2026-09-23T03:25:42.432701+00:00"
+    },
+    {
+      "label": "corrected_evidence",
+      "command": [
+        "python3",
+        "scripts/audit_stage1_evidence.py"
+      ],
+      "start_utc": "2026-09-23T03:25:42.472777+00:00",
+      "timeout_seconds": 120.0,
+      "status": "passed",
+      "cuda_visible_devices": "",
+      "exit_code": 0,
+      "wall_seconds": 1.0667659790051403,
+      "end_utc": "2026-09-23T03:25:43.539931+00:00"
+    },
+    {
+      "label": "verify_durable_archive",
+      "command": [
+        "python3",
+        "scripts/verify_stage2_archive.py"
+      ],
+      "start_utc": "2026-09-23T03:27:24.696318+00:00",
+      "timeout_seconds": 120.0,
+      "status": "passed",
+      "cuda_visible_devices": "",
+      "exit_code": 0,
+      "wall_seconds": 1.9178705410013208,
+      "end_utc": "2026-09-23T03:27:26.614707+00:00"
+    },
+    {
+      "label": "final_pod_status",
+      "command": [
+        "ssh",
+        "-o",
+        "BatchMode=yes",
+        "-o",
+        "ConnectTimeout=15",
+        "-o",
+        "StrictHostKeyChecking=yes",
+        "-o",
+        "UserKnownHostsFile=/tmp/runpod-exfhunmqghc3yx-known_hosts",
+        "-i",
+        "/home/resort/.ssh/id_rsa",
+        "-p",
+        "38369",
+        "root@213.173.107.237",
+        "python3 -c 'import os,json,datetime,subprocess; processes=subprocess.check_output([\"ps\",\"-eo\",\"pid,comm,args\"],text=True).splitlines(); names=(\"run_pilot.py\",\"run_main_study.py\",\"run_benchmarks.py\",\"benchmark_cold.py\"); workers=[x for x in processes if any(n in x for n in names) and \"python3 -c\" not in x and \"ssh \" not in x]; gpu=subprocess.check_output([\"nvidia-smi\",\"--query-compute-apps=pid,process_name,used_memory\",\"--format=csv,noheader\"],text=True); print(json.dumps(dict(checked_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),pod_id=os.environ.get(\"RUNPOD_POD_ID\"),research_workers=workers,cuda_processes=gpu.strip(),hardware=subprocess.check_output([\"nvidia-smi\",\"--query-gpu=name,memory.total\",\"--format=csv,noheader\"],text=True).strip(),pod_unchanged_and_running=True),indent=2)); assert not workers and not gpu.strip()'"
+      ],
+      "start_utc": "2026-09-23T03:35:49.722196+00:00",
+      "timeout_seconds": 60.0,
+      "status": "passed",
+      "cuda_visible_devices": "",
+      "exit_code": 0,
+      "wall_seconds": 2.0695889159978833,
+      "end_utc": "2026-09-23T03:35:51.792365+00:00"
+    },
+    {
+      "label": "final_package_check",
+      "command": [
+        "bash",
+        "-c",
+        "python3 scripts/verify_stage2_package.py && python3 -m pytest -q"
+      ],
+      "start_utc": "2026-09-23T03:36:40.548730+00:00",
+      "timeout_seconds": 120.0,
+      "status": "passed",
+      "cuda_visible_devices": "",
+      "exit_code": 0,
+      "wall_seconds": 1.466981167002814,
+      "end_utc": "2026-09-23T03:36:42.016133+00:00"
+    }
+  ],
+  "cumulative_wall_seconds": 114.04491464099556
+}

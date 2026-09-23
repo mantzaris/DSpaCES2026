@@ -1,0 +1,16 @@
+{
+  "checked_utc": "2026-09-23T03:25:42.386364+00:00",
+  "pod_snapshot_utc": "2026-09-23T03:19:41.765168+00:00",
+  "local_archive": "/home/resort/Documents/repos/DSpaCES2026/.cache/stage1_pod_archive",
+  "verified_files": 90,
+  "total_bytes": 855761126,
+  "mismatched_files": [],
+  "research_workers": [],
+  "cuda_processes_empty": true,
+  "workspace_filesystem": "overlay at /; no separate /workspace mount reported by findmnt",
+  "excluded": "Reconstructible .venv, bytecode, pytest cache and .git; no research outputs excluded",
+  "local_storage": "Existing project filesystem on /dev/nvme0n1p2; ignored by git, not a separate off-site backup",
+  "raw_archive_copied_without_extracting_or_reading_test_values": true,
+  "irreplaceable_project_artifacts_remaining_only_on_pod": [],
+  "pod_remains_allocated": true
+}

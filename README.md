@@ -1,10 +1,17 @@
 # When Agreement Reuses Evidence
 
-Stage 1 of a bounded DSpaCES 2026 study of conservative fusion with signed
-weighted provenance. **Pilot recommendation: stop the sketch branch.** The
-implemented mathematical corollary passed its controlled numerical checks, but
-compressed exact calendar/support exchange is substantially cheaper and training
-influence contributes little under this pilot's empirical uncertainty model.
+**Stage 2 decision C: stop/defer this DSpaCES project.** The original sketch
+approach is stopped. The evidence does not yet justify its narrow paper fallback
+or an event-time pivot. The main study remains disabled; no Stage 3 is proposed.
+
+Read the [Stage 2 decision](reports/STAGE2_DECISION.md),
+[evidence audit and dated corrections](reports/STAGE1_EVIDENCE_AUDIT.md),
+[current literature comparison](docs/STAGE2_NOVELTY_AUDIT.md), and
+[archival disposition / safe pod stop procedure](reports/STAGE3_PROPOSAL.md).
+Stage 1's exact-lineage score improvement over common-noise correction is only
+0.48% on this short pilot, with uncertainty too weak for an equivalence claim.
+Compressed exact metadata is smaller under a richer public-design contract;
+cached-sketch wire costs are estimates. These are local findings.
 
 Start with the [Stage 1 report](reports/STAGE1_REPORT.md),
 [feasibility audit](reports/FEASIBILITY_REPORT.md),
@@ -17,6 +24,31 @@ per provider, three fixed sharing levels, and k=512/2048. October 2016 supplies
 disjoint covariance, calibration and scoring windows. The 2017 test year is
 sealed. Provider institutions and sharing rules are simulated. Real intervals
 are empirical plug-ins, not certified Gaussian or distribution-free intervals.
+
+Stage 2 preserves the original Stage 1 reports and outputs. Its only numerical
+analysis correction is round-trip CSV parsing for interval-boundary coverage:
+30 seasonal-naive targets in one building affected secondary block aggregates;
+the original headline table and exact/common/sketch comparisons were correct.
+Corrected blocks are in `results/stage2/`, alongside independently recomputed
+summaries and a CPU-only diagnostic ledger capped at 30 cumulative minutes.
+The pod snapshot (90 files, about 856 MB) is hash-verified under ignored
+`data/archives/stage1_pod_20260923/` on the existing local disk. The pod remains
+allocated; no research process is running. Neither its termination nor further
+compute is authorized by these reproduction examples.
+
+## Reproduce Stage 2 saved-evidence checks
+
+```bash
+python3 scripts/stage2_job.py --label evidence_recheck --timeout 120 -- python3 scripts/audit_stage1_evidence.py
+python3 scripts/stage2_job.py --label tests_recheck --timeout 120 -- python3 -m pytest -q
+python3 scripts/stage2_job.py --label archive_recheck --timeout 120 -- python3 scripts/verify_stage2_archive.py
+```
+
+The evidence recomputation uses the existing ignored October evaluator CSV;
+the archive verifier hashes opaque files without inspecting sealed outcomes.
+The wrapper preserves its cumulative cap across retries. It excludes GPUs and
+records every child job's wall time separately from reading/writing. Original
+Stage 1 commands below document history and do not authorize new experiments.
 
 ## Reproduce saved-results analysis without GPU or source data
 
@@ -31,6 +63,9 @@ python scripts/run_main_study.py --preflight
 The two [pilot figures](reports/figures/) use retained aggregate numerical
 results. Raw meter files and the local per-target evaluator output are ignored
 by git. Saved block aggregates and sensitivity intervals remain available.
+The original cost figure is retained as evidence; its cached-sketch points are
+estimates despite its old blanket title. The generator's title has been corrected
+for future reproductions. See the Stage 2 audit before interpreting these figures.
 
 ## Reproduce the bounded pilot
 

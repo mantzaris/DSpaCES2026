@@ -1,0 +1,112 @@
+{
+  "ordered_resamples": 27,
+  "week_labels": [
+    "2016-10-17/2016-10-23",
+    "2016-10-24/2016-10-30",
+    "2016-10-31/2016-11-06"
+  ],
+  "warning": "Descriptive three-week sensitivity, two partial weeks; not a population confidence interval or equivalence test",
+  "comparison": "exact_lineage minus common_corrected, calibrated",
+  "ranges": {
+    "is90": {
+      "minimum": -0.012139942089940847,
+      "maximum": 0.005669566057312059,
+      "lower_2_5_percentile": -0.011849742866386037,
+      "upper_97_5_percentile": 0.0043262569290703
+    },
+    "coverage90": {
+      "minimum": -0.0023167698948949322,
+      "maximum": 0.00455729166666663,
+      "lower_2_5_percentile": -0.0023167698948949322,
+      "upper_97_5_percentile": 0.0043146701388888315
+    },
+    "loss": {
+      "minimum": -0.0009452849957403142,
+      "maximum": 0.0052515458299212114,
+      "lower_2_5_percentile": -0.0006964562257472523,
+      "upper_97_5_percentile": 0.004858036151607061
+    }
+  },
+  "leave_site_out": [
+    {
+      "omitted_site": "Bear",
+      "is90_difference": -0.0072529567095904746,
+      "relative_is90": -0.005287778610687854
+    },
+    {
+      "omitted_site": "Bobcat",
+      "is90_difference": -0.004851618606251051,
+      "relative_is90": -0.003407244790826214
+    },
+    {
+      "omitted_site": "Bull",
+      "is90_difference": -0.005502914607690812,
+      "relative_is90": -0.0040306579756684835
+    },
+    {
+      "omitted_site": "Crow",
+      "is90_difference": -0.007219961225390703,
+      "relative_is90": -0.004942252876142472
+    },
+    {
+      "omitted_site": "Eagle",
+      "is90_difference": -0.008824152150331832,
+      "relative_is90": -0.006258538899835964
+    },
+    {
+      "omitted_site": "Fox",
+      "is90_difference": -0.010110409926473718,
+      "relative_is90": -0.007756602994394846
+    },
+    {
+      "omitted_site": "Gator",
+      "is90_difference": 0.0016192307017408591,
+      "relative_is90": 0.0012336448578980086
+    },
+    {
+      "omitted_site": "Hog",
+      "is90_difference": -0.005134884475224144,
+      "relative_is90": -0.003704837632685365
+    },
+    {
+      "omitted_site": "Lamb",
+      "is90_difference": -0.00766868459747494,
+      "relative_is90": -0.005559119941698998
+    },
+    {
+      "omitted_site": "Moose",
+      "is90_difference": -0.006249054048782954,
+      "relative_is90": -0.004251622075985617
+    },
+    {
+      "omitted_site": "Mouse",
+      "is90_difference": -0.008884373852174443,
+      "relative_is90": -0.006093642588543946
+    },
+    {
+      "omitted_site": "Panther",
+      "is90_difference": -0.0076138322723848795,
+      "relative_is90": -0.006038521160689259
+    },
+    {
+      "omitted_site": "Peacock",
+      "is90_difference": -0.007252136458808511,
+      "relative_is90": -0.004973204600540404
+    },
+    {
+      "omitted_site": "Rat",
+      "is90_difference": -0.009003453128844985,
+      "relative_is90": -0.006321407311160376
+    },
+    {
+      "omitted_site": "Robin",
+      "is90_difference": -0.0062010875547788835,
+      "relative_is90": -0.00435825876442808
+    },
+    {
+      "omitted_site": "Shrew",
+      "is90_difference": -0.007712097250112793,
+      "relative_is90": -0.005266074451297231
+    }
+  ]
+}

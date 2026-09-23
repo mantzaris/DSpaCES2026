@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "scripts/audit_stage1_evidence.py", line 158, in <module>
+    main()
+  File "scripts/audit_stage1_evidence.py", line 101, in main
+    np.testing.assert_allclose(checked, recorded, atol=1e-12, rtol=1e-12)
+  File "/home/resort/.local/lib/python3.8/site-packages/numpy/testing/_private/utils.py", line 1530, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+  File "/home/resort/.local/lib/python3.8/site-packages/numpy/testing/_private/utils.py", line 844, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError:
+Not equal to tolerance rtol=1e-12, atol=1e-12
+
+Mismatched elements: 3 / 864 (0.347%)
+Max absolute difference: 0.25641026
+Max relative difference: 0.27027027
+ x: array([[2.254219, 0.726496, 0.571812],
+       [1.770953, 0.717949, 0.493445],
+       [1.770953, 0.717949, 0.493445],...
+ y: array([[2.254219, 0.726496, 0.571812],
+       [1.770953, 0.717949, 0.493445],
+       [1.770953, 0.717949, 0.493445],...

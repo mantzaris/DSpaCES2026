@@ -58,7 +58,7 @@ for row in costrows:
         label=row['method']+' / '+row['contract'])
 axes[0].set_xscale('log');axes[0].set_xlabel('Bytes / completed four-provider query')
 axes[0].set_ylabel('Calibrated normalized interval score')
-axes[0].set_title('Measured wire cost; cached over 256 targets');axes[0].legend(fontsize=7,loc='best')
+axes[0].set_title('Wire bytes and cache estimates; 256 targets');axes[0].legend(fontsize=7,loc='best')
 labels=[];throughput=[];colors=[]
 for backend in ('cpu','gpu'):
     for batch in (1,256):

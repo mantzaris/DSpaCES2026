@@ -26,7 +26,9 @@ def main():
                 coverage90_difference=float(table.loc['sketch_2048','coverage90']-table.loc[ref,'coverage90'])))
     pd.DataFrame(leave).to_csv('results/site_deletion.csv',index=False)
     # Raw outcomes remain untracked. Commit only aggregates of observed calendar blocks.
-    pred=pd.read_csv('results/pilot_predictions.csv')
+    # Preserve saved binary64 values: default CSV parsing can move quantized
+    # residuals across an interval boundary (Stage 2 seasonal-naive regression).
+    pred=pd.read_csv('results/pilot_predictions.csv',float_precision='round_trip')
     audit=json.loads(Path('manifests/data_audit.json').read_text())
     scales={r['building']:r['training_scale'] for r in audit['selection']}
     pred['scale']=pred.building.map(scales)

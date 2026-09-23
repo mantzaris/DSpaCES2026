@@ -1,0 +1,142 @@
+{
+  "status": "passed",
+  "buildings": 16,
+  "sites": 16,
+  "unique_score_targets": 1856,
+  "saved_prediction_rows": 33408,
+  "score_start": "2016-10-21 00:00:00",
+  "score_end": "2016-10-31 23:00:00",
+  "scored_dates": [
+    "2016-10-21",
+    "2016-10-22",
+    "2016-10-23",
+    "2016-10-24",
+    "2016-10-25",
+    "2016-10-26",
+    "2016-10-27",
+    "2016-10-28",
+    "2016-10-29",
+    "2016-10-30",
+    "2016-10-31"
+  ],
+  "unique_score_target_counts_by_week": {
+    "2016-10-17/2016-10-23": 511,
+    "2016-10-24/2016-10-30": 1181,
+    "2016-10-31/2016-11-06": 164
+  },
+  "max_saved_metric_absolute_discrepancy": 1.7763568394002505e-15,
+  "csv_parser_correction": {
+    "method": "seasonal_naive",
+    "building": "Lamb_assembly_Alden",
+    "corrected_unique_targets": 30,
+    "original_main_metrics_valid": true,
+    "effect_on_exact_common_or_sketch_contrasts": "none",
+    "corrected_blocks": "corrected_pilot_block_sums.csv"
+  },
+  "covariance_observations_range": [
+    32,
+    33
+  ],
+  "calibration_observations_range": [
+    101,
+    107
+  ],
+  "mean_training_influence_fraction": 0.04275864564915497,
+  "paired_methods": [
+    "ci",
+    "common_corrected",
+    "exact_lineage",
+    "seasonal_naive",
+    "shrinkage",
+    "sketch_2048"
+  ],
+  "no_raw_meter_read": true,
+  "no_new_fit": true,
+  "no_gpu_execution": true,
+  "november_december_and_2017_opened": false,
+  "cold_initialization_not_in_percentiles": true,
+  "timing_replicates": 5,
+  "benchmark_warm_summary": [
+    {
+      "backend": "cpu",
+      "batch": 1,
+      "warm_replicates": 5,
+      "p50_seconds": 0.012242422439157963,
+      "p95_seconds": 0.013034328259527684,
+      "queries_per_second": 81.6831803484785,
+      "messages_per_second": 326.732721393914
+    },
+    {
+      "backend": "cpu",
+      "batch": 256,
+      "warm_replicates": 5,
+      "p50_seconds": 2.7927186833694577,
+      "p95_seconds": 2.967144605331123,
+      "queries_per_second": 91.66694859903758,
+      "messages_per_second": 366.6677943961503
+    },
+    {
+      "backend": "gpu",
+      "batch": 1,
+      "warm_replicates": 5,
+      "p50_seconds": 0.022596847265958786,
+      "p95_seconds": 0.022889725118875503,
+      "queries_per_second": 44.25396110485105,
+      "messages_per_second": 177.0158444194042
+    },
+    {
+      "backend": "gpu",
+      "batch": 256,
+      "warm_replicates": 5,
+      "p50_seconds": 2.809785366989672,
+      "p95_seconds": 2.846232523582876,
+      "queries_per_second": 91.11016201008673,
+      "messages_per_second": 364.4406480403469
+    }
+  ],
+  "cold_summary": [
+    {
+      "backend": "cpu",
+      "batch": 1,
+      "replicates": 5,
+      "p50_seconds": 0.29999362025409937,
+      "p95_seconds": 0.30067345276474955
+    },
+    {
+      "backend": "cpu",
+      "batch": 256,
+      "replicates": 5,
+      "p50_seconds": 3.018595516681671,
+      "p95_seconds": 3.078184298798442
+    },
+    {
+      "backend": "gpu",
+      "batch": 1,
+      "replicates": 5,
+      "p50_seconds": 0.3064767373725772,
+      "p95_seconds": 0.5351227631792426
+    },
+    {
+      "backend": "gpu",
+      "batch": 256,
+      "replicates": 5,
+      "p50_seconds": 2.9915843410417438,
+      "p95_seconds": 3.016519719362259
+    }
+  ],
+  "inputs_sha256": {
+    "results/pilot_metrics.csv": "6ca90c35e4c4eefc26a5d55565b4f922bf92608309d6ab3bb73cefa454bed886",
+    "results/pilot_predictions.csv": "4144f0c9e5f2b93c591f9d7246d4d9c3cba1bfae0071fd8b47548451180cb7c0",
+    "results/pilot_block_sums.csv": "ece0746ec5eb43909f6813bc96d7770eb24c488006a39caa39e57acaa873be9e",
+    "results/pilot_costs.csv": "5e1b7cf6d67d4d5b170b1c5793999bcb21ac0bbdccee4a02e8ed2fc4de88dadb",
+    "results/summary_metrics.csv": "740b29af407e868c8d5d9378e44f814f735425a6feba664734dd418c38bb566f",
+    "results/exact_exchange.json": "52f528aa7e1c7820c1e1a8e9e820f8baf4273d2dc39af21120453b460f7796d6",
+    "results/diagnostics.json": "14c3ba49c0ed0f87c8bd85737e277efa5c4defb03684ebf4e26197ce8f09f64e",
+    "results/benchmarks.json": "bc7245e0ba03a251509581fb818be0c2b0188e1e61eb67e756eee329650b7702",
+    "results/cold_benchmarks.json": "d6e26a88d7cd7ff3cad62a435387ad300d0e060973540c49a9297e0eaba8ee70",
+    "manifests/provider_allocations.json": "3c5409705957d909f232df519db60a5a9041e7b1877bf3122d81876d327a2dd4",
+    "manifests/pilot_calibration.json": "ec353373a053c792f887d77e4771cc7ca770fc9df095d441c593405fe13d4983",
+    "configs/pilot.yaml": "340601eed669a58a41db0b52703ad31f5f534afe3dc558ac4bdd1680eac96e1d",
+    "configs/main_study.yaml": "da3cc358a40763e24043e2823fcb23dd18f03517554b33a53ce4ae46b1710a32"
+  }
+}
