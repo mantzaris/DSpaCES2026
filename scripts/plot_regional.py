@@ -19,6 +19,8 @@ def main():
     colors=['#0072B2','#D55E00','#009E73','#CC79A7']
     def save(fig,name):
         fig.tight_layout(); fig.savefig(out/(name+'.pdf')); fig.savefig(out/(name+'.svg')); plt.close(fig)
+        svg=out/(name+'.svg')
+        svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines())+'\n')
     fig,axes=plt.subplots(2,1,figsize=(9,6),sharex=True)
     for ax,horizon in zip(axes,[2,12]):
         panel=forecast[(forecast.profile==0)&(forecast.horizon==horizon)]
