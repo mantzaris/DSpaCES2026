@@ -1,5 +1,46 @@
 # Active scope - 2026-09-23
 
+## Authorized continuation: Refinement Without Rebuilding
+
+The latest user instruction selects **adaptive regional representation and
+incremental evidence**, with solver speed secondary. Continue from verified
+`e76bdfc` (GPU source `bf28962`); preserve the completed Stage 1 below. RJD is
+not rerun. The contract-plan candidate and stopped BDG2 studies stay unchanged.
+
+Use one fixed training-fitted Gaussian hierarchy: inherited 16 seasonal factors
+and dynamics, plus the smallest added household AR residual layer. This initial
+model enrichment is explicit and frozen before comparison. Thereafter separate
+(A) exposing/eliminating conditional state with the same evidence from (B)
+replacing a derived group sum with its household evidence. No causal effects,
+geographical topology, Matheron sampling, graph enclosures or selective simulation.
+
+The candidate is an evidence-consistent protocol for retaining registered
+forecast summaries while evicting detail. Its matrix ingredients are established.
+Compare directly with ordinary incremental Gaussian messages and a streamed fine
+reference. No new inference theorem or publication success is presumed.
+
+The frozen workload is in `configs/regional_refinement.json`: nested physical-ID
+cohorts 1,024/2,048/4,194, 16 balanced synthetic groups, 24-step windows, the same
+32 Q1 origins, 2/4/8 accessed groups, fixed/random/current-uncertainty schedules.
+Output masks define observed-support scoring after policy selection; future
+values are only loaded by the evaluator. The 2012 and sealed-date rules persist.
+
+Additional cap: min(90 minutes, verified remaining original 180 minutes).
+Stage 1 closed at 37.4258 minutes; read-only pod preflight found no intervening
+research process and the same closed ledger. Inter-session **cloud billing idle**
+continues and is recorded separately. The new ledger charges every elapsed second
+from the first new executed job through closure, including setup, local work,
+idle, retries, tests and artifact copies. It adds the closed Stage 1 charge rather
+than resetting it. Whole job wall time also counts toward the original six CPU
+job-hours. Existing and new data/cache together must stay under 30 GB; host/GPU
+working targets remain 8/24 GB. No new hardware or pod lifecycle action.
+
+Runtime preflight again measured RTX PRO 4500 Blackwell, 32,623 MiB, idle. The
+requested 48 GB assumption is not the measured hardware. No original main study,
+new direction, held-out evaluation, manuscript or automatic next stage is enabled.
+
+## Historical regional Stage 1 scope and outcome
+
 The user's regional-pilot instruction selects a retrospective digital twin of
 the sampled Greater London households and a shared orthogonal matrix solver.
 The planning handoff is `09ae274`, verified in the history of `main` before edits.
