@@ -57,6 +57,10 @@ class ShockGaussian(HierarchicalGaussian):
         for hi, horizon in enumerate(self.horizons):
             cross = self.variance[ids, None]*self.rho[ids, None]**(
                 horizon+self.length-1-torch.arange(self.length, device=self.device))[None, :]
+            if horizon == 0:
+                # A current recorded-demand query shares its measurement noise
+                # with the final observation; it is not a new future reading.
+                cross[:, -1] += self.nugget[ids]
             gf = torch.einsum('nt,ntu->nu', cross, sf)
             offset_q = (gf*y).sum(1)
             coefficient = -torch.einsum('nt,ni->nti', gf, h).reshape(len(ids), self.dimension)

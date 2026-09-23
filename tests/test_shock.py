@@ -137,3 +137,15 @@ def test_policy_does_not_receive_fine_residuals_or_labels():
     selected=a.refinement_ids(0,ids)
     assert len(selected)==41 and len(set(selected)&set(ids))==0
     assert len(np.unique(a.groups[selected]))>1  # exploration survives a trigger
+
+
+def test_current_record_query_has_shared_not_future_measurement_noise(model):
+    class Current(ShockGaussian):horizons=(0,)
+    engine=Current(model,3)
+    y=np.arange(12,dtype=float).reshape(4,3)/10
+    aggregate=np.stack([y[:2].sum(0),y[2:].sum(0)])
+    output,_=engine.infer(np.ones_like(y,bool),y,aggregate,np.ones((1,4),bool),np.zeros((1,4)))
+    error=float(abs(output[0]['mean']-torch.as_tensor(y[:,-1],device='cuda')).max())
+    variance=float(abs(output[0]['variance']).max())
+    assert max(error,variance)<1e-10
+    ERRORS.append(dict(current_record_mean_error=error,current_record_variance_error=variance))
