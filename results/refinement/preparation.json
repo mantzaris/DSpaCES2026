@@ -1,0 +1,11 @@
+{
+  "development_parse_seconds": 9.334337281063199,
+  "provider_preparation_seconds": 10.972053666599095,
+  "valid_window_rows": 3167768,
+  "origins": 32,
+  "development_source_file_bytes": 69497803,
+  "provider_store_bytes": 31403172,
+  "all_source_rows_read_for_initial_summary": true,
+  "no_online_sensor_ingestion_saving": true,
+  "caveat": "Provider setup reads Q1 once; only frozen windows retained. Scored future values remain in evaluator files, inaccessible to consumer API."
+}

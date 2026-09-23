@@ -1,0 +1,28 @@
+{
+  "completed": true,
+  "smoke": false,
+  "populations": [
+    1024,
+    2048,
+    4194
+  ],
+  "origins_per_population": 32,
+  "model_setup_seconds": 0.1380056394264102,
+  "total_seconds": 61.46843100618571,
+  "device": "NVIDIA RTX PRO 4500 Blackwell",
+  "vram_bytes": 33685569536,
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "precision": "float64",
+  "cpu_threads": 4,
+  "gpu_peak_bytes": 103518720,
+  "host_peak_rss_bytes": 1517363200,
+  "source_file_bytes": 303258045,
+  "data_access_events": 9699,
+  "same_evidence_failures": 0,
+  "london_heldout_sealed": true,
+  "bdg2_seals_unchanged": true,
+  "config_sha256": "8897c168f4da24361e3fd3d5516da53191f7833f6dd05245e803aa13f9b85fee",
+  "model_sha256": "d2c15c50bbfa77c7b4c46180c853cf27854a154ac6c97b653fa5f667f448fe0e",
+  "timing_caveat": "CUDA event spans include gaps while synchronous provider I/O runs; they are not pure kernel time. Complete update includes reads/transfers/assembly/solve/query conversion; setup is charged separately and added to complete_seconds."
+}

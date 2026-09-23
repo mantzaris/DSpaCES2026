@@ -1,5 +1,22 @@
 # Active scope - 2026-09-23
 
+## Completed refinement stage
+
+The authorized bounded continuation is complete. See
+[the measured report](../reports/REGIONAL_TWIN_STAGE2_REFINEMENT_REPORT.md).
+Three nested real cohorts, 864 policy cases, 1,728 restoration cycles and 49 tests
+establish fixed-window query consistency and measured detail eviction/reread.
+The streamed fine reference has the same retained-summary memory floor; the
+largest-cohort uncertainty policy did not improve primary MAE over random and
+selected fixed group sets. No new inference theorem or adaptive-policy advantage
+is claimed. Severe raw one-hour undercoverage remains visible.
+
+The sole proposed follow-up question concerns boundary sufficient information
+for advancing the window without unnecessary rereads. No follow-up execution,
+new model search, full paper or main study is authorized. The closed refinement
+ledger preserves the prior charge and counts this stage's preparation, idle,
+tests, retries and copies. The pod remains allocated with no experiment running.
+
 ## Authorized continuation: Refinement Without Rebuilding
 
 The latest user instruction selects **adaptive regional representation and

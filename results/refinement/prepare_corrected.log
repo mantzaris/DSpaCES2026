@@ -1,0 +1,30 @@
+{
+  "training": {
+    "rows": 52109356,
+    "adjacent_pairs": 52054466,
+    "ar_min": -0.6297713020674167,
+    "ar_median": 0.5864805617680633,
+    "ar_max": 0.95,
+    "parse_seconds": 25.50821351353079,
+    "gpu_fit_ms": 627.3390502929688,
+    "total_seconds": 26.189339163713157,
+    "device": "NVIDIA RTX PRO 4500 Blackwell",
+    "vram_bytes": 33685569536,
+    "gpu_peak_bytes": 344243200,
+    "parent_model_sha256": "abb696d052853d9a4cd888a0c8eb361d5861238814c0d1cfd44848055b87293e",
+    "model_change": "fixed seasonal/factor model plus household AR residual; nugget fraction fixed .2, not identified measurement noise",
+    "model_sha256": "d2c15c50bbfa77c7b4c46180c853cf27854a154ac6c97b653fa5f667f448fe0e",
+    "peak_host_rss_bytes": 1944473600
+  },
+  "preparation": {
+    "development_parse_seconds": 9.334337281063199,
+    "provider_preparation_seconds": 10.972053666599095,
+    "valid_window_rows": 3167768,
+    "origins": 32,
+    "development_source_file_bytes": 69497803,
+    "provider_store_bytes": 31403172,
+    "all_source_rows_read_for_initial_summary": true,
+    "no_online_sensor_ingestion_saving": true,
+    "caveat": "Provider setup reads Q1 once; only frozen windows retained. Scored future values remain in evaluator files, inaccessible to consumer API."
+  }
+}

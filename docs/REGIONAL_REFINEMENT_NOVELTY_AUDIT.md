@@ -47,6 +47,18 @@ If coarse summaries already predict the regional outcome as well, investigate
 only a justified local-query capability; do not select favorable buildings or
 increase latent complexity to manufacture a gain in this stage.
 
+## Measured novelty assessment
+
+The [completed measured pilot](../reports/REGIONAL_TWIN_STAGE2_REFINEMENT_REPORT.md)
+does not clear the candidate novelty gate: streamed fine inference retains the
+same 21.6 MB of summaries; conventional message reuse can apply the same eviction
+policy. Exact restoration trades retained state for charged rereads as expected.
+The largest-cohort variance policy selected fixed sets and had worse primary MAE
+than random at each access budget. Keep the implementation and negative results.
+The next narrow unresolved question is boundary-message retention as the window
+advances, compared with established filtering/smoothing; this stage does not run
+or establish that extension.
+
 ## Separation from BDCC
 
 The authoritative adjacent file

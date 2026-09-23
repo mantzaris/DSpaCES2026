@@ -1,0 +1,7 @@
+population,origin,policy,active_groups,separator_mean_error,separator_variance_trace,correct_variance_trace,representation_error,cycle_error,factor_error,separator_covariance_error,aggregation_mean_error,retained_checkpoint_bytes,added_households,reused_group_factors,updated_separator,seconds,new_summary_bytes,provenance_rows,separator_change
+1024,0,double_count_negative_control,2,0.013128473442673023,0.45795440160701406,0.4615882790343629,,,,,,,,,,,,,
+1024,0,fixed,2,1.0824674490095276e-15,,,0.0,0.0,0.0,2.0816681711721685e-17,2.842170943040401e-14,,,,,,,,
+1024,0,random,2,2.6367796834847468e-15,,,0.0,0.0,0.0,2.3201926491189795e-17,5.684341886080802e-14,,,,,,,,
+1024,0,uncertainty,2,2.55351295663786e-15,,,0.0,0.0,0.0,3.7513395167998453e-17,2.842170943040401e-14,,,,,,,,
+1024,0,durable_restore,0,,,,,1.4210854715202004e-14,,,,13449145.0,,,,,,,
+1024,0,added_coverage,0,,,,,,,,,,64.0,15.0,True,0.00470687635242939,2269.0,1512.0,0.010436681077281532

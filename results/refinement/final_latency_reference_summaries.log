@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "scripts/analyze_refinement.py", line 164, in <module>
+    main()
+  File "scripts/analyze_refinement.py", line 42, in main
+    reference['absolute_variance_difference'] = abs(reference.variance-reference.full_evidence_variance)
+  File "/home/resort/.local/lib/python3.8/site-packages/pandas/core/generic.py", line 5487, in __getattr__
+    return object.__getattribute__(self, name)
+AttributeError: 'DataFrame' object has no attribute 'full_evidence_variance'

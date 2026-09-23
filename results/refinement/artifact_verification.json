@@ -1,0 +1,22 @@
+{
+  "verified_files": 1124,
+  "checked_report_links": 28,
+  "config_sha256": "8897c168f4da24361e3fd3d5516da53191f7833f6dd05245e803aa13f9b85fee",
+  "model_sha256": "d2c15c50bbfa77c7b4c46180c853cf27854a154ac6c97b653fa5f667f448fe0e",
+  "local_storage_bytes": {
+    "data": 2314102532,
+    ".deps": 195132261,
+    ".pytest_cache": 3359,
+    "results/refinement": 7377039,
+    "reports/figures/refinement": 1288307
+  },
+  "local_task_temporary_file_bytes": 282836327,
+  "pod_data_bytes": 1235348686,
+  "pod_data_source": "pod_final_idle_inventory.log; includes prior BDG2 data",
+  "storage_caveat": "Local and pod copies are separate physical storage; temporary transfer copies counted locally. Dependency environments are software, not data; system libraries are not claimed as research cache.",
+  "no_completed_artifact_pod_only": true,
+  "no_gpu_compute_process_at_final_preflight": true,
+  "seals_preserved": true,
+  "GPU_main_source": "4f3d09e670b102388e9bd92fc81f4de041eeae09",
+  "GPU_final_test_source": "fcbc575d86f42e5095af276fc0e5c012a96c84a7"
+}

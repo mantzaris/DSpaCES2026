@@ -1,0 +1,8 @@
+.................................................                        [100%]
+=============================== warnings summary ===============================
+tests/test_refinement.py::test_all_missing_targets_are_not_scored_as_zero
+  /usr/local/lib/python3.12/dist-packages/numpy/_core/fromnumeric.py:3904: RuntimeWarning: Mean of empty slice.
+    return _methods._mean(a, axis=axis, dtype=dtype,
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+49 passed, 1 warning in 3.16s

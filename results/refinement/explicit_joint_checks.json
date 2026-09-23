@@ -1,0 +1,74 @@
+[
+  {
+    "evidence": [
+      "aggregate",
+      "aggregate"
+    ],
+    "separator_mean_max_abs": 1.1102230246251565e-15,
+    "separator_covariance_max_abs": 7.771561172376096e-16
+  },
+  {
+    "evidence": [
+      "aggregate",
+      "aggregate"
+    ],
+    "horizon": 2,
+    "regional_variance_abs_error": 8.881784197001252e-16
+  },
+  {
+    "evidence": [
+      "aggregate",
+      "aggregate"
+    ],
+    "horizon": 12,
+    "regional_variance_abs_error": 0.0
+  },
+  {
+    "evidence": [
+      "fine",
+      "aggregate"
+    ],
+    "separator_mean_max_abs": 4.440892098500626e-16,
+    "separator_covariance_max_abs": 7.771561172376096e-16
+  },
+  {
+    "evidence": [
+      "fine",
+      "aggregate"
+    ],
+    "horizon": 2,
+    "regional_variance_abs_error": 8.881784197001252e-16
+  },
+  {
+    "evidence": [
+      "fine",
+      "aggregate"
+    ],
+    "horizon": 12,
+    "regional_variance_abs_error": 8.881784197001252e-16
+  },
+  {
+    "evidence": [
+      "fine",
+      "fine"
+    ],
+    "separator_mean_max_abs": 7.771561172376096e-16,
+    "separator_covariance_max_abs": 7.216449660063518e-16
+  },
+  {
+    "evidence": [
+      "fine",
+      "fine"
+    ],
+    "horizon": 2,
+    "regional_variance_abs_error": 8.881784197001252e-16
+  },
+  {
+    "evidence": [
+      "fine",
+      "fine"
+    ],
+    "horizon": 12,
+    "regional_variance_abs_error": 0.0
+  }
+]

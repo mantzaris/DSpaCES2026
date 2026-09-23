@@ -1,0 +1,21 @@
+{
+  "representation_error": 0.0,
+  "cycle_error": 0.0,
+  "factor_error": 0.0,
+  "separator_mean_error": 4.135580766728708e-15,
+  "separator_covariance_error": 4.510281037539698e-17,
+  "aggregation_mean_error": 6.821210263296962e-13,
+  "representation_cases": 864,
+  "roundtrip_cycles": 1728,
+  "observed_regional_origins": 32,
+  "development_weeks": 4,
+  "gpu_matrix_event_seconds": 18.083220853090285,
+  "host_to_device_payload_bytes": 319761808,
+  "gpu_peak_bytes": 103933952,
+  "host_peak_rss_bytes": 1467215872,
+  "rerefinement_source_file_bytes": 70407162,
+  "fine_rows_decoded_including_repeated_reads": 45105480,
+  "fine_rows_returned_including_repeated_reads": 26058060,
+  "file_byte_scope": "Sum of compressed provider file sizes accessed, including repeated accesses; conservative logical I/O, not OS physical disk counters. Page-cache state uncontrolled.",
+  "caveat": "Descriptive four-week development replay. No independent-hours inference or held-out confirmation."
+}

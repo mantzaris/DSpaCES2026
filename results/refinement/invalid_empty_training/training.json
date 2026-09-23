@@ -1,0 +1,17 @@
+{
+  "rows": 0,
+  "adjacent_pairs": 0,
+  "ar_min": 0.0,
+  "ar_median": 0.0,
+  "ar_max": 0.0,
+  "parse_seconds": 0.03555488400161266,
+  "gpu_fit_ms": 666.8831176757812,
+  "total_seconds": 0.7555415872484446,
+  "device": "NVIDIA RTX PRO 4500 Blackwell",
+  "vram_bytes": 33685569536,
+  "gpu_peak_bytes": 344243200,
+  "parent_model_sha256": "abb696d052853d9a4cd888a0c8eb361d5861238814c0d1cfd44848055b87293e",
+  "model_change": "fixed seasonal/factor model plus household AR residual; nugget fraction fixed .2, not identified measurement noise",
+  "model_sha256": "d103d85e5cfccc1c8faf766248b376ca93e66c54688d7ff4469eaf4d57906545",
+  "peak_host_rss_bytes": 1771659264
+}

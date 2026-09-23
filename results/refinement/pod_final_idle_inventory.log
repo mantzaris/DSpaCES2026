@@ -1,0 +1,23 @@
+2026-09-23T11:05:04Z
+name, memory.total [MiB], memory.used [MiB], utilization.gpu [%], driver_version
+NVIDIA RTX PRO 4500 Blackwell, 32623 MiB, 2 MiB, 0 %, 580.159.04
+pid, process_name, used_gpu_memory [MiB]
+      1 bash
+      1 docker-init
+      1 jupyter-lab
+      2 nginx
+      1 ps
+      1 sleep
+      1 sort
+      2 sshd
+      2 start.sh
+      1 uniq
+387164385	/workspace/DSpaCES2026-regional/data
+848184301	/workspace/DSpaCES2026-stage1/data
+Filesystem       1B-blocks       Used   Available Use% Mounted on
+overlay        80530636800 2393952256 78136684544   3% /
+a2d04be1d4cd7e1d556fe744669c0ab62dfb84412463cde43dd032d1e0fd2b8d  src/evidence_fusion/refinement_gaussian.py
+4ed456a489715c930594b3929d0349e54f33ad244239113f98bc1e1afbdcc84d  src/evidence_fusion/refinement_access.py
+964ae14be4c21b21b832c4917f0844fa8f29668513f8f75ca623db3a019f2d4a  scripts/prepare_refinement.py
+7ada0343394848b89c5fb5ed00139724ea1d00cf182735abc476e3cb2936e5c4  scripts/replay_refinement.py
+4b74938c916125f429aa2a20e35afb5ffbc1b406f44ae93d0c5206e8c73d7d7b  tests/test_refinement.py

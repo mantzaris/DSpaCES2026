@@ -1,0 +1,128 @@
+[
+  {
+    "population": 1024,
+    "groups": 2,
+    "uncertainty_minus_random_mae": 0.5500543718961675,
+    "relative_mae_percent": 6.115455250325916,
+    "uncertainty_minus_random_interval_score": 12.250447097661002,
+    "week_mean_mae_differences": [
+      2.1814479139426304,
+      0.18212429400760755,
+      1.5675895001670526,
+      -1.7309442205326209
+    ],
+    "distinct_uncertainty_selected_sets": 1
+  },
+  {
+    "population": 1024,
+    "groups": 4,
+    "uncertainty_minus_random_mae": 1.157983576661008,
+    "relative_mae_percent": 12.855428744133246,
+    "uncertainty_minus_random_interval_score": 9.8873696327503,
+    "week_mean_mae_differences": [
+      0.7884620252907981,
+      1.8291626648275972,
+      2.4513633505613615,
+      -0.4370537340357245
+    ],
+    "distinct_uncertainty_selected_sets": 1
+  },
+  {
+    "population": 1024,
+    "groups": 8,
+    "uncertainty_minus_random_mae": 0.6258060637905603,
+    "relative_mae_percent": 6.489451292964037,
+    "uncertainty_minus_random_interval_score": 6.009637327618915,
+    "week_mean_mae_differences": [
+      0.529728098979259,
+      1.469516565444448,
+      0.766240317663321,
+      -0.26226072692478675
+    ],
+    "distinct_uncertainty_selected_sets": 2
+  },
+  {
+    "population": 2048,
+    "groups": 2,
+    "uncertainty_minus_random_mae": 3.3915931892848334,
+    "relative_mae_percent": 17.278891021211248,
+    "uncertainty_minus_random_interval_score": 27.57735852271238,
+    "week_mean_mae_differences": [
+      5.753977195988895,
+      4.064019266890234,
+      7.859208193875169,
+      -4.110831899614965
+    ],
+    "distinct_uncertainty_selected_sets": 1
+  },
+  {
+    "population": 2048,
+    "groups": 4,
+    "uncertainty_minus_random_mae": 1.5758336914723503,
+    "relative_mae_percent": 7.809680817941122,
+    "uncertainty_minus_random_interval_score": 3.842136529563244,
+    "week_mean_mae_differences": [
+      1.1771171131440044,
+      1.4256294721387093,
+      2.1870177547359053,
+      1.5135704258707827
+    ],
+    "distinct_uncertainty_selected_sets": 2
+  },
+  {
+    "population": 2048,
+    "groups": 8,
+    "uncertainty_minus_random_mae": -1.0034009899045344,
+    "relative_mae_percent": -4.910848562779586,
+    "uncertainty_minus_random_interval_score": -15.439148827794444,
+    "week_mean_mae_differences": [
+      -0.7760427427766894,
+      -0.6500479021638688,
+      -0.31809912147391395,
+      -2.2694141932036658
+    ],
+    "distinct_uncertainty_selected_sets": 1
+  },
+  {
+    "population": 4194,
+    "groups": 2,
+    "uncertainty_minus_random_mae": 2.6971267227804105,
+    "relative_mae_percent": 7.671140291724102,
+    "uncertainty_minus_random_interval_score": -17.041052185510004,
+    "week_mean_mae_differences": [
+      2.275294088395127,
+      7.357635670461093,
+      5.114326043200918,
+      -3.9587489109354976
+    ],
+    "distinct_uncertainty_selected_sets": 1
+  },
+  {
+    "population": 4194,
+    "groups": 4,
+    "uncertainty_minus_random_mae": 1.4444033375220078,
+    "relative_mae_percent": 4.052201754703055,
+    "uncertainty_minus_random_interval_score": -48.90771072023613,
+    "week_mean_mae_differences": [
+      2.06089031082864,
+      2.7223576156915055,
+      -1.163884034514182,
+      2.158249458082069
+    ],
+    "distinct_uncertainty_selected_sets": 1
+  },
+  {
+    "population": 4194,
+    "groups": 8,
+    "uncertainty_minus_random_mae": 1.4830435559768278,
+    "relative_mae_percent": 3.9443981464355597,
+    "uncertainty_minus_random_interval_score": 14.584241101581444,
+    "week_mean_mae_differences": [
+      1.7742218714943203,
+      4.419698012610894,
+      -4.158739993786227,
+      3.8969943335883244
+    ],
+    "distinct_uncertainty_selected_sets": 1
+  }
+]

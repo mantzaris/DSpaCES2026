@@ -1,0 +1,377 @@
+{
+  "stage": "regional_refinement",
+  "start_epoch": 1790159450.3328989,
+  "start_utc": "2026-09-23T10:30:50.332914+00:00",
+  "prior_gpu_seconds": 2245.549561738968,
+  "prior_cpu_seconds": 1170.717678880479,
+  "cap_seconds": 5400,
+  "jobs": [
+    {
+      "label": "syntax_check",
+      "command": [
+        "python3",
+        "-m",
+        "py_compile",
+        "scripts/prepare_refinement.py",
+        "scripts/replay_refinement.py",
+        "src/evidence_fusion/refinement_access.py",
+        "src/evidence_fusion/refinement_gaussian.py",
+        "tests/test_refinement.py"
+      ],
+      "timeout": 60,
+      "status": "passed",
+      "start_utc": "2026-09-23T10:30:50.332941+00:00",
+      "exit_code": 0,
+      "wall_seconds": 0.06440350499178749
+    },
+    {
+      "label": "source_transfer",
+      "command": [
+        "scp",
+        "-o",
+        "BatchMode=yes",
+        "-o",
+        "ConnectTimeout=15",
+        "-o",
+        "StrictHostKeyChecking=yes",
+        "-o",
+        "UserKnownHostsFile=/tmp/runpod-exfhunmqghc3yx-known_hosts",
+        "-i",
+        "/home/resort/.ssh/id_rsa",
+        "-P",
+        "38369",
+        "/tmp/regional-refinement-source.tar",
+        "root@213.173.107.237:/tmp/regional-refinement-source.tar"
+      ],
+      "timeout": 180,
+      "status": "passed",
+      "start_utc": "2026-09-23T10:31:18.598268+00:00",
+      "exit_code": 0,
+      "wall_seconds": 6.581329366003047
+    },
+    {
+      "label": "correctness",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "timeout": 180,
+      "status": "passed",
+      "start_utc": "2026-09-23T10:31:40.638469+00:00",
+      "exit_code": 0,
+      "wall_seconds": 4.120417091995478
+    },
+    {
+      "label": "prepare",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "scripts/prepare_refinement.py"
+      ],
+      "timeout": 600,
+      "status": "passed",
+      "start_utc": "2026-09-23T10:32:12.209489+00:00",
+      "exit_code": 0,
+      "wall_seconds": 14.483630766160786
+    },
+    {
+      "label": "prepare_corrected",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "scripts/prepare_refinement.py"
+      ],
+      "timeout": 600,
+      "status": "passed",
+      "start_utc": "2026-09-23T10:35:22.730630+00:00",
+      "exit_code": 0,
+      "wall_seconds": 39.684816972352564
+    },
+    {
+      "label": "corrected_tests",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "timeout": 180,
+      "status": "passed",
+      "start_utc": "2026-09-23T10:37:19.892381+00:00",
+      "exit_code": 0,
+      "wall_seconds": 3.920905912294984
+    },
+    {
+      "label": "smoke",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "scripts/replay_refinement.py",
+        "--smoke"
+      ],
+      "timeout": 180,
+      "status": "passed",
+      "start_utc": "2026-09-23T10:37:23.847354+00:00",
+      "exit_code": 0,
+      "wall_seconds": 2.6184010170400143
+    },
+    {
+      "label": "final_source_tests",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "timeout": 180,
+      "status": "passed",
+      "start_utc": "2026-09-23T10:40:03.303467+00:00",
+      "exit_code": 0,
+      "wall_seconds": 3.9204676058143377
+    },
+    {
+      "label": "final_source_smoke",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "scripts/replay_refinement.py",
+        "--smoke"
+      ],
+      "timeout": 180,
+      "status": "passed",
+      "start_utc": "2026-09-23T10:40:07.259338+00:00",
+      "exit_code": 0,
+      "wall_seconds": 3.870311583392322
+    },
+    {
+      "label": "full_regional_refinement",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "scripts/replay_refinement.py"
+      ],
+      "timeout": 1200,
+      "status": "passed",
+      "start_utc": "2026-09-23T10:40:11.168411+00:00",
+      "exit_code": 0,
+      "wall_seconds": 63.508843828924
+    },
+    {
+      "label": "analysis_figures",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "scripts/analyze_refinement.py"
+      ],
+      "timeout": 180,
+      "status": "passed",
+      "start_utc": "2026-09-23T10:42:56.157175+00:00",
+      "exit_code": 0,
+      "wall_seconds": 2.6184258051216602
+    },
+    {
+      "label": "durable_artifact_audit",
+      "command": [
+        "python3",
+        "scripts/audit_refinement.py"
+      ],
+      "timeout": 180,
+      "status": "passed",
+      "start_utc": "2026-09-23T10:43:50.866660+00:00",
+      "exit_code": 0,
+      "wall_seconds": 0.6656588379992172
+    },
+    {
+      "label": "figure_comparison_audit",
+      "command": [
+        "python3",
+        "scripts/analyze_refinement.py"
+      ],
+      "timeout": 180,
+      "status": "passed",
+      "start_utc": "2026-09-23T10:45:23.999739+00:00",
+      "exit_code": 0,
+      "wall_seconds": 6.125234213002841
+    },
+    {
+      "label": "figure_render_audit",
+      "command": [
+        "bash",
+        "-c",
+        "for name in refinement_replay accuracy_resource refinement_cost_scale; do pdftoppm -scale-to 1600 -png -singlefile reports/figures/refinement/$name.pdf /tmp/$name; done"
+      ],
+      "timeout": 60,
+      "status": "passed",
+      "start_utc": "2026-09-23T10:45:47.939112+00:00",
+      "exit_code": 0,
+      "wall_seconds": 0.6655917540047085
+    },
+    {
+      "label": "cuda_activity_profile",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "scripts/replay_refinement.py",
+        "--smoke",
+        "--profile"
+      ],
+      "timeout": 180,
+      "status": "passed",
+      "start_utc": "2026-09-23T10:48:05.443462+00:00",
+      "exit_code": 0,
+      "wall_seconds": 7.728621958754957
+    },
+    {
+      "label": "handoff_source_tests",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "timeout": 180,
+      "status": "passed",
+      "start_utc": "2026-09-23T10:50:26.910681+00:00",
+      "exit_code": 0,
+      "wall_seconds": 4.020554605871439
+    },
+    {
+      "label": "final_missing_support_tests",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "timeout": 180,
+      "status": "passed",
+      "start_utc": "2026-09-23T10:52:27.302497+00:00",
+      "exit_code": 0,
+      "wall_seconds": 4.019874772056937
+    },
+    {
+      "label": "final_figures",
+      "command": [
+        "python3",
+        "scripts/analyze_refinement.py"
+      ],
+      "timeout": 180,
+      "status": "passed",
+      "start_utc": "2026-09-23T10:57:13.953605+00:00",
+      "exit_code": 0,
+      "wall_seconds": 6.025515715999063
+    },
+    {
+      "label": "final_durable_audit",
+      "command": [
+        "python3",
+        "scripts/audit_refinement.py"
+      ],
+      "timeout": 180,
+      "status": "passed",
+      "start_utc": "2026-09-23T10:57:20.016391+00:00",
+      "exit_code": 0,
+      "wall_seconds": 0.7158227259933483
+    },
+    {
+      "label": "final_figure_render",
+      "command": [
+        "bash",
+        "-c",
+        "for name in refinement_replay accuracy_resource refinement_cost_scale; do pdftoppm -scale-to 1600 -png -singlefile reports/figures/refinement/$name.pdf /tmp/$name; done"
+      ],
+      "timeout": 60,
+      "status": "passed",
+      "start_utc": "2026-09-23T10:57:20.771763+00:00",
+      "exit_code": 0,
+      "wall_seconds": 0.6657294769975124
+    },
+    {
+      "label": "final_latency_reference_summaries",
+      "command": [
+        "python3",
+        "scripts/analyze_refinement.py"
+      ],
+      "timeout": 180,
+      "status": "failed",
+      "start_utc": "2026-09-23T10:58:17.393632+00:00",
+      "exit_code": 1,
+      "wall_seconds": 3.3209562549891416
+    },
+    {
+      "label": "corrected_latency_reference_summaries",
+      "command": [
+        "python3",
+        "scripts/analyze_refinement.py"
+      ],
+      "timeout": 180,
+      "status": "passed",
+      "start_utc": "2026-09-23T10:58:28.566985+00:00",
+      "exit_code": 0,
+      "wall_seconds": 6.077228199996171
+    },
+    {
+      "label": "pod_final_idle_inventory",
+      "command": [
+        "ssh",
+        "-o",
+        "BatchMode=yes",
+        "-o",
+        "ConnectTimeout=15",
+        "-o",
+        "StrictHostKeyChecking=yes",
+        "-o",
+        "UserKnownHostsFile=/tmp/runpod-exfhunmqghc3yx-known_hosts",
+        "-i",
+        "/home/resort/.ssh/id_rsa",
+        "-p",
+        "38369",
+        "root@213.173.107.237",
+        "date -u +%FT%TZ; nvidia-smi --query-gpu=name,memory.total,memory.used,utilization.gpu,driver_version --format=csv; nvidia-smi --query-compute-apps=pid,process_name,used_memory --format=csv; ps -eo comm= | sort | uniq -c; du -sb /workspace/DSpaCES2026-regional/data /workspace/DSpaCES2026-stage1/data; df -B1 /workspace; cd /workspace/DSpaCES2026-regional && sha256sum src/evidence_fusion/refinement_gaussian.py src/evidence_fusion/refinement_access.py scripts/prepare_refinement.py scripts/replay_refinement.py tests/test_refinement.py"
+      ],
+      "timeout": 120,
+      "status": "passed",
+      "start_utc": "2026-09-23T11:05:02.666608+00:00",
+      "exit_code": 0,
+      "wall_seconds": 2.1208728780038655
+    },
+    {
+      "label": "final_artifact_verification",
+      "command": [
+        "python3",
+        "scripts/verify_refinement_artifacts.py"
+      ],
+      "timeout": 120,
+      "status": "passed",
+      "start_utc": "2026-09-23T11:06:21.710979+00:00",
+      "exit_code": 0,
+      "wall_seconds": 0.3149556800053688
+    },
+    {
+      "label": "final_source_syntax",
+      "command": [
+        "python3",
+        "-m",
+        "py_compile",
+        "scripts/refinement_job.py",
+        "scripts/analyze_refinement.py",
+        "scripts/verify_refinement_artifacts.py"
+      ],
+      "timeout": 60,
+      "status": "passed",
+      "start_utc": "2026-09-23T11:06:22.073087+00:00",
+      "exit_code": 0,
+      "wall_seconds": 0.03251175599871203
+    }
+  ],
+  "closed": true,
+  "accounting": "All elapsed from first new job to closure, including setup, idle, local jobs and artifact copies. Closed-stage billing idle recorded separately, not reset or charged as experimental use.",
+  "previous_stage_closed_utc": "2026-09-23T05:25:15.261704+00:00",
+  "inter_stage_billing_idle_seconds": 18335.07119488716,
+  "allocated_seconds": 2328.446834564209,
+  "cumulative_regional_allocated_seconds": 4573.996396303177,
+  "charged_cpu_seconds": 1538.6087611642433,
+  "remaining_regional_seconds": 6226.003603696823,
+  "remaining_stage_seconds": 3071.553165435791,
+  "measured_elapsed_seconds": 2208.446834564209,
+  "closed_utc": "2026-09-23T11:07:38.779712+00:00",
+  "ancillary_cpu_seconds": 180,
+  "handoff_allocation_reserve_seconds": 120,
+  "ancillary_charge_note": "Conservative allowance for unwrapped SCP, archive extraction, git archive and read-only administration; elapsed allocation already includes these.",
+  "charged_through_utc": "2026-09-23T11:09:38.779733+00:00"
+}

@@ -31,6 +31,16 @@ def main():
     numeric = costs.select_dtypes(include=np.number).columns.difference(['population', 'origin', 'active_groups'])
     cost_summary = costs.groupby(ckeys)[numeric].median().reset_index()
     cost_summary.to_csv(folder/'cost_summary.csv', index=False)
+    costs.groupby(ckeys)[['complete_seconds', 'update_seconds',
+        'two_rerefine_seconds', 'two_cached_rerefine_seconds']].quantile(
+        [0.5, 0.95]).rename_axis(ckeys+['quantile']).reset_index().to_csv(
+        folder/'latency_quantiles.csv', index=False)
+    # Different evidence changes a posterior legitimately. These discrepancies
+    # are an acquisition diagnostic, not floating-point inference error.
+    reference = predictions.copy()
+    reference['absolute_mean_difference'] = abs(reference['mean']-reference.full_evidence_mean)
+    reference.groupby(keys)[['absolute_mean_difference']].mean().reset_index().to_csv(
+        folder/'full_evidence_query_differences.csv', index=False)
     check_cols = ['representation_error', 'cycle_error', 'factor_error', 'separator_mean_error',
                   'separator_covariance_error', 'aggregation_mean_error']
     correct = checks[checks.policy.isin(['fixed', 'random', 'uncertainty'])]

@@ -1,9 +1,29 @@
 # DSpaCES research pilots
 
-**Active work: Greater London regional household twin and shared-matrix solver.**
-The user selected and authorized this bounded implementation after planning
-handoff `09ae274`. It uses Low Carbon London observations, a training-only
-seasonal/factor state-space model, and finite-window source-access queries.
+**Completed active stage: Refinement Without Rebuilding, the bounded Greater
+London regional twin refinement pilot.** The GPU implementation uses 4,194 real
+households, with nested 1,024/2,048-household comparisons. It preserves registered
+posterior queries through detail eviction and evidence replacement. All 49 tests
+pass. The measured cache/reread tradeoff is real; a new inference contribution,
+capacity advantage over streamed fine inference, and adaptive-policy benefit
+are not established. One-hour regional intervals under-cover.
+
+Read the [measured refinement report](reports/REGIONAL_TWIN_STAGE2_REFINEMENT_REPORT.md),
+[theory and counterexamples](docs/REGIONAL_REFINEMENT_THEORY.md),
+[closest-source audit](docs/REGIONAL_REFINEMENT_NOVELTY_AUDIT.md), and
+[three measured figures](reports/figures/refinement/). The next proposed question
+is incremental boundary information when the time window moves; it is not an
+authorized next stage. The previous shared-matrix solver's negative result is
+preserved in the [regional Stage 1 report](reports/REGIONAL_TWIN_STAGE1_REPORT.md).
+
+Saved refinement summaries/figures regenerate with
+`python scripts/analyze_refinement.py`; executable preparation, replay and
+validation commands are in the report. The closed
+[resource ledger](results/refinement/resource_ledger.json) adds this stage to
+the original allowance and refuses further execution. Raw data/model caches are
+ignored by git and hash-listed in the
+[durable inventory](manifests/regional_refinement_durable.json).
+
 The compatibility-contract document remains an unchanged candidate at
 [DSpaCES_2026_Research_Plan.md](DSpaCES_2026_Research_Plan.md).
 

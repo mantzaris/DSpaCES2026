@@ -15,8 +15,16 @@ def main():
     parser.add_argument('--label', required=True)
     parser.add_argument('--timeout', type=int, default=600)
     parser.add_argument('--close', action='store_true')
+    parser.add_argument('--ancillary-seconds', type=int, default=0,
+                        help='Conservative unwrapped transfer/admin CPU charge at closure only')
+    parser.add_argument('--handoff-reserve-seconds', type=int, default=0,
+                        help='Conservative allocation tail for final closed-ledger copy and handoff')
     parser.add_argument('command', nargs=argparse.REMAINDER)
     args = parser.parse_args()
+    if args.ancillary_seconds < 0 or (args.ancillary_seconds and not args.close):
+        parser.error('Ancillary charge must be nonnegative and supplied only at closure')
+    if args.handoff_reserve_seconds < 0 or (args.handoff_reserve_seconds and not args.close):
+        parser.error('Handoff reserve must be nonnegative and supplied only at closure')
     root = Path(__file__).resolve().parents[1]
     folder = root/'results/refinement'
     folder.mkdir(parents=True, exist_ok=True)
@@ -45,7 +53,12 @@ def main():
         remaining = min(ledger['cap_seconds']-elapsed,
                         21600-ledger['prior_cpu_seconds']-sum(j['wall_seconds'] for j in ledger['jobs']))
         if args.close:
-            ledger.update(closed=True, closed_utc=dt.datetime.now(dt.timezone.utc).isoformat())
+            if args.ancillary_seconds+args.handoff_reserve_seconds > remaining:
+                raise SystemExit('Ancillary charge/reserve would exceed remaining resource cap')
+            ledger.update(closed=True, closed_utc=dt.datetime.now(dt.timezone.utc).isoformat(),
+                          ancillary_cpu_seconds=args.ancillary_seconds,
+                          handoff_allocation_reserve_seconds=args.handoff_reserve_seconds,
+                          ancillary_charge_note='Conservative allowance for unwrapped SCP, archive extraction, git archive and read-only administration; elapsed allocation already includes these.')
         else:
             command = args.command[1:] if args.command[:1] == ['--'] else args.command
             if not command or remaining <= 0:
@@ -69,9 +82,13 @@ def main():
                     code = 124
             row.update(status='passed' if code == 0 else 'failed', exit_code=code,
                        wall_seconds=time.monotonic()-start)
-        ledger['allocated_seconds'] = time.time()-ledger['start_epoch']
+        ledger['measured_elapsed_seconds'] = time.time()-ledger['start_epoch']
+        ledger['allocated_seconds'] = ledger['measured_elapsed_seconds']+ledger.get('handoff_allocation_reserve_seconds', 0)
+        if args.close:
+            ledger['charged_through_utc'] = dt.datetime.fromtimestamp(
+                ledger['start_epoch']+ledger['allocated_seconds'], dt.timezone.utc).isoformat()
         ledger['cumulative_regional_allocated_seconds'] = ledger['prior_gpu_seconds']+ledger['allocated_seconds']
-        ledger['charged_cpu_seconds'] = ledger['prior_cpu_seconds']+sum(j['wall_seconds'] for j in ledger['jobs'])
+        ledger['charged_cpu_seconds'] = ledger['prior_cpu_seconds']+sum(j['wall_seconds'] for j in ledger['jobs'])+ledger.get('ancillary_cpu_seconds', 0)
         ledger['remaining_regional_seconds'] = 10800-ledger['cumulative_regional_allocated_seconds']
         ledger['remaining_stage_seconds'] = ledger['cap_seconds']-ledger['allocated_seconds']
         path.write_text(json.dumps(ledger, indent=2)+'\n')

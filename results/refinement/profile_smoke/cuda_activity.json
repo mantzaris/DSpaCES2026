@@ -1,0 +1,89 @@
+{
+  "scope": "1,024-household smoke only; instrumentation costs excluded from main timings",
+  "cuda_event_count": 9883,
+  "cuda_activity_seconds": 0.07110276700001213,
+  "kernel_seconds": 0.06909334900000733,
+  "transfer_or_memset_seconds": 0.002009418000004807,
+  "top_activities_us": [
+    [
+      "void kernel<getrf_wo_pivot_params_<double, 0, 256, 1, 64, 64, 64, 16, 1, 1> >(int, int, void*, int, void*, int, int, int, int, int, int*)",
+      14297.218000000168
+    ],
+    [
+      "void trsm_left_kernel<int, double, 256, 4, true, false, false, false, false>(cublasTrsmParams<int, double>, double, double const*, int)",
+      10829.908000000054
+    ],
+    [
+      "void trsm_left_kernel<int, double, 256, 4, true, false, true, false, false>(cublasTrsmParams<int, double>, double, double const*, int)",
+      9212.913000001223
+    ],
+    [
+      "void cutlass::Kernel2<cutlass_80_tensorop_d884gemm_32x32_16x5_tn_align1>(cutlass_80_tensorop_d884gemm_32x32_16x5_tn_align1::Params)",
+      9048.82400000043
+    ],
+    [
+      "void cutlass::Kernel2<cutlass_80_tensorop_d884gemm_32x32_16x5_nn_align1>(cutlass_80_tensorop_d884gemm_32x32_16x5_nn_align1::Params)",
+      8013.546999999206
+    ],
+    [
+      "void at::native::vectorized_elementwise_kernel<2, at::native::CUDAFunctor_add<double>, std::array<char*, 3ul> >(int, at::native::CUDAFunctor_add<double>, std::array<char*, 3ul>)",
+      1788.2800000060815
+    ],
+    [
+      "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl<at::native::(anonymous namespace)::pow_tensor_tensor_kernel(at::TensorIteratorBase&)::{lambda()#1}::operator()() const::{lambda()#6}::operator()() const::{lambda(double, double)#1}>(at::TensorIteratorBase&, at::native::(anonymous namespace)::pow_tensor_tensor_kernel(at::TensorIteratorBase&)::{lambda()#1}::operator()() const::{lambda()#6}::operator()() const::{lambda(double, double)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::(anonymous namespace)::pow_tensor_tensor_kernel(at::TensorIteratorBase&)::{lambda()#1}::operator()() const::{lambda()#6}::operator()() const::{lambda(double, double)#1}>(at::TensorIteratorBase&, at::native::(anonymous namespace)::pow_tensor_tensor_kernel(at::TensorIteratorBase&)::{lambda()#1}::operator()() const::{lambda()#6}::operator()() const::{lambda(double, double)#1} const&)::{lambda(int)#1})",
+      1640.845000000263
+    ],
+    [
+      "void trsv_lt_exec<double, 32u, 32u, 4u, false, false>(int, double const*, long, double*, long, int*)",
+      1109.833000000217
+    ],
+    [
+      "void gemmSN_NN_kernel<double, 256, 4, 2, 8, 3, 4, false, cublasGemvTensorStridedBatched<double const>, cublasGemvTensorStridedBatched<double const>, cublasGemvTensorStridedBatched<double> >(cublasGemmSmallNParams<cublasGemvTensorStridedBatched<double const>, cublasGemvTensorStridedBatched<double const>, cublasGemvTensorStridedBatched<double>, double>)",
+      884.5199999988545
+    ],
+    [
+      "Memcpy HtoD (Pageable -> Device)",
+      884.3620000063383
+    ],
+    [
+      "Memcpy DtoH (Device -> Pageable)",
+      862.8809999990044
+    ],
+    [
+      "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<double, double, double, at::native::binary_internal::MulFunctor<double> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<double, double, double, at::native::binary_internal::MulFunctor<double> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<double, double, double, at::native::binary_internal::MulFunctor<double> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<double, double, double, at::native::binary_internal::MulFunctor<double> > const&)::{lambda(int)#1})",
+      782.5239999998594
+    ],
+    [
+      "void cutlass::Kernel2<cutlass_80_tensorop_d884gemm_32x32_16x5_nt_align1>(cutlass_80_tensorop_d884gemm_32x32_16x5_nt_align1::Params)",
+      758.2760000005946
+    ],
+    [
+      "void at::native::reduce_kernel<128, 4, at::native::ReduceOp<double, at::native::func_wrapper_t<double, at::native::sum_functor<double, double, double>::operator()(at::TensorIterator&)::{lambda(double, double)#1}>, unsigned int, double, 4, 4> >(at::native::ReduceOp<double, at::native::func_wrapper_t<double, at::native::sum_functor<double, double, double>::operator()(at::TensorIterator&)::{lambda(double, double)#1}>, unsigned int, double, 4, 4>)",
+      745.0569999993895
+    ],
+    [
+      "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#6}::operator()() const::{lambda(double)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#6}::operator()() const::{lambda(double)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#6}::operator()() const::{lambda(double)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#6}::operator()() const::{lambda(double)#1} const&)::{lambda(int)#1})",
+      700.6139999993902
+    ],
+    [
+      "void trsv_ln_exec<double, 32u, 32u, 4u, false>(int, double const*, long, double*, long, int*)",
+      677.5379999998258
+    ],
+    [
+      "void at::native::index_elementwise_kernel<128, 4, at::native::gpu_index_kernel<at::native::index_kernel_impl<at::native::OpaqueType<8> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1}>(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>, at::native::index_kernel_impl<at::native::OpaqueType<8> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1} const&, bool)::{lambda(int)#1}>(long, at::native::gpu_index_kernel<at::native::index_kernel_impl<at::native::OpaqueType<8> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1}>(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>, at::native::index_kernel_impl<at::native::OpaqueType<8> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1} const&, bool)::{lambda(int)#1})",
+      639.1729999998352
+    ],
+    [
+      "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<double, at::native::func_wrapper_t<double, at::native::sum_functor<double, double, double>::operator()(at::TensorIterator&)::{lambda(double, double)#1}>, unsigned int, double, 4, 4> >(at::native::ReduceOp<double, at::native::func_wrapper_t<double, at::native::sum_functor<double, double, double>::operator()(at::TensorIterator&)::{lambda(double, double)#1}>, unsigned int, double, 4, 4>)",
+      617.4750000002095
+    ],
+    [
+      "void trsm_template_batched_lNL_kernel<double, 32, 32>(magma_diag_t, int, int, double, double**, int, double**, int, int, int, int, int)",
+      529.0559999999823
+    ],
+    [
+      "void trsm_template_batched_lTL_kernel<double, 32, 32, 1>(magma_diag_t, int, int, double, double**, int, double**, int, int, int, int, int)",
+      526.2740000004414
+    ]
+  ]
+}
