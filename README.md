@@ -1,6 +1,29 @@
 # DSpaCES research pilots
 
-**Completed active stage: When Regional Totals Hide Local Change.** The bounded
+**Completed active stage: shock-responsive acquisition diagnosis.** GPU reconstruction
+verified all 112 original episodes. In 96 demand shocks, 93 group scores changed,
+but no original acquisition trigger or schedule changed. This was a policy
+threshold limitation, not a lost overlay or blocked budget.
+
+One frozen rank-responsive variant changed schedules in 3/12 fresh disturbances
+but did not improve localization: variant, original and random each localized
+2/12. Local one-hour MAE was 0.2660, 0.2621 and 0.2667 kWh respectively; streamed
+fine achieved 0.2053. Same-evidence fixed/adaptive outputs agreed exactly. Nine
+focused tests pass; no unexplained numerical failure. These four-background
+results do not establish an adaptive-refinement advantage or publication readiness.
+
+Read the [Stage 4 report](reports/REGIONAL_TWIN_STAGE4_ACQUISITION_REPORT.md),
+[diagnostic field definitions](docs/REGIONAL_ACQUISITION_FIELDS.md),
+[pre-edit correction hypothesis](docs/REGIONAL_ACQUISITION_CORRECTION.md),
+[three PDF/SVG figures](reports/figures/acquisition/), and
+[closed resource handoff](results/acquisition/resource_handoff.json).
+The stage charged 25.3263 allocation minutes, leaving 11.2337 original regional
+minutes. Both outcome seals remain intact; the original main study is disabled.
+The existing pod/storage remain allocated and idle. No next stage is running.
+
+## Preserved Stage 3 shock study
+
+**Completed prior stage: When Regional Totals Hide Local Change.** The bounded
 GPU shock study ran 112 episodes on 4,194 real households, using eight exploratory
 development backgrounds and reversible synthetic disturbances. All 16 focused
 shock tests pass; previous results remain preserved.

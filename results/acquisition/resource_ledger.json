@@ -1,0 +1,221 @@
+{
+  "stage": "regional_acquisition",
+  "start_epoch": 1790205694.0702393,
+  "start_utc": "2026-09-23T23:21:34.070239+00:00",
+  "prior_gpu_seconds": 8606.397628307343,
+  "prior_cpu_seconds": 4453.913858663029,
+  "cap_seconds": 1800,
+  "jobs": [
+    {
+      "label": "behavioural_smoke",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_acquisition.py"
+      ],
+      "timeout": 90,
+      "status": "passed",
+      "start_utc": "2026-09-23T23:23:04.070284+00:00",
+      "exit_code": 0,
+      "wall_seconds": 2.368856436572969
+    },
+    {
+      "label": "diagnostic_smoke",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "scripts/diagnose_acquisition.py",
+        "--smoke"
+      ],
+      "timeout": 90,
+      "status": "failed",
+      "start_utc": "2026-09-23T23:23:06.511039+00:00",
+      "exit_code": 1,
+      "wall_seconds": 4.573265406303108
+    },
+    {
+      "label": "diagnostic_smoke_retry",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "scripts/diagnose_acquisition.py",
+        "--smoke"
+      ],
+      "timeout": 90,
+      "status": "passed",
+      "start_utc": "2026-09-23T23:24:14.708824+00:00",
+      "exit_code": 0,
+      "wall_seconds": 6.777214350178838
+    },
+    {
+      "label": "reconstruct_all",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "scripts/diagnose_acquisition.py"
+      ],
+      "timeout": 600,
+      "status": "passed",
+      "start_utc": "2026-09-23T23:24:21.528842+00:00",
+      "exit_code": 0,
+      "wall_seconds": 370.90976702049375
+    },
+    {
+      "label": "correction_tests",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_acquisition.py"
+      ],
+      "timeout": 60,
+      "status": "passed",
+      "start_utc": "2026-09-23T23:30:32.440200+00:00",
+      "exit_code": 0,
+      "wall_seconds": 2.319256439805031
+    },
+    {
+      "label": "diagnostic_analysis",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "scripts/analyze_acquisition.py"
+      ],
+      "timeout": 90,
+      "status": "passed",
+      "start_utc": "2026-09-23T23:30:34.772813+00:00",
+      "exit_code": 0,
+      "wall_seconds": 2.0185596430674195
+    },
+    {
+      "label": "correction_smoke",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "scripts/replay_acquisition.py",
+        "smoke"
+      ],
+      "timeout": 90,
+      "status": "passed",
+      "start_utc": "2026-09-23T23:30:36.804194+00:00",
+      "exit_code": 0,
+      "wall_seconds": 4.121216656640172
+    },
+    {
+      "label": "correction_calibration",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "scripts/replay_acquisition.py",
+        "calibrate"
+      ],
+      "timeout": 90,
+      "status": "passed",
+      "start_utc": "2026-09-23T23:30:40.986269+00:00",
+      "exit_code": 0,
+      "wall_seconds": 15.996319139376283
+    },
+    {
+      "label": "freeze",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "scripts/freeze_acquisition.py"
+      ],
+      "timeout": 30,
+      "status": "passed",
+      "start_utc": "2026-09-23T23:31:45.291137+00:00",
+      "exit_code": 0,
+      "wall_seconds": 1.2662352118641138
+    },
+    {
+      "label": "paired_comparison",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "scripts/replay_acquisition.py",
+        "run"
+      ],
+      "timeout": 600,
+      "status": "passed",
+      "start_utc": "2026-09-23T23:31:46.600289+00:00",
+      "exit_code": 0,
+      "wall_seconds": 377.1110102739185
+    },
+    {
+      "label": "final_artifact_audit",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "scripts/audit_acquisition.py"
+      ],
+      "timeout": 60,
+      "status": "passed",
+      "start_utc": "2026-09-23T23:38:03.712557+00:00",
+      "exit_code": 0,
+      "wall_seconds": 2.468868230469525
+    },
+    {
+      "label": "comparison_analysis",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "scripts/analyze_acquisition_comparison.py"
+      ],
+      "timeout": 90,
+      "status": "passed",
+      "start_utc": "2026-09-23T23:38:06.192660+00:00",
+      "exit_code": 0,
+      "wall_seconds": 5.726422877982259
+    },
+    {
+      "label": "final_diagnostic_analysis",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "scripts/analyze_acquisition.py"
+      ],
+      "timeout": 60,
+      "status": "passed",
+      "start_utc": "2026-09-23T23:38:11.929961+00:00",
+      "exit_code": 0,
+      "wall_seconds": 2.1690633054822683
+    },
+    {
+      "label": "final_tests",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_acquisition.py"
+      ],
+      "timeout": 60,
+      "status": "passed",
+      "start_utc": "2026-09-23T23:38:14.150831+00:00",
+      "exit_code": 0,
+      "wall_seconds": 2.3187999054789543
+    },
+    {
+      "label": "final_paired_alarm_audit",
+      "command": [
+        "/workspace/DSpaCES2026-stage1/.venv/bin/python",
+        "scripts/analyze_acquisition_comparison.py"
+      ],
+      "timeout": 60,
+      "status": "passed",
+      "start_utc": "2026-09-23T23:41:47.503402+00:00",
+      "exit_code": 0,
+      "wall_seconds": 6.07822837587446
+    }
+  ],
+  "closed": true,
+  "accounting": "All elapsed from first new job to closure, including setup, idle, local jobs and artifact copies. Closed-stage billing idle recorded separately, not reset or charged as experimental use.",
+  "previous_stage_closed_utc": "2026-09-23T16:31:48.638050+00:00",
+  "inter_stage_billing_idle_seconds": 24675.43218922615,
+  "measured_elapsed_seconds": 1219.5796830654144,
+  "allocated_seconds": 1519.5796830654144,
+  "cumulative_regional_allocated_seconds": 10125.977311372757,
+  "charged_cpu_seconds": 5500.1369419365365,
+  "remaining_regional_seconds": 674.022688627243,
+  "remaining_stage_seconds": 280.42031693458557,
+  "preledger_setup_seconds": 90,
+  "setup_note": "Conservative 90-second charge for initial source transfer and premature extraction retry before first wrapped job",
+  "closed_utc": "2026-09-23T23:41:53.649906+00:00",
+  "ancillary_cpu_seconds": 240,
+  "handoff_allocation_reserve_seconds": 300,
+  "ancillary_charge_note": "Conservative allowance for unwrapped SCP, archive extraction, git archive and read-only administration; elapsed allocation already includes these.",
+  "charged_through_utc": "2026-09-23T23:46:53.649922+00:00"
+}

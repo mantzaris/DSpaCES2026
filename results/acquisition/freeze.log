@@ -1,0 +1,23 @@
+{
+  "frozen_utc": "2026-09-23T23:31:46.340467+00:00",
+  "source_commit": "18fe4af",
+  "hashes": {
+    "configs/regional_acquisition.json": "db3d4bd9f47ef400f65462252fd285c8f6fd1f476f5663fbadb288dc50017e6f",
+    "configs/regional_shock.json": "60d9a17abac78639de7a76ce1ec47a89a2b4b2c313dd3c9d8072526192c0c902",
+    "results/acquisition/calibration.json": "8765c570e8f3b2efe489a9cf7b8aaceed5b666b43c305dd0ca7d0d8fdec9e5d8",
+    "data/regional/refinement/model.npz": "d2c15c50bbfa77c7b4c46180c853cf27854a154ac6c97b653fa5f667f448fe0e",
+    "scripts/replay_shock.py": "68840726558af563576c448c8a9c93fb06d0d56b2b360b1fcf120b7fbf71d03f",
+    "scripts/replay_acquisition.py": "aab5b6325dc46742fcceb81d1831e09c1bb459b7be52b030013925cc6605bf62",
+    "src/evidence_fusion/acquisition_policy.py": "92d0fcc4c368b3860d1d28de9734562573f44151549c926e4500282b8c713bdf",
+    "src/evidence_fusion/shock_gaussian.py": "d0c131210f2e58191ed7c153f3e0107a56b13fe5276004a27783cdbe1c1e317c",
+    "src/evidence_fusion/shock_access.py": "edce902d09cf140890f32f7d8ee865afdef50e2f4cc9ca419141cbddd21f6cf9",
+    "src/evidence_fusion/shock_overlays.py": "515df158750953d0fed18f2e167a3f98c82ceedbf8ffc622a33973b213602613",
+    "docs/REGIONAL_ACQUISITION_CORRECTION.md": "fcb23e35c9798418bda7b8409d230978642a84625a577f4aec5231a05ec3fd78"
+  },
+  "remaining_seconds": 1187.7297768592834,
+  "projected_replay_seconds": 410.1547996401787,
+  "fresh_episodes": 16,
+  "original_diagnostic_episodes": 4,
+  "backgrounds": 4,
+  "no_new_comparative_outcomes_opened": true
+}

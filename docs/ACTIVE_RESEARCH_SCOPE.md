@@ -1,5 +1,31 @@
 # Active scope - 2026-09-23
 
+## Stage 4 complete; no automatic continuation
+
+The [acquisition report](../reports/REGIONAL_TWIN_STAGE4_ACQUISITION_REPORT.md)
+explains the original failure and evaluates one frozen correction. M3b changes
+3/12 fresh shock schedules without a convincing detection/forecast advantage.
+Same-information representations remain identical. Nine focused tests pass.
+The closed ledger charges25.3263 additional allocation minutes and leaves11.2337
+original regional minutes. Both seals and prior negative results persist.
+The pod remains allocated and idle; unused allowance is not authorization for
+another stage. The authorization below is historical and now completed.
+
+
+## Authorized acquisition diagnosis and one corrective test
+
+The latest user instruction authorizes Stage4 on main: reproduce the Stage3
+acquisition failure, trace observation-to-action, and evaluate one evidence-supported
+variant. The below historical no-continuation statuses are superseded only for
+this bounded task. The unchanged probe score can react, but its threshold blocked
+shock-induced selection changes. M3b separates positive score ranking from alarm
+declaration; it preserves the209-reading budget and42 extra exploration reads.
+See [the pre-edit diagnosis](REGIONAL_ACQUISITION_CORRECTION.md).
+No model search, new ingestion, held-out outcomes, RJD rerun or CPU speed campaign.
+The stage ledger inherits143.4399605 allocated minutes and caps this continuation
+at30 minutes, with five minutes reserved inside that cap for handoff.
+
+
 ## Completed shock study: no automatic continuation
 
 The bounded shock study completed 112 episodes, 5,376 sequential updates and

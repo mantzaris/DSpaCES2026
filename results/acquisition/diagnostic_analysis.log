@@ -1,0 +1,52 @@
+{
+  "original_episodes": 112,
+  "demand_episodes": 96,
+  "households": 4194,
+  "backgrounds": 8,
+  "local_mae": {
+    "M0": 0.17770166475734553,
+    "M1": 0.1762059998032441,
+    "M2": 0.17104777672095392,
+    "M3": 0.16959472700198724,
+    "M3_fixed": 0.16959472700198724,
+    "M4": 0.1385861241579701
+  },
+  "negative_alarm_rates": {
+    "M0": 0.09375,
+    "M1": 0.0390625,
+    "M2": 0.06510416666666667,
+    "M3": 0.078125,
+    "M3_fixed": 0.078125,
+    "M4": 0.10677083333333333
+  },
+  "exact_cancellation_localizations": {
+    "M0": 0,
+    "M1": 0,
+    "M2": 0,
+    "M3": 0,
+    "M3_fixed": 0,
+    "M4": 0
+  },
+  "path_counts": {
+    "Demand shocks": 96,
+    "Informative fine exposure": 96,
+    "Informative probe exposure": 94,
+    "Probe innovations changed": 96,
+    "Group scores changed": 93,
+    "Ranking changed during event": 86,
+    "Trigger changed during event": 0,
+    "Action changed during event": 0,
+    "Actual IDs changed": 0
+  },
+  "max_score_reproduction_error": 1.5987211554602254e-14,
+  "identity_comparisons": 5376,
+  "all_ordered_id_hashes_match_original": true,
+  "requested_read_assimilated": {
+    "requested": 1123584,
+    "read": 1106434,
+    "assimilated": 1106434
+  },
+  "probe_hit_no_score_change": 3,
+  "no_informative_fine_exposure": 0,
+  "budget_blocks": 0
+}

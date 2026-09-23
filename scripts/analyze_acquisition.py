@@ -63,6 +63,17 @@ def main():
         summary['probe_hit_no_score_change']=int(((demand.probe_hits_steps>0)&demand.first_score_difference.isna()).sum())
         summary['no_informative_fine_exposure']=int((demand.fine_hits_steps==0).sum())
         summary['budget_blocks']=int(e.budget_block_steps.sum())
+        top=[]
+        for bg,block in s.groupby('background'):
+            control=block[block.family=='none'].set_index('step')
+            for eid,z in block[~block.family.isin(['none','sensor_fault'])].groupby('episode'):
+                z=z.set_index('step');changed=z.best_group!=control.best_group
+                top.append(dict(episode=eid,best_group_changed_steps=int(changed.sum()),
+                    best_group_changed_during_event=int((changed&z.in_event).sum()),
+                    changed_toward_affected_steps=int((changed&z.in_event&z.affected_top_group).sum())))
+        pd.DataFrame(top).to_csv(out/'top_rank_differences.csv',index=False)
+        summary['best_group_changed_episodes']=sum(r['best_group_changed_during_event']>0 for r in top)
+        summary['best_group_changed_toward_affected_episodes']=sum(r['changed_toward_affected_steps']>0 for r in top)
         family=demand.groupby('family').agg(episodes=('episode','size'),fine_exposure=('fine_hits_steps',lambda x:int((x>0).sum())),
             probe_exposure=('probe_hits_steps',lambda x:int((x>0).sum())),score_change=('first_score_difference',lambda x:int(x.notna().sum())),
             rank_change=('ranking_changed_steps',lambda x:int((x>0).sum())),trigger_change=('trigger_changed_steps',lambda x:int((x>0).sum())),

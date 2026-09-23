@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspace/DSpaCES2026-regional/scripts/diagnose_acquisition.py", line 144, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/DSpaCES2026-regional/scripts/diagnose_acquisition.py", line 130, in main
+    max_score=max(r['best_score'] for r in event),score_reproduction_max=max(r['score_error'] for r in rows),
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: max() iterable argument is empty

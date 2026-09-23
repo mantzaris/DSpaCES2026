@@ -1,0 +1,6 @@
+{
+  "['nvidia-smi', '--query-gpu=name,memory.total,memory.used,utilization.gpu', '--format=csv']": "name, memory.total [MiB], memory.used [MiB], utilization.gpu [%]\nNVIDIA RTX PRO 4500 Blackwell, 32623 MiB, 2 MiB, 0 %\n",
+  "['nvidia-smi', '--query-compute-apps=pid,process_name', '--format=csv']": "pid, process_name\n",
+  "['ps', '-eo', 'pid,comm']": "    PID COMMAND\n      1 docker-init\n     51 start.sh\n     82 nginx\n     83 nginx\n    130 sshd\n    135 start.sh\n    141 jupyter-lab\n    143 sleep\n 443523 sshd\n 443534 bash\n 443572 python\n 443578 ps\n",
+  "['du', '-sb', 'data', 'results']": "393366100\tdata\n55600087\tresults\n"
+}
