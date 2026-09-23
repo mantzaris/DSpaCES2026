@@ -16,3 +16,13 @@ This diagnostic is not recovery of a noise-free physical state. The full-informa
 reference trivially knows the current record. Predictive usefulness is judged by
 the separately frozen one-hour and six-hour forecasts. All matrix calculations
 use the existing GPU and count toward the same allocation; no new study starts.
+
+Before comparative analysis, native-support inspection found that two positive-side
+households in this preselected episode are missing. Main outcome metrics already
+exclude missing labels, but the illustrative forecast-side averages included them.
+The same diagnostic therefore reconstructs the preselected episode's six frozen
+method traces at all 48 updates, only to save local forecast means on the available
+target support. No readings or decisions change. Regional forecasts must match
+the original file within 1e-7. Preserve the original figure-data file and save the
+corrected series separately. This is a bounded illustration correction, not a
+rerun or replacement of the comparative outcome matrix.

@@ -36,6 +36,12 @@ comparative prediction.
   at every window advance. This implementation does not establish cross-window
   factor reuse or a new incremental inference algorithm. Within-step retention
   and subsequent eviction change storage, not the same-information posterior.
+- Main error/coverage metrics already use observed target support. The original
+  illustrative positive/negative-side forecast averages include all nominated
+  households, including two missing positive-side records in the preselected
+  episode. A saved-trace GPU reconstruction produces `figure_common_support.csv`
+  on matching target support and verifies unchanged regional predictions. The
+  original figure file and the reconstruction discrepancy are retained.
 - The provider constructs group sums by scanning household readings. Limited
   consumer access therefore measures a simulated fine-message/access saving,
   not a reduction in the provider's sensing or source ingestion. The evaluator's

@@ -21,6 +21,10 @@ def main():
     metrics=pd.read_csv(run/'metrics.csv.gz');alarms=pd.read_csv(run/'alarms.csv.gz')
     costs=pd.read_csv(run/'costs.csv.gz');access=pd.read_csv(run/'access.csv.gz',keep_default_na=False)
     checks=pd.read_csv(run/'checks.csv.gz');figdata=pd.read_csv(run/'figure.csv.gz')
+    corrected=root/'figure_common_support.csv'
+    if corrected.exists():
+        replacement=pd.read_csv(corrected)
+        figdata=pd.concat([figdata[~figdata.episode.isin(replacement.episode.unique())],replacement],ignore_index=True)
     model=dict(np.load('data/regional/refinement/model.npz',allow_pickle=False))
     # The channel trace is authoritative for simulated framing. M4 makes one
     # request, so its header is 64 bytes, not the two-request 128-byte estimate.

@@ -53,6 +53,42 @@ def main():
                 revealed_record_reconstruction_error=float(abs(mu[ids[seen]]-targets[cutoff,ids[seen]]).max()) if seen.any() else 0.))
     pd.DataFrame(rows).to_csv(root/'current_recovery.csv',index=False)
     print(pd.DataFrame(rows).to_string(index=False),flush=True)
+    # Repair only the illustrative series' support: original metric evaluation
+    # already excludes missing targets. Replay immutable traces, never policies.
+    engine=ShockGaussian(model,cfg['window'])
+    original=pd.read_csv(root/'run/figure.csv.gz')
+    original=original[original.episode==ep['episode']]
+    figure=[];max_match=0.
+    for step in range(cfg['steps']):
+        cutoff=cfg['window']-1+step;lower=cutoff-cfg['window']+1
+        window=readings[lower:cutoff+1].T
+        baseline=model['profile'][slots[lower:cutoff+1]].T.astype(float)
+        native=np.isfinite(window)
+        aggregate=np.stack([np.nansum(window[groups==g]-baseline[groups==g],axis=0) for g in range(16)])
+        for method in ('M0','M1','M2','M3','M3_fixed','M4'):
+            known=np.full_like(window,np.nan)
+            tm='M3' if method=='M3_fixed' else method
+            for r in trace[(trace.method==tm)&(trace.step>=lower)&(trace.step<=cutoff)].itertuples():
+                ids=np.arange(len(groups)) if r.households=='ALL' else np.fromstring(r.households,sep=' ',dtype=int)
+                known[ids,int(r.step)-lower]=readings[int(r.step),ids]-baseline[ids,int(r.step)-lower]
+            indices=[cutoff+h for h in engine.horizons]
+            support=np.stack([np.ones(len(groups),bool)]+[np.isfinite(targets[t]) for t in indices[1:]])
+            pred,_=engine.infer(native,known,aggregate,support,model['profile'][slots[indices]])
+            for hi,horizon in enumerate((2,12),start=1):
+                row=original[(original.step==step)&(original.method==method)&(original.horizon==horizon)].iloc[0].to_dict()
+                mu=pred[hi]['mean'].cpu().numpy()
+                max_match=max(max_match,abs(float(pred[hi]['region_mean'])-row['forecast_region']))
+                for side,label in [('plus','positive_ids'),('minus','negative_ids')]:
+                    ids=np.array(ep[label]);ids=ids[np.isfinite(targets[cutoff+horizon,ids])]
+                    row['forecast_'+side]=float(mu[ids].mean()) if len(ids) else np.nan
+                    row[side+'_target_support']=len(ids)
+                figure.append(row)
+    if max_match>1e-7:raise ArithmeticError('Saved-trace reconstruction differs from frozen forecast')
+    pd.DataFrame(figure).to_csv(root/'figure_common_support.csv',index=False)
+    (root/'figure_support_check.json').write_text(json.dumps(dict(episode=ep['episode'],
+        saved_region_mean_max_discrepancy=max_match,new_observations=0,
+        corrected_field='Illustrative local forecast means now use the same available target IDs as observed local means; main metrics were already correct'),indent=2)+'\n')
+    print('Figure support reconstruction maximum regional difference',max_match,flush=True)
 
 
 if __name__=='__main__':main()
