@@ -1,5 +1,13 @@
 # Manuscript claim-to-evidence map
 
+Editorial revision, September 24: the title is *From Detail to Decisions in
+Regional Energy Twins*. The same evidence supports a stronger organizing argument:
+controlled attribution (P04-P07, P21-P22), macro-to-micro information value
+(P08-P11, P22), and execution-level diagnosis (P12-P20). These are achieved
+case-study contributions, not a new algorithm or theorem. Prior reports are preserved.
+`results/editorial/validation.json` checks scientific-output identity and the
+revised effect size; no new experimental evidence is introduced.
+
 Authoritative starting source: `99dc6b8beda6feec18ca5eb54ad6662dbc914d14` on main.
 All proposed claims below are checked against saved outputs, not handoff numbers
 alone. `results/synthesis/input_hashes.json` records exact artifact and decisive
@@ -29,7 +37,7 @@ Full B/C source/config hashes are in `results/shock/frozen_manifest.json` and
 | P06: 3.94% worse regional MAE and 59.4% coverage for variance policy | A, N=4,194, eight groups, 32 origins, h=2 | `outcome_summary.csv`, `policy_comparison.json`, `week_descriptive.csv` | **Supported locally.** Four weeks; conditional variance is value-independent. Not proof of a coding bug or general policy failure. |
 | P07: macro-to-micro-to-macro trace | A, first origin, selected group12/unopened14 | `results/refinement/replay/macro_trace.csv`: coarse/expose/acquire means and SD | **Qualified.** Full-model query, not observed-support regional truth or a causal intervention. |
 | P08: 112 episodes, 96 physical-demand overlays, eight backgrounds | B, `b00`-`b07`, six families x two magnitudes, plus none/fault | `results/shock/run/episodes.json`; `episode_detection.csv` | **Supported.** Eight backgrounds occupy four weeks, not 112 independent real events. |
-| P09: local one-hour MAEs 0.1696/0.1710/0.1386 | B, M3/M2/M4; five local families,80 episodes,h=2,during target phase | `results/shock/analysis/episode_forecasts.csv`; `scripts/analyze_shock.py`; synthesis principal/paired tables | **Supported locally.** Macro average of per-episode, time-averaged valid-household errors; not pooled household error. Pre-onset forecasts of event targets included equally. |
+| P09: local one-hour MAEs 0.1696/0.1710/0.1386 | B, M3/M2/M4; five local families,80 episodes,h=2,during target phase | `results/shock/analysis/episode_forecasts.csv`; `scripts/analyze_shock.py`; synthesis principal/paired tables | **Supported locally.** The generated reduction (1-M4/M3)*100 is 18.284% (18.3% rounded). M4 uses full fine access and a larger budget; this is information value, not matched-budget superiority. Macro average of per-episode, time-averaged valid-household errors; not pooled household error. Pre-onset forecasts of event targets included equally. |
 | P10: all methods localize 0/16 exact cancellations | B, `cancel_exact`, both magnitudes; M0-M4 | `results/shock/analysis/episode_detection.csv`, correct_group_detected | **Supported.** Window onset <= step <= onset+6. Fine evidence did not make frozen detector successful. |
 | P11: broad magnitude-three macro positive control8/8 | B, regional3, all methods | Same detection artifact filtered by family and magnitude | **Supported locally.** Known waveform overlay, no physical-disruption generalization. |
 | P12: 96 schedules unchanged; 93 score responses | Reconstructed B, original M3, all96 demand episodes | `results/acquisition/diagnostic/steps.csv.gz`, `episodes.csv`; ordered identity hashes, canonical hashes, active groups, finite returns; `scripts/diagnose_acquisition.py` | **Supported.** Intermediate scores newly reconstructed in Stage 4; not claimed logged in Stage 3. All5,376 original traces match. |

@@ -18,6 +18,7 @@ FIG = Path('manuscript/figures')
 GEN = Path('manuscript/generated')
 SOURCES = {}
 COLORS = dict(M0='#666666', M1='#CC79A7', M2='#E69F00', M3='#D55E00', M3b='#0072B2', M4='#009E73')
+LABELS = dict(M0='Aggregate', M1='Probes', M2='Random', M3='Gated', M3b='Ranked', M4='Full fine')
 
 
 def source(path):
@@ -113,7 +114,8 @@ def main():
     assert s4.set_index('method').loc['M3b','localized']==2
     assert abs(s3.set_index('method').loc['M3','local_one_hour_mae']-.1695947270)<1e-9
     assert abs(s4.set_index('method').loc['M3b','local_one_hour_mae']-.2660244222)<1e-9
-    assert d3[(d3.family=='cancel_exact') & d3.method.isin(['M2','M3','M4'])].localized.sum()==0
+    exact = d3[d3.family=='cancel_exact'].groupby('method').localized
+    assert (exact.count()==16).all() and (exact.sum()==0).all()
 
     steps=csv('results/acquisition/diagnostic/steps.csv.gz')
     cal=js('results/shock/calibration.json'); cal4=js('results/acquisition/calibration.json')
@@ -189,11 +191,12 @@ def main():
     # Paper tables contain generated values, never copied manual result rows.
     table=[]
     for cohort,methods in [('B',['M0','M1','M2','M3','M4']),('C',['M0','M2','M3','M3b','M4'])]:
-        table.append('\\multicolumn{6}{l}{\\textit{Cohort '+cohort+'}} \\\\')
+        description = 'original disturbances' if cohort == 'B' else 'corrective check'
+        table.append('\\multicolumn{6}{l}{\\textit{'+cohort+': '+description+'}} \\\\')
         for method in methods:
             r=principal[(principal.cohort==cohort)&(principal.method==method)].iloc[0]
             table.append('%s & %.4f & %d/%d & %d/%d & %d/%d & %.2f \\\\'%(
-                method,r.local_one_hour_mae,r.detected,r.demand_episodes,r.localized,r.demand_episodes,
+                method+' '+LABELS[method],r.local_one_hour_mae,r.detected,r.demand_episodes,r.localized,r.demand_episodes,
                 r.negative_alarms,r.negative_steps,r.miss_inclusive_delay_hours))
     (GEN/'principal_rows.tex').write_text('\\begin{tabular}{lrrrrr}\\toprule\n'
         'Method & Local MAE & Detected & Localized & Alarmed control updates & Mean delay (h)\\\\\\midrule\n'
@@ -203,6 +206,12 @@ def main():
     js('results/regional/ingestion.json');js('results/regional/model.json')
     js('results/refinement/replay/summary.json');js('results/refinement/training.json')
     csv('results/refinement/replay/outcome_summary.csv')
+    macro_trace = csv('results/refinement/replay/macro_trace.csv').set_index('operation')
+    query_columns = ['region_mean','region_sd','local_mean','local_sd','untouched_household_mean']
+    assert np.array_equal(macro_trace.loc['coarse',query_columns].values,
+                          macro_trace.loc['same_evidence_refined',query_columns].values)
+    assert abs(macro_trace.loc['fine_acquired','region_mean']-984.0115006244691)<1e-9
+    assert round(macro_trace.loc['fine_acquired','untouched_household_mean'],4)==.6057
     csv('results/acquisition/analysis/alarm_denominators.csv')
     js('results/shock/analysis/decision_summary.json')
     js('results/acquisition/comparison/summary.json')
@@ -225,22 +234,40 @@ def main():
         cohorts=dict(B=dict(episodes=112,demand=96,local_mae=80,backgrounds=8,weeks=4),
                      C=dict(episodes=16,demand=12,local_mae=12,backgrounds=4,weeks=4)))
     (OUT/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
-    macros={'MarginChecks':str(len(margins)), 'MarginCertified':str(summary['sufficient_unchanged_steps'])}
+    b_mae = s3.set_index('method').local_one_hour_mae
+    fine_gain_percent = 100*(1-b_mae['M4']/b_mae['M3'])
+    assert round(fine_gain_percent, 1) == 18.3
+    macros={'MarginChecks':str(len(margins)), 'MarginCertified':str(summary['sufficient_unchanged_steps']),
+            'FineGainPercent':'%.1f'%fine_gain_percent}
     (GEN/'numbers.tex').write_text('\n'.join('\\newcommand{\\%s}{%s}'%(k,v) for k,v in macros.items())+'\n')
 
     # 1. Model/interface diagram. Coordinates encode no empirical quantities.
-    fig,ax=plt.subplots(figsize=(7.0,2.7));ax.set(xlim=(0,10),ylim=(0,4));ax.axis('off')
-    boxes=[(.1,2.35,2.35,1.2,'Household records\n2012 fit; Q1 replay\n4,194 meters','#eeeeee'),
-           (3.0,2.35,3.0,1.2,'Provider interface\n16 sums + validity mask\nFine values on request','#d9eaf3'),
-           (6.6,2.35,3.2,1.2,'One Gaussian model\nShared state + private detail\nRegional and local queries','#dcebdd'),
-           (3.0,.25,3.0,1.2,'Acquisition policy\nProbes, scores, action\n209 requests/update','#f9e5bf'),
-           (6.6,.25,3.2,1.2,'Representation/cache\nRetain or evict detail\nSame evidence, same queries','#f1ddec')]
+    fig,ax=plt.subplots(figsize=(7.0,2.9));ax.set(xlim=(0,10),ylim=(0,4));ax.axis('off')
+    fig.subplots_adjust(left=.01,right=.99,bottom=.03,top=.97)
+    boxes=[(.1,2.5,2.35,1.2,'Household records\n2012 fit; Q1 replay\n4,194 eligible meters','#eeeeee'),
+           (3.0,2.5,3.0,1.2,'Provider access\n16 sums + validity mask\nFine readings on request','#d9eaf3'),
+           (6.6,2.5,3.25,1.2,'Fixed Gaussian model\nShared state + local detail\nRegional / local queries','#dcebdd'),
+           (3.0,.15,3.0,1.35,'Acquisition policy\nProbes, scores, requests\n209 attempts / update','#f9e5bf'),
+           (6.6,.15,3.25,1.35,'Representation / cache\nRetain or evict detail\nSame evidence\nSame registered queries','#f1ddec')]
+    diagram_labels=[]
     for x,y,w,h,label,color in boxes:
         ax.add_patch(FancyBboxPatch((x,y),w,h,boxstyle='round,pad=0.05',facecolor=color,edgecolor='#555555'))
-        ax.text(x+w/2,y+h/2,label,ha='center',va='center',fontsize=8.7,linespacing=1.5)
-    for start,end in [((2.5,2.95),(2.95,2.95)),((6.05,2.95),(6.55,2.95)),((4.15,1.5),(4.15,2.3)),((5.25,2.3),(5.25,1.5)),((8.2,1.5),(8.2,2.3))]:
+        label_artist=ax.text(x+w/2,y+h/2,label,ha='center',va='center',fontsize=8.7,linespacing=1.35)
+        diagram_labels.append((label_artist,x,y,w,h))
+    for start,end in [((2.5,3.1),(2.95,3.1)),((6.05,3.1),(6.55,3.1)),((3.8,1.55),(3.8,2.45)),((5.25,2.45),(5.25,1.55))]:
         ax.annotate('',xy=end,xytext=start,arrowprops=dict(arrowstyle='->',color='#444444',lw=1.2))
-    ax.text(.1,.4,'Summary scans charged\nTargets isolated\nby evaluator\nNo physical grid assumed',fontsize=8)
+    ax.text(3.67,2.0,'Requests',ha='right',va='center',fontsize=7.6)
+    ax.text(5.38,2.0,'Probes',ha='left',va='center',fontsize=7.6)
+    ax.annotate('',xy=(8.2,2.45),xytext=(8.2,1.55),
+                arrowprops=dict(arrowstyle='<->',color='#555555',lw=1.2,linestyle='--'))
+    ax.text(8.35,2.0,'Conditional\nstorage',ha='left',va='center',fontsize=7.6)
+    ax.text(.1,.4,'Provider scans counted\nTargets kept separate\nby the evaluator\nNo physical grid assumed',fontsize=8)
+    # Check the editable labels' actual rendered bounds, not just their anchors.
+    fig.canvas.draw()
+    for label_artist,x,y,w,h in diagram_labels:
+        bounds=label_artist.get_window_extent(fig.canvas.get_renderer()).transformed(ax.transData.inverted())
+        assert bounds.x0>x+.10 and bounds.x1<x+w-.10, 'Diagram text lacks horizontal padding'
+        assert bounds.y0>y+.10 and bounds.y1<y+h-.10, 'Diagram text lacks vertical padding'
     save(fig,'information_flow')
 
     # 2. The original preselected episode, not selected by its policy performance.
@@ -257,7 +284,7 @@ def main():
     axs[0,1].set_title('(b) Real background plus paired shifts')
     for method in ['M0','M3','M4']:
         a=example[(example.horizon==2)&(example.method==method)].sort_values('step')
-        axs[1,0].plot((a.step+2-onset)*.5,a.forecast_plus,color=COLORS[method],label=method)
+        axs[1,0].plot((a.step+2-onset)*.5,a.forecast_plus,color=COLORS[method],label=method+' '+LABELS[method])
     axs[1,0].plot(x+1,base.target_plus,color='black',label='Observed target',lw=1)
     axs[1,0].set_ylabel('Positive-set mean (kWh)');axs[1,0].set_title('(c) One-hour forecasts, target time')
     axs[1,0].legend(ncol=2,fontsize=7)
@@ -268,7 +295,7 @@ def main():
     axs[1,1].axhline(cal['trigger'],ls='--',color='black',label='Acquisition gate')
     axs[1,1].scatter(xt[trace.probe_hits>0],np.zeros((trace.probe_hits>0).sum()),marker='|',s=70,color='#0072B2',label='Affected probe read')
     axs[1,1].set_ylabel('Score');axs[1,1].set_title('(d) Information observed; schedule unchanged')
-    axs[1,1].legend(fontsize=6.8,loc='upper right')
+    axs[1,1].legend(fontsize=6.8,loc='upper left')
     for ax in axs.flat:
         ax.axvspan(0,duration*.5,color='gray',alpha=.10);ax.axvline(0,color='gray',lw=.7)
     axs[1,0].set_xlabel('Hours relative to onset');axs[1,1].set_xlabel('Hours relative to onset')
@@ -282,7 +309,8 @@ def main():
             vals=(paired[method]-paired['M2']).values
             ax.scatter(i+np.linspace(-.12,.12,len(vals)),vals,c=COLORS[method],s=20)
             ax.plot([i-.2,i+.2],[vals.mean()]*2,color='black',lw=1.5)
-        ax.axhline(0,color='gray',lw=.8);ax.set_xticks(range(len(names)));ax.set_xticklabels(names)
+        ax.axhline(0,color='gray',lw=.8);ax.set_xticks(range(len(names)))
+        ax.set_xticklabels([m+'\n'+LABELS[m] for m in names])
         ax.set_title(cohort);ax.set_xlabel('Compared with random acquisition M2')
     axs[0].set_ylabel('Paired one-hour local MAE difference\n(kWh per household; lower is better)')
     fig.tight_layout();fig.subplots_adjust(wspace=.28);save(fig,'paired_comparison')

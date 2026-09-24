@@ -1,0 +1,75 @@
+{
+  "prior_handoff": "results/synthesis/resource_handoff.json",
+  "prior_cpu_minutes": 94.72595005349237,
+  "jobs": [
+    {
+      "label": "editorial-clean-build",
+      "command": [
+        "bash",
+        "manuscript/build.sh",
+        "--clean"
+      ],
+      "started_utc": "2026-09-24T19:09:39.065503+00:00",
+      "wall_seconds": 5.474941435008077,
+      "status": "finished",
+      "exit_code": 1
+    },
+    {
+      "label": "editorial-clean-build-padding",
+      "command": [
+        "bash",
+        "manuscript/build.sh",
+        "--clean"
+      ],
+      "started_utc": "2026-09-24T19:09:56.631150+00:00",
+      "wall_seconds": 9.231452303996775,
+      "status": "finished",
+      "exit_code": 1
+    },
+    {
+      "label": "editorial-layout-build",
+      "command": [
+        "bash",
+        "manuscript/build.sh"
+      ],
+      "started_utc": "2026-09-24T19:11:17.553736+00:00",
+      "wall_seconds": 12.63710670801811,
+      "status": "finished",
+      "exit_code": 0
+    },
+    {
+      "label": "editorial-final-clean-build",
+      "command": [
+        "bash",
+        "manuscript/build.sh",
+        "--clean"
+      ],
+      "started_utc": "2026-09-24T19:13:38.537206+00:00",
+      "wall_seconds": 12.637730371992802,
+      "status": "finished",
+      "exit_code": 0
+    },
+    {
+      "label": "editorial-evidence-audit",
+      "command": [
+        "python3",
+        "scripts/check_regional_editorial.py"
+      ],
+      "started_utc": "2026-09-24T19:14:37.287184+00:00",
+      "wall_seconds": 0.11434245397686027,
+      "status": "finished",
+      "exit_code": 0
+    }
+  ],
+  "gpu_allocation_minutes": 0,
+  "accounting": "Local saved-output analysis and document preparation only. No experimental GPU allocation window opened. Closed-stage cloud billing idle continues separately; reading/writing time is not CPU job time.",
+  "additional_cpu_job_minutes": 0.6682595545498771,
+  "cumulative_cpu_job_minutes": 95.39420960804225,
+  "remaining_cpu_job_minutes": 264.6057903919577,
+  "charged_additional_cpu_minutes": 3.668259554549877,
+  "charged_cumulative_cpu_minutes": 98.39420960804225,
+  "charged_remaining_cpu_minutes": 261.6057903919577,
+  "remaining_gpu_allocation_minutes": 11.233711477120718,
+  "ancillary_cpu_seconds": 180,
+  "ancillary_scope": "Conservative allowance for unwrapped local helpers, figure inspection renders, venue retrieval, hashing, packaging and git handoff; no GPU use."
+}

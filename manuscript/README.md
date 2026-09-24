@@ -1,4 +1,4 @@
-# When Does More Detail Help a Regional Energy Twin?
+# From Detail to Decisions in Regional Energy Twins
 
 [Compiled author-review PDF](regional_twin_study.pdf), ten pages including references,
 IEEEtran conference mode on US Letter. One primary empirical case-study draft;
@@ -11,7 +11,7 @@ and email were supplied explicitly in this session.
 From the repository root:
 
 ```bash
-python3 scripts/synthesis_job.py --label author-review-clean-build --timeout 180 -- bash manuscript/build.sh --clean
+python3 scripts/synthesis_job.py --ledger results/editorial/resource_ledger.json --prior-handoff results/synthesis/resource_handoff.json --label editorial-clean-build --timeout 180 -- bash manuscript/build.sh --clean
 ```
 
 This regenerates result tables, four figures, source hashes, the PDF and automatic
@@ -23,11 +23,19 @@ Read-only review and writing time are separate; no closed GPU stage is reopened.
 
 Dependencies are Python 3 with NumPy, pandas and Matplotlib, plus `latexmk`,
 `pdflatex`, BibTeX, Poppler `pdfinfo`, `pdffonts`, `pdftotext` and `pdftoppm`.
-The build uses standard AMS, graphics, booktabs, array, cite and hyperref packages.
+The build uses standard AMS, graphics, booktabs, array, cite, balance and hyperref packages.
+The balance package balances the ending without changing IEEE typography.
 `environment.json` records the tested local versions. `IEEEtran.cls` and
 `IEEEtran.bst` are unmodified upstream files with their notices preserved;
 `template_source.json` records the archive and file hashes. No custom typography
 or compressed template spacing is used. `SOURCE_DATE_EPOCH` is fixed in `build.sh`.
+
+To check that editorial changes preserve the synthesis outputs and verify the
+revised effect size (requires the preceding synthesis commit in git history):
+
+```bash
+python3 scripts/check_regional_editorial.py
+```
 
 To regenerate only audited numbers and plots:
 
@@ -48,7 +56,9 @@ Key outputs under `results/synthesis/`:
   IDs, timing and available alarm scores. Event-ID membership is explicitly not
   equated to a finite nonzero measurement at every time.
 - `input_hashes.json`, `manuscript_checks.json`, `resource_ledger.json`: provenance,
-  build checks and CPU accounting. Manual page inspection is recorded separately
+  current build checks and historical CPU accounting. Editorial CPU work is recorded
+  separately under `results/editorial/`, inheriting the closed synthesis totals.
+  Manual page inspection is recorded separately
   in `visual_review.json`.
 
 The [claim map](../reports/REGIONAL_TWIN_CLAIM_EVIDENCE.md) links scientific claims
@@ -56,6 +66,8 @@ to configurations, source versions, episode IDs, metric definitions and limits.
 The [synthesis report](../reports/REGIONAL_TWIN_SYNTHESIS_REPORT.md) records new
 analysis and remaining questions. The [venue/source note](VENUE_AND_SOURCES.md)
 records official formatting checks and primary-paper access. The
+[editorial report](../reports/REGIONAL_TWIN_EDITORIAL_REVISION.md) records the
+revised argument, figure padding, column balance and final validation. The
 [author-review checklist](AUTHOR_REVIEW.md) identifies substantive decisions.
 
 ## Experimental reproduction is a separate operation

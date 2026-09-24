@@ -1,19 +1,23 @@
 {
-  "pdf_sha256": "d138ff77a02e5c2d3a5f47490bfd07953f43c5583c8a4a8286888638d6c66a9c",
-  "reviewed_utc": "2026-09-24T01:07:22.798072+00:00",
-  "pages_reviewed": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10
-  ],
-  "method": "Each 110-dpi rendered page opened and visually inspected using view_image, including final pages after layout corrections.",
-  "findings": "Author block, equations, two tables, four vector figures, captions and thirteen references legible. No clipped content or label collisions remain. Standard IEEE two-column typography retained. Some normal flush-bottom white space remains; no margin/font shrinking.",
-  "status": "passed_author_review_layout"
+  "pdf_sha256": "965b0bae29f928f882bc7e1bdd0ebce00da5f1d63cd504d749fea2dac275eb3d",
+  "reviewed_utc": "2026-09-24T19:16:26.435699+00:00",
+  "pages": 10,
+  "render_dpi": 110,
+  "reviewer": "Codex visual inspection of every rendered page",
+  "page_findings": {
+    "1": "Title, author, 228-word abstract and three contributions fit the first page; no title or column overflow.",
+    "2": "Related-work positioning, data scale and model equations readable; provenance distinctions retained.",
+    "3": "Access rules, registered query class, covariance formula and evidence replacement readable.",
+    "4": "Figure 1 has padded, wrapped labels and correctly directed request/probe/storage arrows. Table I method labels fit.",
+    "5": "Observability continuation, threshold proposition and distinct A/B/C protocol labels readable.",
+    "6": "RQ1 heading fits one line; macro-to-micro example and larger-budget forecast comparison are prominent.",
+    "7": "Original gate diagnosis, corrective timing, alarms and limits are legible and consistently scoped.",
+    "8": "Table II denominators and method descriptions fit. Figure 2 legend avoids the post-event score peak; aligned axes retained.",
+    "9": "Figures 3-4 retain all paired points/counts and readable labels. Discussion starts cleanly without the earlier orphan line.",
+    "10": "Limitations, affirmative conclusion and all 13 references fit with balanced columns; no clipped text."
+  },
+  "independent_figure_1": "140 dpi standalone PDF render inspected; labels padded and storage arrow not evidence acquisition.",
+  "template": "Unmodified IEEEtran conference class; standard balance package, no font/margin/spacing overrides.",
+  "remaining_layout_issues": [],
+  "qualification": "Author review; not IEEE PDF eXpress certification."
 }

@@ -3,6 +3,16 @@
 Checked September 23, 2026 in the project timezone; final document preparation
 continues September 24 UTC. These are internal review notes, not submission actions.
 
+## Editorial refresh, September 24, 2026
+
+The [official workshop page](https://sites.google.com/unisalento.it/ieee-dspaces-2026/home)
+was retrieved again. It still explicitly welcomes case studies, limits full papers
+to ten pages including references, and requires IEEE two-column proceedings format.
+The December 14 online meeting, October 15 submission date and provisional waiver
+language are unchanged. No newly established presentation or anonymity rule was
+found. The existing template and full-paper format are retained. This refresh
+was limited to the workshop instructions, not a new venue/literature search.
+
 ## Venue
 
 - [Official DSpaCES workshop page](https://sites.google.com/unisalento.it/ieee-dspaces-2026/home): fourth workshop, co-located with IEEE Big Data 2026; December 14, fully online on Zoom. Original research, positions and case studies are welcomed. Full papers: ten pages including references; short/position: five. IEEE two-column conference formatting.

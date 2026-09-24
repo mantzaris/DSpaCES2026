@@ -1,0 +1,42 @@
+{
+  "reference_commit": "b2fb7acbabbe315f7c004079c86086e5d283d8a8",
+  "scientific_outputs_unchanged": {
+    "results/synthesis/principal_results.csv": "aa8ad4f849e0f9ab12e219bc34bfeebc191b5425ace9071c1efa7ac3a2280bdd",
+    "results/synthesis/family_method_results.csv": "d0ce8b87fdcd6fa6150bb058a83e6c35ba797113cdc9e2a549132d27506c21fc",
+    "results/synthesis/paired_background_B.csv": "bc736c06111b3002907dce6fdd31881940aa72b841509da13536b2745483bc82",
+    "results/synthesis/paired_background_C.csv": "251e5c4b9ba0bdddfae25517633fdf3e208bd17977c99df2a77410cf204ba2e8",
+    "results/synthesis/paired_background_events.csv": "ce56032b98b948922a249d5f242710e99cdd8ffbfe7b78f0e523b1dd43d34fa0",
+    "results/synthesis/diagnostic_path.csv": "104ba25df53f68b222900a4b86468ab7e92f87a97b6aeea8e29338d212011075",
+    "results/synthesis/threshold_margins.csv.gz": "e1c6ed21bb49fb9f725438bab21109c059d0a2d2cb3d23cfa721dc9dedf70654",
+    "results/synthesis/corrective_action_timing.csv": "47e365817ae8453bbf94f8b9cba782e07722022174b24ca682d4c963fb81fd17",
+    "results/synthesis/corrective_action_summary.csv": "e168565d5c8a0c3bb8f487ddcb611ff87ffb285c82348502df956f27b81a3c0c",
+    "results/synthesis/summary.json": "5fc50e071f6f6c343f81e9c24cddb1296ebb8b0c286c51f16f68a5dbae31a21e"
+  },
+  "template_bibliography_configs_and_inference_unchanged": [
+    "manuscript/references.bib",
+    "manuscript/IEEEtran.cls",
+    "manuscript/IEEEtran.bst",
+    "configs/main_study.yaml",
+    "configs/regional_refinement.json",
+    "configs/regional_shock.json",
+    "configs/regional_acquisition.json",
+    "src/evidence_fusion/shock_access.py",
+    "src/evidence_fusion/shock_gaussian.py",
+    "src/evidence_fusion/acquisition_policy.py"
+  ],
+  "abstract_words": 228,
+  "pages": 10,
+  "pdf_sha256": "965b0bae29f928f882bc7e1bdd0ebce00da5f1d63cd504d749fea2dac275eb3d",
+  "fine_access_reduction_percent": 18.28394278063481,
+  "effect_interpretation": "B local 1h MAE: M4 full fine access versus M3, with a larger observation budget.",
+  "plotted_paired_points": {
+    "B": 32,
+    "C": 16
+  },
+  "figures": 4,
+  "principal_tables": 2,
+  "new_experiments": 0,
+  "raw_meter_reads": 0,
+  "figure_padding": "Rendered text-bound checks execute in build_regional_study_results.py.",
+  "visual_review": "All ten pages and standalone Figure 1 inspected; results/synthesis/visual_review.json matches this PDF hash."
+}

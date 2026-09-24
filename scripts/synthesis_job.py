@@ -12,15 +12,17 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--label', required=True)
     parser.add_argument('--timeout', type=int, default=300)
+    parser.add_argument('--ledger', default='results/synthesis/resource_ledger.json')
+    parser.add_argument('--prior-handoff', default='results/acquisition/resource_handoff.json')
     parser.add_argument('command', nargs=argparse.REMAINDER)
     args = parser.parse_args()
-    path = Path('results/synthesis/resource_ledger.json')
+    path = Path(args.ledger)
     path.parent.mkdir(parents=True, exist_ok=True)
     lock = (path.parent/'.cpu_job.lock').open('w')
     fcntl.flock(lock, fcntl.LOCK_EX)
-    prior = json.loads(Path('results/acquisition/resource_handoff.json').read_text())
+    prior = json.loads(Path(args.prior_handoff).read_text())
     ledger = json.loads(path.read_text()) if path.exists() else dict(
-        prior_handoff='results/acquisition/resource_handoff.json',
+        prior_handoff=args.prior_handoff,
         prior_cpu_minutes=prior['cumulative_cpu_job_minutes'], jobs=[],
         gpu_allocation_minutes=0,
         accounting='Local saved-output analysis and document preparation only. No experimental GPU allocation window opened. Closed-stage cloud billing idle continues separately; reading/writing time is not CPU job time.')

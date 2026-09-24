@@ -1,5 +1,14 @@
 # Active scope - 2026-09-23
 
+## Editorial revision, September 24
+
+The current task revises the existing paper as *From Detail to Decisions in
+Regional Energy Twins*. Controlled attribution, information value and acquisition
+diagnosis organize the argument. This stage uses saved results only; no new
+experiments, policies, calibration or unsealing are authorized. Prior findings
+and the synthesis record below are preserved. See
+`reports/REGIONAL_TWIN_EDITORIAL_REVISION.md` for the completed handoff.
+
 ## Completed synthesis for author review, September 23-24
 
 The current authorized task is completed by the ten-page IEEE manuscript

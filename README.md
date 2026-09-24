@@ -1,9 +1,10 @@
 # DSpaCES research pilots
 
-**Current deliverable: compiled regional twin case study for author review.**
-Read [When Does More Detail Help a Regional Energy Twin?](manuscript/regional_twin_study.pdf),
+**Current deliverable: editorially revised regional twin case study for author review.**
+Read [From Detail to Decisions in Regional Energy Twins](manuscript/regional_twin_study.pdf),
 a ten-page IEEE conference draft with four vector figures, an evidence-generated
-results table and the supplied author block. The [synthesis report](reports/REGIONAL_TWIN_SYNTHESIS_REPORT.md),
+results table and the supplied author block. The [editorial report](reports/REGIONAL_TWIN_EDITORIAL_REVISION.md)
+explains the stronger attribution and design argument; the [synthesis report](reports/REGIONAL_TWIN_SYNTHESIS_REPORT.md),
 [claim map](reports/REGIONAL_TWIN_CLAIM_EVIDENCE.md), [clean build](manuscript/README.md)
 and [author-review decisions](manuscript/AUTHOR_REVIEW.md) accompany it.
 
