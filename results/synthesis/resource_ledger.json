@@ -1,0 +1,114 @@
+{
+  "prior_handoff": "results/acquisition/resource_handoff.json",
+  "prior_cpu_minutes": 91.6689490322756,
+  "jobs": [
+    {
+      "label": "audited-results-and-figures",
+      "command": [
+        "python3",
+        "scripts/build_regional_study_results.py"
+      ],
+      "started_utc": "2026-09-24T00:46:30.908861+00:00",
+      "wall_seconds": 7.528391803003615,
+      "status": "finished",
+      "exit_code": 0
+    },
+    {
+      "label": "final-result-denominator-check",
+      "command": [
+        "python3",
+        "scripts/build_regional_study_results.py"
+      ],
+      "started_utc": "2026-09-24T00:53:34.009935+00:00",
+      "wall_seconds": 8.380159847001778,
+      "status": "finished",
+      "exit_code": 0
+    },
+    {
+      "label": "first-build-accounting-correction",
+      "command": [
+        "latexmk",
+        "-cd",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "manuscript/regional_twin_study.tex"
+      ],
+      "wall_seconds": 1.0,
+      "status": "conservative_charge",
+      "exit_code": 12,
+      "note": "Concurrent first wrapper writes lost the 0.405-second failed build row; charged one second and added serialization lock. No numerical result affected."
+    },
+    {
+      "label": "generated-table-build-fix",
+      "command": [
+        "python3",
+        "scripts/build_regional_study_results.py"
+      ],
+      "started_utc": "2026-09-24T00:54:11.852019+00:00",
+      "wall_seconds": 7.979127828992205,
+      "status": "finished",
+      "exit_code": 0
+    },
+    {
+      "label": "manuscript-build",
+      "command": [
+        "latexmk",
+        "-cd",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "manuscript/regional_twin_study.tex"
+      ],
+      "started_utc": "2026-09-24T00:54:37.386013+00:00",
+      "wall_seconds": 1.3168107370001962,
+      "status": "finished",
+      "exit_code": 0
+    },
+    {
+      "label": "clean-reproducible-build-and-page-render",
+      "command": [
+        "bash",
+        "manuscript/build.sh"
+      ],
+      "started_utc": "2026-09-24T00:55:37.002339+00:00",
+      "wall_seconds": 12.238018524003564,
+      "status": "finished",
+      "exit_code": 0
+    },
+    {
+      "label": "revised-figure-layout-and-build",
+      "command": [
+        "bash",
+        "manuscript/build.sh"
+      ],
+      "started_utc": "2026-09-24T01:00:12.528796+00:00",
+      "wall_seconds": 12.237634814009652,
+      "status": "finished",
+      "exit_code": 0
+    },
+    {
+      "label": "final-clean-build",
+      "command": [
+        "bash",
+        "manuscript/build.sh",
+        "--clean"
+      ],
+      "started_utc": "2026-09-24T01:04:46.790200+00:00",
+      "wall_seconds": 12.739917718994548,
+      "status": "finished",
+      "exit_code": 0
+    }
+  ],
+  "gpu_allocation_minutes": 0,
+  "accounting": "Local saved-output analysis and document preparation only. No experimental GPU allocation window opened. Closed-stage cloud billing idle continues separately; reading/writing time is not CPU job time.",
+  "additional_cpu_job_minutes": 1.0570010212167593,
+  "cumulative_cpu_job_minutes": 92.72595005349237,
+  "remaining_cpu_job_minutes": 267.2740499465076,
+  "remaining_gpu_allocation_minutes": 11.233711477120718,
+  "ancillary_cpu_seconds": 120,
+  "ancillary_note": "Conservative two-minute allowance for unwrapped source downloads, schema/log helpers, read-only pod/git checks, metadata/hash packaging and final commit/push. Reading and writing time excluded.",
+  "charged_additional_cpu_minutes": 3.0570010212167595,
+  "charged_cumulative_cpu_minutes": 94.72595005349237,
+  "charged_remaining_cpu_minutes": 265.2740499465076
+}

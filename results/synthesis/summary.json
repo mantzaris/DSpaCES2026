@@ -1,0 +1,41 @@
+{
+  "path_counts": {
+    "fine_exposed": 96,
+    "probe_exposed": 94,
+    "innovation_changed": 96,
+    "score_changed": 93,
+    "ranking_changed": 86,
+    "top_group_changed": 17,
+    "gate_changed": 0,
+    "schedule_changed": 0,
+    "budget_blocked": 0
+  },
+  "gate_margin_steps": 4608,
+  "sufficient_unchanged_steps": 4608,
+  "unexplained_gate_switches": 0,
+  "original_identity_hashes_matched": true,
+  "stage3_requested": 1123584,
+  "stage3_read": 1106434,
+  "stage3_assimilated": 1106434,
+  "refinement_max_representation_error": 0.0,
+  "refinement_max_cycle_error": 1.4210854715202004e-14,
+  "effective_alarm_threshold_M3": 19.707997666856514,
+  "effective_alarm_threshold_M3b": 20.586358374667945,
+  "timing_qualification": "Extra event IDs are potential affected access from saved identities, not per-time valid nonzero readings. No meter archive was read.",
+  "cohorts": {
+    "B": {
+      "episodes": 112,
+      "demand": 96,
+      "local_mae": 80,
+      "backgrounds": 8,
+      "weeks": 4
+    },
+    "C": {
+      "episodes": 16,
+      "demand": 12,
+      "local_mae": 12,
+      "backgrounds": 4,
+      "weeks": 4
+    }
+  }
+}

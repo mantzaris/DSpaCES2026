@@ -1,5 +1,17 @@
 # Active scope - 2026-09-23
 
+## Completed synthesis for author review, September 23-24
+
+The current authorized task is completed by the ten-page IEEE manuscript
+`manuscript/regional_twin_study.pdf`, its evidence map and
+`reports/REGIONAL_TWIN_SYNTHESIS_REPORT.md`. The question separates representation,
+additional observations and acquisition policy. It is an empirical case study
+with mathematical clarification, not a newly successful refinement algorithm.
+Only saved-output analysis, source verification, plotting and document builds
+were added. No GPU experiment, policy variant, model fit or test unsealing occurred.
+The original negative results below remain the research record. Future work in
+the paper is a question, not an authorized next stage. The pod remains intact.
+
 ## Stage 4 complete; no automatic continuation
 
 The [acquisition report](../reports/REGIONAL_TWIN_STAGE4_ACQUISITION_REPORT.md)

@@ -1,0 +1,60 @@
+/usr/lib/python3/dist-packages/matplotlib/cbook/__init__.py:1402: FutureWarning: Support for multi-dimensional indexing (e.g. `obj[:, None]`) is deprecated and will be removed in a future version.  Convert to a numpy array before indexing instead.
+  ndim = x[:, None].ndim
+/usr/lib/python3/dist-packages/matplotlib/axes/_base.py:276: FutureWarning: Support for multi-dimensional indexing (e.g. `obj[:, None]`) is deprecated and will be removed in a future version.  Convert to a numpy array before indexing instead.
+  x = x[:, np.newaxis]
+/usr/lib/python3/dist-packages/matplotlib/axes/_base.py:278: FutureWarning: Support for multi-dimensional indexing (e.g. `obj[:, None]`) is deprecated and will be removed in a future version.  Convert to a numpy array before indexing instead.
+  y = y[:, np.newaxis]
+{
+  "path_counts": {
+    "fine_exposed": 96,
+    "probe_exposed": 94,
+    "innovation_changed": 96,
+    "score_changed": 93,
+    "ranking_changed": 86,
+    "top_group_changed": 17,
+    "gate_changed": 0,
+    "schedule_changed": 0,
+    "budget_blocked": 0
+  },
+  "gate_margin_steps": 4608,
+  "sufficient_unchanged_steps": 4608,
+  "unexplained_gate_switches": 0,
+  "original_identity_hashes_matched": true,
+  "stage3_requested": 1123584,
+  "stage3_read": 1106434,
+  "stage3_assimilated": 1106434,
+  "refinement_max_representation_error": 0.0,
+  "refinement_max_cycle_error": 1.4210854715202004e-14,
+  "effective_alarm_threshold_M3": 19.707997666856514,
+  "effective_alarm_threshold_M3b": 20.586358374667945,
+  "timing_qualification": "Extra event IDs are potential affected access from saved identities, not per-time valid nonzero readings. No meter archive was read.",
+  "cohorts": {
+    "B": {
+      "episodes": 112,
+      "demand": 96,
+      "local_mae": 80,
+      "backgrounds": 8,
+      "weeks": 4
+    },
+    "C": {
+      "episodes": 16,
+      "demand": 12,
+      "local_mae": 12,
+      "backgrounds": 4,
+      "weeks": 4
+    }
+  }
+}
+                   episode  background       family  changed_steps  first_changed_lag  changed_in_detection_window  extra_event_ids_in_detection_window  extra_event_ids_later_in_event  max_fine_z_detection_window  any_fine_alarm_detection_window
+fresh_b00_cancel_exact_3.0           0 cancel_exact              0                NaN                            0                                    0                               0                    10.626478                            False
+     fresh_b00_delayed_3.0           0      delayed              0                NaN                            0                                    0                               0                     7.825054                            False
+   fresh_b00_localized_3.0           0    localized              0                NaN                            0                                    0                               0                    10.699921                            False
+fresh_b02_cancel_exact_3.0           2 cancel_exact              0                NaN                            0                                    0                               0                    15.846487                            False
+     fresh_b02_delayed_3.0           2      delayed              0                NaN                            0                                    0                               0                    11.572811                            False
+   fresh_b02_localized_3.0           2    localized              1                6.0                            1                                    0                               0                    13.631284                            False
+fresh_b04_cancel_exact_3.0           4 cancel_exact              4                8.0                            0                                    0                             120                    13.588595                            False
+     fresh_b04_delayed_3.0           4      delayed              0                NaN                            0                                    0                               0                    13.576365                            False
+   fresh_b04_localized_3.0           4    localized              0                NaN                            0                                    0                               0                    13.705460                            False
+fresh_b06_cancel_exact_3.0           6 cancel_exact              0                NaN                            0                                    0                               0                    12.940067                            False
+     fresh_b06_delayed_3.0           6      delayed              0                NaN                            0                                    0                               0                     9.289416                            False
+   fresh_b06_localized_3.0           6    localized              7                9.0                            0                                    0                              77                    10.787278                            False

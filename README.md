@@ -1,5 +1,20 @@
 # DSpaCES research pilots
 
+**Current deliverable: compiled regional twin case study for author review.**
+Read [When Does More Detail Help a Regional Energy Twin?](manuscript/regional_twin_study.pdf),
+a ten-page IEEE conference draft with four vector figures, an evidence-generated
+results table and the supplied author block. The [synthesis report](reports/REGIONAL_TWIN_SYNTHESIS_REPORT.md),
+[claim map](reports/REGIONAL_TWIN_CLAIM_EVIDENCE.md), [clean build](manuscript/README.md)
+and [author-review decisions](manuscript/AUTHOR_REVIEW.md) accompany it.
+
+Saved-output analysis shows that all 4,608 original demand-replay updates satisfy
+a sufficient unchanged-acquisition-gate condition. M3b's added affected-meter
+requests occur after the detection window; its acquired fine alarm score stays
+below threshold in all 12 fresh demand cases. No adaptive advantage is claimed.
+No new GPU experiment ran; 11.2337 regional allocation minutes remain. Seals and
+the disabled main study persist. The pod remains allocated and idle. This is not
+a submitted paper, a novelty certificate or authorization for another stage.
+
 **Completed active stage: shock-responsive acquisition diagnosis.** GPU reconstruction
 verified all 112 original episodes. In 96 demand shocks, 93 group scores changed,
 but no original acquisition trigger or schedule changed. This was a policy

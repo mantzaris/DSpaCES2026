@@ -1,0 +1,655 @@
+Latexmk: This is Latexmk, John Collins, 26 Dec. 2019, version: 4.67.
+Latexmk: Changing directory to 'manuscript/'
+Latexmk: Undoing directory change
+/usr/lib/python3/dist-packages/matplotlib/cbook/__init__.py:1402: FutureWarning: Support for multi-dimensional indexing (e.g. `obj[:, None]`) is deprecated and will be removed in a future version.  Convert to a numpy array before indexing instead.
+  ndim = x[:, None].ndim
+/usr/lib/python3/dist-packages/matplotlib/axes/_base.py:276: FutureWarning: Support for multi-dimensional indexing (e.g. `obj[:, None]`) is deprecated and will be removed in a future version.  Convert to a numpy array before indexing instead.
+  x = x[:, np.newaxis]
+/usr/lib/python3/dist-packages/matplotlib/axes/_base.py:278: FutureWarning: Support for multi-dimensional indexing (e.g. `obj[:, None]`) is deprecated and will be removed in a future version.  Convert to a numpy array before indexing instead.
+  y = y[:, np.newaxis]
+{
+  "path_counts": {
+    "fine_exposed": 96,
+    "probe_exposed": 94,
+    "innovation_changed": 96,
+    "score_changed": 93,
+    "ranking_changed": 86,
+    "top_group_changed": 17,
+    "gate_changed": 0,
+    "schedule_changed": 0,
+    "budget_blocked": 0
+  },
+  "gate_margin_steps": 4608,
+  "sufficient_unchanged_steps": 4608,
+  "unexplained_gate_switches": 0,
+  "original_identity_hashes_matched": true,
+  "stage3_requested": 1123584,
+  "stage3_read": 1106434,
+  "stage3_assimilated": 1106434,
+  "refinement_max_representation_error": 0.0,
+  "refinement_max_cycle_error": 1.4210854715202004e-14,
+  "effective_alarm_threshold_M3": 19.707997666856514,
+  "effective_alarm_threshold_M3b": 20.586358374667945,
+  "timing_qualification": "Extra event IDs are potential affected access from saved identities, not per-time valid nonzero readings. No meter archive was read.",
+  "cohorts": {
+    "B": {
+      "episodes": 112,
+      "demand": 96,
+      "local_mae": 80,
+      "backgrounds": 8,
+      "weeks": 4
+    },
+    "C": {
+      "episodes": 16,
+      "demand": 12,
+      "local_mae": 12,
+      "backgrounds": 4,
+      "weeks": 4
+    }
+  }
+}
+                   episode  background       family  changed_steps  first_changed_lag  changed_in_detection_window  extra_event_ids_in_detection_window  extra_event_ids_later_in_event  max_fine_z_detection_window  any_fine_alarm_detection_window
+fresh_b00_cancel_exact_3.0           0 cancel_exact              0                NaN                            0                                    0                               0                    10.626478                            False
+     fresh_b00_delayed_3.0           0      delayed              0                NaN                            0                                    0                               0                     7.825054                            False
+   fresh_b00_localized_3.0           0    localized              0                NaN                            0                                    0                               0                    10.699921                            False
+fresh_b02_cancel_exact_3.0           2 cancel_exact              0                NaN                            0                                    0                               0                    15.846487                            False
+     fresh_b02_delayed_3.0           2      delayed              0                NaN                            0                                    0                               0                    11.572811                            False
+   fresh_b02_localized_3.0           2    localized              1                6.0                            1                                    0                               0                    13.631284                            False
+fresh_b04_cancel_exact_3.0           4 cancel_exact              4                8.0                            0                                    0                             120                    13.588595                            False
+     fresh_b04_delayed_3.0           4      delayed              0                NaN                            0                                    0                               0                    13.576365                            False
+   fresh_b04_localized_3.0           4    localized              0                NaN                            0                                    0                               0                    13.705460                            False
+fresh_b06_cancel_exact_3.0           6 cancel_exact              0                NaN                            0                                    0                               0                    12.940067                            False
+     fresh_b06_delayed_3.0           6      delayed              0                NaN                            0                                    0                               0                     9.289416                            False
+   fresh_b06_localized_3.0           6    localized              7                9.0                            0                                    0                              77                    10.787278                            False
+Latexmk: This is Latexmk, John Collins, 26 Dec. 2019, version: 4.67.
+Latexmk: Changing directory to 'manuscript/'
+Rule 'pdflatex': The following rules & subrules became out-of-date:
+      'pdflatex'
+------------
+Run number 1 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -recorder  "regional_twin_study.tex"'
+------------
+Latexmk: applying rule 'pdflatex'...
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./regional_twin_study.tex
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14> (./IEEEtran.cls
+Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd)
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+-- This is a 10 point document.
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(./generated/numbers.tex)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def)
+(./regional_twin_study.aux)
+-- Lines per column: 56 (exact).
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
+
+LaTeX Warning: Citation `london' on page 1 undefined on input line 32.
+
+
+LaTeX Warning: Citation `artifact' on page 1 undefined on input line 38.
+
+
+LaTeX Warning: Citation `katzfuss2017' on page 1 undefined on input line 41.
+
+
+LaTeX Warning: Citation `mrf' on page 1 undefined on input line 41.
+
+
+LaTeX Warning: Citation `vecchia' on page 1 undefined on input line 41.
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Citation `distributed' on page 2 undefined on input line 43.
+
+
+LaTeX Warning: Citation `isam' on page 2 undefined on input line 43.
+
+
+LaTeX Warning: Citation `mint' on page 2 undefined on input line 45.
+
+
+LaTeX Warning: Citation `sun' on page 2 undefined on input line 47.
+
+
+LaTeX Warning: Citation `han' on page 2 undefined on input line 47.
+
+
+Underfull \hbox (badness 6157) in paragraph at lines 47--48
+[]\OT1/ptm/m/n/10 Event-triggered es-ti-ma-tion dis-tin-guishes mea-sure-ments
+
+LaTeX Warning: Citation `controlled' on page 2 undefined on input line 49.
+
+
+LaTeX Warning: Citation `he' on page 2 undefined on input line 51.
+
+
+LaTeX Warning: Citation `london' on page 2 undefined on input line 57.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd) [2]
+
+LaTeX Warning: Reference `fig:interfaces' on page 3 undefined on input line 85.
+
+
+
+LaTeX Warning: Reference `tab:methods' on page 3 undefined on input line 85.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+[]|\OT1/ptm/m/n/8 Same-evidence con-ven-tional
+
+LaTeX Warning: Citation `distributed' on page 3 undefined on input line 114.
+
+
+LaTeX Warning: Citation `isam' on page 3 undefined on input line 114.
+
+[3]
+
+LaTeX Warning: Citation `hespanha' on page 4 undefined on input line 138.
+
+[4 <./figures/information_flow.pdf>]
+Underfull \hbox (badness 2707) in paragraph at lines 173--174
+\OT1/ptm/m/n/10 from the same four de-vel-op-ment weeks. Six demand-
+
+Underfull \hbox (badness 2772) in paragraph at lines 173--174
+\OT1/ptm/m/n/10 give 96 de-mand episodes; eight un-mod-i-fied and eight
+
+LaTeX Warning: Reference `eq:score' on page 5 undefined on input line 185.
+
+[5]
+
+LaTeX Warning: Reference `tab:results' on page 6 undefined on input line 212.
+
+
+LaTeX Warning: Reference `fig:paired' on page 6 undefined on input line 212.
+
+[6] (./generated/principal_rows.tex)
+
+LaTeX Warning: Reference `fig:episode' on page 7 undefined on input line 228.
+
+
+LaTeX Warning: Reference `fig:path' on page 7 undefined on input line 243.
+
+[7]
+Underfull \vbox (badness 10000) has occurred while \output is active [8 <./figu
+res/transparent_episode.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active
+Underfull \vbox (badness 10000) has occurred while \output is active [9 <./figu
+res/paired_comparison.pdf> <./figures/acquisition_path.pdf
+
+pdfTeX warning: pdflatex (file ./figures/acquisition_path.pdf): PDF inclusion:
+multiple pdfs with page group included in a single page
+>] (./regional_twin_study.bbl
+Underfull \hbox (badness 1484) in paragraph at lines 26--31
+\OT1/ptm/m/n/8 cessed Septem-ber 23, 2026. Low Car-bon Lon-don
+)
+
+** Conference Paper **
+Before submitting the final camera ready copy, remember to:
+
+ 1. Manually equalize the lengths of two columns on the last page
+ of your paper;
+
+ 2. Ensure that any PostScript and/or PDF output post-processing
+ uses only Type 1 fonts and that every step in the generation
+ process uses the appropriate paper size.
+
+[10] (./regional_twin_study.aux)
+
+Package rerunfilecheck Warning: File `regional_twin_study.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information){/usr/share/texlive/texmf-d
+ist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
+/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on regional_twin_study.pdf (10 pages, 1764773 bytes).
+Transcript written on regional_twin_study.log.
+Latexmk: Found input bbl file 'regional_twin_study.bbl'
+Latexmk: References changed.
+Latexmk: References changed.
+Latexmk: Log file says output to 'regional_twin_study.pdf'
+Latexmk: List of undefined refs and citations:
+  Citation `artifact' on page 1 undefined on input line 38
+  Citation `controlled' on page 2 undefined on input line 49
+  Citation `distributed' on page 2 undefined on input line 43
+  Citation `distributed' on page 3 undefined on input line 114
+  Citation `han' on page 2 undefined on input line 47
+  Citation `he' on page 2 undefined on input line 51
+  Citation `hespanha' on page 4 undefined on input line 138
+  Citation `isam' on page 2 undefined on input line 43
+  Citation `isam' on page 3 undefined on input line 114
+  Citation `katzfuss2017' on page 1 undefined on input line 41
+  Citation `london' on page 1 undefined on input line 32
+  Citation `london' on page 2 undefined on input line 57
+  Citation `mint' on page 2 undefined on input line 45
+  Citation `mrf' on page 1 undefined on input line 41
+  Citation `sun' on page 2 undefined on input line 47
+  Citation `vecchia' on page 1 undefined on input line 41
+  Reference `eq:score' on page 5 undefined on input line 185
+  Reference `fig:episode' on page 7 undefined on input line 228
+  Reference `fig:interfaces' on page 3 undefined on input line 85
+  Reference `fig:paired' on page 6 undefined on input line 212
+  Reference `fig:path' on page 7 undefined on input line 243
+  Reference `tab:methods' on page 3 undefined on input line 85
+  Reference `tab:results' on page 6 undefined on input line 212
+=== TeX engine is 'pdfTeX'
+Latexmk: Found bibliography file(s) [references.bib]
+Rule 'bibtex regional_twin_study': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'regional_twin_study.aux'
+------------
+Run number 1 of rule 'bibtex regional_twin_study'
+------------
+------------
+Running 'bibtex  "regional_twin_study"'
+------------
+Latexmk: applying rule 'bibtex regional_twin_study'...
+For rule 'bibtex regional_twin_study', running '&run_bibtex(  )' ...
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+The top-level auxiliary file: regional_twin_study.aux
+The style file: IEEEtran.bst
+Database file #1: references.bib
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+
+Done.
+Rule 'pdflatex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'regional_twin_study.aux'
+      'regional_twin_study.bbl'
+      'regional_twin_study.out'
+------------
+Run number 2 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -recorder  "regional_twin_study.tex"'
+------------
+Latexmk: applying rule 'pdflatex'...
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./regional_twin_study.tex
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14> (./IEEEtran.cls
+Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd)
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+-- This is a 10 point document.
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(./generated/numbers.tex)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def)
+(./regional_twin_study.aux)
+-- Lines per column: 56 (exact).
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
+(./regional_twin_study.out) (./regional_twin_study.out) [1{/var/lib/texmf/fonts
+/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 6157) in paragraph at lines 47--48
+[]\OT1/ptm/m/n/10 Event-triggered es-ti-ma-tion dis-tin-guishes mea-sure-ments
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd) [2]
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+[]|\OT1/ptm/m/n/8 Same-evidence con-ven-tional
+
+Underfull \vbox (badness 4205) has occurred while \output is active [3]
+
+LaTeX Warning: Citation `hespanha' on page 4 undefined on input line 138.
+
+[4 <./figures/information_flow.pdf>]
+Underfull \hbox (badness 2707) in paragraph at lines 173--174
+\OT1/ptm/m/n/10 from the same four de-vel-op-ment weeks. Six demand-
+
+Underfull \hbox (badness 2772) in paragraph at lines 173--174
+\OT1/ptm/m/n/10 give 96 de-mand episodes; eight un-mod-i-fied and eight
+[5] [6] (./generated/principal_rows.tex) [7]
+Underfull \vbox (badness 10000) has occurred while \output is active [8 <./figu
+res/transparent_episode.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active
+Underfull \vbox (badness 10000) has occurred while \output is active [9 <./figu
+res/paired_comparison.pdf> <./figures/acquisition_path.pdf
+
+pdfTeX warning: pdflatex (file ./figures/acquisition_path.pdf): PDF inclusion:
+multiple pdfs with page group included in a single page
+>] (./regional_twin_study.bbl
+Underfull \hbox (badness 1484) in paragraph at lines 26--31
+\OT1/ptm/m/n/8 cessed Septem-ber 23, 2026. Low Car-bon Lon-don
+)
+
+** Conference Paper **
+Before submitting the final camera ready copy, remember to:
+
+ 1. Manually equalize the lengths of two columns on the last page
+ of your paper;
+
+ 2. Ensure that any PostScript and/or PDF output post-processing
+ uses only Type 1 fonts and that every step in the generation
+ process uses the appropriate paper size.
+
+[10] (./regional_twin_study.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information){/usr/share/texlive/texmf-d
+ist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
+/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on regional_twin_study.pdf (10 pages, 1767358 bytes).
+Transcript written on regional_twin_study.log.
+Latexmk: Found input bbl file 'regional_twin_study.bbl'
+Latexmk: References changed.
+Latexmk: Log file says output to 'regional_twin_study.pdf'
+Latexmk: List of undefined refs and citations:
+  Citation `hespanha' on page 4 undefined on input line 138
+=== TeX engine is 'pdfTeX'
+Latexmk: Found bibliography file(s) [references.bib]
+Rule 'bibtex regional_twin_study': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'regional_twin_study.aux'
+------------
+Run number 2 of rule 'bibtex regional_twin_study'
+------------
+------------
+Running 'bibtex  "regional_twin_study"'
+------------
+Latexmk: applying rule 'bibtex regional_twin_study'...
+For rule 'bibtex regional_twin_study', running '&run_bibtex(  )' ...
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+The top-level auxiliary file: regional_twin_study.aux
+The style file: IEEEtran.bst
+Database file #1: references.bib
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+
+Done.
+Rule 'pdflatex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'regional_twin_study.aux'
+------------
+Run number 3 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -recorder  "regional_twin_study.tex"'
+------------
+Latexmk: applying rule 'pdflatex'...
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./regional_twin_study.tex
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14> (./IEEEtran.cls
+Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd)
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+-- This is a 10 point document.
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(./generated/numbers.tex)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def)
+(./regional_twin_study.aux)
+-- Lines per column: 56 (exact).
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
+(./regional_twin_study.out) (./regional_twin_study.out) [1{/var/lib/texmf/fonts
+/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 6157) in paragraph at lines 47--48
+[]\OT1/ptm/m/n/10 Event-triggered es-ti-ma-tion dis-tin-guishes mea-sure-ments
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd) [2]
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+[]|\OT1/ptm/m/n/8 Same-evidence con-ven-tional
+
+Underfull \vbox (badness 4205) has occurred while \output is active [3]
+[4 <./figures/information_flow.pdf>]
+Underfull \hbox (badness 2707) in paragraph at lines 173--174
+\OT1/ptm/m/n/10 from the same four de-vel-op-ment weeks. Six demand-
+
+Underfull \hbox (badness 2772) in paragraph at lines 173--174
+\OT1/ptm/m/n/10 give 96 de-mand episodes; eight un-mod-i-fied and eight
+[5] [6] (./generated/principal_rows.tex) [7]
+Underfull \vbox (badness 10000) has occurred while \output is active [8 <./figu
+res/transparent_episode.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active
+Underfull \vbox (badness 10000) has occurred while \output is active [9 <./figu
+res/paired_comparison.pdf> <./figures/acquisition_path.pdf
+
+pdfTeX warning: pdflatex (file ./figures/acquisition_path.pdf): PDF inclusion:
+multiple pdfs with page group included in a single page
+>] (./regional_twin_study.bbl
+Underfull \hbox (badness 1484) in paragraph at lines 26--31
+\OT1/ptm/m/n/8 cessed Septem-ber 23, 2026. Low Car-bon Lon-don
+)
+
+** Conference Paper **
+Before submitting the final camera ready copy, remember to:
+
+ 1. Manually equalize the lengths of two columns on the last page
+ of your paper;
+
+ 2. Ensure that any PostScript and/or PDF output post-processing
+ uses only Type 1 fonts and that every step in the generation
+ process uses the appropriate paper size.
+
+[10] (./regional_twin_study.aux) )
+(see the transcript file for additional information){/usr/share/texlive/texmf-d
+ist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
+/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on regional_twin_study.pdf (10 pages, 1767086 bytes).
+Transcript written on regional_twin_study.log.
+Latexmk: Found input bbl file 'regional_twin_study.bbl'
+Latexmk: Log file says output to 'regional_twin_study.pdf'
+=== TeX engine is 'pdfTeX'
+Latexmk: Found bibliography file(s) [references.bib]
+Latexmk: Undoing directory change
+Latexmk: All targets () are up-to-date
+{
+  "pages": 10,
+  "page_word_counts": [
+    737,
+    847,
+    845,
+    574,
+    859,
+    869,
+    943,
+    448,
+    437,
+    741
+  ],
+  "pdf_sha256": "d138ff77a02e5c2d3a5f47490bfd07953f43c5583c8a4a8286888638d6c66a9c",
+  "missing_references": false,
+  "overfull_boxes": false,
+  "visual_review": "Pending separate human-equivalent page inspection by the agent; not certified by this script"
+}
