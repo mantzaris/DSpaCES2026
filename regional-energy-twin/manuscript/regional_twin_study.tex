@@ -19,272 +19,365 @@ alexander.mantzaris@ucf.edu}}
 \maketitle
 
 \begin{abstract}
-Regional energy twins must connect population-wide demand with local household changes, often through providers that reveal summaries and supply fine readings only on request. Yet ``more detail'' can mean a different state representation, additional observations, or a better acquisition decision. Conflating these operations obscures what improves a twin. We develop and apply controlled comparisons that separate them in a retrospective London energy twin. The pipeline ingests 167.93 million smart-meter rows and uses 4,194 eligible households in a fixed hierarchical Gaussian model with GPU inference. Matched-evidence comparisons preserve registered posterior queries through refinement and coarsening, while a retained-state saving disappears against streamed fine inference. On real demand backgrounds with synthetic disturbances, full fine access reduces local one-hour mean absolute error by \FineGainPercent{}\% relative to the tested adaptive policy, using a larger observation budget. This information value does not imply successful localization. Execution traces show that scores change in 93 of 96 demand disturbances while no acquisition schedule changes: the acquisition gate blocks those score responses. A single correction changes some schedules, but its changed requests add no affected meter identity within the detection window and establish no acquisition advantage. The study contributes controlled attribution and an execution-level diagnosis that connect representation, information access and decision timing. Its exploratory evidence gives twin designers concrete checks for locating where local detail produces value and where that value is lost before action.
+Regional energy twins must connect population demand with local household changes while operating through limited access to detailed measurements. We introduce a controlled evaluation methodology that isolates the contributions of state representation, acquired observations and acquisition decisions. By combining matched evidence comparisons, controlled disturbances and execution tracing, the methodology identifies where refinement improves predictions and where information fails to influence action. We apply it to a retrospective London energy twin built from 167.93 million smart meter rows and 4,194 eligible households, using a hierarchical Gaussian model with GPU inference. Refinement and coarsening preserve registered posterior queries, establishing consistent transitions between regional and household views. Streamed fine inference matches the retained state footprint, showing no capacity advantage for refinement. On real demand backgrounds with synthetic disturbances, full fine access reduces local one hour mean absolute error by \FineGainPercent{}\% relative to the tested adaptive policy, with a larger observation budget. Execution traces reveal that scores respond to 93 of 96 demand disturbances while acquisition schedules remain unchanged, identifying the acquisition gate as a decision bottleneck. A targeted correction changes some schedules but reaches no additional affected meters within the detection window and establishes no acquisition advantage. These findings distinguish forecasting value from successful localization and connect observation access with decision timing. The study provides a reproducible methodology and actionable design criteria for evaluating how regional twins turn local detail into useful information and timely decisions.
 \end{abstract}
 \begin{IEEEkeywords}
 regional digital twins, data spaces, selective observation, Gaussian inference, smart-meter data
 \end{IEEEkeywords}
 
+
+
+
 \section{Introduction}
-A regional energy twin must summarize demand across thousands of households and still reveal a changing local pattern. A provider may expose group totals routinely while a consumer must request individual meter readings. Offset local changes can leave those totals unchanged. The consumer then faces two distinct choices: which local state to retain and which additional observations to acquire. Paying for one does not necessarily obtain the benefit of the other.
+Regional energy twins must connect demand across thousands of households with changes that emerge locally. A stable group total can conceal rising consumption in some households and falling consumption in others. Detecting these changes requires decisions about both representation and observation. A provider may routinely release group totals while supplying individual readings only on request. The consumer must therefore decide which local state to retain, which measurements to acquire and when those measurements can still influence a useful decision.
 
-This distinction matters for evaluating refinement. Exposing conditional household predictions can preserve exactly the information already available to a coarse representation. New measurements can instead update both local and regional predictions through their shared uncertainty. Even then, an acquisition policy can receive useful signals without changing its actions. A score must pass through thresholds, rankings and budget rules, and newly selected information must arrive before the decision deadline.
+These choices have different consequences. Exposing household predictions from an existing model can leave its information unchanged. Acquiring new readings can update both household and regional predictions through their shared uncertainty. Receiving informative observations, however, does not ensure that an acquisition policy acts on them. Scores pass through thresholds, rankings and budget rules, and additional readings must arrive before the relevant decision deadline. Evaluating only forecast error or memory consumption leaves the source of an improvement, or the cause of a failure, unresolved.
 
-We develop and apply a controlled evaluation that separates these effects in a retrospective, data-driven twin of the sampled Greater London household population. Low Carbon London provides real half-hourly measurements~\cite{london}. Simulated household providers supply group summaries and requested fine readings through an explicit interface. A fixed hierarchical Gaussian model supports regional, group and household queries with GPU inference. Holding the model fixed lets us attribute differences to representation, acquired evidence or the policy selecting that evidence.
+We introduce a controlled evaluation methodology that connects these stages within one regional twin. Its methodological contribution is the integration of comparisons under identical evidence, controlled tests of aggregate visibility and detailed tracing from observations to acquisition decisions. This design distinguishes the value of changing representation from the value of receiving more information, then identifies where the acquisition process prevents that information from improving outcomes. It provides a practical basis for assessing whether an apparent refinement benefit justifies additional storage, measurement access or decision complexity.
 
-Three questions organize the study. \textbf{RQ1:} under the same model and evidence, what does changing representation preserve, and what resources does it change? \textbf{RQ2:} when aggregation hides local disturbances, what prediction or detection value do additional fine observations provide? \textbf{RQ3:} does the tested policy convert available disturbance information into useful acquisition decisions at a fixed observation budget?
+We apply the methodology to a retrospective twin of the sampled Greater London household population. Low Carbon London supplies real measurements recorded every half hour~\cite{london}. Simulated providers expose group summaries and requested household readings through an explicit interface. A fixed hierarchical Gaussian model supports regional, group and household queries with GPU inference. Keeping this model fixed enables controlled comparisons of representation, acquired evidence and observation selection.
 
-The contribution is a comparative case study with three linked results.
+Three questions organize the study. \textbf{RQ1.} What does changing representation preserve under identical evidence, and what resources does it require? \textbf{RQ2.} What forecasting and detection value do fine observations provide when aggregation hides local disturbances? \textbf{RQ3.} Can the tested acquisition policy obtain useful additional information within its observation budget and detection window?
+
+The study delivers three connected contributions.
 \begin{enumerate}
-\item \textbf{Controlled attribution of refinement effects.} Matched-evidence comparisons preserve registered posterior queries. Retained state falls from 61.12 to 21.60 MB, but streamed fine inference also retains 21.60 MB. This isolates an ordinary storage/restoration tradeoff from a claimed capacity or prediction gain.
-\item \textbf{A macro-to-micro information study.} Controlled disturbances on real backgrounds separate aggregate visibility, local forecasting and localization. Full fine access improves local forecasts at a larger reading budget, yet all methods miss correct localization of the 16 original exact-cancellation events. This tells consumers what additional access buys, beyond exposing a finer representation.
-\item \textbf{An execution-level acquisition diagnosis.} Traces connect exposure, innovations, scores, thresholds, requests and outcomes. Scores respond in 93 of 96 demand episodes without changing any acquisition schedule. A single correction tests the diagnosed gate, revealing late affected-meter requests and a remaining alarm barrier, without establishing a superior policy. This locates the loss between receiving information and using it in time.
+\item \textbf{Attribution of refinement benefits.} Comparisons under identical evidence verify preservation of registered posterior queries through refinement and coarsening. Retained state falls from 61.12 to 21.60 MB, matching streamed fine inference. This establishes a concrete control for distinguishing storage savings from increased capacity or improved predictions.
+\item \textbf{Measurement of local information value.} Controlled disturbances separate aggregate visibility, forecasting and localization. Full fine access improves local forecasts at a larger observation budget, while all methods miss localization of the 16 original exact cancellation events. These results show what additional measurements contribute and why forecasting gains alone cannot validate a monitoring capability.
+\item \textbf{Diagnosis of acquisition barriers.} Execution traces reveal responsive scores in 93 of 96 demand episodes without any acquisition schedule change. A targeted correction exposes late requests and a remaining alarm barrier without establishing an acquisition advantage. The diagnosis gives designers specific mechanisms to inspect when informative observations fail to produce timely action.
 \end{enumerate}
 
-Established Gaussian and observability arguments explain the findings. Code, configurations, traces and paper-generation scripts support reproduction~\cite{artifact}. The observations are real; providers and disturbances are experimental constructions in a retrospective prototype.
+Established Gaussian and observability results support the analysis. The methodological value lies in connecting these principles to controlled comparisons and observable execution behavior. Code, configurations, traces and reproduction scripts are available~\cite{artifact}. Within this retrospective study, real observations and synthetic disturbances provide a reproducible basis for evaluating how regional twins convert local detail into predictive and operational value.
+
+
 
 \section{Related Work and Scope}
-Multiresolution inference represents local and global uncertainty through hierarchical bases~\cite{katzfuss2017}. Multiresolution filters propagate a forecast-covariance approximation, with exactness in identified special cases~\cite{mrf}. Hierarchical sparse Cholesky methods obtain scalable filtering from specified conditional structure~\cite{vecchia}. We use exact conditional calculations in a smaller fixed model to isolate representation from observation access, rather than proposing another spatial approximation.
+Multiresolution inference represents local and global uncertainty through hierarchical bases~\cite{katzfuss2017}. Multiresolution filters propagate covariance approximations, with exactness in identified special cases~\cite{mrf}. Hierarchical sparse Cholesky methods exploit specified conditional structure for scalable filtering~\cite{vecchia}. Our exact conditional calculations in a smaller fixed model isolate representation from observation access.
 
-Distributed low-rank inference exchanges local sufficient quantities to recover a centralized posterior~\cite{distributed}, the closest mathematical baseline for our common-state/private-detail model. Incremental methods such as iSAM2 reuse conditionals while editing affected parts of a Bayes tree~\cite{isam}. Their locality depends on separator size, ordering and coupling. Our resource comparisons therefore grant message reuse and streamed prediction.
+Distributed low rank inference exchanges local sufficient quantities to recover a centralized posterior~\cite{distributed}, providing the closest mathematical baseline for our shared state and private detail model. Incremental methods such as iSAM2 reuse conditionals within a Bayes tree~\cite{isam}. Because locality depends on separator size, ordering and coupling, our comparisons include conventional message reuse and streamed prediction.
 
-MinT reconciles forecasts with aggregation constraints by minimizing forecast-error covariance trace under its assumptions~\cite{mint}. Our regional and local queries instead come from one joint model. This ensures algebraic agreement, while forecast accuracy and calibration require separate evaluation.
+MinT reconciles forecasts with aggregation constraints by minimizing forecast error covariance trace under its assumptions~\cite{mint}. Our regional and local queries come from one joint model, ensuring algebraic agreement while leaving accuracy and calibration to empirical evaluation.
 
-Event-triggered estimation distinguishes measurements from information carried by transmission decisions. Sun and Work study normalized-innovation triggering with synthetic measurements representing nontransmission~\cite{sun}. Han et al. construct stochastic triggers that preserve a Gaussian estimation structure under particular assumptions~\cite{han}. Our heuristic acquisition rule does not inherit those guarantees. It receives scheduled probes and ignores selection information from history outside its finite inference window.
+Event triggered estimation distinguishes measurements from information conveyed by transmission decisions. Sun and Work represent nontransmission through synthetic measurements~\cite{sun}. Han et al. develop stochastic triggers that preserve Gaussian estimation under specified assumptions~\cite{han}. Our heuristic uses scheduled probes and omits selection information outside its finite inference window, so those guarantees do not apply.
 
-Controlled sensing jointly chooses observations and a stopping rule. Veeravalli et al. establish first-order asymptotic optimality for a windowed procedure under finite action and post-change parameter sets, specified observation laws and a mean-time-to-false-alarm criterion~\cite{controlled}. Our fixed reading budget, empirical thresholds and perturbed meter backgrounds do not satisfy that setup. Random acquisition supplies a simple, nonoptimal comparator.
+Controlled sensing jointly selects observations and a stopping rule. Veeravalli et al. establish first order asymptotic optimality under finite action and postchange parameter sets, specified observation laws and a mean time to false alarm criterion~\cite{controlled}. Our fixed reading budget and empirical thresholds address a different setting. Random acquisition provides a simple, nonoptimal comparator.
 
-Electricity anomaly detection may already use fine inputs before making an aggregate decision. He et al. use participant-level time-slot features and a participant localization rule~\cite{he}. Their interface is not an aggregate-only consumer with a small observation budget. We therefore compare information access explicitly rather than identifying a low-dimensional model with a coarse observation interface. This study adds a linked empirical comparison: it holds evidence fixed to test representation, varies access to measure information value, and follows acquired signals through the actual decision code. That combination explains why correct probabilistic refinement and observable local change need not produce useful acquisition. Residual triggering and sufficient-statistic exchange remain established ingredients.
+Electricity anomaly detection can use detailed inputs before producing aggregate decisions. He et al. combine participant features with a localization rule~\cite{he}. Their observation interface differs from a consumer receiving summaries and requesting limited fine readings. We therefore distinguish model dimension from information access. Our contribution connects these established methods through a controlled empirical design. Comparisons hold evidence fixed to assess representation, vary access to measure information value and trace acquired signals through decision code. This identifies where consistent probabilistic refinement and observable local changes fail to improve acquisition, providing practical guidance for evaluating observation policies alongside representation choices.
+
+
+
 
 \section{Regional Twin and Information Interfaces}
 \subsection{Physical observations and study population}
-Each reading is electricity consumed during a half-hour interval, measured in kWh. A one-hour forecast predicts the reading two intervals ahead; it is not an integral over the next hour. Six-hour forecasts similarly target the reading 12 intervals ahead. We retain meter identifiers and source clock labels. There are no verified feeders, borough assignments, coordinates or population expansion weights.
+Readings measure electricity consumed in half hour intervals, in kWh. Forecasts one and six hours ahead target readings two and 12 intervals later, respectively, rather than cumulative consumption over those horizons. We retain meter identifiers and source clock labels. Verified feeders, borough assignments, coordinates and population expansion weights are unavailable.
 
-The source archive contains 167,932,474 rows, 167,817,021 distinct meter/time keys and 5,566 distinct meter identifiers. These locally counted figures differ from the catalog's approximate 167 million readings and 5,567 households~\cite{london}. One 801.67 MB ZIP expands to 8.54 GB of CSV and becomes 528.82 MB of typed, partitioned Parquet. Streaming ingestion processes about 472,000 rows/s, with 3.36 GB peak host memory. These are ingestion measurements, not inference throughput.
+The archive contains 167,932,474 rows, 167,817,021 distinct meter/time keys and 5,566 meter identifiers, compared with the catalog's approximate 167 million readings and 5,567 households~\cite{london}. The 801.67 MB ZIP expands to 8.54 GB of CSV and yields 528.82 MB of typed, partitioned Parquet. Streaming ingestion processes about 472,000 rows/s with 3.36 GB peak host memory. These figures describe ingestion performance rather than inference throughput.
 
-Nonfinite, invalid and negative readings become missing values. Duplicate keys are retained deterministically for archival bookkeeping but excluded from fitting and replay. Missing demand is never zero-filled as an outcome. Because the source does not resolve timezone and daylight-saving semantics sufficiently for this study, accessible clock-transition days are excluded. We do not invent UTC alignment.
+Nonfinite, invalid and negative readings become missing values. Duplicate keys are retained deterministically for archival bookkeeping but excluded from fitting and replay. Missing outcomes are never replaced with zero. Unresolved timezone and daylight saving semantics require excluding accessible clock transition days without assuming UTC alignment.
 
-Eligibility is fixed using 2012 only, requiring at least 8,760 valid training readings per household. The resulting 4,194-household cohort contributes 52,109,356 valid training readings. About 29.3\% of its rectangular training grid is missing. Of these households, 3,362 have standard and 832 time-of-use tariff labels. Tariff membership is recorded descriptively; this study does not estimate a tariff effect. January--March 2013 supplies exploratory development replay. April--December 2013 remains sealed, as do outcomes from an earlier, separate building-data project. Ingestion partitions held-out records but fitting, selection and scoring do not use their values.
+Eligibility uses only 2012 data and requires at least 8,760 valid readings per household. The 4,194 eligible households provide 52,109,356 valid training readings, with 29.3\% of the rectangular grid missing. Standard tariffs cover 3,362 households and time of use tariffs cover 832. These labels are descriptive, without estimating tariff effects. January to March 2013 supplies exploratory development replay. April to December 2013 and outcomes from the earlier building data project remain sealed. Ingestion partitions withheld records, whose values are excluded from fitting, selection and scoring.
 
 \subsection{One fixed probabilistic model}
-Let $y_{it}$ be household $i$'s recorded demand. The model is
+Let $y_{it}$ denote household $i$'s recorded demand. The model is
 \begin{align}
  s_{t+1}&=F_s s_t+\eta_t,\\
  y_{it}&=\mu_{i,\ell(t)}+\ell_i^\top s_t+d_{it}+\epsilon_{it},\label{eq:model}\\
  d_{i,t+1}&=\rho_i d_{it}+\zeta_{it}.
 \end{align}
-Here $s_t\in\R^{16}$ captures common variation, $\mu_{i,\ell(t)}$ is a 336-slot weekly seasonal profile, and $d_{it}$ is a private household residual. Loadings, dynamics and noise conventions are fitted on training data. Missing standardized residuals are mean-filled for initial factor construction only; loadings are refitted on observed entries. Private residual covariance uses a fixed 80\% autoregressive and 20\% nugget split, with persistence clipped to $[-0.95,0.95]$. The common transition has spectral radius 0.9942. These are working Gaussian assumptions, not verified physical laws.
+Here $s_t\in\R^{16}$ captures common variation, $\mu_{i,\ell(t)}$ is a weekly seasonal profile with 336 slots, and $d_{it}$ is a private household residual. Loadings, dynamics and noise conventions are fitted on training data. Missing standardized residuals receive mean values only for initial factor construction. Loadings are then refitted on observed entries. Private residual covariance uses a fixed 80\% autoregressive and 20\% nugget split, with persistence clipped to $[-0.95,0.95]$. The common transition has spectral radius 0.9942. These are working Gaussian assumptions.
 
-Private innovations are conditionally independent given the common state. Household forecast errors are not unconditionally independent. The regional variance includes common-state uncertainty, future common process noise, private temporal dependence and measurement noise. Gaussian predictions may assign mass to negative demand; the inference model does not enforce a physical nonnegativity constraint. Disturbance generation does enforce nonnegative replay observations and targets.
+Private innovations are conditionally independent given the common state. Household forecast errors are not unconditionally independent. Regional variance includes common state uncertainty, future common process noise, private temporal dependence and measurement noise. Gaussian predictions permit negative demand, whereas disturbance generation enforces nonnegative replay observations and targets.
 
-Sixteen groups are formed by sorted physical meter index modulo 16. They contain 262 or 263 households and are synthetic consumption populations, not geographical neighborhoods. The finite window has 24 half-hour steps. Stacking common coordinates gives a separator of dimension $16\times24=384$. Including all private trajectories yields 101,040 formal coordinates at the largest cohort, but the implementation never forms a dense covariance of that size. Many source records contribute to fitted statistics; they are not all simultaneously resident in the GPU working set.
+Sixteen groups, formed by sorted physical meter index modulo 16, contain 262 or 263 households each. They are synthetic populations without geographical assignments. The window contains 24 half hour steps, giving a common separator dimension of $16\times24=384$. All private trajectories together yield 101,040 formal coordinates at the largest cohort, without constructing a dense covariance of that size. Source records contribute to fitted statistics without residing simultaneously in GPU memory.
 
 \begin{figure*}[!t]
 \centering\includegraphics[width=\textwidth]{figures/information_flow.pdf}
-\caption{Separate access from representation to attribute the value of detail. Providers supply group summaries and requested fine values; the acquisition policy chooses requests using acquired probes. Representation controls conditional storage, not access to new evidence. One model answers regional, group and household queries. Provider summary scans are counted separately from consumer fine reads.}
+\caption{Separating access from representation identifies the value of detail. Providers supply summaries and requested fine readings. Acquired probes guide requests, while representation controls conditional storage without adding evidence. One model answers regional, group and household queries. Provider summary scans are counted separately from consumer fine reads.}
 \label{fig:interfaces}
 \end{figure*}
 
-\subsection{Provider summaries, fine access and query support}
-At each update, the shared provider supplies 16 sums over currently observed households and a native-missingness mask. Thus the actual macro operator includes group totals, not merely one regional total. The evaluator scans the background to construct these summaries; that provider-side scan is charged. Fine readings are available only through a current-cutoff channel that enforces unique requests and a budget. The consumer cannot compute unrevealed household residuals to decide which readings to request.
 
-The restricted methods request at most $\lfloor0.05\times4194\rfloor=209$ household records per update, including 41 rotating probes. Missing requested readings consume an attempt but contribute no likelihood. A 24-step evidence cache stores acquired finite values and expires old entries. Requests, finite returns and assimilation are logged separately. Figure~\ref{fig:interfaces} separates the operations and Table~\ref{tab:methods} defines method interfaces; every method can issue local conditional predictions even when it receives only aggregates.
+
+
+\subsection{Provider summaries, fine access and query support}
+Each update supplies 16 group sums over observed households and a native missingness mask. Constructing these summaries requires a charged provider scan. Fine access enforces the current cutoff, unique requests and an observation budget. Unrevealed household residuals cannot guide acquisition.
+
+Restricted methods allow $\lfloor0.05\times4194\rfloor=209$ requests per update, including 41 rotating probes. Missing readings consume attempts without contributing likelihood. A cache retains finite acquisitions for 24 steps. Requests, finite returns and assimilation are logged separately. Figure~\ref{fig:interfaces} separates these operations and Table~\ref{tab:methods} defines the interfaces. Every method supports conditional household predictions, including those receiving only aggregates.
 
 \begin{table*}[!t]
-\caption{Observation and representation interfaces in the shock comparisons. All rows use the same training-fitted model, 16 group sums and missingness masks. Attempts include missing readings. ``Fine'' describes evidence access, not the dimension of the common state.}
+\caption{Interfaces for shock comparisons. All methods share the fitted model, 16 group sums and missingness masks. Attempts include missing readings. Fine access describes available evidence rather than model dimension.}
 \label{tab:methods}\centering
 \begin{tabular}{p{.14\textwidth}p{.25\textwidth}p{.26\textwidth}p{.25\textwidth}}
 \toprule
-Method & Additional current observations & Acquisition rule & Representation and comparison role\\
+Method & Additional observations & Acquisition rule & Comparison role\\
 \midrule
-M0 Aggregate & None & Aggregate change detector & Conditional household predictions remain possible\\
-M1 Probes & 41 fixed rotating probes & Same cheap monitoring as M3 & Probe-only information control\\
-M2 Random & 41 probes + 168 random requests & Uniform extra selection, no replacement & Matched 209-attempt simple acquisition\\
-M3 Gated & 41 probes + 168 extra requests & Threshold/hold; 42 extra explore, up to 126 target a group & Original event-sensitive refinement\\
-M3b Ranked & Same 209-attempt budget & Current highest positive score; same exploration & One frozen rank-responsive correction\\
-Fixed trace & Exactly M3 or M3b's sequential trace & Receives no future acquisition decisions & Same-evidence conventional conditional retention\\
-M4 Full fine & All 4,194 available household readings & Streamed full access & Structured full-information reference\\
+M0 Aggregate & None & Aggregate change detector & Conditional household predictions\\
+M1 Probes & 41 fixed rotating probes & Same monitoring as M3 & Probe information control\\
+M2 Random & 41 probes + 168 random requests & Uniform selection without replacement & Matched observation budget\\
+M3 Gated & 41 probes + 168 extra requests & Threshold and hold. 42 explore, up to 126 target one group & Original adaptive policy\\
+M3b Ranked & Same 209 attempts & Highest positive score with unchanged exploration & Frozen ranking correction\\
+Fixed trace & M3 or M3b trace, delivered sequentially & No future acquisition decisions & Conventional retention under identical evidence\\
+M4 Full fine & All 4,194 household records & Streamed full access & Structured full information reference\\
 \bottomrule
 \end{tabular}
 \end{table*}
 
-Observed regional targets are sums over the households with a valid target reading. The same support is applied to each method's predictions and uncertainty. This is an evaluator query on the posterior, not a complete-population demand label. Future validity masks enter only these scoring-query weights, not the posterior information matrix or acquisition inputs. Monitoring uses a separate full-support one-step prediction. Neither model selection nor policy sees future consumption. No complete-cohort observed totals were available for the unmodified refinement panel, whose target support ranged from 4,082 to 4,168 households.
+Regional targets sum valid household readings, using identical support for every method's predictions and uncertainty. These posterior queries measure observed support rather than complete population demand. Future validity masks affect only scoring weights, never the posterior information matrix or acquisition inputs. Monitoring uses a separate prediction one step ahead on full support. Model selection and policies never access future consumption. The unmodified refinement panel has no complete cohort totals, with target support ranging from 4,082 to 4,168 households.
 
-\section{What Refinement Can and Cannot Change}
-\subsection{Same model, same evidence}
-Let $c$ denote retained coordinates and $d$ detail coordinates in a proper Gaussian posterior with precision $J$ and information vector $h$. For $J_{dd}\succ0$, elimination gives
+
+
+
+
+
+
+
+\section{Principles for Consistent Regional Refinement}
+\subsection{Preserving queries as detail changes}
+Gaussian elimination supports verifiable refinement. Let $c$ denote retained coordinates and $d$ detail coordinates in a proper Gaussian posterior with precision $J$ and information vector $h$. For $J_{dd}\succ0$,
 \begin{align}
 J_c&=J_{cc}-J_{cd}\operatorname{solve}(J_{dd},J_{dc}),\label{eq:schur}\\
 h_c^{\rm marg}&=h_c-J_{cd}\operatorname{solve}(J_{dd},h_d).
 \end{align}
-The conditional law of $d$ given $c$ has mean $\operatorname{solve}(J_{dd},h_d-J_{dc}c)$ and covariance $J_{dd}^{-1}$. Implementations use factor solves, not explicit matrix inversion. These are standard Gaussian elimination identities underlying distributed and incremental inference~\cite{distributed,isam}.
+The conditional mean of $d$ is $\operatorname{solve}(J_{dd},h_d-J_{dc}c)$ and its covariance is $J_{dd}^{-1}$. Factor solves implement these established identities without explicit inversion~\cite{distributed,isam}.
 
-\begin{proposition}[Registered-query preservation]
-Work in exact arithmetic with a fixed model, evidence and window. Suppose a registered query vector has conditional law
-$q\mid c\sim\mathcal N(a+Lc,V)$ and $c\sim\mathcal N(m,C)$. Retaining $(a,L,V,m,C)$ preserves its mean $a+Lm$ and covariance $V+LCL^\top$ through eviction of other detail. Exact reconstruction using the corresponding conditionals preserves these quantities and is independent of elimination order.
+\begin{proposition}[Registered query preservation]
+For a fixed model, evidence and window, suppose
+$q\mid c\sim\mathcal N(a+Lc,V)$ and $c\sim\mathcal N(m,C)$. In exact arithmetic, retaining $(a,L,V,m,C)$ preserves the query mean $a+Lm$ and covariance $V+LCL^\top$ when other detail is evicted. Reconstruction with the original conditionals preserves these quantities regardless of elimination order.
 \end{proposition}
 \begin{proof}
-The mean follows from iterated expectation. Total covariance gives $V+LCL^\top$. Integrating a proper joint Gaussian over any fixed set of eliminated coordinates gives the same marginal irrespective of integration order. Reconstruction multiplies that marginal by its original conditional law and therefore recovers the same joint distribution.
+Iterated expectation and total covariance give the stated moments. Integrating a proper Gaussian over a fixed coordinate set produces the same marginal in any order. Combining that marginal with its original conditional recovers the joint distribution.
 \end{proof}
 
-The query class matters. The refinement panel registers full-group totals, common observed-support totals and one fixed household per group, separately at each lead. Same-lead cross-covariances are retained. Arbitrary new household combinations or cross-lead joint queries may require reconstruction. A coarse marginal alone is insufficient: $c\sim\mathcal N(0,1)$ is compatible with either $d=c+e$ or $d=-c+e$, for independent $e\sim\mathcal N(0,1)$. The identical coarse law leaves opposite cross-covariances unresolved. Moving conditionals to an uncounted host cache is not a memory reduction.
+This identifies the information needed for consistent regional and household queries. The panel registers full group totals, common observed support totals and one fixed household per group at each lead, including covariances within each lead. New household combinations or joint queries across leads may require reconstruction. Conditional information is essential. Both $d=c+e$ and $d=-c+e$, with independent $c,e\sim\mathcal N(0,1)$, share the same coarse marginal but have opposite cross covariances. Resource accounting includes conditionals and host caches.
 
-When new household readings are constituents of an already used group sum, their likelihood cannot be added independently to the old aggregate likelihood. The implemented update uses
+Evidence integration preserves consistency when acquired readings contribute to an existing group sum. The update uses
 \begin{equation}
 p(y_{\rm fine},a\mid c)
 =p(y_{\rm fine}\mid c)\,p(a\mid y_{\rm fine},c),\label{eq:replace}
 \end{equation}
-conditioning the derived sum $a$ on acquired values and native masks. Revealing all constituents makes the remaining sum redundant. Evidence versions replace the old group message atomically. A deliberately double-counted update changes the posterior and is retained as a negative control.
+conditioning the sum on acquired values and native masks. All constituents together make the remaining aggregate likelihood redundant. Versioned evidence replaces the old group message atomically, preventing duplicate evidence. A duplicate evidence control confirms the posterior changes.
 
-With conditionally private groups, a within-window update can reuse unaffected messages but must refactor the common separator. The cost depends on the affected block and its connections, not just the number of new observations. At rank $r=16$, window length $L=24$ and $N$ households, the implementation stores $O(NL^2)$ private temporal covariance plus separator and query summaries; a dense separator factorization costs $O((rL)^3)$. Private temporal factors can be batched on the GPU. Stronger cross-group coupling or fill-in would remove the simple locality. Each moving window here is rebuilt from the fixed training prior. It does not propagate an exact all-history boundary message, and all 16 group factors are rebuilt per sequential shock update.
+Conditionally private groups permit reuse of unaffected messages within a window, followed by refactorization of the common separator. Update cost depends on block size and coupling. With rank $r=16$, window length $L=24$ and $N$ households, storage is $O(NL^2)$ for private temporal covariance plus separator and query summaries. Dense separator factorization costs $O((rL)^3)$, while private temporal factors support GPU batching. This locality depends on conditional structure and can diminish with stronger coupling or factorization fill. Each advancing window restarts from the fixed training prior and rebuilds all 16 group factors, without propagating an exact boundary message from the complete history.
 
-\subsection{Aggregate visibility}
-For household demand perturbation $d_t$ and actual summary operator $S_t$, the observable perturbation is $S_t d_t$. Exact regional cancellation is insufficient if providers also reveal group totals. Our hidden controls cancel within each observed group, including missing-support handling.
 
-For a compatible fixed linear state model, let household demand be $Hx_t$, transition be $F$, and fixed macro mapping be $C=SH$. The standard finite-horizon observability matrix~\cite{hespanha} is
+
+
+
+
+
+\subsection{Aggregate visibility and information value}
+For household perturbation $d_t$ and summary operator $S_t$, the observable change is $S_t d_t$. Our hidden controls cancel within every observed group, accounting for missing readings. This tests visibility through the actual provider interface, including group totals.
+
+For a fixed linear state model with household demand $Hx_t$, transition $F$ and macro mapping $C=SH$, the standard observability matrix~\cite{hespanha} is
 \begin{equation}
 \mathcal O_L=\begin{bmatrix}C^\top&(CF)^\top&\cdots&(CF^L)^\top\end{bmatrix}^{\!\top}.
 \end{equation}
-\begin{proposition}[Finite-horizon indistinguishability]
-Compare two linear systems with initial states differing by deterministic $\delta$, identical dynamics and input, and the same joint process and observation noise law. If $\mathcal O_L\delta=0$, their macro observation distributions coincide through time $L$. Any detector based only on those observations, with the same independent randomization, has equal alarm probability under both systems.
+\begin{proposition}[Indistinguishability over a finite horizon]
+Consider two linear systems whose initial states differ by deterministic $\delta$, with identical dynamics, inputs and joint noise laws. If $\mathcal O_L\delta=0$, their macro observation distributions coincide through time $L$. Any detector using only these observations and the same independent randomization has equal alarm probability under both systems.
 \end{proposition}
 \begin{proof}
-Couple both systems using the same noise draws. Their state difference at time $k$ is $F^k\delta$, so the macro observation difference is $CF^k\delta=0$. Equality almost surely in this coupling implies equality of observation laws, and hence of any measurable detector output law.
+Couple the systems with identical noise draws. Their state difference at time $k$ is $F^k\delta$, giving macro observation difference $CF^k\delta=0$. The observation laws therefore coincide, as do the output laws of any detector using them.
 \end{proof}
 
-This elementary observability consequence supplies a limit, not a detection algorithm. Additional probe rows can make previously hidden directions visible, but probes that miss the changed households need not do so. Visibility alone supplies no useful finite-sample power guarantee.
+This criterion gives the study a principled way to distinguish unavailable information from unsuccessful detection. Additional probes can reveal hidden directions when their observation operators respond to those changes. Detection performance then depends on signal strength, noise and the decision rule.
 
-For an illustrative pair, changes of $+1$ and $-1$ kWh in one observed group leave its current sum unchanged. If compatible private persistence factors are 0.96 and 0.70, the later sum is $0.96^k-0.70^k$: 0.26 kWh after one step and 0.4316 after two. Equal persistence instead keeps this pair hidden. These numbers illustrate the algebra. The replay disturbances are overlays on measured demand, not draws from this latent-state generator; their visibility is checked directly using $S_t d_t$.
+As an algebraic illustration, changes of $+1$ and $-1$ kWh within one group cancel immediately. Illustrative persistence factors of 0.96 and 0.70 produce a later sum of $0.96^k-0.70^k$, reaching 0.26 kWh after one step and 0.4316 after two. Equal persistence preserves cancellation. This distinguishes changes requiring local observations from those becoming visible through later aggregates. Replay disturbances overlay measured demand rather than follow this illustrative generator, so their visibility is verified directly through $S_t d_t$.
 
-\subsection{From observations to acquisition actions}
-The original policy first reads its 41 probes. For acquired meter $i$, it forms $z_{it}=|y_{it}-\widehat y^{\rm coarse}_{it}|/\sqrt{v^{\rm coarse}_{it}}$. The reference is the previous aggregate-only one-step forecast, with a training seasonal initialization. It then updates
+
+
+
+
+
+
+\subsection{Tracing information into acquisition decisions}
+We connect observation sensitivity with decision behavior by pairing the acquisition policy with a verifiable test of gate stability. This identifies where informative measurements influence requests and where the decision mechanism blocks their effect.
+
+M3 first requests its 41 probes. For each finite probe reading, it computes $z_{it}=|y_{it}-\widehat y^{\rm coarse}_{it}|/\sqrt{v^{\rm coarse}_{it}}$. The reference is the previous forecast one step ahead using aggregates alone, initialized from the training seasonal profile. Group scores follow
 \begin{equation}
 q_{gt}=0.8q_{g,t-1}+\max\{0,\max_{i\in P_t\cap g}z_{it}-2\},\label{eq:score}
 \end{equation}
-where an empty probe group contributes zero. If $\max_gq_{gt}>\tau$, with $\tau=13.4334$, M3 selects the highest-scoring group and resets a four-decision hold. Otherwise it retains a held group or becomes inactive. Forty-two of the 168 extra attempts explore; up to 126 target the active group. When inactive, all extra attempts rotate. Probe values can affect the current extra requests. Extra values update inference but never feed the acquisition score, including at the next update.
+where an empty probe group contributes zero. If $\max_gq_{gt}>\tau$, with $\tau=13.4334$, M3 selects the group with the highest score and resets a hold lasting four decisions. Otherwise it retains a held group or becomes inactive. Of 168 additional attempts, 42 explore and up to 126 target the active group. All additional attempts rotate when inactive. Probe values can influence current requests. Additional readings update inference but never enter acquisition scores.
 
-\begin{proposition}[A sufficient unchanged-gate condition]
-Let $b=\max_gq_g$, $b'=\max_gq'_g$, and $e=\|q'-q\|_\infty$. If $e<|b-\tau|$, the strict decisions $b>\tau$ and $b'>\tau$ coincide. The condition does not certify equality when the margin is zero or equality holds.
+\begin{proposition}[Sufficient condition for acquisition gate stability]
+Let $b=\max_gq_g$, $b'=\max_gq'_g$, and $e=\|q'-q\|_\infty$. If $e<|b-\tau|$, the strict decisions $b>\tau$ and $b'>\tau$ coincide. Equality or a zero margin leaves this condition inconclusive.
 \end{proposition}
 \begin{proof}
-The maximum is 1-Lipschitz in the infinity norm, so $|b'-b|\le e$. The stated strict inequality prevents crossing or reaching the threshold from either side.
+The maximum is Lipschitz with constant one in the infinity norm, giving $|b'-b|\le e$. The strict margin condition prevents the perturbed maximum from reaching or crossing the threshold.
 \end{proof}
 
-An unchanged gate does not alone guarantee unchanged acquisitions. Ranking, ties, hold state, remaining budget and available IDs also matter. We therefore audit actual ordered meter/time requests and finite assimilation, rather than inferring actions from a score or request count. This diagnostic bound is an elementary specialization, not a new event-triggering theorem.
+This elementary bound turns score changes into a checkable explanation of threshold behavior. We complete the diagnosis by auditing ordered meter and time requests and finite assimilation, accounting for ranking, ties, hold state, remaining budget and available identities. Pairing the margin test with actual execution traces distinguishes responsive scores from changed acquisitions. The resulting analysis gives twin designers a reproducible way to locate decision barriers before investing in additional observations or more detailed representations.
+
+
+
+
+
+
+
+
 
 \section{Experimental Protocol}
-\subsection{Distinct exploratory cohorts}
-We keep three linked but noninterchangeable cohorts. \textbf{A, the unmodified refinement panel,} is development replay at 32 origins across four weeks, with nested populations of 1,024, 2,048 and 4,194 households. Fixed, random and uncertainty-guided schedules open 2, 4 or 8 groups, producing 864 policy cases and 1,728 restoration cycles. These are computational cases, not independent physical episodes.
+\subsection{Complementary evaluation cohorts}
+Three complementary panels connect representation consistency, disturbance response and acquisition behavior. \textbf{A, the unmodified refinement panel,} evaluates 32 development origins across four weeks with nested populations of 1,024, 2,048 and 4,194 households. Fixed, random and uncertainty guided schedules open 2, 4 or 8 groups, yielding 864 policy cases and 1,728 restoration cycles. These controlled computational comparisons share backgrounds and are not independent physical episodes.
 
-\textbf{B, the original disturbance panel,} contains 112 sequential episodes on eight backgrounds from the same four development weeks. Six demand-disturbance families, two magnitudes and eight backgrounds give 96 demand episodes; eight unmodified and eight measurement-fault episodes supply controls. Each episode has 23 summary warm-up intervals, 48 scored updates and targets through six hours ahead. Locations, seeds and amplitudes were frozen before comparative scoring.
+\textbf{B, the original disturbance panel,} tests information value through 112 sequential episodes on eight backgrounds from those four weeks. Crossing six disturbance families with two magnitudes produces 96 demand episodes. Eight unmodified and eight measurement fault episodes provide controls. Each episode includes 23 summary initialization intervals, 48 scored updates and targets through six hours ahead. Freezing locations, seeds and amplitudes before scoring supports reproducible comparisons.
 
-\textbf{C, the corrective panel,} uses four predetermined midday backgrounds reused from B, crossed with localized, exactly cancelling, delayed-aggregate and unmodified conditions. It contains 12 fresh-seed demand episodes and four controls. Only the higher nominal magnitude is used. Seed parity makes its localized disturbances increases; it does not cover decreases or all time contexts. Four replayed original episodes support diagnosis but are not pooled into C. The reconstruction of B's 112 episodes likewise adds no independent evidence. Absolute error differences between B and C do not demonstrate temporal model deterioration.
+\textbf{C, the corrective panel,} tests the diagnosed acquisition mechanism on four predetermined midday backgrounds reused from B. Localized, exactly cancelling, delayed aggregate and unmodified conditions produce 12 demand episodes with fresh seeds and four controls. The panel uses the higher nominal magnitude, with seed parity producing localized increases. Its scope excludes localized decreases and other onset contexts. Four original episodes support diagnosis separately from C. Reconstructing B's 112 episodes verifies execution without adding independent evidence. Keeping panel comparisons separate preserves the interpretation of corrective results and avoids treating differences between B and C as temporal model deterioration.
 
-\subsection{Disturbances and targets}
-Reversible overlays produce $y^{\rm shock}_t=y^{\rm background}_t+d_t$. Available readings and future demand targets use this same perturbed series. Broad increases are positive controls for macro detection. Localized increases or decreases affect a small subset. Exact opposing changes cancel within a group; approximate cancellation leaves a residual signature. Different positive and negative persistence creates initially hidden changes with later aggregate effects. A ramp tests gradual rather than abrupt local change. A separate sensor-fault control changes readings but leaves targets unchanged.
 
-Magnitudes use training residual scales. Feasible scaling caps decreases at 80\% of available background demand, and paired changes are suppressed on incompatible missing support. Consequently a nominal scale is not always its realized amplitude. We verify cancellation after these operations and preserve null or attenuated realizations rather than selecting easy shocks. There are no invented propagation paths or grid faults. The interventions are synthetic disturbances on real trajectories, not observed physical events or recovered noise-free demand.
 
-\subsection{Calibration, correction and baselines}
-The earlier unmodified January 3--4 segment supplies 96 calibration updates. After eight startup updates, empirical quantiles fit acquisition and alarm thresholds. The deployed alarm is an any-channel, per-update maximum over group innovations and legally acquired fine innovations, with a nominal 2\% target. It is distinct from M3's acquisition gate. Each method receives a threshold appropriate to its number and distribution of exposed fine readings. No injected-event labels fit these thresholds.
 
-The one intentional correction, M3b, retains Eq.~\eqref{eq:score}, probes, model, reading budget and exploration. It assigns the already-spent extra budget to the current highest positive score instead of requiring the threshold/hold gate. The alarm remains separately calibrated on the same earlier segment. This was specified before its comparative run; no collection of policy variants was searched. Fixed-representation references receive M3 or M3b's acquired trace sequentially, without future requests, and retain conditionals conventionally. M4 uses structured streamed inference with all currently available readings. The uncertainty-only policy from A is preserved as a diagnostic, not rerun to seek a favorable outcome.
+\subsection{Controlled disturbances and calibrated comparisons}
+Reversible overlays produce $y^{\rm shock}_t=y^{\rm background}_t+d_t$, with the same perturbed series supplying observations and future demand targets. Broad increases test macro detection, while localized increases and decreases test sensitivity to small subsets. Opposing changes create exact or approximate cancellation within groups. Different persistence introduces delayed aggregate effects, and ramps test gradual change. Sensor fault controls alter readings alone, separating measurement errors from demand changes.
 
-Intervals include future process and measurement uncertainty. Raw central 90\% intervals use 1.6449 standard deviations. Adjusted intervals multiply by empirical absolute standardized-error quantiles from the earlier calibration segment. Serial dependence, model misspecification and adaptive selection prevent interpreting these as exact coverage guarantees. In particular, old acquisition decisions depend on observations no longer present after a window shift; their informative selection effects are not modeled. Same-evidence numerical agreement is therefore equality of the implemented working posterior, not proof that it is the true posterior conditional on every historical action.
+Magnitudes follow training residual scales. Decreases are capped at 80\% of available demand, and paired changes are suppressed where missing support is incompatible. Realized amplitudes can therefore differ from nominal scales. Cancellation is verified after these operations, retaining null and attenuated realizations. These controls test information access on real trajectories using synthetic disturbances, without modeling grid topology or physical fault propagation.
 
-\subsection{Metrics and paired evidence}
-Detection is any alarm at lags 0 through 6 after onset, inclusive: seven observation instants over three hours. Correct localization requires at least one currently affected group among the alarmed groups in that window. A missed detection is assigned delay seven half-hour steps, so delay averages include failures. We do not convert all event time points into successes after one hit. Negative-control alarms are alarmed updates divided by all unmodified updates; false household and group localizations are retained separately.
+The unmodified January 3 to 4 segment supplies 96 calibration updates. Excluding eight startup updates, empirical quantiles set acquisition and alarm thresholds without injected event labels. Alarms use the maximum across group and legally acquired fine innovations at each update, targeting 2\%. Each method is calibrated for the number and distribution of its exposed readings. This separates the alarm criterion from M3's acquisition gate.
 
-Local mean absolute error (MAE) averages valid affected-household errors within a target interval, then intervals during the event, then episodes. B's primary local average uses 80 episodes from the five local families, excluding broad regional shifts and controls. C uses its 12 demand episodes. Forecast phase is based on target time: some event targets were forecast before an unannounced shock was observable. The methods receive no credit for foreknowledge. Regional consequences exclude exactly cancelling events, for which unchanged regional MAE cannot be a refinement benefit.
+M3b isolates that gate's role by retaining Eq.~\eqref{eq:score}, probes, model, budget and exploration while assigning the extra budget to the current highest positive score. Its alarm is calibrated separately on the same segment. The correction was fixed before comparison, without searching policy variants. Conventional retention references receive M3 or M3b's trace sequentially, without future requests. M4 uses structured streamed inference with all available readings. Panel A's uncertainty policy remains a diagnostic without further tuning.
 
-Comparisons are paired on identical backgrounds, overlays and target support. We show all background-level differences, averaging magnitudes and families within background. Eight backgrounds occupy only four weeks, and C reuses one background per week. We avoid confidence intervals based on independent households or hours, significance claims from the small panel, and interpreting similar averages as equivalence. The frozen alarm operating point is reported with its realized rate; no post hoc score sweep is presented as a closed-loop policy improvement.
+Intervals include future process and measurement uncertainty. Raw central 90\% intervals use 1.6449 standard deviations. Adjusted intervals use empirical absolute standardized error quantiles from calibration. Coverage remains empirical because of serial dependence, model misspecification and adaptive selection. Historical acquisition decisions can depend on observations outside the retained window, whose selection effects are not modeled. Agreement under identical evidence therefore verifies computational consistency of the working posterior, with historical selection effects outside its scope.
+
+\subsection{Outcome measures and paired evaluation}
+Detection requires an alarm at lags 0 through 6 after onset, covering seven observation instants over three hours. Correct localization requires an alarmed group that is currently affected within that window. Misses receive a delay of seven half hour steps, retaining failures in delay averages. A hit does not relabel all event times as successes. Control alarm rates divide alarmed updates by all unmodified updates, with false household and group localizations recorded separately.
+
+Local mean absolute error (MAE) averages valid affected household errors within target intervals, then event intervals and episodes. Panel B uses 80 episodes from five local families, excluding broad shifts and controls. Panel C uses 12 demand episodes. Forecasts are evaluated by target time, including targets predicted before a disturbance was observable. Regional comparisons exclude exactly cancelling events, whose unchanged regional MAE cannot indicate refinement value.
+
+Pairing identical backgrounds, overlays and target support isolates differences between methods. All background differences are displayed after averaging families and magnitudes within each background. The eight backgrounds span four weeks, with C reusing one per week. Results are descriptive, without assuming independent households or hours, claiming significance or treating similar averages as equivalence. Reporting realized alarm rates alongside the frozen operating point connects performance to deployment behavior. Only executed sequential policy comparisons support claims of acquisition improvement.
+
+
+
 
 \subsection{GPU implementation and resource accounting}
-Numerical fitting and replay use FP64 GPU calculations on an NVIDIA RTX PRO 4500 Blackwell with 32,623 MiB reported memory, rather than the unverified 48 GB planning assumption. CPU work handles typed ingestion, provenance, orchestration and saved-output analysis. Inference uses batched household temporal factors and one common separator factor. Means and aggregate covariances are computed by solves, with shared-future-noise terms retained.
+Fitting and replay use double precision (FP64) on an NVIDIA RTX PRO 4500 Blackwell with 32,623 MiB of reported memory. The CPU handles ingestion, provenance, coordination and analysis. Inference batches household temporal factors and solves a common separator system. Linear solves produce means and aggregate covariances, including uncertainty from shared future noise.
 
-Costs distinguish provider scans, consumer requests, serialized payloads, transfers, retained state and complete update latency. Simulated wire bytes are not measured network traffic or Parquet bytes. Ground-truth evaluation does not grant the estimator free fine access. Setup and restoration costs are included. Earlier shared-matrix solver tests found no acceleration advantage; CPU/GPU speedup is not a study claim.
+Resource accounting separates provider scans, consumer requests, payload sizes, transfers, retained state and total update time. Payload estimates describe simulated communication rather than measured network traffic or Parquet storage. Scoring data do not supply the estimator with additional readings. Total update costs include setup and cache restoration. Earlier shared matrix solver tests found no acceleration advantage, and we claim no CPU versus GPU speedup.
+
+
+
+
+
+
+
+
 
 \section{Results}
-\subsection{RQ1: representation preserves; observations update}
-Changing retained detail preserves the registered queries without improving predictions on its own. Means and variances survive representation refinement and eviction in all 864 cases. Policy round trips have zero recorded discrepancy; the broader restoration checks, including streamed fine reconstruction, reach $1.42\times10^{-14}$. Incremental and rebuilt separator means differ by at most $4.14\times10^{-15}$. These FP64 checks establish numerical agreement on the tested cases; forecast adequacy is evaluated separately.
+\subsection{RQ1. Query consistency and information transfer}
+The regional twin supports changes in retained detail while preserving registered predictions across all 864 cases. Query means and variances remain consistent through refinement and eviction. Policy round trips show zero recorded discrepancy. Broader restoration checks, including streamed fine reconstruction, reach $1.42\times10^{-14}$, while incremental and rebuilt separator means differ by at most $4.14\times10^{-15}$. These FP64 results demonstrate reliable numerical transitions between representations within the tested model. Forecast accuracy provides a separate measure of predictive value.
 
-At 4,194 households and eight active groups, retained state falls from 61.12 MB to 21.60 MB after eviction. Streamed fine inference also retains 21.60 MB. Thus the apparent saving against a resident implementation does not establish more representable households or an advantage over conventional streaming. Initial summaries, private covariance storage, host caches and later reconstruction remain necessary.
+At 4,194 households and eight active groups, eviction reduces retained state from 61.12 MB to 21.60 MB. Streamed fine inference achieves the same footprint. The comparison identifies a practical storage and restoration tradeoff while establishing conventional streaming as the relevant capacity baseline. Initial summaries, private covariance storage, host caches and reconstruction costs remain part of the implementation. The demonstrated capability is consistent control of retained detail, with no additional capacity advantage over streaming.
 
-A concrete macro-to-micro example shows where the value enters. At the first replay origin, exposing detail leaves the regional mean at 988.287 kWh and a selected household mean at 0.5630 kWh. Acquiring readings from eight groups changes these predictions to 984.012 and 0.6666 kWh. A selected household in an unopened group also changes, from 0.5012 to 0.6057 kWh, through the shared state. The regional twin therefore propagates statistical information across scales without requiring every group to be opened. These are model query means, not observed complete-population totals or causal demand propagation. For a consumer, the actionable distinction is whether refinement exposes an existing conditional prediction or obtains evidence that changes it.
+A concrete example demonstrates how new evidence connects regional and household predictions. At the first replay origin, exposing detail preserves the regional mean of 988.287 kWh and a selected household mean of 0.5630 kWh. Acquiring readings from eight groups updates these predictions to 984.012 and 0.6666 kWh. Through the shared state, a selected household in an unopened group also changes from 0.5012 to 0.6057 kWh. The twin therefore distributes information across scales without acquiring fine readings from every group. These values are model predictions rather than observed population totals or causal demand effects. For consumers, this demonstrates the distinct roles of accessing existing conditional predictions and acquiring evidence that updates them.
 
-The uncertainty-guided schedule in the largest cohort remains static because its Gaussian conditional variance score does not depend on newly observed values. With eight groups, one-hour regional MAE is 39.082 kWh versus 37.599 for random selection, a 3.94\% disadvantage. Its nominal 90\% regional interval covers 59.4\% of the 32 scored one-hour origins. This motivates checking observation-sensitive policies but does not establish a defect in a covariance-only rule.
+The largest cohort also reveals an acquisition design constraint. Its uncertainty guided schedule remains static because Gaussian conditional variance scores do not depend on newly observed values. With eight groups, regional MAE one hour ahead is 39.082 kWh versus 37.599 for random selection, a 3.94\% disadvantage. Nominal 90\% intervals cover 59.4\% of the 32 scored origins. This comparison identifies observation sensitivity and calibration as concrete priorities for acquisition design under the tested model and budget.
 
-\subsection{RQ2: fine observations improve forecasts, not localization}
-Additional fine observations improve local forecasting at a larger access budget. In the original disturbance panel B, full fine inference reduces local one-hour MAE from gated M3's 0.1696 to 0.1386 kWh, an \FineGainPercent{}\% reduction. This is information value, not a matched-budget algorithm gain. M3's difference from random acquisition is only 0.00145 kWh or 0.85\%. Table~\ref{tab:results} keeps B and the corrective panel C separate; Figure~\ref{fig:paired} shows every paired background difference. The same-evidence controls identify acquired data, rather than representation, as the source of the forecast difference.
 
-Broad magnitude-three increases are detected in all eight backgrounds by every method. This is a case where macro summaries work well. In contrast, all methods, including random and streamed fine, correctly localize zero of B's 16 exact-cancellation events within the detection window. Cancellation hides the perturbation from macro summaries, but revealing fine values is not sufficient for the deployed detector to cross its threshold. The full-information forecast benefit must not be relabeled a localization success.
+
+
+
+\subsection{RQ2. Quantifying the value and cost of fine observations}
+Fine observations provide a measurable improvement in local forecasting. In the original disturbance panel B, full fine inference reduces local MAE one hour ahead from gated M3's 0.1696 to 0.1386 kWh, a \FineGainPercent{}\% reduction obtained with a larger observation budget. Comparisons under identical evidence attribute this improvement to acquired data. At the restricted budget, M3's average advantage over random acquisition is 0.00145 kWh or 0.85\%. Table~\ref{tab:results} reports B and the corrective panel C separately, while Figure~\ref{fig:paired} displays paired background differences. These controls separate additional data access from acquisition policy effects.
+
+Disturbance families test each observation interface. Every method detects broad increases of nominal magnitude three on all eight backgrounds, demonstrating effective macro detection of widespread changes. All methods, including random and streamed fine inference, correctly localize zero of B's 16 exact cancellation events within the detection window. For these events, aggregation removes the macro signature and available fine readings do not trigger the deployed detector. Thus fine access improves forecasting without establishing successful localization.
 
 \begin{table*}[!t]
-\caption{Full fine access improves local forecasts; the correction establishes no acquisition advantage. Results are generated from per-episode artifacts. B is the original disturbance panel and C the corrective panel. Local one-hour MAE is in kWh per affected household and uses 80 local episodes in B, 12 in C. Detection and correct-group localization use all 96 and 12 demand episodes respectively. Negative alarms use only unmodified controls. Delay includes misses at 3.5 h. Fixed same-evidence representations equal their source policy and are omitted as duplicate rows.}
+\caption{Fine observations improve forecasts without establishing an acquisition advantage. Results use recorded episode artifacts. B is the original disturbance panel and C the corrective panel. Local MAE one hour ahead is in kWh per affected household, using 80 local episodes in B and 12 in C. Detection and correct group localization use all 96 and 12 demand episodes, respectively. Control alarms use unmodified episodes. Delay includes misses at 3.5 h. Representations receiving identical evidence match their source policy and are omitted as duplicate rows.}
 \label{tab:results}\centering
 \input{generated/principal_rows}
 \end{table*}
 
 \begin{figure*}[!t]
 \centering\includegraphics[width=\textwidth]{figures/transparent_episode.pdf}
-\caption{Local information reaches the consumer without changing its acquisition. The preselected example is b00, exact cancellation, nominal magnitude three, chosen by first background and fixed family/magnitude before comparison. Gray shading marks the disturbance. (a) The observed-support regional total varies with real background demand, but the injected signature is zero in every group. (b) Positive and negative meter sets change locally. (c) One-hour forecasts are aligned to target time and common observed support; they need not anticipate onset. (d) Affected probes change scores during the event without crossing the gate. The later trigger also occurs on the paired unmodified background. Unchanged acquisition and missed localization are retained. Local sets are evaluator labels, never policy inputs.}
+\caption{Tracing a hidden local change from observations to acquisition. Example b00 uses exact cancellation at nominal magnitude three, selected by first background and fixed family and magnitude before comparison. Gray shading marks the disturbance. (a) Regional demand on observed support varies with the real background, while the injected change sums to zero in every group. (b) Positive and negative meter sets change locally. (c) Forecasts one hour ahead share target times and observed support, without assuming foreknowledge. (d) Affected probes change scores without crossing the acquisition gate during the event. The later trigger also appears on the paired unmodified background. Acquisition remains unchanged and localization is missed. Local sets are evaluator labels unavailable to the policy.}
 \label{fig:episode}
 \end{figure*}
 
-Figure~\ref{fig:episode} provides an observed-but-not-acted-on example, selected by a fixed rule. The affected group is 4, with 60 actually affected households. Affected probes appear at onset and on nine event updates. Their normalized innovation reaches 3.4411, while the maximum acquisition score remains at most 10.0537, below 13.4334. The regional injection remains zero. Thus aggregate blindness explains the macro limitation, while the score-to-action gate explains the unchanged acquisition despite fine exposure. Both are needed to interpret the missed event.
+The example in Figure~\ref{fig:episode} makes the distinction concrete. Group 4 contains 60 affected households. Affected probes appear at onset and on nine event updates, with normalized innovation reaching 3.4411. The maximum acquisition score reaches only 10.0537 against a threshold of 13.4334, while the regional injection remains zero. The traces therefore distinguish information hidden by aggregation from information received without changing acquisition. The diagnosis separates measurement access from acquisition responsiveness.
 
-The streamed reference costs more information. Across B, M3 requests 1,123,584 fine records, receiving 1,106,434 finite readings, whereas M4 requests 22,546,944 and receives 22,204,000. Fine-plus-summary payload estimates are approximately 22.52 MB and 364.95 MB, a 16.2-fold difference at the consumer interface. The shared provider still scans all 4,194 meters to form each summary. Dense masked arrays produce about 5.50 GB of host-to-device input transfers per method over the comparison, so the wire saving is not a measured transfer or provider-computation saving.
+The resource comparison quantifies the price of full access. Across B, M3 requests 1,123,584 fine records and receives 1,106,434 finite readings. M4 requests 22,546,944 and receives 22,204,000. Estimated payloads for fine readings and summaries are 22.52 MB and 364.95 MB, respectively, a factor of 16.2 at the consumer interface. The provider scans all 4,194 meters for each summary, and dense masked arrays generate approximately 5.50 GB of input transfers from host to device per method. Thus the smaller simulated payload establishes an interface tradeoff, without implying reduced measured transfers or provider computation.
 
-Retained separator state after detail eviction is approximately 2.365 MB per shock update for M3 and M4. The fixed-retention comparator temporarily retains approximately 41.017 MB; shared private covariance accounts for a further 38.652 MB and a host evidence cache about 0.805 MB per method. Peak GPU allocation for the comparison is about 182.49 MB, with 1.73 GB peak host memory. All 16 group messages are rebuilt per moving-window update. Complete updates are around 72 ms at the median, with similar values across these methods. These costs reveal no new locality or capacity gain over the streamed comparator.
+After detail eviction, M3 and M4 retain approximately 2.365 MB of separator state per shock update. Conventional retention temporarily requires 41.017 MB. Shared private covariance adds 38.652 MB, and each method's host evidence cache occupies about 0.805 MB. Peak allocation is approximately 182.49 MB on the GPU and 1.73 GB on the host. Each advancing window rebuilds all 16 group messages. Median complete update time is around 72 ms, with similar values across methods. These measurements distinguish retained state, data movement and total update cost, with no demonstrated locality or capacity advantage over streaming.
 
 \begin{figure*}[!t]
 \centering\includegraphics[width=\textwidth]{figures/paired_comparison.pdf}
-\caption{Full fine access consistently reduces local error; matched-budget policy differences are small and heterogeneous. Points show paired local one-hour MAE differences from random acquisition M2. Each dot is a background average, with magnitudes/families averaged inside that background; black bars show the mean. Lower is better. The original disturbance panel B has eight backgrounds in four weeks; corrective panel C reuses four with fresh seeds and different conditions. M4 receives the larger, full-access budget. They are separate panels, not successive estimates of one population error. The displayed spread is descriptive, not an independent-household confidence interval.}
+\caption{Fine access consistently improves local forecasts across backgrounds. Points show paired local MAE differences one hour ahead relative to random acquisition M2. Each dot averages magnitudes and families within one background, and black bars indicate means. Lower is better. B contains eight backgrounds across four weeks. C reuses four backgrounds with fresh seeds and different conditions. M4 receives the larger full access budget. Differences between policies at the restricted budget are small and heterogeneous. The panels describe separate evaluations, with descriptive spread rather than confidence intervals based on independent households.}
 \label{fig:paired}
 \end{figure*}
 
-\subsection{RQ3: the acquisition gate blocks responsive scores}
-The original policy receives disturbance information but loses its effect at the acquisition gate. Reconstruction reproduces all 5,376 original ordered request traces, finite return counts and active-group states. Identity hashes include actual meter IDs and timestamps; maximum score reconstruction discrepancy is $1.60\times10^{-14}$. All 96 demand episodes expose an affected fine reading, and 94 expose an affected probe. Innovations differ in 96 cases, group scores in 93, full rankings during the event in 86, and the top-ranked group in 17. Nevertheless, no trigger, active action or actual acquisition schedule changes. There are no budget rejections. Controlled large-innovation tests through the same path do change actions when an alternative is available, excluding an inherently disconnected scheduler.
 
-The diagnostic condition strengthens this account. At all \MarginChecks{} paired demand-episode updates, the maximum score-vector perturbation is strictly smaller than the paired background's distance to the acquisition gate (Fig.~\ref{fig:path}). Thus none can switch the threshold bit by Proposition 3. Unchanged final actions are established separately by the trace comparison, since a stable gate would not by itself exclude rank or hold effects. Three cases lose their changes at the group maximum/drift step. Two lack a direct probe hit but change the probe reference through macro observations. No lost shock overlay, indexing defect or later scheduler overwrite was found.
 
-The original alarm rate is 30/384 unmodified updates, or 7.81\%, against the nominal 2\% calibration target. Both are any-channel/update quantities, not a per-household versus family-wise mismatch. Matching the calibration's eight-update startup exclusion still gives 17/320, or 5.31\%, versus 2/88 calibration updates. Startup explains part, not all, of the discrepancy. Unmodified backgrounds can contain genuine unlabeled anomalies; these are false alarms relative to the injected-event protocol, not verified false physical incidents.
 
-M3b changes schedules in three of C's 12 demand episodes. It, M3 and random acquisition each correctly localize two. Its local MAE is 0.2660 kWh versus 0.2621 for M3, 0.2667 for random and 0.2053 for streamed fine. The 0.25\% average reduction from random is inconsistent across backgrounds and does not establish a policy benefit. The original M3 is better on the primary average. M3b's negative-control rate is 14/192, or 7.29\%, compared with M3's 15/192, or 7.81\%; neither meets the intended rate. Limited-access methods retain 209 attempts per update and the same 2.666 MB fine-payload estimate across C, with small differences in finite returns.
+
+
+
+
+
+\subsection{RQ3. Why responsive scores leave acquisition unchanged}
+Most disturbances change acquisition scores without changing which households are read. Reconstruction reproduces all 5,376 original request sequences, finite return counts and active group states, with meter identities and timestamps verified by hashes. The maximum score discrepancy is $1.60\times10^{-14}$. All 96 demand episodes expose an affected fine reading, and 94 expose an affected probe. Innovations change in 96 episodes, group scores in 93, rankings during the event in 86 and the highest ranked group in 17. Yet threshold decisions, active groups and acquisition schedules remain unchanged. No requests are rejected by the budget. Tests with larger innovations successfully change actions when alternatives exist, confirming that the scheduler can respond.
+
+The gate margin explains this behavior. Across all \MarginChecks{} paired updates, the largest score change is smaller than the distance from the background's maximum score to the threshold (Fig.~\ref{fig:path}). Proposition 3 therefore certifies unchanged threshold decisions. Request traces separately confirm unchanged acquisition, accounting for ranking and hold effects. In three episodes, innovation differences disappear when group maxima and score decay are applied. Two episodes without an affected probe still change the reference forecast through macro observations. Checks find no lost disturbance overlay, indexing error or scheduler overwrite.
+
+Alarm calibration presents a separate challenge. M3 alarms on 30/384 unmodified updates, or 7.81\%, against the nominal 2\% target. Both rates concern an alarm on any channel at each update. Applying the same exclusion of eight startup updates gives 17/320, or 5.31\%, compared with 2/88 calibration updates. Startup therefore explains only part of the increase. These are false alarms under the injection protocol, although unmodified backgrounds may contain genuine unlabeled changes.
+
+In corrective panel C, M3b changes schedules in three of 12 demand episodes. M3b, M3 and random acquisition each correctly localize two. Local MAE is 0.2660 kWh for M3b, compared with 0.2621 for M3, 0.2667 for random and 0.2053 for streamed fine inference. M3b's 0.25\% average improvement over random varies across backgrounds and does not establish an acquisition advantage. M3 remains better on the primary average. Control alarm rates are 14/192, or 7.29\%, for M3b and 15/192, or 7.81\%, for M3, both above target. Restricted budget methods use 209 attempts per update and an estimated 2.666 MB of fine payload across C, with small differences in finite returns. These comparisons distinguish making acquisition responsive from making it useful.
 
 \begin{figure*}[!t]
 \centering\includegraphics[width=\textwidth]{figures/acquisition_path.pdf}
-\caption{Responsive scores do not cross the acquisition gate in the original disturbance panel B. (a) Counts use 96 demand episodes; rank changes are evaluated during the disturbance, while changed-score checks cover the replay. These are distinct conditions, not independent successes in a strict funnel. (b) Each nonzero paired score perturbation is compared with the baseline gate margin. All 4,608 update comparisons satisfy the strict sufficient unchanged-gate condition, including zero perturbations omitted from the scatter. Final schedule identity is verified from meter/time traces, not inferred from this bound alone.}
+\caption{Locating the gap between changed observations and unchanged acquisition in panel B. (a) Counts cover 96 demand episodes. Rankings are compared during disturbances, while score comparisons cover the replay. The conditions are distinct and do not form a strict funnel. (b) Score changes are compared with the background's distance to the acquisition threshold. All 4,608 paired updates satisfy the sufficient condition for unchanged gate decisions, including zero changes omitted from the scatter. Meter identities and timestamps independently verify that request sequences remain unchanged.}
 \label{fig:path}
 \end{figure*}
 
-\subsubsection{Changed requests arrive too late, with an alarm barrier remaining}
-The corrective traces identify why schedule responsiveness does not deliver localization within the scored window. In the changed exact-cancellation episode, new selection first appears at lag eight, outside the lag-0-through-6 detection window. One localized episode first changes at lag nine. These changes add 120 and 77 requests for event-affected meter IDs during the later event, respectively. The remaining localized episode changes once at lag six but adds no affected meter ID. Thus no changed request adds an event-affected identity inside the scored detection window. Counts by identity alone do not establish a finite nonzero reading at every such instant; the separate opportunity audit uses actual masks and perturbations.
 
-Moreover, in every fresh demand episode the largest acquired fine innovation within that window is at most 15.85, below M3b's effective fine alarm threshold of 20.586. Its two correct-group localizations therefore arise through the macro alarm channel, not a newly triggered household alarm. M3b's calibration raises that effective threshold from M3's 19.708. These observations explain the recorded localization result. They do not establish a better replacement: changed acquisitions alter later evidence, so fixed-trace rescoring cannot evaluate that closed loop.
 
-With identical evidence, fixed and adaptive representations agree in all 5,376 original and 960 corrective/diagnostic updates. Representation therefore cannot explain the forecast differences. The controlled comparisons locate the forecast benefit in additional evidence, and the policy limitation in timely acquisition and alarming.
 
-\section{Discussion and Limitations}
-\subsection{Design lessons from the controlled comparisons}
-The comparisons give regional-twin designers five concrete checks. First, benchmark retained-state savings against competent streaming and charge reconstruction: RQ1's 39.52 MB reduction disappears against streamed fine inference. Second, specify the observation interface separately from state dimension. A low-rank model can consume every meter, while a coarse representation can already answer conditional household queries. The consumer contract should name derived summaries, accessible fine records and the query laws retained after eviction.
 
-Third, evaluate allocation separately from alarming when the reading budget is already being spent. M3's background-calibrated gate suppresses changed rankings even though extra readings are still requested. Removing that gate tests this explanation, but does not by itself improve acquisition. Fourth, measure information arrival against the decision deadline. M3b's changed requests add no affected meter identity inside the scored window; later access cannot explain an earlier detection benefit. Finally, assess deployed alarm rates and forecast calibration separately from numerical consistency. Exact agreement between representations says nothing about whether the model's intervals or detector match observed demand.
 
-These checks connect data-sharing choices to consumer outcomes. A useful interface exposes not just what can be queried, but which observations were actually received, when they affected inference, and whether the subsequent decision used them. Our linked comparisons make those distinctions measurable without attributing every improvement to finer representation.
+
+\subsubsection{Identifying timing and calibration requirements}
+Corrective traces identify where acquisition can be improved. In the changed exact cancellation and localized episodes, selection first changes at lags eight and nine, adding 120 and 77 requests for affected meters. Both occur after the detection window at lags zero through six. The third schedule changes at lag six but adds no affected meter. Thus the correction reaches additional affected meters only after the scoring deadline. A separate audit checks missingness and actual perturbations to distinguish affected identities from informative returned readings.
+
+Alarm calibration provides the second explanation. Across fresh demand episodes, acquired fine innovations within the window reach at most 15.85, below M3b's threshold of 20.586, compared with 19.708 for M3. Its two correct group localizations therefore come through the macro channel. These results identify timely targeting and alarm calibration as distinct design priorities. Evaluating alternatives requires sequential replay because changed acquisitions alter subsequent evidence.
+
+Fixed and adaptive representations agree under identical evidence in all 5,376 original and 960 corrective or diagnostic updates. This consistency isolates additional observations as the source of forecast improvement. Together, the comparisons provide a practical diagnosis of how information access, acquisition timing and alarm decisions contribute to useful refinement.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Discussion}
+The study provides a practical methodology for determining where additional detail creates value in a regional energy twin. Its contribution combines controlled comparisons, mathematical consistency checks and traces of actual acquisition decisions. Together, these establish which predictions survive changes in representation, what additional observations contribute and how decision rules affect the use of that information. This gives designers a clearer basis for choosing where to invest in storage, measurement access and acquisition logic.
+
+The results demonstrate that consistent movement between regional and household views is achievable within one probabilistic model. New observations update predictions across groups through the shared state, including households whose fine readings remain unavailable. This is a useful capability for consumers that receive regional summaries but can request only selected local measurements. The comparison with streamed inference also identifies the appropriate resource baseline. Memory savings should be assessed alongside restoration, shared storage and data movement, rather than interpreted automatically as increased capacity.
+
+The acquisition diagnosis adds a complementary design lesson. Information can reach a consumer and change its scores without changing its requests. In the tested policy, the acquisition gate suppresses this response even though the observation budget is still spent. The correction then separates responsiveness from timeliness by showing that additional requests for affected meters arrive after the detection deadline. These findings make allocation, timing and alarming independently testable parts of the system. They provide specific mechanisms to examine when increasing detail fails to improve a consumer's decisions.
+
+For data sharing, the practical implication is that an interface should describe both available queries and the evidence supporting them. Useful records include which measurements were acquired, when they entered inference and how they influenced subsequent requests. The study shows how these records support reproducible comparisons and prevent forecast gains from being attributed to representation changes alone.
 
 \balance
-\subsection{Scope and remaining uncertainty}
-Uncertainty quality remains inadequate. The earlier 59.4\% regional coverage is not explained by a missing future-noise term: code and independent covariance checks include process noise, measurement noise and aggregation covariance. In B's unmodified controls, M3's raw one-hour regional coverage is 72.14\% with mean width 106.01 kWh. Empirical adjustment widens it to 149.31 kWh and raises coverage to 84.12\%, still below 90\%. Wider intervals do not validate the model or repair acquisition. Adaptive selection outside the retained window, nonstationary demand, common-model errors and the chosen private-noise convention all limit interpretation.
+Predictive reliability also requires calibration beyond numerical agreement. In panel B's unmodified controls, M3's nominal 90\% regional intervals cover 72.14\% of observations. Calibration adjustment raises coverage to 84.12\%, indicating progress while remaining below the target. This provides a clear distinction between consistent computation and reliable uncertainty estimates.
 
-The study has only four development weeks. Repeated investigation and one correction use development findings, and fresh synthetic seeds on reused backgrounds are not held-out real-world validation. Injection families, amplitudes and onset contexts do not represent an estimated distribution of actual disruptions. The regional twin covers a sampled household population without physical grid topology. Missing-support totals cannot establish complete-population performance. The negative alarm controls may contain unlabeled real changes, and the simple detectors are not a state-of-the-art anomaly benchmark.
+The findings concern retrospective replay over four development weeks, using synthetic disturbances and simulated provider groups within a sampled household population. Fresh seeds reuse existing backgrounds and therefore do not provide independent validation on unseen periods. The archive establishes substantial ingestion scale, while the 384 dimensional common separator represents a smaller inference task. Dense transfers and reconstruction at each window shift remain opportunities for implementation improvement, with no demonstrated capacity advantage over streaming.
 
-The substantial archive and small, 384-dimensional common separator describe different scales. Structured streaming already fits easily on the measured GPU. Retained-state accounting excludes some shared arrays by definition, so total peaks and cache costs are reported separately. The implementation's dense masked transfers and full group reconstruction at every window shift leave substantial engineering limitations. No GPU-versus-CPU superiority, production throughput, distributed availability, privacy or physical resilience follows from this single-machine replay.
+The next study can build directly on this diagnosis by testing whether earlier group ranking delivers informative readings before a fixed deadline while maintaining the intended alarm rate on separate chronological backgrounds. Such sequential evaluation would connect the demonstrated value of fine observations to the practical design of more effective acquisition policies.
 
-The next question is whether earlier group ranking can deliver affected readings before a fixed deadline while controlling deployed alarms on separate chronological backgrounds. Answering it requires a new frozen study; rescoring the present traces cannot resolve that closed-loop question.
 
 \section{Conclusion}
-This study separates the value of representation, information and acquisition decisions in a regional energy twin. Matched-evidence comparisons preserve registered queries and expose a storage/restoration tradeoff, with no capacity advantage over streamed fine inference. Full fine access improves local forecasts at a larger observation budget, while aggregate visibility and successful localization remain distinct. Execution traces then locate a concrete loss between observation and action: responsive scores do not cross the acquisition gate, and the correction's changed requests add no affected meter identity before the detection deadline. The correction establishes no acquisition advantage. The resulting controlled comparisons and diagnosis show where detail obtains value and where the tested system fails to use it. Regional twins should be evaluated by the evidence they acquire and the decisions that evidence changes, alongside the detail they retain.
+This study provides a reproducible methodology for evaluating how local detail contributes to a regional energy twin. Controlled comparisons demonstrate consistent refinement between regional and household views and identify additional observations as the source of improved local forecasts. Comparison with streamed inference places the measured storage savings against a realistic capacity baseline.
+
+Execution traces make the connection between information and decisions explicit. Disturbances change acquisition scores, but the gate prevents those changes from affecting requests. The targeted correction reveals a further timing constraint, with additional requests for affected meters arriving after the detection deadline. These findings identify concrete design priorities without establishing a superior acquisition policy.
+
+The contribution is a linked evaluation of representation, observation access and decision behavior. It gives twin designers practical controls for assessing memory tradeoffs, measuring the value of fine observations and locating barriers to timely action. This connects the detail a regional twin retains with the information it gains and the decisions that information can support.
+
+
+
+
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}
