@@ -8,7 +8,13 @@ and email were supplied explicitly in this session.
 
 ## Clean build without data access or a GPU
 
-From the repository root:
+From the shared repository root, first enter this paper's project directory:
+
+```bash
+cd regional-energy-twin
+```
+
+Then run:
 
 ```bash
 python3 scripts/synthesis_job.py --ledger results/editorial/resource_ledger.json --prior-handoff results/synthesis/resource_handoff.json --label editorial-clean-build --timeout 180 -- bash manuscript/build.sh --clean
@@ -74,7 +80,9 @@ revised argument, figure padding, column balance and final validation. The
 
 This build reproduces the paper from retained results. It does not authorize
 rerunning the research. The exact original GPU preparation/replay commands are in
-the regional Stage 1-4 reports and their frozen manifests. The latest GPU source is
+the regional Stage 1-4 reports and their frozen manifests. Earlier commands and manifest paths are relative to `regional-energy-twin/`;
+historical `git show COMMIT:path` references retain their original paths.
+The latest GPU source is
 `18fe4af`; the paper synthesis starts from `99dc6b8`. Original B replay used
 `031bdd6`. Later reconstructed intermediates are explicitly distinguished from
 originally logged values. Tracked code preserves all prior negative findings.
