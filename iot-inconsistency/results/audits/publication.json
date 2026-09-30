@@ -1,0 +1,5868 @@
+{
+  "status": "passed",
+  "archive_verification": {
+    "archives": 6,
+    "artifacts": 19155,
+    "restored": 0
+  },
+  "manifest_sha256": "078ce92df3a03ddc24441c706d3152c8cf91007f43ea4e11959594ac971ac386",
+  "primary_cases": 1092,
+  "primary_candidates": 8736,
+  "score_max_absolute_error": 8.881784197001252e-16,
+  "crps_example_cases": 21,
+  "crps_example_checks": [
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0000_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0000_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0000_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0090_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0000_association.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0000_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0000_observation.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0002_observation.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0084_observation.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0000_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0000_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0000_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0095_observation.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0000_association.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0000_clean.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0000_observation.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0034_observation.json",
+      "max_absolute_error": 8.881784197001252e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0000_association.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0000_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0000_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0075_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    }
+  ],
+  "pca_checks": [
+    {
+      "dataset": "synthetic_32_linear",
+      "method": "pca_lag1_rank16",
+      "windows": 240,
+      "max_absolute_error": 9.5367431640625e-07
+    },
+    {
+      "dataset": "synthetic_32_linear",
+      "method": "pca_lag1_rank2",
+      "windows": 240,
+      "max_absolute_error": 0.0
+    },
+    {
+      "dataset": "synthetic_32_linear",
+      "method": "pca_lag1_rank4",
+      "windows": 240,
+      "max_absolute_error": 9.5367431640625e-07
+    },
+    {
+      "dataset": "synthetic_32_linear",
+      "method": "pca_lag1_rank8",
+      "windows": 240,
+      "max_absolute_error": 2.384185791015625e-07
+    },
+    {
+      "dataset": "synthetic_32_linear",
+      "method": "pca_lag4_rank16",
+      "windows": 240,
+      "max_absolute_error": 1.9073486328125e-06
+    },
+    {
+      "dataset": "synthetic_32_linear",
+      "method": "pca_lag4_rank2",
+      "windows": 240,
+      "max_absolute_error": 5.960464477539063e-08
+    },
+    {
+      "dataset": "synthetic_32_linear",
+      "method": "pca_lag4_rank4",
+      "windows": 240,
+      "max_absolute_error": 4.76837158203125e-07
+    },
+    {
+      "dataset": "synthetic_32_linear",
+      "method": "pca_lag4_rank8",
+      "windows": 240,
+      "max_absolute_error": 4.76837158203125e-07
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "method": "pca_lag1_rank16",
+      "windows": 240,
+      "max_absolute_error": 1.9073486328125e-06
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "method": "pca_lag1_rank2",
+      "windows": 240,
+      "max_absolute_error": 1.9073486328125e-06
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "method": "pca_lag1_rank4",
+      "windows": 240,
+      "max_absolute_error": 4.76837158203125e-07
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "method": "pca_lag1_rank8",
+      "windows": 240,
+      "max_absolute_error": 4.76837158203125e-07
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "method": "pca_lag4_rank16",
+      "windows": 240,
+      "max_absolute_error": 3.814697265625e-06
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "method": "pca_lag4_rank2",
+      "windows": 240,
+      "max_absolute_error": 9.5367431640625e-07
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "method": "pca_lag4_rank4",
+      "windows": 240,
+      "max_absolute_error": 2.9802322387695312e-08
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "method": "pca_lag4_rank8",
+      "windows": 240,
+      "max_absolute_error": 4.76837158203125e-07
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "method": "pca_lag1_rank16",
+      "windows": 240,
+      "max_absolute_error": 1.9073486328125e-06
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "method": "pca_lag1_rank2",
+      "windows": 240,
+      "max_absolute_error": 1.9073486328125e-06
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "method": "pca_lag1_rank4",
+      "windows": 240,
+      "max_absolute_error": 9.5367431640625e-07
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "method": "pca_lag1_rank8",
+      "windows": 240,
+      "max_absolute_error": 1.9073486328125e-06
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "method": "pca_lag4_rank16",
+      "windows": 240,
+      "max_absolute_error": 1.9073486328125e-06
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "method": "pca_lag4_rank2",
+      "windows": 240,
+      "max_absolute_error": 1.9073486328125e-06
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "method": "pca_lag4_rank4",
+      "windows": 240,
+      "max_absolute_error": 9.5367431640625e-07
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "method": "pca_lag4_rank8",
+      "windows": 240,
+      "max_absolute_error": 9.5367431640625e-07
+    },
+    {
+      "dataset": "intel",
+      "method": "pca_lag1_rank16",
+      "windows": 132,
+      "max_absolute_error": 6.103515625e-05
+    },
+    {
+      "dataset": "intel",
+      "method": "pca_lag1_rank2",
+      "windows": 132,
+      "max_absolute_error": 0.0
+    },
+    {
+      "dataset": "intel",
+      "method": "pca_lag1_rank4",
+      "windows": 132,
+      "max_absolute_error": 3.814697265625e-06
+    },
+    {
+      "dataset": "intel",
+      "method": "pca_lag1_rank8",
+      "windows": 132,
+      "max_absolute_error": 0.00048828125
+    },
+    {
+      "dataset": "intel",
+      "method": "pca_lag4_rank16",
+      "windows": 132,
+      "max_absolute_error": 0.0001220703125
+    },
+    {
+      "dataset": "intel",
+      "method": "pca_lag4_rank2",
+      "windows": 132,
+      "max_absolute_error": 0.0
+    },
+    {
+      "dataset": "intel",
+      "method": "pca_lag4_rank4",
+      "windows": 132,
+      "max_absolute_error": 0.0
+    },
+    {
+      "dataset": "intel",
+      "method": "pca_lag4_rank8",
+      "windows": 132,
+      "max_absolute_error": 6.103515625e-05
+    },
+    {
+      "dataset": "skab",
+      "method": "pca_lag1_rank16",
+      "windows": 240,
+      "max_absolute_error": 1.9073486328125e-06
+    },
+    {
+      "dataset": "skab",
+      "method": "pca_lag1_rank2",
+      "windows": 240,
+      "max_absolute_error": 1.52587890625e-05
+    },
+    {
+      "dataset": "skab",
+      "method": "pca_lag1_rank4",
+      "windows": 240,
+      "max_absolute_error": 1.9073486328125e-06
+    },
+    {
+      "dataset": "skab",
+      "method": "pca_lag1_rank8",
+      "windows": 240,
+      "max_absolute_error": 1.9073486328125e-06
+    },
+    {
+      "dataset": "skab",
+      "method": "pca_lag4_rank16",
+      "windows": 240,
+      "max_absolute_error": 3.814697265625e-06
+    },
+    {
+      "dataset": "skab",
+      "method": "pca_lag4_rank2",
+      "windows": 240,
+      "max_absolute_error": 2.384185791015625e-06
+    },
+    {
+      "dataset": "skab",
+      "method": "pca_lag4_rank4",
+      "windows": 240,
+      "max_absolute_error": 7.62939453125e-06
+    },
+    {
+      "dataset": "skab",
+      "method": "pca_lag4_rank8",
+      "windows": 240,
+      "max_absolute_error": 3.814697265625e-06
+    }
+  ],
+  "score_checks": [
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0000_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0000_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0000_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0002_association.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0002_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0002_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0005_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0005_clean.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0005_observation.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0008_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0008_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0008_observation.json",
+      "max_absolute_error": 1.0842021724855044e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0011_association.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0011_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0011_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0014_association.json",
+      "max_absolute_error": 2.168404344971009e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0014_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0014_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0016_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0016_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0016_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0019_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0019_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0019_observation.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0022_association.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0022_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0022_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0025_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0025_clean.json",
+      "max_absolute_error": 2.168404344971009e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0025_observation.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0028_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0028_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0028_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0031_association.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0031_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0031_observation.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0033_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0033_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0033_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0036_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0036_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0036_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0039_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0039_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0039_observation.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0042_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0042_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0042_observation.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0045_association.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0045_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0045_observation.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0047_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0047_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0047_observation.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0050_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0050_clean.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0050_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0053_association.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0053_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0053_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0056_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0056_clean.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0056_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0059_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0059_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0059_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0062_association.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0062_clean.json",
+      "max_absolute_error": 2.168404344971009e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0062_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0064_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0064_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0064_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0067_association.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0067_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0067_observation.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0070_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0070_clean.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0070_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0073_association.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0073_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0073_observation.json",
+      "max_absolute_error": 2.168404344971009e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0076_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0076_clean.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0076_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0079_association.json",
+      "max_absolute_error": 2.168404344971009e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0079_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0079_observation.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0081_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0081_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0081_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0084_association.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0084_clean.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0084_observation.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0087_association.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0087_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0087_observation.json",
+      "max_absolute_error": 2.168404344971009e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0090_association.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0090_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0090_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0093_association.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0093_clean.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0093_observation.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0095_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0095_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0095_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0098_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0098_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0098_observation.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0101_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0101_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0101_observation.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0104_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0104_clean.json",
+      "max_absolute_error": 2.168404344971009e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0104_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0107_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0107_clean.json",
+      "max_absolute_error": 2.168404344971009e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0107_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0110_association.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0110_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0110_observation.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0112_association.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0112_clean.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0112_observation.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0115_association.json",
+      "max_absolute_error": 2.168404344971009e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0115_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0115_observation.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0118_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0118_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0118_observation.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0121_association.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0121_clean.json",
+      "max_absolute_error": 1.0842021724855044e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0121_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0124_association.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0124_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0124_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0127_association.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0127_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0127_observation.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0129_association.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0129_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0129_observation.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0132_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0132_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0132_observation.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0135_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0135_clean.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0135_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0138_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0138_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0138_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0141_association.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0141_clean.json",
+      "max_absolute_error": 2.168404344971009e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0141_observation.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0143_association.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0143_clean.json",
+      "max_absolute_error": 2.168404344971009e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0143_observation.json",
+      "max_absolute_error": 2.168404344971009e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0146_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0146_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0146_observation.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0149_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0149_clean.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0149_observation.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0152_association.json",
+      "max_absolute_error": 2.168404344971009e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0152_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0152_observation.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0155_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0155_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0155_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0158_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0158_clean.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0158_observation.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0160_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0160_clean.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0160_observation.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0163_association.json",
+      "max_absolute_error": 2.168404344971009e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0163_clean.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0163_observation.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0166_association.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0166_clean.json",
+      "max_absolute_error": 2.168404344971009e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0166_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0169_association.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0169_clean.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0169_observation.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0172_association.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0172_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0172_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0175_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0175_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0175_observation.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0177_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0177_clean.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0177_observation.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0180_association.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0180_clean.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0180_observation.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0183_association.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0183_clean.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0183_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0186_association.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0186_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0186_observation.json",
+      "max_absolute_error": 1.0842021724855044e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0189_association.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0189_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0189_observation.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0191_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0191_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0191_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0194_association.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0194_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0194_observation.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0197_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0197_clean.json",
+      "max_absolute_error": 2.168404344971009e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0197_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0200_association.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0200_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0200_observation.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0203_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0203_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0203_observation.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0206_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0206_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0206_observation.json",
+      "max_absolute_error": 2.168404344971009e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0208_association.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0208_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0208_observation.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0211_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0211_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0211_observation.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0214_association.json",
+      "max_absolute_error": 1.0842021724855044e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0214_clean.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0214_observation.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0217_association.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0217_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0217_observation.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0220_association.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0220_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0220_observation.json",
+      "max_absolute_error": 2.168404344971009e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0223_association.json",
+      "max_absolute_error": 2.168404344971009e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0223_clean.json",
+      "max_absolute_error": 2.168404344971009e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_linear/test/test_0223_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0000_association.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0000_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0000_observation.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0002_association.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0002_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0002_observation.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0005_association.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0005_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0005_observation.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0008_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0008_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0008_observation.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0011_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0011_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0011_observation.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0014_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0014_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0014_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0016_association.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0016_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0016_observation.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0019_association.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0019_clean.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0019_observation.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0022_association.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0022_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0022_observation.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0025_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0025_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0025_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0028_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0028_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0028_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0031_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0031_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0031_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0033_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0033_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0033_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0036_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0036_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0036_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0039_association.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0039_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0039_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0042_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0042_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0042_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0045_association.json",
+      "max_absolute_error": 2.168404344971009e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0045_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0045_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0047_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0047_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0047_observation.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0050_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0050_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0050_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0053_association.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0053_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0053_observation.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0056_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0056_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0056_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0059_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0059_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0059_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0062_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0062_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0062_observation.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0064_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0064_clean.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0064_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0067_association.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0067_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0067_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0070_association.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0070_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0070_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0073_association.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0073_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0073_observation.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0076_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0076_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0076_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0079_association.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0079_clean.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0079_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0081_association.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0081_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0081_observation.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0084_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0084_clean.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0084_observation.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0087_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0087_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0087_observation.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0090_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0090_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0090_observation.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0093_association.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0093_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0093_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0095_association.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0095_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0095_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0098_association.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0098_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0098_observation.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0101_association.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0101_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0101_observation.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0104_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0104_clean.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0104_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0107_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0107_clean.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0107_observation.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0110_association.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0110_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0110_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0112_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0112_clean.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0112_observation.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0115_association.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0115_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0115_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0118_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0118_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0118_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0121_association.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0121_clean.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0121_observation.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0124_association.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0124_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0124_observation.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0127_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0127_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0127_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0129_association.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0129_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0129_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0132_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0132_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0132_observation.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0135_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0135_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0135_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0138_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0138_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0138_observation.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0141_association.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0141_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0141_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0143_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0143_clean.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0143_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0146_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0146_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0146_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0149_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0149_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0149_observation.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0152_association.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0152_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0152_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0155_association.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0155_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0155_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0158_association.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0158_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0158_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0160_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0160_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0160_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0163_association.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0163_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0163_observation.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0166_association.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0166_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0166_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0169_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0169_clean.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0169_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0172_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0172_clean.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0172_observation.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0175_association.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0175_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0175_observation.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0177_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0177_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0177_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0180_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0180_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0180_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0183_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0183_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0183_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0186_association.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0186_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0186_observation.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0189_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0189_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0189_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0191_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0191_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0191_observation.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0194_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0194_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0194_observation.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0197_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0197_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0197_observation.json",
+      "max_absolute_error": 8.881784197001252e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0200_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0200_clean.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0200_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0203_association.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0203_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0203_observation.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0206_association.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0206_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0206_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0208_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0208_clean.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0208_observation.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0211_association.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0211_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0211_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0214_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0214_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0214_observation.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0217_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0217_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0217_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0220_association.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0220_clean.json",
+      "max_absolute_error": 2.168404344971009e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0220_observation.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0223_association.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0223_clean.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_32_nonlinear/test/test_0223_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0000_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0000_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0000_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0002_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0002_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0002_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0005_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0005_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0005_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0008_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0008_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0008_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0011_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0011_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0011_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0014_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0014_clean.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0014_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0016_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0016_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0016_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0019_association.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0019_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0019_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0022_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0022_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0022_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0025_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0025_clean.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0025_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0028_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0028_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0028_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0031_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0031_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0031_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0033_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0033_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0033_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0036_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0036_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0036_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0039_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0039_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0039_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0042_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0042_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0042_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0045_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0045_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0045_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0047_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0047_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0047_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0050_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0050_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0050_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0053_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0053_clean.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0053_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0056_association.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0056_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0056_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0059_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0059_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0059_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0062_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0062_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0062_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0064_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0064_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0064_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0067_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0067_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0067_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0070_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0070_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0070_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0073_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0073_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0073_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0076_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0076_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0076_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0079_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0079_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0079_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0081_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0081_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0081_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0084_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0084_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0084_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0087_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0087_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0087_observation.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0090_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0090_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0090_observation.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0093_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0093_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0093_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0095_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0095_clean.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0095_observation.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0098_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0098_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0098_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0101_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0101_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0101_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0104_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0104_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0104_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0107_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0107_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0107_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0110_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0110_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0110_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0112_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0112_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0112_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0115_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0115_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0115_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0118_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0118_clean.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0118_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0121_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0121_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0121_observation.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0124_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0124_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0124_observation.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0127_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0127_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0127_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0129_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0129_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0129_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0132_association.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0132_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0132_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0135_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0135_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0135_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0138_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0138_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0138_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0141_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0141_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0141_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0143_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0143_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0143_observation.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0146_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0146_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0146_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0149_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0149_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0149_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0152_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0152_clean.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0152_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0155_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0155_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0155_observation.json",
+      "max_absolute_error": 8.326672684688674e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0158_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0158_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0158_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0160_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0160_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0160_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0163_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0163_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0163_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0166_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0166_clean.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0166_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0169_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0169_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0169_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0172_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0172_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0172_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0175_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0175_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0175_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0177_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0177_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0177_observation.json",
+      "max_absolute_error": 1.734723475976807e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0180_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0180_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0180_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0183_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0183_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0183_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0186_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0186_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0186_observation.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0189_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0189_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0189_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0191_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0191_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0191_observation.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0194_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0194_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0194_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0197_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0197_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0197_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0200_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0200_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0200_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0203_association.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0203_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0203_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0206_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0206_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0206_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0208_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0208_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0208_observation.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0211_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0211_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0211_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0214_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0214_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0214_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0217_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0217_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0217_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0220_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0220_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0220_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0223_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0223_clean.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/synthetic_64_nonlinear/test/test_0223_observation.json",
+      "max_absolute_error": 6.938893903907228e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0000_association.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0000_clean.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0000_observation.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0001_association.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0001_clean.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0001_observation.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0002_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0002_clean.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0002_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0003_association.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0003_clean.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0003_observation.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0004_association.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0004_clean.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0004_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0005_association.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0005_clean.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0005_observation.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0006_association.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0006_clean.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0006_observation.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0007_association.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0007_clean.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0007_observation.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0008_association.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0008_clean.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0008_observation.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0009_association.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0009_clean.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0009_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0010_association.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0010_clean.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0010_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0011_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0011_clean.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0011_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0012_association.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0012_clean.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0012_observation.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0013_association.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0013_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0013_observation.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0014_association.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0014_clean.json",
+      "max_absolute_error": 8.881784197001252e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0014_observation.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0015_association.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0015_clean.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0015_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0016_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0016_clean.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0016_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0017_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0017_clean.json",
+      "max_absolute_error": 8.881784197001252e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0017_observation.json",
+      "max_absolute_error": 8.881784197001252e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0018_association.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0018_clean.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0018_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0019_association.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0019_clean.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0019_observation.json",
+      "max_absolute_error": 8.881784197001252e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0020_association.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0020_clean.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0020_observation.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0021_association.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0021_clean.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0021_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0022_association.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0022_clean.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0022_observation.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0023_association.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0023_clean.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0023_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0024_association.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0024_clean.json",
+      "max_absolute_error": 8.881784197001252e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0024_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0025_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0025_clean.json",
+      "max_absolute_error": 8.881784197001252e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0025_observation.json",
+      "max_absolute_error": 8.881784197001252e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0026_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0026_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0026_observation.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0027_association.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0027_clean.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0027_observation.json",
+      "max_absolute_error": 8.881784197001252e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0028_association.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0028_clean.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0028_observation.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0029_association.json",
+      "max_absolute_error": 8.881784197001252e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0029_clean.json",
+      "max_absolute_error": 8.881784197001252e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0029_observation.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0030_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0030_clean.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0030_observation.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0031_association.json",
+      "max_absolute_error": 8.881784197001252e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0031_clean.json",
+      "max_absolute_error": 8.881784197001252e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0031_observation.json",
+      "max_absolute_error": 8.881784197001252e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0032_association.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0032_clean.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0032_observation.json",
+      "max_absolute_error": 8.881784197001252e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0033_association.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0033_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0033_observation.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0034_association.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0034_clean.json",
+      "max_absolute_error": 8.881784197001252e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0034_observation.json",
+      "max_absolute_error": 8.881784197001252e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0035_association.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0035_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0035_observation.json",
+      "max_absolute_error": 8.881784197001252e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0036_association.json",
+      "max_absolute_error": 8.881784197001252e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0036_clean.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0036_observation.json",
+      "max_absolute_error": 8.881784197001252e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0037_association.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0037_clean.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0037_observation.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0038_association.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0038_clean.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0038_observation.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0039_association.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0039_clean.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0039_observation.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0040_association.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0040_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0040_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0041_association.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0041_clean.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0041_observation.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0042_association.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0042_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0042_observation.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0043_association.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0043_clean.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/intel/test/test_0043_observation.json",
+      "max_absolute_error": 4.440892098500626e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0000_association.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0000_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0000_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0001_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0001_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0001_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0003_association.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0003_clean.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0003_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0005_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0005_clean.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0005_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0006_association.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0006_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0006_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0008_association.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0008_clean.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0008_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0010_association.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0010_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0010_observation.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0011_association.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0011_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0011_observation.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0017_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0017_clean.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0017_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0019_association.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0019_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0019_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0020_association.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0020_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0020_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0022_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0022_clean.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0022_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0024_association.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0024_clean.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0024_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0025_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0025_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0025_observation.json",
+      "max_absolute_error": 4.163336342344337e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0038_association.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0038_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0038_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0040_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0040_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0040_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0041_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0041_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0041_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0043_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0043_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0043_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0045_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0045_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0045_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0046_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0046_clean.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0046_observation.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0048_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0048_clean.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0048_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0050_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0050_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0050_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0062_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0062_clean.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0062_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0063_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0063_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0063_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0065_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0065_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0065_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0067_association.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0067_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0067_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0068_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0068_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0068_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0070_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0070_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0070_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0072_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0072_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0072_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0073_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0073_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0073_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0075_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0075_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0075_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0086_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0086_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0086_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0087_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0087_clean.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0087_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0089_association.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0089_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0089_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0091_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0091_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0091_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0092_association.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0092_clean.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0092_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0094_association.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0094_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0094_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0096_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0096_clean.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0096_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0097_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0097_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0097_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0109_association.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0109_clean.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0109_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0111_association.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0111_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0111_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0113_association.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0113_clean.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0113_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0114_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0114_clean.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0114_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0116_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0116_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0116_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0118_association.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0118_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0118_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0119_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0119_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0119_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0121_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0121_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0121_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0133_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0133_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0133_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0134_association.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0134_clean.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0134_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0136_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0136_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0136_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0138_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0138_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0138_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0139_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0139_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0139_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0141_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0141_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0141_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0143_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0143_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0143_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0144_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0144_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0144_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0153_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0153_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0153_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0155_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0155_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0155_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0156_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0156_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0156_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0158_association.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0158_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0158_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0160_association.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0160_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0160_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0162_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0162_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0162_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0163_association.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0163_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0163_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0174_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0174_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0174_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0176_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0176_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0176_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0177_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0177_clean.json",
+      "max_absolute_error": 2.220446049250313e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0177_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0179_association.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0179_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0179_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0181_association.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0181_clean.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0181_observation.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0182_association.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0182_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0182_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0184_association.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0184_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0184_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0186_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0186_clean.json",
+      "max_absolute_error": 3.469446951953614e-18,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0186_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0187_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0187_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0187_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0199_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0199_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0199_observation.json",
+      "max_absolute_error": 1.1102230246251565e-16,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0201_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0201_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0201_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0202_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0202_clean.json",
+      "max_absolute_error": 4.336808689942018e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0202_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0204_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0204_clean.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0204_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0206_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0206_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0206_observation.json",
+      "max_absolute_error": 8.673617379884035e-19,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0207_association.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0207_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0207_observation.json",
+      "max_absolute_error": 1.3877787807814457e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0209_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0209_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0209_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0211_association.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0211_clean.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0211_observation.json",
+      "max_absolute_error": 5.551115123125783e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0223_association.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0223_clean.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    },
+    {
+      "case": "results/study/skab/test/test_0223_observation.json",
+      "max_absolute_error": 2.7755575615628914e-17,
+      "candidates": 8
+    }
+  ],
+  "scope": "All primary test E6--E11 and all saved PCA configurations verified from compact distribution arrays. E4 newly verified only on the included full-draw examples. Historical all-case E4 and neural-weight audits remain in their original reports and require the full local/RunPod archive to repeat.",
+  "claims_and_figure_hashes": "passed",
+  "manuscript_sha256": "db5a35e93cd528cb7d88593ea8bcd820330ef2a2088e2805229a589ac7b7bbdf",
+  "clean_restore_verification": {
+    "status": "passed",
+    "archives": [
+      {
+        "archives": 1,
+        "artifacts": 4145,
+        "restored": 4145,
+        "archive": "synthetic_32_linear.tar.xz"
+      },
+      {
+        "archives": 1,
+        "artifacts": 4158,
+        "restored": 4158,
+        "archive": "synthetic_32_nonlinear.tar.xz"
+      },
+      {
+        "archives": 1,
+        "artifacts": 4141,
+        "restored": 4141,
+        "archive": "synthetic_64_nonlinear.tar.xz"
+      },
+      {
+        "archives": 1,
+        "artifacts": 2194,
+        "restored": 2194,
+        "archive": "intel.tar.xz"
+      },
+      {
+        "archives": 1,
+        "artifacts": 4463,
+        "restored": 4463,
+        "archive": "skab.tar.xz"
+      },
+      {
+        "archives": 1,
+        "artifacts": 54,
+        "restored": 54,
+        "archive": "support.tar.xz"
+      }
+    ]
+  }
+}

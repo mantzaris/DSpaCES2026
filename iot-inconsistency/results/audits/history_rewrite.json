@@ -1,0 +1,162 @@
+{
+  "scope": "Only iot-inconsistency artifacts are filtered, and only after the published base. Author, committer, messages and every other project tree are preserved. Descendant commit IDs necessarily change when their parent IDs change.",
+  "remote_base": "6ebf00a9c1f87602f7a45a472b36a8737fe4ebee",
+  "original_head": "c4f8940324de22b54016b74fd91837f76e849f91",
+  "original_to_compact_commit": {
+    "83cedd9a43abc2057b689dd4a13b2f59363acd43": "83cedd9a43abc2057b689dd4a13b2f59363acd43",
+    "ca953f5ecfca74f83f1fbe4f9875fd91158f3b56": "ca953f5ecfca74f83f1fbe4f9875fd91158f3b56",
+    "2df33081b7c9040d9602571fea5933cd4a4c4b84": "2df33081b7c9040d9602571fea5933cd4a4c4b84",
+    "88701ced90271d0bde814ebabdafc043a38e7f7c": "88701ced90271d0bde814ebabdafc043a38e7f7c",
+    "c4d839c37bf1ac1364e6d007f45c7c05107d6901": "c4d839c37bf1ac1364e6d007f45c7c05107d6901",
+    "aa818870c72941b1cd4b5d3ecd682f34fd1c379c": "aa818870c72941b1cd4b5d3ecd682f34fd1c379c",
+    "86df078cec217dc7c2c59d0a75cd44dae9cd62b0": "36485392f74a137e83882039fa9374a9390fe70c",
+    "5391d4eb7a67c1e9bbdc29aa5a576e1f54397a3f": "a23db41ff45bebf4f41b20911df903be9409150b",
+    "ea8050b1a037952c7eb82cf527007847c0ff5b3a": "ecd1a3d12a6611662ee0e1150eafb311308aa4c7",
+    "6f317d647197254db3229e62c72e7a2937488245": "25ab5918ebe8facfd0a3013fe53ed80a853f7c38",
+    "73ce2c435344ad7e0f221177bb968628ebd9aa23": "546878a25c6f17b15ef835ace6a136cf17bc9526",
+    "157911c533ed94d36f3b930771409f59707978bd": "536af70b8a3be16e13f6e6c3eec2b0a36f5a344f",
+    "b912fa23e7f72993116bdd1198c65579f2b1a71f": "2d28004ff9769d5305b38a4a658a9cd41099b5ac",
+    "a4942443b814c9c71b4bd9fc0a751b4af38aba73": "ea80c61b1727752bc300c3bc453121412e8743c9",
+    "1081274b3e27b46559d1a009f3722c954bed5a8a": "8f4fb503483eaa8c2570fc0fe37967a39134b764",
+    "b4aef7683cd77a281abd314de9292f10d0a36e86": "55f6fda71d6e128863c56e7e4e1f0da4ce1006d6",
+    "8b56f326b573c2953581cb811e35acc14bc8874c": "77d11f1a646484a6c264aab6fef967898d50563b",
+    "a104fd239e2f9c207f1f2f31f30092565ce646d1": "1fb43cf65b295f52bc656c360a7ccad941dfce7e",
+    "c4f8940324de22b54016b74fd91837f76e849f91": "adfb0dc03c15f10646af6fdf7c5c750154e4b7e4"
+  },
+  "checks": [
+    {
+      "original": "83cedd9a43abc2057b689dd4a13b2f59363acd43",
+      "rewritten": "83cedd9a43abc2057b689dd4a13b2f59363acd43",
+      "project_files_before": 41,
+      "project_files_after": 41,
+      "other_project_trees": "identical"
+    },
+    {
+      "original": "ca953f5ecfca74f83f1fbe4f9875fd91158f3b56",
+      "rewritten": "ca953f5ecfca74f83f1fbe4f9875fd91158f3b56",
+      "project_files_before": 41,
+      "project_files_after": 41,
+      "other_project_trees": "identical"
+    },
+    {
+      "original": "2df33081b7c9040d9602571fea5933cd4a4c4b84",
+      "rewritten": "2df33081b7c9040d9602571fea5933cd4a4c4b84",
+      "project_files_before": 60,
+      "project_files_after": 60,
+      "other_project_trees": "identical"
+    },
+    {
+      "original": "88701ced90271d0bde814ebabdafc043a38e7f7c",
+      "rewritten": "88701ced90271d0bde814ebabdafc043a38e7f7c",
+      "project_files_before": 60,
+      "project_files_after": 60,
+      "other_project_trees": "identical"
+    },
+    {
+      "original": "c4d839c37bf1ac1364e6d007f45c7c05107d6901",
+      "rewritten": "c4d839c37bf1ac1364e6d007f45c7c05107d6901",
+      "project_files_before": 60,
+      "project_files_after": 60,
+      "other_project_trees": "identical"
+    },
+    {
+      "original": "aa818870c72941b1cd4b5d3ecd682f34fd1c379c",
+      "rewritten": "aa818870c72941b1cd4b5d3ecd682f34fd1c379c",
+      "project_files_before": 60,
+      "project_files_after": 60,
+      "other_project_trees": "identical"
+    },
+    {
+      "original": "86df078cec217dc7c2c59d0a75cd44dae9cd62b0",
+      "rewritten": "36485392f74a137e83882039fa9374a9390fe70c",
+      "project_files_before": 106,
+      "project_files_after": 102,
+      "other_project_trees": "identical"
+    },
+    {
+      "original": "5391d4eb7a67c1e9bbdc29aa5a576e1f54397a3f",
+      "rewritten": "a23db41ff45bebf4f41b20911df903be9409150b",
+      "project_files_before": 106,
+      "project_files_after": 102,
+      "other_project_trees": "identical"
+    },
+    {
+      "original": "ea8050b1a037952c7eb82cf527007847c0ff5b3a",
+      "rewritten": "ecd1a3d12a6611662ee0e1150eafb311308aa4c7",
+      "project_files_before": 106,
+      "project_files_after": 102,
+      "other_project_trees": "identical"
+    },
+    {
+      "original": "6f317d647197254db3229e62c72e7a2937488245",
+      "rewritten": "25ab5918ebe8facfd0a3013fe53ed80a853f7c38",
+      "project_files_before": 106,
+      "project_files_after": 102,
+      "other_project_trees": "identical"
+    },
+    {
+      "original": "73ce2c435344ad7e0f221177bb968628ebd9aa23",
+      "rewritten": "546878a25c6f17b15ef835ace6a136cf17bc9526",
+      "project_files_before": 106,
+      "project_files_after": 102,
+      "other_project_trees": "identical"
+    },
+    {
+      "original": "157911c533ed94d36f3b930771409f59707978bd",
+      "rewritten": "536af70b8a3be16e13f6e6c3eec2b0a36f5a344f",
+      "project_files_before": 16526,
+      "project_files_after": 246,
+      "other_project_trees": "identical"
+    },
+    {
+      "original": "b912fa23e7f72993116bdd1198c65579f2b1a71f",
+      "rewritten": "2d28004ff9769d5305b38a4a658a9cd41099b5ac",
+      "project_files_before": 16526,
+      "project_files_after": 246,
+      "other_project_trees": "identical"
+    },
+    {
+      "original": "a4942443b814c9c71b4bd9fc0a751b4af38aba73",
+      "rewritten": "ea80c61b1727752bc300c3bc453121412e8743c9",
+      "project_files_before": 32765,
+      "project_files_after": 292,
+      "other_project_trees": "identical"
+    },
+    {
+      "original": "1081274b3e27b46559d1a009f3722c954bed5a8a",
+      "rewritten": "8f4fb503483eaa8c2570fc0fe37967a39134b764",
+      "project_files_before": 32765,
+      "project_files_after": 292,
+      "other_project_trees": "identical"
+    },
+    {
+      "original": "b4aef7683cd77a281abd314de9292f10d0a36e86",
+      "rewritten": "55f6fda71d6e128863c56e7e4e1f0da4ce1006d6",
+      "project_files_before": 32765,
+      "project_files_after": 292,
+      "other_project_trees": "identical"
+    },
+    {
+      "original": "8b56f326b573c2953581cb811e35acc14bc8874c",
+      "rewritten": "77d11f1a646484a6c264aab6fef967898d50563b",
+      "project_files_before": 32765,
+      "project_files_after": 292,
+      "other_project_trees": "identical"
+    },
+    {
+      "original": "a104fd239e2f9c207f1f2f31f30092565ce646d1",
+      "rewritten": "1fb43cf65b295f52bc656c360a7ccad941dfce7e",
+      "project_files_before": 32765,
+      "project_files_after": 292,
+      "other_project_trees": "identical"
+    },
+    {
+      "original": "c4f8940324de22b54016b74fd91837f76e849f91",
+      "rewritten": "adfb0dc03c15f10646af6fdf7c5c750154e4b7e4",
+      "project_files_before": 32765,
+      "project_files_after": 292,
+      "other_project_trees": "identical"
+    }
+  ],
+  "recovery": "Local runtime/git-cleanup/original-objects preserves immutable original objects."
+}

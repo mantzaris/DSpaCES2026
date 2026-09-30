@@ -12,10 +12,11 @@ The primary study uses one synthetic sensor-network family, Intel Berkeley measu
 
 - [paper/main.tex](paper/main.tex) and [paper/main.pdf](paper/main.pdf) contain the IEEE manuscript. Generated text is sourced through [results/paper_claims.json](results/paper_claims.json).
 - [results/analysis.json](results/analysis.json) contains the primary results, paired source-block intervals, probability evaluations, operating points and fault-family subsets.
-- `results/study/<configuration>/<split>/` contains case manifests, original inputs, all primary predictive draws, unchanged witness identities and separate score components.
-- `results/ablations/`, `results/robustness/`, `results/native/` and `results/sensitivity/` retain secondary experiments and their narrower label scopes.
+- `results/evidence/` contains six compressed bundles and a checksum manifest. They preserve the exact finalized JSON records for primary and secondary experiments, including negative findings. Run the restore command below to expand them into their original locations.
+- Compact primary arrays retain inputs, masks, truth, replacements, witness losses and score components. Repeated predictive draws are omitted from these explicitly named `results/compact/` files. Twenty-one complete draw files cover all ten operator examples and independent CRPS checks. Original array paths and hashes remain distinct from compact paths and hashes.
+- `results/ablations/`, `results/robustness/`, `results/native/` and `results/sensitivity/` retain their result summaries directly, with detailed records in the bundles. Native process labels remain separate from injected faults.
 - [equation_audit.md](equation_audit.md), [equation_to_code.json](equation_to_code.json) and [CLAIMS_AUDIT.md](CLAIMS_AUDIT.md) connect the method to code and evidence.
-- `results/model_weights/` contains exact inference state arrays and hashes. GPU training checkpoints also include optimizer state and are intentionally excluded from ordinary result pulls.
+- `results/model_weights/manifest.json` records exact neural state hashes. The 78 neural state files, full predictive draws and superseded intermediate runs remain locally and on the existing pod, outside Git. The small PCA states and all source code remain in Git. Optimizer checkpoints are excluded from ordinary result pulls.
 - [literature/NOVELTY_MATRIX.md](literature/NOVELTY_MATRIX.md) records full-method comparisons and adaptation limits. `literature/sources.json` and data acquisition manifests record primary sources, versions and licenses.
 
 ## Local verification and rendering
@@ -23,6 +24,8 @@ The primary study uses one synthetic sensor-network family, Intel Berkeley measu
 The arithmetic reference requires NumPy. Full analysis requires the Python packages in `requirements-runpod.txt`. The recorded GPU environment is `results/environment.lock.txt`. Local artifact analysis also works with the older installed Python 3.8 environment; exact hardware/software reproduction should use the recorded environment.
 
 ```bash
+python3 scripts/package_results.py restore
+python3 scripts/audit_publication.py
 python3 reference/reference_score.py
 python3 scripts/audit_equations.py --device cpu
 python3 -m pytest -q
@@ -34,8 +37,9 @@ python3 scripts/evaluate_pca_total.py
 python3 scripts/figures.py
 python3 scripts/make_paper.py
 latexmk -pdf -interaction=nonstopmode -halt-on-error -cd paper/main.tex
-python3 scripts/audit_final.py
 ```
+
+The restore command checks every file and refuses to overwrite changed local evidence. Expansion needs about 2.4 GiB in a fresh checkout. `package_results.py verify` checks the bundles without expanding them. The publication audit reads primary arrays directly from the bundles and checks all 1,092 test cases, 40 PCA settings, 21 complete CRPS examples, the claim sources and the saved manuscript and figure hashes. Run it before regenerating the published files. `results/audits/production_equations.json` retains the original all-case E4 audit. Repeating that broader draw audit or `scripts/audit_final.py` requires the full local or RunPod archive. Packaging does not change any saved scientific result.
 
 Final paper generation requires completed experiments and audits. `make_paper.py --draft` remains available only for clearly marked intermediate layouts. The vendored IEEE class and bibliography style retain their original license notices. Analysis regenerated under different NumPy or scikit-learn versions can differ in final floating-point digits. The saved outputs and environment lock identify the published values.
 
@@ -50,7 +54,7 @@ python3 scripts/summarize_design.py
 python3 scripts/export_graph.py
 ```
 
-Main inference automatically loads `results/model_weights/<configuration>/*.npz` when optimizer checkpoints are absent. PCA states are in `results/models/<configuration>/`. Rebuilding metrics and figures from saved predictions does not require GPU inference or retraining. The original GPU predictions are the definitive empirical artifacts. Ordinary float32 GPU reductions can change small seeded scores; [results/audits/inference_repeatability.json](results/audits/inference_repeatability.json) measures that effect. Deterministic CUDA mode verifies exact portable/checkpoint agreement and known-copy invariance separately.
+Main inference automatically loads local `results/model_weights/<configuration>/*.npz` when optimizer checkpoints are absent. These neural weights are excluded from the Git distribution. PCA states are in `results/models/<configuration>/`. Rebuilding metrics and figures from restored records and compact arrays does not require GPU inference or retraining. The original GPU predictions remain the definitive full empirical archive. Ordinary float32 GPU reductions can change small seeded scores; [results/audits/inference_repeatability.json](results/audits/inference_repeatability.json) measures that effect. Deterministic CUDA mode verifies exact portable/checkpoint agreement and known-copy invariance separately.
 
 ## Existing RunPod execution
 
@@ -84,7 +88,7 @@ After dataset preparation in that isolated copy on the existing GPU, run these f
 .venv/bin/python scripts/analyze_cross_type.py
 ```
 
-The first run executed development sensitivity separately before freezing. `continue_main.sh` now includes that idempotent command so a clean rerun cannot omit it. The portable/checkpoint audit requires the original optimizer checkpoints on the GPU. CPU analysis and rendering can use the committed inference arrays and original prediction files alone.
+The first run executed development sensitivity separately before freezing. `continue_main.sh` now includes that idempotent command so a clean rerun cannot omit it. The portable/checkpoint audit requires the original optimizer checkpoints on the GPU. CPU analysis and rendering use the restored result records and compact arrays. To rebuild the distribution from the full archive, run `python3 scripts/package_results.py pack`, then `python3 scripts/audit_publication.py`.
 
 ## Neo4j and the operator view
 

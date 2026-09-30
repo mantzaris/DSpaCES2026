@@ -12,14 +12,19 @@ Neo4j stores versioned evidence for ten saved review cases. The node-link interf
 
 `results/audits/final.json` records the completed artifact checks and current manuscript hash. `results/paper_claims.json` maps generated values to saved results. `CLAIMS_AUDIT.md`, `equation_audit.md` and `DECISIONS.md` state the claim limits and corrections.
 
+The Git distribution now uses six compressed evidence bundles. Exact primary and secondary JSON records are preserved. Compact arrays omit repeated witness draws while retaining all primary inputs and score components. The new publication audit reconstructs all 8,736 test candidate scores, verifies all 40 PCA settings and repeats E4 on 21 complete examples. The earlier full E4 audit remains available. All 22 local tests pass, including exact restoration, protection of edited evidence and array fidelity. Neural weights, full draws and superseded runs remain locally and on the pod, outside Git.
+
 Rebuild the paper from committed evidence, without training or dataset acquisition
 
 ```bash
+python3 scripts/package_results.py restore
+python3 scripts/audit_publication.py
 python3 scripts/figures.py
 python3 scripts/make_paper.py
 latexmk -pdf -interaction=nonstopmode -halt-on-error -cd paper/main.tex
-python3 scripts/audit_final.py
 ```
+
+The publication audit checks the saved paper before regeneration. Repeating `scripts/audit_final.py` or the all-case predictive-draw audit requires the full experiment archive. Restoration refuses to overwrite edited files. `python3 scripts/package_results.py verify` checks bundle contents without expanding them.
 
 Restore the local review application
 

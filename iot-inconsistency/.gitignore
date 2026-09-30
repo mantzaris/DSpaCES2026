@@ -9,6 +9,22 @@ literature/downloads/
 runtime/
 results/**/*.pt
 results/**/*.tmp
+# Full experiments remain local. Exact result records and compact primary arrays
+# are distributed in results/evidence and restored by package_results.py.
+/results/study/*/development/
+/results/study/*/calibration/
+/results/study/*/test/
+/results/ablations/*/*/
+/results/robustness/*/*
+!/results/robustness/*/analysis.json
+!/results/robustness/*/complete.json
+/results/sensitivity/*/
+/results/native/*/*
+!/results/native/*/analysis.json
+/results/model_weights/*/*.npz
+/results/compact/
+/results/pilot/
+/results/audits/job_failures/
 *.log
 *.aux
 *.out

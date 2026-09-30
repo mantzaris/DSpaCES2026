@@ -5,10 +5,11 @@ import numpy as np
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'src'))
 from iot_repair.baselines import PCADetector
 from iot_repair.experiment import json_save
+from iot_repair.artifacts import load_case_arrays
 reports=[]
 for name in json.loads((ROOT/'configs/study.json').read_text())['datasets']:
     directory=ROOT/'results/study'/name/'test';manifest=json.loads((directory/'case_manifest.json').read_text())['cases']
-    values=np.stack([np.load(directory/(case['id']+'.npz'))['input'] for case in manifest]);saved=np.load(directory/'baselines_raw.npz')
+    values=np.stack([load_case_arrays(directory/(case['id']+'.npz'))['input'] for case in manifest]);saved=np.load(directory/'baselines_raw.npz')
     for key in saved.files:
         if not key.startswith('pca_'):continue
         lag=int(key.split('_')[1][3:]);model=PCADetector.load(ROOT/'results/models'/name/(key+'.npz'),lag)

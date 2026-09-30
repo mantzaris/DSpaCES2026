@@ -1,0 +1,18 @@
+{
+  "scope": "iot-inconsistency only. Other project trees are preserved.",
+  "before_head": "c4f8940324de22b54016b74fd91837f76e849f91",
+  "remote_base": "6ebf00a9c1f87602f7a45a472b36a8737fe4ebee",
+  "before_tracked_files": 32765,
+  "before_tracked_bytes": 4234356298,
+  "excluded_files": 32473,
+  "excluded_local_bytes": 4197017514,
+  "evidence_archives": 6,
+  "evidence_archive_bytes": 124875508,
+  "exact_archived_json_records": 15992,
+  "compact_primary_array_files": 3069,
+  "archive_sha256": "078ce92df3a03ddc24441c706d3152c8cf91007f43ea4e11959594ac971ac386",
+  "clean_restore_status": "passed",
+  "equation_audit": "results/audits/publication.json",
+  "local_preservation": "Excluded files remain in place and are ignored. Immutable original Git objects have a local recovery snapshot under runtime/git-cleanup.",
+  "no_push": true
+}

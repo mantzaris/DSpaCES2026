@@ -13,6 +13,7 @@ from iot_repair.baselines import PCADetector
 from iot_repair.calibration import null_tail_value
 from iot_repair.experiment import json_save
 from iot_repair.metrics import ap,paired_ap_interval,task_cases,scores_for
+from iot_repair.artifacts import load_case_arrays
 threadpool_limits(4)
 out=ROOT/'results/pca_total';out.mkdir(exist_ok=True);reports={}
 for name in json.loads((ROOT/'configs/study.json').read_text())['datasets']:
@@ -20,7 +21,7 @@ for name in json.loads((ROOT/'configs/study.json').read_text())['datasets']:
     models={p.stem:PCADetector.load(p,lag=int(p.stem.split('_')[1][3:])) for p in sorted((ROOT/'results/models'/name).glob('pca_lag*.npz'))}
     for split in ['development','calibration','test']:
         cases=task_cases([json.loads(p.read_text()) for p in sorted((study/split).glob(split+'_*.json'))],'observation');split_cases[split]=cases
-        x=np.stack([np.load(study/split/case['raw_artifact'])['input'] for case in cases]);results[split]={}
+        x=np.stack([load_case_arrays(study/split/case['raw_artifact'])['input'] for case in cases]);results[split]={}
         for key,model in models.items():
             start=time.perf_counter();total=model.total_reconstruction_score(x);contributions=model.all_coordinate_contributions(x);seconds=time.perf_counter()-start
             # Independent B1--B3 projection, complete squared norm and mean

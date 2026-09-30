@@ -9,6 +9,7 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'src'))
 from iot_repair.metrics import *
 from iot_repair.experiment import json_save
 from iot_repair.calibration import null_tail_value
+from iot_repair.artifacts import load_case_arrays
 config=json.loads((ROOT/'configs/study.json').read_text());reports={}
 for dataset in config['datasets']:
     directory=ROOT/'results/study'/dataset
@@ -79,7 +80,7 @@ for dataset in config['datasets']:
         terms[kind]={str(label):{key:dict(median=float(np.median([r[key] for r in rows if r['truth']==label])),quantiles=np.quantile([r[key] for r in rows if r['truth']==label],[.1,.9]).tolist()) for key in ('mean_gain','model_instability','edit_cost','monte_carlo_standard_error')} for label in [False,True] if any(r['truth']==label for r in rows)}
         degree=[];initial=[];gain=[];durations=[]
         for case in cases:
-            raw=np.load(directory/'test'/case['raw_artifact'])
+            raw=load_case_arrays(directory/'test'/case['raw_artifact'])
             for row in case['records']:
                 if row['kind']!=kind:continue
                 channel=row['index'] if kind=='observation' else case['graph']['edges'][row['index']]['source']
