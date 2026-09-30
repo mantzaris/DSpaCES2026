@@ -1,0 +1,115 @@
+{
+  "measurement_kernel": {
+    "cpu_float64": {
+      "p50_seconds": 0.008413609117269516,
+      "p95_seconds": 0.00978052671998739
+    },
+    "gpu_float32": {
+      "p50_seconds": 0.0014836350455880165,
+      "p95_seconds": 0.0018714384175837037
+    },
+    "maximum_absolute_error": 9.18037966801677e-06
+  },
+  "profiles": [
+    {
+      "dataset": "synthetic64",
+      "sampling": {
+        "128": {
+          "finite": true,
+          "peak_gpu_bytes": 78332928,
+          "seconds": 0.46238455176353455
+        },
+        "32": {
+          "finite": true,
+          "peak_gpu_bytes": 74400768,
+          "seconds": 0.19180725328624249
+        },
+        "64": {
+          "finite": true,
+          "peak_gpu_bytes": 76366848,
+          "seconds": 0.20229856669902802
+        }
+      },
+      "training": {
+        "best_development_loss": 0.25511799938976765,
+        "checkpoint": "/workspace/iot-entropy/experiments/pilot/checkpoints/synthetic64-diffusion-physical-17.pt",
+        "checkpoint_sha256": "3720f9b0721cc86b8a7319c61be0bbd9dc5e9c285a61677cb5228cab5ce37e6f",
+        "dataset": "synthetic64",
+        "graph": "physical",
+        "history": [
+          {
+            "development_loss": 0.3139604665338993,
+            "loss": 0.22073771059513092,
+            "seconds": 2.106332851573825,
+            "step": 50
+          },
+          {
+            "development_loss": 0.25511799938976765,
+            "loss": 0.3612692952156067,
+            "seconds": 3.4270535726100206,
+            "step": 100
+          }
+        ],
+        "kind": "diffusion",
+        "parameters": 20713,
+        "peak_gpu_bytes": 101564928,
+        "screen": true,
+        "seed": 17,
+        "training_seconds": 3.4413683135062456
+      }
+    },
+    {
+      "dataset": "pems",
+      "sampling": {
+        "128": {
+          "finite": true,
+          "peak_gpu_bytes": 330981376,
+          "seconds": 1.8272702153772116
+        },
+        "32": {
+          "finite": true,
+          "peak_gpu_bytes": 308058112,
+          "seconds": 0.464931832626462
+        },
+        "64": {
+          "finite": true,
+          "peak_gpu_bytes": 315113472,
+          "seconds": 0.9144149944186211
+        }
+      },
+      "training": {
+        "best_development_loss": 0.3460410460829735,
+        "checkpoint": "/workspace/iot-entropy/experiments/pilot/checkpoints/pems-diffusion-physical-17.pt",
+        "checkpoint_sha256": "bc6ba445275626dfdb4f477c8b8701641a55951504d9c188bb145a0d98e0fa43",
+        "dataset": "pems",
+        "graph": "physical",
+        "history": [
+          {
+            "development_loss": 0.3966960459947586,
+            "loss": 0.31782010197639465,
+            "seconds": 1.5212995987385511,
+            "step": 50
+          },
+          {
+            "development_loss": 0.3460410460829735,
+            "loss": 0.4633079767227173,
+            "seconds": 2.964486865326762,
+            "step": 100
+          }
+        ],
+        "kind": "diffusion",
+        "parameters": 20713,
+        "peak_gpu_bytes": 399781888,
+        "screen": true,
+        "seed": 17,
+        "training_seconds": 2.976142331957817
+      }
+    }
+  ],
+  "software": {
+    "numpy": "2.1.2",
+    "python": "3.12.3",
+    "torch": "2.8.0+cu128"
+  },
+  "total_seconds": 12.685878558084369
+}

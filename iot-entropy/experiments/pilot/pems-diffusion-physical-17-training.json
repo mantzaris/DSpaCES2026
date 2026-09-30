@@ -1,0 +1,27 @@
+{
+  "best_development_loss": 0.3460410460829735,
+  "checkpoint": "/workspace/iot-entropy/experiments/pilot/checkpoints/pems-diffusion-physical-17.pt",
+  "checkpoint_sha256": "bc6ba445275626dfdb4f477c8b8701641a55951504d9c188bb145a0d98e0fa43",
+  "dataset": "pems",
+  "graph": "physical",
+  "history": [
+    {
+      "development_loss": 0.3966960459947586,
+      "loss": 0.31782010197639465,
+      "seconds": 1.5212995987385511,
+      "step": 50
+    },
+    {
+      "development_loss": 0.3460410460829735,
+      "loss": 0.4633079767227173,
+      "seconds": 2.964486865326762,
+      "step": 100
+    }
+  ],
+  "kind": "diffusion",
+  "parameters": 20713,
+  "peak_gpu_bytes": 399781888,
+  "screen": true,
+  "seed": 17,
+  "training_seconds": 2.976142331957817
+}

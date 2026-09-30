@@ -39,6 +39,6 @@
   "group_merge_iou": 0.5,
   "event_tolerance": 0,
   "bootstrap_repetitions": 1000,
-  "gpu_hour_budget": null,
+  "gpu_hour_budget": 4.0,
   "authors": ["Alexander V. Mantzaris", "James H. Korris"]
 }

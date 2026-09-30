@@ -53,15 +53,16 @@ def simulate(coordinates: np.ndarray, transition: np.ndarray, length: int,
 
 def prepare_synthetic(root: Path, node_count: int, device: str = 'cpu') -> SensorData:
     coords,adjacency,transition,audit=system(node_count)
-    segments=[]; episodes=[]; seeds=[]; bounds=[0]; cursor=0
+    segments=[]; time_segments=[]; episodes=[]; seeds=[]; bounds=[0]; cursor=0
     for split,(number,length) in enumerate([(48,1024),(12,1024),(32,256),(32,384)]):
         for episode in range(number):
             seed=100000+node_count*1000+split*100+episode
             segments.append(simulate(coords,transition,length,seed,device))
+            time_segments.append(np.datetime64('2020-01-01','ns').astype('int64')+(np.arange(length,dtype=np.int64)+256+seed%288)*300*10**9)
             episodes.append([cursor,cursor+length,split]);seeds.append(seed);cursor+=length
         bounds.append(cursor)
     values=np.concatenate(segments)
-    timestamps=np.datetime64('2020-01-01','ns').astype('int64')+np.arange(cursor,dtype=np.int64)*300*10**9
+    timestamps=np.concatenate(time_segments)
     audit.update({'source':'Independently specified graph-coupled stochastic process',
                   'normal_drivers':'daily + weekly sinusoid; 3 OU factors with spatial sinusoidal loadings',
                   'episode_seeds':seeds,'timestamp_note':'Synthetic display index; calendar features use episode phase stored by seed'})

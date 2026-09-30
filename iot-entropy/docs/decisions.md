@@ -15,3 +15,17 @@
   remain explicit unresolved submission metadata, not invented statements.
 - Preregister before full runs. Select an explicit total runtime budget after
   profiling. Preserve negative results and measure generator fidelity.
+- Pilot, before full runs: all seven GPU validation gates passed. B=64 joint
+  sampling took 0.20 s at 64 nodes and 0.91 s at 325 nodes; peak allocated GPU
+  memory was below 0.4 GB. The 128-matrix measurement batch took 1.48 ms on GPU
+  float32 and 8.41 ms on CPU float64 (different precisions, kernel only).
+  Retain the compact width-24 model, 20 DDIM steps, B=64 and lambda=.05;
+  numerical stability is adequate. Set a **4 GPU-hour wall-runtime ceiling**
+  for this study's training, sampling and sensitivities. This is a stop limit,
+  not an entitlement to spend that time. The configured pilot cost is separate
+  and reported. No full/test results informed this decision.
+- Current main-conference CFP explicitly states single-blind review and no
+  appendix. Use the supplied author names and a self-contained <=10-page paper
+  without an appendix. Workshop pages do not provide a separate supplementary
+  policy; preserve reproducibility artifacts locally without assuming they
+  can be submitted as reviewed supplementary material.

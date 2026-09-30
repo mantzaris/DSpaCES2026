@@ -1,0 +1,27 @@
+{
+  "best_development_loss": 0.25511799938976765,
+  "checkpoint": "/workspace/iot-entropy/experiments/pilot/checkpoints/synthetic64-diffusion-physical-17.pt",
+  "checkpoint_sha256": "3720f9b0721cc86b8a7319c61be0bbd9dc5e9c285a61677cb5228cab5ce37e6f",
+  "dataset": "synthetic64",
+  "graph": "physical",
+  "history": [
+    {
+      "development_loss": 0.3139604665338993,
+      "loss": 0.22073771059513092,
+      "seconds": 2.106332851573825,
+      "step": 50
+    },
+    {
+      "development_loss": 0.25511799938976765,
+      "loss": 0.3612692952156067,
+      "seconds": 3.4270535726100206,
+      "step": 100
+    }
+  ],
+  "kind": "diffusion",
+  "parameters": 20713,
+  "peak_gpu_bytes": 101564928,
+  "screen": true,
+  "seed": 17,
+  "training_seconds": 3.4413683135062456
+}

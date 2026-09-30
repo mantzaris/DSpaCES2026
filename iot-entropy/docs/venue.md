@@ -9,8 +9,13 @@ The linked [submission page](https://wi-lab.com/cyberchair/2026/bigdata26/script
 confirms October 15, 2026, 23:59 Anywhere on Earth and the 10-page limit.
 Camera-ready deadline is November 20. No paper has been submitted.
 
-Neither of those pages specifies review anonymity or supplementary-material
-rules. These must not be inferred from an older edition. Inspect current main
-conference author instructions and the new-paper form (read-only) before
-finalizing submission metadata. The linked IEEE template page did not render
-in the browsing tool at the initial check.
+Neither workshop page specifies review anonymity or supplementary-material
+rules. The [current 2026 main-conference CFP](https://bigdataieee.org/BigData2026/calls/papers/)
+explicitly specifies single-blind review and prohibits an appendix. Adopt named
+authors and a self-contained paper without an appendix. The workshop's
+[new-paper form](https://wi-lab.com/cyberchair/2026/bigdata26/scripts/submitform.php?subarea=S53&submittype=&upload_only=0)
+has author/contact fields and one PDF upload, with no separate supplementary
+upload or instructions. A workshop-specific supplementary policy remains
+unspecified. These observations are from the current edition, not an earlier
+year. No form was filled or submitted. The linked IEEE template page did not
+render in the browsing tool at the initial check.

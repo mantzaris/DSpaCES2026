@@ -47,9 +47,9 @@ def window_features(x: torch.Tensor, shrinkage: float = 0.05,
     n_time, m = x.shape[-2:]
     common = torch.isfinite(x).all(-1)
     count = common.sum(-1)
-    safe = torch.where(common.unsqueeze(-1), x, 0)
+    safe = torch.where(common.unsqueeze(-1), x, torch.zeros_like(x))
     mean = safe.sum(-2) / count.clamp_min(1).unsqueeze(-1)
-    centered = torch.where(common.unsqueeze(-1), x - mean.unsqueeze(-2), 0)
+    centered = torch.where(common.unsqueeze(-1), x - mean.unsqueeze(-2), torch.zeros_like(x))
     denominator = (count - 1).clamp_min(1)
     variance = centered.square().sum(-2) / denominator.unsqueeze(-1)
     flatline = (variance <= variance_floor).any(-1) & (count >= 2)
