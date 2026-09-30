@@ -22,13 +22,17 @@ root=Path(__file__).resolve().parents[1]
 config=json.loads((root/'configs/full.json').read_text())
 base=root/'experiments/full'
 out=root/'experiments/sensitivity';out.mkdir(parents=True,exist_ok=True)
-parser=argparse.ArgumentParser();parser.add_argument('stage',choices=['graphs','samples','quality','persistence','global','unscreened'])
+parser=argparse.ArgumentParser();parser.add_argument('stage',choices=['graphs','samples','quality','persistence','global','unscreened','directions'])
 args=parser.parse_args()
 spent=recorded_runtime(root)
 budget=Budget(config['gpu_hour_budget'],spent);torch.set_num_threads(4)
 started=time.monotonic()
 
-if args.stage=='graphs':
+if args.stage=='directions':
+    from iot_entropy.direction_ablation import run_direction_ablation
+    run_direction_ablation(root,config,budget)
+
+elif args.stage=='graphs':
     for graph in ['removed','shuffled']:
         for name in config['datasets']:
             budget.check();run(load_data(root,name),config,17,base,budget,graph=graph)

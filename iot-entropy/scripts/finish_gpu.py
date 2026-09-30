@@ -14,7 +14,7 @@ while not (root/'experiments/full/scoring_status.json').exists():
 primary=json.loads((root/'experiments/full/scoring_status.json').read_text())
 if primary['status']!='complete':raise RuntimeError('Primary scoring did not finish: '+str(primary))
 commands=[['scripts/benchmark.py'],['scripts/fidelity.py']]
-commands += [['scripts/sensitivities.py',stage] for stage in ['quality','global','unscreened','samples','persistence','graphs']]
+commands += [['scripts/sensitivities.py',stage] for stage in ['quality','global','unscreened','samples','persistence','graphs','directions']]
 completed=[]
 for command in commands:
     label=Path(command[0]).stem+('-'+command[1] if len(command)>1 else '')

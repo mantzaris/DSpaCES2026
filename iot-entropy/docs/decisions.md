@@ -71,3 +71,10 @@
   and entropy coverage on their shared eligible groups. A zero-dimensional
   energy score is undefined, not zero; reporting masks this case using the
   saved dimension count. This reporting correction does not alter detections.
+- Distinguish directional ablations explicitly: the main `higher`/`lower`
+  scores are one-sided departures from the generated expectation. An additional
+  saved-score ablation gates the bidirectional score by actual positive/negative
+  observed DeltaH, separately recalibrating each scan. It reuses the original
+  group scores and injections; its unrestricted arm must exactly reproduce all
+  primary entropy p-values. This implements actual increase/decrease-only
+  monitoring without relabeling residual signs as physical slope.
