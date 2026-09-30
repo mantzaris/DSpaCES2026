@@ -30,6 +30,8 @@ const first=await evaluate("({status:$('status').textContent,groups:ranked.lengt
 await evaluate("$('time').value=9;$('time').dispatchEvent(new Event('input'));document.querySelectorAll('.row')[2].click();true");
 const selected=await evaluate("({time:ti,group:gi,evidence:$('evidence').textContent,merged:data.frames[ti].merged_alert_groups.length})");
 if(selected.time!==9||!selected.evidence.includes('Forecast issued:'))throw Error('Linked selection failed');
+const edge=await evaluate("(()=>{const edge=edgeRecords[0],a=positions[edge.a],b=positions[edge.b],rect=$('network').getBoundingClientRect();$('network').dispatchEvent(new MouseEvent('mousemove',{clientX:rect.left+(a[0]+b[0])/2,clientY:rect.top+(a[1]+b[1])/2}));return $('edgeinfo').textContent})()");
+if(!edge.includes('observed r=')||!edge.includes('Δreference='))throw Error('Edge evidence inspection failed');
 const checks=[];
 for(let index=0;index<first.caseCount;index++){
   await evaluate(`$('case').value=${index};load()`);
@@ -42,6 +44,6 @@ const screenshot=await send('Page.captureScreenshot',{format:'png',captureBeyond
   clip:{x:0,y:0,width:1440,height:Math.ceil(layout.cssContentSize.height),scale:1}});
 await fs.mkdir('dashboard/validation',{recursive:true});
 await fs.writeFile('dashboard/validation/replay.png',Buffer.from(screenshot.data,'base64'));
-await fs.writeFile('dashboard/validation/check.json',JSON.stringify({first,selected,checks,errors},null,2)+'\n');
+await fs.writeFile('dashboard/validation/check.json',JSON.stringify({first,selected,edge,checks,errors},null,2)+'\n');
 console.log(JSON.stringify({cases:checks.length,interactionPassed:true,javascriptExceptions:errors.length}));
 socket.close();if(errors.length)process.exitCode=1;

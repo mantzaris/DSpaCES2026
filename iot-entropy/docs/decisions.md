@@ -47,7 +47,7 @@
   the full-rank case. Synthetic coupling-loss events modify the affected rows
   of the stable state transition, with identical process noise and a checked
   identical pre-event prefix; real-data decorrelation remains a sensor-level
-  intervention. The GDN comparator and restarted four-step CUSUM deviations
+  intervention. The GDN comparator and restarted up-to-four-step CUSUM deviations
   are disclosed in the implementation and manuscript.
 - Sensitivity implementation frozen while primary scoring is in progress,
   before inspecting aggregate results: the global trace needs at least twice
@@ -92,3 +92,22 @@
   Full-rank matched-covariance cases are checked separately from short,
   rank-deficient population-target draws; the latter do not imply unbiased
   finite-sample Pearson correlations after sample normalization.
+- After inspecting the primary results, add a retrospective empirical-budget
+  diagnostic from saved predictions. At each existing budget .05/.10/.20,
+  select the largest attainable rank threshold whose untouched-test-control
+  issuance exceedance is within that budget, separately for each method and
+  dataset configuration, pooling its three training seeds. Never use injected
+  labels to choose that threshold. Recompute one-to-one event and localization
+  outcomes at the chosen point. Resample whole source blocks and reselect the
+  threshold inside each paired bootstrap replicate. This is a descriptive
+  operating-point comparison on reused controls, not prospective calibration
+  or a new primary hypothesis test. Preserve the original frozen thresholds.
+- Final implementation audit: grouping uses unweighted hop distances on the
+  supplied graph. Geographic distance breaks finite ties; infinities remain
+  tied and use stable node order when a connected component is too small for
+  a requested group. This frozen fallback is disclosed rather than silently
+  changing the tested neighborhoods. Shrinkage .05 was retained after pilot
+  numerical checks; the configured alternative candidates were not an
+  optimized development sweep. Binary flatline/dropout and permutation faults
+  use the severity-grid seeds but not the severity magnitude, so their paired
+  levels must not be interpreted as a dose-response experiment.

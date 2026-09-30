@@ -48,7 +48,7 @@ Commands below run from `iot-entropy`.
 python3.12 -m venv --system-site-packages .venv
 source .venv/bin/activate
 .venv/bin/python -m pip install -r environment/requirements.lock.txt
-.venv/bin/python -m pip install --no-deps -e .
+.venv/bin/python -m pip install --no-build-isolation --no-deps -e .
 
 iot-entropy acquire
 iot-entropy prepare
@@ -61,6 +61,7 @@ iot-entropy score
 PYTHONPATH=src .venv/bin/python scripts/finish_gpu.py
 
 iot-entropy evaluate
+PYTHONPATH=src .venv/bin/python scripts/operating_points.py
 PYTHONPATH=src .venv/bin/python scripts/calibration_diagnostic.py
 iot-entropy figures
 iot-entropy dashboard
@@ -68,7 +69,8 @@ iot-entropy paper
 ```
 
 Activate `.venv` or invoke `.venv/bin/iot-entropy` in place of `iot-entropy`.
-`latexmk`, `pdflatex`, BibTeX and IEEEtran are needed for the final command.
+`latexmk`, `pdflatex` and BibTeX are needed for the final command. The official
+IEEEtran class and bibliography style are vendored with their license/source.
 The smoke configuration is in `configs/smoke.json`; a quick scoring integration
 check with existing full checkpoints is
 `PYTHONPATH=src .venv/bin/python scripts/score_all.py --smoke --dataset synthetic64 --seed 17`.
@@ -79,7 +81,9 @@ calibration before test work; a separate `calibrate` invocation is optional.
 
 `configs/full.json` freezes the full experiment. The configured four-hour
 ceiling sums completed GPU-stage wall times, including sampling, feature
-calculation and serialization. It is not pod rental uptime or an estimate of
+calculation and serialization, the pilot and the scoring smoke check. Initial
+data acquisition/preparation and validation were not separately timed and are
+outside this recorded stage total. It is not pod rental uptime or an estimate of
 utilization-weighted GPU kernel hours. No infrastructure is provisioned.
 Completed run directories are resumable. To intentionally rerun a completed
 experiment, archive its outputs and use a fresh project working copy; do not

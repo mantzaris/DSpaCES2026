@@ -83,6 +83,7 @@ def recorded_runtime(root: Path) -> float:
     total=(json.loads(training.read_text())['elapsed_seconds'] if training.exists()
            else sum(json.loads(p.read_text())['training_seconds'] for p in full.rglob('*training.json')))
     total+=sum(json.loads(p.read_text())['elapsed_seconds'] for p in full.glob('score-*/status.json'))
+    total+=sum(json.loads(p.read_text())['elapsed_seconds'] for p in (root/'experiments/scoring-smoke').glob('score-*/status.json'))
     # Graph runs live under full/score-*; their stage summary is not additive.
     for path in (root/'experiments/sensitivity').glob('*-status.json'):
         if path.name!='graphs-status.json':total+=json.loads(path.read_text()).get('elapsed_seconds',0)

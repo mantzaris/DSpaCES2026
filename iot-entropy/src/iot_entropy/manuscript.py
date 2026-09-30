@@ -52,6 +52,10 @@ def build(root: Path) -> None:
            r'All three seeds are complete; the three synthetic node counts remain configurations of one benchmark. '
            r'Table~\ref{tab:main} gives the reference-by-feature comparison and required baselines. '
            r'Figure~\ref{fig:performance} includes whole-block uncertainty and the measured direction strata. '+conclusion]
+    lines.append('The mean fraction of eligible diffusion-entropy group windows is '+
+                 '/'.join(number(r['eligible_fraction']['mean']) for r in entropy)+
+                 ' in dataset order. Intel performance is therefore dominated by limited sample support. '
+                 'The shared quality rule does not force identical eligibility when bootstrap donors have additional missing values.')
     for d in datasets:
         h=result(d,'diffusion/entropy');s=result(d,'diffusion/synchronization')
         delta=contrast(d,'diffusion/entropy','diffusion/synchronization','tp')
@@ -75,6 +79,9 @@ def build(root: Path) -> None:
     (destination/'fidelity-table.tex').write_text('\n'.join(table)+'\n')
     lines.append(r'\input{generated/fidelity-table.tex}')
     lines.append(r'Table~\ref{tab:fidelity} tests distributions, not just forecast means. The raw energy score uses independent ensemble pairs and a Euclidean norm normalized by the square root of the jointly observed dimension count. Comparing references uses their common support; an empty support has no score. Covariance errors use training-scaled units. Entropy/change coverage, interval width, correlation/covariance errors and raw energy scores are saved separately, with their support counts. These compact forecasts are model-based references, not known healthy trajectories.')
+    row=fidelity_means.loc[('synthetic64','diffusion')]
+    lines.append(f"Raw marginal coverage does not ensure organizational fidelity: synthetic diffusion raw coverage is {row.common_raw_coverage90:.3f}, but H coverage is {row.common_entropy_coverage90:.3f}. "
+                 r'This limits the reference model, but model error alone does not invalidate the rank theorem: that result permits any fixed scoring rule under exchangeability. Distribution differences across calibration and test units must be considered separately.')
     minimum={d:json.loads((root/'experiments/full'/f'score-{"synthetic64" if d=="synthetic" else d}-physical-17/status.json').read_text())['calibration_units'] for d in datasets}
     lines.append('Calibration has '+', '.join(f"{minimum[d]} units for {names[d]}" for d in datasets)+
                  r'; Intel therefore cannot attain $\alpha=.05$. For diffusion entropy at $.10$, untouched per-issuance exceedance is '+
@@ -84,6 +91,15 @@ def build(root: Path) -> None:
     null=json.loads((root/'results/calibration-null-diagnostic.json').read_text())
     def nullrate(rho,gap):return next(r['exceedance'] for r in null['rows'] if r['rho']==rho and r['gap']==gap and r['alpha']==.1)
     lines.append(f"A separate {null['replicates']:,}-replicate diagnostic fixes the score to the maximum absolute value of four stationary AR(1) sensors. At nominal .10 with 32 calibration units, exceedance is {nullrate(0.,1):.3f} for IID units and {nullrate(.99,1):.3f} at autocorrelation .99. Spacing by 32 steps gives {nullrate(.99,32):.3f} for this specified process; it is not a validity theorem for gapped real data.")
+    retrospective=json.loads((root/'results/retrospective_budgets.json').read_text())
+    empirical_budget_table(retrospective,destination)
+    lines.extend([r'\input{generated/empirical-budget-table.tex}',
+                  r'Table~\ref{tab:empirical} is a post-primary diagnostic at common empirical budgets. For each method/configuration, the largest attainable rank threshold with untouched-control exceedance at most .10 is chosen, pooling seeds and using no injected labels. Whole-block paired resampling reselects thresholds. The same controls select and describe these points: this is retrospective comparison, not prospective false-alert validation, and finite rank resolution often leaves unused budget. Primary thresholds remain unchanged.'])
+    for d in ['synthetic','pems']:
+        delta=next(p for p in retrospective['paired_contrasts'] if p['dataset']==d and p['empirical_budget']==.1 and
+                   p['left']=='diffusion/entropy' and p['right']=='diffusion/synchronization' and p['metric']=='event_recall')
+        lines.append(f"At this empirical budget, the paired H-minus-S recall difference for {names[d]} is {interval(delta)}.")
+    lines.append(r'For Intel, the displayed methods have no nonzero attainable rank threshold within the .10 control budget; their zero recall is a resolution/shift limitation, not evidence of equal feature quality.')
     lines.extend([r'\subsection{Ablations, quality and persistent history}',r'\input{generated/ablation-table.tex}'])
     ablation_table(root,destination)
     observability=json.loads((root/'experiments/sensitivity/injection-observability.json').read_text())['rows']
@@ -138,9 +154,25 @@ def build(root: Path) -> None:
     write_json(root/'results/manuscript-claims.json',{'fault_realizations':faults,'recording_blocks':blocks,
                'consistent_entropy_advantage_supported':consistent,'entropy_recall':[r['event_recall'] for r in entropy],
                'synchronization_recall':[r['event_recall'] for r in sync],'untouched_exceedance':rates,
-               'evidence_files':['summary.json','paired_comparisons.json','calibration-null-diagnostic.json','case-selection.json',
+               'evidence_files':['summary.json','paired_comparisons.json','retrospective_budgets.json','calibration-null-diagnostic.json','case-selection.json',
                                  '../experiments/fidelity-extra.json','../experiments/benchmark.json'],
                'qualification':'Conclusions apply to this compact model, forecast lead, injected taxonomy and finite calibration design; no verified real failures or usability study.'})
+
+
+def empirical_budget_table(record: dict,destination: Path) -> None:
+    lines=[r'\begin{table*}[t]\centering\caption{Retrospective comparison at untouched-control issuance budgets of at most .10. Each cell is event recall / unconditional IoU / achieved background exceedance. Thresholds use reused test controls, so these are descriptive operating points, not deployment guarantees.}\label{tab:empirical}\small',
+           r'\begin{tabular}{lccc}\toprule Method & Synthetic & Intel & PEMS\\\midrule']
+    methods=[('bootstrap/entropy','Bootstrap H'),('bootstrap/synchronization','Bootstrap S'),('bootstrap/combined','Bootstrap H+S'),
+             ('diffusion/entropy','Diffusion H'),('diffusion/synchronization','Diffusion S'),('diffusion/combined','Diffusion H+S'),
+             ('diffusion/matrix','Diffusion full R'),('gdn','GDN adaptation')]
+    for method,label in methods:
+        entries=[]
+        for dataset in ['synthetic','intel','pems']:
+            row=next(r for r in record['summaries'] if r['method']==method and r['dataset']==dataset and r['empirical_budget']==.1)
+            entries.append(' / '.join(number(v) for v in [row['event_recall']['mean'],row['localization_iou']['mean'],row['untouched_exceedance']]))
+        lines.append(label+' & '+' & '.join(entries)+r' \\')
+    lines.extend([r'\bottomrule\end{tabular}\end{table*}'])
+    (destination/'empirical-budget-table.tex').write_text('\n'.join(lines)+'\n')
 
 
 def ablation_table(root: Path,destination: Path) -> None:

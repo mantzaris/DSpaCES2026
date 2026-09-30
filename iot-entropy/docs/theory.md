@@ -35,9 +35,11 @@ The p-value using greater-or-equal ties is at least its randomized rank/(n+1),
 so P(p<=alpha)<=floor(alpha(n+1))/(n+1)<=alpha. Maxima must use the same
 predeclared scan family and eligibility rules. Comparing one group's score to
 these maxima is conservative relative to the test maximum. This is per unit,
-not indefinite stream control. Dependence, real-data contamination or changes
-to the scoring rule invalidate the exchangeability argument; a gap alone
-does not prove exchangeability. Empirical calibration diagnostics are essential.
+not indefinite stream control. Dependence and real-data contamination may
+violate exchangeability; changing the scoring rule between calibration and
+testing also removes the stated argument. A gap alone does not establish it.
+Model error alone is insufficient to invalidate the theorem, which allows
+any fixed scorer under its exchangeability assumption.
 
 SRS with diagonal signs S and PRP' with permutation P are orthogonal
 similarities and preserve H. Per-sensor offsets and positive scaling preserve
@@ -47,10 +49,12 @@ The implementation flags it rather than assigning zero entropy.
 
 | Paper statement | Code | Check |
 |---|---|---|
-| PSD correlation and H | `entropy.window_features`, `entropy_from_correlation` | `test_limits_shrinkage_and_counterexample`, `test_missing_constant_and_disagreement` |
-| Equicorrelation derivative | `entropy.equicorrelation_derivative` | centered finite differences |
-| Trajectory and signed residuals | `entropy.trajectory_features`, `features.score_features` | shared reference and eligibility checks |
-| Rank calibration | `calibration.rank_pvalues` | exchangeable-null simulation, ties and minimum p |
+| `eq:correlation`, `eq:entropy`: PSD correlation and H | `entropy.window_features`, `entropy_from_correlation` | `test_limits_shrinkage_and_counterexample`, `test_missing_constant_and_disagreement` |
+| `eq:derivative`: equicorrelation derivative | `entropy.equicorrelation_derivative` | centered finite differences |
+| `eq:change`, `eq:score`: trajectory and signed residuals | `entropy.trajectory_features`, `features.score_features` | shared reference and eligibility checks |
+| `eq:redundancy`: disagreement identity | `entropy.window_features` | explicit pairwise squared differences |
+| `eq:diffusion`: masked noise loss | `models.GraphDiffusion.loss` | masked targets, finite joint samples and target-perturbation invariance |
+| `eq:rank`: rank calibration | `calibration.rank_pvalues` | exchangeable-null simulation, ties and minimum p |
 | Context chronology | `data.issuance_indices`, `reference.issue_reference` | split containment and target perturbation invariance |
 | Localization and event matching | `localization.set_metrics`, `evaluation.match_events` | exact known sets; no credit for a pre-onset alarm |
 | GPU numerical precision | `entropy.window_features` | CPU float64 vs CUDA float32 |

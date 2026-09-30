@@ -88,8 +88,10 @@ time-series diagnostics, not a new distribution-free stream theorem.
 \subsection{Spatial groups and data quality}
 Let $G=(V,E)$ be a fixed supplied physical or proximity graph. A predeclared
 family $\calG$ contains deduplicated neighborhoods of sizes 6, 12 and 24 around
-24 fixed index-spaced centers. Shortest graph distance selects membership;
-geographic distance breaks ties. Windows $W\in\{24,48,96\}$ and lags $d=W/4$
+24 fixed index-spaced centers. Unweighted graph-hop distance selects membership;
+geographic distance breaks finite ties, with node-order fallback for unreachable
+nodes when a component is smaller than the requested group.
+Windows $W\in\{24,48,96\}$ and lags $d=W/4$
 are scanned only when $W\geq2|g|$. Channels are processed separately: temperature
 and humidity never enter the same correlation matrix.
 
@@ -189,8 +191,8 @@ The statement is per issuance, never indefinite stream-wide control.
 
 Sensor participation averages group scores with inverse-size weights. A
 development-only budget in $\{6,12,24\}$ selects the highest-ranked sensors;
-participation is not causal attribution. Candidate oracle overlap measures
-the library's localization ceiling. Display merging uses group Jaccard overlap
+participation is not causal attribution. Oracle overlap measures the best
+single candidate group, not an upper bound on combined participation. Display merging uses group Jaccard overlap
 at least .5, retaining original records.
 
 \begin{figure*}[t]
@@ -326,7 +328,9 @@ model-only and dedicated entropy-pipeline times are also reported separately.
 Resampling uses whole independent synthetic simulations or disjoint real
 recording blocks, retaining all injections and averaging training seeds within
 each block. We report paired 95\% bootstrap intervals, type macro scores,
-prevalence and missed counts. Overlapping windows are not replicates. Native
+prevalence and missed counts. Real-block intervals are descriptive: gaps do
+not establish independence, and Intel has only eight blocks.
+Overlapping windows are not replicates. Native
 background alerts are not verified false physical-fault detections.
 
 \section{Results}

@@ -46,6 +46,7 @@ for status_path in sorted((root/'experiments/full').glob('score-*/status.json'))
 if not args.allow_partial:
     if len(models)!=45 or len(runs)!=25:raise ValueError(f'Expected 45 models and 25 full scoring runs; got {len(models)}, {len(runs)}')
     if json.loads((root/'experiments/post-primary-status.json').read_text())['status']!='complete':raise ValueError('Sensitivity stages incomplete')
+    if json.loads((root/'experiments/sensitivity/directions-status.json').read_text())['status']!='complete':raise ValueError('Direction and injection-observability audits incomplete')
 source_paths=[*root.glob('src/iot_entropy/*.py'),*root.glob('scripts/*'),root/'configs/full.json']
 sources={str(path.relative_to(root)):digest(path) for path in source_paths if path.is_file()}
 write_json(root/'environment/reporting-environment.json',{'python':platform.python_version(),'platform':platform.platform(),
@@ -54,7 +55,9 @@ write_json(root/'experiments/artifact-manifest.json',{'status':'partial' if args
            'git_revision_at_audit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip(),
            'configuration_sha256':digest(root/'configs/full.json'),'sources':sources,'datasets':data_records,'models':models,'scoring_runs':runs,
            'recorded_gpu_stage_seconds':recorded_runtime(root),'configured_ceiling_seconds':config['gpu_hour_budget']*3600,
-           'historical_code':{'protocol':'ca953f5','model_training':'88701ce','primary_scoring':'aa81887','sensitivity_implementation':'ea8050b'},
+           'historical_code':{'protocol':'ca953f5','model_training':'88701ce','primary_scoring':'aa81887',
+                              'common_support_fidelity':'6f317d6','benchmark':'b912fa23',
+                              'core_sensitivities':'73ce2c4','direction_and_observability':'b912fa23'},
            'lineage_note':'Intel coverage preprocessing was amended in c4d839c before Intel training loaded its data. Primary scoring imported aa81887 code before later reporting/interface changes. Git hashes are this project’s code history; shared-repository commits may also contain sibling work.'})
 print(json.dumps({'verified_datasets':len(data_records),'verified_checkpoints':len(models),'verified_scoring_runs':len(runs),
                   'recorded_gpu_stage_hours':recorded_runtime(root)/3600}))

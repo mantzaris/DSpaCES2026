@@ -116,7 +116,7 @@ def aggregate(root: Path, allow_partial: bool = False) -> dict:
         transitions=group[group.kind=='transition']
         # Average training seeds within each source block; then resample entire
         # blocks, keeping all correlated injections together.
-        block_metrics=faults.groupby(['dataset','base'])[['tp','localization_iou','localization_f1','localization_precision','localization_recall','eligible_fraction']].mean()
+        block_metrics=faults.groupby(['dataset','base'])[['tp','localization_iou','localization_f1','localization_precision','localization_recall','eligible_fraction','observed_eligible_fraction']].mean()
         summary={'dataset':dataset,'method':method,'alpha':config['primary_alpha'],
                  'fault_realizations':len(faults[['dataset','event']].drop_duplicates()),
                  'training_seeds':sorted(faults.seed.unique().tolist()),'independent_blocks':len(block_metrics),

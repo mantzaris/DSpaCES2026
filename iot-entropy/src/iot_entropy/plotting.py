@@ -176,7 +176,7 @@ def spatial(root: Path,cases: list[dict]) -> None:
 def performance(root: Path) -> None:
     summaries=json.loads((root/'results/summary.json').read_text());paired=json.loads((root/'results/paired_comparisons.json').read_text())
     frame=pd.read_csv(root/'results/event_metrics.csv.gz');frame=frame[(frame.alpha==.1)&(frame.graph=='physical')&frame.is_fault]
-    fig,axes=plt.subplots(2,3,figsize=(7.15,3.6),gridspec_kw={'hspace':.8,'wspace':.38})
+    fig,axes=plt.subplots(2,3,figsize=(7.15,3.6),gridspec_kw={'hspace':.8,'wspace':.65})
     methods=[f'{reference}/{feature}' for reference in ['bootstrap','diffusion'] for feature in ['entropy','synchronization','combined']]
     for col,dataset in enumerate(['synthetic','intel','pems']):
         ax=axes[0,col]
@@ -221,7 +221,7 @@ def calibration_cost(root: Path) -> None:
     subset=frame[(frame.alpha==.1)&(frame.graph=='physical')&frame.is_fault&(frame.method=='diffusion/entropy')]
     vals=[subset[subset.primary_dataset==d].delay_with_shared_pipeline_seconds.dropna().values/60 for d in ['synthetic','intel','pems']]
     ax.boxplot(vals,labels=['Synthetic','Intel','PEMS'],showfliers=False,widths=.45)
-    ax.set_ylabel('Detected-event delay (min)');ax.text(.03,.96,'Missed events excluded; counts in table',transform=ax.transAxes,va='top',fontsize=6)
+    ax.set_ylabel('Detected-event delay (min)');ax.text(.03,.96,'Misses excluded here; counted in recall',transform=ax.transAxes,va='top',fontsize=6)
     ax=axes[1,1]
     for name in ['synthetic64','pems']:
         values=[]
@@ -261,7 +261,7 @@ def tables(root: Path) -> None:
     methods=[('bootstrap/entropy','Bootstrap H'),('bootstrap/synchronization','Bootstrap S'),('bootstrap/combined','Bootstrap H+S'),
              ('diffusion/entropy','Diffusion H'),('diffusion/synchronization','Diffusion S'),('diffusion/combined','Diffusion H+S'),
              ('diffusion/matrix','Diffusion full R'),('diffusion/raw','Diffusion raw'),('diffusion/entropy_raw','Diffusion H+raw'),
-             ('diffusion/quality_hybrid','Diffusion quality hybrid'),('cusum','CUSUM'),('gdn','GDN adaptation')]
+             ('diffusion/quality_hybrid','Diffusion H + flatline'),('cusum','CUSUM'),('gdn','GDN adaptation')]
     lines=[r'\begin{table*}[t]',r'\centering\caption{Main results at nominal $\alpha=.10$. Each cell is recall / IoU / event-PR area / median detected-event delay (minutes). Delay adds measured mean complete comparison-pipeline latency to the observation timestamp, a conservative serial execution convention. Localization counts misses as zero. Values summarize three seeds; synthetic configurations form one dataset. Equal nominal budgets do not imply equal realized background rates.}',
            r'\label{tab:main}\footnotesize\setlength{\tabcolsep}{4pt}',r'\begin{tabular}{lccc}',r'\toprule Method & Synthetic & Intel Lab & PEMS-BAY\\\midrule']
     for method,label in methods:
