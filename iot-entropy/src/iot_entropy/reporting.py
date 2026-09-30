@@ -19,6 +19,36 @@ def measured_direction(values: np.ndarray) -> str:
     return 'increase' if value>1e-4 else 'decrease' if value< -1e-4 else 'stable'
 
 
+def cross_dataset_summary(primary: pd.DataFrame, output: Path) -> None:
+    """Expose equal-dataset macro and event-pooled weights without new inference."""
+    rows=[]
+    for method,group in primary.groupby('method'):
+        faults=group[group.is_fault]
+        counts=faults.groupby('primary_dataset')[['dataset','event']].apply(lambda x:len(x.drop_duplicates()))
+        per_dataset=faults.groupby('primary_dataset')
+        record={'method':method,'alpha':float(group.alpha.iloc[0]),
+                'primary_datasets':len(counts),'fault_realizations':int(counts.sum()),
+                'event_seed_pairs':len(faults),'recording_blocks':len(faults[['dataset','base']].drop_duplicates())}
+        for metric,label in [('tp','event_recall'),('localization_iou','localization_iou'),
+                             ('localization_f1','localization_f1'),('localization_precision','localization_precision'),
+                             ('localization_recall','localization_recall')]:
+            record['equal_dataset_macro_'+label]=float(per_dataset[metric].mean().mean())
+            record['event_pooled_'+label]=float(faults[metric].mean())
+        dataset_totals=group.groupby('primary_dataset')[['tp','fp']].sum()
+        precision=dataset_totals.tp/(dataset_totals.tp+dataset_totals.fp).clip(lower=1)
+        record['equal_dataset_macro_event_precision']=float(precision.mean())
+        record['event_pooled_event_precision']=float(group.tp.sum()/max(group.tp.sum()+group.fp.sum(),1))
+        record['equal_dataset_and_type_macro_recall']=float(faults.groupby(['primary_dataset','kind']).tp.mean().groupby(level=0).mean().mean())
+        rows.append(record)
+    pd.DataFrame(rows).to_csv(output/'cross_dataset_summary.csv',index=False)
+    write_json(output/'cross_dataset_weighting.json',{
+        'equal_dataset_macro':'Equal weights for the three primary datasets; all synthetic node configurations remain one dataset.',
+        'event_pooled':'Equal weights for scheduled event–training-seed pairs (216 synthetic, 72 Intel, 72 PEMS injections; three seeds each).',
+        'localization':'Missed events contribute zero; no detected-only conditioning.',
+        'event_precision':'Includes unmatched alert onsets in injected, untouched and legitimate-transition trials.',
+        'interpretation':'Descriptive weighting comparison at the nominal primary alpha, not matched empirical background rates. Use per-dataset paired block intervals for uncertainty; pooled trials are not independent.'})
+
+
 def evaluate_directory(directory: Path, interval_seconds: int, alphas: list[float]) -> tuple[list[dict],list[dict],list[dict]]:
     status=json.loads((directory/'status.json').read_text())
     config=json.loads((directory/'configuration.json').read_text())
@@ -110,6 +140,7 @@ def aggregate(root: Path, allow_partial: bool = False) -> dict:
     pd.DataFrame(fidelity).to_csv(output/'fidelity.csv',index=False)
     summaries=[]
     primary=frame[(frame.alpha==config['primary_alpha'])&(frame.graph=='physical')]
+    cross_dataset_summary(primary,output)
     for (dataset,method),group in primary.groupby(['primary_dataset','method']):
         faults=group[group.is_fault]
         controls=group[group.kind=='untouched']

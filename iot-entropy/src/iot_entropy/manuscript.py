@@ -1,5 +1,6 @@
 """Numerical manuscript text; every value is derived from saved run outputs."""
 from __future__ import annotations
+from collections import Counter
 import json
 from pathlib import Path
 
@@ -110,7 +111,8 @@ def build(root: Path) -> None:
     ablation_table(root,destination)
     observability=json.loads((root/'experiments/sensitivity/injection-observability.json').read_text())['rows']
     absent=[r for r in observability if not r['observable_intervention']]
-    lines.append(f"The post-run measurement audit finds {len(absent)}/{len(observability)} scheduled interventions with no modified finite value or newly removed observation in the named fault set, at a $10^{{-6}}$ training-scaled tolerance. These remain in the primary denominators; their labels describe scheduled interventions rather than guaranteed visible changes. Sensor coverage and covariance guards therefore limit interpretation of the real-data benchmark.")
+    absent_types=', '.join(f'{count} {dataset} {kind.replace("_","-")}' for (dataset,kind),count in Counter((r['dataset'],r['kind']) for r in absent).items())
+    lines.append(f"The post-run audit finds {len(absent)}/{len(observability)} scheduled interventions with no modified finite value or newly removed observation, at a $10^{{-6}}$ training-scaled tolerance ({absent_types}). These remain in the primary denominators; scheduled interventions do not guarantee visible changes. Coverage and covariance guards limit the real-data benchmark.")
     sample_frame=pd.read_csv(root/'results/sample_count_metrics.csv')
     for name in ['synthetic64','pems']:
         selected=sample_frame[(sample_frame.dataset==name)&(sample_frame.method=='diffusion/entropy')&sample_frame.is_fault]
@@ -122,13 +124,14 @@ def build(root: Path) -> None:
     global_rows=pd.DataFrame(global_result['rows']);fault_rows=global_rows[global_rows.is_fault]
     means=fault_rows.groupby('arm')[['tp','localization_iou']].mean()
     lines.append(f"The global/local sensitivity uses the same W={global_result['window']} bootstrap forecasts and calibration budget at 64 nodes. Local/global recall is {means.loc['local','tp']:.3f}/{means.loc['global','tp']:.3f}, and IoU is {means.loc['local','localization_iou']:.3f}/{means.loc['global','localization_iou']:.3f}. "
+                 'A global detection identifies the entire network, whereas the local arm uses its fixed sensor budget. '
                  f"The first valid issuance is {global_result['first_observation_relative_to_onset']} samples after onset, so short events may finish first. "
                  r'The global sample-support rule requires longer windows: the other configurations cannot supply enough calibration units to attain .10 under their original split/episode boundaries. This is a feasibility and longer-window comparison, not an isolated comparison with the primary shorter windows.')
     quality=json.loads((root/'experiments/sensitivity/quality.json').read_text())
     quality_frame=pd.DataFrame([r for r in quality if 'missing_rate' in r])
     for d in ['synthetic64','intel','pems']:
         q=quality_frame[quality_frame.dataset==d].groupby('missing_rate').eligible_fraction.mean()
-        lines.append(f"For {d.replace('synthetic64','synthetic 64')}, the eligible-group fraction falls from {q.loc[0.]:.3f} to {q.loc[.1]:.3f} after 10\% additional entrywise missingness.")
+        lines.append(rf"For {d.replace('synthetic64','synthetic 64')}, the eligible-group fraction falls from {q.loc[0.]:.3f} to {q.loc[.1]:.3f} after 10\% additional entrywise missingness.")
     em=[r for r in quality if 'em_eligible' in r]
     recovered=sum(r['em_eligible'] and not r['complete_case_eligible'] for r in em)
     lines.append(f"Among {len(em)} inspected group windows, the labeled Gaussian covariance-EM sensitivity supplies a PSD estimate in {recovered} cases that the primary rule cannot use; it assumes a Gaussian missing-at-random model and does not inherit the detector's calibration. Separate retained-span light/voltage features and their coverage are preserved in the Intel auxiliary audit. Quality-hybrid outcomes remain separate from entropy-only results.")
@@ -138,9 +141,9 @@ def build(root: Path) -> None:
                  '/'.join(number(late.loc[r,'entropy_max']) for r in ['contaminated','paired_clean','frozen_earlier'])+
                  r'. These are sensitivity scores, not newly calibrated decisions. The intervention changes the conditioning history; a historical reference need not remain useful after a persistent regime change. The unscreened-training fidelity comparison is also retained, rather than assuming the real training data are healthy.')
     lines.extend([r'\begin{figure*}[t]\centering\includegraphics[width=.97\textwidth]{cases.pdf}',
-                  r'\caption{Two fixed saved injections at 64 nodes. The shaded red span is the true 12-sample event; vertical lines mark onset. Filled H markers are issuance levels and open markers their measured lagged levels, since $W/4$ need not equal the alert stride. Reference bands/medians share the same generated blocks. The dashed score line is the strict scan threshold. Groups are selected by signed measured change among candidates overlapping the injected set, solely for illustration; neither displayed group crosses the scan threshold during the event.}\label{fig:cases}\end{figure*}',
+                  r'\caption{Two fixed saved injections at 64 nodes, showing four raw sensor traces per group. The red span is the true 12-sample event; vertical lines mark onset. Filled H markers are issuance levels and open markers their measured lagged levels, since $W/4$ need not equal the alert stride. Reference bands/medians share the same generated blocks. The dashed score line is the strict scan threshold. Groups are selected by signed measured change among candidates overlapping the injected set, solely for illustration; neither displayed group crosses the threshold during the event.}\label{fig:cases}\end{figure*}',
                   r'\begin{figure*}[t]\centering\includegraphics[width=.97\textwidth]{spatial.pdf}',
-                  r'\caption{Saved-case spatial membership and signed residual traces. Black outlines mark known injected sensors; triangles mark the displayed group. The heatmap shows H minus expected H, which differs from the actual slope used for the up/down node markers. Group locality is predefined, not a discovered cause.}\label{fig:spatial}\end{figure*}',
+                  r'\caption{Saved-case membership and signed residual traces. Outlines mark injected sensors; triangles mark the displayed group. Heatmap rows are selected by injected-set overlap for illustration. H minus expected H differs from the actual slope used for the node markers. Group locality is predefined, not a discovered cause.}\label{fig:spatial}\end{figure*}',
                   r'\subsection{Computational cost and operational delay}'])
     benchmark=json.loads((root/'experiments/benchmark.json').read_text());costs=benchmark['detector']
     p50=[x['complete_detector']['p50_seconds'] for x in costs];p95=[x['complete_detector']['p95_seconds'] for x in costs]
@@ -148,14 +151,15 @@ def build(root: Path) -> None:
     kernel=benchmark['kernels'];ratio=kernel['cpu_float32']['p50_seconds']/kernel['gpu_float32']['p50_seconds']
     lines.append(f"On the RTX A6000, complete-detector p50 latency ranges from {min(p50):.3f} to {max(p50):.3f} s per issuance, with p95 {min(p95):.3f}--{max(p95):.3f} s and peak allocated memory {memory:.1f} MiB. "
                  f"Training, scoring and required GPU-enabled audits record {recorded_runtime(root)/3600:.2f} stage-hours within the four-hour ceiling. "
-                 f"For the identical 128-window, 96-row, 24-sensor measurement batch, CPU float32/GPU float32 p50 time is {ratio:.2f}; this is a kernel comparison, not an end-to-end CPU speedup claim. The CPU uses four Torch threads. "
+                 f"For the identical 128-window, 96-row, 24-sensor measurement batch, CPU float32/GPU float32 p50 time is {ratio:.2f}; this is a kernel comparison, not an end-to-end CPU speedup claim. "
+                 f"The Xeon Gold 6342 (nominal 2.80 GHz) uses four Torch threads, with PyTorch {benchmark['software']['torch'].split('+')[0]} and CUDA {benchmark['software']['cuda']}. "
                  r'Model-only and complete-pipeline throughput, p50/p95, hardware/software and sample-count tradeoffs are saved. Serial computation is added to timestamp delays in the artifact; issuance spacing and window availability dominate these sub-second/second execution costs.')
     lines.extend([r'\begin{figure*}[t]\centering\includegraphics[width=.97\textwidth]{calibration-cost.pdf}',
                   r'\caption{Empirical untouched exceedance, synchronized execution timing, detected-event delay and generated-sample cost. Calibration is per issuance; missed events are excluded only from the delay boxplots and are counted in recall/localization. B-cost timing includes the full comparison pipeline on the same limited event subset.}\label{fig:cost}\end{figure*}'])
     (destination/'results.tex').write_text('\n\n'.join(lines)+'\n')
     ending=(conclusion+' '+r'The exact counterexample shows that entropy can distinguish correlation structures sharing simple synchronization summaries, while its invariances prevent sign, sensor-order or causal interpretation. '
             r'In this compact forecasting study, reference fidelity, calibration shift, sample support and the group library constrain practical detection. Equal nominal rank thresholds do not establish equal physical false-alarm rates. '
-            r'The useful deliverable is an auditable monitoring formulation and measured comparison, with explicit abstention and honest cause labels. Stronger predictive references and more representative calibration require new prospective validation before deployment claims.')
+            r'The replay exposes measurement support and separates controlled interventions from unknown native causes. Stronger predictive references and more representative calibration require prospective validation before deployment claims.')
     (destination/'conclusion.tex').write_text(ending+'\n')
     write_json(root/'results/manuscript-claims.json',{'fault_realizations':faults,'recording_blocks':blocks,
                'consistent_entropy_advantage_supported':consistent,'entropy_recall':[r['event_recall'] for r in entropy],

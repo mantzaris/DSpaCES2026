@@ -115,7 +115,7 @@ def cases(root: Path) -> list[dict]:
         raw_times=np.array(sorted(raw));values=np.array([raw[t] for t in raw_times],dtype=float)
         for node in g['nodes'][:4]:
             axes[0,col].plot(raw_times-event['onset'],values[:,node,channel],alpha=.7,lw=.7)
-        axes[0,col].set_title(title,fontsize=8.5);axes[0,col].set_ylabel('Raw (scaled)')
+        axes[0,col].set_title(title+f"\ng{group}; m={g['size']}, W={g['window']}, d={g['lag']}",fontsize=8.5);axes[0,col].set_ylabel('Raw (scaled)')
         for row,feature,label in [(1,0,'H'),(2,1,'ΔH'),(3,2,'Signed C')]:
             observed=np.array([f['observed'][group][feature] for f in frames],dtype=float)
             center=np.array([f['reference_center'][group][feature] for f in frames],dtype=float)
@@ -204,6 +204,31 @@ def performance(root: Path) -> None:
     save(fig,root,'performance')
 
 
+def directional_performance(root: Path) -> None:
+    """Paired intervals within both measured directions, with block counts."""
+    records=json.loads((root/'results/direction-paired-comparisons.json').read_text())
+    fig,axes=plt.subplots(2,3,figsize=(7.15,3.5),gridspec_kw={'hspace':.8,'wspace':.65})
+    for column,dataset in enumerate(['synthetic','intel','pems']):
+        for row,metric in enumerate(['tp','localization_iou']):
+            ax=axes[row,column];labels=[]
+            for position,(direction,color,marker) in enumerate([('increase','#c76527','^'),('decrease','#66509d','v')]):
+                match=next((r for r in records if r['dataset']==dataset and r['actual_entropy_direction']==direction
+                            and r['left']=='diffusion/entropy' and r['right']=='diffusion/synchronization'
+                            and r['metric']==metric),None)
+                labels.append(direction+f" (n={match['n'] if match else 0})")
+                if match and match['mean'] is not None:
+                    value=match['mean']
+                    ax.errorbar(value,position,xerr=[[value-match['low']],[match['high']-value]],
+                                fmt=marker,color=color,capsize=3,ms=4)
+            ax.axvline(0,color='#8795a3',ls='--',lw=.7)
+            ax.set_yticks([0,1]);ax.set_yticklabels(labels,fontsize=6)
+            ax.set_ylim(1.5,-.5);ax.grid(axis='x',alpha=.15)
+            ax.set_xlabel('H − S recall' if metric=='tp' else 'H − S IoU')
+            if row==0:ax.set_title(NAMES[dataset],fontsize=8)
+    fig.suptitle('Diffusion reference; paired 95% whole-block intervals; n = source blocks',fontsize=8,y=1.04)
+    save(fig,root,'directional-performance')
+
+
 def calibration_cost(root: Path) -> None:
     frame=pd.read_csv(root/'results/event_metrics.csv.gz')
     benchmarks=json.loads((root/'experiments/benchmark.json').read_text())
@@ -281,4 +306,4 @@ def tables(root: Path) -> None:
 def build(root: Path) -> None:
     style();architecture(root);theory(root)
     records=cases(root);spatial(root,records)
-    performance(root);calibration_cost(root);tables(root)
+    performance(root);directional_performance(root);calibration_cost(root);tables(root)

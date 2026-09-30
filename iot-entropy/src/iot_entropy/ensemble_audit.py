@@ -25,6 +25,7 @@ def save_ensembles(root: Path, config: dict, budget: Budget) -> None:
         data = load_data(root, dataset); values = data.standardized
         directory = root / 'experiments/full' / f'score-{dataset}-physical-{seed}'
         events = json.loads((directory / 'events.json').read_text())
+        status = json.loads((directory / 'status.json').read_text())
         indices = [0, 18, len(events)-1] if dataset == 'synthetic64' else [len(events)-2]
         model, _ = load_models(data, config, seed, root / 'experiments/full', 'cuda')
         bootstrap = BlockBootstrap(data, config['context'], horizon, 'cuda')
@@ -53,6 +54,8 @@ def save_ensembles(root: Path, config: dict, budget: Budget) -> None:
                 records.append({'dataset': dataset, 'event': event['id'], 'event_index': index,
                                 'observation_index': end, 'target_start': start, 'reference': reference,
                                 'sampling_seed': seed+start, 'model_seed': seed,
+                                'checkpoint_sha256': status['checkpoint_sha256'] if reference=='diffusion' else None,
+                                'configuration_sha256': digest(directory/'configuration.json'),
                                 'shape': list(draws.shape), 'path': str(path.relative_to(root)),
                                 'sha256': digest(path), 'saved_feature_sha256': digest(saved),
                                 'maximum_feature_recovery_error': maximum_error})

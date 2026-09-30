@@ -63,17 +63,35 @@ if not args.allow_partial:
     if json.loads((root/'experiments/sensitivity/directions-status.json').read_text())['status']!='complete':raise ValueError('Direction and injection-observability audits incomplete')
     if json.loads((root/'experiments/sensitivity/ensembles-status.json').read_text())['status']!='complete':raise ValueError('Selected raw ensemble recovery incomplete')
     if recorded_runtime(root)>config['gpu_hour_budget']*3600:raise ValueError('Recorded stage total exceeds configured ceiling')
-source_paths=[*root.glob('src/iot_entropy/*.py'),*root.glob('scripts/*'),root/'configs/full.json']
+replays=json.loads((root/'experiments/replay-compression.json').read_text())['records']
+for record in replays:
+    if digest(root/record['path'])!=record['gzip_sha256']:raise ValueError('Compressed replay hash mismatch: '+record['path'])
+ensembles=json.loads((root/'experiments/selected-ensembles/manifest.json').read_text())['records']
+for record in ensembles:
+    if digest(root/record['path'])!=record['sha256']:raise ValueError('Raw ensemble hash mismatch: '+record['path'])
+source_paths=[*root.glob('src/iot_entropy/*.py'),root/'src/iot_entropy/dashboard_template.html',
+              *root.glob('scripts/*'),*root.glob('docs/*.md'),*root.glob('configs/*.json'),
+              *root.glob('tests/*.py'),root/'README.md',root/'pyproject.toml',root/'.gitignore',
+              root/'manuscript/paper.tex',root/'manuscript/references.bib',root/'environment/requirements.lock.txt']
 sources={str(path.relative_to(root)):digest(path) for path in source_paths if path.is_file()}
 write_json(root/'environment/reporting-environment.json',{'python':platform.python_version(),'platform':platform.platform(),
            'packages':{name:importlib.metadata.version(name) for name in ['numpy','pandas','matplotlib','torch']}})
+derived_paths=[*root.glob('results/*.json'),*root.glob('results/*.csv'),*root.glob('results/*.csv.gz'),
+               *root.glob('manuscript/generated/*.tex'),*root.glob('manuscript/figures/*.pdf'),
+               *root.glob('manuscript/figures/*.svg'),root/'manuscript/paper.pdf',root/'dashboard/index.html',
+               root/'dashboard/schema.json',*root.glob('dashboard/data/*.json'),
+               *root.glob('dashboard/validation/*'),*root.glob('experiments/validation/*'),
+               *root.glob('environment/*.json'),root/'experiments/post-primary-status.json']
+derived={str(path.relative_to(root)):digest(path) for path in derived_paths if path.is_file()}
 write_json(root/'experiments/artifact-manifest.json',{'status':'partial' if args.allow_partial else 'verified',
            'git_revision_at_audit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip(),
-           'configuration_sha256':digest(root/'configs/full.json'),'sources':sources,'datasets':data_records,'models':models,'scoring_runs':runs,
+           'configuration_sha256':digest(root/'configs/full.json'),'sources':sources,'derived_artifacts':derived,
+           'datasets':data_records,'models':models,'scoring_runs':runs,'verified_replay_records':len(replays),'verified_raw_ensembles':len(ensembles),
            'recorded_gpu_stage_seconds':recorded_runtime(root),'configured_ceiling_seconds':config['gpu_hour_budget']*3600,
            'historical_code':{'protocol':'ca953f5','model_training':'88701ce','primary_scoring':'aa81887',
                               'common_support_fidelity':'6f317d6','benchmark':'b912fa23',
-                              'core_sensitivities':'73ce2c4','direction_and_observability':'b912fa23'},
+                              'core_sensitivities':'73ce2c4','direction_and_observability':'b912fa23',
+                              'raw_ensemble_recovery':'b4aef768','retrospective_budget_analysis':'1081274b'},
            'lineage_note':'Intel coverage preprocessing was amended in c4d839c before Intel training loaded its data. Primary scoring imported aa81887 code before later reporting/interface changes. Git hashes are this project’s code history; shared-repository commits may also contain sibling work.'})
 print(json.dumps({'verified_datasets':len(data_records),'verified_checkpoints':len(models),'verified_scoring_runs':len(runs),
                   'recorded_gpu_stage_hours':recorded_runtime(root)/3600}))

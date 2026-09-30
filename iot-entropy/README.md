@@ -36,7 +36,13 @@ calibration guarantee. Native alerts are not adjudicated physical failures.
 recording-block intervals, seed variability, conditional/unconditional
 localization, missed counts, empirical background rates and event prevalence.
 `event_metrics.csv.gz` preserves every event, seed and nominal alpha.
+`cross_dataset_summary.csv` contrasts equal weighting of the three primary
+datasets with event-pooled scores; `cross_dataset_weighting.json` defines those
+weights. Synthetic node counts remain configurations of one dataset.
 `paired_comparisons.json` resamples the same recording blocks in each contrast.
+`direction-paired-comparisons.json` and the standalone `directional-performance`
+figure provide paired intervals within measured entropy-increase/decrease
+strata, including source-block counts.
 `experiments/full/score-*/predictions.npz` retains scores, rank values, node
 rankings and eligibility; the event and group definitions are adjacent JSON.
 
@@ -85,6 +91,7 @@ PYTHONPATH=src .venv/bin/python scripts/calibration_diagnostic.py
 iot-entropy figures
 iot-entropy dashboard
 iot-entropy paper
+PYTHONPATH=src .venv/bin/python scripts/audit_artifacts.py
 ```
 
 Activate `.venv` or invoke `.venv/bin/iot-entropy` in place of `iot-entropy`.
@@ -94,6 +101,16 @@ The smoke configuration is in `configs/smoke.json`; a quick scoring integration
 check with existing full checkpoints is
 `PYTHONPATH=src .venv/bin/python scripts/score_all.py --smoke --dataset synthetic64 --seed 17`.
 The training smoke/pilot writes separately under `experiments/pilot`.
+The final audit verifies raw and processed data, checkpoint and replay hashes,
+identical fault manifests, every saved calibration rank, and the recorded
+runtime ceiling. It writes `experiments/artifact-manifest.json` with source and
+publication-artifact checksums. The publication was rendered locally; its
+separate reporting environment is recorded in
+`environment/reporting-environment.json`.
+`experiments/validation/` also records all 11 passing CUDA checks and report
+regeneration under the locked Python 3.12 environment. The latter can be rerun
+with `PYTHONPATH=src .venv/bin/python scripts/verify_reporting_environment.py`;
+it regenerates the same numerical tables with environment-specific graphics.
 `iot-entropy features`, `calibrate`, and `score --dataset NAME --seed SEED`
 expose individual stages. Full scoring includes development selection and
 calibration before test work; a separate `calibrate` invocation is optional.
@@ -146,6 +163,8 @@ exceedances, not adjudicated false physical-fault alarms.
   replay sources and reference feature draws; `unscreened/` isolates its models.
 - `experiments/sensitivity/`: graph, sample count, coverage/PSD estimator,
   persistent-history and longer-window global/local sensitivities.
+- `experiments/selected-ensembles/`: raw joint diffusion/bootstrap draws for
+  selected replay observations, validated against their original feature arrays.
 - `results/`: reproducible statistical summaries and complete event metrics.
 - `manuscript/`: IEEE LaTeX, verified BibTeX, generated PDF/SVG figures and PDF.
 
