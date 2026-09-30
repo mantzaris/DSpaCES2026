@@ -22,7 +22,7 @@ def initialize(url=DEFAULT_URL):
 
 
 def persist_bundle(bundle,url=DEFAULT_URL):
-    statements=[];dataset=bundle['dataset'];run=bundle['run'];case=bundle['case'];window_id=dataset+':'+case['id']
+    statements=[];dataset=bundle['dataset'];run=bundle['run'];case=bundle['case'];window_id=bundle.get('window_id',dataset+':'+case['id'])
     def node(label,identity,properties):
         statements.append(statement(f'MERGE (n:{label} {{id:$id}}) ON CREATE SET n += $properties',id=identity,properties=properties))
     def link(a,identity,rel,b,other):
@@ -56,7 +56,7 @@ def persist_bundle(bundle,url=DEFAULT_URL):
         link('AssociationVersion',identity,'PREDICTS','Channel',dataset+':channel:'+str(edge['target']))
         link('ObservationWindow',window_id,'USES_VERSION','AssociationVersion',identity)
     for row in bundle['hypotheses']:
-        identity=window_id+':'+row['kind']+':'+str(row['index'])
+        identity=row.get('id',window_id+':'+row['kind']+':'+str(row['index']))
         properties={key:value for key,value in row.items() if isinstance(value,(str,int,float,bool))}
         properties.update(witness_sources=json.dumps(row['witness_groups']),evidence_ref=bundle['artifact'],
             generated_alternatives=json.dumps(row.get('generated_interval_quantiles')),observed_values=json.dumps(row.get('observed_interval')))

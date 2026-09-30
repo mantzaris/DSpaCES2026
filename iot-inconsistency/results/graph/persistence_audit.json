@@ -1,44 +1,44 @@
 {
   "exports": [
     {
-      "statements": 797,
-      "window": "intel:test_0034_observation"
+      "statements": 941,
+      "window": "intel:test_0000_observation:bc6e19043c3b2d7d"
     },
     {
-      "statements": 797,
-      "window": "intel:test_0000_observation"
+      "statements": 941,
+      "window": "intel:test_0034_observation:25e0265bfc7b9691"
     },
     {
-      "statements": 197,
-      "window": "skab:test_0075_observation"
+      "statements": 221,
+      "window": "skab:test_0000_observation:d0d9411451d46a7d"
     },
     {
-      "statements": 197,
-      "window": "skab:test_0000_observation"
+      "statements": 221,
+      "window": "skab:test_0075_observation:8852e48505d0d1f3"
     },
     {
-      "statements": 557,
-      "window": "synthetic_32_linear:test_0090_observation"
+      "statements": 653,
+      "window": "synthetic_32_linear:test_0000_observation:291f0b76f43ff44c"
     },
     {
-      "statements": 557,
-      "window": "synthetic_32_linear:test_0000_observation"
+      "statements": 653,
+      "window": "synthetic_32_linear:test_0090_observation:882b1cac5adb6701"
     },
     {
-      "statements": 557,
-      "window": "synthetic_32_nonlinear:test_0084_observation"
+      "statements": 653,
+      "window": "synthetic_32_nonlinear:test_0002_observation:d729be898afdbf64"
     },
     {
-      "statements": 557,
-      "window": "synthetic_32_nonlinear:test_0002_observation"
+      "statements": 653,
+      "window": "synthetic_32_nonlinear:test_0084_observation:85f1af40f757ef81"
     },
     {
-      "statements": 1037,
-      "window": "synthetic_64_nonlinear:test_0095_observation"
+      "statements": 1229,
+      "window": "synthetic_64_nonlinear:test_0000_observation:dfe1a1f01872aad9"
     },
     {
-      "statements": 1037,
-      "window": "synthetic_64_nonlinear:test_0000_observation"
+      "statements": 1229,
+      "window": "synthetic_64_nonlinear:test_0095_observation:6f970c20739390e5"
     }
   ],
   "counts": [
@@ -51,7 +51,7 @@
         {
           "row": [
             "ModelRun",
-            5
+            10
           ],
           "meta": [
             null,
@@ -61,7 +61,7 @@
         {
           "row": [
             "ObservationWindow",
-            10
+            20
           ],
           "meta": [
             null,
@@ -71,7 +71,7 @@
         {
           "row": [
             "Disagreement",
-            10
+            20
           ],
           "meta": [
             null,
@@ -111,16 +111,6 @@
         {
           "row": [
             "RepairHypothesis",
-            80
-          ],
-          "meta": [
-            null,
-            null
-          ]
-        },
-        {
-          "row": [
-            "EvidenceGroup",
             160
           ],
           "meta": [
@@ -130,8 +120,18 @@
         },
         {
           "row": [
+            "EvidenceGroup",
+            320
+          ],
+          "meta": [
+            null,
+            null
+          ]
+        },
+        {
+          "row": [
             "OperatorDecision",
-            3
+            9
           ],
           "meta": [
             null,

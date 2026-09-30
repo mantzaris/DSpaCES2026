@@ -1,0 +1,447 @@
+{
+  "label_scope": "native process labels only; no sensor or association attribution ground truth",
+  "methods": {
+    "gdn": {
+      "window_ap": 0.7652978788685931,
+      "prevalence": 0.3542319749216301,
+      "windows": 319,
+      "experiments": 10,
+      "nominal_fpr": 0.05,
+      "achieved_fpr": 0.043689320388349516,
+      "recall": 0.3185840707964602,
+      "event_recall": 0.5,
+      "event_precision": 0.625,
+      "median_detected_event_delay_seconds": 36.0,
+      "censored_events": 5,
+      "false_alarm_events_per_hour": 0.9917355371900827,
+      "monitored_hours": 3.025,
+      "events": [
+        {
+          "experiment": "other/1.csv",
+          "onset": 1583078030,
+          "end": 1583078226,
+          "detected": false,
+          "delay_seconds": null
+        },
+        {
+          "experiment": "other/13.csv",
+          "onset": 1581188249,
+          "end": 1581188600,
+          "detected": true,
+          "delay_seconds": 20
+        },
+        {
+          "experiment": "other/6.csv",
+          "onset": 1581179829,
+          "end": 1581180249,
+          "detected": true,
+          "delay_seconds": 36
+        },
+        {
+          "experiment": "other/7.csv",
+          "onset": 1581181031,
+          "end": 1581181393,
+          "detected": true,
+          "delay_seconds": 3
+        },
+        {
+          "experiment": "valve1/10.csv",
+          "onset": 1583761479,
+          "end": 1583761898,
+          "detected": false,
+          "delay_seconds": null
+        },
+        {
+          "experiment": "valve1/11.csv",
+          "onset": 1583762679,
+          "end": 1583763099,
+          "detected": true,
+          "delay_seconds": 206
+        },
+        {
+          "experiment": "valve1/14.csv",
+          "onset": 1583766281,
+          "end": 1583766700,
+          "detected": false,
+          "delay_seconds": null
+        },
+        {
+          "experiment": "valve1/15.csv",
+          "onset": 1583767481,
+          "end": 1583767901,
+          "detected": true,
+          "delay_seconds": 68
+        },
+        {
+          "experiment": "valve1/2.csv",
+          "onset": 1583751940,
+          "end": 1583752293,
+          "detected": false,
+          "delay_seconds": null
+        },
+        {
+          "experiment": "valve1/6.csv",
+          "onset": 1583756676,
+          "end": 1583757096,
+          "detected": false,
+          "delay_seconds": null
+        }
+      ],
+      "process_alerts_retained_during_attribution_abstention": 16
+    },
+    "backbone": {
+      "window_ap": 0.5925695163040898,
+      "prevalence": 0.3542319749216301,
+      "windows": 319,
+      "experiments": 10,
+      "nominal_fpr": 0.05,
+      "achieved_fpr": 0.05825242718446602,
+      "recall": 0.24778761061946902,
+      "event_recall": 0.6,
+      "event_precision": 0.5,
+      "median_detected_event_delay_seconds": 69.5,
+      "censored_events": 4,
+      "false_alarm_events_per_hour": 3.3057851239669422,
+      "monitored_hours": 3.025,
+      "events": [
+        {
+          "experiment": "other/1.csv",
+          "onset": 1583078030,
+          "end": 1583078226,
+          "detected": false,
+          "delay_seconds": null
+        },
+        {
+          "experiment": "other/13.csv",
+          "onset": 1581188249,
+          "end": 1581188600,
+          "detected": false,
+          "delay_seconds": null
+        },
+        {
+          "experiment": "other/6.csv",
+          "onset": 1581179829,
+          "end": 1581180249,
+          "detected": true,
+          "delay_seconds": 69
+        },
+        {
+          "experiment": "other/7.csv",
+          "onset": 1581181031,
+          "end": 1581181393,
+          "detected": true,
+          "delay_seconds": 70
+        },
+        {
+          "experiment": "valve1/10.csv",
+          "onset": 1583761479,
+          "end": 1583761898,
+          "detected": false,
+          "delay_seconds": null
+        },
+        {
+          "experiment": "valve1/11.csv",
+          "onset": 1583762679,
+          "end": 1583763099,
+          "detected": true,
+          "delay_seconds": 3
+        },
+        {
+          "experiment": "valve1/14.csv",
+          "onset": 1583766281,
+          "end": 1583766700,
+          "detected": true,
+          "delay_seconds": 40
+        },
+        {
+          "experiment": "valve1/15.csv",
+          "onset": 1583767481,
+          "end": 1583767901,
+          "detected": true,
+          "delay_seconds": 102
+        },
+        {
+          "experiment": "valve1/2.csv",
+          "onset": 1583751940,
+          "end": 1583752293,
+          "detected": false,
+          "delay_seconds": null
+        },
+        {
+          "experiment": "valve1/6.csv",
+          "onset": 1583756676,
+          "end": 1583757096,
+          "detected": true,
+          "delay_seconds": 132
+        }
+      ],
+      "process_alerts_retained_during_attribution_abstention": 14
+    },
+    "diffad": {
+      "window_ap": 0.5039230272407402,
+      "prevalence": 0.3542319749216301,
+      "windows": 319,
+      "experiments": 10,
+      "nominal_fpr": 0.05,
+      "achieved_fpr": 0.11165048543689321,
+      "recall": 0.23893805309734514,
+      "event_recall": 0.4,
+      "event_precision": 0.23809523809523808,
+      "median_detected_event_delay_seconds": 28.0,
+      "censored_events": 6,
+      "false_alarm_events_per_hour": 5.289256198347108,
+      "monitored_hours": 3.025,
+      "events": [
+        {
+          "experiment": "other/1.csv",
+          "onset": 1583078030,
+          "end": 1583078226,
+          "detected": false,
+          "delay_seconds": null
+        },
+        {
+          "experiment": "other/13.csv",
+          "onset": 1581188249,
+          "end": 1581188600,
+          "detected": true,
+          "delay_seconds": 20
+        },
+        {
+          "experiment": "other/6.csv",
+          "onset": 1581179829,
+          "end": 1581180249,
+          "detected": true,
+          "delay_seconds": 36
+        },
+        {
+          "experiment": "other/7.csv",
+          "onset": 1581181031,
+          "end": 1581181393,
+          "detected": true,
+          "delay_seconds": 3
+        },
+        {
+          "experiment": "valve1/10.csv",
+          "onset": 1583761479,
+          "end": 1583761898,
+          "detected": false,
+          "delay_seconds": null
+        },
+        {
+          "experiment": "valve1/11.csv",
+          "onset": 1583762679,
+          "end": 1583763099,
+          "detected": false,
+          "delay_seconds": null
+        },
+        {
+          "experiment": "valve1/14.csv",
+          "onset": 1583766281,
+          "end": 1583766700,
+          "detected": true,
+          "delay_seconds": 208
+        },
+        {
+          "experiment": "valve1/15.csv",
+          "onset": 1583767481,
+          "end": 1583767901,
+          "detected": false,
+          "delay_seconds": null
+        },
+        {
+          "experiment": "valve1/2.csv",
+          "onset": 1583751940,
+          "end": 1583752293,
+          "detected": false,
+          "delay_seconds": null
+        },
+        {
+          "experiment": "valve1/6.csv",
+          "onset": 1583756676,
+          "end": 1583757096,
+          "detected": false,
+          "delay_seconds": null
+        }
+      ],
+      "process_alerts_retained_during_attribution_abstention": 22
+    },
+    "pca_lag1_rank2": {
+      "window_ap": 0.5748702851717957,
+      "prevalence": 0.3542319749216301,
+      "windows": 319,
+      "experiments": 10,
+      "nominal_fpr": 0.05,
+      "achieved_fpr": 0.07281553398058252,
+      "recall": 0.3008849557522124,
+      "event_recall": 0.4,
+      "event_precision": 0.5,
+      "median_detected_event_delay_seconds": 28.0,
+      "censored_events": 6,
+      "false_alarm_events_per_hour": 1.322314049586777,
+      "monitored_hours": 3.025,
+      "events": [
+        {
+          "experiment": "other/1.csv",
+          "onset": 1583078030,
+          "end": 1583078226,
+          "detected": false,
+          "delay_seconds": null
+        },
+        {
+          "experiment": "other/13.csv",
+          "onset": 1581188249,
+          "end": 1581188600,
+          "detected": true,
+          "delay_seconds": 20
+        },
+        {
+          "experiment": "other/6.csv",
+          "onset": 1581179829,
+          "end": 1581180249,
+          "detected": true,
+          "delay_seconds": 36
+        },
+        {
+          "experiment": "other/7.csv",
+          "onset": 1581181031,
+          "end": 1581181393,
+          "detected": true,
+          "delay_seconds": 3
+        },
+        {
+          "experiment": "valve1/10.csv",
+          "onset": 1583761479,
+          "end": 1583761898,
+          "detected": false,
+          "delay_seconds": null
+        },
+        {
+          "experiment": "valve1/11.csv",
+          "onset": 1583762679,
+          "end": 1583763099,
+          "detected": false,
+          "delay_seconds": null
+        },
+        {
+          "experiment": "valve1/14.csv",
+          "onset": 1583766281,
+          "end": 1583766700,
+          "detected": false,
+          "delay_seconds": null
+        },
+        {
+          "experiment": "valve1/15.csv",
+          "onset": 1583767481,
+          "end": 1583767901,
+          "detected": true,
+          "delay_seconds": 68
+        },
+        {
+          "experiment": "valve1/2.csv",
+          "onset": 1583751940,
+          "end": 1583752293,
+          "detected": false,
+          "delay_seconds": null
+        },
+        {
+          "experiment": "valve1/6.csv",
+          "onset": 1583756676,
+          "end": 1583757096,
+          "detected": false,
+          "delay_seconds": null
+        }
+      ],
+      "process_alerts_retained_during_attribution_abstention": 18
+    },
+    "pca_lag4_rank16": {
+      "window_ap": 0.4483467014639604,
+      "prevalence": 0.3542319749216301,
+      "windows": 319,
+      "experiments": 10,
+      "nominal_fpr": 0.05,
+      "achieved_fpr": 0.03398058252427184,
+      "recall": 0.23893805309734514,
+      "event_recall": 0.4,
+      "event_precision": 0.625,
+      "median_detected_event_delay_seconds": 11.5,
+      "censored_events": 6,
+      "false_alarm_events_per_hour": 0.9917355371900827,
+      "monitored_hours": 3.025,
+      "events": [
+        {
+          "experiment": "other/1.csv",
+          "onset": 1583078030,
+          "end": 1583078226,
+          "detected": false,
+          "delay_seconds": null
+        },
+        {
+          "experiment": "other/13.csv",
+          "onset": 1581188249,
+          "end": 1581188600,
+          "detected": true,
+          "delay_seconds": 20
+        },
+        {
+          "experiment": "other/6.csv",
+          "onset": 1581179829,
+          "end": 1581180249,
+          "detected": true,
+          "delay_seconds": 2
+        },
+        {
+          "experiment": "other/7.csv",
+          "onset": 1581181031,
+          "end": 1581181393,
+          "detected": true,
+          "delay_seconds": 3
+        },
+        {
+          "experiment": "valve1/10.csv",
+          "onset": 1583761479,
+          "end": 1583761898,
+          "detected": false,
+          "delay_seconds": null
+        },
+        {
+          "experiment": "valve1/11.csv",
+          "onset": 1583762679,
+          "end": 1583763099,
+          "detected": false,
+          "delay_seconds": null
+        },
+        {
+          "experiment": "valve1/14.csv",
+          "onset": 1583766281,
+          "end": 1583766700,
+          "detected": false,
+          "delay_seconds": null
+        },
+        {
+          "experiment": "valve1/15.csv",
+          "onset": 1583767481,
+          "end": 1583767901,
+          "detected": true,
+          "delay_seconds": 68
+        },
+        {
+          "experiment": "valve1/2.csv",
+          "onset": 1583751940,
+          "end": 1583752293,
+          "detected": false,
+          "delay_seconds": null
+        },
+        {
+          "experiment": "valve1/6.csv",
+          "onset": 1583756676,
+          "end": 1583757096,
+          "detected": false,
+          "delay_seconds": null
+        }
+      ],
+      "process_alerts_retained_during_attribution_abstention": 16
+    }
+  },
+  "attribution_abstention_fraction": 0.4263322884012539,
+  "decision_stride_samples": 32
+}

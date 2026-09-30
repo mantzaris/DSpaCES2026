@@ -1,0 +1,1045 @@
+{
+  "measurement": "warm screening, inference, transfer, scoring and window-tail calculation included; model loading and database writes excluded",
+  "runs": [
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "channels": 32,
+      "candidate_cap_per_type": 1,
+      "tested_candidates": 2,
+      "eligible_candidates": 2,
+      "repeat": 0,
+      "elapsed_seconds": 0.11014646617695689,
+      "peak_allocated_bytes": 172279296,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 784",
+      "frozen_parameters": {
+        "kappa": 0,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.8571428571428571,
+        "association": 1.0
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20848320
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "channels": 32,
+      "candidate_cap_per_type": 1,
+      "tested_candidates": 2,
+      "eligible_candidates": 2,
+      "repeat": 1,
+      "elapsed_seconds": 0.11195212230086327,
+      "peak_allocated_bytes": 172279296,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 784",
+      "frozen_parameters": {
+        "kappa": 0,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.9591836734693877,
+        "association": 1.0
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20848320
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "channels": 32,
+      "candidate_cap_per_type": 1,
+      "tested_candidates": 2,
+      "eligible_candidates": 2,
+      "repeat": 2,
+      "elapsed_seconds": 0.1104441462084651,
+      "peak_allocated_bytes": 172279296,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 784",
+      "frozen_parameters": {
+        "kappa": 0,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.8367346938775511,
+        "association": 1.0
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20848320
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "channels": 32,
+      "candidate_cap_per_type": 1,
+      "tested_candidates": 2,
+      "eligible_candidates": 2,
+      "repeat": 3,
+      "elapsed_seconds": 0.11130484333261847,
+      "peak_allocated_bytes": 172279296,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 784",
+      "frozen_parameters": {
+        "kappa": 0,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.7551020408163265,
+        "association": 0.9795918367346939
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20848320
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "channels": 32,
+      "candidate_cap_per_type": 1,
+      "tested_candidates": 2,
+      "eligible_candidates": 2,
+      "repeat": 4,
+      "elapsed_seconds": 0.11073493398725986,
+      "peak_allocated_bytes": 172279296,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 784",
+      "frozen_parameters": {
+        "kappa": 0,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.6530612244897959,
+        "association": 1.0
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20848320
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "channels": 32,
+      "candidate_cap_per_type": 2,
+      "tested_candidates": 4,
+      "eligible_candidates": 4,
+      "repeat": 0,
+      "elapsed_seconds": 0.14694129396229982,
+      "peak_allocated_bytes": 237059584,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 784",
+      "frozen_parameters": {
+        "kappa": 0,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.5306122448979592,
+        "association": 0.9387755102040817
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20848320
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "channels": 32,
+      "candidate_cap_per_type": 2,
+      "tested_candidates": 4,
+      "eligible_candidates": 4,
+      "repeat": 1,
+      "elapsed_seconds": 0.14628870598971844,
+      "peak_allocated_bytes": 237059584,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 784",
+      "frozen_parameters": {
+        "kappa": 0,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.42857142857142855,
+        "association": 0.8979591836734694
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20848320
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "channels": 32,
+      "candidate_cap_per_type": 2,
+      "tested_candidates": 4,
+      "eligible_candidates": 4,
+      "repeat": 2,
+      "elapsed_seconds": 0.14652444468811154,
+      "peak_allocated_bytes": 237059584,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 784",
+      "frozen_parameters": {
+        "kappa": 0,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.30612244897959184,
+        "association": 0.8979591836734694
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20848320
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "channels": 32,
+      "candidate_cap_per_type": 2,
+      "tested_candidates": 4,
+      "eligible_candidates": 4,
+      "repeat": 3,
+      "elapsed_seconds": 0.1457227268256247,
+      "peak_allocated_bytes": 237059584,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 784",
+      "frozen_parameters": {
+        "kappa": 0,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.5306122448979592,
+        "association": 0.9183673469387755
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20848320
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "channels": 32,
+      "candidate_cap_per_type": 2,
+      "tested_candidates": 4,
+      "eligible_candidates": 4,
+      "repeat": 4,
+      "elapsed_seconds": 0.14575927704572678,
+      "peak_allocated_bytes": 237059584,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 784",
+      "frozen_parameters": {
+        "kappa": 0,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.42857142857142855,
+        "association": 0.8775510204081632
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20848320
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "channels": 32,
+      "candidate_cap_per_type": 4,
+      "tested_candidates": 8,
+      "eligible_candidates": 8,
+      "repeat": 0,
+      "elapsed_seconds": 0.2439235490746796,
+      "peak_allocated_bytes": 364656128,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 786",
+      "frozen_parameters": {
+        "kappa": 0,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.3673469387755102,
+        "association": 0.8979591836734694
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20848320
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "channels": 32,
+      "candidate_cap_per_type": 4,
+      "tested_candidates": 8,
+      "eligible_candidates": 8,
+      "repeat": 1,
+      "elapsed_seconds": 0.24403118016198277,
+      "peak_allocated_bytes": 364656128,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 786",
+      "frozen_parameters": {
+        "kappa": 0,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.30612244897959184,
+        "association": 0.9183673469387755
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20848320
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "channels": 32,
+      "candidate_cap_per_type": 4,
+      "tested_candidates": 8,
+      "eligible_candidates": 8,
+      "repeat": 2,
+      "elapsed_seconds": 0.24462809832766652,
+      "peak_allocated_bytes": 364656128,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 786",
+      "frozen_parameters": {
+        "kappa": 0,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.3877551020408163,
+        "association": 0.8979591836734694
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20848320
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "channels": 32,
+      "candidate_cap_per_type": 4,
+      "tested_candidates": 8,
+      "eligible_candidates": 8,
+      "repeat": 3,
+      "elapsed_seconds": 0.2441926090978086,
+      "peak_allocated_bytes": 364656128,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 786",
+      "frozen_parameters": {
+        "kappa": 0,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.3877551020408163,
+        "association": 0.8775510204081632
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20848320
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "channels": 32,
+      "candidate_cap_per_type": 4,
+      "tested_candidates": 8,
+      "eligible_candidates": 8,
+      "repeat": 4,
+      "elapsed_seconds": 0.2435107403434813,
+      "peak_allocated_bytes": 364656128,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 786",
+      "frozen_parameters": {
+        "kappa": 0,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.3877551020408163,
+        "association": 0.8571428571428571
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20848320
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "channels": 32,
+      "candidate_cap_per_type": 8,
+      "tested_candidates": 16,
+      "eligible_candidates": 16,
+      "repeat": 0,
+      "elapsed_seconds": 0.4364489330910146,
+      "peak_allocated_bytes": 622798336,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 1190",
+      "frozen_parameters": {
+        "kappa": 0,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.3469387755102041,
+        "association": 0.32653061224489793
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20848320
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "channels": 32,
+      "candidate_cap_per_type": 8,
+      "tested_candidates": 16,
+      "eligible_candidates": 16,
+      "repeat": 1,
+      "elapsed_seconds": 0.43651130283251405,
+      "peak_allocated_bytes": 622798336,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 1190",
+      "frozen_parameters": {
+        "kappa": 0,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.4897959183673469,
+        "association": 0.30612244897959184
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20848320
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "channels": 32,
+      "candidate_cap_per_type": 8,
+      "tested_candidates": 16,
+      "eligible_candidates": 16,
+      "repeat": 2,
+      "elapsed_seconds": 0.43535445490852,
+      "peak_allocated_bytes": 622798336,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 1190",
+      "frozen_parameters": {
+        "kappa": 0,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.5918367346938775,
+        "association": 0.30612244897959184
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20848320
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "channels": 32,
+      "candidate_cap_per_type": 8,
+      "tested_candidates": 16,
+      "eligible_candidates": 16,
+      "repeat": 3,
+      "elapsed_seconds": 0.43659393256530166,
+      "peak_allocated_bytes": 622798336,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 1190",
+      "frozen_parameters": {
+        "kappa": 0,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.5306122448979592,
+        "association": 0.32653061224489793
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20848320
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "channels": 32,
+      "candidate_cap_per_type": 8,
+      "tested_candidates": 16,
+      "eligible_candidates": 16,
+      "repeat": 4,
+      "elapsed_seconds": 0.4370920518413186,
+      "peak_allocated_bytes": 622798336,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 1190",
+      "frozen_parameters": {
+        "kappa": 0,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.30612244897959184,
+        "association": 0.30612244897959184
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20848320
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "channels": 64,
+      "candidate_cap_per_type": 1,
+      "tested_candidates": 2,
+      "eligible_candidates": 2,
+      "repeat": 0,
+      "elapsed_seconds": 0.13966475008055568,
+      "peak_allocated_bytes": 239416832,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 1190",
+      "frozen_parameters": {
+        "kappa": 0.5,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.9387755102040817,
+        "association": 0.6530612244897959
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20849856
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "channels": 64,
+      "candidate_cap_per_type": 1,
+      "tested_candidates": 2,
+      "eligible_candidates": 2,
+      "repeat": 1,
+      "elapsed_seconds": 0.1415208471007645,
+      "peak_allocated_bytes": 239416832,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 1190",
+      "frozen_parameters": {
+        "kappa": 0.5,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.8979591836734694,
+        "association": 0.6326530612244898
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20849856
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "channels": 64,
+      "candidate_cap_per_type": 1,
+      "tested_candidates": 2,
+      "eligible_candidates": 2,
+      "repeat": 2,
+      "elapsed_seconds": 0.1416629059240222,
+      "peak_allocated_bytes": 239416832,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 1190",
+      "frozen_parameters": {
+        "kappa": 0.5,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.9183673469387755,
+        "association": 0.7959183673469388
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20849856
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "channels": 64,
+      "candidate_cap_per_type": 1,
+      "tested_candidates": 2,
+      "eligible_candidates": 2,
+      "repeat": 3,
+      "elapsed_seconds": 0.1398574411869049,
+      "peak_allocated_bytes": 239416832,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 1190",
+      "frozen_parameters": {
+        "kappa": 0.5,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.9795918367346939,
+        "association": 0.7959183673469388
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20849856
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "channels": 64,
+      "candidate_cap_per_type": 1,
+      "tested_candidates": 2,
+      "eligible_candidates": 2,
+      "repeat": 4,
+      "elapsed_seconds": 0.14048013929277658,
+      "peak_allocated_bytes": 239416832,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 1190",
+      "frozen_parameters": {
+        "kappa": 0.5,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.8571428571428571,
+        "association": 0.4897959183673469
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20849856
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "channels": 64,
+      "candidate_cap_per_type": 2,
+      "tested_candidates": 4,
+      "eligible_candidates": 4,
+      "repeat": 0,
+      "elapsed_seconds": 0.2282418948598206,
+      "peak_allocated_bytes": 366803456,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 1190",
+      "frozen_parameters": {
+        "kappa": 0.5,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.6938775510204082,
+        "association": 0.5306122448979592
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20849856
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "channels": 64,
+      "candidate_cap_per_type": 2,
+      "tested_candidates": 4,
+      "eligible_candidates": 4,
+      "repeat": 1,
+      "elapsed_seconds": 0.22694429708644748,
+      "peak_allocated_bytes": 366803456,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 1190",
+      "frozen_parameters": {
+        "kappa": 0.5,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.8979591836734694,
+        "association": 0.6122448979591837
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20849856
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "channels": 64,
+      "candidate_cap_per_type": 2,
+      "tested_candidates": 4,
+      "eligible_candidates": 4,
+      "repeat": 2,
+      "elapsed_seconds": 0.2273612474091351,
+      "peak_allocated_bytes": 366803456,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 1190",
+      "frozen_parameters": {
+        "kappa": 0.5,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.7551020408163265,
+        "association": 0.673469387755102
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20849856
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "channels": 64,
+      "candidate_cap_per_type": 2,
+      "tested_candidates": 4,
+      "eligible_candidates": 4,
+      "repeat": 3,
+      "elapsed_seconds": 0.22814899403601885,
+      "peak_allocated_bytes": 366803456,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 1190",
+      "frozen_parameters": {
+        "kappa": 0.5,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.2857142857142857,
+        "association": 0.5714285714285714
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20849856
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "channels": 64,
+      "candidate_cap_per_type": 2,
+      "tested_candidates": 4,
+      "eligible_candidates": 4,
+      "repeat": 4,
+      "elapsed_seconds": 0.2287802528589964,
+      "peak_allocated_bytes": 366803456,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 1190",
+      "frozen_parameters": {
+        "kappa": 0.5,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.2857142857142857,
+        "association": 0.6938775510204082
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20849856
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "channels": 64,
+      "candidate_cap_per_type": 4,
+      "tested_candidates": 8,
+      "eligible_candidates": 8,
+      "repeat": 0,
+      "elapsed_seconds": 0.4018252491950989,
+      "peak_allocated_bytes": 628299264,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 1190",
+      "frozen_parameters": {
+        "kappa": 0.5,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.22448979591836735,
+        "association": 0.20408163265306123
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20849856
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "channels": 64,
+      "candidate_cap_per_type": 4,
+      "tested_candidates": 8,
+      "eligible_candidates": 8,
+      "repeat": 1,
+      "elapsed_seconds": 0.40213464898988605,
+      "peak_allocated_bytes": 628299264,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 1190",
+      "frozen_parameters": {
+        "kappa": 0.5,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.08163265306122448,
+        "association": 0.2857142857142857
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20849856
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "channels": 64,
+      "candidate_cap_per_type": 4,
+      "tested_candidates": 8,
+      "eligible_candidates": 8,
+      "repeat": 2,
+      "elapsed_seconds": 0.4024613182991743,
+      "peak_allocated_bytes": 628299264,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 1190",
+      "frozen_parameters": {
+        "kappa": 0.5,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.08163265306122448,
+        "association": 0.20408163265306123
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20849856
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "channels": 64,
+      "candidate_cap_per_type": 4,
+      "tested_candidates": 8,
+      "eligible_candidates": 8,
+      "repeat": 3,
+      "elapsed_seconds": 0.4005779828876257,
+      "peak_allocated_bytes": 628299264,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 1190",
+      "frozen_parameters": {
+        "kappa": 0.5,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.16326530612244897,
+        "association": 0.12244897959183673
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20849856
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "channels": 64,
+      "candidate_cap_per_type": 4,
+      "tested_candidates": 8,
+      "eligible_candidates": 8,
+      "repeat": 4,
+      "elapsed_seconds": 0.40252096811309457,
+      "peak_allocated_bytes": 628299264,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 1190",
+      "frozen_parameters": {
+        "kappa": 0.5,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.2857142857142857,
+        "association": 0.14285714285714285
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20849856
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "channels": 64,
+      "candidate_cap_per_type": 8,
+      "tested_candidates": 16,
+      "eligible_candidates": 16,
+      "repeat": 0,
+      "elapsed_seconds": 0.7594938869588077,
+      "peak_allocated_bytes": 1140999680,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 1982",
+      "frozen_parameters": {
+        "kappa": 0.5,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.061224489795918366,
+        "association": 0.2857142857142857
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20849856
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "channels": 64,
+      "candidate_cap_per_type": 8,
+      "tested_candidates": 16,
+      "eligible_candidates": 16,
+      "repeat": 1,
+      "elapsed_seconds": 0.7603577948175371,
+      "peak_allocated_bytes": 1140999680,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 1982",
+      "frozen_parameters": {
+        "kappa": 0.5,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.22448979591836735,
+        "association": 0.20408163265306123
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20849856
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "channels": 64,
+      "candidate_cap_per_type": 8,
+      "tested_candidates": 16,
+      "eligible_candidates": 16,
+      "repeat": 2,
+      "elapsed_seconds": 0.7597639057785273,
+      "peak_allocated_bytes": 1140999680,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 1982",
+      "frozen_parameters": {
+        "kappa": 0.5,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.22448979591836735,
+        "association": 0.16326530612244897
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20849856
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "channels": 64,
+      "candidate_cap_per_type": 8,
+      "tested_candidates": 16,
+      "eligible_candidates": 16,
+      "repeat": 3,
+      "elapsed_seconds": 0.7604424450546503,
+      "peak_allocated_bytes": 1140999680,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 1982",
+      "frozen_parameters": {
+        "kappa": 0.5,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.08163265306122448,
+        "association": 0.22448979591836735
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20849856
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "channels": 64,
+      "candidate_cap_per_type": 8,
+      "tested_candidates": 16,
+      "eligible_candidates": 16,
+      "repeat": 4,
+      "elapsed_seconds": 0.7613114137202501,
+      "peak_allocated_bytes": 1140999680,
+      "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+      "process_id": 67502,
+      "reported_gpu_processes": "67502, .venv/bin/python, 1982",
+      "frozen_parameters": {
+        "kappa": 0.5,
+        "lambda": 0
+      },
+      "window_tails": {
+        "observation": 0.20408163265306123,
+        "association": 0.2653061224489796
+      },
+      "tail_scope": "Runtime only. Main reference tails are calibrated for four candidates per type, not the other scaling caps.",
+      "proposal_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "parameter_count": 20849856
+    }
+  ]
+}

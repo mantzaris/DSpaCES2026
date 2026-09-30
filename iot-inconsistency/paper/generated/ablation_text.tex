@@ -3,6 +3,6 @@ Table~\ref{tab:ablation} separates arithmetic correctness from predictive useful
 
 The spread penalty had a practical threshold effect on controlled SKAB windows. Gain alone had false-positive fraction 0.613 at nominal 5\%, compared with 0.050 for the selected score. Fault recall also fell from 0.637 to 0.013. Conservatism here does not imply accurate diagnosis.
 
-\textcolor{red}{Secondary inference ablations are still running in this layout draft.}
+Deterministic replacement reached 0.879 AP in S32N, close to the sampled score. Removing graph conditioning gave 0.500 because this architecture then has no path by which editing one channel changes another channel's prediction. The result tests a necessary information path, not the superiority of a particular graph learner. Witness visibility and counted copies are deliberately invalid evidence procedures. Their results are retained even when a metric improves. Such improvement cannot establish independent support.
 
 The production audit independently recomputed 8736 candidate scores from saved samples across 1092 cases. The largest absolute arithmetic discrepancy was 7.11$\times10^{-15}$. This verifies implementation, not the research hypotheses. Figure~\ref{fig:equations} examines paired variants, sampling variability, contaminated conditioning and measured runtime.

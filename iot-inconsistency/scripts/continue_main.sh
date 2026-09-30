@@ -12,6 +12,7 @@ PY
 bash scripts/train_diffad.sh
 for dataset in synthetic_32_linear synthetic_32_nonlinear synthetic_64_nonlinear intel skab; do
   .venv/bin/python scripts/evaluate.py --dataset "$dataset" --split development
+  .venv/bin/python scripts/sensitivity.py --dataset "$dataset"
   .venv/bin/python scripts/freeze.py --dataset "$dataset" --stage development
   .venv/bin/python scripts/evaluate.py --dataset "$dataset" --split calibration
   .venv/bin/python scripts/freeze.py --dataset "$dataset" --stage calibration

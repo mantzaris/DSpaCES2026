@@ -38,6 +38,7 @@ for dataset in config['datasets']:
     if not (folder/'complete.json').exists():raise RuntimeError('Stress experiments incomplete '+dataset)
     cases=[json.loads(p.read_text()) for p in sorted(folder.glob('*.json')) if p.name not in ['complete.json','analysis.json']]
     if any(r.get('stress_protocol_version')!='scaled-screen-stratified-v3' for r in cases):raise RuntimeError('Stress protocol correction still required '+dataset)
+    if any(r.get('low_support_protocol')!='ordinary screening, diagnostic ranking only' for r in cases if r['details']['family']=='single_source_support'):raise RuntimeError('Single-group screening audit still required '+dataset)
     buckets={}
     for case in cases:
         details=case['details'];name=details['family'];level=details.get('fraction',details.get('requested_fraction','all'));key=name+'/'+str(level)
@@ -47,6 +48,7 @@ for dataset in config['datasets']:
         supports=[r['support_count'] for case in rows for r in case['records']];scores=[r['score'] for case in rows for r in case['records']]
         summary[key]=dict(cases=len(rows),primary_target_top1=float(np.mean([r['primary_target_top1'] for r in rows])),
             primary_target_screened=float(np.mean([r['primary_target_screened'] for r in rows])),
+            single_group_diagnostic_top1=float(np.mean([r.get('single_group_diagnostic_top1',False) for r in rows])),
             baseline_primary_target_top1={method:float(np.mean([r['baseline_primary_target_top1'][method] for r in rows])) for method in rows[0]['baseline_primary_target_top1']},
             median_score=float(np.median(scores)) if scores else None,source_blocks=sorted({r['details']['block'] for r in rows if 'block' in r['details']}),
             support_counts={str(count):supports.count(count) for count in sorted(set(supports))},numeric_abstentions=sum(len(r['abstentions']) for r in rows),

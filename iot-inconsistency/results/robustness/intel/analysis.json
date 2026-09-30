@@ -1,0 +1,337 @@
+{
+  "conditions": {
+    "conditioning_source_contamination/0.0": {
+      "cases": 12,
+      "primary_target_top1": 0.08333333333333333,
+      "primary_target_screened": 0.3333333333333333,
+      "single_group_diagnostic_top1": 0.0,
+      "baseline_primary_target_top1": {
+        "gdn": 0.08333333333333333,
+        "pca_lag4_rank16": 0.0
+      },
+      "median_score": 0.12333685770002221,
+      "source_blocks": [
+        "12500",
+        "12501",
+        "12502",
+        "12503",
+        "12504",
+        "12505"
+      ],
+      "support_counts": {
+        "2": 96
+      },
+      "numeric_abstentions": 0,
+      "selected_primary_windows_abstained": 0,
+      "availability_alerts": 0,
+      "observation_window_alarms_at_005": 0,
+      "source_files": [
+        "results/robustness/intel/conditioning_0_0.0.json",
+        "results/robustness/intel/conditioning_10_0.0.json",
+        "results/robustness/intel/conditioning_11_0.0.json",
+        "results/robustness/intel/conditioning_1_0.0.json",
+        "results/robustness/intel/conditioning_2_0.0.json",
+        "results/robustness/intel/conditioning_3_0.0.json",
+        "results/robustness/intel/conditioning_4_0.0.json",
+        "results/robustness/intel/conditioning_5_0.0.json",
+        "results/robustness/intel/conditioning_6_0.0.json",
+        "results/robustness/intel/conditioning_7_0.0.json",
+        "results/robustness/intel/conditioning_8_0.0.json",
+        "results/robustness/intel/conditioning_9_0.0.json"
+      ]
+    },
+    "conditioning_source_contamination/0.125": {
+      "cases": 12,
+      "primary_target_top1": 0.08333333333333333,
+      "primary_target_screened": 0.3333333333333333,
+      "single_group_diagnostic_top1": 0.0,
+      "baseline_primary_target_top1": {
+        "gdn": 0.08333333333333333,
+        "pca_lag4_rank16": 0.0
+      },
+      "median_score": 0.10379523211791311,
+      "source_blocks": [
+        "12500",
+        "12501",
+        "12502",
+        "12503",
+        "12504",
+        "12505"
+      ],
+      "support_counts": {
+        "2": 96
+      },
+      "numeric_abstentions": 0,
+      "selected_primary_windows_abstained": 0,
+      "availability_alerts": 0,
+      "observation_window_alarms_at_005": 0,
+      "source_files": [
+        "results/robustness/intel/conditioning_0_0.125.json",
+        "results/robustness/intel/conditioning_10_0.125.json",
+        "results/robustness/intel/conditioning_11_0.125.json",
+        "results/robustness/intel/conditioning_1_0.125.json",
+        "results/robustness/intel/conditioning_2_0.125.json",
+        "results/robustness/intel/conditioning_3_0.125.json",
+        "results/robustness/intel/conditioning_4_0.125.json",
+        "results/robustness/intel/conditioning_5_0.125.json",
+        "results/robustness/intel/conditioning_6_0.125.json",
+        "results/robustness/intel/conditioning_7_0.125.json",
+        "results/robustness/intel/conditioning_8_0.125.json",
+        "results/robustness/intel/conditioning_9_0.125.json"
+      ]
+    },
+    "conditioning_source_contamination/0.25": {
+      "cases": 12,
+      "primary_target_top1": 0.08333333333333333,
+      "primary_target_screened": 0.25,
+      "single_group_diagnostic_top1": 0.0,
+      "baseline_primary_target_top1": {
+        "gdn": 0.08333333333333333,
+        "pca_lag4_rank16": 0.0
+      },
+      "median_score": 0.2034485648052009,
+      "source_blocks": [
+        "12500",
+        "12501",
+        "12502",
+        "12503",
+        "12504",
+        "12505"
+      ],
+      "support_counts": {
+        "2": 96
+      },
+      "numeric_abstentions": 0,
+      "selected_primary_windows_abstained": 0,
+      "availability_alerts": 0,
+      "observation_window_alarms_at_005": 0,
+      "source_files": [
+        "results/robustness/intel/conditioning_0_0.25.json",
+        "results/robustness/intel/conditioning_10_0.25.json",
+        "results/robustness/intel/conditioning_11_0.25.json",
+        "results/robustness/intel/conditioning_1_0.25.json",
+        "results/robustness/intel/conditioning_2_0.25.json",
+        "results/robustness/intel/conditioning_3_0.25.json",
+        "results/robustness/intel/conditioning_4_0.25.json",
+        "results/robustness/intel/conditioning_5_0.25.json",
+        "results/robustness/intel/conditioning_6_0.25.json",
+        "results/robustness/intel/conditioning_7_0.25.json",
+        "results/robustness/intel/conditioning_8_0.25.json",
+        "results/robustness/intel/conditioning_9_0.25.json"
+      ]
+    },
+    "conditioning_source_contamination/0.5": {
+      "cases": 12,
+      "primary_target_top1": 0.0,
+      "primary_target_screened": 0.16666666666666666,
+      "single_group_diagnostic_top1": 0.0,
+      "baseline_primary_target_top1": {
+        "gdn": 0.08333333333333333,
+        "pca_lag4_rank16": 0.0
+      },
+      "median_score": 0.15568698120063362,
+      "source_blocks": [
+        "12500",
+        "12501",
+        "12502",
+        "12503",
+        "12504",
+        "12505"
+      ],
+      "support_counts": {
+        "2": 96
+      },
+      "numeric_abstentions": 0,
+      "selected_primary_windows_abstained": 0,
+      "availability_alerts": 0,
+      "observation_window_alarms_at_005": 0,
+      "source_files": [
+        "results/robustness/intel/conditioning_0_0.5.json",
+        "results/robustness/intel/conditioning_10_0.5.json",
+        "results/robustness/intel/conditioning_11_0.5.json",
+        "results/robustness/intel/conditioning_1_0.5.json",
+        "results/robustness/intel/conditioning_2_0.5.json",
+        "results/robustness/intel/conditioning_3_0.5.json",
+        "results/robustness/intel/conditioning_4_0.5.json",
+        "results/robustness/intel/conditioning_5_0.5.json",
+        "results/robustness/intel/conditioning_6_0.5.json",
+        "results/robustness/intel/conditioning_7_0.5.json",
+        "results/robustness/intel/conditioning_8_0.5.json",
+        "results/robustness/intel/conditioning_9_0.5.json"
+      ]
+    },
+    "missingness/all": {
+      "cases": 12,
+      "primary_target_top1": 0.0,
+      "primary_target_screened": 1.0,
+      "single_group_diagnostic_top1": 0.0,
+      "baseline_primary_target_top1": {
+        "gdn": 0.0,
+        "pca_lag4_rank16": 0.0
+      },
+      "median_score": null,
+      "source_blocks": [],
+      "support_counts": {},
+      "numeric_abstentions": 12,
+      "selected_primary_windows_abstained": 12,
+      "availability_alerts": 12,
+      "observation_window_alarms_at_005": 0,
+      "source_files": [
+        "results/robustness/intel/dropout_0.json",
+        "results/robustness/intel/dropout_1.json",
+        "results/robustness/intel/dropout_10.json",
+        "results/robustness/intel/dropout_11.json",
+        "results/robustness/intel/dropout_2.json",
+        "results/robustness/intel/dropout_3.json",
+        "results/robustness/intel/dropout_4.json",
+        "results/robustness/intel/dropout_5.json",
+        "results/robustness/intel/dropout_6.json",
+        "results/robustness/intel/dropout_7.json",
+        "results/robustness/intel/dropout_8.json",
+        "results/robustness/intel/dropout_9.json"
+      ]
+    },
+    "graph_error/0.1": {
+      "cases": 12,
+      "primary_target_top1": 0.08333333333333333,
+      "primary_target_screened": 0.16666666666666666,
+      "single_group_diagnostic_top1": 0.0,
+      "baseline_primary_target_top1": {
+        "gdn": 0.08333333333333333,
+        "pca_lag4_rank16": 0.0
+      },
+      "median_score": 0.02350441957436111,
+      "source_blocks": [],
+      "support_counts": {
+        "2": 96
+      },
+      "numeric_abstentions": 0,
+      "selected_primary_windows_abstained": 0,
+      "availability_alerts": 0,
+      "observation_window_alarms_at_005": 0,
+      "source_files": [
+        "results/robustness/intel/graph_errors_0_0.1.json",
+        "results/robustness/intel/graph_errors_10_0.1.json",
+        "results/robustness/intel/graph_errors_11_0.1.json",
+        "results/robustness/intel/graph_errors_1_0.1.json",
+        "results/robustness/intel/graph_errors_2_0.1.json",
+        "results/robustness/intel/graph_errors_3_0.1.json",
+        "results/robustness/intel/graph_errors_4_0.1.json",
+        "results/robustness/intel/graph_errors_5_0.1.json",
+        "results/robustness/intel/graph_errors_6_0.1.json",
+        "results/robustness/intel/graph_errors_7_0.1.json",
+        "results/robustness/intel/graph_errors_8_0.1.json",
+        "results/robustness/intel/graph_errors_9_0.1.json"
+      ]
+    },
+    "graph_error/0.3": {
+      "cases": 12,
+      "primary_target_top1": 0.0,
+      "primary_target_screened": 0.16666666666666666,
+      "single_group_diagnostic_top1": 0.0,
+      "baseline_primary_target_top1": {
+        "gdn": 0.08333333333333333,
+        "pca_lag4_rank16": 0.0
+      },
+      "median_score": 0.005441844089765756,
+      "source_blocks": [],
+      "support_counts": {
+        "2": 96
+      },
+      "numeric_abstentions": 0,
+      "selected_primary_windows_abstained": 0,
+      "availability_alerts": 0,
+      "observation_window_alarms_at_005": 0,
+      "source_files": [
+        "results/robustness/intel/graph_errors_0_0.3.json",
+        "results/robustness/intel/graph_errors_10_0.3.json",
+        "results/robustness/intel/graph_errors_11_0.3.json",
+        "results/robustness/intel/graph_errors_1_0.3.json",
+        "results/robustness/intel/graph_errors_2_0.3.json",
+        "results/robustness/intel/graph_errors_3_0.3.json",
+        "results/robustness/intel/graph_errors_4_0.3.json",
+        "results/robustness/intel/graph_errors_5_0.3.json",
+        "results/robustness/intel/graph_errors_6_0.3.json",
+        "results/robustness/intel/graph_errors_7_0.3.json",
+        "results/robustness/intel/graph_errors_8_0.3.json",
+        "results/robustness/intel/graph_errors_9_0.3.json"
+      ]
+    },
+    "single_source_support/all": {
+      "cases": 12,
+      "primary_target_top1": 0.0,
+      "primary_target_screened": 0.3333333333333333,
+      "single_group_diagnostic_top1": 0.25,
+      "baseline_primary_target_top1": {
+        "gdn": 0.16666666666666666,
+        "pca_lag4_rank16": 0.25
+      },
+      "median_score": -0.012705423491226813,
+      "source_blocks": [
+        "12500",
+        "12501",
+        "12502",
+        "12503",
+        "12504",
+        "12505"
+      ],
+      "support_counts": {
+        "1": 48,
+        "2": 28
+      },
+      "numeric_abstentions": 20,
+      "selected_primary_windows_abstained": 12,
+      "availability_alerts": 0,
+      "observation_window_alarms_at_005": 0,
+      "source_files": [
+        "results/robustness/intel/low_support_0.json",
+        "results/robustness/intel/low_support_1.json",
+        "results/robustness/intel/low_support_10.json",
+        "results/robustness/intel/low_support_11.json",
+        "results/robustness/intel/low_support_2.json",
+        "results/robustness/intel/low_support_3.json",
+        "results/robustness/intel/low_support_4.json",
+        "results/robustness/intel/low_support_5.json",
+        "results/robustness/intel/low_support_6.json",
+        "results/robustness/intel/low_support_7.json",
+        "results/robustness/intel/low_support_8.json",
+        "results/robustness/intel/low_support_9.json"
+      ]
+    },
+    "unknown_provenance_association_copies/all": {
+      "cases": 12,
+      "primary_target_top1": 0.08333333333333333,
+      "primary_target_screened": 0.3333333333333333,
+      "single_group_diagnostic_top1": 0.0,
+      "baseline_primary_target_top1": {
+        "gdn": 0.08333333333333333,
+        "pca_lag4_rank16": 0.0
+      },
+      "median_score": 0.06735916061896585,
+      "source_blocks": [],
+      "support_counts": {
+        "2": 96
+      },
+      "numeric_abstentions": 0,
+      "selected_primary_windows_abstained": 0,
+      "availability_alerts": 0,
+      "observation_window_alarms_at_005": 0,
+      "source_files": [
+        "results/robustness/intel/unknown_aliases_0.json",
+        "results/robustness/intel/unknown_aliases_1.json",
+        "results/robustness/intel/unknown_aliases_10.json",
+        "results/robustness/intel/unknown_aliases_11.json",
+        "results/robustness/intel/unknown_aliases_2.json",
+        "results/robustness/intel/unknown_aliases_3.json",
+        "results/robustness/intel/unknown_aliases_4.json",
+        "results/robustness/intel/unknown_aliases_5.json",
+        "results/robustness/intel/unknown_aliases_6.json",
+        "results/robustness/intel/unknown_aliases_7.json",
+        "results/robustness/intel/unknown_aliases_8.json",
+        "results/robustness/intel/unknown_aliases_9.json"
+      ]
+    }
+  },
+  "physical_controls": {},
+  "scope": "Twelve evenly spaced reference windows, nested contamination sets, no parameter refitting. Primary target attribution differs from classifying every additional contaminated channel. Small diagnostic study, not independent final-method repetitions."
+}

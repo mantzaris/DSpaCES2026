@@ -1,4 +1,5 @@
 {
+  "window_id": "intel:test_0000_observation:bc6e19043c3b2d7d",
   "process_alert": false,
   "process_null_tail": 0.058823529411764705,
   "dataset": "intel",
@@ -7097,7 +7098,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "intel:test_0000_observation:bc6e19043c3b2d7d:22a25a9c71bf9b7c:observation:12"
     },
     {
       "kind": "observation",
@@ -7350,7 +7352,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "intel:test_0000_observation:bc6e19043c3b2d7d:22a25a9c71bf9b7c:observation:5"
     },
     {
       "kind": "observation",
@@ -7603,7 +7606,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "intel:test_0000_observation:bc6e19043c3b2d7d:22a25a9c71bf9b7c:observation:4"
     },
     {
       "kind": "observation",
@@ -7856,7 +7860,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "intel:test_0000_observation:bc6e19043c3b2d7d:22a25a9c71bf9b7c:observation:8"
     },
     {
       "kind": "association",
@@ -8067,7 +8072,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "intel:test_0000_observation:bc6e19043c3b2d7d:22a25a9c71bf9b7c:association:134"
     },
     {
       "kind": "association",
@@ -8278,7 +8284,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "intel:test_0000_observation:bc6e19043c3b2d7d:22a25a9c71bf9b7c:association:24"
     },
     {
       "kind": "association",
@@ -8489,7 +8496,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "intel:test_0000_observation:bc6e19043c3b2d7d:22a25a9c71bf9b7c:association:14"
     },
     {
       "kind": "association",
@@ -8700,7 +8708,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "intel:test_0000_observation:bc6e19043c3b2d7d:22a25a9c71bf9b7c:association:36"
     }
   ],
   "artifact": "results/study/intel/test/test_0000_observation.npz",
@@ -8773,80 +8782,90 @@
         "source": 40,
         "target": 44,
         "lag": 1,
+        "lag_seconds": 300,
         "sign": 1,
-        "label": "predicts C44, lag 1"
+        "label": "predicts C44, lag 300 s"
       },
       {
         "index": 133,
         "source": 36,
         "target": 44,
         "lag": 1,
+        "lag_seconds": 300,
         "sign": 1,
-        "label": "predicts C44, lag 1"
+        "label": "predicts C44, lag 300 s"
       },
       {
         "index": 24,
         "source": 4,
         "target": 8,
         "lag": 1,
+        "lag_seconds": 300,
         "sign": 1,
-        "label": "predicts C08, lag 1"
+        "label": "predicts C08, lag 300 s"
       },
       {
         "index": 26,
         "source": 0,
         "target": 8,
         "lag": 1,
+        "lag_seconds": 300,
         "sign": 1,
-        "label": "predicts C08, lag 1"
+        "label": "predicts C08, lag 300 s"
       },
       {
         "index": 25,
         "source": 12,
         "target": 8,
         "lag": 1,
+        "lag_seconds": 300,
         "sign": 1,
-        "label": "predicts C08, lag 1"
+        "label": "predicts C08, lag 300 s"
       },
       {
         "index": 134,
         "source": 8,
         "target": 44,
         "lag": 1,
+        "lag_seconds": 300,
         "sign": 1,
-        "label": "predicts C44, lag 1"
+        "label": "predicts C44, lag 300 s"
       },
       {
         "index": 110,
         "source": 32,
         "target": 36,
         "lag": 1,
+        "lag_seconds": 300,
         "sign": 1,
-        "label": "predicts C36, lag 1"
+        "label": "predicts C36, lag 300 s"
       },
       {
         "index": 14,
         "source": 12,
         "target": 4,
         "lag": 1,
+        "lag_seconds": 300,
         "sign": 1,
-        "label": "predicts C04, lag 1"
+        "label": "predicts C04, lag 300 s"
       },
       {
         "index": 2,
         "source": 28,
         "target": 0,
         "lag": 1,
+        "lag_seconds": 300,
         "sign": 1,
-        "label": "predicts C00, lag 1"
+        "label": "predicts C00, lag 300 s"
       },
       {
         "index": 84,
         "source": 24,
         "target": 28,
         "lag": 1,
+        "lag_seconds": 300,
         "sign": 1,
-        "label": "predicts C28, lag 1"
+        "label": "predicts C28, lag 300 s"
       }
     ],
     "pruning_rule": "All selected suspects and witnesses retained. Context uses a fixed spanning forest of strong stored relations. Coordinates use seed 9026 and deterministic collision adjustment, never fault labels.",
@@ -8854,7 +8873,7 @@
     "layout_seed": 9026
   },
   "run": {
-    "id": "intel:26f9b64ad50ea139",
+    "id": "intel:22a25a9c71bf9b7c",
     "ensemble_seeds": [
       1101,
       2202,
@@ -8865,6 +8884,44 @@
     "predictive_samples": 8,
     "manifest": "results/study/intel/test/provenance.json",
     "manifest_sha256": "efcdce334b32426fc91503c48384adb2907f1e502476e5a71cda9005813b2e49"
+  },
+  "association_context": {
+    "train": {
+      "decision_start": 1077945600,
+      "decision_stop": 1079049600,
+      "blocks": [
+        "12476",
+        "12477",
+        "12478",
+        "12479",
+        "12480",
+        "12481",
+        "12482",
+        "12483",
+        "12484",
+        "12485",
+        "12486",
+        "12487",
+        "12488",
+        "12489"
+      ],
+      "file": "data/processed/intel/train.npz"
+    },
+    "development": {
+      "decision_start": 1079092200,
+      "decision_stop": 1079553000,
+      "blocks": [
+        "12489",
+        "12490",
+        "12491",
+        "12492",
+        "12493",
+        "12494"
+      ],
+      "file": "data/processed/intel/development.npz"
+    },
+    "manifest": "data/manifests/intel.json",
+    "manifest_sha256": "c03bc18836ece41a9dedd0dcddda906d86867a70e80596ca0101b4ec77d4f8d7"
   },
   "median": [
     21.7916,

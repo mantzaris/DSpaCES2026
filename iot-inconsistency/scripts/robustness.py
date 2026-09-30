@@ -30,8 +30,9 @@ def evaluate(identity,x,g,truth,details,member_models=None,candidates=None):
     path=out/(identity+'.json')
     if path.exists():
         previous=json.loads(path.read_text())
-        if previous.get('stress_protocol_version')=='scaled-screen-stratified-v3':return previous
-        archive=out/'prior_stress_protocols'/previous.get('stress_protocol_version','unscaled-v1');archive.mkdir(parents=True,exist_ok=True)
+        if previous.get('stress_protocol_version')=='scaled-screen-stratified-v3' and (details['family']!='single_source_support' or previous.get('low_support_protocol')=='ordinary screening, diagnostic ranking only'):return previous
+        version=previous.get('stress_protocol_version','unscaled-v1')+('_single_candidate' if details['family']=='single_source_support' else '')
+        archive=out/'prior_stress_protocols'/version;archive.mkdir(parents=True,exist_ok=True)
         path.replace(archive/path.name);path.with_suffix('.npz').replace(archive/path.with_suffix('.npz').name)
     with torch.no_grad():residual=np.mean([gdn_residual(m,torch.as_tensor(x[None],device='cuda')).cpu().numpy()[0] for m in models['gdn']],axis=0)
     residual=scaled(residual,scales['gdn'])
@@ -43,9 +44,11 @@ def evaluate(identity,x,g,truth,details,member_models=None,candidates=None):
     for row in records:
         row['primary_target']=bool(truth[row['index']]) if row['kind']=='observation' else None
     observations=[r for r in records if r['kind']=='observation' and r['support_count']>=2];best=max(observations,key=lambda r:r['score']) if observations else None
+    single=[r for r in records if r['kind']=='observation' and r['support_count']==1];single_best=max(single,key=lambda r:r['score']) if single else None
     selected=max([r['score'] for r in observations],default=-1e12)
     report=dict(id=identity,dataset=name,details=details,records=records,abstentions=abstentions,candidates=candidates,
         stress_protocol_version='scaled-screen-stratified-v3',baseline_sensor_scores={'gdn':residual.tolist(),pca_name:pca_scores.tolist()},
+        low_support_protocol='ordinary screening, diagnostic ranking only',single_group_diagnostic_top1=bool(single_best and truth[single_best['index']]),
         baseline_primary_target_top1={'gdn':bool(truth[int(np.nanargmax(residual))]),pca_name:bool(truth[int(np.nanargmax(pca_scores))])},
         primary_target_top1=bool(best and truth[best['index']]),primary_target_screened=any(truth[i] for kind,i in candidates if kind=='observation'),
         primary_target_best_score=max([r['score'] for r in observations if truth[r['index']]],default=None),
@@ -67,7 +70,8 @@ for index in range(min(12,len(base))):
     low=x.copy();allowed={graph['groups'][target],partition['groups'][0]}
     for ch,group in enumerate(graph['groups']):
         if group not in allowed:low[ch,-8:]=np.nan
-    evaluate(f'low_support_{index}',low,graph,truth,dict(family='single_source_support'),candidates=[('observation',target)])
+    evaluate(f'low_support_{index}',low,graph,truth,dict(family='single_source_support',primary_fault=fault,
+        block=str(d['block'][source_indices[index]]),source_index=int(source_indices[index])))
     dropped=x.copy();dropped[target,-8:]=np.nan
     evaluate(f'dropout_{index}',dropped,graph,truth,dict(family='missingness',availability_alert=bool(np.isnan(dropped[target,-8:]).all()),numeric_edit_expected='abstain'),candidates=[('observation',target)])
     copies=copy.deepcopy(graph);edges=[copy.deepcopy(e) for e in graph['edges'] if e['source']==target]
@@ -90,6 +94,7 @@ if name.startswith('synthetic_32'):
         measurement_identical=True,arithmetic_roundoff=roundoff,observation_fault_truth='not identifiable from the shared measurements'))
     np.savez_compressed(out/'identifiability_latents.npz',normal=normal,physical=physical,common_mode_fault=fault_measurements,latent_normal=latent,latent_changed=shifted_latent)
     stale,stale_latent,_,_,_=simulate(32,192,830002,nonlinear=name.endswith('nonlinear'),association_change=dict(start=120,channel=0,new_latent=1))
+    np.savez_compressed(out/'physical_stale_latents.npz',measurements=stale,latent=stale_latent,seed=np.array(830002),change_start=np.array(120),changed_channel=np.array(0),new_latent=np.array(1))
     values=transform_measurements(stale,meta['normalizer']).T[:,-64:].astype('float32')
     evaluate('physical_stale_associations',values,graph,np.zeros(32,bool),dict(family='physical_relation_change',changed_channel=0,
         changed_latent=1,association_truth=[i for i,e in enumerate(graph['edges']) if e['source']==0 or e['target']==0],observation_fault_truth='none injected; measurements follow changed physical response'))

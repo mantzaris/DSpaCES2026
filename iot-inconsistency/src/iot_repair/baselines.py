@@ -30,7 +30,7 @@ class PCADetector:
             model.fill=saved['fill'].copy()
             model.portable_components=saved['components'].copy();model.portable_mean=saved['mean'].copy()
         return model
-    def score(self,x,horizon=8):
+    def reconstruction_errors(self,x):
         a=self.vectors(x); mask=np.isfinite(a); a=np.where(mask,a,self.fill)
         # sklearn's transform and inverse_transform use the separately fitted PCA mean.
         if hasattr(self,'portable_components'):
@@ -39,7 +39,23 @@ class PCADetector:
         else:reconstructed=self.pca.inverse_transform(self.pca.transform(a))
         squared=(a-reconstructed)**2
         squared=np.where(mask,squared,np.nan).reshape(len(x),x.shape[-1]-self.lag+1,x.shape[1],self.lag)
-        return np.nanmean(squared[:,-horizon:,:,-1],axis=1)
+        return squared
+    def score(self,x,horizon=8):
+        # Frozen common-protocol score uses only each embedded vector's current
+        # target coordinate, matching the causal forecasting target interval.
+        return np.nanmean(self.reconstruction_errors(x)[:,-horizon:,:,-1],axis=1)
+    def total_reconstruction_score(self,x,horizon=8):
+        """B2 squared residual norm, averaged over target decision steps.
+
+        Missing coordinates have no observed residual. A wholly unavailable
+        vector remains unavailable rather than receiving a zero error.
+        """
+        error=self.reconstruction_errors(x)[:,-horizon:]
+        total=np.nansum(error,axis=(2,3));total[~np.isfinite(error).any(axis=(2,3))]=np.nan
+        return np.nanmean(total,axis=1)
+    def all_coordinate_contributions(self,x,horizon=8):
+        """B3 mean residual over all observed lag coordinates of each sensor."""
+        return np.nanmean(self.reconstruction_errors(x)[:,-horizon:],axis=(1,3))
 
 
 class GDN(nn.Module):

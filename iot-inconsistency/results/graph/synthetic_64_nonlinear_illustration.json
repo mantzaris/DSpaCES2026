@@ -1,4 +1,5 @@
 {
+  "window_id": "synthetic_64_nonlinear:test_0095_observation:6f970c20739390e5",
   "process_alert": true,
   "process_null_tail": 0.02040816326530612,
   "dataset": "synthetic_64_nonlinear",
@@ -10185,7 +10186,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "synthetic_64_nonlinear:test_0095_observation:6f970c20739390e5:5988d010fa1788ea:observation:5"
     },
     {
       "kind": "observation",
@@ -10438,7 +10440,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "synthetic_64_nonlinear:test_0095_observation:6f970c20739390e5:5988d010fa1788ea:observation:26"
     },
     {
       "kind": "observation",
@@ -10691,7 +10694,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "synthetic_64_nonlinear:test_0095_observation:6f970c20739390e5:5988d010fa1788ea:observation:61"
     },
     {
       "kind": "observation",
@@ -10944,7 +10948,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "synthetic_64_nonlinear:test_0095_observation:6f970c20739390e5:5988d010fa1788ea:observation:1"
     },
     {
       "kind": "association",
@@ -11155,7 +11160,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "synthetic_64_nonlinear:test_0095_observation:6f970c20739390e5:5988d010fa1788ea:association:4"
     },
     {
       "kind": "association",
@@ -11366,7 +11372,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "synthetic_64_nonlinear:test_0095_observation:6f970c20739390e5:5988d010fa1788ea:association:16"
     },
     {
       "kind": "association",
@@ -11577,7 +11584,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "synthetic_64_nonlinear:test_0095_observation:6f970c20739390e5:5988d010fa1788ea:association:15"
     },
     {
       "kind": "association",
@@ -11788,7 +11796,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "synthetic_64_nonlinear:test_0095_observation:6f970c20739390e5:5988d010fa1788ea:association:17"
     }
   ],
   "artifact": "results/study/synthetic_64_nonlinear/test/test_0095_observation.npz",
@@ -11849,48 +11858,54 @@
         "source": 0,
         "target": 4,
         "lag": 1,
+        "lag_seconds": 1,
         "sign": -1,
-        "label": "predicts C04, lag 1"
+        "label": "predicts C04, lag 1 s"
       },
       {
         "index": 183,
         "source": 1,
         "target": 61,
         "lag": 1,
+        "lag_seconds": 1,
         "sign": -1,
-        "label": "predicts C61, lag 1"
+        "label": "predicts C61, lag 1 s"
       },
       {
         "index": 28,
         "source": 5,
         "target": 9,
         "lag": 1,
+        "lag_seconds": 1,
         "sign": -1,
-        "label": "predicts C09, lag 1"
+        "label": "predicts C09, lag 1 s"
       },
       {
         "index": 29,
         "source": 1,
         "target": 9,
         "lag": 1,
+        "lag_seconds": 1,
         "sign": 1,
-        "label": "predicts C09, lag 1"
+        "label": "predicts C09, lag 1 s"
       },
       {
         "index": 184,
         "source": 5,
         "target": 61,
         "lag": 1,
+        "lag_seconds": 1,
         "sign": 1,
-        "label": "predicts C61, lag 1"
+        "label": "predicts C61, lag 1 s"
       },
       {
         "index": 4,
         "source": 5,
         "target": 1,
         "lag": 1,
+        "lag_seconds": 1,
         "sign": -1,
-        "label": "predicts C01, lag 1"
+        "label": "predicts C01, lag 1 s"
       }
     ],
     "pruning_rule": "All selected suspects and witnesses retained. Context uses a fixed spanning forest of strong stored relations. Coordinates use seed 9026 and deterministic collision adjustment, never fault labels.",
@@ -11898,7 +11913,7 @@
     "layout_seed": 9026
   },
   "run": {
-    "id": "synthetic_64_nonlinear:69b302dd511f100d",
+    "id": "synthetic_64_nonlinear:5988d010fa1788ea",
     "ensemble_seeds": [
       1101,
       2202,
@@ -11909,6 +11924,44 @@
     "predictive_samples": 8,
     "manifest": "results/study/synthetic_64_nonlinear/test/provenance.json",
     "manifest_sha256": "8902df54ffdcbe8e069d5afd1e8b3b53f0d07d85733e0bb7e745524d17eec69f"
+  },
+  "association_context": {
+    "train": {
+      "decision_start": 63,
+      "decision_stop": 1023,
+      "blocks": [
+        "train_trajectory_0",
+        "train_trajectory_1",
+        "train_trajectory_10",
+        "train_trajectory_11",
+        "train_trajectory_2",
+        "train_trajectory_3",
+        "train_trajectory_4",
+        "train_trajectory_5",
+        "train_trajectory_6",
+        "train_trajectory_7",
+        "train_trajectory_8",
+        "train_trajectory_9"
+      ],
+      "file": "data/processed/synthetic_64_nonlinear/train.npz"
+    },
+    "development": {
+      "decision_start": 63,
+      "decision_stop": 1023,
+      "blocks": [
+        "development_trajectory_0",
+        "development_trajectory_1",
+        "development_trajectory_2",
+        "development_trajectory_3",
+        "development_trajectory_4",
+        "development_trajectory_5",
+        "development_trajectory_6",
+        "development_trajectory_7"
+      ],
+      "file": "data/processed/synthetic_64_nonlinear/development.npz"
+    },
+    "manifest": "data/manifests/synthetic_64_nonlinear.json",
+    "manifest_sha256": "6e219a8cb66130923f4ed4713ec45810b1897f1b3ced723ce0f4368edc9a9b37"
   },
   "median": [
     20.892951290665927,

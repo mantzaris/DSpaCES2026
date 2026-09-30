@@ -1,0 +1,165 @@
+{
+  "cases": [
+    {
+      "dataset": "synthetic_32_linear",
+      "case": "test_0000_observation",
+      "seed": 4911009,
+      "ordinary_cuda_repetitions": [
+        {
+          "repeat": 0,
+          "max_loss_difference": 0.0001792350085452199,
+          "max_prediction_difference": 0.020958781242370605,
+          "max_score_difference": 3.1582403843010733e-06,
+          "top_observation": 4
+        },
+        {
+          "repeat": 1,
+          "max_loss_difference": 0.0001792350085452199,
+          "max_prediction_difference": 0.020958781242370605,
+          "max_score_difference": 5.536373366980775e-06,
+          "top_observation": 4
+        },
+        {
+          "repeat": 2,
+          "max_loss_difference": 0.0002468250459060073,
+          "max_prediction_difference": 0.020958781242370605,
+          "max_score_difference": 4.907908087700154e-06,
+          "top_observation": 4
+        }
+      ],
+      "maximum_repeat_score_spread": 4.997332267230839e-06,
+      "deterministic_copy_invariance": "exact array equality",
+      "deterministic_algorithms": true,
+      "workspace_config": ":4096:8"
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "case": "test_0000_observation",
+      "seed": 4911009,
+      "ordinary_cuda_repetitions": [
+        {
+          "repeat": 0,
+          "max_loss_difference": 0.000174970060470514,
+          "max_prediction_difference": 0.02197781205177307,
+          "max_score_difference": 4.104901866715856e-06,
+          "top_observation": 20
+        },
+        {
+          "repeat": 1,
+          "max_loss_difference": 0.000174970060470514,
+          "max_prediction_difference": 0.02197781205177307,
+          "max_score_difference": 4.104901866715856e-06,
+          "top_observation": 20
+        },
+        {
+          "repeat": 2,
+          "max_loss_difference": 0.000174970060470514,
+          "max_prediction_difference": 0.02197781205177307,
+          "max_score_difference": 6.400645721292564e-06,
+          "top_observation": 20
+        }
+      ],
+      "maximum_repeat_score_spread": 5.298384223806352e-06,
+      "deterministic_copy_invariance": "exact array equality",
+      "deterministic_algorithms": true,
+      "workspace_config": ":4096:8"
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "case": "test_0000_observation",
+      "seed": 4911009,
+      "ordinary_cuda_repetitions": [
+        {
+          "repeat": 0,
+          "max_loss_difference": 0.0005681741749867797,
+          "max_prediction_difference": 0.045517563819885254,
+          "max_score_difference": 1.0644824709016981e-05,
+          "top_observation": 48
+        },
+        {
+          "repeat": 1,
+          "max_loss_difference": 0.0007199423271231353,
+          "max_prediction_difference": 0.045517563819885254,
+          "max_score_difference": 2.656805176761562e-05,
+          "top_observation": 48
+        },
+        {
+          "repeat": 2,
+          "max_loss_difference": 0.0005681741749867797,
+          "max_prediction_difference": 0.045517563819885254,
+          "max_score_difference": 8.18993773020471e-06,
+          "top_observation": 48
+        }
+      ],
+      "maximum_repeat_score_spread": 2.656805176761562e-05,
+      "deterministic_copy_invariance": "exact array equality",
+      "deterministic_algorithms": true,
+      "workspace_config": ":4096:8"
+    },
+    {
+      "dataset": "intel",
+      "case": "test_0000_observation",
+      "seed": 4911009,
+      "ordinary_cuda_repetitions": [
+        {
+          "repeat": 0,
+          "max_loss_difference": 0.026669473387300968,
+          "max_prediction_difference": 1.2300381660461426,
+          "max_score_difference": 0.00039804841693088025,
+          "top_observation": 12
+        },
+        {
+          "repeat": 1,
+          "max_loss_difference": 0.01995167672430398,
+          "max_prediction_difference": 1.2300381660461426,
+          "max_score_difference": 0.00039804841693088025,
+          "top_observation": 12
+        },
+        {
+          "repeat": 2,
+          "max_loss_difference": 0.03497347608208656,
+          "max_prediction_difference": 1.2036714553833008,
+          "max_score_difference": 0.00041585270719224354,
+          "top_observation": 12
+        }
+      ],
+      "maximum_repeat_score_spread": 0.0007110025702180174,
+      "deterministic_copy_invariance": "exact array equality",
+      "deterministic_algorithms": true,
+      "workspace_config": ":4096:8"
+    },
+    {
+      "dataset": "skab",
+      "case": "test_0000_observation",
+      "seed": 4911009,
+      "ordinary_cuda_repetitions": [
+        {
+          "repeat": 0,
+          "max_loss_difference": 0.0,
+          "max_prediction_difference": 0.0,
+          "max_score_difference": 0.0,
+          "top_observation": 1
+        },
+        {
+          "repeat": 1,
+          "max_loss_difference": 0.0,
+          "max_prediction_difference": 0.0,
+          "max_score_difference": 0.0,
+          "top_observation": 1
+        },
+        {
+          "repeat": 2,
+          "max_loss_difference": 0.0,
+          "max_prediction_difference": 0.0,
+          "max_score_difference": 0.0,
+          "top_observation": 1
+        }
+      ],
+      "maximum_repeat_score_spread": 0.0,
+      "deterministic_copy_invariance": "exact array equality",
+      "deterministic_algorithms": true,
+      "workspace_config": ":4096:8"
+    }
+  ],
+  "scope": "Saved predictive draws remain the definitive empirical inputs. Float32 CUDA index_add reductions may vary under fixed random seeds; deterministic mode is tested separately."
+}

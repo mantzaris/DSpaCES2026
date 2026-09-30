@@ -90,14 +90,17 @@ for directory in sorted((ROOT/'results/study').iterdir()):
                         positions[i]-=direction*(92-distance)*.5;positions[j]+=direction*(92-distance)*.5
             for i in nodes:positions[i]=np.clip(positions[i],[65,55],[655,385])
         view=dict(nodes=[dict(index=i,label=f'C{i:02d}',x=positions[i][0],y=positions[i][1]) for i in nodes],
-            edges=[dict(index=index,source=e['source'],target=e['target'],lag=e['lag'],sign=e['sign'],label=f"predicts C{e['target']:02d}, lag {e['lag']}") for index,e in displayed],
+            edges=[dict(index=index,source=e['source'],target=e['target'],lag=e['lag'],lag_seconds=e['lag']*(300 if dataset=='intel' else 1),sign=e['sign'],label=f"predicts C{e['target']:02d}, lag {e['lag']*(300 if dataset=='intel' else 1)} s") for index,e in displayed],
             pruning_rule='All selected suspects and witnesses retained. Context uses a fixed spanning forest of strong stored relations. Coordinates use seed 9026 and deterministic collision adjustment, never fault labels.',
             sample_seconds=300 if dataset=='intel' else 1,layout_seed=9026)
-        artifact=str((directory/'test'/case['raw_artifact']).relative_to(ROOT));run_id=dataset+':'+hashlib.sha256((directory/'frozen.json').read_bytes()).hexdigest()[:16]
+        artifact=str((directory/'test'/case['raw_artifact']).relative_to(ROOT))
+        run_hash=hashlib.sha256((directory/'test/provenance.json').read_bytes()+(directory/'frozen.json').read_bytes()).hexdigest()[:16]
+        run_id=dataset+':'+run_hash;window_id=dataset+':'+case['id']+':'+case['raw_sha256'][:16]
+        for hypothesis in hypotheses:hypothesis['id']=window_id+':'+run_hash+':'+hypothesis['kind']+':'+str(hypothesis['index'])
         run=dict(id=run_id,ensemble_seeds=[1101,2202,3303],members=3,replicates=8,predictive_samples=8,
             manifest=str((directory/'test/provenance.json').relative_to(ROOT)),manifest_sha256=hashlib.sha256((directory/'test/provenance.json').read_bytes()).hexdigest())
         process_p=float(null_tail_value(cal['null_references']['observation/gdn'],np.nanmax(np.asarray(case['baseline_sensor_scores']['gdn'],dtype=float))))
-        bundle=dict(process_alert=process_p<=.05,process_null_tail=process_p,dataset=dataset,case=case,hypotheses=hypotheses,artifact=artifact,view=view,run=run,
+        bundle=dict(window_id=window_id,process_alert=process_p<=.05,process_null_tail=process_p,dataset=dataset,case=case,hypotheses=hypotheses,artifact=artifact,view=view,run=run,
             association_context=provenance_context,
             median=meta['normalizer']['median'],scale=meta['normalizer']['scale'],units=meta['units'],
             selection_rule='largest correctly localized observation score, if available' if label=='illustration' else 'first failed localization in stable file order, if available',

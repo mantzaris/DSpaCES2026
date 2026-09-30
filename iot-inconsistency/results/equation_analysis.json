@@ -1,0 +1,2817 @@
+{
+  "synthetic_32_linear": {
+    "development_grid": [
+      {
+        "kappa": 0,
+        "lambda": 0,
+        "window_ap": 0.843308892951029
+      },
+      {
+        "kappa": 0,
+        "lambda": 0.05,
+        "window_ap": 0.8367087466592391
+      },
+      {
+        "kappa": 0,
+        "lambda": 0.2,
+        "window_ap": 0.8242974335585
+      },
+      {
+        "kappa": 0.5,
+        "lambda": 0,
+        "window_ap": 0.8453397043619457
+      },
+      {
+        "kappa": 0.5,
+        "lambda": 0.05,
+        "window_ap": 0.8219384853639987
+      },
+      {
+        "kappa": 0.5,
+        "lambda": 0.2,
+        "window_ap": 0.8132517509488746
+      },
+      {
+        "kappa": 1,
+        "lambda": 0,
+        "window_ap": 0.8004342082910052
+      },
+      {
+        "kappa": 1,
+        "lambda": 0.05,
+        "window_ap": 0.7968490305076876
+      },
+      {
+        "kappa": 1,
+        "lambda": 0.2,
+        "window_ap": 0.783111932480293
+      },
+      {
+        "kappa": 2,
+        "lambda": 0,
+        "window_ap": 0.7863068894777494
+      },
+      {
+        "kappa": 2,
+        "lambda": 0.05,
+        "window_ap": 0.7762261512276996
+      },
+      {
+        "kappa": 2,
+        "lambda": 0.2,
+        "window_ap": 0.7309150883501634
+      }
+    ],
+    "sampling_sensitivity": [
+      {
+        "path": "results/sensitivity/synthetic_32_linear/case0_E1_uncertainty_free.json",
+        "E": 1,
+        "M": 8,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": null,
+        "peak_bytes": null,
+        "top1": false,
+        "median_monte_carlo_se": null,
+        "median_instability": null,
+        "scope": "first-member gain with shared ensemble cost, U undefined"
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_linear/case0_E2_M8_L8_amp1.json",
+        "E": 2,
+        "M": 8,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.15572913130745292,
+        "peak_bytes": 364326400,
+        "top1": false,
+        "median_monte_carlo_se": 0.00013992123569181374,
+        "median_instability": 0.0007237679809462005
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_linear/case0_E3_M16_L8_amp1.json",
+        "E": 3,
+        "M": 16,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.38088650396093726,
+        "peak_bytes": 624510464,
+        "top1": false,
+        "median_monte_carlo_se": 9.40513463798962e-05,
+        "median_instability": 0.0007881424043610365
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_linear/case0_E3_M2_L8_amp1.json",
+        "E": 3,
+        "M": 2,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.371794231235981,
+        "peak_bytes": 172445184,
+        "top1": false,
+        "median_monte_carlo_se": 0.0002711607566188495,
+        "median_instability": 0.0013826443310872255
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_linear/case0_E3_M4_L8_amp1.json",
+        "E": 3,
+        "M": 4,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.15749782836064696,
+        "peak_bytes": 238153216,
+        "top1": false,
+        "median_monte_carlo_se": 0.00017707421619540497,
+        "median_instability": 0.0008488390578199475
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_linear/case0_E3_M8_L16_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 16,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.37162324134260416,
+        "peak_bytes": 597276160,
+        "top1": false,
+        "median_monte_carlo_se": 9.021625604809118e-05,
+        "median_instability": 0.0007809195778655688
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_linear/case0_E3_M8_L4_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 4,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.1568999490700662,
+        "peak_bytes": 249916928,
+        "top1": false,
+        "median_monte_carlo_se": 0.0001762162021797966,
+        "median_instability": 0.0008831667150615848
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_linear/case0_E3_M8_L8_amp0.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 0,
+        "amp": false,
+        "seconds": 0.8052824158221483,
+        "peak_bytes": 454955520,
+        "top1": false,
+        "median_monte_carlo_se": 9.923132368367277e-05,
+        "median_instability": 0.0008951261547996853
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_linear/case0_E3_M8_L8_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.23153719026595354,
+        "peak_bytes": 364656128,
+        "top1": false,
+        "median_monte_carlo_se": 0.000142145133214824,
+        "median_instability": 0.0009849714211748169
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_linear/case1_E1_uncertainty_free.json",
+        "E": 1,
+        "M": 8,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": null,
+        "peak_bytes": null,
+        "top1": true,
+        "median_monte_carlo_se": null,
+        "median_instability": null,
+        "scope": "first-member gain with shared ensemble cost, U undefined"
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_linear/case1_E2_M8_L8_amp1.json",
+        "E": 2,
+        "M": 8,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.15584697108715773,
+        "peak_bytes": 364326400,
+        "top1": true,
+        "median_monte_carlo_se": 0.0011370921699807306,
+        "median_instability": 0.0023307271241680967
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_linear/case1_E3_M16_L8_amp1.json",
+        "E": 3,
+        "M": 16,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.38037308398634195,
+        "peak_bytes": 624510464,
+        "top1": true,
+        "median_monte_carlo_se": 0.0013455481978166704,
+        "median_instability": 0.013720038906823611
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_linear/case1_E3_M2_L8_amp1.json",
+        "E": 3,
+        "M": 2,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.13281410420313478,
+        "peak_bytes": 172445184,
+        "top1": true,
+        "median_monte_carlo_se": 0.0025255632865127994,
+        "median_instability": 0.010602263093913293
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_linear/case1_E3_M4_L8_amp1.json",
+        "E": 3,
+        "M": 4,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.15687863901257515,
+        "peak_bytes": 238153216,
+        "top1": true,
+        "median_monte_carlo_se": 0.0022358218013984856,
+        "median_instability": 0.010442743349516337
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_linear/case1_E3_M8_L16_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 16,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.3729172279126942,
+        "peak_bytes": 597276160,
+        "top1": true,
+        "median_monte_carlo_se": 0.001559305879126389,
+        "median_instability": 0.017385555021947236
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_linear/case1_E3_M8_L4_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 4,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.15836632577702403,
+        "peak_bytes": 249916928,
+        "top1": true,
+        "median_monte_carlo_se": 0.002253700132381358,
+        "median_instability": 0.01704717560292384
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_linear/case1_E3_M8_L8_amp0.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 1,
+        "amp": false,
+        "seconds": 0.8058140249922872,
+        "peak_bytes": 454955520,
+        "top1": true,
+        "median_monte_carlo_se": 0.0019690308441276372,
+        "median_instability": 0.016061035220313265
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_linear/case1_E3_M8_L8_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.23065563198179007,
+        "peak_bytes": 364656128,
+        "top1": true,
+        "median_monte_carlo_se": 0.001968329375285441,
+        "median_instability": 0.01641692495340461
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_linear/case2_E1_uncertainty_free.json",
+        "E": 1,
+        "M": 8,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": null,
+        "peak_bytes": null,
+        "top1": true,
+        "median_monte_carlo_se": null,
+        "median_instability": null,
+        "scope": "first-member gain with shared ensemble cost, U undefined"
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_linear/case2_E2_M8_L8_amp1.json",
+        "E": 2,
+        "M": 8,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.15588700026273727,
+        "peak_bytes": 364326400,
+        "top1": true,
+        "median_monte_carlo_se": 0.0006372577857975698,
+        "median_instability": 0.001607458123821113
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_linear/case2_E3_M16_L8_amp1.json",
+        "E": 3,
+        "M": 16,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.382755939848721,
+        "peak_bytes": 624510464,
+        "top1": true,
+        "median_monte_carlo_se": 0.0006640643104582712,
+        "median_instability": 0.007113188460628539
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_linear/case2_E3_M2_L8_amp1.json",
+        "E": 3,
+        "M": 2,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.13215179508551955,
+        "peak_bytes": 172445184,
+        "top1": true,
+        "median_monte_carlo_se": 0.0013667168903292878,
+        "median_instability": 0.003948690022160414
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_linear/case2_E3_M4_L8_amp1.json",
+        "E": 3,
+        "M": 4,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.1565065300092101,
+        "peak_bytes": 238153216,
+        "top1": true,
+        "median_monte_carlo_se": 0.0011198698607210774,
+        "median_instability": 0.006035888195357386
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_linear/case2_E3_M8_L16_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 16,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.3731459970586002,
+        "peak_bytes": 597276160,
+        "top1": true,
+        "median_monte_carlo_se": 0.0005738718425591161,
+        "median_instability": 0.009189260719654122
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_linear/case2_E3_M8_L4_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 4,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.15814031707122922,
+        "peak_bytes": 249916928,
+        "top1": true,
+        "median_monte_carlo_se": 0.001234793794127895,
+        "median_instability": 0.007320752374593164
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_linear/case2_E3_M8_L8_amp0.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 2,
+        "amp": false,
+        "seconds": 0.8058488150127232,
+        "peak_bytes": 454955520,
+        "top1": true,
+        "median_monte_carlo_se": 0.0006130600006854843,
+        "median_instability": 0.008657952857081815
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_linear/case2_E3_M8_L8_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.23178766015917063,
+        "peak_bytes": 364656128,
+        "top1": true,
+        "median_monte_carlo_se": 0.0006227228176554495,
+        "median_instability": 0.008850061595829488
+      }
+    ],
+    "ranking_reversal": {
+      "path": "results/study/synthetic_32_linear/development/development_0006_association.json",
+      "first": 30,
+      "second": 10,
+      "gain_difference": -0.0005468183483875082,
+      "instability_difference": -0.0012802000046412787,
+      "cost_difference": -0.001544051053416401,
+      "penalty_difference": -0.0015890102153245588,
+      "score_difference_at_zero": -0.0005468183483875082,
+      "score_difference_at_kappa1_lambda02": 0.0010421918669370506,
+      "interpretation": "The sign changes exactly where the displayed ranking inequality changes. This is a development example, not a performance estimate."
+    },
+    "stress_analysis": "results/robustness/synthetic_32_linear/analysis.json",
+    "term_correlations": {
+      "observation": {
+        "False": {
+          "mean_gain": {
+            "median": -0.004343403033393163,
+            "quantiles": [
+              -0.016573602848075096,
+              1.089509169105451e-07
+            ]
+          },
+          "model_instability": {
+            "median": 0.00391358148039658,
+            "quantiles": [
+              0.0,
+              0.016196767695373968
+            ]
+          },
+          "edit_cost": {
+            "median": 0.019347229545625545,
+            "quantiles": [
+              0.0150646384217301,
+              0.02835819333817603
+            ]
+          },
+          "monte_carlo_standard_error": {
+            "median": 0.0011107425205110263,
+            "quantiles": [
+              0.0,
+              0.0029976175937945332
+            ]
+          }
+        },
+        "True": {
+          "mean_gain": {
+            "median": 0.005629568874186382,
+            "quantiles": [
+              -3.019714010103291e-07,
+              0.43784169491387775
+            ]
+          },
+          "model_instability": {
+            "median": 0.005244000385078082,
+            "quantiles": [
+              0.0,
+              0.02807132610908056
+            ]
+          },
+          "edit_cost": {
+            "median": 0.118285075826053,
+            "quantiles": [
+              0.030862543636057022,
+              0.36621240793158205
+            ]
+          },
+          "monte_carlo_standard_error": {
+            "median": 0.001560055559524337,
+            "quantiles": [
+              0.0,
+              0.0037440931812301073
+            ]
+          }
+        },
+        "gain_initial_loss_spearman": -0.21664573226862927,
+        "gain_degree_spearman": -0.35283588725632975
+      },
+      "association": {
+        "False": {
+          "mean_gain": {
+            "median": 0.00020388974492864992,
+            "quantiles": [
+              -0.0014038094975949394,
+              0.00300473047975326
+            ]
+          },
+          "model_instability": {
+            "median": 0.000677034080294533,
+            "quantiles": [
+              0.00018490296980421832,
+              0.0028942415663093914
+            ]
+          },
+          "edit_cost": {
+            "median": 0.010416666666666666,
+            "quantiles": [
+              0.010416666666666666,
+              0.010416666666666666
+            ]
+          },
+          "monte_carlo_standard_error": {
+            "median": 0.0001272867990519547,
+            "quantiles": [
+              6.569628737740288e-05,
+              0.00032705472711180183
+            ]
+          }
+        },
+        "True": {
+          "mean_gain": {
+            "median": 0.052337752921318405,
+            "quantiles": [
+              0.0024260736715708245,
+              0.14628041240281775
+            ]
+          },
+          "model_instability": {
+            "median": 0.013474140961469875,
+            "quantiles": [
+              0.0031594961164415594,
+              0.04177761785585347
+            ]
+          },
+          "edit_cost": {
+            "median": 0.010416666666666666,
+            "quantiles": [
+              0.010416666666666666,
+              0.010416666666666666
+            ]
+          },
+          "monte_carlo_standard_error": {
+            "median": 0.0018170197325143825,
+            "quantiles": [
+              0.00045904916719189846,
+              0.0032225675666582875
+            ]
+          }
+        },
+        "gain_initial_loss_spearman": 0.224600734701318,
+        "gain_degree_spearman": -0.07631157930334508
+      }
+    }
+  },
+  "synthetic_32_nonlinear": {
+    "development_grid": [
+      {
+        "kappa": 0,
+        "lambda": 0,
+        "window_ap": 0.9007526830997896
+      },
+      {
+        "kappa": 0,
+        "lambda": 0.05,
+        "window_ap": 0.8998973937304574
+      },
+      {
+        "kappa": 0,
+        "lambda": 0.2,
+        "window_ap": 0.8957004840436016
+      },
+      {
+        "kappa": 0.5,
+        "lambda": 0,
+        "window_ap": 0.8948474190203415
+      },
+      {
+        "kappa": 0.5,
+        "lambda": 0.05,
+        "window_ap": 0.8932935646822373
+      },
+      {
+        "kappa": 0.5,
+        "lambda": 0.2,
+        "window_ap": 0.8834779458997013
+      },
+      {
+        "kappa": 1,
+        "lambda": 0,
+        "window_ap": 0.8927726243342301
+      },
+      {
+        "kappa": 1,
+        "lambda": 0.05,
+        "window_ap": 0.8852559294075234
+      },
+      {
+        "kappa": 1,
+        "lambda": 0.2,
+        "window_ap": 0.8779969968570485
+      },
+      {
+        "kappa": 2,
+        "lambda": 0,
+        "window_ap": 0.8708073321763663
+      },
+      {
+        "kappa": 2,
+        "lambda": 0.05,
+        "window_ap": 0.8699211401146731
+      },
+      {
+        "kappa": 2,
+        "lambda": 0.2,
+        "window_ap": 0.867702130806423
+      }
+    ],
+    "sampling_sensitivity": [
+      {
+        "path": "results/sensitivity/synthetic_32_nonlinear/case0_E1_uncertainty_free.json",
+        "E": 1,
+        "M": 8,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": null,
+        "peak_bytes": null,
+        "top1": true,
+        "median_monte_carlo_se": null,
+        "median_instability": null,
+        "scope": "first-member gain with shared ensemble cost, U undefined"
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_nonlinear/case0_E2_M8_L8_amp1.json",
+        "E": 2,
+        "M": 8,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.1574333282187581,
+        "peak_bytes": 364326400,
+        "top1": true,
+        "median_monte_carlo_se": 0.001548369048688609,
+        "median_instability": 0.001834575757307725
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_nonlinear/case0_E3_M16_L8_amp1.json",
+        "E": 3,
+        "M": 16,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.38647336326539516,
+        "peak_bytes": 624510464,
+        "top1": true,
+        "median_monte_carlo_se": 0.0008165544649944692,
+        "median_instability": 0.0023333959538861873
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_nonlinear/case0_E3_M2_L8_amp1.json",
+        "E": 3,
+        "M": 2,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.3703891928307712,
+        "peak_bytes": 172445184,
+        "top1": true,
+        "median_monte_carlo_se": 0.0019856589041508514,
+        "median_instability": 0.0021868286848083333
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_nonlinear/case0_E3_M4_L8_amp1.json",
+        "E": 3,
+        "M": 4,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.1586569850333035,
+        "peak_bytes": 238153216,
+        "top1": true,
+        "median_monte_carlo_se": 0.0015612775093644643,
+        "median_instability": 0.0033859805871183026
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_nonlinear/case0_E3_M8_L16_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 16,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.3768492410890758,
+        "peak_bytes": 597276160,
+        "top1": true,
+        "median_monte_carlo_se": 0.0009247545562266111,
+        "median_instability": 0.0031631273037993
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_nonlinear/case0_E3_M8_L4_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 4,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.16078419238328934,
+        "peak_bytes": 249916928,
+        "top1": true,
+        "median_monte_carlo_se": 0.0014560410512136604,
+        "median_instability": 0.004172463030149131
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_nonlinear/case0_E3_M8_L8_amp0.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 0,
+        "amp": false,
+        "seconds": 0.8170778742060065,
+        "peak_bytes": 454955520,
+        "top1": true,
+        "median_monte_carlo_se": 0.0012402190778535967,
+        "median_instability": 0.003791443620803716
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_nonlinear/case0_E3_M8_L8_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.23413436580449343,
+        "peak_bytes": 364656128,
+        "top1": true,
+        "median_monte_carlo_se": 0.0012153638886496666,
+        "median_instability": 0.003895178117852909
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_nonlinear/case1_E1_uncertainty_free.json",
+        "E": 1,
+        "M": 8,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": null,
+        "peak_bytes": null,
+        "top1": true,
+        "median_monte_carlo_se": null,
+        "median_instability": null,
+        "scope": "first-member gain with shared ensemble cost, U undefined"
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_nonlinear/case1_E2_M8_L8_amp1.json",
+        "E": 2,
+        "M": 8,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.15706684812903404,
+        "peak_bytes": 364326400,
+        "top1": true,
+        "median_monte_carlo_se": 0.0029602264821774462,
+        "median_instability": 0.013529331805943408
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_nonlinear/case1_E3_M16_L8_amp1.json",
+        "E": 3,
+        "M": 16,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.38598086405545473,
+        "peak_bytes": 624510464,
+        "top1": true,
+        "median_monte_carlo_se": 0.0031362160296522596,
+        "median_instability": 0.018726769963890548
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_nonlinear/case1_E3_M2_L8_amp1.json",
+        "E": 3,
+        "M": 2,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.1359075177460909,
+        "peak_bytes": 172445184,
+        "top1": true,
+        "median_monte_carlo_se": 0.005257325607718344,
+        "median_instability": 0.027037998188084663
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_nonlinear/case1_E3_M4_L8_amp1.json",
+        "E": 3,
+        "M": 4,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.15939647518098354,
+        "peak_bytes": 238153216,
+        "top1": true,
+        "median_monte_carlo_se": 0.005520545603354403,
+        "median_instability": 0.020435634372221456
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_nonlinear/case1_E3_M8_L16_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 16,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.3769722911529243,
+        "peak_bytes": 597276160,
+        "top1": true,
+        "median_monte_carlo_se": 0.0031694268009109143,
+        "median_instability": 0.020625655395126924
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_nonlinear/case1_E3_M8_L4_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 4,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.1606369917280972,
+        "peak_bytes": 249916928,
+        "top1": true,
+        "median_monte_carlo_se": 0.0041049632550270426,
+        "median_instability": 0.011870870594924303
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_nonlinear/case1_E3_M8_L8_amp0.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 1,
+        "amp": false,
+        "seconds": 0.8183234520256519,
+        "peak_bytes": 454955520,
+        "top1": true,
+        "median_monte_carlo_se": 0.003945859653937833,
+        "median_instability": 0.017381088268263352
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_nonlinear/case1_E3_M8_L8_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.23471673391759396,
+        "peak_bytes": 364656128,
+        "top1": true,
+        "median_monte_carlo_se": 0.003922628007815392,
+        "median_instability": 0.017303084014594135
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_nonlinear/case2_E1_uncertainty_free.json",
+        "E": 1,
+        "M": 8,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": null,
+        "peak_bytes": null,
+        "top1": true,
+        "median_monte_carlo_se": null,
+        "median_instability": null,
+        "scope": "first-member gain with shared ensemble cost, U undefined"
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_nonlinear/case2_E2_M8_L8_amp1.json",
+        "E": 2,
+        "M": 8,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.1580615770071745,
+        "peak_bytes": 364326400,
+        "top1": true,
+        "median_monte_carlo_se": 0.0025680321159768467,
+        "median_instability": 0.011056805333827826
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_nonlinear/case2_E3_M16_L8_amp1.json",
+        "E": 3,
+        "M": 16,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.3869932219386101,
+        "peak_bytes": 624510464,
+        "top1": true,
+        "median_monte_carlo_se": 0.001961186161941075,
+        "median_instability": 0.015893351351726395
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_nonlinear/case2_E3_M2_L8_amp1.json",
+        "E": 3,
+        "M": 2,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.1356328590773046,
+        "peak_bytes": 172445184,
+        "top1": true,
+        "median_monte_carlo_se": 0.005769079871083283,
+        "median_instability": 0.01826025353587928
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_nonlinear/case2_E3_M4_L8_amp1.json",
+        "E": 3,
+        "M": 4,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.15912249498069286,
+        "peak_bytes": 238153216,
+        "top1": true,
+        "median_monte_carlo_se": 0.004566698898992068,
+        "median_instability": 0.016435656658278678
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_nonlinear/case2_E3_M8_L16_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 16,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.378583328332752,
+        "peak_bytes": 597276160,
+        "top1": true,
+        "median_monte_carlo_se": 0.0020036376528434585,
+        "median_instability": 0.01467909302359139
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_nonlinear/case2_E3_M8_L4_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 4,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.1606032019481063,
+        "peak_bytes": 249916928,
+        "top1": true,
+        "median_monte_carlo_se": 0.0033782763382189038,
+        "median_instability": 0.017534419824963322
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_nonlinear/case2_E3_M8_L8_amp0.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 2,
+        "amp": false,
+        "seconds": 0.8191644409671426,
+        "peak_bytes": 454955520,
+        "top1": true,
+        "median_monte_carlo_se": 0.0026982278834831583,
+        "median_instability": 0.017198195136270602
+      },
+      {
+        "path": "results/sensitivity/synthetic_32_nonlinear/case2_E3_M8_L8_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.2337955655530095,
+        "peak_bytes": 364656128,
+        "top1": true,
+        "median_monte_carlo_se": 0.002730941669959068,
+        "median_instability": 0.01706763651679756
+      }
+    ],
+    "ranking_reversal": {
+      "path": "results/study/synthetic_32_nonlinear/development/development_0000_observation.json",
+      "first": 10,
+      "second": 30,
+      "gain_difference": -0.0026140566769754514,
+      "instability_difference": 0.0032194651557817663,
+      "cost_difference": -0.03742470090380973,
+      "penalty_difference": -0.00426547502498018,
+      "score_difference_at_zero": -0.0026140566769754514,
+      "score_difference_at_kappa1_lambda02": 0.0016514183480047283,
+      "interpretation": "The sign changes exactly where the displayed ranking inequality changes. This is a development example, not a performance estimate."
+    },
+    "stress_analysis": "results/robustness/synthetic_32_nonlinear/analysis.json",
+    "term_correlations": {
+      "observation": {
+        "False": {
+          "mean_gain": {
+            "median": -0.006819781962500807,
+            "quantiles": [
+              -0.03915979547430955,
+              0.0004414338016186884
+            ]
+          },
+          "model_instability": {
+            "median": 0.005634019301678011,
+            "quantiles": [
+              0.001478141449866528,
+              0.020224414811232966
+            ]
+          },
+          "edit_cost": {
+            "median": 0.01996810505306712,
+            "quantiles": [
+              0.014943089148598826,
+              0.03353799455281761
+            ]
+          },
+          "monte_carlo_standard_error": {
+            "median": 0.002039990356549262,
+            "quantiles": [
+              0.0007367581001475116,
+              0.0061401368309532455
+            ]
+          }
+        },
+        "True": {
+          "mean_gain": {
+            "median": 0.16284360724500857,
+            "quantiles": [
+              0.0007563102626591154,
+              0.7409447137848475
+            ]
+          },
+          "model_instability": {
+            "median": 0.026312419956187324,
+            "quantiles": [
+              0.007418168182177767,
+              0.08999745032944173
+            ]
+          },
+          "edit_cost": {
+            "median": 0.13570869457907975,
+            "quantiles": [
+              0.035215154949886106,
+              0.45487865593361987
+            ]
+          },
+          "monte_carlo_standard_error": {
+            "median": 0.003641677382094948,
+            "quantiles": [
+              0.002056500474540631,
+              0.009505759593102441
+            ]
+          }
+        },
+        "gain_initial_loss_spearman": -0.21299576876711018,
+        "gain_degree_spearman": 0.035321867936176865
+      },
+      "association": {
+        "False": {
+          "mean_gain": {
+            "median": 0.0003408081271678576,
+            "quantiles": [
+              -0.006821091533917448,
+              0.017216560561488826
+            ]
+          },
+          "model_instability": {
+            "median": 0.0015571233661614684,
+            "quantiles": [
+              0.0003449997197161118,
+              0.00713288258847221
+            ]
+          },
+          "edit_cost": {
+            "median": 0.010416666666666666,
+            "quantiles": [
+              0.010416666666666666,
+              0.010416666666666666
+            ]
+          },
+          "monte_carlo_standard_error": {
+            "median": 0.0003110265968420462,
+            "quantiles": [
+              0.00010944755620924943,
+              0.0010755022795782732
+            ]
+          }
+        },
+        "True": {
+          "mean_gain": {
+            "median": 0.054461842689998895,
+            "quantiles": [
+              -0.001968798951240046,
+              0.2369612080891926
+            ]
+          },
+          "model_instability": {
+            "median": 0.011058538655732602,
+            "quantiles": [
+              0.0033030520774636443,
+              0.02868117966636659
+            ]
+          },
+          "edit_cost": {
+            "median": 0.010416666666666666,
+            "quantiles": [
+              0.010416666666666666,
+              0.010416666666666666
+            ]
+          },
+          "monte_carlo_standard_error": {
+            "median": 0.002181270316280045,
+            "quantiles": [
+              0.0006913329812439236,
+              0.004725558940003165
+            ]
+          }
+        },
+        "gain_initial_loss_spearman": 0.27470250076226205,
+        "gain_degree_spearman": -0.010155303280614729
+      }
+    }
+  },
+  "synthetic_64_nonlinear": {
+    "development_grid": [
+      {
+        "kappa": 0,
+        "lambda": 0,
+        "window_ap": 0.8221624102848248
+      },
+      {
+        "kappa": 0,
+        "lambda": 0.05,
+        "window_ap": 0.8263817130391893
+      },
+      {
+        "kappa": 0,
+        "lambda": 0.2,
+        "window_ap": 0.8193285894243342
+      },
+      {
+        "kappa": 0.5,
+        "lambda": 0,
+        "window_ap": 0.8495995183809728
+      },
+      {
+        "kappa": 0.5,
+        "lambda": 0.05,
+        "window_ap": 0.843023303640474
+      },
+      {
+        "kappa": 0.5,
+        "lambda": 0.2,
+        "window_ap": 0.825109444180429
+      },
+      {
+        "kappa": 1,
+        "lambda": 0,
+        "window_ap": 0.8234869789526801
+      },
+      {
+        "kappa": 1,
+        "lambda": 0.05,
+        "window_ap": 0.8245898316989007
+      },
+      {
+        "kappa": 1,
+        "lambda": 0.2,
+        "window_ap": 0.7915707934712557
+      },
+      {
+        "kappa": 2,
+        "lambda": 0,
+        "window_ap": 0.7489046972221304
+      },
+      {
+        "kappa": 2,
+        "lambda": 0.05,
+        "window_ap": 0.7567787216948184
+      },
+      {
+        "kappa": 2,
+        "lambda": 0.2,
+        "window_ap": 0.7645557696598483
+      }
+    ],
+    "sampling_sensitivity": [
+      {
+        "path": "results/sensitivity/synthetic_64_nonlinear/case0_E1_uncertainty_free.json",
+        "E": 1,
+        "M": 8,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": null,
+        "peak_bytes": null,
+        "top1": true,
+        "median_monte_carlo_se": null,
+        "median_instability": null,
+        "scope": "first-member gain with shared ensemble cost, U undefined"
+      },
+      {
+        "path": "results/sensitivity/synthetic_64_nonlinear/case0_E2_M8_L8_amp1.json",
+        "E": 2,
+        "M": 8,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.25932963704690337,
+        "peak_bytes": 622857728,
+        "top1": true,
+        "median_monte_carlo_se": 0.004891756620296908,
+        "median_instability": 0.0380757328733892
+      },
+      {
+        "path": "results/sensitivity/synthetic_64_nonlinear/case0_E3_M16_L8_amp1.json",
+        "E": 3,
+        "M": 16,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.707012155558914,
+        "peak_bytes": 1139648000,
+        "top1": true,
+        "median_monte_carlo_se": 0.003328592555937778,
+        "median_instability": 0.024845498856100035
+      },
+      {
+        "path": "results/sensitivity/synthetic_64_nonlinear/case0_E3_M2_L8_amp1.json",
+        "E": 3,
+        "M": 2,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.39422769099473953,
+        "peak_bytes": 238333440,
+        "top1": true,
+        "median_monte_carlo_se": 0.0033691650695552395,
+        "median_instability": 0.02470557604089814
+      },
+      {
+        "path": "results/sensitivity/synthetic_64_nonlinear/case0_E3_M4_L8_amp1.json",
+        "E": 3,
+        "M": 4,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.2441574763506651,
+        "peak_bytes": 364760576,
+        "top1": true,
+        "median_monte_carlo_se": 0.003320388989390087,
+        "median_instability": 0.02218647124328128
+      },
+      {
+        "path": "results/sensitivity/synthetic_64_nonlinear/case0_E3_M8_L16_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 16,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.6893915389664471,
+        "peak_bytes": 1087477248,
+        "top1": true,
+        "median_monte_carlo_se": 0.003712940352966268,
+        "median_instability": 0.02937601228406577
+      },
+      {
+        "path": "results/sensitivity/synthetic_64_nonlinear/case0_E3_M8_L4_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 4,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.2444979650899768,
+        "peak_bytes": 392910336,
+        "top1": true,
+        "median_monte_carlo_se": 0.0036337282498141964,
+        "median_instability": 0.030382283198723496
+      },
+      {
+        "path": "results/sensitivity/synthetic_64_nonlinear/case0_E3_M8_L8_amp0.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 0,
+        "amp": false,
+        "seconds": 1.5232835430651903,
+        "peak_bytes": 817164800,
+        "top1": true,
+        "median_monte_carlo_se": 0.0037611549660545632,
+        "median_instability": 0.027456416015137042
+      },
+      {
+        "path": "results/sensitivity/synthetic_64_nonlinear/case0_E3_M8_L8_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.3883214918896556,
+        "peak_bytes": 624465408,
+        "top1": true,
+        "median_monte_carlo_se": 0.0038265387120990707,
+        "median_instability": 0.028347725097298014
+      },
+      {
+        "path": "results/sensitivity/synthetic_64_nonlinear/case1_E1_uncertainty_free.json",
+        "E": 1,
+        "M": 8,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": null,
+        "peak_bytes": null,
+        "top1": false,
+        "median_monte_carlo_se": null,
+        "median_instability": null,
+        "scope": "first-member gain with shared ensemble cost, U undefined"
+      },
+      {
+        "path": "results/sensitivity/synthetic_64_nonlinear/case1_E2_M8_L8_amp1.json",
+        "E": 2,
+        "M": 8,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.2605702839791775,
+        "peak_bytes": 622857728,
+        "top1": false,
+        "median_monte_carlo_se": 0.0016233390872558765,
+        "median_instability": 0.0037538992073736
+      },
+      {
+        "path": "results/sensitivity/synthetic_64_nonlinear/case1_E3_M16_L8_amp1.json",
+        "E": 3,
+        "M": 16,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.7092440607957542,
+        "peak_bytes": 1139648000,
+        "top1": false,
+        "median_monte_carlo_se": 0.0009672111599396591,
+        "median_instability": 0.003527885113673391
+      },
+      {
+        "path": "results/sensitivity/synthetic_64_nonlinear/case1_E3_M2_L8_amp1.json",
+        "E": 3,
+        "M": 2,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.1614277227781713,
+        "peak_bytes": 238333440,
+        "top1": false,
+        "median_monte_carlo_se": 0.0028306455532800374,
+        "median_instability": 0.005972095142271478
+      },
+      {
+        "path": "results/sensitivity/synthetic_64_nonlinear/case1_E3_M4_L8_amp1.json",
+        "E": 3,
+        "M": 4,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.2367405197583139,
+        "peak_bytes": 364760576,
+        "top1": false,
+        "median_monte_carlo_se": 0.001381871981028929,
+        "median_instability": 0.004440007680064465
+      },
+      {
+        "path": "results/sensitivity/synthetic_64_nonlinear/case1_E3_M8_L16_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 16,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.6920414650812745,
+        "peak_bytes": 1087477248,
+        "top1": false,
+        "median_monte_carlo_se": 0.0015117282937948983,
+        "median_instability": 0.004063047910254237
+      },
+      {
+        "path": "results/sensitivity/synthetic_64_nonlinear/case1_E3_M8_L4_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 4,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.24423202499747276,
+        "peak_bytes": 392910336,
+        "top1": false,
+        "median_monte_carlo_se": 0.0015582668333041579,
+        "median_instability": 0.0031260629582251422
+      },
+      {
+        "path": "results/sensitivity/synthetic_64_nonlinear/case1_E3_M8_L8_amp0.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 1,
+        "amp": false,
+        "seconds": 1.5262548071332276,
+        "peak_bytes": 817164800,
+        "top1": false,
+        "median_monte_carlo_se": 0.0014759706089302437,
+        "median_instability": 0.004054430973488748
+      },
+      {
+        "path": "results/sensitivity/synthetic_64_nonlinear/case1_E3_M8_L8_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.3876438429579139,
+        "peak_bytes": 624465408,
+        "top1": false,
+        "median_monte_carlo_se": 0.0014643677185747306,
+        "median_instability": 0.004144488680923325
+      },
+      {
+        "path": "results/sensitivity/synthetic_64_nonlinear/case2_E1_uncertainty_free.json",
+        "E": 1,
+        "M": 8,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": null,
+        "peak_bytes": null,
+        "top1": true,
+        "median_monte_carlo_se": null,
+        "median_instability": null,
+        "scope": "first-member gain with shared ensemble cost, U undefined"
+      },
+      {
+        "path": "results/sensitivity/synthetic_64_nonlinear/case2_E2_M8_L8_amp1.json",
+        "E": 2,
+        "M": 8,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.2602107049897313,
+        "peak_bytes": 622857728,
+        "top1": true,
+        "median_monte_carlo_se": 0.004811471555719557,
+        "median_instability": 0.03475606673738009
+      },
+      {
+        "path": "results/sensitivity/synthetic_64_nonlinear/case2_E3_M16_L8_amp1.json",
+        "E": 3,
+        "M": 16,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.7096968102268875,
+        "peak_bytes": 1139648000,
+        "top1": true,
+        "median_monte_carlo_se": 0.0035714415775155777,
+        "median_instability": 0.027323750358087394
+      },
+      {
+        "path": "results/sensitivity/synthetic_64_nonlinear/case2_E3_M2_L8_amp1.json",
+        "E": 3,
+        "M": 2,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.1623518019914627,
+        "peak_bytes": 238333440,
+        "top1": true,
+        "median_monte_carlo_se": 0.005770679525054208,
+        "median_instability": 0.029850852267972898
+      },
+      {
+        "path": "results/sensitivity/synthetic_64_nonlinear/case2_E3_M4_L8_amp1.json",
+        "E": 3,
+        "M": 4,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.23763726791366935,
+        "peak_bytes": 364760576,
+        "top1": true,
+        "median_monte_carlo_se": 0.006175260959321487,
+        "median_instability": 0.02816776119339078
+      },
+      {
+        "path": "results/sensitivity/synthetic_64_nonlinear/case2_E3_M8_L16_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 16,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.6923778927884996,
+        "peak_bytes": 1087477248,
+        "top1": true,
+        "median_monte_carlo_se": 0.00336616134803193,
+        "median_instability": 0.023297576424542804
+      },
+      {
+        "path": "results/sensitivity/synthetic_64_nonlinear/case2_E3_M8_L4_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 4,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.2449627136811614,
+        "peak_bytes": 392910336,
+        "top1": true,
+        "median_monte_carlo_se": 0.004429882830784415,
+        "median_instability": 0.023142949147658267
+      },
+      {
+        "path": "results/sensitivity/synthetic_64_nonlinear/case2_E3_M8_L8_amp0.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 2,
+        "amp": false,
+        "seconds": 1.5272800051607192,
+        "peak_bytes": 817164800,
+        "top1": true,
+        "median_monte_carlo_se": 0.0034730162896825733,
+        "median_instability": 0.02448613267672172
+      },
+      {
+        "path": "results/sensitivity/synthetic_64_nonlinear/case2_E3_M8_L8_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.3889636299572885,
+        "peak_bytes": 624465408,
+        "top1": true,
+        "median_monte_carlo_se": 0.003493940730797519,
+        "median_instability": 0.024982145035116796
+      }
+    ],
+    "ranking_reversal": {
+      "path": "results/study/synthetic_64_nonlinear/development/development_0000_association.json",
+      "first": 37,
+      "second": 23,
+      "gain_difference": -0.05884926882815004,
+      "instability_difference": -0.1027548201857473,
+      "cost_difference": -0.02312834827627499,
+      "penalty_difference": -0.1073804898410023,
+      "score_difference_at_zero": -0.05884926882815004,
+      "score_difference_at_kappa1_lambda02": 0.04853122101285226,
+      "interpretation": "The sign changes exactly where the displayed ranking inequality changes. This is a development example, not a performance estimate."
+    },
+    "stress_analysis": "results/robustness/synthetic_64_nonlinear/analysis.json",
+    "term_correlations": {
+      "observation": {
+        "False": {
+          "mean_gain": {
+            "median": -0.00559034795211725,
+            "quantiles": [
+              -0.0819813194803596,
+              0.011395887601475982
+            ]
+          },
+          "model_instability": {
+            "median": 0.018794986386264333,
+            "quantiles": [
+              7.743989990682583e-06,
+              0.10706068567311637
+            ]
+          },
+          "edit_cost": {
+            "median": 0.058969731629379865,
+            "quantiles": [
+              0.017965008652613,
+              0.16750363722660244
+            ]
+          },
+          "monte_carlo_standard_error": {
+            "median": 0.004975762627036369,
+            "quantiles": [
+              6.141855822484629e-06,
+              0.022461613770561415
+            ]
+          }
+        },
+        "True": {
+          "mean_gain": {
+            "median": 0.152426008494477,
+            "quantiles": [
+              -3.093962449914517e-06,
+              0.645995292246182
+            ]
+          },
+          "model_instability": {
+            "median": 0.04528909724641944,
+            "quantiles": [
+              0.002039713859395969,
+              0.1953085808272922
+            ]
+          },
+          "edit_cost": {
+            "median": 0.17593771766731456,
+            "quantiles": [
+              0.0762980560101116,
+              0.38483880588803204
+            ]
+          },
+          "monte_carlo_standard_error": {
+            "median": 0.006338116609998841,
+            "quantiles": [
+              0.0015247654720740148,
+              0.03016429929462075
+            ]
+          }
+        },
+        "gain_initial_loss_spearman": -0.021302297982223956,
+        "gain_degree_spearman": -0.05775813740052203
+      },
+      "association": {
+        "False": {
+          "mean_gain": {
+            "median": -0.0027941606061479734,
+            "quantiles": [
+              -0.08016700815530078,
+              0.042850298028198924
+            ]
+          },
+          "model_instability": {
+            "median": 0.03653175443016918,
+            "quantiles": [
+              0.006970610505425744,
+              0.11540426096440883
+            ]
+          },
+          "edit_cost": {
+            "median": 0.005208333333333333,
+            "quantiles": [
+              0.005208333333333333,
+              0.005208333333333333
+            ]
+          },
+          "monte_carlo_standard_error": {
+            "median": 0.0038780504217966554,
+            "quantiles": [
+              0.0014010812119374474,
+              0.0085808704555555
+            ]
+          }
+        },
+        "True": {
+          "mean_gain": {
+            "median": 0.02096124988906404,
+            "quantiles": [
+              -0.023844338997374592,
+              0.14017643831300575
+            ]
+          },
+          "model_instability": {
+            "median": 0.05403972197495428,
+            "quantiles": [
+              0.026845910937452592,
+              0.1745605761712516
+            ]
+          },
+          "edit_cost": {
+            "median": 0.005208333333333333,
+            "quantiles": [
+              0.005208333333333333,
+              0.005208333333333333
+            ]
+          },
+          "monte_carlo_standard_error": {
+            "median": 0.003972368719133561,
+            "quantiles": [
+              0.002122810840491515,
+              0.00978986413772969
+            ]
+          }
+        },
+        "gain_initial_loss_spearman": -0.053439565364111714,
+        "gain_degree_spearman": 0.26166918794152455
+      }
+    }
+  },
+  "intel": {
+    "development_grid": [
+      {
+        "kappa": 0,
+        "lambda": 0,
+        "window_ap": 0.8119031594371389
+      },
+      {
+        "kappa": 0,
+        "lambda": 0.05,
+        "window_ap": 0.8187534639118944
+      },
+      {
+        "kappa": 0,
+        "lambda": 0.2,
+        "window_ap": 0.78907386882866
+      },
+      {
+        "kappa": 0.5,
+        "lambda": 0,
+        "window_ap": 0.7456994824016965
+      },
+      {
+        "kappa": 0.5,
+        "lambda": 0.05,
+        "window_ap": 0.7511163174048237
+      },
+      {
+        "kappa": 0.5,
+        "lambda": 0.2,
+        "window_ap": 0.7311136837944455
+      },
+      {
+        "kappa": 1,
+        "lambda": 0,
+        "window_ap": 0.7599885226968534
+      },
+      {
+        "kappa": 1,
+        "lambda": 0.05,
+        "window_ap": 0.7329764094270381
+      },
+      {
+        "kappa": 1,
+        "lambda": 0.2,
+        "window_ap": 0.7243346781571551
+      },
+      {
+        "kappa": 2,
+        "lambda": 0,
+        "window_ap": 0.6890433144944841
+      },
+      {
+        "kappa": 2,
+        "lambda": 0.05,
+        "window_ap": 0.6594854597390549
+      },
+      {
+        "kappa": 2,
+        "lambda": 0.2,
+        "window_ap": 0.6210572446486331
+      }
+    ],
+    "sampling_sensitivity": [
+      {
+        "path": "results/sensitivity/intel/case0_E1_uncertainty_free.json",
+        "E": 1,
+        "M": 8,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": null,
+        "peak_bytes": null,
+        "top1": true,
+        "median_monte_carlo_se": null,
+        "median_instability": null,
+        "scope": "first-member gain with shared ensemble cost, U undefined"
+      },
+      {
+        "path": "results/sensitivity/intel/case0_E2_M8_L8_amp1.json",
+        "E": 2,
+        "M": 8,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.21004459960386157,
+        "peak_bytes": 498802176,
+        "top1": false,
+        "median_monte_carlo_se": 0.02900018718575835,
+        "median_instability": 0.07064641277547608
+      },
+      {
+        "path": "results/sensitivity/intel/case0_E3_M16_L8_amp1.json",
+        "E": 3,
+        "M": 16,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.5471951197832823,
+        "peak_bytes": 883144192,
+        "top1": true,
+        "median_monte_carlo_se": 0.0165629871886894,
+        "median_instability": 0.1551858353643161
+      },
+      {
+        "path": "results/sensitivity/intel/case0_E3_M2_L8_amp1.json",
+        "E": 3,
+        "M": 2,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.38593456614762545,
+        "peak_bytes": 205618688,
+        "top1": true,
+        "median_monte_carlo_se": 0.03228395624600421,
+        "median_instability": 0.11367099768112236
+      },
+      {
+        "path": "results/sensitivity/intel/case0_E3_M4_L8_amp1.json",
+        "E": 3,
+        "M": 4,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.19848504289984703,
+        "peak_bytes": 301686272,
+        "top1": true,
+        "median_monte_carlo_se": 0.026699412175666844,
+        "median_instability": 0.14408720378191125
+      },
+      {
+        "path": "results/sensitivity/intel/case0_E3_M8_L16_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 16,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.5325153479352593,
+        "peak_bytes": 846308864,
+        "top1": true,
+        "median_monte_carlo_se": 0.02114804506583013,
+        "median_instability": 0.1335337122465096
+      },
+      {
+        "path": "results/sensitivity/intel/case0_E3_M8_L4_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 4,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.2025182950310409,
+        "peak_bytes": 324265472,
+        "top1": true,
+        "median_monte_carlo_se": 0.030169300339531302,
+        "median_instability": 0.11156615444942734
+      },
+      {
+        "path": "results/sensitivity/intel/case0_E3_M8_L8_amp0.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 0,
+        "amp": false,
+        "seconds": 1.190480435732752,
+        "peak_bytes": 640811520,
+        "top1": true,
+        "median_monte_carlo_se": 0.02479822023324773,
+        "median_instability": 0.12892751727285867
+      },
+      {
+        "path": "results/sensitivity/intel/case0_E3_M8_L8_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.3138378029689193,
+        "peak_bytes": 498802176,
+        "top1": true,
+        "median_monte_carlo_se": 0.02509966262402151,
+        "median_instability": 0.12947573815520355
+      },
+      {
+        "path": "results/sensitivity/intel/case1_E1_uncertainty_free.json",
+        "E": 1,
+        "M": 8,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": null,
+        "peak_bytes": null,
+        "top1": true,
+        "median_monte_carlo_se": null,
+        "median_instability": null,
+        "scope": "first-member gain with shared ensemble cost, U undefined"
+      },
+      {
+        "path": "results/sensitivity/intel/case1_E2_M8_L8_amp1.json",
+        "E": 2,
+        "M": 8,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.20956792123615742,
+        "peak_bytes": 498802176,
+        "top1": false,
+        "median_monte_carlo_se": 0.00746639275887808,
+        "median_instability": 0.04679132654841215
+      },
+      {
+        "path": "results/sensitivity/intel/case1_E3_M16_L8_amp1.json",
+        "E": 3,
+        "M": 16,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.5488020260818303,
+        "peak_bytes": 883144192,
+        "top1": false,
+        "median_monte_carlo_se": 0.005291765963130681,
+        "median_instability": 0.05080813778630872
+      },
+      {
+        "path": "results/sensitivity/intel/case1_E3_M2_L8_amp1.json",
+        "E": 3,
+        "M": 2,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.14721819991245866,
+        "peak_bytes": 205618688,
+        "top1": false,
+        "median_monte_carlo_se": 0.014691429691081143,
+        "median_instability": 0.054682223644050586
+      },
+      {
+        "path": "results/sensitivity/intel/case1_E3_M4_L8_amp1.json",
+        "E": 3,
+        "M": 4,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.1985992332920432,
+        "peak_bytes": 301686272,
+        "top1": false,
+        "median_monte_carlo_se": 0.00841725558731737,
+        "median_instability": 0.04462166085809582
+      },
+      {
+        "path": "results/sensitivity/intel/case1_E3_M8_L16_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 16,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.53389234514907,
+        "peak_bytes": 846308864,
+        "top1": false,
+        "median_monte_carlo_se": 0.005306098240585445,
+        "median_instability": 0.049511582922772246
+      },
+      {
+        "path": "results/sensitivity/intel/case1_E3_M8_L4_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 4,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.2021086448803544,
+        "peak_bytes": 324265472,
+        "top1": false,
+        "median_monte_carlo_se": 0.00923342834798806,
+        "median_instability": 0.0494810167854226
+      },
+      {
+        "path": "results/sensitivity/intel/case1_E3_M8_L8_amp0.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 1,
+        "amp": false,
+        "seconds": 1.1880157310515642,
+        "peak_bytes": 640811520,
+        "top1": false,
+        "median_monte_carlo_se": 0.00615369684310587,
+        "median_instability": 0.04601812616015058
+      },
+      {
+        "path": "results/sensitivity/intel/case1_E3_M8_L8_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.31325287418439984,
+        "peak_bytes": 498802176,
+        "top1": false,
+        "median_monte_carlo_se": 0.006136568593122572,
+        "median_instability": 0.04539742165743138
+      },
+      {
+        "path": "results/sensitivity/intel/case2_E1_uncertainty_free.json",
+        "E": 1,
+        "M": 8,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": null,
+        "peak_bytes": null,
+        "top1": true,
+        "median_monte_carlo_se": null,
+        "median_instability": null,
+        "scope": "first-member gain with shared ensemble cost, U undefined"
+      },
+      {
+        "path": "results/sensitivity/intel/case2_E2_M8_L8_amp1.json",
+        "E": 2,
+        "M": 8,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.20959660224616528,
+        "peak_bytes": 498802176,
+        "top1": true,
+        "median_monte_carlo_se": 0.02929112000947519,
+        "median_instability": 0.130417610995579
+      },
+      {
+        "path": "results/sensitivity/intel/case2_E3_M16_L8_amp1.json",
+        "E": 3,
+        "M": 16,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.5483918469399214,
+        "peak_bytes": 883144192,
+        "top1": true,
+        "median_monte_carlo_se": 0.014829082790127159,
+        "median_instability": 0.10880673472506461
+      },
+      {
+        "path": "results/sensitivity/intel/case2_E3_M2_L8_amp1.json",
+        "E": 3,
+        "M": 2,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.1466450709849596,
+        "peak_bytes": 205618688,
+        "top1": true,
+        "median_monte_carlo_se": 0.02920915901818509,
+        "median_instability": 0.10182660335573226
+      },
+      {
+        "path": "results/sensitivity/intel/case2_E3_M4_L8_amp1.json",
+        "E": 3,
+        "M": 4,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.19587405771017075,
+        "peak_bytes": 301686272,
+        "top1": true,
+        "median_monte_carlo_se": 0.0245372947243344,
+        "median_instability": 0.07580260447695486
+      },
+      {
+        "path": "results/sensitivity/intel/case2_E3_M8_L16_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 16,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.5335838962346315,
+        "peak_bytes": 846308864,
+        "top1": true,
+        "median_monte_carlo_se": 0.016592835407447788,
+        "median_instability": 0.13133853806390444
+      },
+      {
+        "path": "results/sensitivity/intel/case2_E3_M8_L4_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 4,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.20062352810055017,
+        "peak_bytes": 324265472,
+        "top1": true,
+        "median_monte_carlo_se": 0.030888944245247702,
+        "median_instability": 0.09596573862263483
+      },
+      {
+        "path": "results/sensitivity/intel/case2_E3_M8_L8_amp0.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 2,
+        "amp": false,
+        "seconds": 1.185507734771818,
+        "peak_bytes": 640811520,
+        "top1": true,
+        "median_monte_carlo_se": 0.02137640846086044,
+        "median_instability": 0.10182933915053607
+      },
+      {
+        "path": "results/sensitivity/intel/case2_E3_M8_L8_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.31371368281543255,
+        "peak_bytes": 498802176,
+        "top1": true,
+        "median_monte_carlo_se": 0.021780826678823417,
+        "median_instability": 0.09996777609083791
+      }
+    ],
+    "ranking_reversal": {
+      "path": "results/study/intel/development/development_0000_association.json",
+      "first": 30,
+      "second": 45,
+      "gain_difference": -0.051569797614310964,
+      "instability_difference": -0.10532000591333607,
+      "cost_difference": 0.15033258211527328,
+      "penalty_difference": -0.0752534894902814,
+      "score_difference_at_zero": -0.051569797614310964,
+      "score_difference_at_kappa1_lambda02": 0.023683691875970445,
+      "interpretation": "The sign changes exactly where the displayed ranking inequality changes. This is a development example, not a performance estimate."
+    },
+    "stress_analysis": "results/robustness/intel/analysis.json",
+    "term_correlations": {
+      "observation": {
+        "False": {
+          "mean_gain": {
+            "median": 0.26773832204510484,
+            "quantiles": [
+              -0.22099976157151482,
+              3.5320152361921093
+            ]
+          },
+          "model_instability": {
+            "median": 1.0195284601962358,
+            "quantiles": [
+              0.05020712424345594,
+              4.081844679196609
+            ]
+          },
+          "edit_cost": {
+            "median": 0.5010683760683761,
+            "quantiles": [
+              0.1300168770752407,
+              0.50163132137031
+            ]
+          },
+          "monte_carlo_standard_error": {
+            "median": 0.03399384824679061,
+            "quantiles": [
+              0.005949300070350467,
+              0.08172900308962207
+            ]
+          }
+        },
+        "True": {
+          "mean_gain": {
+            "median": 2.023045620949314,
+            "quantiles": [
+              -0.03201525406135867,
+              5.277767935997422
+            ]
+          },
+          "model_instability": {
+            "median": 2.452941134720983,
+            "quantiles": [
+              0.14833798515501675,
+              4.861931194294752
+            ]
+          },
+          "edit_cost": {
+            "median": 0.5015432098765432,
+            "quantiles": [
+              0.29481221090312354,
+              0.5016393442622951
+            ]
+          },
+          "monte_carlo_standard_error": {
+            "median": 0.018464782784007445,
+            "quantiles": [
+              0.005036183078781805,
+              0.09590877812065762
+            ]
+          }
+        },
+        "gain_initial_loss_spearman": 0.694475060922262,
+        "gain_degree_spearman": 0.15597337116455492
+      },
+      "association": {
+        "False": {
+          "mean_gain": {
+            "median": 0.09575687024054735,
+            "quantiles": [
+              -0.628614710295829,
+              0.6864776073145686
+            ]
+          },
+          "model_instability": {
+            "median": 0.5116805168343201,
+            "quantiles": [
+              0.1373790889373246,
+              1.0795672865231694
+            ]
+          },
+          "edit_cost": {
+            "median": 0.006944444444444444,
+            "quantiles": [
+              0.006944444444444444,
+              0.006944444444444444
+            ]
+          },
+          "monte_carlo_standard_error": {
+            "median": 0.0055835665764963965,
+            "quantiles": [
+              0.0024130417152094037,
+              0.04955348805327638
+            ]
+          }
+        },
+        "True": {
+          "mean_gain": {
+            "median": 0.1532794035501297,
+            "quantiles": [
+              -0.26365444795770826,
+              1.304076206928583
+            ]
+          },
+          "model_instability": {
+            "median": 0.3643985528591931,
+            "quantiles": [
+              0.18238177810713924,
+              1.1058959743204646
+            ]
+          },
+          "edit_cost": {
+            "median": 0.006944444444444444,
+            "quantiles": [
+              0.006944444444444444,
+              0.006944444444444444
+            ]
+          },
+          "monte_carlo_standard_error": {
+            "median": 0.020584450940075986,
+            "quantiles": [
+              0.0030347098396165313,
+              0.07198397578309305
+            ]
+          }
+        },
+        "gain_initial_loss_spearman": -0.3430750799008549,
+        "gain_degree_spearman": 0.27421935992527185
+      }
+    }
+  },
+  "skab": {
+    "development_grid": [
+      {
+        "kappa": 0,
+        "lambda": 0,
+        "window_ap": 0.4692859131641855
+      },
+      {
+        "kappa": 0,
+        "lambda": 0.05,
+        "window_ap": 0.4700739897048643
+      },
+      {
+        "kappa": 0,
+        "lambda": 0.2,
+        "window_ap": 0.47208717868037386
+      },
+      {
+        "kappa": 0.5,
+        "lambda": 0,
+        "window_ap": 0.48206473901330515
+      },
+      {
+        "kappa": 0.5,
+        "lambda": 0.05,
+        "window_ap": 0.47675310443350827
+      },
+      {
+        "kappa": 0.5,
+        "lambda": 0.2,
+        "window_ap": 0.46877053753603526
+      },
+      {
+        "kappa": 1,
+        "lambda": 0,
+        "window_ap": 0.5245837479645536
+      },
+      {
+        "kappa": 1,
+        "lambda": 0.05,
+        "window_ap": 0.5003164215876386
+      },
+      {
+        "kappa": 1,
+        "lambda": 0.2,
+        "window_ap": 0.5053996309554617
+      },
+      {
+        "kappa": 2,
+        "lambda": 0,
+        "window_ap": 0.5126093466648575
+      },
+      {
+        "kappa": 2,
+        "lambda": 0.05,
+        "window_ap": 0.47923036658547125
+      },
+      {
+        "kappa": 2,
+        "lambda": 0.2,
+        "window_ap": 0.4645373945988353
+      }
+    ],
+    "sampling_sensitivity": [
+      {
+        "path": "results/sensitivity/skab/case0_E1_uncertainty_free.json",
+        "E": 1,
+        "M": 8,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": null,
+        "peak_bytes": null,
+        "top1": false,
+        "median_monte_carlo_se": null,
+        "median_instability": null,
+        "scope": "first-member gain with shared ensemble cost, U undefined"
+      },
+      {
+        "path": "results/sensitivity/skab/case0_E2_M8_L8_amp1.json",
+        "E": 2,
+        "M": 8,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.09298823308199644,
+        "peak_bytes": 172148224,
+        "top1": false,
+        "median_monte_carlo_se": 0.026082355650749955,
+        "median_instability": 0.06950828722093723
+      },
+      {
+        "path": "results/sensitivity/skab/case0_E3_M16_L8_amp1.json",
+        "E": 3,
+        "M": 16,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.1639197780750692,
+        "peak_bytes": 238411264,
+        "top1": false,
+        "median_monte_carlo_se": 0.017171069097094427,
+        "median_instability": 0.061394359997811856
+      },
+      {
+        "path": "results/sensitivity/skab/case0_E3_M2_L8_amp1.json",
+        "E": 3,
+        "M": 2,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.3665318628773093,
+        "peak_bytes": 124257792,
+        "top1": false,
+        "median_monte_carlo_se": 0.031850963090690965,
+        "median_instability": 0.05908788737366312
+      },
+      {
+        "path": "results/sensitivity/skab/case0_E3_M4_L8_amp1.json",
+        "E": 3,
+        "M": 4,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.1269538290798664,
+        "peak_bytes": 139675136,
+        "top1": false,
+        "median_monte_carlo_se": 0.02404273244084338,
+        "median_instability": 0.02281415705506832
+      },
+      {
+        "path": "results/sensitivity/skab/case0_E3_M8_L16_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 16,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.16260832967236638,
+        "peak_bytes": 232803840,
+        "top1": false,
+        "median_monte_carlo_se": 0.015358077901893169,
+        "median_instability": 0.05671419936114905
+      },
+      {
+        "path": "results/sensitivity/skab/case0_E3_M8_L4_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 4,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.12687599938362837,
+        "peak_bytes": 143363584,
+        "top1": false,
+        "median_monte_carlo_se": 0.03254592206867038,
+        "median_instability": 0.030081130049411813
+      },
+      {
+        "path": "results/sensitivity/skab/case0_E3_M8_L8_amp0.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 0,
+        "amp": false,
+        "seconds": 0.274680748116225,
+        "peak_bytes": 185117184,
+        "top1": false,
+        "median_monte_carlo_se": 0.02459313260997672,
+        "median_instability": 0.06153623334073682
+      },
+      {
+        "path": "results/sensitivity/skab/case0_E3_M8_L8_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 0,
+        "amp": true,
+        "seconds": 0.14157514087855816,
+        "peak_bytes": 172477952,
+        "top1": false,
+        "median_monte_carlo_se": 0.026424058905516867,
+        "median_instability": 0.06441548927084781
+      },
+      {
+        "path": "results/sensitivity/skab/case1_E1_uncertainty_free.json",
+        "E": 1,
+        "M": 8,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": null,
+        "peak_bytes": null,
+        "top1": false,
+        "median_monte_carlo_se": null,
+        "median_instability": null,
+        "scope": "first-member gain with shared ensemble cost, U undefined"
+      },
+      {
+        "path": "results/sensitivity/skab/case1_E2_M8_L8_amp1.json",
+        "E": 2,
+        "M": 8,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.09471704997122288,
+        "peak_bytes": 172148224,
+        "top1": false,
+        "median_monte_carlo_se": 0.021500385985230415,
+        "median_instability": 0.07616636875294011
+      },
+      {
+        "path": "results/sensitivity/skab/case1_E3_M16_L8_amp1.json",
+        "E": 3,
+        "M": 16,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.16116106370463967,
+        "peak_bytes": 238411264,
+        "top1": false,
+        "median_monte_carlo_se": 0.015798841814984796,
+        "median_instability": 0.053514862896150504
+      },
+      {
+        "path": "results/sensitivity/skab/case1_E3_M2_L8_amp1.json",
+        "E": 3,
+        "M": 2,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.12272281711921096,
+        "peak_bytes": 124257792,
+        "top1": false,
+        "median_monte_carlo_se": 0.029364307639994897,
+        "median_instability": 0.07306075361393519
+      },
+      {
+        "path": "results/sensitivity/skab/case1_E3_M4_L8_amp1.json",
+        "E": 3,
+        "M": 4,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.12487695273011923,
+        "peak_bytes": 139675136,
+        "top1": false,
+        "median_monte_carlo_se": 0.021892297003687895,
+        "median_instability": 0.03604313949546716
+      },
+      {
+        "path": "results/sensitivity/skab/case1_E3_M8_L16_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 16,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.16202918207272887,
+        "peak_bytes": 232803840,
+        "top1": false,
+        "median_monte_carlo_se": 0.017293241625196222,
+        "median_instability": 0.07079094348046616
+      },
+      {
+        "path": "results/sensitivity/skab/case1_E3_M8_L4_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 4,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.12444078270345926,
+        "peak_bytes": 143363584,
+        "top1": false,
+        "median_monte_carlo_se": 0.03373651440194945,
+        "median_instability": 0.05108819476624452
+      },
+      {
+        "path": "results/sensitivity/skab/case1_E3_M8_L8_amp0.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 1,
+        "amp": false,
+        "seconds": 0.27565742610022426,
+        "peak_bytes": 185117184,
+        "top1": false,
+        "median_monte_carlo_se": 0.01627261524863268,
+        "median_instability": 0.05429189017616915
+      },
+      {
+        "path": "results/sensitivity/skab/case1_E3_M8_L8_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 1,
+        "amp": true,
+        "seconds": 0.13716077897697687,
+        "peak_bytes": 172477952,
+        "top1": false,
+        "median_monte_carlo_se": 0.01666589067405877,
+        "median_instability": 0.0538890557248354
+      },
+      {
+        "path": "results/sensitivity/skab/case2_E1_uncertainty_free.json",
+        "E": 1,
+        "M": 8,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": null,
+        "peak_bytes": null,
+        "top1": false,
+        "median_monte_carlo_se": null,
+        "median_instability": null,
+        "scope": "first-member gain with shared ensemble cost, U undefined"
+      },
+      {
+        "path": "results/sensitivity/skab/case2_E2_M8_L8_amp1.json",
+        "E": 2,
+        "M": 8,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.0934891919605434,
+        "peak_bytes": 172148224,
+        "top1": false,
+        "median_monte_carlo_se": 0.024309488043561964,
+        "median_instability": 0.07038224994690905
+      },
+      {
+        "path": "results/sensitivity/skab/case2_E3_M16_L8_amp1.json",
+        "E": 3,
+        "M": 16,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.1613782630302012,
+        "peak_bytes": 238411264,
+        "top1": false,
+        "median_monte_carlo_se": 0.014730247579297574,
+        "median_instability": 0.0390070952461232
+      },
+      {
+        "path": "results/sensitivity/skab/case2_E3_M2_L8_amp1.json",
+        "E": 3,
+        "M": 2,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.1251523718237877,
+        "peak_bytes": 124257792,
+        "top1": false,
+        "median_monte_carlo_se": 0.03819663358866672,
+        "median_instability": 0.11567886074723949
+      },
+      {
+        "path": "results/sensitivity/skab/case2_E3_M4_L8_amp1.json",
+        "E": 3,
+        "M": 4,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.1300716418772936,
+        "peak_bytes": 139675136,
+        "top1": false,
+        "median_monte_carlo_se": 0.026058907976040328,
+        "median_instability": 0.07082725377302482
+      },
+      {
+        "path": "results/sensitivity/skab/case2_E3_M8_L16_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 16,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.16128318337723613,
+        "peak_bytes": 232803840,
+        "top1": false,
+        "median_monte_carlo_se": 0.01567851315771876,
+        "median_instability": 0.04000383660909218
+      },
+      {
+        "path": "results/sensitivity/skab/case2_E3_M8_L4_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 4,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.12521293153986335,
+        "peak_bytes": 143363584,
+        "top1": false,
+        "median_monte_carlo_se": 0.02836479760163075,
+        "median_instability": 0.05085990848950456
+      },
+      {
+        "path": "results/sensitivity/skab/case2_E3_M8_L8_amp0.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 2,
+        "amp": false,
+        "seconds": 0.27480099722743034,
+        "peak_bytes": 185117184,
+        "top1": false,
+        "median_monte_carlo_se": 0.023848389972574876,
+        "median_instability": 0.05670357937486546
+      },
+      {
+        "path": "results/sensitivity/skab/case2_E3_M8_L8_amp1.json",
+        "E": 3,
+        "M": 8,
+        "L": 8,
+        "case": 2,
+        "amp": true,
+        "seconds": 0.1396084539592266,
+        "peak_bytes": 172477952,
+        "top1": false,
+        "median_monte_carlo_se": 0.023047668103221543,
+        "median_instability": 0.05935218182498805
+      }
+    ],
+    "ranking_reversal": {
+      "path": "results/study/skab/development/development_0000_association.json",
+      "first": 4,
+      "second": 6,
+      "gain_difference": -0.015353302032513838,
+      "instability_difference": 0.016735602605463383,
+      "cost_difference": -0.16051152302619207,
+      "penalty_difference": -0.01536670199977503,
+      "score_difference_at_zero": -0.015353302032513838,
+      "score_difference_at_kappa1_lambda02": 1.3399967261192025e-05,
+      "interpretation": "The sign changes exactly where the displayed ranking inequality changes. This is a development example, not a performance estimate."
+    },
+    "stress_analysis": "results/robustness/skab/analysis.json",
+    "term_correlations": {
+      "observation": {
+        "False": {
+          "mean_gain": {
+            "median": 0.0009939306277018112,
+            "quantiles": [
+              -0.012312043421847996,
+              0.13092212310940946
+            ]
+          },
+          "model_instability": {
+            "median": 0.028882739720210042,
+            "quantiles": [
+              0.0,
+              0.1511644011857422
+            ]
+          },
+          "edit_cost": {
+            "median": 0.32038736625044195,
+            "quantiles": [
+              0.09077872311859714,
+              0.5078125
+            ]
+          },
+          "monte_carlo_standard_error": {
+            "median": 0.012463375027144376,
+            "quantiles": [
+              0.0,
+              0.0243908829167837
+            ]
+          }
+        },
+        "True": {
+          "mean_gain": {
+            "median": 0.0,
+            "quantiles": [
+              -0.004009971069009243,
+              0.13069480067134218
+            ]
+          },
+          "model_instability": {
+            "median": 0.006040180235655999,
+            "quantiles": [
+              0.0,
+              0.13877985847598961
+            ]
+          },
+          "edit_cost": {
+            "median": 0.3419839004175931,
+            "quantiles": [
+              0.14354270684413628,
+              0.5078125
+            ]
+          },
+          "monte_carlo_standard_error": {
+            "median": 0.0010139044511519783,
+            "quantiles": [
+              0.0,
+              0.02015902206041454
+            ]
+          }
+        },
+        "gain_initial_loss_spearman": 0.2584110643501496,
+        "gain_degree_spearman": 0.49783607400250157
+      },
+      "association": {
+        "False": {
+          "mean_gain": {
+            "median": -0.00040223790152064487,
+            "quantiles": [
+              -0.14080286726057425,
+              0.013282649803750261
+            ]
+          },
+          "model_instability": {
+            "median": 0.005938824952797408,
+            "quantiles": [
+              0.0002923113631105248,
+              0.11654360811549373
+            ]
+          },
+          "edit_cost": {
+            "median": 0.041666666666666664,
+            "quantiles": [
+              0.041666666666666664,
+              0.041666666666666664
+            ]
+          },
+          "monte_carlo_standard_error": {
+            "median": 0.0017647380384288413,
+            "quantiles": [
+              0.00023254227895701707,
+              0.026090536020103628
+            ]
+          }
+        },
+        "True": {
+          "mean_gain": {
+            "median": -0.0022381736988326866,
+            "quantiles": [
+              -0.38221717166746083,
+              0.03260869892856514
+            ]
+          },
+          "model_instability": {
+            "median": 0.01813421981345451,
+            "quantiles": [
+              0.003146490893805519,
+              0.2841778031622319
+            ]
+          },
+          "edit_cost": {
+            "median": 0.041666666666666664,
+            "quantiles": [
+              0.041666666666666664,
+              0.041666666666666664
+            ]
+          },
+          "monte_carlo_standard_error": {
+            "median": 0.003607130054580295,
+            "quantiles": [
+              0.0012332901143660279,
+              0.0576650929879697
+            ]
+          }
+        },
+        "gain_initial_loss_spearman": -0.14655720655078835,
+        "gain_degree_spearman": 0.32063856371789234
+      }
+    }
+  }
+}

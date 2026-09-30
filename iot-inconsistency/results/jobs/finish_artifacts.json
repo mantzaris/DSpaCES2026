@@ -1,9 +1,11 @@
 {
-  "pid": 44792,
-  "state": "running",
+  "pid": 55081,
+  "state": "complete",
   "command": [
     "bash",
     "scripts/finish_artifacts.sh"
   ],
-  "started": "2026-09-30T18:39:32.347348+00:00"
+  "started": "2026-09-30T19:11:12.544754+00:00",
+  "exit_code": 0,
+  "finished": "2026-09-30T19:53:09.603305+00:00"
 }

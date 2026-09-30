@@ -1,4 +1,5 @@
 {
+  "window_id": "synthetic_32_linear:test_0000_observation:291f0b76f43ff44c",
   "process_alert": false,
   "process_null_tail": 0.9591836734693877,
   "dataset": "synthetic_32_linear",
@@ -4526,7 +4527,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "synthetic_32_linear:test_0000_observation:291f0b76f43ff44c:6d08c05fdd153590:observation:4"
     },
     {
       "kind": "observation",
@@ -4779,7 +4781,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "synthetic_32_linear:test_0000_observation:291f0b76f43ff44c:6d08c05fdd153590:observation:16"
     },
     {
       "kind": "observation",
@@ -5032,7 +5035,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "synthetic_32_linear:test_0000_observation:291f0b76f43ff44c:6d08c05fdd153590:observation:3"
     },
     {
       "kind": "observation",
@@ -5285,7 +5289,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "synthetic_32_linear:test_0000_observation:291f0b76f43ff44c:6d08c05fdd153590:observation:10"
     },
     {
       "kind": "association",
@@ -5496,7 +5501,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "synthetic_32_linear:test_0000_observation:291f0b76f43ff44c:6d08c05fdd153590:association:60"
     },
     {
       "kind": "association",
@@ -5707,7 +5713,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "synthetic_32_linear:test_0000_observation:291f0b76f43ff44c:6d08c05fdd153590:association:47"
     },
     {
       "kind": "association",
@@ -5918,7 +5925,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "synthetic_32_linear:test_0000_observation:291f0b76f43ff44c:6d08c05fdd153590:association:62"
     },
     {
       "kind": "association",
@@ -6129,7 +6137,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "synthetic_32_linear:test_0000_observation:291f0b76f43ff44c:6d08c05fdd153590:association:61"
     }
   ],
   "artifact": "results/study/synthetic_32_linear/test/test_0000_observation.npz",
@@ -6190,56 +6199,63 @@
         "source": 24,
         "target": 8,
         "lag": 2,
+        "lag_seconds": 2,
         "sign": 1,
-        "label": "predicts C08, lag 2"
+        "label": "predicts C08, lag 2 s"
       },
       {
         "index": 24,
         "source": 4,
         "target": 8,
         "lag": 1,
+        "lag_seconds": 1,
         "sign": -1,
-        "label": "predicts C08, lag 1"
+        "label": "predicts C08, lag 1 s"
       },
       {
         "index": 25,
         "source": 28,
         "target": 8,
         "lag": 1,
+        "lag_seconds": 1,
         "sign": -1,
-        "label": "predicts C08, lag 1"
+        "label": "predicts C08, lag 1 s"
       },
       {
         "index": 85,
         "source": 12,
         "target": 28,
         "lag": 1,
+        "lag_seconds": 1,
         "sign": 1,
-        "label": "predicts C28, lag 1"
+        "label": "predicts C28, lag 1 s"
       },
       {
         "index": 86,
         "source": 0,
         "target": 28,
         "lag": 1,
+        "lag_seconds": 1,
         "sign": -1,
-        "label": "predicts C28, lag 1"
+        "label": "predicts C28, lag 1 s"
       },
       {
         "index": 49,
         "source": 24,
         "target": 16,
         "lag": 1,
+        "lag_seconds": 1,
         "sign": 1,
-        "label": "predicts C16, lag 1"
+        "label": "predicts C16, lag 1 s"
       },
       {
         "index": 60,
         "source": 4,
         "target": 20,
         "lag": 1,
+        "lag_seconds": 1,
         "sign": 1,
-        "label": "predicts C20, lag 1"
+        "label": "predicts C20, lag 1 s"
       }
     ],
     "pruning_rule": "All selected suspects and witnesses retained. Context uses a fixed spanning forest of strong stored relations. Coordinates use seed 9026 and deterministic collision adjustment, never fault labels.",
@@ -6247,7 +6263,7 @@
     "layout_seed": 9026
   },
   "run": {
-    "id": "synthetic_32_linear:5fa7df464da07029",
+    "id": "synthetic_32_linear:6d08c05fdd153590",
     "ensemble_seeds": [
       1101,
       2202,
@@ -6258,6 +6274,44 @@
     "predictive_samples": 8,
     "manifest": "results/study/synthetic_32_linear/test/provenance.json",
     "manifest_sha256": "85f4809ca2deb88cd7e578a6f3ccd0930236b1a4acfbee4797c779dcf5bf8a0b"
+  },
+  "association_context": {
+    "train": {
+      "decision_start": 63,
+      "decision_stop": 1023,
+      "blocks": [
+        "train_trajectory_0",
+        "train_trajectory_1",
+        "train_trajectory_10",
+        "train_trajectory_11",
+        "train_trajectory_2",
+        "train_trajectory_3",
+        "train_trajectory_4",
+        "train_trajectory_5",
+        "train_trajectory_6",
+        "train_trajectory_7",
+        "train_trajectory_8",
+        "train_trajectory_9"
+      ],
+      "file": "data/processed/synthetic_32_linear/train.npz"
+    },
+    "development": {
+      "decision_start": 63,
+      "decision_stop": 1023,
+      "blocks": [
+        "development_trajectory_0",
+        "development_trajectory_1",
+        "development_trajectory_2",
+        "development_trajectory_3",
+        "development_trajectory_4",
+        "development_trajectory_5",
+        "development_trajectory_6",
+        "development_trajectory_7"
+      ],
+      "file": "data/processed/synthetic_32_linear/development.npz"
+    },
+    "manifest": "data/manifests/synthetic_32_linear.json",
+    "manifest_sha256": "7aa5e81f7a597e416e88527e92ee7de3bb2e78fb74bd5b792673327cf8756cf3"
   },
   "median": [
     20.416071329237,

@@ -1,5 +1,5 @@
 {
-  "draft": true,
+  "draft": false,
   "displayed_values": [
     {
       "output": "abstract_results.tex",
@@ -522,6 +522,146 @@
     },
     {
       "output": "main_table.tex",
+      "source": "results/pca_total/analysis.json",
+      "json_path": [
+        "results",
+        "synthetic_32_linear",
+        "metrics",
+        "1",
+        "window_ap"
+      ],
+      "value": 0.9675458042424377,
+      "multiplier": 1,
+      "rendered": "0.968"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/pca_total/analysis.json",
+      "json_path": [
+        "results",
+        "synthetic_32_nonlinear",
+        "metrics",
+        "1",
+        "window_ap"
+      ],
+      "value": 0.9759039768428672,
+      "multiplier": 1,
+      "rendered": "0.976"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/pca_total/analysis.json",
+      "json_path": [
+        "results",
+        "synthetic_64_nonlinear",
+        "metrics",
+        "1",
+        "window_ap"
+      ],
+      "value": 0.8682606827186236,
+      "multiplier": 1,
+      "rendered": "0.868"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/pca_total/analysis.json",
+      "json_path": [
+        "results",
+        "intel",
+        "metrics",
+        "1",
+        "window_ap"
+      ],
+      "value": 0.5539525366678701,
+      "multiplier": 1,
+      "rendered": "0.554"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/pca_total/analysis.json",
+      "json_path": [
+        "results",
+        "skab",
+        "metrics",
+        "1",
+        "window_ap"
+      ],
+      "value": 0.6539218128022162,
+      "multiplier": 1,
+      "rendered": "0.654"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/pca_total/analysis.json",
+      "json_path": [
+        "results",
+        "synthetic_32_linear",
+        "metrics",
+        "4",
+        "window_ap"
+      ],
+      "value": 0.9563601636052901,
+      "multiplier": 1,
+      "rendered": "0.956"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/pca_total/analysis.json",
+      "json_path": [
+        "results",
+        "synthetic_32_nonlinear",
+        "metrics",
+        "4",
+        "window_ap"
+      ],
+      "value": 0.9500374882523444,
+      "multiplier": 1,
+      "rendered": "0.950"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/pca_total/analysis.json",
+      "json_path": [
+        "results",
+        "synthetic_64_nonlinear",
+        "metrics",
+        "4",
+        "window_ap"
+      ],
+      "value": 0.8078089477384607,
+      "multiplier": 1,
+      "rendered": "0.808"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/pca_total/analysis.json",
+      "json_path": [
+        "results",
+        "intel",
+        "metrics",
+        "4",
+        "window_ap"
+      ],
+      "value": 0.554634673738482,
+      "multiplier": 1,
+      "rendered": "0.555"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/pca_total/analysis.json",
+      "json_path": [
+        "results",
+        "skab",
+        "metrics",
+        "4",
+        "window_ap"
+      ],
+      "value": 0.6598131122967542,
+      "multiplier": 1,
+      "rendered": "0.660"
+    },
+    {
+      "output": "main_table.tex",
       "source": "results/analysis.json",
       "json_path": [
         "synthetic_32_linear",
@@ -923,6 +1063,45 @@
     },
     {
       "output": "main_table.tex",
+      "source": "results/ablations/synthetic_64_nonlinear/analysis.json",
+      "json_path": [
+        "deterministic",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.7749396619021593,
+      "multiplier": 1,
+      "rendered": "0.775"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/ablations/intel/analysis.json",
+      "json_path": [
+        "deterministic",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.5363335099775797,
+      "multiplier": 1,
+      "rendered": "0.536"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/ablations/skab/analysis.json",
+      "json_path": [
+        "deterministic",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.5809580490040132,
+      "multiplier": 1,
+      "rendered": "0.581"
+    },
+    {
+      "output": "main_table.tex",
       "source": "results/analysis.json",
       "json_path": [
         "synthetic_32_linear",
@@ -1316,6 +1495,45 @@
       "value": 0.8246862887196653,
       "multiplier": 1,
       "rendered": "0.825"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/ablations/synthetic_64_nonlinear/analysis.json",
+      "json_path": [
+        "deterministic",
+        "metrics",
+        "association",
+        "window_ap"
+      ],
+      "value": 0.6383716002614573,
+      "multiplier": 1,
+      "rendered": "0.638"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/ablations/intel/analysis.json",
+      "json_path": [
+        "deterministic",
+        "metrics",
+        "association",
+        "window_ap"
+      ],
+      "value": 0.603648882883449,
+      "multiplier": 1,
+      "rendered": "0.604"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/ablations/skab/analysis.json",
+      "json_path": [
+        "deterministic",
+        "metrics",
+        "association",
+        "window_ap"
+      ],
+      "value": 0.5385023056807651,
+      "multiplier": 1,
+      "rendered": "0.539"
     },
     {
       "output": "main_table.tex",
@@ -1764,6 +1982,100 @@
     },
     {
       "output": "results_text.tex",
+      "source": "results/confidence_comparisons.json",
+      "json_path": [
+        "results",
+        "synthetic_32_nonlinear",
+        "observation",
+        "paired_window_ap_by_comparator",
+        "gdn",
+        "difference"
+      ],
+      "value": 0.09889581998228791,
+      "multiplier": 1,
+      "rendered": "0.099"
+    },
+    {
+      "output": "results_text.tex",
+      "source": "results/confidence_comparisons.json",
+      "json_path": [
+        "results",
+        "synthetic_32_nonlinear",
+        "observation",
+        "paired_window_ap_by_comparator",
+        "gdn",
+        "interval",
+        0
+      ],
+      "value": 0.031775724205339695,
+      "multiplier": 1,
+      "rendered": "0.032"
+    },
+    {
+      "output": "results_text.tex",
+      "source": "results/confidence_comparisons.json",
+      "json_path": [
+        "results",
+        "synthetic_32_nonlinear",
+        "observation",
+        "paired_window_ap_by_comparator",
+        "gdn",
+        "interval",
+        1
+      ],
+      "value": 0.1617502997127426,
+      "multiplier": 1,
+      "rendered": "0.162"
+    },
+    {
+      "output": "results_text.tex",
+      "source": "results/confidence_comparisons.json",
+      "json_path": [
+        "results",
+        "synthetic_32_nonlinear",
+        "observation",
+        "paired_window_ap_by_comparator",
+        "backbone",
+        "difference"
+      ],
+      "value": 0.04499881148963558,
+      "multiplier": 1,
+      "rendered": "0.045"
+    },
+    {
+      "output": "results_text.tex",
+      "source": "results/confidence_comparisons.json",
+      "json_path": [
+        "results",
+        "synthetic_32_nonlinear",
+        "observation",
+        "paired_window_ap_by_comparator",
+        "backbone",
+        "interval",
+        0
+      ],
+      "value": 0.0022092241126453094,
+      "multiplier": 1,
+      "rendered": "0.002"
+    },
+    {
+      "output": "results_text.tex",
+      "source": "results/confidence_comparisons.json",
+      "json_path": [
+        "results",
+        "synthetic_32_nonlinear",
+        "observation",
+        "paired_window_ap_by_comparator",
+        "backbone",
+        "interval",
+        1
+      ],
+      "value": 0.08638423160859465,
+      "multiplier": 1,
+      "rendered": "0.086"
+    },
+    {
+      "output": "results_text.tex",
       "source": "results/analysis.json",
       "json_path": [
         "synthetic_32_nonlinear",
@@ -1982,6 +2294,34 @@
       "value": 0.7340305397727274,
       "multiplier": 1,
       "rendered": "0.734"
+    },
+    {
+      "output": "results_text.tex",
+      "source": "results/cross_type_analysis.json",
+      "json_path": [
+        "results",
+        "synthetic_32_nonlinear",
+        "alarm_table",
+        "observation",
+        "association_window_alert"
+      ],
+      "value": 0.6375,
+      "multiplier": 1,
+      "rendered": "0.637"
+    },
+    {
+      "output": "results_text.tex",
+      "source": "results/cross_type_analysis.json",
+      "json_path": [
+        "results",
+        "synthetic_32_nonlinear",
+        "alarm_table",
+        "observation",
+        "both_candidate_types_accepted"
+      ],
+      "value": 0.6,
+      "multiplier": 1,
+      "rendered": "0.600"
     },
     {
       "output": "results_text.tex",
@@ -2576,7 +2916,98 @@
     },
     {
       "output": "ablation_table.tex",
+      "source": "results/ablations/synthetic_64_nonlinear/analysis.json",
+      "json_path": [
+        "deterministic",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.7749396619021593,
+      "multiplier": 1,
+      "rendered": "0.775"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/ablations/intel/analysis.json",
+      "json_path": [
+        "deterministic",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.5363335099775797,
+      "multiplier": 1,
+      "rendered": "0.536"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/ablations/skab/analysis.json",
+      "json_path": [
+        "deterministic",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.5809580490040132,
+      "multiplier": 1,
+      "rendered": "0.581"
+    },
+    {
+      "output": "ablation_table.tex",
       "source": "results/ablations/synthetic_32_linear/analysis.json",
+      "json_path": [
+        "no_graph",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.5,
+      "multiplier": 1,
+      "rendered": "0.500"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/ablations/synthetic_32_nonlinear/analysis.json",
+      "json_path": [
+        "no_graph",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.5,
+      "multiplier": 1,
+      "rendered": "0.500"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/ablations/synthetic_64_nonlinear/analysis.json",
+      "json_path": [
+        "no_graph",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.5,
+      "multiplier": 1,
+      "rendered": "0.500"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/ablations/intel/analysis.json",
+      "json_path": [
+        "no_graph",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.5314831379695943,
+      "multiplier": 1,
+      "rendered": "0.531"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/ablations/skab/analysis.json",
       "json_path": [
         "no_graph",
         "metrics",
@@ -2615,6 +3046,45 @@
     },
     {
       "output": "ablation_table.tex",
+      "source": "results/ablations/synthetic_64_nonlinear/analysis.json",
+      "json_path": [
+        "no_witness_separation",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.7586772432018919,
+      "multiplier": 1,
+      "rendered": "0.759"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/ablations/intel/analysis.json",
+      "json_path": [
+        "no_witness_separation",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.537795709847656,
+      "multiplier": 1,
+      "rendered": "0.538"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/ablations/skab/analysis.json",
+      "json_path": [
+        "no_witness_separation",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.5075130260309589,
+      "multiplier": 1,
+      "rendered": "0.508"
+    },
+    {
+      "output": "ablation_table.tex",
       "source": "results/ablations/synthetic_32_linear/analysis.json",
       "json_path": [
         "no_provenance_grouping",
@@ -2641,6 +3111,45 @@
     },
     {
       "output": "ablation_table.tex",
+      "source": "results/ablations/synthetic_64_nonlinear/analysis.json",
+      "json_path": [
+        "no_provenance_grouping",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.7883909068122491,
+      "multiplier": 1,
+      "rendered": "0.788"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/ablations/intel/analysis.json",
+      "json_path": [
+        "no_provenance_grouping",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.5401875755861965,
+      "multiplier": 1,
+      "rendered": "0.540"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/ablations/skab/analysis.json",
+      "json_path": [
+        "no_provenance_grouping",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.506857627545766,
+      "multiplier": 1,
+      "rendered": "0.507"
+    },
+    {
+      "output": "ablation_table.tex",
       "source": "results/ablations/synthetic_32_linear/analysis.json",
       "json_path": [
         "no_provenance_deduplication",
@@ -2664,6 +3173,45 @@
       "value": 0.8877460139185778,
       "multiplier": 1,
       "rendered": "0.888"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/ablations/synthetic_64_nonlinear/analysis.json",
+      "json_path": [
+        "no_provenance_deduplication",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.7830879094377239,
+      "multiplier": 1,
+      "rendered": "0.783"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/ablations/intel/analysis.json",
+      "json_path": [
+        "no_provenance_deduplication",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.5396589962305899,
+      "multiplier": 1,
+      "rendered": "0.540"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/ablations/skab/analysis.json",
+      "json_path": [
+        "no_provenance_deduplication",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.5310916994693154,
+      "multiplier": 1,
+      "rendered": "0.531"
     },
     {
       "output": "ablation_table.tex",
@@ -2855,6 +3403,32 @@
     },
     {
       "output": "ablation_text.tex",
+      "source": "results/ablations/synthetic_32_nonlinear/analysis.json",
+      "json_path": [
+        "deterministic",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.8790144089357238,
+      "multiplier": 1,
+      "rendered": "0.879"
+    },
+    {
+      "output": "ablation_text.tex",
+      "source": "results/ablations/synthetic_32_nonlinear/analysis.json",
+      "json_path": [
+        "no_graph",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.5,
+      "multiplier": 1,
+      "rendered": "0.500"
+    },
+    {
+      "output": "ablation_text.tex",
       "source": "results/audits/production_equations.json",
       "json_path": [
         "candidates"
@@ -2883,6 +3457,605 @@
       "rendered": "7.11"
     },
     {
+      "output": "robustness_text.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "predefined_strata",
+        "known_families",
+        "proposed",
+        "window_ap"
+      ],
+      "value": 0.909267798393525,
+      "multiplier": 1,
+      "rendered": "0.909"
+    },
+    {
+      "output": "robustness_text.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "predefined_strata",
+        "heldout_families",
+        "proposed",
+        "window_ap"
+      ],
+      "value": 0.8129733080315782,
+      "multiplier": 1,
+      "rendered": "0.813"
+    },
+    {
+      "output": "robustness_text.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "predefined_strata",
+        "heldout_families",
+        "comparator",
+        "window_ap"
+      ],
+      "value": 0.9660391343606225,
+      "multiplier": 1,
+      "rendered": "0.966"
+    },
+    {
+      "output": "robustness_text.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "predefined_strata",
+        "heldout_regime",
+        "proposed",
+        "window_ap"
+      ],
+      "value": 0.8918055555555556,
+      "multiplier": 1,
+      "rendered": "0.892"
+    },
+    {
+      "output": "robustness_text.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "predefined_strata",
+        "heldout_regime",
+        "comparator",
+        "window_ap"
+      ],
+      "value": 0.9999999999999999,
+      "multiplier": 1,
+      "rendered": "1.000"
+    },
+    {
+      "output": "robustness_text.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "intel",
+        "score_terms",
+        "observation",
+        "gain_initial_loss_spearman"
+      ],
+      "value": 0.694475060922262,
+      "multiplier": 1,
+      "rendered": "0.694"
+    },
+    {
+      "output": "robustness_text.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "score_terms",
+        "observation",
+        "gain_degree_spearman"
+      ],
+      "value": 0.49783607400250157,
+      "multiplier": 1,
+      "rendered": "0.498"
+    },
+    {
+      "output": "robustness_text.tex",
+      "source": "results/equation_analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "ranking_reversal",
+        "gain_difference"
+      ],
+      "value": -0.0026140566769754514,
+      "multiplier": 1,
+      "rendered": "-0.0026"
+    },
+    {
+      "output": "robustness_text.tex",
+      "source": "results/equation_analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "ranking_reversal",
+        "penalty_difference"
+      ],
+      "value": -0.00426547502498018,
+      "multiplier": 1,
+      "rendered": "-0.0043"
+    },
+    {
+      "output": "robustness_text.tex",
+      "source": "results/equation_analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "ranking_reversal",
+        "score_difference_at_kappa1_lambda02"
+      ],
+      "value": 0.0016514183480047283,
+      "multiplier": 1,
+      "rendered": "0.0017"
+    },
+    {
+      "output": "robustness_text.tex",
+      "sources": [
+        "results/equation_analysis.json"
+      ],
+      "operation": "median case diagnostic at E3 M2 L8 neural autocast",
+      "value": 0.005257325607718344,
+      "rendered": "0.0053"
+    },
+    {
+      "output": "robustness_text.tex",
+      "sources": [
+        "results/equation_analysis.json"
+      ],
+      "operation": "median case diagnostic at E3 M16 L8 neural autocast",
+      "value": 0.001961186161941075,
+      "rendered": "0.0020"
+    },
+    {
+      "output": "robustness_text.tex",
+      "source": "results/robustness/synthetic_32_nonlinear/analysis.json",
+      "json_path": [
+        "conditions",
+        "conditioning_source_contamination/0.0",
+        "primary_target_top1"
+      ],
+      "value": 1.0,
+      "multiplier": 1,
+      "rendered": "1.000"
+    },
+    {
+      "output": "robustness_text.tex",
+      "source": "results/robustness/synthetic_32_nonlinear/analysis.json",
+      "json_path": [
+        "conditions",
+        "conditioning_source_contamination/0.5",
+        "primary_target_top1"
+      ],
+      "value": 0.0,
+      "multiplier": 1,
+      "rendered": "0.000"
+    },
+    {
+      "output": "robustness_text.tex",
+      "source": "results/robustness/synthetic_32_nonlinear/analysis.json",
+      "json_path": [
+        "conditions",
+        "conditioning_source_contamination/0.0",
+        "cases"
+      ],
+      "value": 12,
+      "multiplier": 1,
+      "rendered": "12"
+    },
+    {
+      "output": "robustness_text.tex",
+      "source": "results/robustness/synthetic_32_nonlinear/analysis.json",
+      "json_path": [
+        "conditions",
+        "conditioning_source_contamination/0.5",
+        "primary_target_screened"
+      ],
+      "value": 0.16666666666666666,
+      "multiplier": 1,
+      "rendered": "0.167"
+    },
+    {
+      "output": "robustness_text.tex",
+      "source": "results/robustness/synthetic_32_nonlinear/analysis.json",
+      "json_path": [
+        "conditions",
+        "conditioning_source_contamination/0.5",
+        "baseline_primary_target_top1",
+        "pca_lag1_rank16"
+      ],
+      "value": 0.16666666666666666,
+      "multiplier": 1,
+      "rendered": "0.167"
+    },
+    {
+      "output": "robustness_text.tex",
+      "source": "results/robustness/synthetic_32_nonlinear/analysis.json",
+      "json_path": [
+        "conditions",
+        "graph_error/0.3",
+        "primary_target_top1"
+      ],
+      "value": 0.9166666666666666,
+      "multiplier": 1,
+      "rendered": "0.917"
+    },
+    {
+      "output": "robustness_text.tex",
+      "source": "results/robustness/synthetic_32_nonlinear/analysis.json",
+      "json_path": [
+        "conditions",
+        "unknown_provenance_association_copies/all",
+        "primary_target_top1"
+      ],
+      "value": 1.0,
+      "multiplier": 1,
+      "rendered": "1.000"
+    },
+    {
+      "output": "robustness_text.tex",
+      "source": "results/robustness/synthetic_32_nonlinear/analysis.json",
+      "json_path": [
+        "conditions",
+        "single_source_support/all",
+        "selected_primary_windows_abstained"
+      ],
+      "value": 12,
+      "multiplier": 1,
+      "rendered": "12"
+    },
+    {
+      "output": "robustness_text.tex",
+      "source": "results/robustness/synthetic_32_nonlinear/analysis.json",
+      "json_path": [
+        "conditions",
+        "single_source_support/all",
+        "single_group_diagnostic_top1"
+      ],
+      "value": 0.8333333333333334,
+      "multiplier": 1,
+      "rendered": "0.833"
+    },
+    {
+      "output": "robustness_text.tex",
+      "source": "results/robustness/synthetic_32_nonlinear/analysis.json",
+      "json_path": [
+        "conditions",
+        "missingness/all",
+        "availability_alerts"
+      ],
+      "value": 12,
+      "multiplier": 1,
+      "rendered": "12"
+    },
+    {
+      "output": "robustness_text.tex",
+      "source": "results/robustness/synthetic_32_nonlinear/analysis.json",
+      "json_path": [
+        "conditions",
+        "training_contamination/0.1",
+        "primary_target_top1"
+      ],
+      "value": 0.9166666666666666,
+      "multiplier": 1,
+      "rendered": "0.917"
+    },
+    {
+      "output": "robustness_text.tex",
+      "sources": [
+        "results/robustness/synthetic_32_nonlinear/analysis.json"
+      ],
+      "operation": "sum accepted hypotheses in two physical controls",
+      "value": 2.0,
+      "rendered": "2"
+    },
+    {
+      "output": "native_text.tex",
+      "source": "results/native/skab/analysis.json",
+      "json_path": [
+        "methods",
+        "gdn",
+        "windows"
+      ],
+      "value": 319,
+      "multiplier": 1,
+      "rendered": "319"
+    },
+    {
+      "output": "native_text.tex",
+      "source": "results/native/skab/analysis.json",
+      "json_path": [
+        "methods",
+        "gdn",
+        "experiments"
+      ],
+      "value": 10,
+      "multiplier": 1,
+      "rendered": "10"
+    },
+    {
+      "output": "native_text.tex",
+      "source": "results/native/skab/analysis.json",
+      "json_path": [
+        "methods",
+        "gdn",
+        "window_ap"
+      ],
+      "value": 0.7652978788685931,
+      "multiplier": 1,
+      "rendered": "0.765"
+    },
+    {
+      "output": "native_text.tex",
+      "source": "results/native/skab/analysis.json",
+      "json_path": [
+        "methods",
+        "gdn",
+        "event_recall"
+      ],
+      "value": 0.5,
+      "multiplier": 1,
+      "rendered": "0.500"
+    },
+    {
+      "output": "native_text.tex",
+      "source": "results/native/skab/analysis.json",
+      "json_path": [
+        "methods",
+        "gdn",
+        "achieved_fpr"
+      ],
+      "value": 0.043689320388349516,
+      "multiplier": 1,
+      "rendered": "0.044"
+    },
+    {
+      "output": "native_text.tex",
+      "source": "results/native/skab/analysis.json",
+      "json_path": [
+        "methods",
+        "gdn",
+        "median_detected_event_delay_seconds"
+      ],
+      "value": 36.0,
+      "multiplier": 1,
+      "rendered": "36.0"
+    },
+    {
+      "output": "native_text.tex",
+      "source": "results/native/skab/analysis.json",
+      "json_path": [
+        "methods",
+        "gdn",
+        "censored_events"
+      ],
+      "value": 5,
+      "multiplier": 1,
+      "rendered": "5"
+    },
+    {
+      "output": "native_text.tex",
+      "source": "results/native/skab/analysis.json",
+      "json_path": [
+        "methods",
+        "gdn",
+        "process_alerts_retained_during_attribution_abstention"
+      ],
+      "value": 16,
+      "multiplier": 1,
+      "rendered": "16"
+    },
+    {
+      "output": "native_text.tex",
+      "source": "results/native/skab/analysis.json",
+      "json_path": [
+        "methods",
+        "pca_lag4_rank16",
+        "window_ap"
+      ],
+      "value": 0.4483467014639604,
+      "multiplier": 1,
+      "rendered": "0.448"
+    },
+    {
+      "output": "native_text.tex",
+      "source": "results/native/skab/analysis.json",
+      "json_path": [
+        "methods",
+        "pca_lag4_rank16",
+        "event_recall"
+      ],
+      "value": 0.4,
+      "multiplier": 1,
+      "rendered": "0.400"
+    },
+    {
+      "output": "native_text.tex",
+      "source": "results/native/skab/analysis.json",
+      "json_path": [
+        "methods",
+        "pca_lag4_rank16",
+        "false_alarm_events_per_hour"
+      ],
+      "value": 0.9917355371900827,
+      "multiplier": 1,
+      "rendered": "0.99"
+    },
+    {
+      "output": "native_text.tex",
+      "source": "results/native/skab/analysis.json",
+      "json_path": [
+        "methods",
+        "gdn",
+        "window_ap"
+      ],
+      "value": 0.7652978788685931,
+      "multiplier": 1,
+      "rendered": "0.765"
+    },
+    {
+      "output": "native_text.tex",
+      "source": "results/native/skab/analysis.json",
+      "json_path": [
+        "methods",
+        "gdn",
+        "event_recall"
+      ],
+      "value": 0.5,
+      "multiplier": 1,
+      "rendered": "0.500"
+    },
+    {
+      "output": "native_text.tex",
+      "source": "results/native/skab/analysis.json",
+      "json_path": [
+        "methods",
+        "gdn",
+        "false_alarm_events_per_hour"
+      ],
+      "value": 0.9917355371900827,
+      "multiplier": 1,
+      "rendered": "0.99"
+    },
+    {
+      "output": "native_text.tex",
+      "source": "results/native/skab/analysis.json",
+      "json_path": [
+        "methods",
+        "backbone",
+        "window_ap"
+      ],
+      "value": 0.5925695163040898,
+      "multiplier": 1,
+      "rendered": "0.593"
+    },
+    {
+      "output": "native_text.tex",
+      "source": "results/native/skab/analysis.json",
+      "json_path": [
+        "methods",
+        "backbone",
+        "event_recall"
+      ],
+      "value": 0.6,
+      "multiplier": 1,
+      "rendered": "0.600"
+    },
+    {
+      "output": "native_text.tex",
+      "source": "results/native/skab/analysis.json",
+      "json_path": [
+        "methods",
+        "backbone",
+        "false_alarm_events_per_hour"
+      ],
+      "value": 3.3057851239669422,
+      "multiplier": 1,
+      "rendered": "3.31"
+    },
+    {
+      "output": "native_text.tex",
+      "source": "results/native/skab/analysis.json",
+      "json_path": [
+        "methods",
+        "diffad",
+        "window_ap"
+      ],
+      "value": 0.5039230272407402,
+      "multiplier": 1,
+      "rendered": "0.504"
+    },
+    {
+      "output": "native_text.tex",
+      "source": "results/native/skab/analysis.json",
+      "json_path": [
+        "methods",
+        "diffad",
+        "event_recall"
+      ],
+      "value": 0.4,
+      "multiplier": 1,
+      "rendered": "0.400"
+    },
+    {
+      "output": "native_text.tex",
+      "source": "results/native/skab/analysis.json",
+      "json_path": [
+        "methods",
+        "diffad",
+        "false_alarm_events_per_hour"
+      ],
+      "value": 5.289256198347108,
+      "multiplier": 1,
+      "rendered": "5.29"
+    },
+    {
+      "output": "cost_text.tex",
+      "sources": [
+        "results/latency_scaling.json",
+        "results/analysis.json"
+      ],
+      "operation": "median 32-channel warm runs, 8 candidates",
+      "value": 0.24403118016198277,
+      "rendered": "0.244"
+    },
+    {
+      "output": "cost_text.tex",
+      "sources": [
+        "results/latency_scaling.json",
+        "results/analysis.json"
+      ],
+      "operation": "median 64-channel warm runs, 8 candidates",
+      "value": 0.40213464898988605,
+      "rendered": "0.402"
+    },
+    {
+      "output": "cost_text.tex",
+      "sources": [
+        "results/latency_scaling.json",
+        "results/analysis.json"
+      ],
+      "operation": "maximum allocated bytes / 2^30",
+      "value": 1.062638759613037,
+      "rendered": "1.06"
+    },
+    {
+      "output": "cost_text.tex",
+      "sources": [
+        "results/analysis.json"
+      ],
+      "operation": "PCA inference seconds per window times 1000",
+      "value": 0.3164479586606224,
+      "rendered": "0.316"
+    },
+    {
+      "output": "cost_text.tex",
+      "sources": [
+        "results/analysis.json"
+      ],
+      "operation": "GDN ensemble batched inference seconds per window times 1000",
+      "value": 2.1374375753415125,
+      "rendered": "2.137"
+    },
+    {
+      "output": "cost_text.tex",
+      "sources": [
+        "results/analysis.json"
+      ],
+      "operation": "sum final recorded neural training GPU hours",
+      "value": 0.6049969361399092,
+      "rendered": "0.605"
+    },
+    {
       "output": "network_caption.tex",
       "source": "results/graph/synthetic_32_nonlinear_illustration.json",
       "json_path": [
@@ -2907,25 +4080,35 @@
   ],
   "sources": {
     "results/analysis.json": "904d06b7563e80a51c7a88a0d0dc71fa3977ac9f0f6105026db6d9b3d3eb43d6",
-    "results/confidence_comparisons.json": "fa1a5884561562ac1278bb1c244c38a1edf3adc9cc6343b078420bce1542b66f",
+    "results/confidence_comparisons.json": "b975d0a52cd10018c30e01067c00499e6f335ed56b429584104e68194fb7fc64",
     "results/dataset_summary.json": "8e41992716ca7f42ad29740bfc758f4ae3f378ee011e5e6968dd064586866802",
+    "results/pca_total/analysis.json": "7550ef37e47223dfb212ffd4c83cbc864ceb73c59a97a2ca18a7a0db0ba1f059",
     "results/ablations/synthetic_32_linear/analysis.json": "f7fa95a0ee1a5d59985ae3a8bbbb822e692e08f78795a403465e9d1cea30f497",
-    "results/ablations/synthetic_32_nonlinear/analysis.json": "acd4b4b99bfd896f2f92d5a90a6ae75a43e846ecafe61633da30a35af0494786",
+    "results/ablations/synthetic_32_nonlinear/analysis.json": "1c3f703792efb878c466e5a55c5c2d72faf932074619fea15991c6fe3ee0e6ac",
+    "results/ablations/synthetic_64_nonlinear/analysis.json": "2b9502727e295d445c7de5ae4c4c337b971f337bbfd136a55bebe81479273b55",
+    "results/ablations/intel/analysis.json": "91716b65e6d54308f35f46957f38030e5a4b196626f1725382702e7ebf725e62",
+    "results/ablations/skab/analysis.json": "918a446470f6a8c3d3c954f93adc7037c115c44f89b36bb0bae1a4f94618d951",
     "results/audits/association_metadata.json": "b04066bc5abf91d42b01f9d413c794e7381d70b5366954a39232898f5d83db35",
+    "results/cross_type_analysis.json": "36ebb9cf3c2f47359a58638f9d0f332d12a3ee35885b7fc07e1723e1a67c18db",
     "results/audits/production_equations.json": "30ab85adc4e6973828bbceb9f37b631ae1bd61d020328cd842b7b4a5e11a794a",
-    "results/graph/synthetic_32_nonlinear_illustration.json": "90f7c769fafc23e4690fcfde8c205b50f11492981ddd24a389bc5b6cdbb76120"
+    "results/equation_analysis.json": "d2ff7b3026b169d94d7fa2b4a9875e85f38e775c53b19b161c1ff89eacfe9d82",
+    "results/robustness/synthetic_32_nonlinear/analysis.json": "f853c328b4ca56d5961b7763a4d5f4741870babb1d1317851de2015335373060",
+    "results/native/skab/analysis.json": "d4c190844dceb4b8e36a3ac0f2f5a98e3ea96bf47e88b814a643bd56b1c79d1a",
+    "results/latency_scaling.json": "810e6195b145951d5d0c79e7153c3055aff9734c16d7d0c0f94400d84b2aeb61",
+    "results/graph/synthetic_32_nonlinear_illustration.json": "f8b21f15a7c3bfa407a82a2af867d3fbcaa9c3554e872627de32928f73d615fc"
   },
   "generated_outputs": {
-    "numbers.tex": "aed126156bc70de3cfd8c00ddf9b46c034c787b7d25dfb08b67a3622e6d0228a",
-    "abstract_results.tex": "9552188e546b5e7097adbe5ebc1d41b51e3fb01d899ce11f1cc0d152deb04dcf",
+    "numbers.tex": "1789cffe5432f97110e98dd98e1b0adc975939f3fd2f486b4856b81825264d8e",
+    "abstract_results.tex": "f2188837d8db481aeefc636374acd90847f53bf891489c7665b13f8b78be7750",
     "datasets_table.tex": "75198004e9c25cf2daca4a528dcef6f7974b9eca433774229153cf82c7066145",
-    "main_table.tex": "ab1677114d2efb5bbd12eb1357b1cb7ac6846e7b70956564e0794d57fde00434",
-    "results_text.tex": "0dd3363385608557342f7e3aa5dcfed5f8edc22a4a09f07f4b47f002ce3e5705",
-    "ablation_table.tex": "7a5d9db1e856fb51337a46acf148a157e186a38ec788b76383cde5b0687f3d6f",
-    "ablation_text.tex": "31d7d333e1cd46ca24c203277074c5d61d87a245a9a507ef44ee2c23addd1935",
-    "native_text.tex": "167328d6b47384345580c8aa68ac3cf994a38efc989936345796464db5840f14",
-    "cost_text.tex": "bb2bafd24900705ff9726dd64b84ceb0c68956da59b0bb5132f00fc9b7d658a1",
-    "network_caption.tex": "60fa5697fabe9f1d51991f86fb7e463b7063264ae36897ce383928471ecf9321",
+    "main_table.tex": "754887113f6c7682e46faf1fb6efe6ba422cda4daa5edaa1e3d107dc12eb7ddc",
+    "results_text.tex": "fe57b83955f2c0f183a49a3a63ba429c52a8b76c797893f3fac2d8a84f8e8113",
+    "ablation_table.tex": "a9ec42f625af05f0245251ed0a7a6c0923b8013b6e3136603a8aa3aa9ca1fc2e",
+    "ablation_text.tex": "b4bc362a69e28a273f81589d4fab411812c84fcc84e710537ecfa9c9252d6fea",
+    "robustness_text.tex": "214b89e28edb740f7f6254c16464b625ed24ee008347565cdb326e28aef2b327",
+    "native_text.tex": "7c478dbde7782aacbfe29b0aa811b8f448918e1535fbfd2972bfcc20359df3cb",
+    "cost_text.tex": "6d397ad1e3219210beee9c42189a5c8d9baaf13236b0d07928ee73c179bbff06",
+    "network_caption.tex": "2343a5988d9d95ddbc0838483ebcc1a206c9514a6c0b814c9fd558d487dc7166",
     "conclusion_results.tex": "49fd266cba1f6f76b69e2a68cd46d275ff297b0fa7607a48dd27c673b507d675"
   },
   "static_numerical_sources": [

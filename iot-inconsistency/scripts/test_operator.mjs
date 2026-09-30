@@ -38,6 +38,6 @@ for(const action of ['confirm','reject','defer']){
  reviews.push(await evaluate("$('status').textContent"));
 }
 assert.deepEqual(exceptions,[]);
-const report={tested_at:new Date().toISOString(),url:base,case_count:10,checks:['saved case and time selection','classic SVG node-link network','observation and association selection','unchanged witness values and before/after intervals','evidence artifact download','neighborhood focus','confirm/reject/defer persistence','no uncaught browser exceptions'],reviews,scope:'automated local interface verification, not a human evaluation'};
+const report={tested_at:new Date().toISOString(),url:base,case_count:10,run_id:await evaluate('bundle.run.id'),case_id:await evaluate('bundle.case.id'),graph_version:await evaluate('bundle.case.graph.version'),checks:['saved case and time selection','classic SVG node-link network','observation and association selection','unchanged witness values and before/after intervals','evidence artifact download','neighborhood focus','confirm/reject/defer persistence','no uncaught browser exceptions'],reviews,scope:'automated local interface verification, not a human evaluation'};
 await fs.writeFile('results/interface/browser_verification.json',JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(report,null,2));socket.close();

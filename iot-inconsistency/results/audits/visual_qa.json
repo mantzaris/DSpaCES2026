@@ -1,0 +1,27 @@
+{
+  "inspected_at": "2026-09-30T20:08:06.572811+00:00",
+  "pdf_sha256": "db5a35e93cd528cb7d88593ea8bcd820330ef2a2088e2805229a589ac7b7bbdf",
+  "pages": 10,
+  "inspected_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "checks": [
+    "IEEE conference layout and readable text",
+    "all four scientific figures inspected at paper placement",
+    "all result tables including native event table fit their columns",
+    "formula symbols and numbering visible",
+    "network coordinates fixed across all three panels",
+    "reliability-bin counts legible",
+    "references fit within page limit"
+  ],
+  "scope": "Visual inspection of rendered pages and original figure previews, not an automated proof of scientific validity"
+}

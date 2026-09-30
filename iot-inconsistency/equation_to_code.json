@@ -261,8 +261,102 @@
       "results/audits/production_equations.json",
       "results/audits/parity_cuda.json",
       "results/study/",
-      "results/sensitivity/"
+      "results/sensitivity/",
+      "results/native/skab/analysis.json"
     ],
-    "status": "implemented; native-event experiment running"
+    "status": "implemented and executed in native SKAB events; process alerts retained during attribution abstention"
+  },
+  {
+    "specification_equation": "B1",
+    "manuscript_label": "Comparators and implementation",
+    "implementation": "src/iot_repair/baselines.py:PCADetector.fit and PCADetector.score",
+    "tests": [
+      "scripts/audit_pca.py"
+    ],
+    "configuration": "configs/study.json",
+    "results": [
+      "results/audits/pca_scores.json"
+    ],
+    "status": "executed comparator; explicit training mean, sensor contributions and frozen calibration"
+  },
+  {
+    "specification_equation": "B2",
+    "manuscript_label": "Comparators and implementation",
+    "implementation": "src/iot_repair/baselines.py:total_reconstruction_score",
+    "tests": [
+      "scripts/evaluate_pca_total.py"
+    ],
+    "configuration": "configs/study.json",
+    "results": [
+      "results/pca_total/analysis.json"
+    ],
+    "status": "executed conventional total residual detector, calibrated and evaluated separately from the frozen channel-maximum primary comparator"
+  },
+  {
+    "specification_equation": "B3",
+    "manuscript_label": "Comparators and implementation",
+    "implementation": "src/iot_repair/baselines.py:score and all_coordinate_contributions",
+    "tests": [
+      "scripts/audit_pca.py",
+      "scripts/evaluate_pca_total.py"
+    ],
+    "configuration": "configs/study.json",
+    "results": [
+      "results/audits/pca_scores.json",
+      "results/pca_total/analysis.json"
+    ],
+    "status": "executed comparator; explicit training mean, sensor contributions and frozen calibration"
+  },
+  {
+    "specification_equation": "B4",
+    "manuscript_label": "Comparators and implementation",
+    "implementation": "src/iot_repair/baselines.py:GDN.forward",
+    "tests": [
+      "scripts/audit_models.py"
+    ],
+    "configuration": "configs/study.json",
+    "results": [
+      "results/audits/trained_models.json"
+    ],
+    "status": "executed comparator; explicit training mean, sensor contributions and frozen calibration"
+  },
+  {
+    "specification_equation": "B5",
+    "manuscript_label": "Comparators and implementation",
+    "implementation": "src/iot_repair/baselines.py:gdn_residual",
+    "tests": [
+      "scripts/audit_models.py"
+    ],
+    "configuration": "configs/study.json",
+    "results": [
+      "results/study/"
+    ],
+    "status": "executed comparator; explicit training mean, sensor contributions and frozen calibration"
+  },
+  {
+    "specification_equation": "B6",
+    "manuscript_label": "Comparators and implementation",
+    "implementation": "src/iot_repair/experiment.py:reference_scale and scaled",
+    "tests": [
+      "scripts/analyze.py"
+    ],
+    "configuration": "configs/study.json",
+    "results": [
+      "results/study/"
+    ],
+    "status": "executed comparator; explicit training mean, sensor contributions and frozen calibration"
+  },
+  {
+    "specification_equation": "B7",
+    "manuscript_label": "Comparators and implementation",
+    "implementation": "src/iot_repair/metrics.py:summarize",
+    "tests": [
+      "scripts/analyze.py"
+    ],
+    "configuration": "configs/study.json",
+    "results": [
+      "results/analysis.json"
+    ],
+    "status": "executed comparator; explicit training mean, sensor contributions and frozen calibration"
   }
 ]

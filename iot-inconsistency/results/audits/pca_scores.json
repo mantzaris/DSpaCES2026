@@ -1,0 +1,405 @@
+{
+  "checks": [
+    {
+      "dataset": "synthetic_32_linear",
+      "method": "pca_lag1_rank2",
+      "windows": 240,
+      "rank": 2,
+      "portable_max_absolute_error": 0.0,
+      "double_projection_max_absolute_error": 2.6769299346085518e-06,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "synthetic_32_linear",
+      "method": "pca_lag1_rank4",
+      "windows": 240,
+      "rank": 4,
+      "portable_max_absolute_error": 9.5367431640625e-07,
+      "double_projection_max_absolute_error": 1.633077680196493e-06,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "synthetic_32_linear",
+      "method": "pca_lag1_rank8",
+      "windows": 240,
+      "rank": 8,
+      "portable_max_absolute_error": 2.384185791015625e-07,
+      "double_projection_max_absolute_error": 1.5285953676169584e-06,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "synthetic_32_linear",
+      "method": "pca_lag1_rank16",
+      "windows": 240,
+      "rank": 16,
+      "portable_max_absolute_error": 9.5367431640625e-07,
+      "double_projection_max_absolute_error": 1.4615954704311207e-06,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "synthetic_32_linear",
+      "method": "pca_lag4_rank2",
+      "windows": 240,
+      "rank": 2,
+      "portable_max_absolute_error": 5.960464477539063e-08,
+      "double_projection_max_absolute_error": 2.280642398488908e-06,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "synthetic_32_linear",
+      "method": "pca_lag4_rank4",
+      "windows": 240,
+      "rank": 4,
+      "portable_max_absolute_error": 4.76837158203125e-07,
+      "double_projection_max_absolute_error": 1.8703862210145417e-06,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "synthetic_32_linear",
+      "method": "pca_lag4_rank8",
+      "windows": 240,
+      "rank": 8,
+      "portable_max_absolute_error": 4.76837158203125e-07,
+      "double_projection_max_absolute_error": 2.3214447963937346e-06,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "synthetic_32_linear",
+      "method": "pca_lag4_rank16",
+      "windows": 240,
+      "rank": 16,
+      "portable_max_absolute_error": 9.5367431640625e-07,
+      "double_projection_max_absolute_error": 2.387905716716432e-06,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "method": "pca_lag1_rank2",
+      "windows": 240,
+      "rank": 2,
+      "portable_max_absolute_error": 1.9073486328125e-06,
+      "double_projection_max_absolute_error": 1.8113861735002956e-06,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "method": "pca_lag1_rank4",
+      "windows": 240,
+      "rank": 4,
+      "portable_max_absolute_error": 4.76837158203125e-07,
+      "double_projection_max_absolute_error": 3.7649314634791153e-06,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "method": "pca_lag1_rank8",
+      "windows": 240,
+      "rank": 8,
+      "portable_max_absolute_error": 4.76837158203125e-07,
+      "double_projection_max_absolute_error": 3.4670541850800873e-06,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "method": "pca_lag1_rank16",
+      "windows": 240,
+      "rank": 16,
+      "portable_max_absolute_error": 1.9073486328125e-06,
+      "double_projection_max_absolute_error": 1.3640735296860385e-06,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "method": "pca_lag4_rank2",
+      "windows": 240,
+      "rank": 2,
+      "portable_max_absolute_error": 9.5367431640625e-07,
+      "double_projection_max_absolute_error": 2.5201050561918237e-06,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "method": "pca_lag4_rank4",
+      "windows": 240,
+      "rank": 4,
+      "portable_max_absolute_error": 2.9802322387695312e-08,
+      "double_projection_max_absolute_error": 2.5056863464101298e-06,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "method": "pca_lag4_rank8",
+      "windows": 240,
+      "rank": 8,
+      "portable_max_absolute_error": 4.76837158203125e-07,
+      "double_projection_max_absolute_error": 2.1483557439694323e-06,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "method": "pca_lag4_rank16",
+      "windows": 240,
+      "rank": 16,
+      "portable_max_absolute_error": 3.814697265625e-06,
+      "double_projection_max_absolute_error": 2.64593349541542e-06,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "method": "pca_lag1_rank2",
+      "windows": 240,
+      "rank": 2,
+      "portable_max_absolute_error": 1.9073486328125e-06,
+      "double_projection_max_absolute_error": 4.598085048712619e-06,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "method": "pca_lag1_rank4",
+      "windows": 240,
+      "rank": 4,
+      "portable_max_absolute_error": 9.5367431640625e-07,
+      "double_projection_max_absolute_error": 2.5571033788196473e-06,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "method": "pca_lag1_rank8",
+      "windows": 240,
+      "rank": 8,
+      "portable_max_absolute_error": 1.9073486328125e-06,
+      "double_projection_max_absolute_error": 2.879222098073342e-06,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "method": "pca_lag1_rank16",
+      "windows": 240,
+      "rank": 16,
+      "portable_max_absolute_error": 1.9073486328125e-06,
+      "double_projection_max_absolute_error": 2.2894074653834195e-06,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "method": "pca_lag4_rank2",
+      "windows": 240,
+      "rank": 2,
+      "portable_max_absolute_error": 1.9073486328125e-06,
+      "double_projection_max_absolute_error": 2.1228316904320366e-06,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "method": "pca_lag4_rank4",
+      "windows": 240,
+      "rank": 4,
+      "portable_max_absolute_error": 9.5367431640625e-07,
+      "double_projection_max_absolute_error": 3.3108047432506282e-06,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "method": "pca_lag4_rank8",
+      "windows": 240,
+      "rank": 8,
+      "portable_max_absolute_error": 9.5367431640625e-07,
+      "double_projection_max_absolute_error": 2.992107759780538e-06,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "method": "pca_lag4_rank16",
+      "windows": 240,
+      "rank": 16,
+      "portable_max_absolute_error": 3.814697265625e-06,
+      "double_projection_max_absolute_error": 2.2918796815929454e-06,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "intel",
+      "method": "pca_lag1_rank2",
+      "windows": 132,
+      "rank": 2,
+      "portable_max_absolute_error": 0.0,
+      "double_projection_max_absolute_error": 0.00016213967387557204,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "intel",
+      "method": "pca_lag1_rank4",
+      "windows": 132,
+      "rank": 4,
+      "portable_max_absolute_error": 3.814697265625e-06,
+      "double_projection_max_absolute_error": 0.0001581117676323629,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "intel",
+      "method": "pca_lag1_rank8",
+      "windows": 132,
+      "rank": 8,
+      "portable_max_absolute_error": 0.00048828125,
+      "double_projection_max_absolute_error": 0.00011221193986443723,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "intel",
+      "method": "pca_lag1_rank16",
+      "windows": 132,
+      "rank": 16,
+      "portable_max_absolute_error": 6.103515625e-05,
+      "double_projection_max_absolute_error": 0.00014227065378236148,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "intel",
+      "method": "pca_lag4_rank2",
+      "windows": 132,
+      "rank": 2,
+      "portable_max_absolute_error": 0.0,
+      "double_projection_max_absolute_error": 0.00032525151254958473,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "intel",
+      "method": "pca_lag4_rank4",
+      "windows": 132,
+      "rank": 4,
+      "portable_max_absolute_error": 0.0,
+      "double_projection_max_absolute_error": 0.00023475228434222117,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "intel",
+      "method": "pca_lag4_rank8",
+      "windows": 132,
+      "rank": 8,
+      "portable_max_absolute_error": 9.1552734375e-05,
+      "double_projection_max_absolute_error": 0.00021986266710882774,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "intel",
+      "method": "pca_lag4_rank16",
+      "windows": 132,
+      "rank": 16,
+      "portable_max_absolute_error": 0.00018310546875,
+      "double_projection_max_absolute_error": 0.00038534190662176115,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "skab",
+      "method": "pca_lag1_rank2",
+      "windows": 240,
+      "rank": 2,
+      "portable_max_absolute_error": 1.52587890625e-05,
+      "double_projection_max_absolute_error": 2.7791826369139017e-05,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "skab",
+      "method": "pca_lag1_rank4",
+      "windows": 240,
+      "rank": 4,
+      "portable_max_absolute_error": 1.9073486328125e-06,
+      "double_projection_max_absolute_error": 1.4691616911477468e-05,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "skab",
+      "method": "pca_lag1_rank8",
+      "windows": 240,
+      "rank": 7,
+      "portable_max_absolute_error": 1.9073486328125e-06,
+      "double_projection_max_absolute_error": 2.96754658002385e-06,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "skab",
+      "method": "pca_lag1_rank16",
+      "windows": 240,
+      "rank": 7,
+      "portable_max_absolute_error": 1.9073486328125e-06,
+      "double_projection_max_absolute_error": 2.96754658002385e-06,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "skab",
+      "method": "pca_lag4_rank2",
+      "windows": 240,
+      "rank": 2,
+      "portable_max_absolute_error": 2.384185791015625e-06,
+      "double_projection_max_absolute_error": 2.1083418914713548e-05,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "skab",
+      "method": "pca_lag4_rank4",
+      "windows": 240,
+      "rank": 4,
+      "portable_max_absolute_error": 7.62939453125e-06,
+      "double_projection_max_absolute_error": 7.148891072006336e-06,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "skab",
+      "method": "pca_lag4_rank8",
+      "windows": 240,
+      "rank": 8,
+      "portable_max_absolute_error": 3.814697265625e-06,
+      "double_projection_max_absolute_error": 5.949625959900118e-06,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    },
+    {
+      "dataset": "skab",
+      "method": "pca_lag4_rank16",
+      "windows": 240,
+      "rank": 16,
+      "portable_max_absolute_error": 3.814697265625e-06,
+      "double_projection_max_absolute_error": 1.5321546264601693e-05,
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 2e-05
+    }
+  ],
+  "scope": "Every primary test window, all saved PCA rank/lag settings. No fitting or test-based selection."
+}

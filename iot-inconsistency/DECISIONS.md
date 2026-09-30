@@ -8,7 +8,7 @@
 
 2026-09-30. The adjacent regional energy twin manuscript concerns selective measurement access and Gaussian refinement. This study concerns sensor and association attribution using withheld witnesses. Its results, prose and scientific figures will not be reused as evidence for this study.
 
-2026-09-30. The workshop page confirms an October 15 deadline and a ten-page IEEE two-column full-paper limit. The exact deadline timezone and anonymity rules still require portal verification. Source https://sites.google.com/unisalento.it/ieee-dspaces-2026/home.
+2026-09-30. The workshop page confirms an October 15 deadline and a ten-page IEEE two-column full-paper limit. The submission portal was subsequently verified to state October 15 at 23:59 Anywhere on Earth (AoE). No anonymity instruction was stated on the workshop or submission landing page. See literature/venue_verification.json. Source https://sites.google.com/unisalento.it/ieee-dspaces-2026/home.
 
 The second protocol uses alternating signs in synthetic measurement responses so sign faults can be matched to valid sign metadata. Paired edge permutations preserve source and target degree counts and the marginal distributions of lag, sign, magnitude and intercept. The stored parameter mismatch remains explicitly a surrogate. A separate simulation changes a physical measurement response to examine genuinely stale associations.
 
@@ -39,3 +39,11 @@ Exact known-copy invariance passed on all five trained configurations when deter
 ## Final targeted-stress sampling
 
 The final bounded stress set uses twelve evenly spaced eligible held-out reference windows, spanning the available source blocks, rather than taking the first twelve consecutive windows. This fixes the representativeness of the diagnostic controls without increasing the case budget or selecting on results. Version `scaled-screen-stratified-v3` includes the frozen screening correction. Earlier stress outputs remain in versioned subdirectories and are excluded from final summaries. Primary test cases and hyperparameters remain frozen.
+
+## Final PCA formula-completeness audit
+
+The original common evaluation uses the maximum standardized sensor contribution and reconstructs only the current coordinate when summarizing each lag vector. This is now named explicitly in the paper. A final audit identified that the conventional B2 full squared reconstruction norm and the B3 mean across all embedded coordinates also needed an explicit detector evaluation. `evaluate_pca_total.py` evaluates them with the already trained PCA states, development-only rank selection and the same calibration blocks. It preserves all original primary selections and reports the additional total-error rows separately. Independent double-precision projection checks pass for both statistics. Entirely unavailable windows abstain at the declared floor and are not assigned zero error.
+
+## Joint use of type-specific confidence
+
+`analyze_cross_type.py` keeps frozen calibrators and evaluates observation, association and unmodified windows together as a descriptive transfer diagnostic. It was added after the illustrated case exposed simultaneous reading and association acceptance. No new exclusivity classifier is fitted. The paper and interface state that the probability map is fitted for one injected fault type against unmodified references. Strong evidence for two types exposes ambiguity rather than a unique causal diagnosis.

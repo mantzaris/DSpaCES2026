@@ -1,0 +1,57 @@
+{
+  "weight_files_verified": 78,
+  "cases": [
+    {
+      "dataset": "synthetic_32_linear",
+      "case": "test_0000_observation",
+      "raw_sha256": "291f0b76f43ff44ca7d45007e0cc2452d960c59470c6aa510e18393c210d676f",
+      "seed": 4911009,
+      "candidates": 8,
+      "portable_vs_checkpoint": "exact state and predictive array equality under deterministic CUDA reductions",
+      "max_score_difference_from_original_study": 1.1256589865533224e-05,
+      "note": "Original study used ordinary CUDA reductions. See inference_repeatability.json. All published scores are independently audited from the saved original draws."
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "case": "test_0000_observation",
+      "raw_sha256": "0ac906605711b47f166410b9f17e2d663ef8c0d51762eb7e347b9859945e98db",
+      "seed": 4911009,
+      "candidates": 8,
+      "portable_vs_checkpoint": "exact state and predictive array equality under deterministic CUDA reductions",
+      "max_score_difference_from_original_study": 1.2345460132993534e-05,
+      "note": "Original study used ordinary CUDA reductions. See inference_repeatability.json. All published scores are independently audited from the saved original draws."
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "case": "test_0000_observation",
+      "raw_sha256": "dfe1a1f01872aad9ca89feffe1665c107d3582959c30053bb747412ba56e0689",
+      "seed": 4911009,
+      "candidates": 8,
+      "portable_vs_checkpoint": "exact state and predictive array equality under deterministic CUDA reductions",
+      "max_score_difference_from_original_study": 1.2475056756708347e-05,
+      "note": "Original study used ordinary CUDA reductions. See inference_repeatability.json. All published scores are independently audited from the saved original draws."
+    },
+    {
+      "dataset": "intel",
+      "case": "test_0000_observation",
+      "raw_sha256": "bc6e19043c3b2d7d58461d6c982ebb4266af729acf877593652c71e5e554f613",
+      "seed": 4911009,
+      "candidates": 8,
+      "portable_vs_checkpoint": "exact state and predictive array equality under deterministic CUDA reductions",
+      "max_score_difference_from_original_study": 0.0023807979196512896,
+      "note": "Original study used ordinary CUDA reductions. See inference_repeatability.json. All published scores are independently audited from the saved original draws."
+    },
+    {
+      "dataset": "skab",
+      "case": "test_0000_observation",
+      "raw_sha256": "d0d9411451d46a7d002306e19cd6e4382000f122f847a53cc7fed2d346d4895b",
+      "seed": 4911009,
+      "candidates": 8,
+      "portable_vs_checkpoint": "exact state and predictive array equality under deterministic CUDA reductions",
+      "max_score_difference_from_original_study": 0.0,
+      "note": "Original study used ordinary CUDA reductions. See inference_repeatability.json. All published scores are independently audited from the saved original draws."
+    }
+  ],
+  "deterministic_algorithms": true,
+  "workspace_config": ":4096:8"
+}

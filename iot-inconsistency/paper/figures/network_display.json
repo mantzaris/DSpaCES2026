@@ -1,0 +1,469 @@
+{
+  "run_id": "synthetic_32_nonlinear:7e12b65a87902c3d",
+  "case": "test_0084_observation",
+  "graph_version": "7cc8c08c08e3b834",
+  "raw_sha256": "85f1af40f757ef816fe48b6b3c97f810731aad437eae35e689307fe5fc05b120",
+  "coordinates": {
+    "13": [
+      456.20787123970536,
+      243.06190561193267
+    ],
+    "21": [
+      243.22237849966174,
+      132.67244301066154
+    ],
+    "17": [
+      263.759894224572,
+      261.93009581832166
+    ],
+    "25": [
+      99.07057632256618,
+      100.0
+    ],
+    "29": [
+      80.0,
+      233.39446607471564
+    ],
+    "9": [
+      476.7244070045284,
+      372.28226702758195
+    ],
+    "5": [
+      640.0,
+      271.5791888517068
+    ],
+    "1": [
+      620.9580619279974,
+      405.0
+    ]
+  },
+  "panels": [
+    {
+      "title": "(a) Disagreement",
+      "hypothesis_id": null,
+      "edges": [
+        {
+          "index": 87,
+          "source": 25,
+          "target": 29,
+          "label": "\u219229 1s",
+          "label_position": [
+            105.0,
+            164.2913113976476
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        },
+        {
+          "index": 88,
+          "source": 21,
+          "target": 29,
+          "label": "\u219229 2s",
+          "label_position": [
+            179.9913126324949,
+            212.81887151875338
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        },
+        {
+          "index": 89,
+          "source": 17,
+          "target": 29,
+          "label": "\u219229 1s",
+          "label_position": [
+            166.509251088647,
+            282.2477638001911
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        },
+        {
+          "index": 76,
+          "source": 17,
+          "target": 25,
+          "label": "\u219225 1s",
+          "label_position": [
+            136.55853138964403,
+            160.7009611747379
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        },
+        {
+          "index": 63,
+          "source": 17,
+          "target": 21,
+          "label": "\u219221 1s",
+          "label_position": [
+            332.5000444059443,
+            184.74768627173836
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        },
+        {
+          "index": 65,
+          "source": 13,
+          "target": 21,
+          "label": "\u219221 1s",
+          "label_position": [
+            373.6435093970758,
+            141.69973541861802
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        },
+        {
+          "index": 53,
+          "source": 9,
+          "target": 17,
+          "label": "\u219217 2s",
+          "label_position": [
+            378.0634157830875,
+            302.0122153714654
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        },
+        {
+          "index": 40,
+          "source": 17,
+          "target": 13,
+          "label": "\u219213 1s",
+          "label_position": [
+            329.30030509091506,
+            335.887890977252
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        },
+        {
+          "index": 15,
+          "source": 1,
+          "target": 5,
+          "label": "\u219205 1s",
+          "label_position": [
+            610.0,
+            340.69151040283026
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        },
+        {
+          "index": 16,
+          "source": 9,
+          "target": 5,
+          "label": "\u219205 1s",
+          "label_position": [
+            539.9889228750459,
+            292.1410894894469
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        }
+      ],
+      "witnesses": [],
+      "node_shape": "circle",
+      "suspect_shape": "double circle",
+      "annotation_connector": "black dotted line"
+    },
+    {
+      "title": "(b) Suspect reading",
+      "hypothesis_id": "synthetic_32_nonlinear:test_0084_observation:85f1af40f757ef81:7e12b65a87902c3d:observation:17",
+      "edges": [
+        {
+          "index": 87,
+          "source": 25,
+          "target": 29,
+          "label": "\u219229 1s",
+          "label_position": [
+            105.0,
+            164.2913113976476
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        },
+        {
+          "index": 88,
+          "source": 21,
+          "target": 29,
+          "label": "\u219229 2s",
+          "label_position": [
+            179.9913126324949,
+            212.81887151875338
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        },
+        {
+          "index": 89,
+          "source": 17,
+          "target": 29,
+          "label": "\u219229 1s",
+          "label_position": [
+            166.509251088647,
+            282.2477638001911
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        },
+        {
+          "index": 76,
+          "source": 17,
+          "target": 25,
+          "label": "\u219225 1s",
+          "label_position": [
+            136.55853138964403,
+            160.7009611747379
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        },
+        {
+          "index": 63,
+          "source": 17,
+          "target": 21,
+          "label": "\u219221 1s",
+          "label_position": [
+            270.2805293214302,
+            194.63363299665653
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        },
+        {
+          "index": 65,
+          "source": 13,
+          "target": 21,
+          "label": "\u219221 1s",
+          "label_position": [
+            365.8207683015822,
+            156.7929365950708
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        },
+        {
+          "index": 53,
+          "source": 9,
+          "target": 17,
+          "label": "\u219217 2s",
+          "label_position": [
+            378.0634157830875,
+            302.0122153714654
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        },
+        {
+          "index": 40,
+          "source": 17,
+          "target": 13,
+          "label": "\u219213 1s",
+          "label_position": [
+            329.30030509091506,
+            335.887890977252
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        },
+        {
+          "index": 15,
+          "source": 1,
+          "target": 5,
+          "label": "\u219205 1s",
+          "label_position": [
+            610.0,
+            340.69151040283026
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        },
+        {
+          "index": 16,
+          "source": 9,
+          "target": 5,
+          "label": "\u219205 1s",
+          "label_position": [
+            539.9889228750459,
+            292.1410894894469
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        }
+      ],
+      "witnesses": [
+        13,
+        21
+      ],
+      "node_shape": "circle",
+      "suspect_shape": "double circle",
+      "annotation_connector": "black dotted line"
+    },
+    {
+      "title": "(c) Association under review",
+      "hypothesis_id": "synthetic_32_nonlinear:test_0084_observation:85f1af40f757ef81:7e12b65a87902c3d:association:76",
+      "edges": [
+        {
+          "index": 87,
+          "source": 25,
+          "target": 29,
+          "label": "\u219229 1s",
+          "label_position": [
+            105.0,
+            164.2913113976476
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        },
+        {
+          "index": 88,
+          "source": 21,
+          "target": 29,
+          "label": "\u219229 2s",
+          "label_position": [
+            221.5632768325783,
+            207.14166943717402
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        },
+        {
+          "index": 89,
+          "source": 17,
+          "target": 29,
+          "label": "\u219229 1s",
+          "label_position": [
+            166.509251088647,
+            282.2477638001911
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        },
+        {
+          "index": 76,
+          "source": 17,
+          "target": 25,
+          "label": "\u219225 1s",
+          "label_position": [
+            136.55853138964403,
+            160.7009611747379
+          ],
+          "color": "#a95300",
+          "line_style": "dashed",
+          "meaning": "predicts target channel at stated lag"
+        },
+        {
+          "index": 63,
+          "source": 17,
+          "target": 21,
+          "label": "\u219221 1s",
+          "label_position": [
+            270.2805293214302,
+            194.63363299665653
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        },
+        {
+          "index": 65,
+          "source": 13,
+          "target": 21,
+          "label": "\u219221 1s",
+          "label_position": [
+            365.8207683015822,
+            156.7929365950708
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        },
+        {
+          "index": 53,
+          "source": 9,
+          "target": 17,
+          "label": "\u219217 2s",
+          "label_position": [
+            378.0634157830875,
+            302.0122153714654
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        },
+        {
+          "index": 40,
+          "source": 17,
+          "target": 13,
+          "label": "\u219213 1s",
+          "label_position": [
+            329.30030509091506,
+            335.887890977252
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        },
+        {
+          "index": 15,
+          "source": 1,
+          "target": 5,
+          "label": "\u219205 1s",
+          "label_position": [
+            610.0,
+            340.69151040283026
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        },
+        {
+          "index": 16,
+          "source": 9,
+          "target": 5,
+          "label": "\u219205 1s",
+          "label_position": [
+            539.9889228750459,
+            292.1410894894469
+          ],
+          "color": "#8293a0",
+          "line_style": "solid",
+          "meaning": "predicts target channel at stated lag"
+        }
+      ],
+      "witnesses": [
+        25,
+        29
+      ],
+      "node_shape": "circle",
+      "suspect_shape": "double circle",
+      "annotation_connector": "black dotted line"
+    }
+  ],
+  "font_points": 8
+}

@@ -1,4 +1,5 @@
 {
+  "window_id": "skab:test_0000_observation:d0d9411451d46a7d",
   "process_alert": false,
   "process_null_tail": 0.7111111111111111,
   "dataset": "skab",
@@ -1617,7 +1618,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "skab:test_0000_observation:d0d9411451d46a7d:2950cd6d66e1f0f1:observation:1"
     },
     {
       "kind": "observation",
@@ -1870,7 +1872,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "skab:test_0000_observation:d0d9411451d46a7d:2950cd6d66e1f0f1:observation:4"
     },
     {
       "kind": "observation",
@@ -2123,7 +2126,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "skab:test_0000_observation:d0d9411451d46a7d:2950cd6d66e1f0f1:observation:0"
     },
     {
       "kind": "observation",
@@ -2376,7 +2380,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "skab:test_0000_observation:d0d9411451d46a7d:2950cd6d66e1f0f1:observation:7"
     },
     {
       "kind": "association",
@@ -2587,7 +2592,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "skab:test_0000_observation:d0d9411451d46a7d:2950cd6d66e1f0f1:association:14"
     },
     {
       "kind": "association",
@@ -2798,7 +2804,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "skab:test_0000_observation:d0d9411451d46a7d:2950cd6d66e1f0f1:association:2"
     },
     {
       "kind": "association",
@@ -3009,7 +3016,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "skab:test_0000_observation:d0d9411451d46a7d:2950cd6d66e1f0f1:association:23"
     },
     {
       "kind": "association",
@@ -3220,7 +3228,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "id": "skab:test_0000_observation:d0d9411451d46a7d:2950cd6d66e1f0f1:association:5"
     }
   ],
   "artifact": "results/study/skab/test/test_0000_observation.npz",
@@ -3281,80 +3290,90 @@
         "source": 7,
         "target": 1,
         "lag": 3,
+        "lag_seconds": 3,
         "sign": 1,
-        "label": "predicts C01, lag 3"
+        "label": "predicts C01, lag 3 s"
       },
       {
         "index": 4,
         "source": 0,
         "target": 1,
         "lag": 2,
+        "lag_seconds": 2,
         "sign": 1,
-        "label": "predicts C01, lag 2"
+        "label": "predicts C01, lag 2 s"
       },
       {
         "index": 5,
         "source": 4,
         "target": 1,
         "lag": 3,
+        "lag_seconds": 3,
         "sign": 1,
-        "label": "predicts C01, lag 3"
+        "label": "predicts C01, lag 3 s"
       },
       {
         "index": 21,
         "source": 1,
         "target": 7,
         "lag": 1,
+        "lag_seconds": 1,
         "sign": 1,
-        "label": "predicts C07, lag 1"
+        "label": "predicts C07, lag 1 s"
       },
       {
         "index": 1,
         "source": 1,
         "target": 0,
         "lag": 2,
+        "lag_seconds": 2,
         "sign": 1,
-        "label": "predicts C00, lag 2"
+        "label": "predicts C00, lag 2 s"
       },
       {
         "index": 14,
         "source": 0,
         "target": 4,
         "lag": 1,
+        "lag_seconds": 1,
         "sign": 1,
-        "label": "predicts C04, lag 1"
+        "label": "predicts C04, lag 1 s"
       },
       {
         "index": 15,
         "source": 0,
         "target": 5,
         "lag": 3,
+        "lag_seconds": 3,
         "sign": 1,
-        "label": "predicts C05, lag 3"
+        "label": "predicts C05, lag 3 s"
       },
       {
         "index": 7,
         "source": 1,
         "target": 2,
         "lag": 2,
+        "lag_seconds": 2,
         "sign": 1,
-        "label": "predicts C02, lag 2"
+        "label": "predicts C02, lag 2 s"
       },
       {
         "index": 19,
         "source": 0,
         "target": 6,
         "lag": 3,
+        "lag_seconds": 3,
         "sign": -1,
-        "label": "predicts C06, lag 3"
+        "label": "predicts C06, lag 3 s"
       },
       {
         "index": 11,
         "source": 1,
         "target": 3,
         "lag": 1,
+        "lag_seconds": 1,
         "sign": 1,
-        "label": "predicts C03, lag 1"
+        "label": "predicts C03, lag 1 s"
       }
     ],
     "pruning_rule": "All selected suspects and witnesses retained. Context uses a fixed spanning forest of strong stored relations. Coordinates use seed 9026 and deterministic collision adjustment, never fault labels.",
@@ -3362,7 +3381,7 @@
     "layout_seed": 9026
   },
   "run": {
-    "id": "skab:0aed4c8f81b2f97c",
+    "id": "skab:2950cd6d66e1f0f1",
     "ensemble_seeds": [
       1101,
       2202,
@@ -3373,6 +3392,39 @@
     "predictive_samples": 8,
     "manifest": "results/study/skab/test/provenance.json",
     "manifest_sha256": "2a1e307e18a9d733b21388234fe961061a5bddf0e3f51ee9062603efa7b15ea2"
+  },
+  "association_context": {
+    "train": {
+      "decision_start": 1581168714,
+      "decision_stop": 1583773569,
+      "blocks": [
+        "anomaly-free/anomaly-free.csv",
+        "other/11.csv",
+        "other/5.csv",
+        "valve1/5.csv",
+        "valve2/0.csv",
+        "valve2/2.csv",
+        "valve2/3.csv"
+      ],
+      "file": "data/processed/skab/train.npz"
+    },
+    "development": {
+      "decision_start": 1581182905,
+      "decision_stop": 1583760849,
+      "blocks": [
+        "other/3.csv",
+        "other/4.csv",
+        "other/9.csv",
+        "valve1/0.csv",
+        "valve1/1.csv",
+        "valve1/3.csv",
+        "valve1/8.csv",
+        "valve1/9.csv"
+      ],
+      "file": "data/processed/skab/development.npz"
+    },
+    "manifest": "data/manifests/skab.json",
+    "manifest_sha256": "d1cf4088e0575c2a1b1983f1d3fb5163a78edc634e76ea7523668783ea785970"
   },
   "median": [
     0.212368,

@@ -1,6 +1,6 @@
 # Claims audit
 
-The manuscript is generated from saved experiment outputs. `results/paper_claims.json` records each generated numerical value, its JSON path or explicit aggregation, the source hash and the generated LaTeX hash. `paper/figures/provenance.json` records figure inputs. Draft status is explicit until native events, all ablations and final audits have finished.
+The complete manuscript is generated from saved experiment outputs. `results/paper_claims.json` records each generated numerical value, its JSON path or explicit aggregation, source hash and generated LaTeX hash. `paper/figures/provenance.json` records figure inputs and outputs. `results/audits/final.json` verifies their consistency and the 10-page limit.
 
 | Claim | Saved evidence | Interpretation and limits |
 | --- | --- | --- |
@@ -15,9 +15,14 @@ The manuscript is generated from saved experiment outputs. `results/paper_claims
 | Metadata matching is incomplete | `results/audits/association_metadata.json` | Degrees and marginal edge attributes are matched, but a metadata-only classifier still identifies some joint shortcuts. SKAB ROC area is 0.734. |
 | Calibration has limited resolution and imperfect empirical transfer | Each method's `null_reference_units`, `null_resolution`, `operating_points`, `probability_evaluation` | No configuration supports the 1% window-tail level. No temporal exchangeability guarantee is claimed. |
 | Exact known copies can be removed without changing model evidence | CPU integration tests and `results/audits/inference_repeatability.json` | Trained CUDA equality is tested with deterministic reductions. Unknown source aliases do not satisfy the assumptions. |
-| Portable weights preserve trained inference state | `results/model_weights/manifest.json`, `results/audits/portable_models.json` when complete | Exact state and deterministic checkpoint/NPZ predictive agreement. Ordinary CUDA seeded replays are measured separately. |
-| Native SKAB results concern process events | `results/native/skab/analysis.json` when complete | No native broken-sensor or false-edge truth is inferred. Process alerts remain independent of attribution abstention. |
+| Portable weights preserve trained inference state | `results/model_weights/manifest.json`, `results/audits/portable_models.json` | All 78 states preserved. Exact state and deterministic checkpoint/NPZ predictive agreement. Ordinary CUDA seeded replays are measured separately. |
+| Native SKAB results concern process events | `results/native/skab/analysis.json` | 319 windows from 10 disjoint experiments. GDN event recall 0.50, detected-event median delay 36 s, five censored events. No native broken-sensor or false-edge truth is inferred. |
 | The operator application persists review evidence | `results/graph/persistence_audit.json`, `results/interface/browser_verification.json`, `results/operator_decisions.jsonl` | Automated interface tests only. No human performance, diagnosis, causal identification or actuation claim. |
+| Sensor and association explanations can conflict | `results/cross_type_analysis.json` | S32N association window alarms occur on 0.6375 of reading-only fault windows. Type-specific probability maps do not identify an exclusive fault type. |
+| Contaminated conditioning can defeat primary-target attribution | `results/robustness/synthetic_32_nonlinear/analysis.json` | Twelve evenly spaced reference windows. Top-one rate falls from 1.0 to 0.0 at 50% additional conditioning-channel corruption. Only 0.1667 retain the primary target in screening. Additional corrupted channels are distractors for this endpoint. |
+| The single-source gate and missingness path abstain as designed | Same stress artifact | All 12 single-source windows withhold high-confidence attribution. Diagnostic top-one is 0.8333. Dropout yields 12 availability alerts and numeric-edit abstentions. |
+| Conventional PCA squared-error detection was also evaluated | `results/pca_total/analysis.json` | Full B2 norm and all-coordinate B3 attribution, independent double projection checks, development ranks and common calibration. Added at final formula audit and does not replace the frozen primary comparator. |
+| Candidate inference has measured computational costs | `results/latency_scaling.json` | Five warm runs per candidate count and network size. Eight hypotheses take median 0.244 s and 0.402 s for S32N/S64N. Includes screening and scoring, excludes model loading and database writes. No other GPU process was reported during these runs. |
 
 The worked S = 0.43 example is illustrative arithmetic. Model member seeds are not independent repetitions of the full ensemble. Primary evaluation uses one three-member ensemble. All intervals preserve source blocks rather than treating overlapping windows as independent.
 

@@ -1,9 +1,11 @@
 {
-  "pid": 50938,
-  "state": "running",
+  "pid": 55087,
+  "state": "complete",
   "command": [
     "bash",
     "scripts/verify_final_gpu.sh"
   ],
-  "started": "2026-09-30T18:56:55.503612+00:00"
+  "started": "2026-09-30T19:11:12.592208+00:00",
+  "exit_code": 0,
+  "finished": "2026-09-30T19:53:25.528846+00:00"
 }

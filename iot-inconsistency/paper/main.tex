@@ -1,6 +1,7 @@
 \documentclass[conference]{IEEEtran}
 \usepackage{amsmath,amssymb,booktabs,graphicx,microtype,url,xcolor}
 \usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Testing Sensor and Association Repairs with Separate Witness Evidence in IoT Networks},pdfauthor={Alexander V. Mantzaris}}
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\1}{\mathbf{1}}
 \newcommand{\method}{witness repair}
@@ -154,7 +155,7 @@ The tail value is not a fault probability. Where labeled calibration examples ar
  q(h)=\sigma(a\widetilde S(h)+b).
  \label{eq:probability}
 \end{equation}
-The centering and scale of $\widetilde S$ are fitted on that calibration fold. We report probability error and its prevalence dependence. A separate supervised comparator combines $R$, $U$ and $\Omega$ using only development labels.
+The centering and scale of $\widetilde S$ are fitted on that calibration fold. Each map describes one injected fault type against unmodified references, not exclusive diagnosis among competing fault types. We report probability error and its prevalence dependence. A separate supervised comparator combines $R$, $U$ and $\Omega$ using only development labels.
 
 Finally, the conventional process alert and attribution decision are distinct
 \begin{equation}
@@ -186,13 +187,13 @@ SKAB contains 34 labeled experiments and one anomaly-free file with eight proces
 Each controlled base window has an unmodified copy, one observation-fault copy and one association-fault copy in the same partition. Observation faults include offset, drift, stuck values, spikes, noise and coordinated changes. Replay, scale changes and delays are held-out families. Strength and duration vary. Missingness is a separate availability track. Association faults permute paired endpoints, lags, signs or parameter tuples. These permutations preserve degree counts and marginal attribute distributions. A metadata-only classifier tests remaining joint-distribution shortcuts. Parameter-version mismatch is reported as a surrogate, separately from the physical response-change experiment.
 
 \subsection{Comparators and implementation}
-PCA fits its own training mean after robust normalization. We evaluate contemporaneous and four-step lag embeddings, choose rank on development data and exclude a full-rank reconstruction. Per-channel reconstruction contributions support localization. GDN uses the verified one-head attention architecture with learned embeddings, neighbor selection, multiplicative output embeddings and batch normalization. We replace the inspected implementation's test-based normalization and test-optimal threshold paths with the shared protocol.
+PCA fits its own training mean after robust normalization. We evaluate current and four-step lag embeddings, choose rank on development data and exclude full-rank reconstruction. The frozen common protocol takes the maximum standardized current-coordinate reconstruction contribution, matching the graph detector's aggregation. A final formula audit also evaluates the conventional total squared reconstruction error and mean contributions over all embedded sensor coordinates. These supplemental results retain the original primary comparison. GDN uses the verified one-head attention architecture with learned embeddings, neighbor selection, multiplicative output embeddings and batch normalization. Its test-based normalization and test-optimal threshold paths are replaced by the shared protocol.
 
 The generative comparisons include the same diffusion backbone scored by residuals, deterministic conditional-mean replacements evaluated on the same witnesses, and an independent DiffAD adaptation. The latter implements the paper's density-ratio selection, bicubic conditioning, increasing replacement weights and multiscale state-space denoising. Its structured state-space kernel uses a dense calculation of the normal-plus-low-rank dynamics~\cite{s4}. The original code snapshot differs from several paper components, so we do not claim an exact author-code reproduction. The density estimator, numerical floors, window length and development learning-rate search are documented. Sampling retains the paper's 100 reverse steps and integer-step conditioning weight.
 
-Direct association-prediction residuals provide a simple comparator for relation faults. PCA and GDN are not assigned zero association accuracy because they do not natively output the stored association hypotheses. All comparators share measurements, partitions, fault manifests and calibration opportunities. Their reference residual centering and scaling use unmodified development data.
+Direct association-prediction residuals provide a simple comparator for relation faults. PCA and GDN are not assigned zero association accuracy because they do not natively output the stored association hypotheses. All comparators share measurements, partitions, fault manifests and calibration opportunities. Their reference residual centering and scaling use unmodified development data. PCA fills absent input coordinates with training medians. GDN uses zero fills after robust centering and excludes missing targets from its residuals. Conditional diffusion also receives availability masks.
 
-Our conditional model has approximately seven million parameters per member. The main procedure uses three separately trained members, eight paired proposals, eight predictive samples and 12 reverse sampling steps. Neural denoising uses bfloat16, diffusion states use float32, and witness losses and score differences accumulate in float64. Every neural comparator uses the same three training seeds. This is one three-member ensemble, not three independent ensemble repetitions.
+Our conditional model has approximately seven million parameters per member. GDN uses 64-dimensional sensor embeddings and five selected neighbors. The main procedure uses three separately trained members, eight paired proposals, eight predictive samples and 12 reverse sampling steps. Neural denoising uses bfloat16, diffusion states use float32, and witness losses and score differences accumulate in float64. Every neural comparator uses the same three training seeds. This is one three-member ensemble, not three independent ensemble repetitions.
 
 \subsection{Endpoints and audits}
 The primary endpoint is observation-fault average precision at the window level. The comparator for that endpoint is the strongest eligible baseline selected on development data. We also report candidate average precision, top-one and top-three attribution, reciprocal rank, screening recall and achieved false-alarm rates. Relation results are separate. Paired bootstrap intervals resample whole trajectories, Intel days or whole SKAB experiments, preserving shared observations and cross-channel dependence. We do not pool the different dataset prevalences.
@@ -224,12 +225,13 @@ The interface makes evidence inspectable. We make no claim that it improves oper
 \input{generated/main_table.tex}
 \begin{figure*}[t]
 \centering\includegraphics[width=\textwidth]{figures/confidence.pdf}
-\caption{Detection and confidence from saved final-test outputs. Observation and association tasks remain separate. Colors identify dataset configurations and line styles distinguish the repair procedure from its stated comparator. The reliability panel uses fitted fault probabilities and labels each occupied bin with its count. Review risk counts incorrect attribution among screened candidates, including findings from unmodified reference windows. Dashed curves use the development-selected PCA variant for observations and direct edge residuals for associations.}
+\caption{Detection and confidence from saved final-test outputs. Observation and association tasks remain separate. Colors identify dataset configurations and line styles distinguish the repair procedure from its stated comparator. The reliability panel uses fitted fault probabilities and lists occupied-bin counts from left to right. Review risk counts incorrect attribution among screened candidates, including findings from unmodified reference windows. Dashed curves use the development-selected PCA variant for observations and direct edge residuals for associations.}
 \label{fig:confidence}
 \end{figure*}
 
 \subsection{Equation components and robustness}
 \input{generated/ablation_text.tex}
+\input{generated/robustness_text.tex}
 \input{generated/ablation_table.tex}
 \begin{figure*}[t]
 \centering\IfFileExists{figures/equations.pdf}{\includegraphics[width=\textwidth]{figures/equations.pdf}}{\fbox{\parbox[c][2in][c]{.9\textwidth}{\centering Equation figure awaits the running secondary experiments.}}}
@@ -249,13 +251,12 @@ Several limits remain. Controlled corruptions do not cover all field failures. I
 
 Finite calibration also limits what confidence can mean. A small reference set cannot support arbitrarily small tail levels. Temporal dependence and changing operating conditions can increase empirical false alarms. Fitted probabilities depend on the labeled calibration population and may transfer poorly to unseen faults. Distinct source identifiers do not eliminate shared physical disturbances or undocumented copies.
 
-The practical contribution is a reproducible link from a hypothetical edit to unchanged measurements, audited arithmetic, calibrated review quantities and versioned evidence. Its usefulness should be judged by the measured detection, attribution and cost tradeoffs, with simpler detectors retained wherever they perform better. A process alert can remain actionable for investigation even when the available evidence does not support a sensor or association diagnosis.
-
 \section*{Reproducibility}
 The accompanying artifact includes the extracted reference, source and dependency locks, dataset acquisition hashes, partition and fault manifests, trained weights, raw score arrays, equation and claim audits, graph exports, figure scripts and local operator application. The main and secondary experiment commands are resumable. Every numerical table and figure is generated from saved result files. Model and dataset licenses and adaptation choices are recorded with the literature audit.
 
 \section*{Acknowledgment}
 We acknowledge the Intel Berkeley Research Lab data contributors and the creators of the Skoltech Anomaly Benchmark for providing the measured datasets.
 \bibliographystyle{IEEEtran}
+\IEEEtriggeratref{9}
 \bibliography{references}
 \end{document}

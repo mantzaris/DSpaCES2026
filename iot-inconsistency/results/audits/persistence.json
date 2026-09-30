@@ -1,0 +1,68 @@
+{
+  "status": "passed",
+  "idempotent_counts": {
+    "AssociationVersion": 552,
+    "Channel": 184,
+    "Disagreement": 20,
+    "EvidenceGroup": 320,
+    "ModelRun": 10,
+    "ObservationWindow": 20,
+    "OperatorDecision": 9,
+    "RepairHypothesis": 160,
+    "Sensor": 148
+  },
+  "bundles": [
+    {
+      "bundle": "results/graph/intel_failure_review.json",
+      "sha256": "b99690ef3a09b63d929163bcc17ddd792d854384d3cf4bf26b3030b140708bf8",
+      "hypotheses": 8
+    },
+    {
+      "bundle": "results/graph/intel_illustration.json",
+      "sha256": "e263f5ffe0ae3d33694107362f48986d86dcf933c4bc5ece2f5487f0ca896158",
+      "hypotheses": 8
+    },
+    {
+      "bundle": "results/graph/skab_failure_review.json",
+      "sha256": "7cd10749a36bc7f28de8b5df383304f61a35036744b263ade7cdb120d77ddcfc",
+      "hypotheses": 8
+    },
+    {
+      "bundle": "results/graph/skab_illustration.json",
+      "sha256": "26a6cabf15b55e3ad909e0ca2cf78b4bf7bc19de8c38c155ad05c2f013c7cf6c",
+      "hypotheses": 8
+    },
+    {
+      "bundle": "results/graph/synthetic_32_linear_failure_review.json",
+      "sha256": "f365f6e932f0bb93f229efe335fab4270d5692e5a35fca0e2b76d33f0d5f4723",
+      "hypotheses": 8
+    },
+    {
+      "bundle": "results/graph/synthetic_32_linear_illustration.json",
+      "sha256": "62388a73291a481ca667160a1a005ffbdfbbc62dd6ed413c55c6bea440110c7c",
+      "hypotheses": 8
+    },
+    {
+      "bundle": "results/graph/synthetic_32_nonlinear_failure_review.json",
+      "sha256": "caaf5a02ccc319f8db1788c905c58da939f3b7939b6e9161ebc55528c1623b73",
+      "hypotheses": 8
+    },
+    {
+      "bundle": "results/graph/synthetic_32_nonlinear_illustration.json",
+      "sha256": "f8b21f15a7c3bfa407a82a2af867d3fbcaa9c3554e872627de32928f73d615fc",
+      "hypotheses": 8
+    },
+    {
+      "bundle": "results/graph/synthetic_64_nonlinear_failure_review.json",
+      "sha256": "18774ff28ce94b110357db41bb3eb4a06decb3545143384edd48566f1fae5013",
+      "hypotheses": 8
+    },
+    {
+      "bundle": "results/graph/synthetic_64_nonlinear_illustration.json",
+      "sha256": "732d98842ca5e7aa5f2e4767d836d622ce72628d16ec66dfd22b1ab4990c1e81",
+      "hypotheses": 8
+    }
+  ],
+  "decisions_verified": 9,
+  "scope": "Current bundle links, values, immutable file hashes, repeated import and saved automated operator decisions. Historical versions remain in the database."
+}

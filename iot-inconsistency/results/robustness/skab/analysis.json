@@ -1,0 +1,357 @@
+{
+  "conditions": {
+    "conditioning_source_contamination/0.0": {
+      "cases": 12,
+      "primary_target_top1": 0.4166666666666667,
+      "primary_target_screened": 0.9166666666666666,
+      "single_group_diagnostic_top1": 0.0,
+      "baseline_primary_target_top1": {
+        "gdn": 0.6666666666666666,
+        "pca_lag4_rank16": 0.5
+      },
+      "median_score": -0.0029992008128792097,
+      "source_blocks": [
+        "other/1.csv",
+        "other/13.csv",
+        "other/6.csv",
+        "other/7.csv",
+        "valve1/10.csv",
+        "valve1/11.csv",
+        "valve1/14.csv",
+        "valve1/15.csv",
+        "valve1/2.csv",
+        "valve1/6.csv"
+      ],
+      "support_counts": {
+        "2": 96
+      },
+      "numeric_abstentions": 0,
+      "selected_primary_windows_abstained": 0,
+      "availability_alerts": 0,
+      "observation_window_alarms_at_005": 0,
+      "source_files": [
+        "results/robustness/skab/conditioning_0_0.0.json",
+        "results/robustness/skab/conditioning_10_0.0.json",
+        "results/robustness/skab/conditioning_11_0.0.json",
+        "results/robustness/skab/conditioning_1_0.0.json",
+        "results/robustness/skab/conditioning_2_0.0.json",
+        "results/robustness/skab/conditioning_3_0.0.json",
+        "results/robustness/skab/conditioning_4_0.0.json",
+        "results/robustness/skab/conditioning_5_0.0.json",
+        "results/robustness/skab/conditioning_6_0.0.json",
+        "results/robustness/skab/conditioning_7_0.0.json",
+        "results/robustness/skab/conditioning_8_0.0.json",
+        "results/robustness/skab/conditioning_9_0.0.json"
+      ]
+    },
+    "conditioning_source_contamination/0.125": {
+      "cases": 12,
+      "primary_target_top1": 0.0,
+      "primary_target_screened": 0.8333333333333334,
+      "single_group_diagnostic_top1": 0.0,
+      "baseline_primary_target_top1": {
+        "gdn": 0.3333333333333333,
+        "pca_lag4_rank16": 0.16666666666666666
+      },
+      "median_score": -0.0022867896380293195,
+      "source_blocks": [
+        "other/1.csv",
+        "other/13.csv",
+        "other/6.csv",
+        "other/7.csv",
+        "valve1/10.csv",
+        "valve1/11.csv",
+        "valve1/14.csv",
+        "valve1/15.csv",
+        "valve1/2.csv",
+        "valve1/6.csv"
+      ],
+      "support_counts": {
+        "2": 96
+      },
+      "numeric_abstentions": 0,
+      "selected_primary_windows_abstained": 0,
+      "availability_alerts": 0,
+      "observation_window_alarms_at_005": 1,
+      "source_files": [
+        "results/robustness/skab/conditioning_0_0.125.json",
+        "results/robustness/skab/conditioning_10_0.125.json",
+        "results/robustness/skab/conditioning_11_0.125.json",
+        "results/robustness/skab/conditioning_1_0.125.json",
+        "results/robustness/skab/conditioning_2_0.125.json",
+        "results/robustness/skab/conditioning_3_0.125.json",
+        "results/robustness/skab/conditioning_4_0.125.json",
+        "results/robustness/skab/conditioning_5_0.125.json",
+        "results/robustness/skab/conditioning_6_0.125.json",
+        "results/robustness/skab/conditioning_7_0.125.json",
+        "results/robustness/skab/conditioning_8_0.125.json",
+        "results/robustness/skab/conditioning_9_0.125.json"
+      ]
+    },
+    "conditioning_source_contamination/0.25": {
+      "cases": 12,
+      "primary_target_top1": 0.0,
+      "primary_target_screened": 0.8333333333333334,
+      "single_group_diagnostic_top1": 0.0,
+      "baseline_primary_target_top1": {
+        "gdn": 0.3333333333333333,
+        "pca_lag4_rank16": 0.16666666666666666
+      },
+      "median_score": -0.0022867896380293195,
+      "source_blocks": [
+        "other/1.csv",
+        "other/13.csv",
+        "other/6.csv",
+        "other/7.csv",
+        "valve1/10.csv",
+        "valve1/11.csv",
+        "valve1/14.csv",
+        "valve1/15.csv",
+        "valve1/2.csv",
+        "valve1/6.csv"
+      ],
+      "support_counts": {
+        "2": 96
+      },
+      "numeric_abstentions": 0,
+      "selected_primary_windows_abstained": 0,
+      "availability_alerts": 0,
+      "observation_window_alarms_at_005": 1,
+      "source_files": [
+        "results/robustness/skab/conditioning_0_0.25.json",
+        "results/robustness/skab/conditioning_10_0.25.json",
+        "results/robustness/skab/conditioning_11_0.25.json",
+        "results/robustness/skab/conditioning_1_0.25.json",
+        "results/robustness/skab/conditioning_2_0.25.json",
+        "results/robustness/skab/conditioning_3_0.25.json",
+        "results/robustness/skab/conditioning_4_0.25.json",
+        "results/robustness/skab/conditioning_5_0.25.json",
+        "results/robustness/skab/conditioning_6_0.25.json",
+        "results/robustness/skab/conditioning_7_0.25.json",
+        "results/robustness/skab/conditioning_8_0.25.json",
+        "results/robustness/skab/conditioning_9_0.25.json"
+      ]
+    },
+    "conditioning_source_contamination/0.5": {
+      "cases": 12,
+      "primary_target_top1": 0.08333333333333333,
+      "primary_target_screened": 0.6666666666666666,
+      "single_group_diagnostic_top1": 0.0,
+      "baseline_primary_target_top1": {
+        "gdn": 0.25,
+        "pca_lag4_rank16": 0.08333333333333333
+      },
+      "median_score": -0.008665408467687949,
+      "source_blocks": [
+        "other/1.csv",
+        "other/13.csv",
+        "other/6.csv",
+        "other/7.csv",
+        "valve1/10.csv",
+        "valve1/11.csv",
+        "valve1/14.csv",
+        "valve1/15.csv",
+        "valve1/2.csv",
+        "valve1/6.csv"
+      ],
+      "support_counts": {
+        "2": 96
+      },
+      "numeric_abstentions": 0,
+      "selected_primary_windows_abstained": 0,
+      "availability_alerts": 0,
+      "observation_window_alarms_at_005": 1,
+      "source_files": [
+        "results/robustness/skab/conditioning_0_0.5.json",
+        "results/robustness/skab/conditioning_10_0.5.json",
+        "results/robustness/skab/conditioning_11_0.5.json",
+        "results/robustness/skab/conditioning_1_0.5.json",
+        "results/robustness/skab/conditioning_2_0.5.json",
+        "results/robustness/skab/conditioning_3_0.5.json",
+        "results/robustness/skab/conditioning_4_0.5.json",
+        "results/robustness/skab/conditioning_5_0.5.json",
+        "results/robustness/skab/conditioning_6_0.5.json",
+        "results/robustness/skab/conditioning_7_0.5.json",
+        "results/robustness/skab/conditioning_8_0.5.json",
+        "results/robustness/skab/conditioning_9_0.5.json"
+      ]
+    },
+    "missingness/all": {
+      "cases": 12,
+      "primary_target_top1": 0.0,
+      "primary_target_screened": 1.0,
+      "single_group_diagnostic_top1": 0.0,
+      "baseline_primary_target_top1": {
+        "gdn": 0.0,
+        "pca_lag4_rank16": 0.0
+      },
+      "median_score": null,
+      "source_blocks": [],
+      "support_counts": {},
+      "numeric_abstentions": 12,
+      "selected_primary_windows_abstained": 12,
+      "availability_alerts": 12,
+      "observation_window_alarms_at_005": 0,
+      "source_files": [
+        "results/robustness/skab/dropout_0.json",
+        "results/robustness/skab/dropout_1.json",
+        "results/robustness/skab/dropout_10.json",
+        "results/robustness/skab/dropout_11.json",
+        "results/robustness/skab/dropout_2.json",
+        "results/robustness/skab/dropout_3.json",
+        "results/robustness/skab/dropout_4.json",
+        "results/robustness/skab/dropout_5.json",
+        "results/robustness/skab/dropout_6.json",
+        "results/robustness/skab/dropout_7.json",
+        "results/robustness/skab/dropout_8.json",
+        "results/robustness/skab/dropout_9.json"
+      ]
+    },
+    "graph_error/0.1": {
+      "cases": 12,
+      "primary_target_top1": 0.4166666666666667,
+      "primary_target_screened": 0.9166666666666666,
+      "single_group_diagnostic_top1": 0.0,
+      "baseline_primary_target_top1": {
+        "gdn": 0.6666666666666666,
+        "pca_lag4_rank16": 0.5
+      },
+      "median_score": -0.003632366929408215,
+      "source_blocks": [],
+      "support_counts": {
+        "2": 96
+      },
+      "numeric_abstentions": 0,
+      "selected_primary_windows_abstained": 0,
+      "availability_alerts": 0,
+      "observation_window_alarms_at_005": 0,
+      "source_files": [
+        "results/robustness/skab/graph_errors_0_0.1.json",
+        "results/robustness/skab/graph_errors_10_0.1.json",
+        "results/robustness/skab/graph_errors_11_0.1.json",
+        "results/robustness/skab/graph_errors_1_0.1.json",
+        "results/robustness/skab/graph_errors_2_0.1.json",
+        "results/robustness/skab/graph_errors_3_0.1.json",
+        "results/robustness/skab/graph_errors_4_0.1.json",
+        "results/robustness/skab/graph_errors_5_0.1.json",
+        "results/robustness/skab/graph_errors_6_0.1.json",
+        "results/robustness/skab/graph_errors_7_0.1.json",
+        "results/robustness/skab/graph_errors_8_0.1.json",
+        "results/robustness/skab/graph_errors_9_0.1.json"
+      ]
+    },
+    "graph_error/0.3": {
+      "cases": 12,
+      "primary_target_top1": 0.4166666666666667,
+      "primary_target_screened": 0.9166666666666666,
+      "single_group_diagnostic_top1": 0.0,
+      "baseline_primary_target_top1": {
+        "gdn": 0.6666666666666666,
+        "pca_lag4_rank16": 0.5
+      },
+      "median_score": -0.004543648793387897,
+      "source_blocks": [],
+      "support_counts": {
+        "2": 96
+      },
+      "numeric_abstentions": 0,
+      "selected_primary_windows_abstained": 0,
+      "availability_alerts": 0,
+      "observation_window_alarms_at_005": 0,
+      "source_files": [
+        "results/robustness/skab/graph_errors_0_0.3.json",
+        "results/robustness/skab/graph_errors_10_0.3.json",
+        "results/robustness/skab/graph_errors_11_0.3.json",
+        "results/robustness/skab/graph_errors_1_0.3.json",
+        "results/robustness/skab/graph_errors_2_0.3.json",
+        "results/robustness/skab/graph_errors_3_0.3.json",
+        "results/robustness/skab/graph_errors_4_0.3.json",
+        "results/robustness/skab/graph_errors_5_0.3.json",
+        "results/robustness/skab/graph_errors_6_0.3.json",
+        "results/robustness/skab/graph_errors_7_0.3.json",
+        "results/robustness/skab/graph_errors_8_0.3.json",
+        "results/robustness/skab/graph_errors_9_0.3.json"
+      ]
+    },
+    "single_source_support/all": {
+      "cases": 12,
+      "primary_target_top1": 0.0,
+      "primary_target_screened": 1.0,
+      "single_group_diagnostic_top1": 0.5833333333333334,
+      "baseline_primary_target_top1": {
+        "gdn": 0.4166666666666667,
+        "pca_lag4_rank16": 0.75
+      },
+      "median_score": -0.001989065099630122,
+      "source_blocks": [
+        "other/1.csv",
+        "other/13.csv",
+        "other/6.csv",
+        "other/7.csv",
+        "valve1/10.csv",
+        "valve1/11.csv",
+        "valve1/14.csv",
+        "valve1/15.csv",
+        "valve1/2.csv",
+        "valve1/6.csv"
+      ],
+      "support_counts": {
+        "1": 42,
+        "2": 30
+      },
+      "numeric_abstentions": 24,
+      "selected_primary_windows_abstained": 12,
+      "availability_alerts": 0,
+      "observation_window_alarms_at_005": 0,
+      "source_files": [
+        "results/robustness/skab/low_support_0.json",
+        "results/robustness/skab/low_support_1.json",
+        "results/robustness/skab/low_support_10.json",
+        "results/robustness/skab/low_support_11.json",
+        "results/robustness/skab/low_support_2.json",
+        "results/robustness/skab/low_support_3.json",
+        "results/robustness/skab/low_support_4.json",
+        "results/robustness/skab/low_support_5.json",
+        "results/robustness/skab/low_support_6.json",
+        "results/robustness/skab/low_support_7.json",
+        "results/robustness/skab/low_support_8.json",
+        "results/robustness/skab/low_support_9.json"
+      ]
+    },
+    "unknown_provenance_association_copies/all": {
+      "cases": 12,
+      "primary_target_top1": 0.4166666666666667,
+      "primary_target_screened": 0.9166666666666666,
+      "single_group_diagnostic_top1": 0.0,
+      "baseline_primary_target_top1": {
+        "gdn": 0.6666666666666666,
+        "pca_lag4_rank16": 0.5
+      },
+      "median_score": -0.0023765894827489117,
+      "source_blocks": [],
+      "support_counts": {
+        "2": 96
+      },
+      "numeric_abstentions": 0,
+      "selected_primary_windows_abstained": 0,
+      "availability_alerts": 0,
+      "observation_window_alarms_at_005": 1,
+      "source_files": [
+        "results/robustness/skab/unknown_aliases_0.json",
+        "results/robustness/skab/unknown_aliases_1.json",
+        "results/robustness/skab/unknown_aliases_10.json",
+        "results/robustness/skab/unknown_aliases_11.json",
+        "results/robustness/skab/unknown_aliases_2.json",
+        "results/robustness/skab/unknown_aliases_3.json",
+        "results/robustness/skab/unknown_aliases_4.json",
+        "results/robustness/skab/unknown_aliases_5.json",
+        "results/robustness/skab/unknown_aliases_6.json",
+        "results/robustness/skab/unknown_aliases_7.json",
+        "results/robustness/skab/unknown_aliases_8.json",
+        "results/robustness/skab/unknown_aliases_9.json"
+      ]
+    }
+  },
+  "physical_controls": {},
+  "scope": "Twelve evenly spaced reference windows, nested contamination sets, no parameter refitting. Primary target attribution differs from classifying every additional contaminated channel. Small diagnostic study, not independent final-method repetitions."
+}
