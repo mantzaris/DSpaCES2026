@@ -84,10 +84,14 @@ def aggregate(root: Path) -> dict:
         for timing in runtime['timings']:
             runtimes.append({'dataset':status['dataset'],'seed':status['seed'],'graph':status['graph'],**timing,'peak_gpu_bytes':runtime['peak_gpu_bytes']})
         for record in json.loads((directory/'fidelity.json').read_text()):
+            # The primary scorer recorded support explicitly. Zero dimensions
+            # cannot define a multivariate score; never interpret its stored
+            # numerical zero as perfect fidelity.
+            if record.get('energy_dimensions',0)==0:record['energy_score']=None
             fidelity.append({'dataset':status['dataset'],'seed':status['seed'],'graph':status['graph'],**record})
     if not rows:raise RuntimeError('No completed score outputs')
     output=root/'results';output.mkdir(exist_ok=True)
-    frame=pd.DataFrame(rows);frame.to_csv(output/'event_metrics.csv',index=False)
+    frame=pd.DataFrame(rows);frame.to_csv(output/'event_metrics.csv.gz',index=False)
     write_json(output/'event_pr_curves.json',curves)
     pd.DataFrame(calibration).to_csv(output/'calibration_diagnostics.csv',index=False)
     pd.DataFrame(runtimes).to_csv(output/'runtime.csv',index=False)

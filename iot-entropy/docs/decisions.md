@@ -65,3 +65,9 @@
 - Runtime accounting sums GPU-enabled stage wall times, not pod rental uptime
   or utilization-weighted kernel time. Graph-run summaries are not counted a
   second time when individual scoring statuses already contain their duration.
+- Fidelity audit: missing bootstrap donor values can leave different raw
+  dimensions eligible for the two references. In the fixed additional fidelity
+  subset, also report energy scores on their identical jointly complete support
+  and entropy coverage on their shared eligible groups. A zero-dimensional
+  energy score is undefined, not zero; reporting masks this case using the
+  saved dimension count. This reporting correction does not alter detections.

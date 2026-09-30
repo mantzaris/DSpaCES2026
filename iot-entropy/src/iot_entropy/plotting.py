@@ -174,7 +174,7 @@ def spatial(root: Path,cases: list[dict]) -> None:
 
 def performance(root: Path) -> None:
     summaries=json.loads((root/'results/summary.json').read_text());paired=json.loads((root/'results/paired_comparisons.json').read_text())
-    frame=pd.read_csv(root/'results/event_metrics.csv');frame=frame[(frame.alpha==.1)&(frame.graph=='physical')&frame.is_fault]
+    frame=pd.read_csv(root/'results/event_metrics.csv.gz');frame=frame[(frame.alpha==.1)&(frame.graph=='physical')&frame.is_fault]
     fig,axes=plt.subplots(2,3,figsize=(7.15,3.6),gridspec_kw={'hspace':.8,'wspace':.38})
     methods=[f'{reference}/{feature}' for reference in ['bootstrap','diffusion'] for feature in ['entropy','synchronization','combined']]
     for col,dataset in enumerate(['synthetic','intel','pems']):
@@ -203,7 +203,7 @@ def performance(root: Path) -> None:
 
 
 def calibration_cost(root: Path) -> None:
-    frame=pd.read_csv(root/'results/event_metrics.csv')
+    frame=pd.read_csv(root/'results/event_metrics.csv.gz')
     benchmarks=json.loads((root/'experiments/benchmark.json').read_text())
     fig,axes=plt.subplots(2,2,figsize=(7.15,3.65),gridspec_kw={'wspace':.35,'hspace':.52})
     ax=axes[0,0]
@@ -249,7 +249,7 @@ def tables(root: Path) -> None:
         label='Synthetic '+name.replace('synthetic','') if name.startswith('synthetic') else NAMES[name]
         channels='signal' if name.startswith('synthetic') else 'temp., humidity' if name=='intel' else 'speed (mph)'
         span='independent simulations' if name.startswith('synthetic') else '28 Feb.--23 Mar. 2004' if name=='intel' else '1 Jan.--30 June 2017'
-        lines.append(f"{label} & {len(data.node_ids)} & {counts[0]:,} & {counts[1]:,} & {counts[2]:,} / {counts[3]:,} & {manifest['interval_seconds']//60} min; {channels} & {span} \\")
+        lines.append(f"{label} & {len(data.node_ids)} & {counts[0]:,} & {counts[1]:,} & {counts[2]:,} / {counts[3]:,} & {manifest['interval_seconds']//60} min; {channels} & {span}" + r" \\")
         dataset_rows.append({'dataset':name,'counts':counts,'nodes':len(data.node_ids),'interval_seconds':manifest['interval_seconds']})
     lines += [r'\bottomrule\end{tabular}',r'\end{table*}']
     (directory/'datasets.tex').write_text('\n'.join(lines)+'\n')

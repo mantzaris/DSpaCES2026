@@ -148,5 +148,5 @@ def prediction_fidelity(observed: torch.Tensor, samples: torch.Tensor) -> dict:
     observation=torch.where(joint_mask,observed,torch.zeros_like(observed))
     first=torch.linalg.vector_norm((clean-observation).flatten(1),dim=-1).mean()/dimensions
     second=torch.linalg.vector_norm((clean[:len(clean)//2]-clean[len(clean)//2:2*(len(clean)//2)]).flatten(1),dim=-1).mean()/dimensions
-    return {'coverage90':float(coverage),'width90':float(width),'energy_score':float(first-.5*second),
+    return {'coverage90':float(coverage),'width90':float(width),'energy_score':float(first-.5*second) if bool(joint_mask.any()) else float('nan'),
             'observed_fraction':float(mask.float().mean()),'energy_dimensions':int(joint_mask.sum())}

@@ -17,7 +17,7 @@ push and workshop submission; this workflow does neither.
 `results/summary.json` contains all 30 detector/reference combinations, whole
 recording-block intervals, seed variability, conditional/unconditional
 localization, missed counts, empirical background rates and event prevalence.
-`event_metrics.csv` preserves every event, seed and nominal alpha.
+`event_metrics.csv.gz` preserves every event, seed and nominal alpha.
 `paired_comparisons.json` resamples the same recording blocks in each contrast.
 `experiments/full/score-*/predictions.npz` retains scores, rank values, node
 rankings and eligibility; the event and group definitions are adjacent JSON.
