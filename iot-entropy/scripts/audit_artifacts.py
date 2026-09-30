@@ -74,6 +74,7 @@ source_paths=[*root.glob('src/iot_entropy/*.py'),root/'src/iot_entropy/dashboard
               *root.glob('tests/*.py'),root/'README.md',root/'pyproject.toml',root/'.gitignore',
               root/'manuscript/paper.tex',root/'manuscript/references.bib',root/'environment/requirements.lock.txt']
 sources={str(path.relative_to(root)):digest(path) for path in source_paths if path.is_file()}
+packaging=json.loads((root/'git-storage.json').read_text())
 write_json(root/'environment/reporting-environment.json',{'python':platform.python_version(),'platform':platform.platform(),
            'packages':{name:importlib.metadata.version(name) for name in ['numpy','pandas','matplotlib','torch']}})
 derived_paths=[*root.glob('results/*.json'),*root.glob('results/*.csv'),*root.glob('results/*.csv.gz'),
@@ -82,6 +83,7 @@ derived_paths=[*root.glob('results/*.json'),*root.glob('results/*.csv'),*root.gl
                root/'dashboard/schema.json',*root.glob('dashboard/data/*.json'),
                *root.glob('dashboard/validation/*'),*root.glob('experiments/validation/*'),
                *root.glob('environment/*.json'),root/'experiments/post-primary-status.json']
+derived_paths += [root/'git-storage.json',*[root/record['archive'] for record in packaging['compressed_results']]]
 derived={str(path.relative_to(root)):digest(path) for path in derived_paths if path.is_file()}
 write_json(root/'experiments/artifact-manifest.json',{'status':'partial' if args.allow_partial else 'verified',
            'git_revision_at_audit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip(),
@@ -92,6 +94,6 @@ write_json(root/'experiments/artifact-manifest.json',{'status':'partial' if args
                               'common_support_fidelity':'6f317d6','benchmark':'b912fa23',
                               'core_sensitivities':'73ce2c4','direction_and_observability':'b912fa23',
                               'raw_ensemble_recovery':'b4aef768','retrospective_budget_analysis':'1081274b'},
-           'lineage_note':'Intel coverage preprocessing was amended in c4d839c before Intel training loaded its data. Primary scoring imported aa81887 code before later reporting/interface changes. Git hashes are this project’s code history; shared-repository commits may also contain sibling work.'})
+           'lineage_note':'Intel coverage preprocessing was amended in c4d839c before Intel training loaded its data. Primary scoring imported aa81887 code before later reporting/interface changes. Original Git hashes remain in experiment records; environment/git-history-map.json maps them to commits with generated bulk removed. Shared-repository commits may also contain sibling work.'})
 print(json.dumps({'verified_datasets':len(data_records),'verified_checkpoints':len(models),'verified_scoring_runs':len(runs),
                   'recorded_gpu_stage_hours':recorded_runtime(root)/3600}))

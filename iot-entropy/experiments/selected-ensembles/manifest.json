@@ -1,0 +1,228 @@
+{
+  "purpose": "Selected raw joint ensembles recovered from frozen checkpoints/seeds; no detector outcomes changed",
+  "records": [
+    {
+      "checkpoint_sha256": "1ac1ef337547a7d88de757bc3ddfa54792811086794c8c33c9b9d7583f3f8ca8",
+      "configuration_sha256": "f24836f8971319a516639dd6d1895e5f34ae6a609c64d18133a1a75183128f02",
+      "dataset": "synthetic64",
+      "event": "copy-000",
+      "event_index": 0,
+      "maximum_feature_recovery_error": 0.0,
+      "model_seed": 17,
+      "observation_index": 203,
+      "path": "experiments/selected-ensembles/samples/synthetic64-event0-time203-diffusion.npz",
+      "reference": "diffusion",
+      "sampling_seed": 69733,
+      "saved_feature_sha256": "5cdedc995cffe59724f810aa5ba26adf83a925e5e85c05d295cd0da1c4a33b63",
+      "sha256": "7bf64a53a9d9ea450afd15362b37ff1b3ebfcd5ca0f8e29c7216daf1edea906a",
+      "shape": [
+        64,
+        120,
+        64,
+        1
+      ],
+      "target_start": 69716
+    },
+    {
+      "checkpoint_sha256": null,
+      "configuration_sha256": "f24836f8971319a516639dd6d1895e5f34ae6a609c64d18133a1a75183128f02",
+      "dataset": "synthetic64",
+      "event": "copy-000",
+      "event_index": 0,
+      "maximum_feature_recovery_error": 0.0,
+      "model_seed": 17,
+      "observation_index": 203,
+      "path": "experiments/selected-ensembles/samples/synthetic64-event0-time203-bootstrap.npz",
+      "reference": "bootstrap",
+      "sampling_seed": 69733,
+      "saved_feature_sha256": "9d573108b0fc854feae1cfdd31f7f2740bfe5e083a36824c8c720839348255a8",
+      "sha256": "8b38d6c0c0fe34855bd231f18ecbf5385814c83fe07c4426b95c4262336b85b8",
+      "shape": [
+        64,
+        120,
+        64,
+        1
+      ],
+      "target_start": 69716
+    },
+    {
+      "checkpoint_sha256": "1ac1ef337547a7d88de757bc3ddfa54792811086794c8c33c9b9d7583f3f8ca8",
+      "configuration_sha256": "f24836f8971319a516639dd6d1895e5f34ae6a609c64d18133a1a75183128f02",
+      "dataset": "synthetic64",
+      "event": "noise-018",
+      "event_index": 18,
+      "maximum_feature_recovery_error": 0.0,
+      "model_seed": 17,
+      "observation_index": 203,
+      "path": "experiments/selected-ensembles/samples/synthetic64-event18-time203-diffusion.npz",
+      "reference": "diffusion",
+      "sampling_seed": 75877,
+      "saved_feature_sha256": "e7b08304edbb047a20e14a961910b1333677110cdb5db78577c8b79dd9a44ced",
+      "sha256": "24307d1e09989fc0f8ddcb37cc3c20bef9d9ea9792d6dbefe8e90e96ded487c3",
+      "shape": [
+        64,
+        120,
+        64,
+        1
+      ],
+      "target_start": 75860
+    },
+    {
+      "checkpoint_sha256": null,
+      "configuration_sha256": "f24836f8971319a516639dd6d1895e5f34ae6a609c64d18133a1a75183128f02",
+      "dataset": "synthetic64",
+      "event": "noise-018",
+      "event_index": 18,
+      "maximum_feature_recovery_error": 0.0,
+      "model_seed": 17,
+      "observation_index": 203,
+      "path": "experiments/selected-ensembles/samples/synthetic64-event18-time203-bootstrap.npz",
+      "reference": "bootstrap",
+      "sampling_seed": 75877,
+      "saved_feature_sha256": "b1d1778e9cb523711c807a32ff10be836c54ffcd0fc8406087dc32bc7bcf7487",
+      "sha256": "0648975eb1ba909d107e1cc94b853b569df47cf6ae2b7e07f191f2efc4ff016e",
+      "shape": [
+        64,
+        120,
+        64,
+        1
+      ],
+      "target_start": 75860
+    },
+    {
+      "checkpoint_sha256": "1ac1ef337547a7d88de757bc3ddfa54792811086794c8c33c9b9d7583f3f8ca8",
+      "configuration_sha256": "f24836f8971319a516639dd6d1895e5f34ae6a609c64d18133a1a75183128f02",
+      "dataset": "synthetic64",
+      "event": "transition-011",
+      "event_index": 95,
+      "maximum_feature_recovery_error": 0.0,
+      "model_seed": 17,
+      "observation_index": 203,
+      "path": "experiments/selected-ensembles/samples/synthetic64-event95-time203-diffusion.npz",
+      "reference": "diffusion",
+      "sampling_seed": 81637,
+      "saved_feature_sha256": "2ef616b72530b5afa2c81f36ed98e811af90d55603af4d58846193bbedc1d924",
+      "sha256": "fefe714e6bbc7d12d5c79be4033347d4ebbcc28f5e6355e9dde8bc7a5906893a",
+      "shape": [
+        64,
+        120,
+        64,
+        1
+      ],
+      "target_start": 81620
+    },
+    {
+      "checkpoint_sha256": null,
+      "configuration_sha256": "f24836f8971319a516639dd6d1895e5f34ae6a609c64d18133a1a75183128f02",
+      "dataset": "synthetic64",
+      "event": "transition-011",
+      "event_index": 95,
+      "maximum_feature_recovery_error": 0.0,
+      "model_seed": 17,
+      "observation_index": 203,
+      "path": "experiments/selected-ensembles/samples/synthetic64-event95-time203-bootstrap.npz",
+      "reference": "bootstrap",
+      "sampling_seed": 81637,
+      "saved_feature_sha256": "f28a774be2374d4efe62d1c0851b882c129180aac06d8ef203bd582cf0375dc9",
+      "sha256": "f4e107d338badfd13984c43fbe8d351bf37d786a7f8354ae7d1b59114238e38c",
+      "shape": [
+        64,
+        120,
+        64,
+        1
+      ],
+      "target_start": 81620
+    },
+    {
+      "checkpoint_sha256": "194606b84c53f21e5cc32b84e2946716cda37f3590e283c48550ea41905716b2",
+      "configuration_sha256": "f24836f8971319a516639dd6d1895e5f34ae6a609c64d18133a1a75183128f02",
+      "dataset": "intel",
+      "event": "untouched-007",
+      "event_index": 86,
+      "maximum_feature_recovery_error": 0.0,
+      "model_seed": 17,
+      "observation_index": 203,
+      "path": "experiments/selected-ensembles/samples/intel-event86-time203-diffusion.npz",
+      "reference": "diffusion",
+      "sampling_seed": 17559,
+      "saved_feature_sha256": "b5d829dfa909cf8ee75dd69dd931099db638a3a539bafea001e6af7a69748120",
+      "sha256": "ac57a171b43b58a032e119a06c95a3f88e02674d04345919ff6599d4c497911b",
+      "shape": [
+        64,
+        120,
+        54,
+        2
+      ],
+      "target_start": 17542
+    },
+    {
+      "checkpoint_sha256": null,
+      "configuration_sha256": "f24836f8971319a516639dd6d1895e5f34ae6a609c64d18133a1a75183128f02",
+      "dataset": "intel",
+      "event": "untouched-007",
+      "event_index": 86,
+      "maximum_feature_recovery_error": 0.0,
+      "model_seed": 17,
+      "observation_index": 203,
+      "path": "experiments/selected-ensembles/samples/intel-event86-time203-bootstrap.npz",
+      "reference": "bootstrap",
+      "sampling_seed": 17559,
+      "saved_feature_sha256": "c401877fba8e27e70a647f02e70810343c6c02335e135baa4fe6b2fac832998f",
+      "sha256": "e0de686820ce71c36d466631435975a92557b1213192d36e4f2a75b2ca7c60fc",
+      "shape": [
+        64,
+        120,
+        54,
+        2
+      ],
+      "target_start": 17542
+    },
+    {
+      "checkpoint_sha256": "f51e90aeb930543f6a684d66314f96ca76c398ab4d6925fe5297273dfb173f1f",
+      "configuration_sha256": "f24836f8971319a516639dd6d1895e5f34ae6a609c64d18133a1a75183128f02",
+      "dataset": "pems",
+      "event": "untouched-011",
+      "event_index": 94,
+      "maximum_feature_recovery_error": 0.0,
+      "model_seed": 17,
+      "observation_index": 203,
+      "path": "experiments/selected-ensembles/samples/pems-event94-time203-diffusion.npz",
+      "reference": "diffusion",
+      "sampling_seed": 51897,
+      "saved_feature_sha256": "5dc557ddbb8a75fc1570f6fbce3352718a2e40bcb03b003d022529b25d09d434",
+      "sha256": "01f8c5686ff386179af8e9d64a69eee6ea2c7594c56424f0a31b92250b9586f3",
+      "shape": [
+        64,
+        120,
+        325,
+        1
+      ],
+      "target_start": 51880
+    },
+    {
+      "checkpoint_sha256": null,
+      "configuration_sha256": "f24836f8971319a516639dd6d1895e5f34ae6a609c64d18133a1a75183128f02",
+      "dataset": "pems",
+      "event": "untouched-011",
+      "event_index": 94,
+      "maximum_feature_recovery_error": 0.0,
+      "model_seed": 17,
+      "observation_index": 203,
+      "path": "experiments/selected-ensembles/samples/pems-event94-time203-bootstrap.npz",
+      "reference": "bootstrap",
+      "sampling_seed": 51897,
+      "saved_feature_sha256": "facd061f815b76081482647c37d2e8429548a24efcf74cc39948c805adc0c9f2",
+      "sha256": "73089f1ecfed1a085759c3c759b5a9752a158a371187d09fd5c36cb67f9e09af",
+      "shape": [
+        64,
+        120,
+        325,
+        1
+      ],
+      "target_start": 51880
+    }
+  ],
+  "selection": "Observation index 203 in all five exported dashboard cases, both references",
+  "units": "Training-standardized; multiply by scale and add center for original channel units",
+  "validation": "Every reconstructed feature draw agrees with its original saved array, including NaN support, at rtol=atol=1e-5"
+}

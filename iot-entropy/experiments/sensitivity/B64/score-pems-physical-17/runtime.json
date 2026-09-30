@@ -1,0 +1,260 @@
+{
+  "peak_gpu_bytes": 795833344,
+  "timings": [
+    {
+      "seconds": 1.2122703194618225,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.201722327619791,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.20098333992064,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.1977382749319077,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.1921261604875326,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.1973308641463518,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.1365801449865103,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.1387014612555504,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.133923001587391,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.1334620993584394,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.132411828264594,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.1295426804572344,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.1322875246405602,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.1290176287293434,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.1292585153132677,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.1312125567346811,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.1309202425181866,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.184886883944273,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.1896924022585154,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.1941310185939074,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.1504876539111137,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.1804958544671535,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.1938799414783716,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.19545441493392,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.194839607924223,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.1761241257190704,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.1267783492803574,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.1337552908807993,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.131067231297493,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.133218351751566,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 1.129660453647375,
+      "stage": "calibration"
+    },
+    {
+      "events": 4,
+      "seconds": 2.324436441063881,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 2.2949237562716007,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 2.232990439981222,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 2.198088826611638,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 2.288799524307251,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 2.2254653088748455,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 2.233569836243987,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 2.2875879369676113,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 2.2370892949402332,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 2.219881806522608,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 2.295729823410511,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 2.2018575482070446,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 2.1930405106395483,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 2.836206005886197,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 2.7472358383238316,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 2.7076537162065506,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 2.8419609665870667,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 2.854990404099226,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 2.7795122247189283,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 2.7915592044591904,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 2.826596239581704,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 2.7751449290663004,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 2.820344815030694,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 2.913361804559827,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 2.7570335920900106,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 2.810160554945469,
+      "stage": "test_shared_reference_and_all_injections"
+    }
+  ],
+  "total_seconds": 113.66728745773435
+}

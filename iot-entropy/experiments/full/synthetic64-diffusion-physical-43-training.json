@@ -1,0 +1,87 @@
+{
+  "best_development_loss": 0.15046645235270262,
+  "checkpoint": "/workspace/iot-entropy/experiments/full/checkpoints/synthetic64-diffusion-physical-43.pt",
+  "checkpoint_sha256": "f7970209190c6dfcdbb61893582e364e73083990fcb9b944bf0f917bab762288",
+  "dataset": "synthetic64",
+  "graph": "physical",
+  "history": [
+    {
+      "development_loss": 0.1818376872688532,
+      "loss": 0.1927083283662796,
+      "seconds": 4.178921127691865,
+      "step": 200
+    },
+    {
+      "development_loss": 0.16304848715662956,
+      "loss": 0.36183902621269226,
+      "seconds": 8.805665850639343,
+      "step": 400
+    },
+    {
+      "development_loss": 0.16181064676493406,
+      "loss": 0.3802436888217926,
+      "seconds": 13.666014662012458,
+      "step": 600
+    },
+    {
+      "development_loss": 0.15711781289428473,
+      "loss": 0.053016699850559235,
+      "seconds": 17.508815485984087,
+      "step": 800
+    },
+    {
+      "development_loss": 0.16085701435804367,
+      "loss": 0.2161705046892166,
+      "seconds": 21.36870812624693,
+      "step": 1000
+    },
+    {
+      "development_loss": 0.1541926395148039,
+      "loss": 0.18838940560817719,
+      "seconds": 25.38992292061448,
+      "step": 1200
+    },
+    {
+      "development_loss": 0.15373927727341652,
+      "loss": 0.14793802797794342,
+      "seconds": 30.102480571717024,
+      "step": 1400
+    },
+    {
+      "development_loss": 0.15414946246892214,
+      "loss": 0.0813540369272232,
+      "seconds": 34.871428625658154,
+      "step": 1600
+    },
+    {
+      "development_loss": 0.15225213207304478,
+      "loss": 0.13706937432289124,
+      "seconds": 39.30588091164827,
+      "step": 1800
+    },
+    {
+      "development_loss": 0.15125810075551271,
+      "loss": 0.13699382543563843,
+      "seconds": 43.39399523474276,
+      "step": 2000
+    },
+    {
+      "development_loss": 0.1539890980347991,
+      "loss": 0.16563360393047333,
+      "seconds": 47.610403845086694,
+      "step": 2200
+    },
+    {
+      "development_loss": 0.15046645235270262,
+      "loss": 0.147742360830307,
+      "seconds": 52.38074169307947,
+      "step": 2400
+    }
+  ],
+  "kind": "diffusion",
+  "parameters": 20713,
+  "peak_gpu_bytes": 101892608,
+  "screen": true,
+  "seed": 43,
+  "training_seconds": 52.393755707889795
+}

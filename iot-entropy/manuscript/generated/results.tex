@@ -1,0 +1,79 @@
+\input{generated/main-table.tex}
+
+\subsection{Detection, localization and the feature hypothesis}
+
+The full primary study contains 360 scheduled fault injections within 56 recording blocks. All three seeds are complete; the three synthetic node counts remain configurations of one benchmark. Table~\ref{tab:main} gives the reference-by-feature comparison and required baselines. Figure~\ref{fig:performance} includes whole-block uncertainty and the measured direction strata. The paired comparisons do not establish a consistent entropy advantage in both detection and localization.
+
+The mean fraction of eligible diffusion-entropy group windows is 0.979/0.039/0.962 in dataset order. Intel performance is therefore dominated by limited sample support. The shared quality rule does not force identical eligibility when bootstrap donors have additional missing values.
+
+For synthetic, the paired entropy-minus-synchronization recall difference is 0.011 [-0.057, 0.080], and its IoU difference is -0.004 [-0.009, 0.001]. Entropy misses 437 event--seed pairs; conditional detected-event IoU is 0.054, versus 0.017 when misses count as zero. The mean oracle candidate-group IoU is 0.291.
+
+For Intel, the paired entropy-minus-synchronization recall difference is -0.144 [-0.283, 0.000], and its IoU difference is -0.022 [-0.048, -0.002]. Entropy misses 193 event--seed pairs; conditional detected-event IoU is 0.084, versus 0.009 when misses count as zero. The mean oracle candidate-group IoU is 0.429.
+
+For PEMS, the paired entropy-minus-synchronization recall difference is -0.042 [-0.120, 0.019], and its IoU difference is 0.001 [-0.006, 0.010]. Entropy misses 186 event--seed pairs; conditional detected-event IoU is 0.042, versus 0.006 when misses count as zero. The mean oracle candidate-group IoU is 0.342.
+
+The comparison is against specific scoring rules. Entropy cannot add information to the full correlation matrix from which it is computed; an empirical difference from the Frobenius baseline does not contradict this fact. Type macros, seed variability, event precision, sensor-level precision/recall/F1, topology/severity/duration strata and every raw PR curve are retained in the artifact.
+
+\begin{figure*}[t]\centering\includegraphics[width=.97\textwidth]{performance.pdf}
+
+\caption{At nominal $\alpha=.10$, top panels show overall event recall with whole-block 95\% intervals; open up/down markers show observed-increase/decrease strata. B denotes bootstrap, D diffusion, H entropy and S synchronization. Bottom panels are paired differences in unconditional localization IoU, with 95\% intervals; positive favors the left-hand feature set.}\label{fig:performance}\end{figure*}
+
+\subsection{Reference fidelity and calibration}
+
+\input{generated/fidelity-table.tex}
+
+Table~\ref{tab:fidelity} tests distributions, not just forecast means. The raw energy score uses independent ensemble pairs and a Euclidean norm normalized by the square root of the jointly observed dimension count. Comparing references uses their common support; an empty support has no score. Covariance errors use training-scaled units. Entropy/change coverage, interval width, correlation/covariance errors and raw energy scores are saved separately, with their support counts. These compact forecasts are model-based references, not known healthy trajectories.
+
+Raw marginal coverage does not ensure organizational fidelity: synthetic diffusion raw coverage is 0.972, but H coverage is 0.372. This limits the reference model, but model error alone does not invalidate the rank theorem: that result permits any fixed scoring rule under exchangeability. Distribution differences across calibration and test units must be considered separately.
+
+Calibration has 32 units for synthetic, 10 units for Intel, 31 units for PEMS; Intel therefore cannot attain $\alpha=.05$. For diffusion entropy at $.10$, untouched per-issuance exceedance is 0.240/0.308/0.032, while legitimate-transition exceedance is 0.170/0.301/0.167. These are empirical background rates. Native recordings lack adjudicated failure labels, and comparable nominal thresholds do not mean matched realized false-alert rates. Thus a recall advantage across reference models alone would not demonstrate superiority at equal false-alarm rates.
+
+A separate 20,000-replicate diagnostic fixes the score to the maximum absolute value of four stationary AR(1) sensors. At nominal .10 with 32 calibration units, exceedance is 0.094 for IID units and 0.164 at autocorrelation .99. Spacing by 32 steps gives 0.100 for this specified process; it is not a validity theorem for gapped real data.
+
+\input{generated/empirical-budget-table.tex}
+
+Table~\ref{tab:empirical} is a post-primary diagnostic at common empirical budgets. For each method/configuration, the largest attainable rank threshold with untouched-control exceedance at most .10 is chosen, pooling seeds and using no injected labels. Whole-block paired resampling reselects thresholds. The same controls select and describe these points: this is retrospective comparison, not prospective false-alert validation, and finite rank resolution often leaves unused budget. Primary thresholds remain unchanged.
+
+At this empirical budget, the paired H-minus-S recall difference for synthetic is -0.019 [-0.130, 0.034].
+
+At this empirical budget, the paired H-minus-S recall difference for PEMS is 0.069 [-0.065, 0.236].
+
+For Intel, the displayed methods have no nonzero attainable rank threshold within the .10 control budget; their zero recall is a resolution/shift limitation, not evidence of equal feature quality.
+
+\subsection{Ablations, quality and persistent history}
+
+\input{generated/ablation-table.tex}
+
+The post-run audit finds 6/360 scheduled interventions with no modified finite value or newly removed observation, at a $10^{-6}$ training-scaled tolerance (6 intel matched-covariance). These remain in the primary denominators; scheduled interventions do not guarantee visible changes. Coverage and covariance guards limit the real-data benchmark.
+
+On the identical three-fault limited subset for synthetic 64, entropy recall with B=32/64/128 is 0.000/0.000/0.000. These small subsets quantify Monte Carlo sensitivity and cost, not a precise ranking of sample budgets.
+
+On the identical three-fault limited subset for pems, entropy recall with B=32/64/128 is 0.000/0.000/0.000. These small subsets quantify Monte Carlo sensitivity and cost, not a precise ranking of sample budgets.
+
+The global/local sensitivity uses the same W=160 bootstrap forecasts and calibration budget at 64 nodes. Local/global recall is 0.125/0.014, and IoU is 0.018/0.003. A global detection identifies the entire network, whereas the local arm uses its fixed sensor budget. The first valid issuance is 55 samples after onset, so short events may finish first. The global sample-support rule requires longer windows: the other configurations cannot supply enough calibration units to attain .10 under their original split/episode boundaries. This is a feasibility and longer-window comparison, not an isolated comparison with the primary shorter windows.
+
+For synthetic 64, the eligible-group fraction falls from 1.000 to 0.000 after 10\% additional entrywise missingness.
+
+For intel, the eligible-group fraction falls from 0.068 to 0.000 after 10\% additional entrywise missingness.
+
+For pems, the eligible-group fraction falls from 0.982 to 0.000 after 10\% additional entrywise missingness.
+
+Among 54 inspected group windows, the labeled Gaussian covariance-EM sensitivity supplies a PSD estimate in 3 cases that the primary rule cannot use; it assumes a Gaussian missing-at-random model and does not inherit the detector's calibration. Separate retained-span light/voltage features and their coverage are preserved in the Intel auxiliary audit. Quality-hybrid outcomes remain separate from entropy-only results.
+
+In the long-fault sensitivity, mean late-event entropy maxima for contaminated, paired-clean and frozen-earlier histories are 9.776/9.629/10.114. These are sensitivity scores, not newly calibrated decisions. The intervention changes the conditioning history; a historical reference need not remain useful after a persistent regime change. The unscreened-training fidelity comparison is also retained, rather than assuming the real training data are healthy.
+
+\begin{figure*}[t]\centering\includegraphics[width=.97\textwidth]{cases.pdf}
+
+\caption{Two fixed saved injections at 64 nodes, showing four raw sensor traces per group. The red span is the true 12-sample event; vertical lines mark onset. Filled H markers are issuance levels and open markers their measured lagged levels, since $W/4$ need not equal the alert stride. Reference bands/medians share the same generated blocks. The dashed score line is the strict scan threshold. Groups are selected by signed measured change among candidates overlapping the injected set, solely for illustration; neither displayed group crosses the threshold during the event.}\label{fig:cases}\end{figure*}
+
+\begin{figure*}[t]\centering\includegraphics[width=.97\textwidth]{spatial.pdf}
+
+\caption{Saved-case membership and signed residual traces. Outlines mark injected sensors; triangles mark the displayed group. Heatmap rows are selected by injected-set overlap for illustration. H minus expected H differs from the actual slope used for the node markers. Group locality is predefined, not a discovered cause.}\label{fig:spatial}\end{figure*}
+
+\subsection{Computational cost and operational delay}
+
+On the RTX A6000, complete-detector p50 latency ranges from 0.271 to 0.986 s per issuance, with p95 0.359--0.988 s and peak allocated memory 1396.8 MiB. Training, scoring and required GPU-enabled audits record 2.80 stage-hours within the four-hour ceiling. For the identical 128-window, 96-row, 24-sensor measurement batch, CPU float32/GPU float32 p50 time is 4.28; this is a kernel comparison, not an end-to-end CPU speedup claim. The Xeon Gold 6342 (nominal 2.80 GHz) uses four Torch threads, with PyTorch 2.8.0 and CUDA 12.8. Model-only and complete-pipeline throughput, p50/p95, hardware/software and sample-count tradeoffs are saved. Serial computation is added to timestamp delays in the artifact; issuance spacing and window availability dominate these sub-second/second execution costs.
+
+\begin{figure*}[t]\centering\includegraphics[width=.97\textwidth]{calibration-cost.pdf}
+
+\caption{Empirical untouched exceedance, synchronized execution timing, detected-event delay and generated-sample cost. Calibration is per issuance; missed events are excluded only from the delay boxplots and are counted in recall/localization. B-cost timing includes the full comparison pipeline on the same limited event subset.}\label{fig:cost}\end{figure*}

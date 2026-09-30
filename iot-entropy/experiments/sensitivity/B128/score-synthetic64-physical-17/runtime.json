@@ -1,0 +1,264 @@
+{
+  "peak_gpu_bytes": 1540730368,
+  "timings": [
+    {
+      "seconds": 0.7640433050692081,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.7369440346956253,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.7313879076391459,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.7234270870685577,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.7194233313202858,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.6883780099451542,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.6302401777356863,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.6307592317461967,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.6371155176311731,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.636379960924387,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.6314017735421658,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.6344099156558514,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.6324050351977348,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.6315621677786112,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.6323265600949526,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.6309943646192551,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.6320334002375603,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.634052712470293,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.6336718294769526,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.6423732992261648,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.6831286419183016,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.6306830607354641,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.6482534687966108,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.631418889388442,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.6337075363844633,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.6506747901439667,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.6500361561775208,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.6415018327534199,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.6389593556523323,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.6473300531506538,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.6476007997989655,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.6305051501840353,
+      "stage": "calibration"
+    },
+    {
+      "events": 4,
+      "seconds": 1.338421519845724,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 1.3430248573422432,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 1.2935774605721235,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 1.2896837573498487,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 1.3446664102375507,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 1.3009576126933098,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 1.2918261587619781,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 1.2902681957930326,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 1.3509840387851,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 1.2939879912883043,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 1.2870213780552149,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 1.3424625042825937,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 1.2913643158972263,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 1.4719602279365063,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 1.4195263031870127,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 1.4752660561352968,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 1.4653893560171127,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 1.4156633149832487,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 1.460007444024086,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 1.4621723052114248,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 1.42013306543231,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 1.470368416979909,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 1.476548271253705,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 1.4545123539865017,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 1.4615077022463083,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 1.471696887165308,
+      "stage": "test_shared_reference_and_all_injections"
+    }
+  ],
+  "total_seconds": 63.09624336473644
+}

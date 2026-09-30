@@ -1,0 +1,7 @@
+{
+  "equal_dataset_macro": "Equal weights for the three primary datasets; all synthetic node configurations remain one dataset.",
+  "event_pooled": "Equal weights for scheduled event\u2013training-seed pairs (216 synthetic, 72 Intel, 72 PEMS injections; three seeds each).",
+  "event_precision": "Includes unmatched alert onsets in injected, untouched and legitimate-transition trials.",
+  "interpretation": "Descriptive weighting comparison at the nominal primary alpha, not matched empirical background rates. Use per-dataset paired block intervals for uncertainty; pooled trials are not independent.",
+  "localization": "Missed events contribute zero; no detected-only conditioning."
+}

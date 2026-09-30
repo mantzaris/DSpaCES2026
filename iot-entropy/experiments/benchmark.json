@@ -1,0 +1,139 @@
+{
+  "detector": [
+    {
+      "complete_detector": {
+        "mean_seconds": 0.3951957256843646,
+        "p50_seconds": 0.29947984497994184,
+        "p95_seconds": 0.6963491793721914,
+        "repetitions": 6
+      },
+      "dataset": "synthetic64",
+      "model_only": {
+        "mean_seconds": 0.276903847232461,
+        "p50_seconds": 0.21447263564914465,
+        "p95_seconds": 0.4809780162759125,
+        "repetitions": 6
+      },
+      "network_observations_per_second": 303.6470088136574,
+      "peak_gpu_bytes": 694639616,
+      "scalar_measurements_per_second": 19433.408564074074
+    },
+    {
+      "complete_detector": {
+        "mean_seconds": 0.4703757253785928,
+        "p50_seconds": 0.4609221825376153,
+        "p95_seconds": 0.5075310859829187,
+        "repetitions": 6
+      },
+      "dataset": "synthetic128",
+      "model_only": {
+        "mean_seconds": 0.4625713111211856,
+        "p50_seconds": 0.45417648926377296,
+        "p95_seconds": 0.576163302641362,
+        "repetitions": 6
+      },
+      "network_observations_per_second": 255.11520583553758,
+      "peak_gpu_bytes": 743828992,
+      "scalar_measurements_per_second": 32654.74634694881
+    },
+    {
+      "complete_detector": {
+        "mean_seconds": 0.7870501720656952,
+        "p50_seconds": 0.774909564293921,
+        "p95_seconds": 0.8312661466188729,
+        "repetitions": 6
+      },
+      "dataset": "synthetic256",
+      "model_only": {
+        "mean_seconds": 0.7039545501271883,
+        "p50_seconds": 0.7024986334145069,
+        "p95_seconds": 0.7092097951099277,
+        "repetitions": 6
+      },
+      "network_observations_per_second": 152.46804366365552,
+      "peak_gpu_bytes": 781449216,
+      "scalar_measurements_per_second": 39031.81917789581
+    },
+    {
+      "complete_detector": {
+        "mean_seconds": 0.28294521756470203,
+        "p50_seconds": 0.270702856592834,
+        "p95_seconds": 0.35909078596159816,
+        "repetitions": 6
+      },
+      "dataset": "intel",
+      "model_only": {
+        "mean_seconds": 0.1852921051904559,
+        "p50_seconds": 0.17485894169658422,
+        "p95_seconds": 0.21905431430786848,
+        "repetitions": 6
+      },
+      "network_observations_per_second": 424.1103667799552,
+      "peak_gpu_bytes": 1464600576,
+      "scalar_measurements_per_second": 45803.919612235164
+    },
+    {
+      "complete_detector": {
+        "mean_seconds": 0.9860091982409358,
+        "p50_seconds": 0.9862154424190521,
+        "p95_seconds": 0.9881699937395751,
+        "repetitions": 6
+      },
+      "dataset": "pems",
+      "model_only": {
+        "mean_seconds": 0.9201103867962956,
+        "p50_seconds": 0.9192306017503142,
+        "p95_seconds": 0.9238615524955094,
+        "repetitions": 6
+      },
+      "network_observations_per_second": 121.70271860960618,
+      "peak_gpu_bytes": 788047360,
+      "scalar_measurements_per_second": 39553.38354812201
+    }
+  ],
+  "elapsed_seconds": 38.336614448577166,
+  "hardware": {
+    "/sys/fs/cgroup/cpu.max": "765000 100000",
+    "/sys/fs/cgroup/memory.max": "49999998976",
+    "cpu": "x86_64",
+    "cpu_model": "Intel(R) Xeon(R) Gold 6342 CPU @ 2.80GHz",
+    "gpu": "NVIDIA RTX A6000",
+    "logical_cpus": 96,
+    "torch_threads": 4
+  },
+  "kernels": {
+    "cpu_float32": {
+      "mean_seconds": 0.006640184670686722,
+      "p50_seconds": 0.006538897752761841,
+      "p95_seconds": 0.007482037506997585,
+      "repetitions": 20
+    },
+    "cpu_float64": {
+      "mean_seconds": 0.006920820381492376,
+      "p50_seconds": 0.006791199557483196,
+      "p95_seconds": 0.007596213463693858,
+      "repetitions": 20
+    },
+    "float32_gpu_cpu_reference_max_abs_error": 1.6190354901191029e-07,
+    "gpu_float32": {
+      "mean_seconds": 0.0015338482335209846,
+      "p50_seconds": 0.0015267431735992432,
+      "p95_seconds": 0.0015832235105335713,
+      "repetitions": 20
+    }
+  },
+  "pipeline_stages": [
+    "host-to-device context/target transfer",
+    "joint generation",
+    "feature/reference statistics",
+    "robust scores",
+    "calibration ranks",
+    "sensor participation and overlap merging",
+    "local alert-record serialization"
+  ],
+  "software": {
+    "cuda": "12.8",
+    "python": "3.12.3",
+    "torch": "2.8.0+cu128"
+  }
+}

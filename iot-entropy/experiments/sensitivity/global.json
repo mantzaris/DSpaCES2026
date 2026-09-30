@@ -1,0 +1,272 @@
+[
+  {
+    "attainable_alpha_0_1": true,
+    "calibration_units": 32,
+    "dataset": "synthetic64",
+    "minimum_p": 0.030303030303030304,
+    "nodes": 64,
+    "test_units": 8,
+    "units": [
+      {
+        "channel": 0,
+        "eligible": true,
+        "entropy": 0.37281641364097595,
+        "reference_h_median": 0.38860392570495605,
+        "target_start": 69680
+      },
+      {
+        "channel": 0,
+        "eligible": true,
+        "entropy": 0.5004255175590515,
+        "reference_h_median": 0.3617195785045624,
+        "target_start": 70064
+      },
+      {
+        "channel": 0,
+        "eligible": true,
+        "entropy": 0.49205639958381653,
+        "reference_h_median": 0.3643476665019989,
+        "target_start": 70448
+      },
+      {
+        "channel": 0,
+        "eligible": true,
+        "entropy": 0.495071142911911,
+        "reference_h_median": 0.39061543345451355,
+        "target_start": 70832
+      },
+      {
+        "channel": 0,
+        "eligible": true,
+        "entropy": 0.3899984359741211,
+        "reference_h_median": 0.3796660900115967,
+        "target_start": 71216
+      },
+      {
+        "channel": 0,
+        "eligible": true,
+        "entropy": 0.33616045117378235,
+        "reference_h_median": 0.37449002265930176,
+        "target_start": 71600
+      },
+      {
+        "channel": 0,
+        "eligible": true,
+        "entropy": 0.3204177916049957,
+        "reference_h_median": 0.41255348920822144,
+        "target_start": 71984
+      },
+      {
+        "channel": 0,
+        "eligible": true,
+        "entropy": 0.40397027134895325,
+        "reference_h_median": 0.4133780300617218,
+        "target_start": 72368
+      }
+    ],
+    "window": 160
+  },
+  {
+    "attainable_alpha_0_1": false,
+    "calibration_units": 0,
+    "dataset": "synthetic128",
+    "minimum_p": 1.0,
+    "nodes": 128,
+    "test_units": 0,
+    "units": [],
+    "window": 320
+  },
+  {
+    "attainable_alpha_0_1": false,
+    "calibration_units": 0,
+    "dataset": "synthetic256",
+    "minimum_p": 1.0,
+    "nodes": 256,
+    "test_units": 0,
+    "units": [],
+    "window": 640
+  },
+  {
+    "attainable_alpha_0_1": false,
+    "calibration_units": 8,
+    "dataset": "intel",
+    "minimum_p": 0.1111111111111111,
+    "nodes": 54,
+    "test_units": 8,
+    "units": [
+      {
+        "channel": 0,
+        "eligible": false,
+        "entropy": null,
+        "reference_h_median": null,
+        "target_start": 15322
+      },
+      {
+        "channel": 1,
+        "eligible": false,
+        "entropy": null,
+        "reference_h_median": null,
+        "target_start": 15322
+      },
+      {
+        "channel": 0,
+        "eligible": false,
+        "entropy": null,
+        "reference_h_median": null,
+        "target_start": 15540
+      },
+      {
+        "channel": 1,
+        "eligible": false,
+        "entropy": null,
+        "reference_h_median": null,
+        "target_start": 15540
+      },
+      {
+        "channel": 0,
+        "eligible": false,
+        "entropy": null,
+        "reference_h_median": null,
+        "target_start": 15758
+      },
+      {
+        "channel": 1,
+        "eligible": false,
+        "entropy": null,
+        "reference_h_median": null,
+        "target_start": 15758
+      },
+      {
+        "channel": 0,
+        "eligible": false,
+        "entropy": null,
+        "reference_h_median": null,
+        "target_start": 15976
+      },
+      {
+        "channel": 1,
+        "eligible": false,
+        "entropy": null,
+        "reference_h_median": null,
+        "target_start": 15976
+      },
+      {
+        "channel": 0,
+        "eligible": false,
+        "entropy": null,
+        "reference_h_median": null,
+        "target_start": 16194
+      },
+      {
+        "channel": 1,
+        "eligible": false,
+        "entropy": null,
+        "reference_h_median": null,
+        "target_start": 16194
+      },
+      {
+        "channel": 0,
+        "eligible": false,
+        "entropy": null,
+        "reference_h_median": null,
+        "target_start": 16412
+      },
+      {
+        "channel": 1,
+        "eligible": false,
+        "entropy": null,
+        "reference_h_median": null,
+        "target_start": 16412
+      },
+      {
+        "channel": 0,
+        "eligible": false,
+        "entropy": null,
+        "reference_h_median": null,
+        "target_start": 16630
+      },
+      {
+        "channel": 1,
+        "eligible": false,
+        "entropy": null,
+        "reference_h_median": null,
+        "target_start": 16630
+      },
+      {
+        "channel": 0,
+        "eligible": false,
+        "entropy": null,
+        "reference_h_median": null,
+        "target_start": 16848
+      },
+      {
+        "channel": 1,
+        "eligible": false,
+        "entropy": null,
+        "reference_h_median": null,
+        "target_start": 16848
+      }
+    ],
+    "window": 136
+  },
+  {
+    "attainable_alpha_0_1": false,
+    "calibration_units": 4,
+    "dataset": "pems",
+    "minimum_p": 0.2,
+    "nodes": 325,
+    "test_units": 7,
+    "units": [
+      {
+        "channel": 0,
+        "eligible": true,
+        "entropy": 0.4320376217365265,
+        "reference_h_median": 0.4573545455932617,
+        "target_start": 44356
+      },
+      {
+        "channel": 0,
+        "eligible": true,
+        "entropy": 0.4789593815803528,
+        "reference_h_median": 0.48770931363105774,
+        "target_start": 45424
+      },
+      {
+        "channel": 0,
+        "eligible": true,
+        "entropy": 0.4395316243171692,
+        "reference_h_median": 0.45608213543891907,
+        "target_start": 46492
+      },
+      {
+        "channel": 0,
+        "eligible": true,
+        "entropy": 0.4842367470264435,
+        "reference_h_median": 0.4758334755897522,
+        "target_start": 47560
+      },
+      {
+        "channel": 0,
+        "eligible": true,
+        "entropy": 0.4356679618358612,
+        "reference_h_median": 0.44485586881637573,
+        "target_start": 48628
+      },
+      {
+        "channel": 0,
+        "eligible": true,
+        "entropy": 0.4805946350097656,
+        "reference_h_median": 0.44997432827949524,
+        "target_start": 49696
+      },
+      {
+        "channel": 0,
+        "eligible": true,
+        "entropy": 0.4547138214111328,
+        "reference_h_median": 0.47313398122787476,
+        "target_start": 50764
+      }
+    ],
+    "window": 816
+  }
+]

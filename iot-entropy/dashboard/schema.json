@@ -1,0 +1,20 @@
+{
+  "event": "controlled injection metadata or untouched recording with unknown cause",
+  "feature_order": [
+    "H",
+    "delta H",
+    "C",
+    "delta C",
+    "Cabs",
+    "delta Cabs",
+    "D",
+    "delta D",
+    "P",
+    "delta P"
+  ],
+  "frame": "historical issuance/observation times, observed/ref feature distributions, correlations, masks, scores and scan-adjusted rank values",
+  "group": "nodes, window, lag, channel; frozen scan index",
+  "reference": "All displayed reference traces are from the same saved diffusion sample ensemble",
+  "sensor": "node_ids index, coordinates, measurement channels/units; supplied graph edges",
+  "version": 1
+}

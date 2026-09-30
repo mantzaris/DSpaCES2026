@@ -1,0 +1,42 @@
+{
+  "command": "PYTHONPATH=src .venv/bin/python scripts/verify_reporting_environment.py",
+  "elapsed_seconds": 12.846389340236783,
+  "figure_families": [
+    "architecture",
+    "theory",
+    "cases",
+    "spatial",
+    "performance",
+    "directional-performance",
+    "calibration-cost"
+  ],
+  "note": "CPU reporting from saved measurements; this is not an additional GPU experiment. PDF graphics may differ across Matplotlib versions.",
+  "numerical_artifact_sha256": {
+    "manuscript/generated/ablation-table.tex": "fab8f7e6c9212612585af3c97ad8b28eef23fa177758c35bba1ad2d02c50738a",
+    "manuscript/generated/abstract.tex": "d67110c7ee902ff9d588acd65b1cad9b7f7562c8c54163dac7cbff15151cc28e",
+    "manuscript/generated/conclusion.tex": "cd62b4651423e8fee472257be67a0fc1779e8f37085bc8df966a752f3f41491a",
+    "manuscript/generated/datasets.tex": "42e941271349e746e4de0efc7cdc90c12c80034360bfa1f5165e4f6264394222",
+    "manuscript/generated/empirical-budget-table.tex": "7af438a8a35fe15471eb10f1e362dbdb507355843072a9638f82fa70d77daebc",
+    "manuscript/generated/fidelity-table.tex": "7d9fe274a1de08d4ed99f945a2ef081f7ef41c6b1ae62171df06de8e853d1c99",
+    "manuscript/generated/main-table.tex": "dd79980049fee7948eecf73d04a8e91de00609f71b8a90bbda1cb4283cea74b9",
+    "manuscript/generated/results.tex": "a21132dd17d9af8cf2338b9de6cc97bd65e47aa9b815e28f80cea60d5a58404c",
+    "results/case-selection.json": "313d923bc8db34bfb25c42ad63307dc531a0e4c2e48deb6e51f05354bcf9d299",
+    "results/cross_dataset_summary.csv": "d6ee36e0ea1b4b2a4615da2b6eb3fd9e162c0f2a43111b591c6c316d2f54cbce",
+    "results/dataset-table.json": "199e7df19168ba928fa12cabe8094af83080ce525cdda6896d81be17514744bb",
+    "results/manuscript-claims.json": "6f32be613fe35d2a42f91a37600d746d17e39f48176b7e413bbdf032694f0660"
+  },
+  "packages": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.1.2",
+    "pandas": "3.0.6",
+    "torch": "2.8.0+cu128"
+  },
+  "python": "3.12.3",
+  "source_sha256": {
+    "scripts/verify_reporting_environment.py": "c1a20fc3de13ea251ff79484d7a73d7af82ed0dc5ad6cdff0a1b4ce9e79d9f7a",
+    "src/iot_entropy/manuscript.py": "8f35fc7b9af02b8a50004b6234ef10afa4c843643bf54c04dfbd42b828b3cbb1",
+    "src/iot_entropy/plotting.py": "6b62529f2a929de80483a8a6e66b025c8401c7f1b77696664c12bf07798a066b",
+    "src/iot_entropy/reporting.py": "695fb192d9ba752e504fa58e73dab1b843ced90e65aee3be07fca90daf22843d"
+  },
+  "status": "passed"
+}

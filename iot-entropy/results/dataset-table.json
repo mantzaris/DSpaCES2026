@@ -1,0 +1,57 @@
+[
+  {
+    "counts": [
+      49152,
+      12288,
+      8192,
+      12288
+    ],
+    "dataset": "synthetic64",
+    "interval_seconds": 300,
+    "nodes": 64
+  },
+  {
+    "counts": [
+      49152,
+      12288,
+      8192,
+      12288
+    ],
+    "dataset": "synthetic128",
+    "interval_seconds": 300,
+    "nodes": 128
+  },
+  {
+    "counts": [
+      49152,
+      12288,
+      8192,
+      12288
+    ],
+    "dataset": "synthetic256",
+    "interval_seconds": 300,
+    "nodes": 256
+  },
+  {
+    "counts": [
+      10782,
+      2695,
+      1797,
+      2696
+    ],
+    "dataset": "intel",
+    "interval_seconds": 120,
+    "nodes": 54
+  },
+  {
+    "counts": [
+      31276,
+      7820,
+      5212,
+      7820
+    ],
+    "dataset": "pems",
+    "interval_seconds": 300,
+    "nodes": 325
+  }
+]

@@ -1,0 +1,60 @@
+{
+  "consistent_entropy_advantage_supported": false,
+  "entropy_recall": [
+    {
+      "high": 0.4213348765432097,
+      "low": 0.22993827160493824,
+      "mean": 0.32561728395061723,
+      "n": 36
+    },
+    {
+      "high": 0.18981481481481483,
+      "low": 0.027777777777777776,
+      "mean": 0.10648148148148148,
+      "n": 8
+    },
+    {
+      "high": 0.26851851851851855,
+      "low": 0.027777777777777776,
+      "mean": 0.13888888888888887,
+      "n": 12
+    }
+  ],
+  "evidence_files": [
+    "summary.json",
+    "paired_comparisons.json",
+    "retrospective_budgets.json",
+    "calibration-null-diagnostic.json",
+    "case-selection.json",
+    "../experiments/fidelity-extra.json",
+    "../experiments/benchmark.json"
+  ],
+  "fault_realizations": 360,
+  "qualification": "Conclusions apply to this compact model, forecast lead, injected taxonomy and finite calibration design; no verified real failures or usability study.",
+  "recording_blocks": 56,
+  "synchronization_recall": [
+    {
+      "high": 0.41207561728395053,
+      "low": 0.21755401234567895,
+      "mean": 0.31481481481481477,
+      "n": 36
+    },
+    {
+      "high": 0.40289351851851835,
+      "low": 0.07858796296296296,
+      "mean": 0.25,
+      "n": 8
+    },
+    {
+      "high": 0.3241898148148147,
+      "low": 0.05555555555555555,
+      "mean": 0.18055555555555555,
+      "n": 12
+    }
+  ],
+  "untouched_exceedance": [
+    0.24002849002849003,
+    0.3076923076923077,
+    0.03205128205128205
+  ]
+}

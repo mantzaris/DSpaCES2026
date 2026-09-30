@@ -1,0 +1,19 @@
+\begin{table*}[t]
+\centering\caption{Main results at nominal $\alpha=.10$. Each cell is recall / IoU / event-PR area / median detected-event delay (minutes). Delay adds measured mean complete comparison-pipeline latency to the observation timestamp, a conservative serial execution convention. Localization counts misses as zero. Values summarize three seeds; synthetic configurations form one dataset. Equal nominal budgets do not imply equal realized background rates.}
+\label{tab:main}\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lccc}
+\toprule Method & Synthetic & Intel Lab & PEMS-BAY\\\midrule
+Bootstrap H & 0.188 / 0.013 / 0.151 / 175.0 & 0.208 / 0.027 / 0.049 / 70.0 & 0.509 / 0.029 / 0.134 / 55.0 \\
+Bootstrap S & 0.196 / 0.021 / 0.159 / 175.0 & 0.185 / 0.028 / 0.028 / 70.0 & 0.403 / 0.026 / 0.165 / 115.0 \\
+Bootstrap H+S & 0.196 / 0.021 / 0.159 / 175.0 & 0.185 / 0.028 / 0.028 / 70.0 & 0.398 / 0.028 / 0.151 / 115.0 \\
+Diffusion H & 0.326 / 0.017 / 0.139 / 175.0 & 0.106 / 0.009 / 0.036 / 70.0 & 0.139 / 0.006 / 0.150 / 175.0 \\
+Diffusion S & 0.315 / 0.021 / 0.134 / 175.0 & 0.250 / 0.031 / 0.045 / 46.0 & 0.181 / 0.005 / 0.141 / 175.0 \\
+Diffusion H+S & 0.315 / 0.021 / 0.134 / 175.0 & 0.255 / 0.027 / 0.052 / 70.0 & 0.116 / 0.006 / 0.153 / 175.0 \\
+Diffusion full R & 0.338 / 0.026 / 0.132 / 175.0 & 0.176 / 0.018 / 0.024 / 70.0 & 0.162 / 0.007 / 0.144 / 175.0 \\
+Diffusion raw & 0.054 / 0.001 / 0.107 / 175.0 & 0.190 / 0.034 / 0.030 / 46.0 & 0.278 / 0.004 / 0.159 / 175.0 \\
+Diffusion H+raw & 0.326 / 0.017 / 0.139 / 175.0 & 0.120 / 0.012 / 0.031 / 46.0 & 0.139 / 0.006 / 0.150 / 175.0 \\
+Diffusion H + flatline & 0.350 / 0.027 / 0.151 / 115.0 & 0.000 / 0.000 / 0.000 / -- & 0.000 / 0.000 / 0.061 / -- \\
+CUSUM & 0.199 / 0.016 / 0.136 / 235.0 & 0.014 / 0.003 / 0.083 / 190.0 & 0.153 / 0.000 / 0.140 / 115.0 \\
+GDN adaptation & 0.546 / 0.072 / 0.243 / 55.0 & 0.051 / 0.006 / 0.029 / 94.0 & 0.157 / 0.003 / 0.190 / 175.0 \\
+\bottomrule\end{tabular}
+\end{table*}

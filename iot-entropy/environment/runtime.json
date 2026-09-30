@@ -1,0 +1,17 @@
+{
+  "python": "3.12.3",
+  "platform": "Linux-6.8.0-49-generic-x86_64-with-glibc2.39",
+  "lock_roots": [
+    "numpy",
+    "scipy",
+    "pandas",
+    "matplotlib",
+    "h5py",
+    "requests",
+    "torch",
+    "pytest",
+    "setuptools"
+  ],
+  "locked_packages": 48,
+  "scope": "Installed required dependency closure; optional extras excluded"
+}

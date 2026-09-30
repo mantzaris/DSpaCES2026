@@ -1,0 +1,264 @@
+{
+  "peak_gpu_bytes": 401337856,
+  "timings": [
+    {
+      "seconds": 0.5891361963003874,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.36422479897737503,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.3882568273693323,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.31784486398100853,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.30037100426852703,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.3065531123429537,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.30442199669778347,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.3268035352230072,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.34581728279590607,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.360188702121377,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.35421990044414997,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.35334266535937786,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.34770308434963226,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.35277746245265007,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.34694978035986423,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.35302928276360035,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.3497487008571625,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.35105875693261623,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.28913397155702114,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.2693286370486021,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.2717107553035021,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.3626638613641262,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.26931126043200493,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.273622989654541,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.27154407277703285,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.2780184093862772,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.2828384321182966,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.2802105564624071,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.26989520713686943,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.27942717261612415,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.2756926380097866,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.27049860917031765,
+      "stage": "calibration"
+    },
+    {
+      "events": 4,
+      "seconds": 0.8998438250273466,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 0.8924011401832104,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 0.9797773007303476,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 0.917456429451704,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 0.9084774535149336,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 0.9870131257921457,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 0.914642795920372,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 0.8909066822379827,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 0.9496346022933722,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 0.9280360508710146,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 0.9989056475460529,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 1.0962800774723291,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 4,
+      "seconds": 0.9173699375241995,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 1.103005487471819,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 1.157545318827033,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 1.2532668262720108,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 1.0924708880484104,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 1.0297695733606815,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 1.1261420864611864,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 1.133184915408492,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 1.0650673899799585,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 1.129432750865817,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 1.066895641386509,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 1.0895582102239132,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 1.1173138841986656,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 3,
+      "seconds": 1.2631961163133383,
+      "stage": "test_shared_reference_and_all_injections"
+    }
+  ],
+  "total_seconds": 41.893147269263864
+}

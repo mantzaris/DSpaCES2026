@@ -1,0 +1,108 @@
+{
+  "abstract_and_conclusion_claim_audit": [
+    {
+      "assessment": "Counts verified; synthetic node counts are configurations; real faults are controlled injections.",
+      "claim": "Three primary datasets; 360 scheduled injections; 56 source blocks; three seeds",
+      "evidence": [
+        "results/summary.json",
+        "results/manuscript-claims.json",
+        "data/manifests/"
+      ]
+    },
+    {
+      "assessment": "Exact source values checked; generated numeric text is identical in both reporting environments.",
+      "claim": "Reported recall and untouched exceedance values",
+      "evidence": [
+        "results/summary.json",
+        "manuscript/generated/abstract.tex"
+      ]
+    },
+    {
+      "assessment": "Paired intervals do not establish a consistent positive advantage. Empirical budgets are explicitly retrospective and may leave unused allowance.",
+      "claim": "No consistent detection and localization advantage established",
+      "evidence": [
+        "results/paired_comparisons.json",
+        "results/retrospective_budgets.json"
+      ]
+    },
+    {
+      "assessment": "Proofs and counterexample reviewed; mathematical checks passed. No superiority over full correlation information or causal interpretation claimed.",
+      "claim": "Bounds, mean-correlation counterexample and invariances delimit entropy information",
+      "evidence": [
+        "docs/theory.md",
+        "tests/test_core.py",
+        "manuscript/paper.tex"
+      ]
+    },
+    {
+      "assessment": "Measured limitations; the rank guarantee remains conditional on exchangeability.",
+      "claim": "Reference fidelity, calibration shift, support and grouping constrain this experiment",
+      "evidence": [
+        "experiments/fidelity-extra.json",
+        "results/calibration-null-diagnostic.json",
+        "results/group_window_ablations.csv",
+        "results/summary.json"
+      ]
+    },
+    {
+      "assessment": "Inspected linked traces, support, physical/correlation edges, model provenance and distinct cause labels; no field-fault, causality or usability claim.",
+      "claim": "Replay exposes evidence and unknown native causes",
+      "evidence": [
+        "dashboard/validation/check.json",
+        "dashboard/schema.json",
+        "src/iot_entropy/dashboard_template.html"
+      ]
+    }
+  ],
+  "all_fonts_embedded": true,
+  "authors": [
+    "Alexander V. Mantzaris",
+    "James H. Korris"
+  ],
+  "browser_validation": {
+    "cases": 5,
+    "edge_inspection": true,
+    "javascript_exceptions": 0,
+    "linked_selection": true
+  },
+  "build_errors_or_unresolved_references_or_overfull_boxes": [],
+  "cuda_validation": {
+    "errors": 0,
+    "failures": 0,
+    "seconds": 4.694,
+    "skipped": 0,
+    "tests": 11
+  },
+  "format": "IEEEtran conference, two columns, US letter",
+  "numerical_reporting_artifacts_identical_across_environments": 12,
+  "pages_including_references": 10,
+  "pdf_sha256": "e8c1cf5c8ebe217b2f7c713058e6c37eb9654d98879b6e6393c92fd4ca742592",
+  "scope": "Local technical and scientific artifact audit; no workshop submission, external publication or repository push.",
+  "status": "passed",
+  "submission_metadata_pending": [
+    "Author affiliations",
+    "Corresponding author email"
+  ],
+  "type3_fonts": false,
+  "visual_review": {
+    "checks": [
+      "Equations fit columns",
+      "Tables and figure labels readable",
+      "All figures before references",
+      "Bibliography entries and article identifiers present"
+    ],
+    "rendered_pages_inspected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "reviewer": "Codex"
+  }
+}

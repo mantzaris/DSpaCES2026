@@ -1,0 +1,54 @@
+{
+  "first": {
+    "status": "2020-01-03 03:55:00 (source clock) · family p=0.242",
+    "groups": 161,
+    "frames": 13,
+    "caseCount": 5,
+    "selected": 56
+  },
+  "selected": {
+    "time": 9,
+    "group": 116,
+    "evidence": "g116 · signal · arbitrary units\nWindow 96; lag 24; common rows now/lagged 96/96\nQuality: eligible\nActual ΔH: 0.033 (increasing)\nH minus expected H: 0.336 (higher than expected)\nAᴴ: 10.736; scan-adjusted p: 0.424\nForecast issued: 2020-01-02 21:55:00 (source clock)\nObserved: 2020-01-03 07:55:00 (source clock)\nModel: graph-conditioned diffusion, seed 17\nCheckpoint: 1ac1ef337547a7d88de7…\nCause status: controlled fault injection",
+    "merged": 1
+  },
+  "edge": "Sensors 19–20: observed r=0.683, reference=0.965, Δreference=-0.282; 96 common rows.",
+  "checks": [
+    {
+      "dataset": "synthetic64",
+      "kind": "copy",
+      "group": 56,
+      "frames": 13,
+      "hasThreshold": true
+    },
+    {
+      "dataset": "synthetic64",
+      "kind": "noise",
+      "group": 117,
+      "frames": 13,
+      "hasThreshold": true
+    },
+    {
+      "dataset": "synthetic64",
+      "kind": "transition",
+      "group": 16,
+      "frames": 13,
+      "hasThreshold": true
+    },
+    {
+      "dataset": "intel",
+      "kind": "untouched",
+      "group": 263,
+      "frames": 13,
+      "hasThreshold": true
+    },
+    {
+      "dataset": "pems",
+      "kind": "untouched",
+      "group": 145,
+      "frames": 13,
+      "hasThreshold": true
+    }
+  ],
+  "errors": []
+}

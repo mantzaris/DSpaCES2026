@@ -1,0 +1,19 @@
+{
+  "identical_artifact_bytes": {
+    "manuscript/generated/ablation-table.tex": true,
+    "manuscript/generated/abstract.tex": true,
+    "manuscript/generated/conclusion.tex": true,
+    "manuscript/generated/datasets.tex": true,
+    "manuscript/generated/empirical-budget-table.tex": true,
+    "manuscript/generated/fidelity-table.tex": true,
+    "manuscript/generated/main-table.tex": true,
+    "manuscript/generated/results.tex": true,
+    "results/case-selection.json": true,
+    "results/cross_dataset_summary.csv": true,
+    "results/dataset-table.json": true,
+    "results/manuscript-claims.json": true
+  },
+  "note": "Graphics need not be byte-identical across Matplotlib releases.",
+  "publication_environment": "See environment/reporting-environment.json",
+  "recorded_environment": "Python 3.12.3; see reporting-environment.json"
+}

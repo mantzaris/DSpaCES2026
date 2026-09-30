@@ -1,0 +1,69 @@
+{
+  "best_development_loss": 0.2633602246642113,
+  "checkpoint": "/workspace/iot-entropy/experiments/full/checkpoints/synthetic128-gdn-physical-17.pt",
+  "checkpoint_sha256": "cd266ca2e785c206432ecedb648ad63b588d207caf884fbd014ddf021395d048",
+  "dataset": "synthetic128",
+  "graph": "physical",
+  "history": [
+    {
+      "development_loss": 0.3726899288594723,
+      "loss": 0.35115188360214233,
+      "seconds": 1.5119618996977806,
+      "step": 200
+    },
+    {
+      "development_loss": 0.32513604313135147,
+      "loss": 0.3259744346141815,
+      "seconds": 3.7253194246441126,
+      "step": 400
+    },
+    {
+      "development_loss": 0.31305932253599167,
+      "loss": 0.3339196443557739,
+      "seconds": 5.843948220834136,
+      "step": 600
+    },
+    {
+      "development_loss": 0.29959920421242714,
+      "loss": 0.34289902448654175,
+      "seconds": 7.8606713358312845,
+      "step": 800
+    },
+    {
+      "development_loss": 0.28950190357863903,
+      "loss": 0.318002313375473,
+      "seconds": 9.832273654639721,
+      "step": 1000
+    },
+    {
+      "development_loss": 0.2825979646295309,
+      "loss": 0.22860415279865265,
+      "seconds": 11.771775111556053,
+      "step": 1200
+    },
+    {
+      "development_loss": 0.27642638981342316,
+      "loss": 0.25658556818962097,
+      "seconds": 13.959760004654527,
+      "step": 1400
+    },
+    {
+      "development_loss": 0.2633602246642113,
+      "loss": 0.3002780079841614,
+      "seconds": 16.25412278622389,
+      "step": 1600
+    },
+    {
+      "development_loss": 0.26941906474530697,
+      "loss": 0.2780560255050659,
+      "seconds": 18.60782467201352,
+      "step": 1800
+    }
+  ],
+  "kind": "gdn",
+  "parameters": 8417,
+  "peak_gpu_bytes": 65150976,
+  "screen": true,
+  "seed": 17,
+  "training_seconds": 18.61152601800859
+}

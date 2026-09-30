@@ -1,0 +1,92 @@
+{
+  "alert_stride": 12,
+  "authors": [
+    "Alexander V. Mantzaris",
+    "James H. Korris"
+  ],
+  "base_episodes": 2,
+  "batch_size": 8,
+  "bootstrap_repetitions": 1000,
+  "calibration_stride": 168,
+  "context": 48,
+  "datasets": [
+    "synthetic64",
+    "synthetic128",
+    "synthetic256",
+    "intel",
+    "pems"
+  ],
+  "diffusion_steps": 100,
+  "durations": [
+    48
+  ],
+  "early_stopping_patience": 4,
+  "episode_length": 312,
+  "event_tolerance": 0,
+  "fault_sizes": [
+    6,
+    12
+  ],
+  "fault_types": [
+    "copy",
+    "noise",
+    "drift"
+  ],
+  "gdn_hidden": 32,
+  "gdn_steps": 1800,
+  "gdn_topk": 15,
+  "generated_samples": 128,
+  "gpu_hour_budget": 4.0,
+  "group_merge_iou": 0.5,
+  "group_sizes": [
+    6,
+    12,
+    24
+  ],
+  "hidden": 24,
+  "layers": 3,
+  "learning_rate": 0.001,
+  "localization_budgets": [
+    6,
+    12,
+    24
+  ],
+  "maximum_group_centers": 24,
+  "onset": 192,
+  "primary_alpha": 0.1,
+  "sample_chunk": 16,
+  "sampling_steps": 20,
+  "secondary_alphas": [
+    0.05,
+    0.2
+  ],
+  "severities": [
+    1.0
+  ],
+  "shrinkage": 0.05,
+  "shrinkage_candidates": [
+    0.0,
+    0.05,
+    0.1
+  ],
+  "split_fractions": [
+    0.6,
+    0.15,
+    0.1,
+    0.15
+  ],
+  "study": "entropy-reference-v1",
+  "synthetic_graph_seed": 3107,
+  "training_seeds": [
+    17,
+    29,
+    43
+  ],
+  "training_steps": 2400,
+  "validation_every": 200,
+  "windows": [
+    24,
+    48,
+    96
+  ]
+}

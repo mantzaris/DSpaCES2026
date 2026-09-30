@@ -1,0 +1,13 @@
+\begin{table*}[t]\centering\caption{Diffusion-entropy ablation recall at nominal $\alpha=.10$, seed 17 throughout. Each restricted family has its own calibration maxima; the localization budget stays fixed. Last two rows list the three labeled settings in order.}\label{tab:ablations}\small
+\begin{tabular}{lccc}\toprule Setting & Synthetic & Intel & PEMS\\\midrule
+H + $\Delta H$ & 0.292 & 0.069 & 0.083 \\
+H level only & 0.315 & 0.014 & 0.083 \\
+Higher than expected & 0.315 & 0.542 & 0.431 \\
+Lower than expected & 0.421 & 0.056 & 0.083 \\
+Actual increase only & 0.324 & 0.153 & 0.181 \\
+Actual decrease only & 0.296 & 0.097 & 0.083 \\
+Graph conditioning removed & 0.190 & 0.056 & 0.083 \\
+Graph conditioning shuffled & 0.282 & 0.069 & 0.111 \\
+Group size 6 / 12 / 24 & 0.264 / 0.421 / 0.486 & 0.069 / 0.042 / 0.000 & 0.167 / 0.167 / 0.250 \\
+Window 24 / 48 / 96 & 0.389 / 0.315 / 0.264 & 0.125 / 0.111 / 0.194 & 0.333 / 0.167 / 0.083 \\
+\bottomrule\end{tabular}\end{table*}

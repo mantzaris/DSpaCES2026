@@ -1,0 +1,20 @@
+[
+  {
+    "actual_mean_delta_h_during_event": -0.031891703605651855,
+    "event": "copy-000",
+    "exceeds_scan_threshold_during_event": false,
+    "group": 11,
+    "selection": "Fixed saved copy/noise cases; choose largest signed mean change among groups with truth IoU >= .25, for illustration only",
+    "size": 6,
+    "window": 24
+  },
+  {
+    "actual_mean_delta_h_during_event": 0.0388835072517395,
+    "event": "noise-018",
+    "exceeds_scan_threshold_during_event": false,
+    "group": 117,
+    "selection": "Fixed saved copy/noise cases; choose largest signed mean change among groups with truth IoU >= .25, for illustration only",
+    "size": 6,
+    "window": 96
+  }
+]

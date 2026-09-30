@@ -1,0 +1,302 @@
+[
+  {
+    "dataset": "intel",
+    "high": 0.0,
+    "left": "diffusion/entropy",
+    "low": -0.2825231481481481,
+    "mean": -0.14351851851851852,
+    "metric": "tp",
+    "n": 8,
+    "right": "diffusion/synchronization"
+  },
+  {
+    "dataset": "intel",
+    "high": -0.0019473838918283365,
+    "left": "diffusion/entropy",
+    "low": -0.04771089125255337,
+    "mean": -0.022198299947587465,
+    "metric": "localization_iou",
+    "n": 8,
+    "right": "diffusion/synchronization"
+  },
+  {
+    "dataset": "intel",
+    "high": 0.037037037037037035,
+    "left": "diffusion/entropy",
+    "low": -0.19907407407407407,
+    "mean": -0.06944444444444445,
+    "metric": "tp",
+    "n": 8,
+    "right": "diffusion/matrix"
+  },
+  {
+    "dataset": "intel",
+    "high": -0.001290110813859978,
+    "left": "diffusion/entropy",
+    "low": -0.020714489112336757,
+    "mean": -0.009542142762787342,
+    "metric": "localization_iou",
+    "n": 8,
+    "right": "diffusion/matrix"
+  },
+  {
+    "dataset": "intel",
+    "high": 0.11111111111111113,
+    "left": "diffusion/combined",
+    "low": -0.11122685185185184,
+    "mean": 0.004629629629629629,
+    "metric": "tp",
+    "n": 8,
+    "right": "diffusion/synchronization"
+  },
+  {
+    "dataset": "intel",
+    "high": 0.00943323112901966,
+    "left": "diffusion/combined",
+    "low": -0.022255926266305442,
+    "mean": -0.003944436419222309,
+    "metric": "localization_iou",
+    "n": 8,
+    "right": "diffusion/synchronization"
+  },
+  {
+    "dataset": "intel",
+    "high": 0.009259259259259259,
+    "left": "diffusion/entropy",
+    "low": -0.24074074074074073,
+    "mean": -0.10185185185185185,
+    "metric": "tp",
+    "n": 8,
+    "right": "bootstrap/entropy"
+  },
+  {
+    "dataset": "intel",
+    "high": -0.0036505432252885873,
+    "left": "diffusion/entropy",
+    "low": -0.0352628753838045,
+    "mean": -0.01854822245915836,
+    "metric": "localization_iou",
+    "n": 8,
+    "right": "bootstrap/entropy"
+  },
+  {
+    "dataset": "intel",
+    "high": 0.19444444444444445,
+    "left": "diffusion/combined",
+    "low": -0.06018518518518518,
+    "mean": 0.06944444444444445,
+    "metric": "tp",
+    "n": 8,
+    "right": "bootstrap/combined"
+  },
+  {
+    "dataset": "intel",
+    "high": 0.018204552819055045,
+    "left": "diffusion/combined",
+    "low": -0.02011534790141148,
+    "mean": -0.0009725723728028352,
+    "metric": "localization_iou",
+    "n": 8,
+    "right": "bootstrap/combined"
+  },
+  {
+    "dataset": "pems",
+    "high": 0.018518518518518517,
+    "left": "diffusion/entropy",
+    "low": -0.12037037037037036,
+    "mean": -0.041666666666666664,
+    "metric": "tp",
+    "n": 12,
+    "right": "diffusion/synchronization"
+  },
+  {
+    "dataset": "pems",
+    "high": 0.009584178688039322,
+    "left": "diffusion/entropy",
+    "low": -0.006155164811774006,
+    "mean": 0.0008320932238240959,
+    "metric": "localization_iou",
+    "n": 12,
+    "right": "diffusion/synchronization"
+  },
+  {
+    "dataset": "pems",
+    "high": 0.08796296296296297,
+    "left": "diffusion/entropy",
+    "low": -0.14814814814814814,
+    "mean": -0.023148148148148143,
+    "metric": "tp",
+    "n": 12,
+    "right": "diffusion/matrix"
+  },
+  {
+    "dataset": "pems",
+    "high": 0.0024216636458222404,
+    "left": "diffusion/entropy",
+    "low": -0.005008210180623973,
+    "mean": -0.0008382075149264865,
+    "metric": "localization_iou",
+    "n": 12,
+    "right": "diffusion/matrix"
+  },
+  {
+    "dataset": "pems",
+    "high": 0.009259259259259259,
+    "left": "diffusion/combined",
+    "low": -0.14814814814814817,
+    "mean": -0.06481481481481483,
+    "metric": "tp",
+    "n": 12,
+    "right": "diffusion/synchronization"
+  },
+  {
+    "dataset": "pems",
+    "high": 0.00816935129698103,
+    "left": "diffusion/combined",
+    "low": -0.004611954935230797,
+    "mean": 0.0005685148366327939,
+    "metric": "localization_iou",
+    "n": 12,
+    "right": "diffusion/synchronization"
+  },
+  {
+    "dataset": "pems",
+    "high": -0.1574074074074074,
+    "left": "diffusion/entropy",
+    "low": -0.5787037037037036,
+    "mean": -0.3703703703703704,
+    "metric": "tp",
+    "n": 12,
+    "right": "bootstrap/entropy"
+  },
+  {
+    "dataset": "pems",
+    "high": -0.0029696412308244115,
+    "left": "diffusion/entropy",
+    "low": -0.04779585537402625,
+    "mean": -0.023184530712037493,
+    "metric": "localization_iou",
+    "n": 12,
+    "right": "bootstrap/entropy"
+  },
+  {
+    "dataset": "pems",
+    "high": -0.08796296296296298,
+    "left": "diffusion/combined",
+    "low": -0.47233796296296304,
+    "mean": -0.28240740740740744,
+    "metric": "tp",
+    "n": 12,
+    "right": "bootstrap/combined"
+  },
+  {
+    "dataset": "pems",
+    "high": -0.0074205139372050775,
+    "left": "diffusion/combined",
+    "low": -0.040184855788660524,
+    "mean": -0.02244639278893695,
+    "metric": "localization_iou",
+    "n": 12,
+    "right": "bootstrap/combined"
+  },
+  {
+    "dataset": "synthetic",
+    "high": 0.08024691358024691,
+    "left": "diffusion/entropy",
+    "low": -0.057137345679012345,
+    "mean": 0.010802469135802465,
+    "metric": "tp",
+    "n": 36,
+    "right": "diffusion/synchronization"
+  },
+  {
+    "dataset": "synthetic",
+    "high": 0.0006336075829994641,
+    "left": "diffusion/entropy",
+    "low": -0.008999921993293653,
+    "mean": -0.0038300819239449353,
+    "metric": "localization_iou",
+    "n": 36,
+    "right": "diffusion/synchronization"
+  },
+  {
+    "dataset": "synthetic",
+    "high": 0.07106481481481475,
+    "left": "diffusion/entropy",
+    "low": -0.10185185185185187,
+    "mean": -0.012345679012345685,
+    "metric": "tp",
+    "n": 36,
+    "right": "diffusion/matrix"
+  },
+  {
+    "dataset": "synthetic",
+    "high": 0.0005702147995125085,
+    "left": "diffusion/entropy",
+    "low": -0.017927522017412836,
+    "mean": -0.0080054593920054,
+    "metric": "localization_iou",
+    "n": 36,
+    "right": "diffusion/matrix"
+  },
+  {
+    "dataset": "synthetic",
+    "high": 0.0,
+    "left": "diffusion/combined",
+    "low": 0.0,
+    "mean": 0.0,
+    "metric": "tp",
+    "n": 36,
+    "right": "diffusion/synchronization"
+  },
+  {
+    "dataset": "synthetic",
+    "high": 0.0005276288264757922,
+    "left": "diffusion/combined",
+    "low": -0.0020707972037001757,
+    "mean": -0.0004789913778654137,
+    "metric": "localization_iou",
+    "n": 36,
+    "right": "diffusion/synchronization"
+  },
+  {
+    "dataset": "synthetic",
+    "high": 0.2284336419753086,
+    "left": "diffusion/entropy",
+    "low": 0.044714506172839515,
+    "mean": 0.13734567901234568,
+    "metric": "tp",
+    "n": 36,
+    "right": "bootstrap/entropy"
+  },
+  {
+    "dataset": "synthetic",
+    "high": 0.012591589674816616,
+    "left": "diffusion/entropy",
+    "low": -0.002524137376452738,
+    "mean": 0.004600100213652681,
+    "metric": "localization_iou",
+    "n": 36,
+    "right": "bootstrap/entropy"
+  },
+  {
+    "dataset": "synthetic",
+    "high": 0.22071759259259255,
+    "left": "diffusion/combined",
+    "low": -0.0015817901234568036,
+    "mean": 0.11882716049382716,
+    "metric": "tp",
+    "n": 36,
+    "right": "bootstrap/combined"
+  },
+  {
+    "dataset": "synthetic",
+    "high": 0.008249307770973012,
+    "left": "diffusion/combined",
+    "low": -0.009604198970099237,
+    "mean": -0.0004893047570703857,
+    "metric": "localization_iou",
+    "n": 36,
+    "right": "bootstrap/combined"
+  }
+]

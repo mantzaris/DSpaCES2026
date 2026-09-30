@@ -1,0 +1,24 @@
+{
+  "candidate_mean_iou": {
+    "12": 0.0,
+    "24": 0.03333333333333333,
+    "6": 0.0
+  },
+  "development_indices": [
+    31324,
+    31996,
+    32668,
+    33340,
+    34012,
+    34684,
+    35356,
+    36028,
+    36700,
+    37372,
+    38044,
+    38884
+  ],
+  "floor_rule": ".05 development IQR, minimum 1e-4",
+  "localization_budget": 24,
+  "shrinkage": 0.05
+}

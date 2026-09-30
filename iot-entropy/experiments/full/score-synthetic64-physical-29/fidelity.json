@@ -1,0 +1,362 @@
+[
+  {
+    "coverage90": 1.0,
+    "energy_dimensions": 7680,
+    "energy_score": 0.9843825101852417,
+    "observed_fraction": 1.0,
+    "reference": "diffusion",
+    "split": "development",
+    "target_start": 49200,
+    "width90": 8.462722778320312
+  },
+  {
+    "coverage90": 1.0,
+    "energy_dimensions": 7680,
+    "energy_score": 0.9866187572479248,
+    "observed_fraction": 1.0,
+    "reference": "diffusion",
+    "split": "development",
+    "target_start": 50224,
+    "width90": 8.473362922668457
+  },
+  {
+    "coverage90": 1.0,
+    "energy_dimensions": 7680,
+    "energy_score": 1.0180518627166748,
+    "observed_fraction": 1.0,
+    "reference": "diffusion",
+    "split": "development",
+    "target_start": 51248,
+    "width90": 8.501328468322754
+  },
+  {
+    "coverage90": 0.99895840883255,
+    "energy_dimensions": 7680,
+    "energy_score": 1.0833109617233276,
+    "observed_fraction": 1.0,
+    "reference": "diffusion",
+    "split": "development",
+    "target_start": 52440,
+    "width90": 8.287888526916504
+  },
+  {
+    "coverage90": 1.0,
+    "energy_dimensions": 7680,
+    "energy_score": 0.8482660055160522,
+    "observed_fraction": 1.0,
+    "reference": "diffusion",
+    "split": "development",
+    "target_start": 53464,
+    "width90": 8.342103958129883
+  },
+  {
+    "coverage90": 0.9617187976837158,
+    "energy_dimensions": 7680,
+    "energy_score": 1.4559205770492554,
+    "observed_fraction": 1.0,
+    "reference": "diffusion",
+    "split": "development",
+    "target_start": 54656,
+    "width90": 8.427480697631836
+  },
+  {
+    "coverage90": 1.0,
+    "energy_dimensions": 7680,
+    "energy_score": 0.9376344680786133,
+    "observed_fraction": 1.0,
+    "reference": "diffusion",
+    "split": "development",
+    "target_start": 55680,
+    "width90": 8.602136611938477
+  },
+  {
+    "coverage90": 0.9994792342185974,
+    "energy_dimensions": 7680,
+    "energy_score": 1.0934351682662964,
+    "observed_fraction": 1.0,
+    "reference": "diffusion",
+    "split": "development",
+    "target_start": 56872,
+    "width90": 7.755406379699707
+  },
+  {
+    "coverage90": 1.0,
+    "energy_dimensions": 7680,
+    "energy_score": 1.139613151550293,
+    "observed_fraction": 1.0,
+    "reference": "diffusion",
+    "split": "development",
+    "target_start": 57896,
+    "width90": 8.424339294433594
+  },
+  {
+    "coverage90": 0.9979166984558105,
+    "energy_dimensions": 7680,
+    "energy_score": 1.00098717212677,
+    "observed_fraction": 1.0,
+    "reference": "diffusion",
+    "split": "development",
+    "target_start": 59088,
+    "width90": 8.51309871673584
+  },
+  {
+    "coverage90": 1.0,
+    "energy_dimensions": 7680,
+    "energy_score": 0.9835529327392578,
+    "observed_fraction": 1.0,
+    "reference": "diffusion",
+    "split": "development",
+    "target_start": 60112,
+    "width90": 8.65920639038086
+  },
+  {
+    "coverage90": 0.9962239861488342,
+    "energy_dimensions": 7680,
+    "energy_score": 1.141964316368103,
+    "observed_fraction": 1.0,
+    "reference": "diffusion",
+    "split": "development",
+    "target_start": 61304,
+    "width90": 8.276403427124023
+  },
+  {
+    "base": 0,
+    "coverage90": 1.0,
+    "energy_dimensions": 7680,
+    "energy_score": 0.9813023805618286,
+    "observed_fraction": 1.0,
+    "reference": "diffusion",
+    "split": "test_untouched",
+    "width90": 8.410404205322266
+  },
+  {
+    "base": 0,
+    "coverage90": 0.9319010972976685,
+    "energy_dimensions": 7680,
+    "energy_score": 0.5140352249145508,
+    "observed_fraction": 1.0,
+    "reference": "bootstrap",
+    "split": "test_untouched",
+    "width90": 2.8206825256347656
+  },
+  {
+    "base": 1,
+    "coverage90": 1.0,
+    "energy_dimensions": 7680,
+    "energy_score": 0.9781436920166016,
+    "observed_fraction": 1.0,
+    "reference": "diffusion",
+    "split": "test_untouched",
+    "width90": 8.62113094329834
+  },
+  {
+    "base": 1,
+    "coverage90": 0.9264323115348816,
+    "energy_dimensions": 7680,
+    "energy_score": 0.47521430253982544,
+    "observed_fraction": 1.0,
+    "reference": "bootstrap",
+    "split": "test_untouched",
+    "width90": 2.6214442253112793
+  },
+  {
+    "base": 2,
+    "coverage90": 0.9973958730697632,
+    "energy_dimensions": 7680,
+    "energy_score": 1.2170099020004272,
+    "observed_fraction": 1.0,
+    "reference": "diffusion",
+    "split": "test_untouched",
+    "width90": 7.876286029815674
+  },
+  {
+    "base": 2,
+    "coverage90": 0.9411458969116211,
+    "energy_dimensions": 7680,
+    "energy_score": 0.44867730140686035,
+    "observed_fraction": 1.0,
+    "reference": "bootstrap",
+    "split": "test_untouched",
+    "width90": 2.7083029747009277
+  },
+  {
+    "base": 3,
+    "coverage90": 1.0,
+    "energy_dimensions": 7680,
+    "energy_score": 0.8680711984634399,
+    "observed_fraction": 1.0,
+    "reference": "diffusion",
+    "split": "test_untouched",
+    "width90": 8.385054588317871
+  },
+  {
+    "base": 3,
+    "coverage90": 0.8523437976837158,
+    "energy_dimensions": 7680,
+    "energy_score": 0.6485389471054077,
+    "observed_fraction": 1.0,
+    "reference": "bootstrap",
+    "split": "test_untouched",
+    "width90": 2.569693088531494
+  },
+  {
+    "base": 4,
+    "coverage90": 1.0,
+    "energy_dimensions": 7680,
+    "energy_score": 1.05552339553833,
+    "observed_fraction": 1.0,
+    "reference": "diffusion",
+    "split": "test_untouched",
+    "width90": 8.615337371826172
+  },
+  {
+    "base": 4,
+    "coverage90": 0.8614583611488342,
+    "energy_dimensions": 7680,
+    "energy_score": 0.5988885164260864,
+    "observed_fraction": 1.0,
+    "reference": "bootstrap",
+    "split": "test_untouched",
+    "width90": 2.6408936977386475
+  },
+  {
+    "base": 5,
+    "coverage90": 1.0,
+    "energy_dimensions": 7680,
+    "energy_score": 1.0142560005187988,
+    "observed_fraction": 1.0,
+    "reference": "diffusion",
+    "split": "test_untouched",
+    "width90": 8.363131523132324
+  },
+  {
+    "base": 5,
+    "coverage90": 0.8819010853767395,
+    "energy_dimensions": 7680,
+    "energy_score": 0.5580133199691772,
+    "observed_fraction": 1.0,
+    "reference": "bootstrap",
+    "split": "test_untouched",
+    "width90": 2.6761293411254883
+  },
+  {
+    "base": 6,
+    "coverage90": 1.0,
+    "energy_dimensions": 7680,
+    "energy_score": 1.0266814231872559,
+    "observed_fraction": 1.0,
+    "reference": "diffusion",
+    "split": "test_untouched",
+    "width90": 8.405318260192871
+  },
+  {
+    "base": 6,
+    "coverage90": 0.8881511092185974,
+    "energy_dimensions": 7680,
+    "energy_score": 0.5725671648979187,
+    "observed_fraction": 1.0,
+    "reference": "bootstrap",
+    "split": "test_untouched",
+    "width90": 2.5096676349639893
+  },
+  {
+    "base": 7,
+    "coverage90": 1.0,
+    "energy_dimensions": 7680,
+    "energy_score": 0.9775707721710205,
+    "observed_fraction": 1.0,
+    "reference": "diffusion",
+    "split": "test_untouched",
+    "width90": 8.5934476852417
+  },
+  {
+    "base": 7,
+    "coverage90": 0.9796875715255737,
+    "energy_dimensions": 7680,
+    "energy_score": 0.4234194755554199,
+    "observed_fraction": 1.0,
+    "reference": "bootstrap",
+    "split": "test_untouched",
+    "width90": 2.712972640991211
+  },
+  {
+    "base": 8,
+    "coverage90": 0.9997396469116211,
+    "energy_dimensions": 7680,
+    "energy_score": 1.0275142192840576,
+    "observed_fraction": 1.0,
+    "reference": "diffusion",
+    "split": "test_untouched",
+    "width90": 8.44062328338623
+  },
+  {
+    "base": 8,
+    "coverage90": 0.9274740219116211,
+    "energy_dimensions": 7680,
+    "energy_score": 0.4673282504081726,
+    "observed_fraction": 1.0,
+    "reference": "bootstrap",
+    "split": "test_untouched",
+    "width90": 2.6459405422210693
+  },
+  {
+    "base": 9,
+    "coverage90": 0.9990885853767395,
+    "energy_dimensions": 7680,
+    "energy_score": 1.1380099058151245,
+    "observed_fraction": 1.0,
+    "reference": "diffusion",
+    "split": "test_untouched",
+    "width90": 8.249173164367676
+  },
+  {
+    "base": 9,
+    "coverage90": 0.9513021111488342,
+    "energy_dimensions": 7680,
+    "energy_score": 0.5056413412094116,
+    "observed_fraction": 1.0,
+    "reference": "bootstrap",
+    "split": "test_untouched",
+    "width90": 2.789886713027954
+  },
+  {
+    "base": 10,
+    "coverage90": 0.9998698234558105,
+    "energy_dimensions": 7680,
+    "energy_score": 0.9896531105041504,
+    "observed_fraction": 1.0,
+    "reference": "diffusion",
+    "split": "test_untouched",
+    "width90": 8.641363143920898
+  },
+  {
+    "base": 10,
+    "coverage90": 0.8207031488418579,
+    "energy_dimensions": 7680,
+    "energy_score": 0.6453042030334473,
+    "observed_fraction": 1.0,
+    "reference": "bootstrap",
+    "split": "test_untouched",
+    "width90": 2.5347750186920166
+  },
+  {
+    "base": 11,
+    "coverage90": 0.9997396469116211,
+    "energy_dimensions": 7680,
+    "energy_score": 1.0770453214645386,
+    "observed_fraction": 1.0,
+    "reference": "diffusion",
+    "split": "test_untouched",
+    "width90": 8.408775329589844
+  },
+  {
+    "base": 11,
+    "coverage90": 0.9131510853767395,
+    "energy_dimensions": 7680,
+    "energy_score": 0.5372216105461121,
+    "observed_fraction": 1.0,
+    "reference": "bootstrap",
+    "split": "test_untouched",
+    "width90": 2.738534688949585
+  }
+]

@@ -1,0 +1,224 @@
+{
+  "calibration_units": 32,
+  "interpretation": "Stationary dependent units need not be exchangeable. Gaps reduce this specified AR dependence but do not prove validity on the real recordings.",
+  "replicates": 20000,
+  "rows": [
+    {
+      "alpha": 0.05,
+      "effective_ar_coefficient": 0.0,
+      "exceedance": 0.03135,
+      "gap": 1,
+      "mc_standard_error": 0.0012322170567720609,
+      "rho": 0.0
+    },
+    {
+      "alpha": 0.1,
+      "effective_ar_coefficient": 0.0,
+      "exceedance": 0.09355,
+      "gap": 1,
+      "mc_standard_error": 0.0020591065720355515,
+      "rho": 0.0
+    },
+    {
+      "alpha": 0.2,
+      "effective_ar_coefficient": 0.0,
+      "exceedance": 0.1829,
+      "gap": 1,
+      "mc_standard_error": 0.0027335653458441414,
+      "rho": 0.0
+    },
+    {
+      "alpha": 0.05,
+      "effective_ar_coefficient": 0.0,
+      "exceedance": 0.03135,
+      "gap": 8,
+      "mc_standard_error": 0.0012322170567720609,
+      "rho": 0.0
+    },
+    {
+      "alpha": 0.1,
+      "effective_ar_coefficient": 0.0,
+      "exceedance": 0.09355,
+      "gap": 8,
+      "mc_standard_error": 0.0020591065720355515,
+      "rho": 0.0
+    },
+    {
+      "alpha": 0.2,
+      "effective_ar_coefficient": 0.0,
+      "exceedance": 0.1829,
+      "gap": 8,
+      "mc_standard_error": 0.0027335653458441414,
+      "rho": 0.0
+    },
+    {
+      "alpha": 0.05,
+      "effective_ar_coefficient": 0.0,
+      "exceedance": 0.03135,
+      "gap": 32,
+      "mc_standard_error": 0.0012322170567720609,
+      "rho": 0.0
+    },
+    {
+      "alpha": 0.1,
+      "effective_ar_coefficient": 0.0,
+      "exceedance": 0.09355,
+      "gap": 32,
+      "mc_standard_error": 0.0020591065720355515,
+      "rho": 0.0
+    },
+    {
+      "alpha": 0.2,
+      "effective_ar_coefficient": 0.0,
+      "exceedance": 0.1829,
+      "gap": 32,
+      "mc_standard_error": 0.0027335653458441414,
+      "rho": 0.0
+    },
+    {
+      "alpha": 0.05,
+      "effective_ar_coefficient": 0.9,
+      "exceedance": 0.0493,
+      "gap": 1,
+      "mc_standard_error": 0.0015308414352897559,
+      "rho": 0.9
+    },
+    {
+      "alpha": 0.1,
+      "effective_ar_coefficient": 0.9,
+      "exceedance": 0.1153,
+      "gap": 1,
+      "mc_standard_error": 0.002258383381979242,
+      "rho": 0.9
+    },
+    {
+      "alpha": 0.2,
+      "effective_ar_coefficient": 0.9,
+      "exceedance": 0.2014,
+      "gap": 1,
+      "mc_standard_error": 0.0028358247477585775,
+      "rho": 0.9
+    },
+    {
+      "alpha": 0.05,
+      "effective_ar_coefficient": 0.4304672100000001,
+      "exceedance": 0.03245,
+      "gap": 8,
+      "mc_standard_error": 0.0012529365007852553,
+      "rho": 0.9
+    },
+    {
+      "alpha": 0.1,
+      "effective_ar_coefficient": 0.4304672100000001,
+      "exceedance": 0.0955,
+      "gap": 8,
+      "mc_standard_error": 0.002078217385164507,
+      "rho": 0.9
+    },
+    {
+      "alpha": 0.2,
+      "effective_ar_coefficient": 0.4304672100000001,
+      "exceedance": 0.18545,
+      "gap": 8,
+      "mc_standard_error": 0.002748256697435667,
+      "rho": 0.9
+    },
+    {
+      "alpha": 0.05,
+      "effective_ar_coefficient": 0.03433683820292515,
+      "exceedance": 0.0317,
+      "gap": 32,
+      "mc_standard_error": 0.0012388524932371893,
+      "rho": 0.9
+    },
+    {
+      "alpha": 0.1,
+      "effective_ar_coefficient": 0.03433683820292515,
+      "exceedance": 0.0938,
+      "gap": 32,
+      "mc_standard_error": 0.0020615717305007843,
+      "rho": 0.9
+    },
+    {
+      "alpha": 0.2,
+      "effective_ar_coefficient": 0.03433683820292515,
+      "exceedance": 0.1836,
+      "gap": 32,
+      "mc_standard_error": 0.002737617942664754,
+      "rho": 0.9
+    },
+    {
+      "alpha": 0.05,
+      "effective_ar_coefficient": 0.99,
+      "exceedance": 0.0805,
+      "gap": 1,
+      "mc_standard_error": 0.0019237950774445805,
+      "rho": 0.99
+    },
+    {
+      "alpha": 0.1,
+      "effective_ar_coefficient": 0.99,
+      "exceedance": 0.164,
+      "gap": 1,
+      "mc_standard_error": 0.002618243686137713,
+      "rho": 0.99
+    },
+    {
+      "alpha": 0.2,
+      "effective_ar_coefficient": 0.99,
+      "exceedance": 0.25245,
+      "gap": 1,
+      "mc_standard_error": 0.0030717991267333873,
+      "rho": 0.99
+    },
+    {
+      "alpha": 0.05,
+      "effective_ar_coefficient": 0.9227446944279201,
+      "exceedance": 0.0527,
+      "gap": 8,
+      "mc_standard_error": 0.0015799162952511124,
+      "rho": 0.99
+    },
+    {
+      "alpha": 0.1,
+      "effective_ar_coefficient": 0.9227446944279201,
+      "exceedance": 0.11835,
+      "gap": 8,
+      "mc_standard_error": 0.002284111178336116,
+      "rho": 0.99
+    },
+    {
+      "alpha": 0.2,
+      "effective_ar_coefficient": 0.9227446944279201,
+      "exceedance": 0.20825,
+      "gap": 8,
+      "mc_standard_error": 0.0028712535372202854,
+      "rho": 0.99
+    },
+    {
+      "alpha": 0.05,
+      "effective_ar_coefficient": 0.7249803359578534,
+      "exceedance": 0.0351,
+      "gap": 32,
+      "mc_standard_error": 0.00130130684313885,
+      "rho": 0.99
+    },
+    {
+      "alpha": 0.1,
+      "effective_ar_coefficient": 0.7249803359578534,
+      "exceedance": 0.09955,
+      "gap": 32,
+      "mc_standard_error": 0.0021170710604512073,
+      "rho": 0.99
+    },
+    {
+      "alpha": 0.2,
+      "effective_ar_coefficient": 0.7249803359578534,
+      "exceedance": 0.18885,
+      "gap": 32,
+      "mc_standard_error": 0.0027675411243556977,
+      "rho": 0.99
+    }
+  ],
+  "score": "max absolute value of four independent stationary AR(1) sensors; independent replicate paths"
+}

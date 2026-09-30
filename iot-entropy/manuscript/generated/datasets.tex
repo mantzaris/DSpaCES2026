@@ -1,0 +1,10 @@
+\begin{table*}[t]
+\centering\caption{Primary datasets and frozen splits. Counts are time rows; independent synthetic episodes define the partitions. Intel and PEMS faults are controlled injections, not confirmed field failures.}
+\label{tab:data}\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrll}
+\toprule Dataset & Nodes & Train & Dev. & Cal. / test & Interval; primary channels & Source span used\\\midrule
+Synthetic (3 configs) & 64/128/256 & 49,152 & 12,288 & 8,192 / 12,288 & 5 min; signal & independent simulations \\
+Intel Lab & 54 & 10,782 & 2,695 & 1,797 / 2,696 & 2 min; temp., humidity & 28 Feb.--23 Mar. 2004 \\
+PEMS-BAY & 325 & 31,276 & 7,820 & 5,212 / 7,820 & 5 min; speed (mph) & 1 Jan.--30 June 2017 \\
+\bottomrule\end{tabular}
+\end{table*}

@@ -1,0 +1,199 @@
+{
+  "peak_gpu_bytes": 108854784,
+  "timings": [
+    {
+      "seconds": 0.3573384080082178,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.3390266429632902,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.3299459610134363,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.32882748171687126,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.3228608313947916,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.32220934331417084,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.320008784532547,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.32553878240287304,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.3253787215799093,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.30096292681992054,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.25613612681627274,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.27305219508707523,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.2500315271317959,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.24045073054730892,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.2406788468360901,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.24117313884198666,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.24241514690220356,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.24329104460775852,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.2458464317023754,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.24024371057748795,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.24523350223898888,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.24374672025442123,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.24080190435051918,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.24236879125237465,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.24264299683272839,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.246793607249856,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.24014765210449696,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.24408525601029396,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.242122208699584,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.24049710854887962,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.24315319396555424,
+      "stage": "calibration"
+    },
+    {
+      "seconds": 0.24150303192436695,
+      "stage": "calibration"
+    },
+    {
+      "events": 5,
+      "seconds": 1.7204170674085617,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 5,
+      "seconds": 1.723613005131483,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 5,
+      "seconds": 1.6207365319132805,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 5,
+      "seconds": 1.6404568757861853,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 5,
+      "seconds": 1.628855800256133,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 5,
+      "seconds": 1.6444387082010508,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 5,
+      "seconds": 1.6204274464398623,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 5,
+      "seconds": 1.6240368448197842,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 5,
+      "seconds": 1.6254592277109623,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 5,
+      "seconds": 1.573727436363697,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 5,
+      "seconds": 1.6409371327608824,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 5,
+      "seconds": 1.6787984240800142,
+      "stage": "test_shared_reference_and_all_injections"
+    },
+    {
+      "events": 5,
+      "seconds": 1.7056573517620564,
+      "stage": "test_shared_reference_and_all_injections"
+    }
+  ],
+  "total_seconds": 33.3873286023736
+}
