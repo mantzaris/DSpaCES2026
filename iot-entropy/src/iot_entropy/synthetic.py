@@ -100,8 +100,8 @@ def inject(values: np.ndarray, nodes: list[int], onset: int, duration: int,
     """Operate on standardized recordings, retain missing values except dropout.
 
     These sensor-level interventions do not depend on generated references.
-    'decouple' is observational decorrelation; synthetic dynamical coupling
-    changes are supplied separately as a model-level sensitivity.
+    'decouple' here is observational decorrelation. For primary synthetic
+    coupling-loss events, the caller substitutes the intervened state process.
     """
     rng=np.random.default_rng(seed)
     out=values.copy()

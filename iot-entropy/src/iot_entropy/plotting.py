@@ -12,6 +12,7 @@ import numpy as np
 import pandas as pd
 
 from .data import load_data
+from .replay import load_frames
 from .utils import write_json
 
 COLORS={'synthetic':'#326b99','intel':'#92539d','pems':'#c76527',
@@ -43,12 +44,12 @@ def architecture(root: Path) -> None:
     def arrow(a,b):ax.add_patch(FancyArrowPatch(a,b,arrowstyle='-|>',mutation_scale=9,color='#476278',linewidth=.9))
     box(.05,1.95,2.15,.85,'History + masks\nGraph + calendar')
     box(2.7,1.95,2.3,.85,'Joint diffusion\n64 future blocks',True)
-    box(5.55,1.95,2.4,.85,'Reference statistics\nSame measurement rule',True)
+    box(5.55,1.95,2.4,.85,'Reference features\nShared rules',True)
     box(.05,.3,2.15,.85,'Observed target\nAvailable at t')
     box(2.7,.3,2.3,.85,'Common-row PSD\nH, ΔH; C, D, P; R',True)
     box(5.55,.3,2.4,.85,'Quality / eligibility\nRobust discrepancy',True)
     box(8.45,1.1,1.8,1.1,'Scan maxima\nHeld-out ranks\nParticipation')
-    box(10.8,1.1,2.1,1.1,'Evidence replay\nLinked traces\nCause kept distinct')
+    box(10.8,1.1,2.1,1.1,'Evidence replay\nLinked traces\nCause status')
     for a,b in [((2.2,2.37),(2.7,2.37)),((5,2.37),(5.55,2.37)),((2.2,.72),(2.7,.72)),
                 ((5,.72),(5.55,.72)),((6.75,1.95),(6.75,1.2)),((7.95,.72),(8.45,1.3)),
                 ((10.25,1.65),(10.8,1.65))]:arrow(a,b)
@@ -84,7 +85,7 @@ def theory(root: Path) -> None:
 
 def replay(root: Path,event_index: int) -> tuple[dict,list[dict],list[dict]]:
     directory=root/'experiments/full/score-synthetic64-physical-17'
-    frames=[json.loads(p.read_text()) for p in sorted((directory/'replay').glob(f'{event_index}-*.json'),key=lambda p:int(p.stem.split('-')[1]))]
+    frames=load_frames(directory/'replay',event_index)
     groups=json.loads((directory/'groups.json').read_text())
     return json.loads((directory/'events.json').read_text())[event_index],frames,groups
 
@@ -220,7 +221,8 @@ def calibration_cost(root: Path) -> None:
     ax=axes[1,0]
     subset=frame[(frame.alpha==.1)&(frame.graph=='physical')&frame.is_fault&(frame.method=='diffusion/entropy')]
     vals=[subset[subset.primary_dataset==d].delay_with_shared_pipeline_seconds.dropna().values/60 for d in ['synthetic','intel','pems']]
-    ax.boxplot(vals,labels=['Synthetic','Intel','PEMS'],showfliers=False,widths=.45)
+    ax.boxplot(vals,showfliers=False,widths=.45)
+    ax.set_xticks([1,2,3]);ax.set_xticklabels(['Synthetic','Intel','PEMS'])
     ax.set_ylabel('Detected-event delay (min)');ax.text(.03,.96,'Misses excluded here; counted in recall',transform=ax.transAxes,va='top',fontsize=6)
     ax=axes[1,1]
     for name in ['synthetic64','pems']:

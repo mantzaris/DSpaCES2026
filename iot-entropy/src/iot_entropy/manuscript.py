@@ -20,6 +20,12 @@ def interval(record: dict) -> str:
 def build(root: Path) -> None:
     coverage=json.loads((root/'results/report-coverage.json').read_text())
     if not coverage['primary_complete']:raise RuntimeError('Cannot write manuscript results from an incomplete primary study')
+    if coverage['completed_scoring_configurations']!=25:
+        raise RuntimeError('Both graph sensitivities must be included before final manuscript generation')
+    for stage in ['quality','global','unscreened','samples','persistence','graphs','directions']:
+        status=root/'experiments/sensitivity'/f'{stage}-status.json'
+        if not status.exists() or json.loads(status.read_text())['status']!='complete':
+            raise RuntimeError('Required sensitivity is incomplete: '+stage)
     destination=root/'manuscript/generated';destination.mkdir(exist_ok=True)
     summaries=json.loads((root/'results/summary.json').read_text())
     pairs=json.loads((root/'results/paired_comparisons.json').read_text())
@@ -69,7 +75,7 @@ def build(root: Path) -> None:
                   r'\subsection{Reference fidelity and calibration}'])
     fidelity=pd.DataFrame(json.loads((root/'experiments/fidelity-extra.json').read_text())['rows'])
     fidelity_means=fidelity.groupby(['dataset','reference']).mean(numeric_only=True)
-    table=[r'\begin{table}[t]\centering\caption{Fixed untouched fidelity subset, averaged across six units and three seeds. Raw/H cov. are 90\% interval coverages on identical support for both references; R error is mean element RMSE. Energy scores and covariance errors with support counts are in the artifact. Undefined common support is shown as --.}\label{tab:fidelity}\small',
+    table=[r'\begin{table}[t]\centering\caption{Defined values from six fixed untouched units and three seeds. Raw/H cov. are 90\% interval coverages on identical support for both references; R error is mean element RMSE. Energy/covariance errors and support counts are retained. Undefined common support is shown as --.}\label{tab:fidelity}\small',
            r'\begin{tabular}{llrrr}\toprule Data & Reference & Raw cov. & H cov. & R error\\\midrule']
     for name,label in [('synthetic64','Syn. 64'),('intel','Intel'),('pems','PEMS')]:
         for ref in ['bootstrap','diffusion']:

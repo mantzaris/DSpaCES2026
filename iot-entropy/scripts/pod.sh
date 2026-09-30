@@ -10,6 +10,8 @@ case "${1:-}" in
       root@194.68.245.88:/workspace/iot-entropy/
     ;;
   download)
+    "${project_dir}/scripts/ssh-gpu.sh" \
+      'cd /workspace/iot-entropy && PYTHONPATH=src .venv/bin/python scripts/compress_replays.py'
     for directory in experiments data/processed data/manifests environment; do
       mkdir -p -- "${project_dir}/${directory}"
       rsync -az -e "${connection}" \

@@ -9,6 +9,7 @@ import numpy as np
 from .calibration import rank_pvalues
 from .data import load_data
 from .localization import merge_groups
+from .replay import load_frames
 from .utils import write_json
 
 
@@ -33,9 +34,7 @@ def build(root: Path, datasets: list[str] | None = None) -> None:
         cases=[0,18,len(events)-1] if name=='synthetic64' else [len(events)-2]
         for event_index in cases:
             frames=[]
-            paths=sorted((directory/'replay').glob(f'{event_index}-*.json'),key=lambda p:int(p.stem.split('-')[-1]))
-            for path in paths:
-                frame=json.loads(path.read_text())
+            for frame in load_frames(directory/'replay',event_index):
                 scores=np.array([np.nan if v is None else v for v in frame['scores']['diffusion/entropy']])
                 frame['p_adjusted']=rank_pvalues(maxima,np.where(np.isfinite(scores),scores,-np.inf)).tolist()
                 frame['family_p']=float(rank_pvalues(maxima,np.max(np.where(np.isfinite(scores),scores,-np.inf))))

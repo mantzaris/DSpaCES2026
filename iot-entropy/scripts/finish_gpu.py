@@ -19,7 +19,7 @@ for dataset in config['datasets']:
         if not (root/'experiments/full'/f'score-{dataset}-physical-{seed}/status.json').exists():
             raise RuntimeError('Missing primary scoring configuration: '+dataset+' / '+str(seed))
 commands=[['scripts/benchmark.py'],['scripts/fidelity.py']]
-commands += [['scripts/sensitivities.py',stage] for stage in ['quality','global','unscreened','samples','persistence','graphs','directions']]
+commands += [['scripts/sensitivities.py',stage] for stage in ['quality','global','unscreened','samples','persistence','graphs','directions','ensembles']]
 completed=[]
 for command in commands:
     label=Path(command[0]).stem+('-'+command[1] if len(command)>1 else '')

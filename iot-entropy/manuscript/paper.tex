@@ -189,8 +189,9 @@ Displayed group values compare $A_{g,t}$ with the same calibration maxima and
 are labeled scan-adjusted. Neither $p$ nor $1-p$ is a fault probability.
 The statement is per issuance, never indefinite stream-wide control.
 
-Sensor participation averages group scores with inverse-size weights. A
-development-only budget in $\{6,12,24\}$ selects the highest-ranked sensors;
+Sensor participation averages group scores with inverse-size weights.
+Diffusion-H IoU on six development injections selects a shared budget in
+$\{6,12,24\}$ for the highest-ranked sensors;
 participation is not causal attribution. Oracle overlap measures the best
 single candidate group, not an upper bound on combined participation. Display merging uses group Jaccard overlap
 at least .5, retaining original records.
@@ -312,7 +313,9 @@ and do not guarantee matching realized correlation. All scheduled injections
 remain in the denominators; a saved audit flags unobservable interventions.
 For direction strata, take the median within-event $\Delta H$ in the
 predefined group with greatest overlap with the injected sensor set; truth
-is used only for evaluation, never for scoring or selecting alarm thresholds.
+is used only for evaluation. A $10^{-4}$ dead band labels stable traces.
+The sign-gated ablation uses strictly positive/negative observed changes,
+independent of truth, and recalibrates its scan.
 
 The primary scan budget is $\alpha=.10$, with .05/.20 reported where attainable.
 Alerts are consecutive flagged issuance runs, with stride 12. Their onsets
