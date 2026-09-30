@@ -1,0 +1,17 @@
+{
+  "clean_directory_restore": "All 72 entropy and 836 prepared sibling archives restored to exactly their original bytes; conflicting local edits protected.",
+  "entropy_tracked_bytes_after": 29992806,
+  "entropy_tracked_bytes_before": 120952422,
+  "largest_entropy_file_bytes": 2922882,
+  "lossless_json_archives": 72,
+  "no_push": true,
+  "retained_local_artifacts_removed_from_index": 86,
+  "sibling_blocker": "Automatic approval review rejected even a byte-verified, index-only operation, citing the active sibling-project isolation rule despite explicit user approval. Sibling Git history/index were not modified.",
+  "sibling_preparation_location": ".local/git-storage/iot-inconsistency-prepared",
+  "status": "entropy cleanup verified; sibling Git cleanup blocked by automatic approval review",
+  "unrelated_sibling_code_changes_preserved": [
+    "scripts/analyze.py",
+    "scripts/audit_pca.py",
+    "scripts/evaluate_pca_total.py"
+  ]
+}
