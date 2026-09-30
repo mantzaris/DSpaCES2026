@@ -1,0 +1,172 @@
+You are working in my local research repository with access to an already configured RunPod GPU. Implement and execute a reproducible research study, then write a submission-ready IEEE workshop paper. Do the research before writing results. Read the repository instructions first and preserve existing work. Do not submit the paper or provision paid infrastructure automatically.
+
+WORKING TITLE
+Generative Reference Models for Spatial Entropy Traces in IoT Sensor Fault Detection
+
+VENUE AND SCOPE
+Target IEEE DSpaCES 2026, https://sites.google.com/unisalento.it/ieee-dspaces-2026/home . On September 30, 2026, its official page states October 15, 2026 as the full-paper deadline, a maximum of 10 pages including references, IEEE two-column formatting, and a fully online workshop on December 14, 2026. Recheck the official page and linked author instructions at execution time, including anonymity and supplementary-material rules. Do not infer these rules from older editions.
+
+The application is a monitoring layer for sensor-fed digital twins and data spaces. Detect and localize unusual changes in collective sensor behavior, whether local entropy increases or decreases. The dashboard should show affected groups, their entropy traces, corresponding non-entropic synchronization traces, and shared observed characteristics. A change is an attention signal; verified sensor faults, legitimate operating transitions, and unknown causes must remain distinct.
+
+RESEARCH CLAIM TO TEST
+Test whether spatially localized spectral entropy trajectories, evaluated against a conditional generative reference for normal operation, improve group-level detection and localization at matched false-alarm rates. Compare them with non-entropic synchronization measurements using the same reference generator. Evaluate entropy-only, synchronization-only, and combined scores. Treat the proposed advantage as a hypothesis, never as a required outcome.
+
+The potential contribution is the complete formulation and evidence: bidirectional group entropy changes, generative normal-reference trajectories, spatial localization, calibrated scanning across groups, and an auditable dashboard. Shannon entropy, matrix spectral entropy, diffusion models, graph forecasting, and conformal calibration are established tools. Do not claim their invention. Search for close prior work, particularly diffusion-based sensor anomaly detection, entropy-based graph monitoring, and collective anomaly localization, and revise the novelty claim if needed.
+
+VERIFIED STARTING REFERENCES
+Read original papers and verify all bibliography fields. Useful sources:
+1. Mantzaris, Chen, Domenikos, and Choudur (2024), Exploring the effects of urban network topologies on entropy trajectories of segregation. Scientific Reports 14:19188. https://doi.org/10.1038/s41598-024-70029-x
+2. Mantzaris and Domenikos (2025), Exploring the thermodynamic description of a simulation of flocking birds. Frontiers in Complex Systems 2:1516812. https://doi.org/10.3389/fcpxs.2024.1516812 . Publication is February 2025 even though the DOI and volume refer to 2024.
+3. Mantzaris and Domenikos (2023), Exploring the entropic nature of political polarization through its formulation as a isolated thermodynamic system. https://doi.org/10.1038/s41598-023-31585-w . Optional background if space permits.
+4. Roy and Vetterli (2007), The Effective Rank: A Measure of Effective Dimensionality. https://zenodo.org/records/40328
+5. Wen et al. (2023), DiffSTG: Probabilistic Spatio-Temporal Graph Forecasting with Denoising Diffusion Models. https://arxiv.org/abs/2301.13629 ; https://github.com/wenhaomin/DiffSTG ; final proceedings DOI https://doi.org/10.1145/3589132.3625614
+6. Tashiro et al. (2021), CSDI: Conditional Score-based Diffusion Models for Probabilistic Time Series Imputation. https://proceedings.nips.cc/paper_files/paper/2021/hash/cfe8504bda37b575c70ee1a8276f3486-Abstract.html ; https://github.com/ermongroup/CSDI
+7. Rasul et al. (2021), Autoregressive Denoising Diffusion Models for Multivariate Probabilistic Time Series Forecasting. https://proceedings.mlr.press/v139/rasul21a.html
+8. Deng and Hooi (2021), Graph Neural Network-Based Anomaly Detection in Multivariate Time Series. https://doi.org/10.1609/aaai.v35i5.16523
+9. Li et al. (2018), Diffusion Convolutional Recurrent Neural Network: Data-Driven Traffic Forecasting. https://github.com/liyaguang/DCRNN
+10. Chernozhukov, Wuthrich, and Zhu (2018), Exact and Robust Conformal Inference Methods for Predictive Machine Learning with Dependent Data. https://proceedings.mlr.press/v75/chernozhukov18a.html
+
+Build explicitly on Mantzaris's use of entropy trajectories to describe evolving organization and on the connection between network structure and collective behavior. State exactly which ideas transfer and which definitions differ. This paper uses an informational entropy of local sensor correlation spectra. It does not establish a thermodynamic entropy, temperature, heat flow, a second-law claim, or causality.
+
+EXACTLY THREE PRIMARY DATASETS
+Dataset A: One independently specified synthetic spatial sensor benchmark. Use random geometric graphs with 64, 128, and 256 nodes as configurations of the same benchmark. A stable graph-coupled stochastic process is an appropriate starting point:
+x_(t+1) = (a I - kappa L) x_t + B f_t + sigma epsilon_t.
+L is a graph Laplacian, f_t contains documented normal seasonal and latent operating factors, and epsilon_t is noise. Verify spectral_radius(a I - kappa L) < 1. Keep normal dynamics and all injected changes explicitly reproducible. Separate training, development, calibration, and test simulations by seeds and whole episodes.
+
+Create faults on known connected and partly disconnected groups: copy/replay collapse, increased common-mode interference, loss of coupling, independent noise, partial delays, drifting offsets/gains, and flatlining/dropout. Include legitimate synchronized operating transitions as negative controls. Include anticorrelated groups, mixed positive/negative entropy changes, and changes designed to preserve marginal mean/variance or average pairwise correlation. Record expected mechanisms, but measure actual entropy directions rather than forcing labels to match the hypothesis. Use multiple severity and duration levels, including events shorter than the entropy window. Fault generation must be independent of the learned diffusion model.
+
+Dataset B: Intel Berkeley Research Lab sensor data, original source https://db.csail.mit.edu/labdata/labdata.html . The source describes 54 motes with coordinates, approximately 31-second temperature/humidity/light/voltage readings, and missing/truncated streams. Retain masks, units, timestamps, coordinates, and provenance. Construct fixed spatial neighborhoods from coordinates. Use temperature and humidity as primary channels and light/voltage as additional channels where coverage allows. Never calculate a correlation by pooling unlike measurement units. Audit actual retained sensors and time spans.
+
+Dataset C: PEMS-BAY from the original DCRNN release, https://github.com/liyaguang/DCRNN . Verify actual node count, timestamps, sampling interval, locations, distance graph, missingness and any preprocessing already present in the release. Use the release's road-distance information when available; otherwise use documented coordinate neighborhoods and call them geographic proximity, not road connectivity. Calendar context is known in advance; future traffic measurements are not.
+
+For both real datasets, the quantitative fault-localization benchmark consists of controlled injections into untouched held-out real recordings. Call it semi-synthetic evaluation on real sensor data. Do not describe injected faults as real confirmed failures. The remaining unmodified recordings support qualitative monitoring examples; unlabelled events are not automatically false alarms or verified true faults. Record raw-to-processed lineage and any imputation in the upstream release. Do not silently substitute datasets. If data are inaccessible, complete the other components and report the exact access blocker.
+
+DATA SPLITS AND PREPROCESSING
+Use contiguous chronological train/development/calibration/test splits, initially 60/15/10/15 percent, adjusted only for documented coverage. Prevent context/target windows from crossing split boundaries. All scaling, neighborhoods learned from correlations, model selection, and selection of thresholds must precede the test split. Fit normal-reference models on nominal training data; document contamination screening and sensitivity to residual contamination. A real dataset without fault labels cannot be asserted completely healthy.
+
+Do not interpolate a value with observations beyond the time at which it is available. Never fill missing observations with copies of a neighbor's signal: that creates artificial synchronization. Start with common observed rows within each fixed group/channel window, preserving a positive semidefinite Gram correlation matrix. Require sufficient coverage and group size relative to valid rows. A useful initial condition is n_valid >= max(2*m, 0.8*W), rounded appropriately. If coverage is inadequate, abstain for that group/channel and show a data-quality status. Report abstention coverage and assess the missingness effect separately. If complete cases are too sparse, implement and label a principled PSD estimator as a sensitivity analysis instead of undocumented pairwise deletion.
+
+Constant/near-constant channels have undefined correlations. Route them to a separate flatline/variance-quality alert. Do not assign them invented entropy values. Use identical quality handling across compared methods and report entropy-only performance separately from hybrid quality-alert performance.
+
+GROUPS AND ENTROPY DEFINITION
+Let G=(V,E) be the fixed physical/proximity graph. Predefine overlapping local groups g from graph neighborhoods and documented metadata. Initial sizes may be 6, 12, and 24 nodes where data coverage permits. Deduplicate groups and freeze their definitions before testing. Include several window sizes, initially W in {24,48,96}, but use only group/window pairs with adequate sample support. Do not assume normalized entropy has identical finite-sample behavior across group sizes or window lengths.
+
+For a group of m sensors and one measurement channel in a window ending at t, let Z contain the n_valid common rows after centering and scaling each sensor column to unit sample variance. Define:
+R_(g,t) = Z^T Z / (n_valid - 1).
+Rtilde_(g,t) = (1 - lambda) R_(g,t) + lambda I_m.
+p_k = eigenvalue_k(Rtilde_(g,t)) / trace(Rtilde_(g,t)).
+H_(g,t) = -sum_k p_k log(p_k) / log(m).
+
+Use 0 log 0 = 0. Choose lambda on development data, keep its handling identical for observations and generated samples, and document that positive shrinkage raises the minimum attainable entropy. Calculate eigenvalues with a symmetric eigensolver. Symmetrize numerical roundoff, reject materially non-PSD matrices, and only clip eigenvalues within a documented floating-point tolerance. Compare GPU calculations against float64 CPU reference cases.
+
+H is a local correlation-spectrum entropy. It reflects the effective dimensionality of co-fluctuation within spatially selected groups. The spatial content comes from graph-based grouping and the spatial scan; H alone ignores sensor ordering and geometric arrangement inside a fixed group. It is not the Shannon entropy of sensor coordinates or of a graph degree histogram. Low H can reflect strong positive or negative dependence; preserve the signs of pairwise correlations in explanations.
+
+Define entropy change DeltaH_(g,t) = H_(g,t) - H_(g,t-d) for fixed lag d. Initial d can be W/4, rounded and fixed by configuration. Use both H and DeltaH. Compute each channel separately; aggregate standardized anomaly scores later. A single global entropy trace is an ablation.
+
+GENUINE GENERATIVE-AI COMPONENT
+Implement a compact graph-conditioned temporal diffusion model, building on DiffSTG or a clearly attributed graph-conditioned CSDI adaptation. It must generate joint future sensor blocks, preserving cross-sensor and temporal dependence. Independent univariate sampling is not an acceptable substitute for the main model. No LLM is necessary for the detector.
+
+For the score at time t, the target block Y spans t-W-d+1 through t. Its conditioning context C ends strictly before this block. C contains historical measurements/masks, graph structure, verified metadata, and calendar variables known at issuance. Generate B independent stochastic samples from q_theta(Y | C,G), initially B=64 with chunking; evaluate B=32 and B=128 in a limited sensitivity analysis. Compute H at t-d and t from the same generated block so the distribution of DeltaH respects joint temporal dependence. Never condition on the observed target fault window or independent future entropy draws. Precomputing a prediction at its genuine historical issuance time and evaluating it when its target is observed is allowed. Record issuance time and detection time.
+
+Diffusion training:
+Y_s = sqrt(alpha_bar_s) Y + sqrt(1-alpha_bar_s) epsilon.
+L_diffusion = E[||M_loss * (epsilon - epsilon_theta(Y_s,s,C,G))||_F^2 / sum(M_loss)].
+M_loss includes valid training targets only. Specify masking and missing-value treatment explicitly. Use a published noise schedule and sampler; verify their compatibility. Choose architecture, sampling steps, and stopping rule on development data. Start compact and profile before expanding. Evaluate generated raw time series and their entropy/synchronization distributions, not only MSE. Report interval coverage, width, energy score or another multivariate proper score, correlation/covariance structure errors, and entropy-distribution fidelity.
+
+Reference samples are model-based predictions of normal operation, not identified causal counterfactuals. Test history contamination and long persistent faults: a model conditioned on faulty history can normalize the failure. Include a context-only seasonal/block-bootstrap reference and, if feasible, a frozen earlier-reference sensitivity analysis. Explain adaptation and detection latency.
+
+NEW SCORE TO IMPLEMENT AND STUDY
+For each group/channel/window, let u_(g,t) = [H_(g,t), DeltaH_(g,t)] and let u_(g,t)^(b) be computed from generated sample b. For component j define:
+center_(g,t,j) = median_b u_(g,t,j)^(b).
+scale_(g,t,j) = 1.4826 median_b |u_(g,t,j)^(b) - center_(g,t,j)| + epsilon_j.
+A_(g,t)^H = max_j |u_(g,t,j) - center_(g,t,j)| / scale_(g,t,j).
+
+The scale floor epsilon_j must be derived from training/development numerical precision or variability and frozen. Calibrate the max score empirically; do not assume normal tails because of the MAD scaling constant. This is a proposed bidirectional trajectory score, not a new entropy definition. Keep separate signed diagnostics H - generated_median(H), DeltaH, and DeltaH - generated_median(DeltaH). Label actual increasing/decreasing entropy separately from higher/lower than expected entropy.
+
+Aggregate across all predeclared groups, channels and window sizes with M_t = max_g A_(g,t)^H, where g here indexes the complete declared scan family. On held-out nominal calibration units calculate M_b. Use:
+p_t = (1 + sum_b 1[M_b >= M_t]) / (n_cal + 1).
+For a particular displayed group, a conservative scan-adjusted value can similarly compare A_(g,t)^H with calibration maxima. Keep family-level and group-level labels explicit.
+
+Under exchangeable calibration/test score units and a fixed trained scoring rule, explain the finite-sample rank argument for per-unit null exceedance control. Time-series blocks are not automatically exchangeable. Use non-overlapping/gapped calibration units or block maxima appropriate to the intended alert rate; empirically measure dependence, coverage and false-alert rates. If calibrating daily maxima, the nominal statement is per day, and the online decision must match that definition. Never claim indefinite stream-wide false-alarm control from per-window calibration. Never call 1-p the probability of a physical fault. Track inadequate calibration sample size and the attainable minimum p-value.
+
+LOCALIZATION AND SHARED FEATURES
+Rank candidate groups by adjusted anomaly score. Merge highly overlapping simultaneous alerts using a rule selected on development data and then fixed. Preserve original candidate records. For sensor i, an initial participation score is:
+node_score_i = [sum_(g contains i) A_g / |g|] / [sum_(g contains i) 1/|g|].
+Use an explicitly selected development-only threshold or rank budget for predicted sensor sets. Evaluate the localization rule; participation is not causal attribution. Report the oracle best-overlap candidate-group ceiling to reveal group-library limitations.
+
+Cluster flagged groups by similarity of their trailing signed entropy-residual traces, using data available at the current time only. Treat this as descriptive organization after the calibrated scan, not a fresh significance test. Show common observed channels, locations, supplied metadata, time lags, variance changes, pairwise correlation changes, and overlapping sensor membership. Display support counts and contrast with an appropriate unaffected/reference population. If spatial closeness is guaranteed by construction, do not present it as a newly discovered causal explanation. Do not invent firmware, manufacturer, maintenance, road-segment or hardware fields absent from the data.
+
+NON-ENTROPIC COMPARISONS
+Use the same windows, groups, quality rules, normal generator, calibration budget and test episodes whenever possible. At minimum compare:
+1. Mean signed correlation C_g = 2 sum_(i<j) R_ij / [m(m-1)].
+2. Mean absolute correlation Cabs_g = 2 sum_(i<j) |R_ij| / [m(m-1)].
+3. Mean pairwise squared disagreement D_g = mean_(time,i<j) (z_i-z_j)^2, explicitly defining whether z uses training or within-window normalization. Document redundancy with signed correlation under within-window standardization.
+4. Leading-eigenvalue concentration P_g = lambda_max(R_g) / trace(R_g).
+5. Full correlation-matrix change, using Frobenius distance or a well-specified regularized detector, compared to its generative reference. This is essential: H is a deterministic summary of R, so it cannot contain more information than R.
+6. A conventional correlation/disagreement change detector with two-sided CUSUM, independently calibrated.
+7. A strong published graph anomaly detector such as GDN, using the authors' method faithfully or clearly labeling a reimplementation and deviations.
+8. Raw-value predictive-residual detection from the same generative model, especially for offsets/gains that correlation entropy can miss.
+
+Run a matched factorial comparison: entropy features vs synchronization features vs their combination, each with a seasonal/block-bootstrap normal reference and with the diffusion reference. This separates entropy effects from generator effects. Avoid comparing a heavily tuned new model only against weak thresholds. Report cases where simpler methods match or win. A conditional VAE with the same conditioning is an optional cheaper generative alternative after the required comparisons are complete. Phase-locking/Kuramoto measures are suitable only for genuinely oscillatory synthetic signals with meaningful phases; do not force phases onto arbitrary traffic traces.
+
+THEORY TO DERIVE, VERIFY, AND IMPLEMENT
+Result 1: For a PSD correlation matrix, show 0 <= H <= 1; at lambda=0, H=1 for I and H=0 for a rank-one correlation matrix. State the changed lower limit under positive shrinkage. Discuss finite samples, autocorrelation, and the rank ceiling when n_valid is too small.
+
+Result 2: For R(rho)=(1-rho)I + rho 11^T with 0 <= rho < 1 and lambda=0, derive:
+p_1=[1+(m-1)rho]/m; p_2...p_m=(1-rho)/m.
+dH/drho = (m-1)/(m log m) * log[(1-rho)/(1+(m-1)rho)] <= 0.
+For fixed positive shrinkage replace rho by (1-lambda)rho and apply the chain rule. Interpret this as a result for this family, not a universal monotonic law for all synchronizations or faults.
+
+Result 3: Demonstrate a limit of average-correlation traces. For m=4, compare equicorrelation rho=0.2 (spectrum 1.6,0.8,0.8,0.8) with two separate correlated pairs rho=0.6 (spectrum 1.6,1.6,0.4,0.4). Both have mean pairwise correlation 0.2 and leading concentration 0.4. At lambda=0 their normalized entropies are approximately 0.960964 and 0.860964. Prove validity and reproduce numerically. This shows different organization at the same simple summaries, not that entropy beats full covariance information.
+
+Result 4: State and prove the calibration rank property only under its actual assumptions, and evaluate its degradation for dependent sensor streams. This is an application of established conformal theory, not a new distribution-free time-series theorem.
+
+Include limitations as explicit counterexamples: R and SRS for diagonal sign matrix S have equal spectra; fixed-group node permutations do not change H; offsets and positive rescaling can preserve correlations; nonzero-variance coherent faults and legitimate common drivers can share H; flatlined channels make Pearson correlations undefined. Test relevant cases. Do not change the entropy definition after viewing test results merely to make all faults detectable.
+
+EXPERIMENTAL DESIGN AND METRICS
+Preregister hypotheses, required baselines, default hyperparameters, fault taxonomy, event matching and primary metrics in protocol.md before full runs. All test methods see identical sampled fault realizations. Use at least three model-training seeds if the compute budget permits; use numerous independent synthetic/test fault events and report their counts. Do not treat overlapping windows as independent replicates.
+
+Primary outcomes: event-level precision/recall and event AUPRC under a defined one-to-one event matching rule; affected-sensor localization precision/recall/F1 and Jaccard IoU; detection delay including windowing, sampling, computation and alert stride; false alerts per sensor-day and network-day on appropriate controls. Break down by entropy-increase and entropy-decrease events, mechanism, duration, severity, group size, and topology. Report macro scores by fault type and dataset alongside pooled scores. Measure sensitivity to legitimate operating transitions and data-quality failures.
+
+State the event onset interval/tolerance and merging rule before testing. No point-adjusted metrics that turn an entire faulty interval into a true positive after one hit. Bootstrap whole independent runs, injection episodes or appropriately sized day blocks; use paired comparisons across the same episodes and do not pool correlated windows to manufacture tight confidence intervals. Report 95% intervals, missed-event counts, test prevalence, and performance at matched false-alert budgets. Native unlabelled data support exploratory cases, not definitive fault accuracy estimates.
+
+Required ablations: global versus local entropy; level only versus level+change; increase-only versus decrease-only versus bidirectional; graph conditioning removed or shuffled; seasonal/bootstrap versus generative reference; entropy/synchronization/combined features; raw-residual hybrid; a compact sensitivity study of group size, window size, missingness and generated sample count. Prioritize required ablations over broad model searches.
+
+GPU AND REPRODUCIBILITY
+Use the already available RunPod CUDA device. Inspect its hardware and set memory-aware batch sizes. Keep diffusion training/sampling, synthetic tensor generation, batched covariance, symmetric eigendecomposition, trace calculation and scoring on GPU where practical. CPU parsing, dashboard rendering, storage and small statistical summaries are acceptable. Use mixed precision for suitable network operations and float32/float64 for sensitive correlation/eigenvalue calculations. Chunk samples and group sizes to avoid out-of-memory failures. Do not claim GPU superiority for tiny groups without timings.
+
+Time CUDA operations with synchronization/warmup; report model-only and complete pipeline throughput, p50/p95 latency, peak GPU memory, CPU hardware, GPU hardware, software versions, training time and total GPU-hours. Use a comparable CPU implementation for measurement kernels; separate kernel speedups from end-to-end speedups. Save predictions so metrics/plots/dashboard can be regenerated without rerunning diffusion. Record git commit, configuration hash, seeds, data checksums, split manifests and checkpoint identifiers. Keep logs free of credentials. Use descriptive variable names, typed public interfaces and small modules.
+
+Implement coherent command-line stages: data preparation; synthetic generation; feature calculation; training; calibration; scoring; evaluation; paper figure/table generation; dashboard replay; paper build. Include tiny smoke configurations and the full experiment configuration. Profile a small pilot before selecting an explicit GPU-hour budget; stop safely at that configured budget and summarize unfinished runs. Do not open paid instances, delete pods, or change billing arrangements without an explicit instruction.
+
+DASHBOARD
+Build a research dashboard with a classic node-and-edge sensor view in physical/geographic positions when known. Distinguish physical topology from correlation-change overlays. Keep layout stable across time. Show blue/purple for decreasing entropy and orange/red for increasing entropy, with text labels and shapes so color is not the only cue. Mark higher/lower than expected separately from actual slope. Use gray for inadequate coverage and a distinct flatline/data-quality symbol.
+
+Include a ranked group list, a groups-by-time signed anomaly heatmap, synchronized raw/entropy/non-entropy traces, generated reference bands, and a details panel for common observed features and their counts. Clicking an alert selects its time, nodes and evidence. Edge annotations should show observed correlation and change relative to the expected/reference value. The same generated samples must supply all displayed reference traces. Show model/checkpoint, forecast issuance, observation time, units, window length, score, scan-adjusted calibration value and quality status on inspection. Do not describe the calibration value as a probability of a physical fault.
+
+A graph database is optional; it is not required for this paper. Start with Parquet/JSON plus a documented sensor/group/event schema. Add graph persistence only if it serves a concrete reproducibility or inspection requirement and does not displace the core experiments. Any explanation text must be grounded in computed fields. An LLM explanation layer is optional and cannot determine anomaly labels or invent causes. Do not claim operator-usability improvements without an actual user study.
+
+FIGURES AND TABLES
+Produce publication-ready PDF/SVG figures with readable text at IEEE column size and accessible colors. Core figures:
+1. Architecture showing shared data/context entering observed-trace and generative-reference branches, their comparison, group scanning/calibration, and dashboard output. Clearly indicate GPU versus CPU work.
+2. Theory: H against rho for several m; the matched-mean-correlation counterexample with matrix heatmaps/eigenspectra.
+3. Two aligned event case studies, one entropy decrease and one increase: raw signals, H with reference bands, DeltaH, non-entropic traces, score/threshold and true onset.
+4. Spatial network snapshots and groups-by-time signed anomaly heatmap, showing affected groups and shared features.
+5. Main detection/localization comparison across three datasets and both directions, with paired confidence intervals and a compact ablation panel/table.
+6. Calibration and computational cost: empirical false-alert rate versus nominal rate, detection delay, throughput/latency, GPU memory and generation-sample tradeoff. Combine panels as page space requires.
+
+Tables: datasets/provenance/splits; method comparison with event recall at fixed false-alert budgets, localization IoU and delay; compact ablation/runtime summary. Generate all numerical entries directly from saved experiment outputs. Do not create result-shaped illustrative figures and present them as measurements. Label any schematic synthetic example clearly.
+
+IMPLEMENTATION ORGANIZATION
+Prefer a src-layout package with modules for data, synthetic processes, graph groups, entropy, synchronization, generative models, calibration, localization, evaluation, plotting and dashboard. Put immutable experiment settings in configs, literature/protocol/decisions in docs, and run manifests/results in a stable experiment directory. Avoid a single giant notebook. Connect manuscript equation labels to function names and relevant mathematical checks in an equation-to-code table.
+
+Meaningful validation gates: analytic entropy limits; derivative/finite-difference agreement; counterexample reproduction; PSD/constant/missing-data handling; CPU/GPU numeric agreement; future-information leakage checks; deterministic split manifests; calibration on simulated exchangeable null episodes; correct event and localization scoring. Do not expand testing indefinitely once the concrete risks are covered.
+
+PAPER WRITING AND COMPLETION
+Suggested 10-page allocation including references: introduction/motivation and related work about 1.5 pages; formulation/generative method/calibration about 2.5; theory about 1; data/protocol about 1; results/ablations about 2; dashboard/discussion/limitations about 0.75; references about 1.25. Adjust after rendering while keeping the actual official maximum. Avoid excessive formalism or a sprawling architecture.
+
+Write the introduction and methods after the protocol is fixed; fill results only from completed runs. Make the extension of Mantzaris's prior research specific. Position the application within trustworthy sensor-fed digital twins and data-space quality. Distinguish established tools, proposed combinations, proved statements, empirical findings, and conjectures. State whether the data support an advantage over non-entropic traces. Negative or mixed findings are valid results. Do not fabricate citations, measurements, proofs, dataset labels or novelty.
+
+Deliver a reproducible repository, data acquisition scripts, environment lock/container definition, experiment configurations, raw metrics and manifests, model checkpoints or documented retrieval paths, dashboard with saved replay cases, publication figures, IEEE LaTeX source, BibTeX, compiled PDF, and a concise README with exact reproduction commands. Render the final PDF and inspect equations, page count, figure legibility and references. Audit every abstract/conclusion claim against a result or proof.
+
+Work in milestones: (1) source verification/protocol/data audit; (2) entropy mathematics and non-entropic baselines; (3) conditional generative model and pilot; (4) frozen calibration and full experiments; (5) dashboard and figures; (6) manuscript and reproducibility audit. Continue through authorized implementation and experiments without repeatedly asking routine questions. Pause only for genuine missing access, budget changes, scientific choices that materially change the scope, or irreversible external actions. If blocked, complete all independent work and identify the exact remaining blocker.

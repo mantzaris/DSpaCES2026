@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "iot-entropy"
+version = "0.1.0"
+description = "Reproducible local correlation-spectrum monitoring study"
+requires-python = ">=3.11"
+dependencies = ["numpy", "scipy", "pandas", "torch", "matplotlib", "h5py", "requests"]
+
+[project.scripts]
+iot-entropy = "iot_entropy.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

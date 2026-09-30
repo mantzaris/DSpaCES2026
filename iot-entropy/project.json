@@ -1,0 +1,35 @@
+{
+  "name": "iot-entropy",
+  "local_directory": "/home/resort/Documents/repos/DSpaCES2026/iot-entropy",
+  "purpose": "Research and preparation of a workshop submission",
+  "workshop": {
+    "name": "IEEE DSpaCES 2026",
+    "source_url": "https://sites.google.com/unisalento.it/ieee-dspaces-2026/home",
+    "checked_on": "2026-09-30",
+    "submission_deadline": "2026-10-15",
+    "acceptance_notification": "2026-11-05",
+    "camera_ready_deadline": "2026-11-20",
+    "registration_deadline": "2026-11-26",
+    "event_date": "2026-12-14",
+    "event_mode": "online",
+    "full_paper_max_pages": 10,
+    "short_or_position_paper_max_pages": 5,
+    "page_limits_include_references": true,
+    "format": "IEEE Computer Society Proceedings, two columns"
+  },
+  "gpu_connection": {
+    "direct": {
+      "host": "194.68.245.88",
+      "port": 22071,
+      "user": "root",
+      "supports_scp_sftp": true
+    },
+    "gateway": {
+      "host": "ssh.runpod.io",
+      "user": "a9caywwdg4b4vu-644112d4",
+      "supports_scp_sftp": false
+    },
+    "requested_identity_file": "~/.ssh/id_ed25519",
+    "approved_identity_file": "~/.ssh/id_rsa"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "checked_at_utc": "2026-09-30T17:14:58.813879+00:00",
+  "hostname": "368f2f9eb569",
+  "python_version": "3.12.3",
+  "platform": "Linux-6.8.0-49-generic-x86_64-with-glibc2.39",
+  "cpu_count": 96,
+  "remote_working_directory": "/root",
+  "gpus": [
+    {
+      "index": 0,
+      "name": "NVIDIA RTX A6000",
+      "memory_total_mib": 46068,
+      "memory_used_mib": 0,
+      "driver_version": "570.195.03"
+    }
+  ],
+  "storage": {
+    "/": {
+      "total_bytes": 80530636800,
+      "free_bytes": 80514015232
+    },
+    "/workspace": {
+      "total_bytes": 80530636800,
+      "free_bytes": 80514015232
+    }
+  },
+  "pytorch": {
+    "installed": true,
+    "version": "2.8.0+cu128",
+    "cuda_version": "12.8",
+    "cuda_available": true,
+    "gpu_count": 1,
+    "cuda_smoke_test": {
+      "sum_of_squares": 14.0,
+      "expected": 14.0,
+      "passed": true
+    }
+  }
+}
