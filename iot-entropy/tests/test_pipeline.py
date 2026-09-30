@@ -7,6 +7,8 @@ import torch
 from iot_entropy.data import SensorData
 from iot_entropy.features import Scan, score_features, summarize_reference
 from iot_entropy.reference import issue_reference
+from iot_entropy.synthetic import inject
+from iot_entropy.psd_sensitivity import covariance_em
 
 
 def fixture_data():
@@ -51,3 +53,24 @@ def test_shared_reference_features_and_quality():
     scored,_=score_features(constants,reference,floor)
     assert torch.isnan(scored['entropy']).all()
     assert (scored['quality_hybrid']==1e6).all()
+
+
+def test_matched_mean_covariance_fault():
+    rng=np.random.default_rng(491)
+    x=rng.normal(size=(192,6,1))
+    x[:,1,0]=.8*x[:,0,0]+.6*x[:,1,0]
+    modified=inject(x,list(range(6)),96,96,'matched_covariance',1.,12)
+    a,b=x[96:,:,0],modified[96:,:,0]
+    np.testing.assert_allclose(a.mean(0),b.mean(0),atol=1e-12)
+    np.testing.assert_allclose(a.std(0),b.std(0),atol=1e-12)
+    ra,rb=np.corrcoef(a.T),np.corrcoef(b.T)
+    np.testing.assert_allclose(ra.sum(),rb.sum(),atol=1e-10)
+    assert np.linalg.norm(ra-rb)>.1
+
+
+def test_missing_covariance_em_psd():
+    rng=np.random.default_rng(42)
+    x=rng.normal(size=(96,6));x[rng.uniform(size=x.shape)<.15]=np.nan
+    r=covariance_em(x)
+    assert r is not None and np.linalg.eigvalsh(r).min()>0
+    np.testing.assert_allclose(np.diag(r),1,atol=1e-12)

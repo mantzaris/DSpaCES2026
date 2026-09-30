@@ -38,3 +38,13 @@
   entire raw-span processed recording as `intel_full.npz`, an auxiliary quality
   view of the same dataset, not a fourth dataset. No detector scores informed
   this correction. Test-group abstention remains an outcome, not an exclusion.
+- Implementation audit before full test scoring: matched-covariance faults now
+  whiten/recolor the untouched event toward equicorrelation with the same mean
+  correlation, preserving means/variances exactly when full rank. Rank-deficient
+  short events preserve the correlation target in expectation; they are not
+  claimed to satisfy exact finite-sample matching. A mathematical test verifies
+  the full-rank case. Synthetic coupling-loss events modify the affected rows
+  of the stable state transition, with identical process noise and a checked
+  identical pre-event prefix; real-data decorrelation remains a sensor-level
+  intervention. The GDN comparator and restarted four-step CUSUM deviations
+  are disclosed in the implementation and manuscript.

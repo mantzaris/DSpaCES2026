@@ -55,7 +55,13 @@ def window_features(x: torch.Tensor, shrinkage: float = 0.05,
     flatline = (variance <= variance_floor).any(-1) & (count >= 2)
     valid = (count >= max(2 * m, math.ceil(minimum_coverage * n_time))) & ~flatline
     standardized = centered / variance.clamp_min(variance_floor).sqrt().unsqueeze(-2)
-    correlation = standardized.transpose(-1, -2) @ standardized
+    # Neural-network TF32 settings must not silently reduce Gram precision.
+    previous_tf32 = torch.backends.cuda.matmul.allow_tf32
+    try:
+        torch.backends.cuda.matmul.allow_tf32 = False
+        correlation = standardized.transpose(-1, -2) @ standardized
+    finally:
+        torch.backends.cuda.matmul.allow_tf32 = previous_tf32
     correlation = correlation / denominator.unsqueeze(-1).unsqueeze(-1)
     eye = torch.eye(m, dtype=x.dtype, device=x.device)
     correlation = torch.where(valid[..., None, None], correlation, eye)

@@ -147,13 +147,30 @@ def inject(values: np.ndarray, nodes: list[int], onset: int, duration: int,
             for c in range(x.shape[-1]):
                 valid=np.flatnonzero(mask[:,j,c]); changed[valid,j,c]=rng.permutation(x[valid,j,c])
     elif kind=='matched_covariance':
-        # Four-node blocks with same simple population summaries as rho=.2
-        # equicorrelation but distinct spectrum (the paired benchmark is
-        # separately reported; arbitrary real backgrounds need not be equicorrelated).
-        covariance=np.eye(len(nodes))
-        for j in range(0,len(nodes)-1,2): covariance[j,j+1]=covariance[j+1,j]=.6*severity
-        draws=rng.multivariate_normal(np.zeros(len(nodes)),covariance,size=(steps,x.shape[-1])).transpose(0,2,1)
-        changed=center+draws*scale
+        # Match the untouched event's average correlation, marginal mean and
+        # variance while changing its spectrum. With sufficient full-rank rows,
+        # whitening/recoloring gives an exact finite-sample construction.
+        changed=x.copy()
+        m=len(nodes)
+        for channel in range(x.shape[-1]):
+            common=mask[:,:,channel].all(1)
+            original=x[common,:,channel]
+            if len(original)<3 or (np.std(original,axis=0)<1e-8).any():continue
+            mean=original.mean(0);sd=original.std(0,ddof=1)
+            z=(original-mean)/sd
+            r=z.T@z/(len(z)-1)
+            average=float((r.sum()-m)/(m*(m-1)))
+            equicorrelation=(1-average)*np.eye(m)+average*np.ones((m,m))
+            target=(1-severity)*r+severity*equicorrelation
+            eig,vec=np.linalg.eigh(r);teig,tvec=np.linalg.eigh(target)
+            if eig.min()>1e-7:
+                transformed=z@((vec/np.sqrt(eig))@vec.T)@((tvec*np.sqrt(np.maximum(teig,0)))@tvec.T)
+            else:
+                # Rank-deficient short events preserve the covariance target
+                # in expectation, not exact observed sample correlation.
+                transformed=rng.multivariate_normal(np.zeros(m),target,size=len(z))
+                transformed=(transformed-transformed.mean(0))/np.maximum(transformed.std(0,ddof=1),1e-8)
+            changed[common,:,channel]=mean+transformed*sd
     else: raise ValueError(f'Unknown fault {kind}')
     if kind!='dropout': changed=np.where(mask,changed,np.nan)
     out[onset:stop,nodes]=changed

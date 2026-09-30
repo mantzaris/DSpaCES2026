@@ -164,6 +164,7 @@ def run(data: SensorData, config: dict, seed: int, experiment_dir: Path, budget:
     event_maxima=np.full((len(events),len(times),len(methods)),-np.inf,np.float32)
     rankings=np.zeros((len(events),len(times),len(methods),24),np.int16)
     quality=np.zeros((len(events),len(times)),np.float32)
+    method_quality=np.zeros_like(event_maxima)
     directions=np.full((len(events),len(times)),np.nan,np.float32)
     observed_changes=directions.copy()
     saved_group_scores=np.full((len(events),len(times),len(group_methods),len(scan.records)),np.nan,np.float32)
@@ -219,6 +220,7 @@ def run(data: SensorData, config: dict, seed: int, experiment_dir: Path, budget:
                 maxima,orders=score_summary(all_scores,scan,len(data.node_ids))
                 saved_group_scores[event_index,tick]=torch.stack([all_scores[m] for m in group_methods]).cpu().numpy()
                 event_maxima[event_index,tick]=[maxima[m] for m in methods]
+                method_quality[event_index,tick]=[float(torch.isfinite(all_scores[m]).float().mean()) for m in methods]
                 rankings[event_index,tick]=np.stack([orders[m] for m in methods])
                 quality[event_index,tick]=float(observed.eligible.float().mean())
                 if event['nodes']:
@@ -249,7 +251,7 @@ def run(data: SensorData, config: dict, seed: int, experiment_dir: Path, budget:
         event['oracle_group_iou']=oracle_overlap(scan.groups,event['nodes']) if event['is_fault'] else None
         start,stop=bases[event['base']];event['base_start']=start;event['base_stop']=stop
     np.savez_compressed(directory/'predictions.npz',maxima=event_maxima,pvalues=pvalues,ranked_nodes=rankings,
-                        eligible_fraction=quality,entropy_direction=directions,observed_delta_h=observed_changes,
+                        eligible_fraction=quality,method_eligible_fraction=method_quality,entropy_direction=directions,observed_delta_h=observed_changes,
                         times=times,methods=methods,localization_budget=chosen_budget)
     np.savez_compressed(samples_dir/'group_scores.npz',calibration=np.stack(calibration_groups),
                         scores=saved_group_scores,methods=group_methods)

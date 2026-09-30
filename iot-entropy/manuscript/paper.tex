@@ -1,0 +1,366 @@
+\documentclass[conference]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm,booktabs,graphicx,microtype}
+\usepackage[hidelinks]{hyperref}
+\graphicspath{{figures/}}
+\newtheorem{proposition}{Proposition}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\calG}{\mathcal{G}}
+\title{Generative Reference Models for Spatial Entropy Traces\newline in IoT Sensor Fault Detection}
+\author{\IEEEauthorblockN{Alexander V. Mantzaris and James H. Korris}}
+\begin{document}
+\maketitle
+\begin{abstract}
+\input{generated/abstract.tex}
+\end{abstract}
+\begin{IEEEkeywords}
+sensor monitoring, digital twins, data spaces, spectral entropy, conditional diffusion
+\end{IEEEkeywords}
+
+\section{Introduction}
+Sensor-fed digital twins depend on measurements whose collective behavior can
+change before a single extreme value becomes conspicuous. A copied stream may
+make several devices unusually alike; independent interference may break a
+previously shared pattern. A legitimate operating transition can also change
+coordination. A monitoring layer for data spaces should identify the affected
+measurements, retain their provenance and expose this ambiguity rather than
+equate a change with a verified physical failure.
+
+We investigate an informational description of this behavior: the entropy of
+the correlation spectrum within spatially selected sensor groups. A spectrum
+concentrated in a few modes has low entropy; broadly distributed modes have
+high entropy. Monitoring both directions can reveal different reorganizations.
+However, direction alone is insufficient: expected seasonality, window length,
+missing observations and changes in normal collective activity also affect the
+trace. The question is whether comparing local entropy trajectories with a
+conditional joint normal reference improves detection and localization at a
+matched calibration budget, relative to non-entropic synchronization traces.
+
+The motivating connection to Mantzaris's research is specific. Entropy
+trajectories have been used to describe evolving segregation under different
+network topologies~\cite{mantzaris2024} and collective flocking
+organization~\cite{mantzaris2025}. We transfer the use of evolving entropy as a
+description of collective organization, and the attention to the network that
+defines interactions. The former study uses degree and homophily distributions;
+the latter constructs thermodynamic quantities from a flocking model. Here the
+probability vector consists of normalized eigenvalues of a \emph{sensor
+correlation matrix}. This is not a degree-distribution entropy, a thermodynamic
+entropy or a causal explanation. We establish no temperature, heat flow or
+second-law claim.
+
+Our contribution is a reproducible formulation and empirical test of local
+level-and-change scores, historically issued generative reference blocks,
+explicit quality abstention, scan calibration and inspectable localization.
+The study separates feature choice from reference-model choice in a factorial
+comparison, includes a full-correlation detector, and preserves negative
+findings. The output is an attention signal with observed evidence; injected
+faults, legitimate controls and unknown native causes remain distinct.
+
+\section{Related Work}
+Spectral entropy is established. Effective rank uses the exponential entropy of
+normalized singular values~\cite{effective_rank}; for a PSD correlation matrix,
+singular values equal eigenvalues. Graph-entropy monitoring also predates this
+study: FINGER approximates von Neumann entropy of graph Laplacians and applies
+graph distances to anomaly detection~\cite{finger}. Our correlation spectrum
+differs from a Laplacian spectrum, and its spatial meaning comes from group
+selection, not an ordering of sensors inside the matrix.
+
+Diffusion forecasting and imputation are likewise prior tools. TimeGrad models
+multivariate predictive distributions~\cite{timegrad}, CSDI conditions joint
+diffusion on masked observations~\cite{csdi}, and DiffSTG incorporates
+spatiotemporal graph structure~\cite{diffstg}. DiffAD~\cite{diffad},
+ImDiffusion~\cite{imdiffusion} and ICDiffAD~\cite{icdiffad} demonstrate that
+diffusion-based time-series anomaly detection is not new. Our information
+boundary is a forecasting boundary: the main generator receives no observed
+value from its target block. We ask about the resulting distributions of
+collective measurements, rather than claiming a new denoising architecture.
+
+GDN learns a sensor graph and forecasts values to detect departures from
+inter-sensor relationships~\cite{gdn}. It motivates our strong graph baseline.
+Conformal work with dependent observations explicitly addresses assumptions
+needed beyond exchangeability~\cite{conformal}. Our simpler scan-max rank
+calibration is an application of established rank reasoning, with empirical
+time-series diagnostics, not a new distribution-free stream theorem.
+
+\section{Local Measurements and Normal References}
+\subsection{Spatial groups and data quality}
+Let $G=(V,E)$ be a fixed supplied physical or proximity graph. A predeclared
+family $\calG$ contains deduplicated neighborhoods of sizes 6, 12 and 24 around
+24 fixed index-spaced centers. Shortest graph distance selects membership;
+geographic distance breaks ties. Windows $W\in\{24,48,96\}$ and lags $d=W/4$
+are scanned only when $W\geq2|g|$. Channels are processed separately: temperature
+and humidity never enter the same correlation matrix.
+
+For one group/channel window, retain rows observed at every sensor. With $m$
+columns and $n$ retained rows, require $n\geq\max(2m,\lceil.8W\rceil)$.
+Otherwise abstain. Variance below $10^{-8}$ in training-scaled units gives a
+separate flatline flag. It does not receive an entropy of zero. Neural inputs
+use masked zero after training-only scaling, while feature calculation retains
+the original missingness. Generated samples receive the observed window mask
+\emph{after} generation to compare equal measurement support.
+
+\subsection{Entropy and synchronization}
+Center and standardize each retained column by its sample standard deviation,
+forming $Z\in\mathbb{R}^{n\times m}$. Define
+\begin{align}
+ \R_{g,t}&=Z^\top Z/(n-1),\qquad
+ \widetilde\R_{g,t}=(1-\lambda)\R_{g,t}+\lambda I,\label{eq:correlation}\\
+ p_k&=\frac{\lambda_k(\widetilde\R_{g,t})}{\operatorname{tr}(\widetilde\R_{g,t})},\qquad
+ H_{g,t}=-\frac{\sum_k p_k\log p_k}{\log m},\label{eq:entropy}\\
+ \Delta H_{g,t}&=H_{g,t}-H_{g,t-d}.\label{eq:change}
+\end{align}
+We use $0\log0=0$, $\lambda=.05$, a symmetric eigensolver and a roundoff
+tolerance of $64m$ machine epsilons. Materially negative eigenvalues are an
+error. The Gram product disables reduced-mantissa TF32; the network can use
+mixed precision. CPU float64 cases check CUDA float32 measurements.
+
+The non-entropic features are mean signed correlation $C$, mean absolute
+correlation $C_{\rm abs}$, pairwise squared disagreement $D$, and leading
+concentration $P=\lambda_{\max}(\R)/m$, each with a lagged change. With our
+within-window sample normalization,
+\begin{equation}
+ D=\frac{1}{n{m\choose2}}\sum_{s,i<j}(z_{si}-z_{sj})^2
+   =2\frac{n-1}{n}(1-C).\label{eq:redundancy}
+\end{equation}
+Thus $D$ is redundant with $C$ at fixed $n$. Low $H$ can reflect positive
+\emph{or negative} dependence; displayed pairwise signs are retained.
+
+\subsection{Joint conditional diffusion}
+For the score at $t$, the generated block spans $t-119$ through $t$; it contains
+both windows for the largest $W+d=120$. The 48-row conditioning history ends
+at $t-120$, strictly before the target. Smaller windows use suffixes of the
+same block, making their longer forecast lead explicit. Context includes
+measurements, masks, fixed coordinates/graph and known calendar harmonics.
+
+Our compact independent implementation follows the graph-temporal conditional
+denoising ideas of DiffSTG/CSDI. A history encoder, coordinate/calendar
+embeddings, width-24 gated temporal convolutions and three graph aggregation
+blocks predict joint noise across all sensors. It is not a reproduction of
+DiffSTG's UGnet. For noise step $s$,
+\begin{align}
+ Y_s&=\sqrt{\bar\alpha_s}Y+\sqrt{1-\bar\alpha_s}\epsilon,\\
+ \mathcal L&=\E\!\left[\frac{\|M_{\rm loss}\odot
+  (\epsilon-\epsilon_\theta(Y_s,s,C,G))\|_F^2}{\sum M_{\rm loss}}\right].\label{eq:diffusion}
+\end{align}
+Only valid training targets enter the loss. The cosine schedule~\cite{cosine}
+uses 100 steps; compatible DDIM~\cite{ddim} uses 20 inference steps, independent
+initial noises and $\eta=0$. Denoised states are clipped to $[-8,8]$ in
+training-scaled units. Three seeds, Adam at $10^{-3}$, batch 8 and at most
+2400 updates are used; development checks every 200 updates select checkpoints,
+with patience four. The main sample count is 64, chunked by 16.
+
+The bootstrap reference samples intact joint training blocks from 64 candidate
+donors selected by historical context and calendar similarity. Selection sees
+no target values. This preserves empirical temporal/cross-sensor organization
+and provides the same feature-by-reference factorial comparison. Neither model
+identifies causal counterfactuals of real failures.
+
+\subsection{Trajectory scores, calibration and localization}
+For $u=(H,\Delta H)$, generated samples provide componentwise median $c_j$ and
+scale $s_j=1.4826\operatorname{median}_b|u_j^{(b)}-c_j|+\epsilon_j$. The floor is
+5\% of the development IQR, with numerical minimum $10^{-4}$, then frozen.
+The proposed bidirectional trajectory score is
+\begin{equation}
+ A^H_{g,t}=\max_{j\in\{1,2\}}\frac{|u_{g,t,j}-c_{g,t,j}|}{s_{g,t,j}}.\label{eq:score}
+\end{equation}
+MAD scaling implies no Gaussian tail model. Synchronization and combined
+scores use the same operation on their declared feature components. At least
+80\% of reference samples must support a feature. Independent comparisons
+include Frobenius distance to the sample-mean full correlation matrix, raw-value
+predictive residuals, a restarted finite-memory two-sided CUSUM and a labeled
+GDN reimplementation. GDN uses causal observed target history for one-step
+prediction, an advantage over the longer reference forecast; its learned
+top-$k$ graph and graph attention are retained, while its head, normalization
+and group mapping are explicit adaptations. Quality hybrids are reported
+separately from entropy-only detection.
+
+The scan maximum $M_t=\max_{g\in\calG} A_{g,t}$ includes every declared
+group, channel and eligible window. All-abstained units have $M_t=-\infty$.
+Disjoint context-plus-target calibration units, separated by 168 observations,
+produce $M_1,\ldots,M_n$. We use
+\begin{equation}
+ p_t=\frac{1+\sum_{b=1}^n\mathbb{1}\{M_b\geq M_t\}}{n+1}.\label{eq:rank}
+\end{equation}
+Displayed group values compare $A_{g,t}$ with the same calibration maxima and
+are labeled scan-adjusted. Neither $p$ nor $1-p$ is a fault probability.
+The statement is per issuance, never indefinite stream-wide control.
+
+Sensor participation averages group scores with inverse-size weights. A
+development-only budget in $\{6,12,24\}$ selects the highest-ranked sensors;
+participation is not causal attribution. Candidate oracle overlap measures
+the library's localization ceiling. Display merging uses group Jaccard overlap
+at least .5, retaining original records.
+
+\begin{figure*}[t]
+\centering\includegraphics[width=.98\textwidth]{architecture.pdf}
+\caption{Historically issued joint references and observed blocks share the
+same group/channel measurement rules. Missingness is applied to predictions
+only for measurement comparison. GPU stages are shaded; data parsing,
+manifests, summaries and replay rendering run on CPU.}
+\label{fig:architecture}
+\end{figure*}
+
+\section{Properties and Limits}
+\begin{proposition}
+For PSD correlation matrices, $0\leq H\leq1$. At zero shrinkage, identity and
+rank-one matrices attain 1 and 0. With positive shrinkage the minimum is the
+entropy of $(1-\lambda+\lambda/m,\lambda/m,\ldots,\lambda/m)$.
+\end{proposition}
+\begin{proof}
+The nonnegative eigenvalues sum to $m$, hence define a probability vector.
+Shannon's bound gives the first statement. Shrinkage gives every probability
+at least $\lambda/m$; the displayed most-concentrated vector majorizes all
+feasible vectors, and entropy is Schur-concave.
+\end{proof}
+For $n$ centered observations, rank is at most $\min(m,n-1)$, so zero-shrinkage
+entropy is at most $\log\min(m,n-1)/\log m$. Autocorrelation further reduces
+effective information without changing this algebraic ceiling; normalization
+does not equalize finite-sample distributions across groups or windows.
+
+\begin{proposition}
+For $\R(\rho)=(1-\rho)I+\rho\mathbf1\mathbf1^\top$, $0\leq\rho<1$,
+\begin{equation}
+ \frac{dH}{d\rho}=\frac{m-1}{m\log m}
+ \log\frac{1-\rho}{1+(m-1)\rho}\leq0.\label{eq:derivative}
+\end{equation}
+\end{proposition}
+\begin{proof}
+The eigenvalues are $1+(m-1)\rho$ along $\mathbf1$ and $1-\rho$ on its
+orthogonal complement. Differentiate their normalized entropy; constant
+derivative terms cancel because the probabilities sum to one. For shrinkage,
+replace $\rho$ by $(1-\lambda)\rho$ and multiply by $1-\lambda$.
+\end{proof}
+This is a statement about equicorrelation, not a universal law of faults.
+
+For $m=4$, equicorrelation .2 has spectrum $(1.6,.8,.8,.8)$; two separate
+correlated pairs at .6 have spectrum $(1.6,1.6,.4,.4)$. Both matrices are
+positive definite, with mean pairwise correlation .2 and leading concentration
+.4. Yet their zero-shrinkage entropies are .960964 and .860964
+(Fig.~\ref{fig:theory}). Entropy distinguishes these organizations lost by
+those simple summaries. It cannot contain more information than full $\R$.
+
+\begin{proposition}
+For an exchangeable set of calibration and null-test maxima from a fixed
+scoring rule, (\ref{eq:rank}) satisfies $\Pr(p\leq\alpha)\leq\alpha$.
+\end{proposition}
+\begin{proof}
+Under random tie breaking, symmetry makes the test rank among $n+1$ scores
+uniform. Greater-or-equal tie counting is conservative. Thus the exceedance
+probability is at most $\lfloor\alpha(n+1)\rfloor/(n+1)$.
+\end{proof}
+Real sensor blocks are not automatically exchangeable. Gaps do not establish
+this assumption; dependence, distribution shift and contamination require
+empirical evaluation. The minimum attainable $p$ is $1/(n+1)$.
+
+Counterexamples delimit interpretation. Diagonal sign changes $S\R S$ and
+fixed-group permutations preserve the spectrum. Offsets and positive rescaling
+preserve correlations. A coherent fault and a legitimate common driver can
+share $H$. Flatlines make correlations undefined. The detector therefore
+needs signed correlation evidence and separately evaluated raw/quality alerts.
+
+\begin{figure}[t]
+\centering\includegraphics[width=\columnwidth]{theory.pdf}
+\caption{Analytical entropy curves and the exact matched-summary counterexample;
+these are mathematical illustrations, not measured detection performance.}
+\label{fig:theory}
+\end{figure}
+
+\section{Data and Preregistered Evaluation}
+\input{generated/datasets.tex}
+The synthetic benchmark uses random geometric graphs and a stable process
+$x_{t+1}=(.82I-.25L)x_t+Bf_t+.12\epsilon_t$, with $L$ divided by maximum
+degree, documented daily/weekly signals, spatial factor loadings and latent
+OU drivers. Spectral radii are checked below one. Entire simulations have
+disjoint train, development, calibration and test seeds; the three node counts
+are configurations of one benchmark, not three primary datasets.
+
+Intel Lab~\cite{intel} retains timestamps, masks, coordinates and units.
+Right-labeled two-minute bins take the last observed whole row, with no
+interpolation. A coverage-only audit, before Intel training/test scoring,
+excludes the terminal sustained availability collapse after March 23; the
+complete recording is retained for the quality sensitivity. All 54 motes
+remain. Primary channels are temperature and humidity, with separately audited
+light/voltage. PEMS-BAY uses the original DCRNN release~\cite{dcrnn}, its road
+distances and all 325 sensors. Its actual file spans January--June 2017; the
+one-hour March 12 gap is explicitly masked. Zero values follow the release's
+missing-value evaluation convention. Per-value upstream imputation lineage
+is unavailable, a limitation of using the processed release.
+
+Real recordings use chronological 60/15/10/15\% splits. Windows never cross
+split or synthetic-episode boundaries. Median/IQR scaling is training-only.
+Training-loss screening excludes standardized magnitudes above eight; an
+unscreened sensitivity tests this choice. Unlabeled real training recordings
+are nominal, not certified healthy.
+
+The protocol was committed before full runs. All methods see identical
+controlled injections into untouched held-out recordings. The real-data study
+is \emph{semi-synthetic}. Twelve fault mechanisms span copying/replay collapse,
+common interference, coupling loss/decorrelation, noise, delays, gain/offset
+drift, flatline/dropout, anticorrelation, mixed changes, matched mean correlation
+and marginal-preserving rearrangement. Severities .6/1, durations 12/48/96 and
+connected/partly disconnected groups are balanced in a fixed 72-event grid.
+Legitimate synchronized transitions and untouched recordings are controls.
+Entropy directions are measured, not assigned from the mechanism name.
+
+The primary scan budget is $\alpha=.10$, with .05/.20 reported where attainable.
+Alerts are consecutive flagged issuance runs, with stride 12. Their onsets
+must match true event intervals one-to-one, with zero trailing tolerance;
+pre-existing alarms receive no credit. No point adjustment is used. Event
+PR area integrates the upper precision envelope over attainable one-to-one
+recalls and retains the raw curve. Localization scores missed events as zero,
+with conditional detected-event results also available. Delays include window
+and stride effects; measured execution latency is reported separately.
+
+Resampling uses whole independent synthetic simulations or disjoint real
+recording blocks, retaining all injections and averaging training seeds within
+each block. We report paired 95\% bootstrap intervals, type macro scores,
+prevalence and missed counts. Overlapping windows are not replicates. Native
+background alerts are not verified false physical-fault detections.
+
+\section{Results}
+\input{generated/results.tex}
+
+\section{Auditable Monitoring and Limitations}
+The saved replay links a stable spatial node/edge view, ranked groups, signed
+residual heatmap and synchronized raw, entropy and non-entropic traces.
+Blue/purple down markers and orange/red up markers label actual $\Delta H$;
+higher/lower than the generated expectation is shown separately. Gray denotes
+inadequate support and a distinct symbol identifies flatline quality status.
+Inspection exposes group membership, common-row counts, units, observed and
+reference correlations, shared-channel evidence and its support, checkpoint,
+forecast issuance, observation time, window and scan-adjusted value. Physical
+edges and correlation overlays are distinct. Reference bands use the same
+samples as all compared traces. Trailing residual clustering is descriptive,
+uses only past/current observations, and introduces no additional significance
+claim. No firmware, manufacturer, maintenance or road-segment metadata are
+invented; spatial proximity is an input, not a discovered cause.
+
+Several limitations matter for deployment. Spectral compression loses sign,
+sensor identity within a fixed group and other covariance information. Selection
+of groups limits localization, while common-case deletion can make a large scan
+ineligible. The Gaussian PSD sensitivity makes additional missingness/model
+assumptions and does not silently replace the primary estimator. Forecast
+misspecification or contaminated history can normalize persistent faults.
+Gapped real calibration units still exhibit dependence, and small calibration
+sets limit attainable tail levels. Synthetic mechanisms and real-data injections
+do not establish accuracy on confirmed field failures. The dashboard is an
+evidence-inspection artifact; no operator-usability improvement is claimed.
+
+\section{Conclusion}
+\input{generated/conclusion.tex}
+
+\section*{Reproducibility and Acknowledgments}
+The accompanying local research artifact includes acquisition/preprocessing
+scripts, raw-source hashes, frozen configurations, split/group manifests,
+training logs/checkpoint hashes, saved predictions, replay data, source-to-equation
+checks and figure/table generators. Three training seeds and the predeclared
+four-hour GPU runtime ceiling are recorded. Intel data collection is credited
+to Bodik, Hong, Guestrin, Madden, Paskin and Thibaux. The manuscript and artifacts
+were developed with AI coding assistance; the experimental measurements and
+their limitations are traceable to saved outputs.
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+\end{document}

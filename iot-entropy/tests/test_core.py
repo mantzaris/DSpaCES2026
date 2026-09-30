@@ -96,3 +96,10 @@ def test_gpu_cpu_agreement():
     cpu=window_features(x)
     gpu=window_features(x.cuda().float())
     torch.testing.assert_close(cpu.values.float(),gpu.values.cpu(),rtol=2e-5,atol=2e-6)
+    for noise in [.1,.001]:
+        shared=torch.randn(9,96,1,dtype=torch.float64)
+        x=shared*torch.where(torch.arange(24)%2==0,1.,-1.)+noise*x
+        x[:,0,0]=float('nan')
+        torch.backends.cuda.matmul.allow_tf32=True
+        cpu=window_features(x);gpu=window_features(x.cuda().float())
+        torch.testing.assert_close(cpu.values.float(),gpu.values.cpu(),rtol=2e-5,atol=2e-6)
