@@ -1,0 +1,66 @@
+{
+  "GDN": {
+    "url": "https://codeload.github.com/d-ailin/GDN/tar.gz/9853899da860682669a134e4af315d036aab4eca",
+    "path": "literature/downloads/GDN-9853899da860682669a134e4af315d036aab4eca.tar.gz",
+    "bytes": 397196,
+    "sha256": "89670acf72714e53ce6a07f714748b2fac24bf8c9050327479836d879dbbb40d",
+    "repository": "d-ailin/GDN",
+    "revision": "9853899da860682669a134e4af315d036aab4eca",
+    "extracted": "literature/upstream/GDN",
+    "license_files": [
+      "literature/upstream/GDN/LICENSE"
+    ]
+  },
+  "CSDI": {
+    "url": "https://codeload.github.com/ermongroup/CSDI/tar.gz/7f24a436f08d98853a6b43d4f7f04e5a65ecdf27",
+    "path": "literature/downloads/CSDI-7f24a436f08d98853a6b43d4f7f04e5a65ecdf27.tar.gz",
+    "bytes": 2679238,
+    "sha256": "32cdbccf3ea7efe429ff1d0a3255086eb64d1bbbfb6fef32ee68e901694483e2",
+    "repository": "ermongroup/CSDI",
+    "revision": "7f24a436f08d98853a6b43d4f7f04e5a65ecdf27",
+    "extracted": "literature/upstream/CSDI",
+    "license_files": [
+      "literature/upstream/CSDI/LICENSE"
+    ]
+  },
+  "intel_locations": {
+    "url": "https://db.csail.mit.edu/labdata/mote_locs.txt",
+    "path": "data/raw/intel/mote_locs.txt",
+    "bytes": 552,
+    "sha256": "3865c0263110c24c40e3377690cecaa552e0575cf56cdb9f5f8bd17130b6bf04"
+  },
+  "SKAB": {
+    "url": "https://codeload.github.com/waico/SKAB/tar.gz/b2c0d46c2971dcbfe71e26087b6d231998bb91c2",
+    "path": "literature/downloads/SKAB-b2c0d46c2971dcbfe71e26087b6d231998bb91c2.tar.gz",
+    "bytes": 5391409,
+    "sha256": "94697857befc4481ddb328ad097acc8f7db688fae20870946e6eda37a2cd52b1",
+    "repository": "waico/SKAB",
+    "revision": "b2c0d46c2971dcbfe71e26087b6d231998bb91c2",
+    "extracted": "data/raw/SKAB",
+    "license_files": [
+      "data/raw/SKAB/LICENSE"
+    ]
+  },
+  "intel_description": {
+    "url": "https://db.csail.mit.edu/labdata/labdata.html",
+    "path": "data/raw/intel/description.html",
+    "bytes": 3790,
+    "sha256": "baa5934fa0dc4a40232997aa73a66bea847d522f0c1e7f38b62e56ba1ff92178"
+  },
+  "intel_data": {
+    "url": "https://db.csail.mit.edu/labdata/data.txt.gz",
+    "path": "data/raw/intel/data.txt.gz",
+    "bytes": 34422518,
+    "sha256": "d99288c8f406ca6604d359ceaa0d8adfffa79e7095061a1e27dc4399f48c7225"
+  },
+  "DiffAD": {
+    "url": "https://codeload.github.com/ChunjingXiao/DiffAD/tar.gz/a05f764dea8c956c0dc95802d4a2813a70a7144e",
+    "path": "literature/downloads/DiffAD-a05f764dea8c956c0dc95802d4a2813a70a7144e.tar.gz",
+    "bytes": 95107827,
+    "sha256": "d1870ecdfa2a34dbf12210624aa7877b64cef21aad11b4be69b78469372be3bb",
+    "repository": "ChunjingXiao/DiffAD",
+    "revision": "a05f764dea8c956c0dc95802d4a2813a70a7144e",
+    "extracted": "literature/upstream/DiffAD",
+    "license_files": []
+  }
+}

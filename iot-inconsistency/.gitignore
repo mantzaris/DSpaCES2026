@@ -1,0 +1,17 @@
+__pycache__/
+.pytest_cache/
+.venv/
+.cache/
+data/raw/
+data/processed/
+literature/upstream/
+literature/downloads/
+runtime/
+*.log
+*.aux
+*.out
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz

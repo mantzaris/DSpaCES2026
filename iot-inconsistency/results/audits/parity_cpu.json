@@ -1,0 +1,33 @@
+{
+  "device": "cpu",
+  "torch": "1.10.1+cpu",
+  "input_sha256": "06dcee40440ba1516d48f63c3a62a542537abc02951997410f437d8f811fd562",
+  "axes": [
+    "batch",
+    "candidate",
+    "ensemble_member",
+    "paired_replicate",
+    "provenance_group"
+  ],
+  "checks": [
+    {
+      "dtype": "torch.float64",
+      "tolerance": 1e-11,
+      "max_score_component_error": 1.1796119636642288e-16,
+      "crps": true,
+      "score_components": true,
+      "edit_cost_unit_invariance": true,
+      "null_tails": true
+    },
+    {
+      "dtype": "torch.float32",
+      "tolerance": 2e-06,
+      "max_score_component_error": 3.7255277418601906e-08,
+      "crps": true,
+      "score_components": true,
+      "edit_cost_unit_invariance": true,
+      "null_tails": true
+    }
+  ],
+  "status": "passed"
+}

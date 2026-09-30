@@ -1,0 +1,791 @@
+DSpaCES 2026 RESEARCH PLAN AND COMPLETE LOCAL CODEX PROMPT
+Rewritten 30 September 2026: explicit equations, executable reference, equation examination, established alternatives, and figure specifications.
+
+Working title:
+Generative Repair Tests for Detecting Faulty Sensor Knowledge in Digital-Twin Data Spaces
+
+How to use this file:
+Put this entire file in the local research repository. Part A is the research specification. Part B is the Codex execution prompt. Part C is executable reference Python for the proposed score. Part D records the arithmetic checks performed during this rewrite. Part E lists starting sources. This is one self-contained replacement for the earlier plan, not an addendum requiring the old version.
+
+Status:
+The arithmetic reference has been run on illustrative arrays. The sensor detector has not been trained, the datasets have not been benchmarked here, and comparative performance remains an experimental question. The intended improvement over established approaches is a research hypothesis.
+
+PART A. RESEARCH SPECIFICATION
+
+A1. Venue, scope, and deliverable
+
+The official workshop currently lists 15 October 2026 for submission, up to 10 pages including references for full papers, IEEE two-column formatting, and an online workshop on 14 December. Recheck the official portal for deadline timezone, anonymity, and template instructions. Complete the paper by 13 October if possible.
+
+Study a data-quality service receiving distributed IoT sensor streams for a digital-twin data space. GPU-based generative inference proposes and assesses alternatives; a graph database stores discovered associations and their evidence; a classic node-and-edge interface exposes disagreements to an operator. The implementation can analyze distributed data centrally. Do not label it federated learning or distributed training without implementing those capabilities.
+
+A2. Research question, hypotheses, and novelty
+
+Main question:
+Can a generative model rank unreliable sensor observations and unreliable learned associations by testing proposed repairs on separate, unchanged witness evidence, and can the resulting findings carry useful calibrated confidence?
+
+An observation is a measured value or interval. An association is a versioned, learned predictive relationship with endpoints, lag, applicable regime, and provenance. A disagreement is evidence that one or more current observations or associations are incompatible. A genuine physical-process anomaly can occur while every sensor reports correctly. These are distinct labels, not interchangeable names for the same event.
+
+Research hypotheses:
+H1: Separate witness evaluation improves fault localization over ordinary forecast/reconstruction error, especially when an anomalous source contaminates the predictions of other sensors.
+H2: Testing observation edits and association masks separately improves identification of unreliable stored knowledge under relationship changes.
+H3: Ensemble disagreement penalties and held-out calibration increase precision among accepted findings at a stated coverage level.
+H4: Canonical provenance grouping prevents known duplicate messages from being treated as additional corroboration.
+
+The intended improvement is targeted to nonlinear, regime-dependent, or conflicting evidence. A simpler method may be as good or better in linear stable data and should be expected to be cheaper. Include those favorable conditions for the alternatives in the experiments.
+
+Compare against the full methods of GDN (AAAI 2021), CSDI (NeurIPS 2021), DiffAD (KDD 2023), TSAD-C, graph-guided counterfactual explanations by Shi et al. (BEHAIV 2025), Hara et al.'s graph anomaly localization (AISTATS 2015), generative counterfactual graph methods, and recent conformal time-series detection. Build a novelty matrix before expensive runs. Neither graph learning, diffusion, counterfactual perturbations, calibration, nor a database alone is novel. Assess the contribution as a specific scoring and evidence-validation method, supported by experiments.
+
+A3. Exactly three primary datasets
+
+A. Synthetic coupled sensor network
+Create one documented simulator with several configurations, not several separately advertised datasets. Use latent physical states, heterogeneous sensor channels, lagged nonlinear coupling, exogenous operating regimes, correlated noise, and redundant measurements. Example model:
+  z_t = A(r_t) z_(t-1) + B u_t + nonlinear(z_(t-1)) + process_noise
+  x_i,t = h_i(z_t, z_(t-lag_i)) + bias_i(t) + measurement_noise_i,t
+Use a physical process family independent of the learned diffusion architecture. Validate stability and dimensional units. Use 32 and 64 sensor nodes for primary experiments, with larger networks only for a measured scalability study.
+
+Generate independent training, tuning, calibration, and test trajectories with different seeds and held-out operating regimes. Record latent truth, observation corruptions, association changes, source provenance, and affected intervals.
+
+Fault families: offset, gradual drift, stuck-at, spike bursts, noise increase, dropout, replay/time delay, scale or unit mismatch, and small coordinated faulty groups. Relationship faults: wrong endpoints, wrong lag, wrong sign, unsupported associations, and stale associations after a genuine regime change. Match false and valid association candidates on simple properties so metadata does not reveal the answer. Include genuine consistent physical changes as controls and common-mode failures as difficult cases. Separate true process abnormalities from incorrect measurements.
+
+B. Intel Berkeley Research Lab data
+Official source: https://db.csail.mit.edu/labdata/labdata.html
+Measured data from 54 wireless sensor motes with temperature, humidity, light, voltage, location, and communication information. Useful for spatially distributed sensing, missing observations, and redundant evidence.
+Represent a physical mote separately from its channels. Preserve availability masks, original timestamps, and time since last observation. Choose resampling and any bounded interpolation using training data only. Do not interpolate across splits, long gaps, or known injected faults. Communication links are not automatically physical or causal dependencies.
+There are no comprehensive authoritative sensor-fault labels established by the dataset description. Use a frozen, documented reference subset and injected faults for exact attribution, and describe this experiment as controlled corruption of real measurements. Native irregularities without adjudicated truth are qualitative cases, not scored proof of real faults. Quantify possible reference-data contamination.
+
+C. SKAB
+Official source: https://github.com/waico/SKAB
+Measured physical water-circulation testbed signals including pressure, flow, motor current, voltage, vibration, and temperature. The repository provides anomaly/changepoint labels; freeze the exact version and verify file counts locally rather than assuming a planned future release exists.
+Keep entire experiments disjoint across development, calibration, and test. Inspect documentation to determine what labels actually identify. Native labels support process-anomaly detection, not automatic identification of a broken sensor or false relationship. Add a separately reported controlled-corruption track on suitable held-out normal portions for precise observation/association attribution.
+This is a compact physical testbed, not evidence of a large geographically distributed deployment. Intel and the simulator supply distributed-network coverage; SKAB supplies physical process validation.
+
+Alternative only if required by data access or scientific fit: HAI, https://github.com/icsdataset/hai, is a larger industrial testbed augmented by hardware-in-the-loop simulation. Disclose its hybrid origin if substituted. SWaT is another strong option if authorized access is already available. Do not silently add a fourth dataset or wait for gated access before building the primary study.
+
+A4. Established alternative methodologies and fair comparisons
+
+Make PCA reconstruction-error detection the explicit simpler existing methodology. Use GDN as a stronger established graph comparator. Include a close diffusion detector to avoid a comparison that only demonstrates the value of a more expressive backbone.
+
+Alternative 1: PCA reconstruction-error detection
+Fit preprocessing and a rank-r PCA subspace on reference training data. For a standardized feature/window vector z_t in R^d and an orthonormal loading matrix P_r in R^(d x r):
+
+  (B1) reconstructed_z_t = mean_z + P_r P_r^T (z_t - mean_z)
+  (B2) Q_t = ||z_t - reconstructed_z_t||_2^2
+  (B3) Q_i,t = mean over coordinates of sensor i of
+                   (z_t - reconstructed_z_t)^2
+
+Fit the PCA mean on training data even if earlier robust centering was performed. Choose rank using development reconstruction or labeled development metrics under the stated protocol. Include both contemporaneous PCA and a lag-embedded PCA variant so the baseline is not unnecessarily denied temporal information. Select a threshold on held-out calibration data and rank sensor contributions using Q_i,t. Do not use every principal component, which can make reconstruction error vanish.
+
+Why it is expected to be less effective in some intended conditions: its standard subspace is linear; it does not sample multiple conditional explanations; reconstruction contributions do not uniquely distinguish a bad sensor from a stale relation. These are structural limitations and testable expectations, not already measured inferiority. Advantages: low computational cost, simple implementation, and potentially excellent performance on stable linear systems. A kernel-PCA extension is optional if basic nonlinear effects account for the entire observed advantage.
+
+Alternative 2: Graph Deviation Network, GDN
+Reproduce the published architecture/code, including learned sensor relationships and graph-based forecasting. In concise notation, its residual-style scoring is:
+
+  (B4) predicted_x_t = graph_forecaster(x_(t-H):x_(t-1), learned_graph)
+  (B5) residual_i,t = |x_i,t - predicted_x_i,t|
+  (B6) standardized_residual_i,t =
+          (residual_i,t - reference_median_i) / max(reference_IQR_i, epsilon)
+  (B7) network_score_t = max_i standardized_residual_i,t
+
+Follow the verified original details for the faithful reproduction. For the common protocol comparison, estimate all reference medians/scales from development reference data, use causal smoothing only, and calibrate every method without test-label optimization. Label this evaluation adaptation. Inspect the official evaluation script: it exposes test-optimal scoring paths and normalization behavior that must not be silently inherited into a leakage-free study. Preserve a faithful architecture while transparently harmonizing evaluation.
+
+Expected difference: GDN provides forecast deviations and sensor localization; the proposed study explicitly tests observation and association hypotheses on separate witnesses. Do not claim GDN cannot localize faults. Its speed and simpler inference are advantages to report.
+
+Required comparison ladder:
+  B0: lag-embedded PCA residual detection.
+  B1: GDN with the common calibration protocol.
+  B2: the proposed diffusion backbone scored only by reconstruction/nonconformity.
+  B3: the same repair method using deterministic conditional-mean replacements.
+  B4: a close published diffusion anomaly detector, prioritizing TSAD-C or DiffAD.
+  P: the full proposed score.
+
+Do not assign zero association accuracy to a baseline that has no association output. Provide a separately labeled edge-residual extension using the same stored association predictors, or mark that task unsupported. Retain a simple direct association-prediction-residual baseline: a new method must improve on evaluating the relation's held-out prediction error directly. Compare equal data access, splits, candidate budgets, and calibration opportunities. Report both detection quality and compute cost.
+
+A5. Model, notation, and equation-to-code specification
+
+Notation:
+X: a decision-time sensor window, represented as [batch, channel, time].
+O: availability mask with the same shape; missing observations are not numeric zeros.
+G: the versioned association graph available at the decision time.
+h: a candidate observation interval or association to question.
+E: independently trained model members, default 3 for the final method.
+M: independent paired inference replicates per hypothesis, start at 8 or 16.
+L: predictive samples per witness prediction, start at 8 or 16.
+K_h: number of unique witness provenance groups available for h.
+w_g: nonnegative group weight, sum_g w_g = 1; use uniform unique-group weights first.
+
+Keep E, M, and L distinct. More stochastic samples from one model do not create more independently trained models. They reduce sampling noise but do not establish fault confidence. Each replicate m contains one generated repair and before/after predictive draws. Common random numbers may couple before/after noise to reduce variance, while replicate seeds remain independent.
+
+E1. Training-only normalization
+  s_i = max(IQR_train(x_i), epsilon_i)
+  normalized_x_i,t = (x_i,t - median_train(x_i)) / s_i
+
+Set epsilon_i from documented sensor resolution or a training-only scale floor, not test behavior. Treat constant channels explicitly. Save medians, scales, units, and excluded channels. CRPS may be computed in raw units and divided by s_i, or on normalized values with scale 1. Never apply both normalizations.
+
+E2. Conditional diffusion training
+Let A be a randomly selected target mask restricted to observed training cells, epsilon be Gaussian noise, and a_bar_s be the cumulative noise schedule:
+
+  noisy_target_s = sqrt(a_bar_s) * target + sqrt(1-a_bar_s) * epsilon
+  L_diff = E[ || A * (epsilon - denoiser_theta(noisy_target_s, s, context, G)) ||^2
+                 / max(sum(A), 1) ]
+
+Multiply and square elementwise before summing. The context must exclude the target values and their duplicate provenance copies. Known context is supplied separately rather than being mistaken for noised target data. Train with channel/time masking and edge dropout so inference-time masking is supported. This objective is an existing diffusion construction; the proposed scientific contribution is its use in the scoring procedure below.
+
+Initial architecture: a compact temporal encoder with graph-conditioned cross-channel blocks and a conditional denoiser. Use PyTorch, mixed precision for training, and float32 or float64 accumulation for differences and final metrics. Start at windows of 64-128 steps and about 5-20 million parameters; adjust after profiling. Verify primary documentation before selecting current software versions.
+
+E3. Association acceptance
+Screen lagged dependencies on training data, then measure a candidate's predictive gain on separate development data:
+
+  association_gain_e = mean_dev(loss_without_e - loss_with_e)
+
+Use fixed targets, validation folds, a sparse neighbor cap, and block stability. Record which predictor defines this statistic and which graph attributes affect it. Store learned associations separately from known topology. Train-only discovery plus development validation precedes final score calibration.
+
+If an experiment corrupts an edge's lag or sign, that attribute must affect the executable prediction/validation model. A decorative sign label ignored by the model cannot support a claim about detecting incorrect signs. A graph mask tests whether a relation is unhelpful; it does not prove the exact causal reason for its failure.
+
+E4. Normalized empirical CRPS for one witness cell
+For observed y, predictive samples v_1,...,v_L, and positive training scale s_i:
+
+  C(v, y) = [ (1/L) sum_l |v_l-y|
+               - (1/(2 L^2)) sum_l sum_k |v_l-v_k| ] / s_i
+
+This is the CRPS of the empirical predictive distribution. Its finite-sample behavior depends on L; keep L equal across the comparisons where this score is used, and examine L sensitivity. For L=1 it reduces to normalized absolute error. The reference implementation uses the equivalent sorted-sample expression for the second term to avoid allocating an L-by-L pairwise tensor.
+
+E5. Witness-group loss
+Let J_g(h) be the fixed set of unique observed witness cells in group g, after masking unavailable targets and removing repair targets and duplicate descendants:
+
+  loss_e,m,g(h) = [1 / |J_g(h)|] sum_(j,tau in J_g(h)) C(v_e,m,j,tau, x_j,tau)
+
+The group losses for before and after must use identical J_g(h), counts, normalizers, prediction horizon, and weighting. Record a hash of the witness IDs. A group with no valid target cells is ineligible; an unavailable prediction causes an explicit failure/abstention, not a zero loss. Different hypotheses may have different support, so compare/calibrate them by type and support regime rather than assuming all raw scores are interchangeable.
+
+Witness separation:
+  - Generate observation repairs using proposal sources P_h.
+  - Exclude witness target values W_h from the proposal context.
+  - Exclude the suspect observation interval from proposal conditioning.
+  - Predict each witness with its target interval and duplicate copies masked.
+  - Evaluate predictions against actual unchanged witness observations.
+  - Keep source partition rules fixed before examining test outcomes.
+
+Other channels may still be statistically correlated. Distinct provenance IDs do not establish independence. Primary high-confidence attribution should require at least two distinct source groups when available; report low-support abstention and evaluate eligible single-group cases separately. Frozen screening and partition selection are part of the pipeline that is calibrated.
+
+E6. Paired repair improvement
+  Delta_e,m,g(h) = loss_before_e,m,g(h) - loss_after_e,m,g(h)
+
+Observation hypothesis: replace only the stated cells using samples from the conditional generator. Association hypothesis: mask the specified association, retaining the same observed witnesses and their loss terms. Candidate masking must not change graph version history or measured records.
+
+E7. Mean repair gain
+  D_e,m(h) = sum_g w_g(h) Delta_e,m,g(h)
+  R_e(h) = (1/M) sum_m D_e,m(h)
+  R(h) = (1/E) sum_e R_e(h)
+
+E8. Explicit model-instability penalty
+  U(h) = sqrt( [1/(E-1)] sum_e (R_e(h) - R(h))^2 )
+
+This rewrite makes U precise: it is the sample standard deviation of repair gains across separately trained models. Do not divide it by sqrt(E). It is a stability penalty, not a proven posterior standard deviation or formal confidence bound. Use evidence block bootstrap for metric intervals and sensitivity analysis separately rather than silently mixing several undefined uncertainties into U. If E=1, U is unavailable; label an uncertainty-free ablation instead of setting U=0 and reporting certainty.
+
+E9. Edit cost
+For an observation hypothesis with a fixed proposed edit mask H_h of k cells in a fixed local window containing N_h eligible cells:
+
+  Omega_obs(h) = rho * k/N_h
+                 + (1-rho) * mean_(e,m,(i,t) in H_h)
+                    min( |replacement_e,m,i,t - x_i,t| / (c*s_i), 1 )
+
+Use rho=0.5 and c=3 only as development starting values; freeze chosen values before final calibration. For association masking:
+
+  Omega_edge(h) = number_of_masked_edges / max(number_of_edges_in_fixed_local_graph, 1)
+
+The reference score accepts the already computed scalar cost. Production code must implement and audit the cost functions. The local graph and denominator are fixed before testing repairs. Costs for sensor edits and edge masks have different meanings: report/type-calibrate these outputs separately. Dropouts require explicit missingness hypotheses rather than pretending an absent observed value has a numeric edit magnitude.
+
+E10. Proposed score to implement and investigate
+  S(h) = R(h) - kappa * U(h) - lambda * Omega(h)
+
+Use nonnegative kappa and lambda. Keep negative scores; do not clip at zero before ranking or calibration. Start kappa at 1 and lambda at 0.2 for arithmetic development only. Evaluate a small preregistered grid, e.g. kappa in {0, 0.5, 1, 2} and lambda in {0, 0.05, 0.2}, using development data. Calibrate the selected complete pipeline on untouched calibration data.
+
+E11. Monte Carlo sampling diagnostic, distinct from E8
+  SE_MC(h) = sqrt( [1/E^2] sum_e Var_m(D_e,m(h)) / M )
+
+This estimates variability from the paired inference replicates conditional on the fitted ensemble, assuming replicate randomness is independent. Reusing one baseline forecast for all m omits baseline sampling variation; either regenerate/couple baseline draws per replicate or label the conditional approximation explicitly. Diagnose convergence as M and L increase. A zero SE_MC on constant toy arrays is not confidence that a fault is real.
+
+E12. Null-tail calibration
+For a fixed comparable score Z and B reference calibration units:
+  p(Z) = [1 + sum_b I(Z_b >= Z)] / (B+1)
+
+For candidate review, define the candidate type and selection-conditioned reference population. For a network/window alarm use Z_t = max_h S_t(h), running the same screening, support checks, and score pipeline on every reference calibration unit. Calibrating all maxima gives a window-level null-tail statement under the stated assumptions, not family-wise control over an unlimited sequence of windows. A window with no eligible candidate can receive a predeclared floor score below all finite scores; separately report insufficient evidence. Never quietly treat ineligible candidates as high-confidence negatives.
+
+E13. Optional probability calibration
+Fit an appropriate supervised calibrator on separate labeled calibration data, for example:
+  q(h) = sigmoid(a * S(h) + b)
+
+Fit/type-stratify where observation and association labels differ; use measured calibration quality, not the logistic shape alone, as justification. Document prevalence and unseen-fault transfer. The calibrated probability is conditional on the calibration population; 1-p from E12 is not q. If using the same dataset for null and probability calibration, use disjoint folds and avoid fitting both on the final test data.
+
+E14. Decision semantics
+Record three separate outputs: a process/anomaly alert, candidate attribution scores, and attribution acceptance/abstention. Use a calibrated conventional window nonconformity score for process alerts as well as the repair scores for attribution, since a genuine physical event need not be resolved by repairing a sensor. Do not suppress native process anomalies because no repair candidate passes. A lack of successful repairs does not prove the event is genuine; it may remain unresolved.
+
+Output one or more plausible hypotheses if appropriate. If scores are close or evidence is inadequate, display competing possibilities. A top-two score margin may help a decision rule but is not a probability; tune it on development data. Multiple simultaneous sensor/edge faults can remain mixed rather than being forced into one exclusive class.
+
+A6. Code layout, reference implementation, and mandatory equation examination
+
+The executable NumPy reference in Part C defines CRPS, provenance deduplication, the score, and rank-tail calibration. It uses float64 and runs without a GPU. It is an arithmetic oracle, not the production detector. Extract it into a reference module and implement a batched PyTorch/CUDA equivalent for the actual experiment. The GPU implementation must reproduce the reference within declared dtype tolerances on the same saved arrays.
+
+Equation-to-code mapping:
+  E1: preprocessing.py -> fit_training_normalizer, transform_measurements
+  E2: diffusion.py -> masked_denoising_loss, conditional_sample
+  E3: associations.py -> evaluate_association_gain
+  E4: scoring.py -> normalized_empirical_crps
+  E5: witnesses.py -> select_witnesses, aggregate_group_losses
+  E6-E8: scoring.py -> compute_paired_gains, ensemble_instability
+  E9: costs.py -> observation_edit_cost, association_edit_cost
+  E10-E11: scoring.py -> repair_score, sampling_standard_error
+  E12-E14: calibration.py -> fit_null_reference, null_tail_value,
+           fit_probability_calibrator, decide_or_abstain
+
+Reference loss tensor: [ensemble_member, paired_replicate, provenance_group].
+Production loss tensor: [batch, candidate, ensemble_member, paired_replicate, group],
+with explicit validity masks and fixed before/after target membership. Predictive sample arrays add a final sample axis before cell-to-group aggregation. Save axis names and counts in metadata, not just anonymous arrays.
+
+Numerical and integration checks:
+  1. CRPS equals an independently written pairwise definition.
+  2. A deterministic predictive distribution gives scaled absolute error.
+  3. Consistent affine unit changes preserve normalized CRPS and edit cost.
+  4. No-op edits yield zero gain; positive edit cost then lowers the score.
+  5. Harmful edits have negative gain.
+  6. Increasing lambda lowers scores by the specified cost difference.
+  7. At fixed mean gain, larger model disagreement lowers S for kappa>0.
+  8. Known duplicate identities do not change canonicalized inputs or scores.
+  9. Conflicting copies with one ID are flagged, not silently averaged.
+  10. Vectorized CPU and GPU formulas match an independent scalar calculation.
+  11. Witness IDs, masks, horizons, and normalizers are identical before/after.
+  12. Injecting a distinctive hidden witness value cannot affect repair generation.
+  13. Labels, future samples, and repaired targets cannot enter their forbidden contexts.
+  14. NaN/missing outputs cannot lower the loss through zero filling.
+  15. p-values have the correct ordering, tie treatment, and resolution 1/(B+1).
+  16. Deleting an edge does not delete a target or an error term.
+
+Part D records only the checks actually executed during preparation; the model-level and GPU tests remain instructions for local Codex.
+
+Scientific examination of the formula is mandatory:
+  - Save R, U, Omega, S, SE_MC, support counts, and truth labels for every tested candidate.
+  - Plot term distributions for correct and incorrect hypotheses separately.
+  - Compare S with R alone, ordinary residuals, deterministic repairs, and a simple
+    supervised combination of the same features as an explicitly supervised comparator.
+  - Run sensitivity to kappa, lambda, M, L, and E on development data; freeze before test.
+  - Check whether gain is merely correlated with a large initial residual or graph degree.
+  - Examine short versus long fault intervals, low/high support, and different fault types.
+  - Test errors in the graph itself and contamination of repair-conditioning sources.
+  - Test whether candidate screening discards true faulty sensors or edges.
+  - Construct an ambiguous common-mode example and document failure/abstention.
+  - Report where ordinary PCA or GDN is competitive or better.
+
+Create equation_audit.md and equation_to_code.json linking each manuscript equation to functions, tests, configurations, and result artifacts. Add one worked arithmetic example: R=0.50, U=0.05, Omega=0.10, kappa=1, lambda=0.2 gives S=0.43. Label it illustrative. Never present it as measured detection performance.
+
+A7. Limited theory and what the equations do not establish
+
+Proposition 1, duplicate-provenance invariance:
+With canonical deduplication before model input construction and again before group aggregation, unchanged unique evidence, fixed model parameters, and fixed inference randomness, adding exact known copies leaves losses, weights, R, U, costs, and S unchanged. Prove the invariance at each stage. If only the scoring kernel is deduplicated, claim only kernel invariance, since duplicated upstream messages can change model predictions.
+
+Proposition 2, penalty sensitivity:
+For fixed R, U, Omega, dS/dkappa = -U <= 0 and dS/dlambda = -Omega <= 0. This is a simple property of the defined score, not a deep new theorem. For two hypotheses, h1 outranks h2 exactly when:
+  R(h1)-R(h2) > kappa[U(h1)-U(h2)] + lambda[Omega(h1)-Omega(h2)].
+Use this inequality to explain observed ranking reversals in the sensitivity experiment.
+
+Proposition 3, conditional calibration:
+For a frozen complete scoring/selection pipeline and exchangeable calibration/test units under the declared null, the standard rank-tail value in E12 is super-uniform. Attribute this result to existing conformal theory. State whether the unit is a candidate, an experiment, or a window maximum. Temporal spacing alone does not establish exchangeability. Under serial dependence or distribution shift, show empirical false alarms and avoid an unproved exact guarantee.
+
+Give an identifiability counterexample: two indistinguishable sensor explanations, or a common-mode fault shared by all informative witnesses, cannot be uniquely resolved from the observed relationships alone. Describe required informative redundancy, reliable enough conditioning evidence, and model adequacy. Do not claim a theorem of universal superiority over PCA/GDN. Keep the theory around half to one page, with detailed checks in reproducible artifacts if page limits require.
+
+A8. Graph storage and exact visualization specification
+
+Use Neo4j for versioned associations and evidence. Store raw arrays outside the graph with stable file/window references. Suggested entities: Sensor, Channel, ObservationWindow, AssociationVersion, Disagreement, RepairHypothesis, EvidenceGroup, ModelRun, and OperatorDecision. An association entity holds lag, sign/type where modeled, units, regime, discovery interval, validation gain, confidence status, provenance, and valid-from/valid-to values. It can be projected as an annotated edge in the operator's sensor graph.
+
+Use Cytoscape.js or an equivalent graph library for the interactive view. This is a classic 2D node-link network, with conventional nodes connected by visible annotated edges. The paper must contain this actual style of diagram, not substitute an embedding plot, card layout, heatmap, or 3D graph. Those may support analysis elsewhere but do not satisfy the operator-diagram requirement.
+
+Operator node-link encoding:
+  - Circle: measured sensor/channel, with a short unambiguous identifier.
+  - Optional small square: disagreement record, linked to the disputed items.
+  - Solid directed edge: a stored predictive association; arrows mean prediction direction.
+  - Thin gray: contextual association without a current flag.
+  - Red double outline plus 'suspect reading': observation hypothesis.
+  - Orange dashed edge plus 'association under review': relationship hypothesis.
+  - Blue outline plus 'witness': evidence used in the current explanation.
+  - Black dotted annotation connector: explanatory text, not another learned relation.
+Do not rely on color alone or let edge thickness ambiguously mean both strength and uncertainty. Choose one meaning and explain it. Unknown confidence stays unknown.
+
+Visible edge labels should name the relation and lag, e.g. 'predicts flow; lag 2 s'.
+Disagreement annotation should show measured value, predicted interval, units, and status where space permits. Example wording without fabricated result numbers: 'Flow observation outside generated interval; sensor and edge hypotheses compared'. Full numbers come from the selected run.
+
+Interface behavior:
+Click a node/edge to show observed data, generated alternatives or prediction interval, R/U/Omega/S, calibrated p or probability with its proper meaning, unique witness sources, support count, candidate alternatives, graph/model version, and exact evidence links. Provide time selection, local neighborhood focus, and confirm/reject/defer controls. Decisions are logged; proposed repairs do not overwrite measurements or control physical equipment.
+
+Use a local ego network with roughly 8-20 nodes for case figures. Keep all directly relevant witnesses and suspects; report any pruning rule. Fix coordinates across before/after panels. Intel sensor positions may guide layout; otherwise use a fixed seeded force-directed or layered layout, followed by reproducible position adjustment. Layout must not encode information from fault labels. Save graph JSON, positions, edge labels, styles, and run ID.
+
+Produce SVG/PDF from exact graph data for the paper and a PNG preview for visual QA. Set figure fonts to remain readable, about 8-9 pt or larger at final placement. Inspect at the actual column/two-column width. Never use AI-generated imagery for the scientific graph or measured plots.
+
+A9. Paper figures and tables: specified diagram types
+
+Figure 1: Method architecture and evidence separation.
+Type: compact top-down block/dataflow diagram, not the operator network.
+Show measured window branching into proposal context and withheld witness targets; candidate hypotheses entering generation; before/after prediction distributions entering CRPS; R/U/Omega entering S; calibration leading to graph records/operator review. Explicitly show that witness values go to scoring rather than repair generation. Show training/calibration artifacts separately from test inputs. Label graph/database writes and model reads accurately; avoid arrows implying causal sensor relations in this systems diagram.
+
+Figure 2: Actual operator network, preferably across two columns.
+Type: three comparable 2D node-link panels with fixed coordinates.
+(a) Local sensor network before attribution, with the disagreement marked.
+(b) Best-supported observation-repair hypothesis with untouched witnesses highlighted.
+(c) Association alternative or unresolved case, with dashed disputed edges and score details.
+Use measured run values and short annotated edges. Caption states dataset, time interval, label provenance, graph version, and whether the fault was injected. A second case can appear in the artifact if the paper lacks space. This is the required classic diagram.
+
+Figure 3: Detection and confidence.
+Type: 2-by-2 standard scientific plots, not a conceptual illustration.
+(a) Observation precision-recall curves, x=recall, y=precision.
+(b) Association precision-recall curves for supported methods.
+(c) Reliability diagram, x=mean predicted fault probability per bin,
+    y=observed fault frequency; diagonal y=x; show counts/uncertainty.
+(d) Risk-coverage curve, x=fraction of candidates accepted,
+    y=fraction of accepted attributions that are wrong; lower is better.
+Use native probabilities only when a labeled calibrator has been validated. If only p-values are available, replace panel (c) with nominal versus empirical false-positive rate and label it accordingly. Do not treat p-values as probabilities in a reliability diagram. Keep datasets/tracks separate by small panels or clearly distinguishable curves; do not silently pool prevalence.
+
+Figure 4: Equation and robustness analysis.
+Type: compact paired-difference/error-bar panels and sensitivity plots.
+Choose the most informative development-planned panels: full S minus R-only AUPRC with paired intervals; performance versus fraction of corrupted sources; kappa/lambda sensitivity heatmap; and latency versus number of tested candidates. Label directions and units. The full-minus-baseline sign convention must be consistent. A two-panel version is acceptable to fit 10 pages; other plots belong in artifacts.
+
+Optional artifact diagrams:
+  - Property-graph schema/entity relationship diagram, showing actual stored types.
+  - Paired sensor time-series with generated intervals and fault annotations.
+  - Score decomposition by candidate and a calibration support histogram.
+These support inspection but do not replace Figure 2.
+
+Tables:
+  T1: datasets, split units, sensor/channel counts after preprocessing, labels,
+      fault prevalence, missingness, and native versus injected evaluation.
+  T2: main observation/association results with paired intervals; separate native
+      process-anomaly panel. Mark unsupported tasks as not applicable.
+  T3: essential ablations and measured compute costs, combined if needed.
+
+Every plot/table comes from saved predictions and manifests via a script. Captions describe sample units, intervals, and exclusions. Examples and mockups are labeled illustrative. No scores are invented for aesthetic reasons.
+
+A10. Experimental protocol and criteria for an improvement claim
+
+Use train, development, calibration, and final test partitions. Keep complete SKAB experiments disjoint. Keep Intel chronological blocks disjoint with gaps at least as large as the maximum horizon/window/lag. Keep synthetic trajectories and corruption seeds independent. Paired unmodified/corrupted copies of a base segment stay in the same partition. Freeze normalization, associations, screening, hyperparameters, and calibration without test outcomes.
+
+Primary endpoint: observation-fault AUPRC on the predefined controlled-corruption test conditions, with a preregistered comparison against the strongest development-selected eligible baseline. Report results per dataset and a stated macro aggregation if used, not a pooled micro result that hides dataset size differences. Association AUPRC and high-confidence attribution precision at prespecified coverage are key secondary endpoints. Report them even if they do not improve.
+
+Additional metrics: achieved FPR and recall at calibration-selected nominal FPR targets; sensor/association top-1/top-3 or MRR; event precision/recall; detection delay; false alerts per hour/day; calibrated-probability Brier score/log loss; reliability and risk-coverage; abstention; latency, throughput, VRAM, and GPU-hours. AUPRC needs stated prevalence. Candidate selection misses and unsupported low-evidence cases belong in the denominator/coverage accounting. Separate candidate ranking conditional on screening from end-to-end performance.
+
+Use the same fault manifests for every method. Run at least three model training seeds for the proposed method and strongest neural comparators if budget permits. E ensemble members and repeated experiment seeds are different notions: one ensemble with three members is not three independent repetitions of the ensemble method. Ideally use three independent ensembles; if only one is affordable, report it as one ensemble and use event/block intervals with an explicit limitation. Never mislabel ensemble members as repeated final-method runs.
+
+Use paired temporal-block/experiment bootstrap intervals for method differences, with a block choice fixed from training/development dependence. Do not bootstrap overlapping windows as independent points. Preserve cross-sensor covariance when resampling time blocks. Include enough independent events for useful intervals and report the count.
+
+Mandatory ablations: R only; deterministic repairs; no witness separation; no provenance deduplication; kappa=0; no graph conditioning; no edit penalty; and common calibration applied to all methods. Isolate unsafe/leaky ablations as diagnostics, not competing fair production methods. Calibrated versus uncalibrated output is an evaluation comparison, not an excuse to give the proposed method privileged thresholds.
+
+Stress tests: nonlinear versus linear relations; stable versus changed regimes; correlated/coordinated faults; unknown fault families; weak support; missingness; training contamination; duplicate copies with known and unknown provenance; false graph relations; varying delay and fault strength. Report fault-family holdout and operating-regime holdout separately.
+
+The claim 'less optimal' must name an objective and operating condition. A defensible result might be higher attribution precision at equal coverage in nonlinear/stale-graph cases, with greater latency. Do not claim global superiority because PCA has lower AUPRC on one injected scenario. Establish the narrower result using paired comparisons and disclose conditions favoring the established alternative. If the main score adds no value over R-only or deterministic repairs, revise the contribution accordingly instead of suppressing the result.
+
+A11. GPU execution, milestones, and manuscript construction
+
+Use existing authorized RunPod compute. Do not create paid instances or unbounded sweeps without an existing budget. GPU: diffusion training, conditional sampling, graph/neural baselines, candidate batching, and ensemble prediction. CPU: ingestion, graph storage, file manifests, small reference checks, browser UI, and many statistical summaries. The CPU arithmetic reference does not replace the GPU research implementation.
+
+Profile training and the complete attribution path, which costs roughly in proportion to E x hypotheses x M x witness predictions x diffusion sampling steps. L and graph size also affect batching/memory. Start with a small candidate cap, measure screening recall, cache valid repeated predictions, and vectorize candidates/samples. Report the inference stride and induced detection latency. Do not score only oracle-known fault windows.
+
+Initial target hardware: an available GPU with roughly 24-48 GB VRAM for compact models, adjusted after profiling. A pilot of a few hundred to a thousand steps should determine the run budget. A provisional 48-96 GPU-hour allocation is only a planning assumption, not a measured runtime or authorization for spending. Preserve checkpoints, model/data hashes, package lockfiles, timings, and resume commands.
+
+Milestones:
+  Sep 30-Oct 1: novelty matrix, split/fault manifests, equation reference,
+                data adapters, and initial PCA/GDN checks.
+  Oct 2-4: synthetic generator, diffusion pilot, numerical/GPU parity,
+           end-to-end small study with real association persistence.
+  Oct 5-8: main experiments, full-score comparison, calibration, close diffusion baseline.
+  Oct 9-11: targeted ablations, robustness, classic network interface/case figures.
+  Oct 12-13: write/revise the paper, reproduce every table, render and inspect PDF.
+  Oct 14: buffer and final checks; workshop deadline currently Oct 15.
+
+Reduce broad hyperparameter sweeps and secondary scalability work before removing a dataset, confidence evaluation, close generative comparator, or the central ablations.
+
+Approximate 10-page allocation: introduction/abstract 1; closest work 0.75;
+method/equations 2; confidence/theory 0.75; experimental protocol 1.25;
+results/ablations 2; graph interface/cases 0.75; limitations/conclusion 0.5;
+references 1. Adjust to the real template without shrinking text to unreadable sizes.
+
+Deliver repository code/configs, data and fault manifests, model checkpoints,
+raw predictions and score decomposition, graph export, working operator view,
+figure scripts, equation audit, claims audit, LaTeX source, compiled PDF, and
+exact reproduction/resume commands. A human study is optional; without one,
+claim inspectability rather than measured gains in operator performance.
+
+PART B. COMPLETE PROMPT FOR LOCAL CODEX
+
+You are working in my local research repository. Read this entire specification and implement the study, not just a plan. Part A defines the method and evaluation, Part C supplies an executable arithmetic reference, Part D states what has actually been checked, and Part E supplies starting sources. Keep the research empirical, GPU-driven, and centered on detection and calibrated confidence.
+
+GOAL
+Produce an IEEE DSpaCES 2026 submission, working title 'Generative Repair Tests for Detecting Faulty Sensor Knowledge in Digital-Twin Data Spaces'. Implement generative repair tests for unreliable observations and associations; evaluate one synthetic dataset and two real measured datasets; store discovered associations in Neo4j; and show disagreements in a classic annotated node-link graph. Write a complete IEEE paper within the current 10-page limit including references. Aim to complete by October 13 for the currently listed October 15 deadline. Recheck current official instructions. Do not submit automatically.
+
+FIRST ACTIONS
+Read applicable repository instructions and inspect the working tree. Preserve unrelated work. Inspect existing datasets, code, my relevant prior papers if present, GPU hardware, and already configured RunPod access. Reuse suitable assets with attribution. Create RESEARCH_PLAN.md, PROGRESS.md, DECISIONS.md, EQUATION_AUDIT.md, CLAIMS_AUDIT.md, verified references, and machine-readable configurations. Keep next commands and resumable checkpoints current. Continue autonomously through the authorized work; ask only for essential missing access or decisions that actually block progress.
+
+SCIENTIFIC POSITION
+The question is whether plausible observation repairs or association masks improve predictions of separate, untouched witness evidence. Compare observation and association hypotheses, expose ambiguity, and distinguish incorrect measurements from genuine physical-process abnormalities. The graph database and visualization must work, but they are supporting system contributions. The method is not novel simply because it uses diffusion, graphs, counterfactuals, or calibration.
+
+Read the full methods of GDN, CSDI, DiffAD, TSAD-C, Hara's graph anomaly localization, Shi's 2025 graph counterfactual explanation work, and close 2025-2026 studies. Build a sourced novelty matrix. Check overlap with my existing projects when available. Refine a duplicate idea before expensive runs. Do not invent references or claim a prior method lacks a capability without checking it.
+
+DATA AND PROTOCOL
+Use exactly the synthetic coupled sensor network, Intel Berkeley Lab measurements, and SKAB specified in A3. Preserve actual dataset versions, licenses, units, source identities, missingness, and timestamps. Use native SKAB labels only at documented process/event granularity. Controlled sensor/association fault injections on real measurements are a separate semi-synthetic experiment. Intel native irregularities without verified labels are not scored proof of sensor faults.
+
+Freeze disjoint train/development/calibration/test manifests. Keep experiments and overlapping base segments disjoint, use temporal gaps, and fit preprocessing/association discovery without test data. Create reproducible fault manifests for offsets, drift, stuck values, noise, missingness, replay, delay, scale changes, incorrect edge attributes, and stale associations. Include coordinated faults, genuine process changes, linear conditions favorable to simpler methods, nonlinear conditions, and unknown-fault/regime holdout. All methods share the same manifests and available information.
+
+IMPLEMENT THE EQUATIONS IN CODE
+Implement E1-E14 and B1-B7 from Part A with the exact tensor contracts. Extract Part C into a CPU reference module and run its checks first. Create batched PyTorch/CUDA implementations and test numerical parity on saved input arrays. Do not leave the new formula only in LaTeX, a README, or unused code.
+
+Use a graph-conditioned conditional diffusion model trained with target masking and edge dropout. Clearly separate E independently trained models, M paired inference replicates, and L witness predictive samples. Begin with a compact model and profile. Prevent target, duplicate-source, label, and future-data leakage.
+
+Implement provenance-aware proposal/witness partitioning. Witness observations must not condition repair generation. Repaired cells and their descendants cannot validate their own repair. Predict witness targets with their values masked. Before and after each repair, use identical witness IDs, horizons, loss terms, scales, and group weights. Masking an association must not remove the target or residual being evaluated. Save evidence IDs, target-mask hashes, and support counts.
+
+The main score must actually determine candidate ranking and feed calibration:
+  Delta[e,m,g] = normalized_CRPS_before[e,m,g]
+                 - normalized_CRPS_after[e,m,g]
+  model_gain[e] = mean_m sum_g weight[g] * Delta[e,m,g]
+  mean_gain = mean_e model_gain[e]
+  model_instability = std_e(model_gain[e], correction=1)
+  score = mean_gain - kappa * model_instability - lambda * edit_cost
+
+Implement E9's observation and edge edit costs and keep their type-specific interpretation. Use unique provenance groups with fixed nonnegative weights summing to one. Keep negative scores. Use at least two models for an instability estimate and preferably three for the final ensemble. More samples from one model are not more model members. Compute the E11 Monte Carlo diagnostic separately; do not present it as fault confidence. Use block bootstrap for evaluation intervals separately from the defined U term.
+
+EXAMINE THE EQUATION, DO NOT ASSUME IT WORKS
+Run every numerical and integration check in A6. Verify scalar/reference/GPU agreement, penalty signs, unit consistency, no-op behavior, canonical duplicate invariance, missing-output rejection, and fixed witness membership. Prove that forbidden witness values cannot alter the repair generator inputs or outputs under fixed randomness. Inspect representative batches manually through saved records.
+
+Save all R/U/Omega/S components and compare their distributions by truth label and fault type. Examine whether scores track initial residual, graph degree, support count, or edit size instead of true faults. Run the small development-only kappa/lambda grid and M/L/E sensitivity. Test no-witness separation, no-provenance deduplication, R-only, deterministic repairs, no-graph, no-uncertainty, and no-cost variants. Preserve results that contradict the proposal. Create a manuscript-equation-to-code/test/artifact mapping and a worked illustrative example clearly distinguished from experimental evidence.
+
+EXISTING ALTERNATIVES
+Implement lag-embedded PCA reconstruction-error detection as the named simpler established method. Include contemporaneous PCA as a secondary variant. Fit the subspace on training data, select rank using development data, derive sensor contributions, and calibrate thresholds on held-out reference data. Explain its linear-subspace limitation and computational advantages. It is hypothesized to be less effective for the targeted nonlinear/stale-association problem, not assumed inferior on every dataset.
+
+Reproduce GDN as the stronger graph baseline. Inspect its source and separate faithful architecture from the common evaluation adaptation. Fit residual normalization on development data and avoid test-optimal threshold paths. Do not describe GDN as incapable of fault localization. Add the same diffusion backbone with ordinary reconstruction scoring, deterministic repairs, direct association residuals, and at least one close published diffusion anomaly detector, preferably TSAD-C or DiffAD. Do not manufacture association outputs for unsupported methods; use clearly labeled common extensions or not-applicable entries.
+
+CONFIDENCE AND THEORY
+Calibrate the entire frozen screening/scoring/selection pipeline. Distinguish candidate nulls from window-maximum nulls and report achieved operational false alerts. Use E12 rank-tail calibration only with its appropriate assumptions and interpretation. 1-p is not a fault probability. Where probabilities are reported, fit and validate an explicit labeled calibrator with documented prevalence and separate calibration/test data. Include Brier/log loss, reliability, risk-coverage, high-confidence precision, unknown-fault transfer, and abstention.
+
+Derive the three limited theoretical properties in A7, with honest assumptions and citations. Duplicate invariance needs canonicalization before model inputs as well as final aggregation. Penalty derivatives/ranking conditions describe this score; standard conformal validity is established prior theory. Do not claim exchangeability simply from nonoverlapping time windows. Include an identifiability counterexample and an observed ambiguous failure case.
+
+EVALUATION
+Follow A10. Predeclare the main AUPRC comparison. Report per-dataset observation/association metrics, localization, recall at calibration-selected nominal FPR with achieved FPR, event performance, false alarms per unit time, confidence, coverage, and measured compute. Native process alerts use a suitable process anomaly score even if no sensor repair is supported. Account for screening misses, low-support candidates, and abstentions. Do not evaluate only oracle-known faulty windows.
+
+Use paired experiment/temporal-block intervals and actual independent runs. An ensemble's members are not independent repetitions of the full ensemble method. If only one ensemble is feasible, say so. Do not use headline point-adjusted F1, test-label threshold optimization, or cherry-picked corruption conditions. Keep a fair hyperparameter/search budget and also show conditions favorable to PCA/GDN. State exactly where an alternative is less effective and whether the proposed improvement costs more time or memory.
+
+GRAPH AND REQUIRED DIAGRAMS
+Implement the Neo4j concepts, provenance/versioning, and interaction described in A8. Keep measured records, hypothetical repairs, and operator decisions separate. Produce an actual classic 2D sensor node-link view with annotated connecting edges, predictive-direction arrows, visible suspect readings, dashed disputed associations, witness highlights, and disagreement text. Cards or tables can supplement this view but cannot replace it.
+
+Implement click-through evidence showing measured values, generated interval, R/U/Omega/S, the correct calibration quantity, unique sources, support count, rival hypotheses, graph/model versions, and source records. Add time selection and confirm/reject/defer logging. No physical actuation or automatic overwriting of measurements.
+
+Create the exact figure types in A9:
+  Figure 1: dataflow architecture emphasizing proposal/witness separation.
+  Figure 2: reproducible classic node-link case panels with fixed coordinates.
+  Figure 3: sensor/association PR, probability reliability or null-FPR calibration,
+            and risk-coverage, with accurate axes and label provenance.
+  Figure 4: equation ablations/sensitivity/robustness with paired intervals.
+Keep the schema diagram as an optional artifact if page space is tight. Figures come from saved graph JSON and result arrays. Export scientific graphics as SVG/PDF with readable labels at final IEEE size and inspect PNG renders. Never use generated imagery for measured plots or precise graphs. Do not invent results to fill a diagram.
+
+GPU, ORGANIZATION, AND PERSISTENCE
+Use the existing authorized RunPod GPU and supplied budget. Do not create paid resources automatically. Separate modules for data, simulator/faults, associations, diffusion, baselines, witness selection, scoring, costs, calibration, metrics, graph persistence, UI, and paper generation. Use descriptive names, configuration-driven commands, locked dependencies, hashes, run IDs, and resumable checkpoints.
+
+Measure the complete pilot including E x M x candidate x witness sampling costs. Batch and cache carefully without changing independence or score semantics. Record GPU model, memory, dtype, throughput, inference stride, latency, and GPU-hours. If remote access is missing, finish local code/reference tests and exact launch/resume commands, then name the blocker. Never fabricate remote execution.
+
+PAPER AND FINAL DELIVERABLES
+Write the complete IEEE empirical paper from actual results. Explain the repair idea before notation; include the equation and map it to used code. Include established alternatives, theory, dataset/label distinctions, fair experiments, calibration, ablations, classic graph cases, limitations, and conclusion. Make the improvement claim match measured conditions. A faster baseline may remain optimal for some resource constraints.
+
+Generate all tables/plots from result files. Maintain a claims audit connecting each empirical statement to a run/artifact. Compile LaTeX, verify page count/references/equations, render every page, and fix unreadable labels/overflow. Deliver source/PDF, code/configs, manifests, raw metrics and score terms, models, graph export, working UI, equation audit, and reproduction commands. If the evidence does not favor the proposed formula, report the supported narrower finding rather than manufacturing success. Continue through the authorized stages and keep PROGRESS.md current. Do not submit or externally publish automatically.
+
+PART C. EXECUTABLE NUMPY ARITHMETIC REFERENCE
+
+Copy the Python between the markers into a file such as reference_score.py and run it with Python and NumPy. It prints its own numerical check results. This is an exact arithmetic reference for E4, E6-E8, E10-E12 and a duplicate-group guard; it does not implement the generator, witness masks, edit-cost calculation, GPU batching, or full scientific evaluation.
+
+BEGIN REFERENCE PYTHON
+"""Numerical reference for the proposed score, not a trained fault detector.
+
+Loss axes: [ensemble_member, paired_replicate, provenance_group].
+The production PyTorch/CUDA implementation must agree with this reference.
+"""
+from __future__ import annotations
+
+import json
+import numpy as np
+
+
+def normalized_empirical_crps(
+    predictive_samples: np.ndarray,
+    observed_values: np.ndarray,
+    training_scale: np.ndarray | float,
+) -> np.ndarray:
+    """Score a finite predictive sample distribution; sample axis is last."""
+    samples = np.asarray(predictive_samples, dtype=np.float64)
+    observed = np.asarray(observed_values, dtype=np.float64)
+    scale = np.asarray(training_scale, dtype=np.float64)
+    if samples.ndim < 1 or samples.shape[-1] == 0:
+        raise ValueError("At least one predictive sample is required.")
+    if observed.shape != samples.shape[:-1]:
+        raise ValueError("Observation shape must match all non-sample axes.")
+    scale = np.broadcast_to(scale, observed.shape)
+    if not all(np.isfinite(values).all() for values in (samples, observed, scale)):
+        raise ValueError("Exclude missing targets explicitly; inputs must be finite.")
+    if np.any(scale <= 0):
+        raise ValueError("Use positive, frozen training scales.")
+    sample_count = samples.shape[-1]
+    first_term = np.mean(np.abs(samples - observed[..., None]), axis=-1)
+    sorted_samples = np.sort(samples, axis=-1)
+    ranks = np.arange(1, sample_count + 1, dtype=np.float64)
+    coefficients = 2 * ranks - sample_count - 1
+    second_term = np.sum(sorted_samples * coefficients, axis=-1) / sample_count**2
+    result = (first_term - second_term) / scale
+    if np.any(result < -1e-10):
+        raise ArithmeticError("CRPS should not be materially negative.")
+    return np.maximum(result, 0.0)
+
+
+def canonicalize_groups(
+    loss_before: np.ndarray,
+    loss_after: np.ndarray,
+    provenance_ids: list[str],
+) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """Deduplicate exact repeated groups and return uniform unique-group weights.
+
+    This is a final arithmetic guard. Real provenance must be deduplicated
+    before model inputs and group losses are constructed as well.
+    """
+    before = np.asarray(loss_before, dtype=np.float64)
+    after = np.asarray(loss_after, dtype=np.float64)
+    if before.ndim != 3 or before.shape != after.shape:
+        raise ValueError("Expected matching [ensemble, replicate, group] losses.")
+    if before.shape[-1] != len(provenance_ids) or not provenance_ids:
+        raise ValueError("Every group needs a canonical provenance identity.")
+    if not np.isfinite(before).all() or not np.isfinite(after).all():
+        raise ValueError("Losses must be finite.")
+    first_indices: dict[str, int] = {}
+    for position, identity in enumerate(provenance_ids):
+        if not isinstance(identity, str) or not identity:
+            raise ValueError("Provenance identities must be nonempty strings.")
+        if identity in first_indices:
+            previous = first_indices[identity]
+            for values in (before, after):
+                if not np.allclose(values[..., position], values[..., previous],
+                                   rtol=1e-12, atol=1e-12):
+                    raise ValueError("Conflicting copies require explicit provenance resolution.")
+        else:
+            first_indices[identity] = position
+    selected = list(first_indices.values())
+    weights = np.full(len(selected), 1.0 / len(selected), dtype=np.float64)
+    return before[..., selected], after[..., selected], weights
+
+
+def repair_score(
+    loss_before: np.ndarray,
+    loss_after: np.ndarray,
+    group_weights: np.ndarray,
+    edit_cost: float,
+    uncertainty_weight: float = 1.0,
+    edit_weight: float = 0.2,
+) -> dict[str, float]:
+    """Compute mean gain minus ensemble disagreement and edit penalties.
+
+    Each replicate includes a repair and paired before/after predictive draws.
+    Model standard deviation is NOT divided by sqrt(ensemble_count).
+    Monte Carlo SE is a sampling diagnostic, not fault confidence.
+    """
+    before = np.asarray(loss_before, dtype=np.float64)
+    after = np.asarray(loss_after, dtype=np.float64)
+    weights = np.asarray(group_weights, dtype=np.float64)
+    if before.ndim != 3 or before.shape != after.shape:
+        raise ValueError("Expected matching [ensemble, replicate, group] losses.")
+    ensemble_count, replicate_count, group_count = before.shape
+    if ensemble_count < 2 or replicate_count < 2 or group_count < 1:
+        raise ValueError("Need at least two models, two replicates, and one group.")
+    if weights.shape != (group_count,):
+        raise ValueError("One weight is required per unique provenance group.")
+    if not all(np.isfinite(values).all() for values in (before, after, weights)):
+        raise ValueError("Losses and weights must be finite.")
+    if np.any(before < 0) or np.any(after < 0):
+        raise ValueError("CRPS losses must be nonnegative.")
+    if np.any(weights < 0) or not np.isclose(weights.sum(), 1.0):
+        raise ValueError("Weights must be nonnegative and sum to one.")
+    penalties = np.asarray([edit_cost, uncertainty_weight, edit_weight])
+    if not np.isfinite(penalties).all() or np.any(penalties < 0):
+        raise ValueError("Costs and penalty weights must be finite and nonnegative.")
+    paired_gains = np.sum((before - after) * weights[None, None, :], axis=-1)
+    model_gains = paired_gains.mean(axis=1)
+    mean_gain = float(model_gains.mean())
+    model_instability = float(model_gains.std(ddof=1))
+    monte_carlo_variance = np.sum(paired_gains.var(axis=1, ddof=1) / replicate_count)
+    monte_carlo_standard_error = float(np.sqrt(monte_carlo_variance / ensemble_count**2))
+    score = mean_gain - uncertainty_weight * model_instability - edit_weight * edit_cost
+    return {
+        "score": float(score),
+        "mean_gain": mean_gain,
+        "model_instability": model_instability,
+        "edit_cost": float(edit_cost),
+        "monte_carlo_standard_error": monte_carlo_standard_error,
+    }
+
+
+def null_tail_value(calibration_scores: np.ndarray, candidate_score: float) -> float:
+    scores = np.asarray(calibration_scores, dtype=np.float64)
+    if scores.ndim != 1 or scores.size == 0 or not np.isfinite(scores).all():
+        raise ValueError("Provide a nonempty finite one-dimensional calibration array.")
+    if not np.isfinite(candidate_score):
+        raise ValueError("The candidate score must be finite.")
+    return float((1 + np.count_nonzero(scores >= candidate_score)) / (scores.size + 1))
+
+
+def run_numerical_checks() -> dict:
+    checks: list[str] = []
+    generator = np.random.default_rng(9026)
+    samples = generator.normal(size=(7, 11))
+    observations = generator.normal(size=7)
+    scales = generator.uniform(0.5, 2.0, size=7)
+    pairwise_crps = (
+        np.abs(samples - observations[:, None]).mean(axis=-1)
+        - 0.5 * np.abs(samples[:, :, None] - samples[:, None, :]).mean(axis=(-2, -1))
+    ) / scales
+    np.testing.assert_allclose(normalized_empirical_crps(samples, observations, scales),
+                               pairwise_crps, rtol=1e-12, atol=1e-12)
+    checks.append("sorted_CRPS_matches_pairwise_definition")
+    np.testing.assert_allclose(normalized_empirical_crps(np.full((1, 8), 2.0),
+                               np.array([3.0]), 2.0), [0.5])
+    checks.append("deterministic_CRPS_equals_scaled_absolute_error")
+    np.testing.assert_allclose(normalized_empirical_crps(-3 * samples + 7,
+                               -3 * observations + 7, 3 * scales), pairwise_crps)
+    checks.append("CRPS_invariant_to_consistent_affine_unit_change")
+
+    before = np.ones((3, 4, 3))
+    after = np.broadcast_to(np.array([0.45, 0.50, 0.55])[:, None, None], before.shape).copy()
+    weights = np.full(3, 1 / 3)
+    result = repair_score(before, after, weights, edit_cost=0.1)
+    np.testing.assert_allclose([result['mean_gain'], result['model_instability'], result['score']],
+                               [0.5, 0.05, 0.43], atol=1e-12)
+    checks.append("hand_calculated_score_0_43")
+    np.testing.assert_allclose(repair_score(before, before, weights, 0.0)['score'], 0.0)
+    checks.append("no_op_repair_has_zero_score")
+    assert repair_score(before, before + 0.2, weights, 0.0)['score'] < 0
+    checks.append("worse_repair_has_negative_score")
+    higher_cost = repair_score(before, after, weights, 0.3)
+    np.testing.assert_allclose(result['score'] - higher_cost['score'], 0.2 * (0.3 - 0.1))
+    checks.append("edit_cost_penalty_has_correct_sign_and_slope")
+    unstable_after = np.broadcast_to(np.array([0.3, 0.5, 0.7])[:, None, None], before.shape)
+    unstable_result = repair_score(before, unstable_after, weights, 0.1)
+    np.testing.assert_allclose(unstable_result['mean_gain'], result['mean_gain'])
+    assert unstable_result['score'] < result['score']
+    checks.append("ensemble_disagreement_lowers_equal_mean_gain_score")
+
+    duplicated_before = np.concatenate([before, before[..., [1]]], axis=-1)
+    duplicated_after = np.concatenate([after, after[..., [1]]], axis=-1)
+    unique_before, unique_after, unique_weights = canonicalize_groups(
+        duplicated_before, duplicated_after, ['sensor_a', 'sensor_b', 'sensor_c', 'sensor_b'])
+    np.testing.assert_allclose(repair_score(unique_before, unique_after, unique_weights, 0.1)['score'],
+                               result['score'])
+    checks.append("known_duplicate_provenance_does_not_change_score")
+    conflicting_after = duplicated_after.copy()
+    conflicting_after[..., -1] += 0.1
+    try:
+        canonicalize_groups(duplicated_before, conflicting_after,
+                            ['sensor_a', 'sensor_b', 'sensor_c', 'sensor_b'])
+    except ValueError:
+        checks.append("conflicting_duplicate_evidence_is_rejected")
+    else:
+        raise AssertionError("Conflicting duplicated evidence was accepted.")
+
+    noisy_before = generator.uniform(0.5, 1.5, size=(3, 9, 4))
+    noisy_after = generator.uniform(0.1, 1.0, size=(3, 9, 4))
+    nonuniform_weights = np.array([0.1, 0.2, 0.3, 0.4])
+    reference_model_gains = []
+    for model_index in range(3):
+        replicate_gains = []
+        for replicate_index in range(9):
+            replicate_gains.append(sum(
+                nonuniform_weights[group_index] *
+                (noisy_before[model_index, replicate_index, group_index]
+                 - noisy_after[model_index, replicate_index, group_index])
+                for group_index in range(4)))
+        reference_model_gains.append(sum(replicate_gains) / 9)
+    scalar_score = np.mean(reference_model_gains) - np.std(reference_model_gains, ddof=1) - 0.02
+    np.testing.assert_allclose(repair_score(noisy_before, noisy_after, nonuniform_weights, 0.1)['score'],
+                               scalar_score, atol=1e-12)
+    checks.append("vectorized_score_matches_independent_scalar_loops")
+    reference_null = np.array([0.0, 0.1, 0.2, 0.3, 0.4])
+    np.testing.assert_allclose(null_tail_value(reference_null, 0.43), 1 / 6)
+    assert null_tail_value(reference_null, 0.43) <= null_tail_value(reference_null, 0.2)
+    assert null_tail_value(reference_null, -1) == 1.0
+    checks.append("rank_tail_value_has_correct_direction_and_resolution")
+    invalid_before = before.copy()
+    invalid_before[0, 0, 0] = np.nan
+    try:
+        repair_score(invalid_before, after, weights, 0.1)
+    except ValueError:
+        checks.append("missing_loss_is_not_silently_treated_as_zero")
+    else:
+        raise AssertionError("NaN loss was accepted.")
+    return {"status": "passed", "check_count": len(checks), "checks": checks,
+            "illustrative_score_components": result,
+            "scope": "Arithmetic/reference checks only; no detector was trained or evaluated."}
+
+
+if __name__ == '__main__':
+    print(json.dumps(run_numerical_checks(), indent=2))
+
+END REFERENCE PYTHON
+
+PART D. CHECKS ACTUALLY EXECUTED FOR THIS REWRITE
+
+The following CPU numerical checks passed on 30 September 2026. They concern arithmetic and small constructed arrays. No trained sensor model, GPU parity, real-data detection result, or operator study is implied. The remaining model-level checks in A6 are required work for local Codex.
+
+{
+  "status": "passed",
+  "check_count": 13,
+  "checks": [
+    "sorted_CRPS_matches_pairwise_definition",
+    "deterministic_CRPS_equals_scaled_absolute_error",
+    "CRPS_invariant_to_consistent_affine_unit_change",
+    "hand_calculated_score_0_43",
+    "no_op_repair_has_zero_score",
+    "worse_repair_has_negative_score",
+    "edit_cost_penalty_has_correct_sign_and_slope",
+    "ensemble_disagreement_lowers_equal_mean_gain_score",
+    "known_duplicate_provenance_does_not_change_score",
+    "conflicting_duplicate_evidence_is_rejected",
+    "vectorized_score_matches_independent_scalar_loops",
+    "rank_tail_value_has_correct_direction_and_resolution",
+    "missing_loss_is_not_silently_treated_as_zero"
+  ],
+  "illustrative_score_components": {
+    "score": 0.42999999999999994,
+    "mean_gain": 0.5,
+    "model_instability": 0.05000000000000007,
+    "edit_cost": 0.1,
+    "monte_carlo_standard_error": 0.0
+  },
+  "scope": "Arithmetic/reference checks only; no detector was trained or evaluated."
+}
+
+PART E. PRIMARY SOURCES AND IMPLEMENTATION STARTING POINTS
+
+Workshop:
+https://sites.google.com/unisalento.it/ieee-dspaces-2026/home
+
+Datasets:
+https://db.csail.mit.edu/labdata/labdata.html
+https://github.com/waico/SKAB
+Alternative hybrid testbed: https://github.com/icsdataset/hai
+
+Methods:
+https://arxiv.org/abs/2106.06947
+https://proceedings.neurips.cc/paper/2021/hash/cfe8504bda37b575c70ee1a8276f3486-Abstract.html
+https://github.com/ermongroup/CSDI
+https://github.com/ChunjingXiao/DiffAD
+https://arxiv.org/abs/2308.12563
+https://ceur-ws.org/Vol-4073/BEHAIV2025_CRV_4.pdf
+https://proceedings.mlr.press/v38/hara15.html
+https://arxiv.org/abs/2407.02143
+
+Calibration and evaluation:
+https://proceedings.mlr.press/v329/xu26a.html
+https://arxiv.org/abs/2202.13415
+https://proceedings.neurips.cc/paper_files/paper/2024/hash/c3f3c690b7a99fba16d0efd35cb83b2c-Abstract-Datasets_and_Benchmarks_Track.html
+
+These are starting references, not an exhaustive literature review or a certificate of novelty. Verify full methods, publication metadata, code licenses, and current workshop requirements during implementation.
+
+Additional alternative-method sources:
+https://github.com/d-ailin/GDN
+https://github.com/d-ailin/GDN/blob/main/evaluate.py
+https://arxiv.org/html/2106.06947v1
+https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html
