@@ -9,3 +9,15 @@
 2026-09-30. The adjacent regional energy twin manuscript concerns selective measurement access and Gaussian refinement. This study concerns sensor and association attribution using withheld witnesses. Its results, prose and scientific figures will not be reused as evidence for this study.
 
 2026-09-30. The workshop page confirms an October 15 deadline and a ten-page IEEE two-column full-paper limit. The exact deadline timezone and anonymity rules still require portal verification. Source https://sites.google.com/unisalento.it/ieee-dspaces-2026/home.
+
+The second protocol uses alternating signs in synthetic measurement responses so sign faults can be matched to valid sign metadata. Paired edge permutations preserve source and target degree counts and the marginal distributions of lag, sign, magnitude and intercept. The stored parameter mismatch remains explicitly a surrogate. A separate simulation changes a physical measurement response to examine genuinely stale associations.
+
+All comparator residual medians and scales come from unmodified development windows. Complete calibration blocks are divided into null and labeled probability folds. The small calibration sets cannot resolve every requested nominal tail level. Report the actual attainable resolution and measured false alarms rather than claiming exact temporal coverage.
+
+RunPod synchronization excludes `results` to prevent local progress snapshots from overwriting newer remote artifacts. Result transfer is one way from the GPU to the local project. Optimizer checkpoints remain outside routine transfer until final model export.
+
+Before inspecting final performance, the confidence comparison was tightened to use the same screened candidate pool for all supervised probability calibrators and candidate risk curves. Early outputs may have used every baseline channel for that probability fit. `finalize_saved_protocol.py` preserves the initial calibration, refits only from the labeled calibration blocks and asserts that all null references remain unchanged. It also applies previously frozen score weights directly through the CUDA equation kernel to saved loss arrays where an early JSON record retained arithmetic-default weights. Raw predictions, detector settings and development-selected penalties are unchanged. The correction log records hashes and explicitly states that no test labels or performance guided these corrections.
+
+The final equation comparison also retains the prespecified arithmetic starting weights kappa = 1 and lambda = 0.2 as a fixed-positive-penalty variant. This ensures the experiment examines nonzero penalties even when development selection chooses zero. It is a fixed diagnostic comparison, not a test-tuned replacement for the selected procedure.
+
+The observation cost now casts fixed cell counts to the loss dtype before division. An independent 3/37 count-ratio test verifies float64 precision. Saved loss and replacement arrays allow affected scalar cost/score records to be corrected without changing any predictive draw or learned parameter. The correction audit records any resulting calibration-score roundoff.

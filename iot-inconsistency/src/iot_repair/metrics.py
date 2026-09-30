@@ -12,6 +12,7 @@ def ap(y,s):
 
 def candidate_score(record,method,kappa=1.,edit_weight=.2):
     r,u,c=record['mean_gain'],record['model_instability'],record['edit_cost']
+    if method=='fixed_penalties':return r-u-.2*c
     if method=='R_only':return r
     if method=='no_uncertainty':return r-edit_weight*c
     if method=='no_cost':return r-kappa*u
@@ -20,7 +21,7 @@ def candidate_score(record,method,kappa=1.,edit_weight=.2):
 
 def scores_for(case,method,kind,parameters):
     count=len(case[kind+'_truth']);scores=np.full(count,FLOOR);support=np.zeros(count,dtype=int)
-    if method in ('proposed','R_only','no_uncertainty','no_cost','supervised_terms'):
+    if method in ('proposed','fixed_penalties','R_only','no_uncertainty','no_cost','supervised_terms'):
         for row in case['records']:
             if row['kind']!=kind:continue
             support[row['index']]=row['support_count']
@@ -30,9 +31,9 @@ def scores_for(case,method,kind,parameters):
                 score=float(f@np.array(p['coefficient'])+p['intercept'])
             else:score=candidate_score(row,method,parameters['kappa'],parameters['lambda'])
             scores[row['index']]=score
-    elif method=='edge_residual':scores=np.nan_to_num(case['edge_residuals'],nan=FLOOR)
+    elif method=='edge_residual':scores=np.nan_to_num(np.asarray(case['edge_residuals'],dtype=float),nan=FLOOR)
     elif kind=='observation':
-        scores=np.nan_to_num(case['baseline_sensor_scores'][method],nan=FLOOR);support[:]=2
+        scores=np.nan_to_num(np.asarray(case['baseline_sensor_scores'][method],dtype=float),nan=FLOOR);support[:]=2
     else:raise ValueError('Unsupported association output')
     return scores,support
 
@@ -40,6 +41,13 @@ def scores_for(case,method,kind,parameters):
 def task_cases(cases,kind):
     return [case for case in cases if case['track'] in ('clean',kind) and
             (case['track']=='clean' or case['fault']['status']=='injected')]
+
+
+def selected_pool(case,kind,count):
+    mask=np.zeros(count,dtype=bool)
+    for candidate_kind,index in case['candidates']:
+        if candidate_kind==kind:mask[index]=True
+    return mask
 
 
 def paired_ap_interval(y,a,b,blocks,repetitions=1000,seed=9026):
@@ -56,12 +64,15 @@ def paired_ap_interval(y,a,b,blocks,repetitions=1000,seed=9026):
 def summarize(cases,method,kind,parameters,reference=None,alphas=(.01,.05,.1)):
     from .calibration import null_tail_value
     selected=task_cases(cases,kind);ys=[];zs=[];cy=[];cs=[];top1=[];top3=[];rr=[];covered=[];screen=[];groups=[]
-    records=[]
+    records=[];review_scores=[];review_truth=[];review_pool_count=0
     for case in selected:
         truth=np.array(case[kind+'_truth'],bool);scores,support=scores_for(case,method,kind,parameters)
         eligible=scores>FLOOR;best=int(np.argmax(scores)) if len(scores) else -1;z=float(scores.max()) if len(scores) else FLOOR
         y=int(truth.any());ys.append(y);zs.append(z);groups.append(case['block']);cy.extend(truth.tolist());cs.extend(scores.tolist())
         covered.append(bool(eligible.any()))
+        pool=selected_pool(case,kind,len(scores)) if 'candidates' in case else np.ones(len(scores),bool)
+        review_pool_count+=int(pool.sum())
+        review_scores.extend(scores[eligible&pool]);review_truth.extend(truth[eligible&pool])
         if y:
             order=np.argsort(-scores,kind='stable');hits=truth[order]&eligible[order]
             top1.append(bool(hits[:1].any()));top3.append(bool(hits[:3].any()));rr.append(1/(int(np.flatnonzero(hits)[0])+1) if hits.any() else 0.)
@@ -87,4 +98,11 @@ def summarize(cases,method,kind,parameters,reference=None,alphas=(.01,.05,.1)):
         precision=np.mean([records[i]['attribution_correct'] for i in ix])
         curve.append(dict(coverage=k/len(order),precision=float(precision),risk=float(1-precision),reviewed=k))
     report['risk_coverage']=curve
+    order=np.argsort(-np.asarray(review_scores),kind='stable');candidate_curve=[]
+    for coverage in (.1,.25,.5,1.):
+        k=min(len(order),max(1,int(np.ceil(review_pool_count*coverage))))
+        if not k:continue
+        precision=float(np.mean(np.asarray(review_truth)[order[:k]]))
+        candidate_curve.append(dict(coverage=k/max(1,review_pool_count),precision=precision,risk=1-precision,accepted=k,pool=review_pool_count))
+    report['candidate_risk_coverage']=candidate_curve
     return report

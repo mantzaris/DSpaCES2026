@@ -13,8 +13,15 @@ from .associations import edge_residuals
 SEEDS=[1101,2202,3303]
 
 def json_save(path,data):
+    def clean(value):
+        if isinstance(value,np.ndarray):return clean(value.tolist())
+        if isinstance(value,np.generic):return clean(value.item())
+        if isinstance(value,float) and not np.isfinite(value):return None
+        if isinstance(value,dict):return {str(k):clean(v) for k,v in value.items()}
+        if isinstance(value,(list,tuple)):return [clean(v) for v in value]
+        return value
     path=Path(path);path.parent.mkdir(parents=True,exist_ok=True)
-    temporary=path.with_suffix('.tmp');temporary.write_text(json.dumps(data,indent=2,allow_nan=True)+'\n');temporary.replace(path)
+    temporary=path.with_suffix('.tmp');temporary.write_text(json.dumps(clean(data),indent=2,allow_nan=False)+'\n');temporary.replace(path)
 
 
 def build_cases(data,graph,split,config):

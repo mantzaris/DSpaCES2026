@@ -30,7 +30,8 @@ class ConditionalDiffusion(nn.Module):
     def encode(self,context,observed,graph,dropout=0.):
         if not torch.isfinite(context).all(): raise ValueError('Context must be finite with an explicit mask')
         context=torch.where(observed,context,torch.zeros_like(context))
-        predicted,valid=graph_context(context,observed,graph,dropout)
+        active_graph=dict(graph,edges=[]) if getattr(self,'disable_graph',False) else graph
+        predicted,valid=graph_context(context,observed,active_graph,dropout)
         emb=self.embedding.weight[None].expand(len(context),-1,-1)
         return self.encoder(torch.cat([context,observed.to(context.dtype),predicted,valid.to(context.dtype),emb],-1))
     def predict_noise(self,noisy_target,step,encoding):

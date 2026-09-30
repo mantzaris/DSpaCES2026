@@ -86,3 +86,11 @@ def test_crps_pairwise_and_unit_change():
     expected=(s-y[:,None]).abs().mean(-1)-.5*(s[:,:,None]-s[:,None,:]).abs().mean((-2,-1))
     torch.testing.assert_close(normalized_empirical_crps(s,y),expected)
     torch.testing.assert_close(normalized_empirical_crps(-3*s+7,-3*y+7,3.),expected)
+
+
+def test_double_edit_cost_uses_double_count_ratios():
+    original=torch.zeros(6,8,dtype=torch.float64);observed=torch.ones(6,8,dtype=torch.bool)
+    observed.reshape(-1)[:11]=False;edit=torch.zeros_like(observed);edit.reshape(-1)[20:23]=True
+    replacement=torch.ones(3,8,6,8,dtype=torch.float64)*.7
+    actual=observation_edit_cost(original,replacement,edit,observed)
+    assert abs(float(actual)-(.5*3/37+.5*.7/3))<1e-14

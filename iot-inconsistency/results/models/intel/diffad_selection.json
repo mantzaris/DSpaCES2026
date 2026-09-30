@@ -1,0 +1,24 @@
+{
+  "selected_learning_rate": 0.001,
+  "grid": [
+    {
+      "learning_rate": 3e-06,
+      "steps": 500,
+      "validation_masked_noise_mse": 1.0650252103805542,
+      "elapsed_seconds": 15.08718940988183
+    },
+    {
+      "learning_rate": 0.0003,
+      "steps": 500,
+      "validation_masked_noise_mse": 0.7618457078933716,
+      "elapsed_seconds": 14.995192531030625
+    },
+    {
+      "learning_rate": 0.001,
+      "steps": 500,
+      "validation_masked_noise_mse": 0.6222971081733704,
+      "elapsed_seconds": 15.69938735337928
+    }
+  ],
+  "adaptation": "paper learning rate included, common fixed window and independent dense S4 implementation"
+}

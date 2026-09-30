@@ -3,13 +3,14 @@ from __future__ import annotations
 import copy,time
 import numpy as np
 import torch
-from .witnesses import select_witnesses,masked_context,aggregate_group_losses
+from .witnesses import select_witnesses,masked_context,aggregate_group_losses,canonicalize_records,canonicalize_graph
 from .diffusion import conditional_sample
 from .scoring import normalized_empirical_crps,repair_score
 from .costs import observation_edit_cost,association_edit_cost
 
 
 def screen_candidates(sensor_residuals,edge_residuals,graph,cap=4):
+    if cap<1:raise ValueError('Candidate cap must be positive')
     residual=np.nan_to_num(sensor_residuals,nan=-np.inf)
     first=list(np.argsort(-residual,kind='stable')[:max(1,cap//2)])
     outgoing=np.full(len(residual),-np.inf)
@@ -17,8 +18,8 @@ def screen_candidates(sensor_residuals,edge_residuals,graph,cap=4):
         if np.isfinite(edge_residuals[index]):outgoing[edge['source']]=max(outgoing[edge['source']],edge_residuals[index])
     order=list(np.argsort(-outgoing,kind='stable'))+list(np.argsort(-residual,kind='stable'))
     for i in order:
-        if i not in first:first.append(int(i))
         if len(first)>=cap:break
+        if i not in first:first.append(int(i))
     edges=np.argsort(-np.nan_to_num(edge_residuals,nan=-np.inf),kind='stable')[:cap]
     return [('observation',int(i)) for i in first]+[('association',int(i)) for i in edges]
 
@@ -26,13 +27,20 @@ def screen_candidates(sensor_residuals,edge_residuals,graph,cap=4):
 @torch.no_grad()
 def score_candidates(models,x,graph,candidates,replicates=8,predictive_samples=8,seed=1,
                      kappa=1.,edit_weight=.2,sampling_steps=12,deterministic_models=None,
-                     separate_witnesses=True,no_op=False):
+                     separate_witnesses=True,no_op=False,record_ids=None,deduplicate_graph=True):
     """One immutable decision window, candidates batched within each model.
 
     Raw tensors keep candidate, ensemble, replicate, group, cell, sample axes.
     Before/after draws are regenerated for each replicate with common noise.
     """
     if x.ndim!=2:raise ValueError('Expected [channel,time] decision window')
+    if deduplicate_graph:graph=canonicalize_graph(graph)
+    expected=[f'channel_{i}' for i in range(len(graph['groups']))]
+    identities=expected if record_ids is None else record_ids
+    if len(identities)!=len(x):raise ValueError('Every input record needs a source identity')
+    x,_,identities=canonicalize_records(x,np.isfinite(x),identities)
+    if set(identities)!=set(expected):raise ValueError('Unexpected source identity requires channel mapping')
+    x=x[[identities.index(identity) for identity in expected]]
     device=next(models[0].parameters()).device
     observed=np.isfinite(x);eligible=[];abstentions=[]
     for kind,index in candidates:

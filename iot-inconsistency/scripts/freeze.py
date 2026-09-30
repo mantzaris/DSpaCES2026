@@ -15,6 +15,7 @@ def load(split):
     if not (directory/'complete.json').exists():raise RuntimeError('Incomplete '+split)
     return [json.loads(p.read_text()) for p in sorted(directory.glob(split+'_*.json'))]
 if a.stage=='development':
+    if not (ROOT/'results/sensitivity'/a.dataset/'complete.json').exists():raise RuntimeError('Run development sensitivity before freezing')
     cases=load('development');grid=[]
     for kappa in config['kappa_grid']:
       for penalty in config['lambda_grid']:
@@ -40,9 +41,9 @@ if a.stage=='development':
     json_save(out/'frozen.json',parameters);print(a.dataset,'frozen',best,parameters['strongest_baseline'],flush=True)
 else:
     parameters=json.loads((out/'frozen.json').read_text());cases=load('calibration');nulls={};probability={};candidate_refs={}
-    methods=['proposed','R_only','no_uncertainty','no_cost','supervised_terms','gdn','backbone','diffad']+list(parameters['pca'].values())
+    methods=['proposed','fixed_penalties','R_only','no_uncertainty','no_cost','supervised_terms','gdn','backbone','diffad']+list(parameters['pca'].values())
     for kind in ('observation','association'):
-      for method in (methods if kind=='observation' else ['proposed','R_only','no_uncertainty','no_cost','supervised_terms','edge_residual']):
+      for method in (methods if kind=='observation' else ['proposed','fixed_penalties','R_only','no_uncertainty','no_cost','supervised_terms','edge_residual']):
         if method=='diffad' and method not in cases[0]['baseline_sensor_scores']:continue
         key=kind+'/'+method
         clean=[case for case in cases if case['track']=='clean' and case['calibration_fold']=='null']
@@ -55,14 +56,14 @@ else:
         labeled=[case for case in task_cases(cases,kind) if case['calibration_fold']=='probability']
         features=[];labels=[]
         for case in labeled:
-            scores,support=scores_for(case,method,kind,parameters);eligible=scores>FLOOR
+            scores,support=scores_for(case,method,kind,parameters);eligible=(scores>FLOOR)&selected_pool(case,kind,len(scores))
             features.extend(scores[eligible].tolist());labels.extend(np.array(case[kind+'_truth'])[eligible].tolist())
         if len(set(labels))==2:
             values=np.array(features)[:,None];scaler=StandardScaler().fit(values)
             model=LogisticRegression(C=1.,max_iter=2000,random_state=9026).fit(scaler.transform(values),labels)
             probability[key]=dict(mean=float(scaler.mean_[0]),scale=float(scaler.scale_[0]),coefficient=float(model.coef_[0,0]),intercept=float(model.intercept_[0]),
                 units=len(labels),prevalence=float(np.mean(labels)),scope='selected eligible candidates on disjoint labeled calibration blocks')
-    json_save(out/'calibration_complete.json',dict(null_references=nulls,candidate_null_references=candidate_refs,probability=probability,
+    json_save(out/'calibration_complete.json',dict(candidate_probability_population='common screened candidate pool v2',null_references=nulls,candidate_null_references=candidate_refs,probability=probability,
         frozen_sha256=hashlib.sha256((out/'frozen.json').read_bytes()).hexdigest(),
         null_blocks=sorted({case['block'] for case in cases if case['calibration_fold']=='null'}),probability_blocks=sorted({case['block'] for case in cases if case['calibration_fold']=='probability'})))
     print(a.dataset,'calibrated',len(nulls),'pipelines',flush=True)

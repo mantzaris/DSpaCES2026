@@ -450,6 +450,7 @@
           "45:voltage"
         ],
         "resample_seconds": 300,
+        "decision_time": "right boundary of completed five-minute bin",
         "interpolation": "none",
         "gap_bins": 64,
         "duplicate_records_excluded": 0,
@@ -467,9 +468,9 @@
     "interpolation": "none"
   },
   "files": {
-    "train.npz": "ccdf790c26147fcd4a70296416481b9b082a8cd32410cd3d69869808683cfb5f",
-    "calibration.npz": "a313753b7470ee6a30468d8fcd6f2e352bea7a7731c2e154f1f44aded66bf71e",
-    "development.npz": "6155c7d2810783f64a8081f343ff87d7f10b5bf83c1d517349036d073d763ae2",
-    "test.npz": "d2bda8dca6be2beec057e8b4f199b4e2ccfd88dd5cd0b821cc7e6017f1b8af71"
+    "train.npz": "5a2c95b1e70dab133b442b7cf90351dcb02994b0b682eb80d8debeefca0aacdd",
+    "calibration.npz": "c6ebff931b58b02081590b14b6898a6bf7837fa7ac9d7af781685aff6917d558",
+    "development.npz": "4aaf175188da6b8eb878253a2067360445c6639c548ca4bc3bc7faadd7b11042",
+    "test.npz": "73a9c40230e5e529debf338e71400f17fe6dc6c28e041bd8e148ccb109a57c6a"
   }
 }

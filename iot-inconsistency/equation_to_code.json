@@ -1,0 +1,254 @@
+[
+  {
+    "specification_equation": "E1",
+    "manuscript_label": "eq:normalization",
+    "implementation": "src/iot_repair/preprocessing.py:fit_training_normalizer",
+    "tests": [
+      "tests/test_equation_integration.py",
+      "tests/test_pipeline.py",
+      "scripts/audit_equations.py",
+      "scripts/audit_saved_scores.py"
+    ],
+    "configuration": "configs/study.json",
+    "results": [
+      "results/audits/",
+      "results/study/",
+      "results/sensitivity/"
+    ],
+    "status": "implemented; saved production audit required after final inference"
+  },
+  {
+    "specification_equation": "E2",
+    "manuscript_label": "eq:diffusion",
+    "implementation": "src/iot_repair/diffusion.py:masked_denoising_loss",
+    "tests": [
+      "tests/test_equation_integration.py",
+      "tests/test_pipeline.py",
+      "scripts/audit_equations.py",
+      "scripts/audit_saved_scores.py"
+    ],
+    "configuration": "configs/study.json",
+    "results": [
+      "results/audits/",
+      "results/study/",
+      "results/sensitivity/"
+    ],
+    "status": "implemented; saved production audit required after final inference"
+  },
+  {
+    "specification_equation": "E3",
+    "manuscript_label": "eq:association",
+    "implementation": "src/iot_repair/associations.py:discover_associations",
+    "tests": [
+      "tests/test_equation_integration.py",
+      "tests/test_pipeline.py",
+      "scripts/audit_equations.py",
+      "scripts/audit_saved_scores.py"
+    ],
+    "configuration": "configs/study.json",
+    "results": [
+      "results/audits/",
+      "results/study/",
+      "results/sensitivity/"
+    ],
+    "status": "implemented; saved production audit required after final inference"
+  },
+  {
+    "specification_equation": "E4",
+    "manuscript_label": "eq:crps",
+    "implementation": "src/iot_repair/scoring.py:normalized_empirical_crps",
+    "tests": [
+      "tests/test_equation_integration.py",
+      "tests/test_pipeline.py",
+      "scripts/audit_equations.py",
+      "scripts/audit_saved_scores.py"
+    ],
+    "configuration": "configs/study.json",
+    "results": [
+      "results/audits/",
+      "results/study/",
+      "results/sensitivity/"
+    ],
+    "status": "implemented; saved production audit required after final inference"
+  },
+  {
+    "specification_equation": "E5",
+    "manuscript_label": "eq:group",
+    "implementation": "src/iot_repair/witnesses.py:aggregate_group_losses",
+    "tests": [
+      "tests/test_equation_integration.py",
+      "tests/test_pipeline.py",
+      "scripts/audit_equations.py",
+      "scripts/audit_saved_scores.py"
+    ],
+    "configuration": "configs/study.json",
+    "results": [
+      "results/audits/",
+      "results/study/",
+      "results/sensitivity/"
+    ],
+    "status": "implemented; saved production audit required after final inference"
+  },
+  {
+    "specification_equation": "E6",
+    "manuscript_label": "eq:delta",
+    "implementation": "src/iot_repair/scoring.py:compute_paired_gains",
+    "tests": [
+      "tests/test_equation_integration.py",
+      "tests/test_pipeline.py",
+      "scripts/audit_equations.py",
+      "scripts/audit_saved_scores.py"
+    ],
+    "configuration": "configs/study.json",
+    "results": [
+      "results/audits/",
+      "results/study/",
+      "results/sensitivity/"
+    ],
+    "status": "implemented; saved production audit required after final inference"
+  },
+  {
+    "specification_equation": "E7",
+    "manuscript_label": "eq:gain",
+    "implementation": "src/iot_repair/scoring.py:repair_score",
+    "tests": [
+      "tests/test_equation_integration.py",
+      "tests/test_pipeline.py",
+      "scripts/audit_equations.py",
+      "scripts/audit_saved_scores.py"
+    ],
+    "configuration": "configs/study.json",
+    "results": [
+      "results/audits/",
+      "results/study/",
+      "results/sensitivity/"
+    ],
+    "status": "implemented; saved production audit required after final inference"
+  },
+  {
+    "specification_equation": "E8",
+    "manuscript_label": "eq:instability",
+    "implementation": "src/iot_repair/scoring.py:ensemble_instability",
+    "tests": [
+      "tests/test_equation_integration.py",
+      "tests/test_pipeline.py",
+      "scripts/audit_equations.py",
+      "scripts/audit_saved_scores.py"
+    ],
+    "configuration": "configs/study.json",
+    "results": [
+      "results/audits/",
+      "results/study/",
+      "results/sensitivity/"
+    ],
+    "status": "implemented; saved production audit required after final inference"
+  },
+  {
+    "specification_equation": "E9",
+    "manuscript_label": "eq:cost",
+    "implementation": "src/iot_repair/costs.py:observation_edit_cost and association_edit_cost",
+    "tests": [
+      "tests/test_equation_integration.py",
+      "tests/test_pipeline.py",
+      "scripts/audit_equations.py",
+      "scripts/audit_saved_scores.py"
+    ],
+    "configuration": "configs/study.json",
+    "results": [
+      "results/audits/",
+      "results/study/",
+      "results/sensitivity/"
+    ],
+    "status": "implemented; saved production audit required after final inference"
+  },
+  {
+    "specification_equation": "E10",
+    "manuscript_label": "eq:score",
+    "implementation": "src/iot_repair/scoring.py:repair_score",
+    "tests": [
+      "tests/test_equation_integration.py",
+      "tests/test_pipeline.py",
+      "scripts/audit_equations.py",
+      "scripts/audit_saved_scores.py"
+    ],
+    "configuration": "configs/study.json",
+    "results": [
+      "results/audits/",
+      "results/study/",
+      "results/sensitivity/"
+    ],
+    "status": "implemented; saved production audit required after final inference"
+  },
+  {
+    "specification_equation": "E11",
+    "manuscript_label": "eq:mc",
+    "implementation": "src/iot_repair/scoring.py:sampling_standard_error",
+    "tests": [
+      "tests/test_equation_integration.py",
+      "tests/test_pipeline.py",
+      "scripts/audit_equations.py",
+      "scripts/audit_saved_scores.py"
+    ],
+    "configuration": "configs/study.json",
+    "results": [
+      "results/audits/",
+      "results/study/",
+      "results/sensitivity/"
+    ],
+    "status": "implemented; saved production audit required after final inference"
+  },
+  {
+    "specification_equation": "E12",
+    "manuscript_label": "eq:tail",
+    "implementation": "src/iot_repair/calibration.py:null_tail_value",
+    "tests": [
+      "tests/test_equation_integration.py",
+      "tests/test_pipeline.py",
+      "scripts/audit_equations.py",
+      "scripts/audit_saved_scores.py"
+    ],
+    "configuration": "configs/study.json",
+    "results": [
+      "results/audits/",
+      "results/study/",
+      "results/sensitivity/"
+    ],
+    "status": "implemented; saved production audit required after final inference"
+  },
+  {
+    "specification_equation": "E13",
+    "manuscript_label": "eq:probability",
+    "implementation": "src/iot_repair/calibration.py:fit_probability_calibrator and scripts/freeze.py",
+    "tests": [
+      "tests/test_equation_integration.py",
+      "tests/test_pipeline.py",
+      "scripts/audit_equations.py",
+      "scripts/audit_saved_scores.py"
+    ],
+    "configuration": "configs/study.json",
+    "results": [
+      "results/audits/",
+      "results/study/",
+      "results/sensitivity/"
+    ],
+    "status": "implemented; saved production audit required after final inference"
+  },
+  {
+    "specification_equation": "E14",
+    "manuscript_label": "eq:decision",
+    "implementation": "src/iot_repair/calibration.py:decide_or_abstain and scripts/native_process.py",
+    "tests": [
+      "tests/test_equation_integration.py",
+      "tests/test_pipeline.py",
+      "scripts/audit_equations.py",
+      "scripts/audit_saved_scores.py"
+    ],
+    "configuration": "configs/study.json",
+    "results": [
+      "results/audits/",
+      "results/study/",
+      "results/sensitivity/"
+    ],
+    "status": "implemented; saved production audit required after final inference"
+  }
+]

@@ -7,7 +7,7 @@ SSH_ARGS=(-p 18860 -o BatchMode=yes -o ConnectTimeout=20 -o UserKnownHostsFile=/
 case "${1:-status}" in
   sync)
     ssh "${SSH_ARGS[@]}" "$REMOTE_HOST" "mkdir -p $REMOTE_DIR"
-    rsync -az --exclude=.git --exclude=.venv --exclude=runtime --exclude=__pycache__ --exclude=literature/upstream --exclude=literature/downloads -e "ssh ${SSH_ARGS[*]}" ./ "$REMOTE_HOST:$REMOTE_DIR/"
+    rsync -az --exclude=.git --exclude=.venv --exclude=runtime --exclude=results --exclude=__pycache__ --exclude=literature/upstream --exclude=literature/downloads -e "ssh ${SSH_ARGS[*]}" ./ "$REMOTE_HOST:$REMOTE_DIR/"
     ;;
   pull)
     rsync -az --exclude='*.pt' --exclude='*.tmp' -e "ssh ${SSH_ARGS[*]}" "$REMOTE_HOST:$REMOTE_DIR/results/" results/

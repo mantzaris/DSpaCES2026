@@ -5,6 +5,17 @@ import numpy as np
 import torch
 
 
+def canonicalize_graph(graph):
+    """Ignore exact repeated transport copies of an association version."""
+    found={};edges=[]
+    for edge in graph['edges']:
+        identity=edge.get('id',json.dumps(edge,sort_keys=True))
+        if identity in found:
+            if edge!=found[identity]:raise ValueError('Conflicting association-version copies')
+        else:found[identity]=edge;edges.append(edge)
+    return dict(graph,edges=edges)
+
+
 def canonicalize_records(values,observed,record_ids):
     """Deduplicate upstream copies, preserving channel/time order; flag conflicts."""
     first={}; indices=[]

@@ -145,7 +145,9 @@ def sample(model,values,available,selected,samples=8,seed=9026):
     noise=torch.randn(condition.shape,device=values.device,generator=rng)
     state=torch.where(mask,observations,.9*condition+.1*noise)
     for step in reversed(range(model.steps)):
-        predicted=model(state,condition,torch.full((b*samples,),step,device=values.device))
+        with torch.autocast(device_type=state.device.type,dtype=torch.bfloat16,
+                            enabled=state.device.type=='cuda' and getattr(model,'inference_autocast',False)):
+            predicted=model(state,condition,torch.full((b*samples,),step,device=values.device))
         mean=(state-model.beta[step]/(1-model.alpha_bar[step]).sqrt()*predicted)/model.alpha[step].sqrt()
         if step:
             variance=model.beta[step]*(1-model.alpha_bar[step-1])/(1-model.alpha_bar[step])

@@ -10,6 +10,7 @@ PAPERS={
  'Shi':'https://ceur-ws.org/Vol-4073/BEHAIV2025_CRV_4.pdf',
  'Conformal':'https://arxiv.org/pdf/2202.13415',
  'Xu':'https://raw.githubusercontent.com/mlresearch/v329/main/assets/xu26a/xu26a.pdf',
+ 'TSB-AD':'https://proceedings.neurips.cc/paper_files/paper/2024/file/c3f3c690b7a99fba16d0efd35cb83b2c-Paper-Datasets_and_Benchmarks_Track.pdf',
 }
 def retrieve(item):
     name,url=item; path=ROOT/'literature/downloads'/(name+'.pdf')

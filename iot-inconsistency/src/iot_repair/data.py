@@ -9,7 +9,7 @@ from .preprocessing import fit_training_normalizer, transform_measurements
 SPLITS=('train','development','calibration','test')
 
 
-def simulate(nodes, length, seed, nonlinear=True, heldout=False):
+def simulate(nodes, length, seed, nonlinear=True, heldout=False,event=None,association_change=None):
     rng=np.random.default_rng(seed)
     z=np.zeros((length+128,4)); regime=np.zeros(len(z),dtype=int)
     regime[len(z)//2:]=2 if heldout else 1
@@ -18,6 +18,8 @@ def simulate(nodes, length, seed, nonlinear=True, heldout=False):
     for t in range(1,len(z)):
         u=np.sin(t/np.array([27.,41.,67.,103.])+seed%31)
         u+=.2*regime[t]
+        if event is not None and event['start']<=t-128<event['stop']:
+            u[event.get('latent',0)]+=event['magnitude']
         z[t]=a@z[t-1]+.08*u+.035*np.tanh(np.roll(z[t-1],1))+rng.normal(0,.025,4)
     z=z[128:]; regime=regime[128:]
     x=np.zeros((length,nodes)); units=[]
@@ -28,6 +30,11 @@ def simulate(nodes, length, seed, nonlinear=True, heldout=False):
         value=z[np.maximum(np.arange(length)-lag,0),j]+.1*z[:,(j+1)%4]
         if nonlinear:
             value+=.6*np.sin(2*z[:,j]+.2*(i//4)%3)+.15*regime*z[:,(j+2)%4]**2
+        if association_change is not None and i==association_change['channel']:
+            alternate=association_change['new_latent'];start=association_change['start']
+            changed=z[np.maximum(np.arange(length)-lag,0),alternate]+.1*z[:,(alternate+1)%4]
+            if nonlinear:changed+=.6*np.sin(2*z[:,alternate]+.2*(i//4)%3)+.15*regime*z[:,(alternate+2)%4]**2
+            value[start:]=changed[start:]
         response_sign=1 if (i//4)%2==0 else -1
         x[:,i]=offsets[j]+scales[j]*(response_sign*(value+correlated[:,j])+rng.normal(0,.015,length))
         units.append(['degC','kPa','V','lux'][j])
@@ -95,7 +102,7 @@ def intel_records(root,mote_count=12):
     records={}; manifest=[]
     for s,split in enumerate(SPLITS):
         lo=bounds[s]+(64 if s else 0); hi=bounds[s+1]
-        timestamps=grid[lo:hi].astype('int64').to_numpy()//10**9
+        timestamps=grid[lo:hi].astype('int64').to_numpy()//10**9+300
         records[split]=_windows(x[lo:hi],timestamps,'intel_'+split,stride=32)
         # Temporal bootstrap blocks are days, never individual overlapping windows.
         for record in records[split]: record['block']=str(record['timestamp']//86400)
@@ -106,7 +113,7 @@ def intel_records(root,mote_count=12):
     np.savez_compressed(archive,timestamps=df.timestamp.astype('int64').to_numpy(),
         mote=df.mote.to_numpy(),epoch=df.epoch.to_numpy(),values=df[fields].to_numpy())
     manifest.append(dict(selected_motes=selected,channel_names=[f'{m}:{f}' for f,m in cols],
-        resample_seconds=300,interpolation='none',gap_bins=64,duplicate_records_excluded=duplicates,
+        resample_seconds=300,decision_time='right boundary of completed five-minute bin',interpolation='none',gap_bins=64,duplicate_records_excluded=duplicates,
         selection='highest training availability, all four channels of each chosen mote',
         label_scope='controlled corruption of unadjudicated measured reference',
         source_record_archive=str(archive.relative_to(root))))

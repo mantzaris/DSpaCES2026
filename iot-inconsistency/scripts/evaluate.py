@@ -1,12 +1,13 @@
 """Resumable shared experiments. Final test requires development freeze and calibration."""
 from pathlib import Path
-import argparse,hashlib,json,sys,time
+import argparse,hashlib,json,sys,time,subprocess
 import numpy as np
 import torch
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'src'))
 from iot_repair.experiment import *
 from iot_repair.pipeline import screen_candidates,score_candidates
 from iot_repair.faults import content_hash
+from iot_repair.costs import COST_PRECISION_VERSION
 
 p=argparse.ArgumentParser();p.add_argument('--dataset',required=True);p.add_argument('--split',choices=['development','calibration','test'],required=True)
 p.add_argument('--device',default='cuda');p.add_argument('--skip-diffad',action='store_true');args=p.parse_args()
@@ -15,11 +16,21 @@ config=json.loads((ROOT/'configs/study.json').read_text());dataset=args.dataset;
 out=ROOT/'results/study'/dataset;out.mkdir(parents=True,exist_ok=True)
 if split!='development' and not (out/'frozen.json').exists():raise RuntimeError('Freeze development selection first')
 if split=='test' and not (out/'calibration_complete.json').exists():raise RuntimeError('Calibrate the frozen pipeline before opening test data')
+score_parameters={'kappa':1.,'lambda':.2} if split=='development' else json.loads((out/'frozen.json').read_text())
+if split=='development':subprocess.run([sys.executable,str(ROOT/'scripts/sensitivity.py'),'--dataset',dataset],check=True)
 kinds=['diffusion','mean','gdn','no_graph']+([] if args.skip_diffad else ['diffad'])
 models,graph=load_models(ROOT,dataset,kinds,args.device)
 data=np.load(ROOT/'data/processed'/dataset/(split+'.npz'))
 cases=build_cases(data,graph,split,config);splitout=out/split;splitout.mkdir(exist_ok=True)
 json_save(splitout/'case_manifest.json',dict(protocol=content_hash(config),cases=[public_case(case) for case in cases]))
+source_files=sorted((ROOT/'src/iot_repair').glob('*.py'))+[Path(__file__),ROOT/'scripts/freeze.py']
+source_hashes={str(path.relative_to(ROOT)):hashlib.sha256(path.read_bytes()).hexdigest() for path in source_files}
+json_save(splitout/'provenance.json',dict(source_sha256=source_hashes,protocol=config,
+    dataset_manifest_sha256=hashlib.sha256((ROOT/'data/manifests'/(dataset+'.json')).read_bytes()).hexdigest(),
+    models=json.loads((ROOT/'results/models'/dataset/'training.json').read_text()),
+    torch_version=torch.__version__,cuda=torch.version.cuda,gpu=torch.cuda.get_device_name() if args.device.startswith('cuda') else 'cpu',
+    loss_axes=['candidate','ensemble','paired_replicate','provenance_group'],
+    predictive_axes=['candidate','ensemble','paired_replicate','provenance_group','cell','predictive_sample']))
 values=np.stack([case['x'] for case in cases]);cache=splitout/'baselines_raw.npz'
 if cache.exists():
     raw=dict(np.load(cache));timings=json.loads((splitout/'baseline_timing.json').read_text())
@@ -46,15 +57,17 @@ for ordinal,case in enumerate(cases):
     edge_scores=edge_residuals(case['x'][None],case['graph'])[0]
     candidates=screen_candidates(normalized['gdn'][ordinal],edge_scores,case['graph'],config['candidate_cap_per_type'])
     torch.cuda.reset_peak_memory_stats() if args.device.startswith('cuda') else None
+    inference_seed=910000+ordinal*1009+{'development':0,'calibration':2000000,'test':4000000}[split]
     records,terms,abstentions=score_candidates(models['diffusion'],case['x'],case['graph'],candidates,
-        replicates=config['replicates'],predictive_samples=config['predictive_samples'],seed=910000+ordinal*1009+{'development':0,'calibration':2000000,'test':4000000}[split])
+        replicates=config['replicates'],predictive_samples=config['predictive_samples'],seed=inference_seed,
+        kappa=score_parameters['kappa'],edit_weight=score_parameters['lambda'])
     for record in records:
         record['truth']=bool(case[record['kind']+'_truth'][record['index']])
     artifact=case['id']+'.npz';np.savez_compressed(splitout/artifact,input=case['x'],
         observation_truth=case['observation_truth'],association_truth=case['association_truth'],**terms)
     result=dict(public_case(case),graph=case['graph'],records=records,abstentions=abstentions,candidates=candidates,
         edge_residuals=edge_scores.tolist(),baseline_sensor_scores={name:scores[ordinal].tolist() for name,scores in normalized.items()},
-        raw_artifact=artifact,raw_sha256=hashlib.sha256((splitout/artifact).read_bytes()).hexdigest(),
+        raw_artifact=artifact,inference_seed=inference_seed,cost_precision_version=COST_PRECISION_VERSION,score_parameters={key:score_parameters[key] for key in ('kappa','lambda')},raw_sha256=hashlib.sha256((splitout/artifact).read_bytes()).hexdigest(),
         gpu_peak_bytes=torch.cuda.max_memory_allocated() if args.device.startswith('cuda') else 0)
     json_save(path,result)
     if ordinal%25==0:print(dataset,split,ordinal,'/',len(cases),flush=True)

@@ -24,3 +24,11 @@ def test_screening_misses_stay_in_attribution_denominator():
         cases.append(dict(id=str(i),track='observation',fault={'status':'injected','family':'offset'},block=str(i),observation_truth=[True,False],records=[dict(kind='observation',index=1,support_count=2,mean_gain=1.,model_instability=.1,edit_cost=.1)]))
     result=summarize(cases,'proposed','observation',{'kappa':1,'lambda':.2})
     assert result['top1']==0 and result['screening_recall']==0
+
+
+def test_candidate_cap_is_respected_at_one():
+    from iot_repair.pipeline import screen_candidates
+    graph={'edges':[{'source':0,'target':1},{'source':1,'target':2}]}
+    candidates=screen_candidates(np.array([1.,2.,3.]),np.array([1.,2.]),graph,cap=1)
+    assert len([c for c in candidates if c[0]=='observation'])==1
+    assert len([c for c in candidates if c[0]=='association'])==1

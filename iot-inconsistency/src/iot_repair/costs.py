@@ -1,6 +1,7 @@
 """E9. Denominators are fixed before proposals are drawn."""
 from __future__ import annotations
 import torch
+COST_PRECISION_VERSION='float64-observation-cost-v2'
 
 
 def observation_edit_cost(original, replacements, edit_mask, eligible_mask, scale=1., rho=.5, c=3.):
@@ -9,7 +10,8 @@ def observation_edit_cost(original, replacements, edit_mask, eligible_mask, scal
         raise ValueError("Invalid edit-cost parameters.")
     if (edit_mask & ~eligible_mask).any():
         raise ValueError("Missingness needs a separate hypothesis, not a numeric edit cost.")
-    k, n = edit_mask.sum((-2,-1)), eligible_mask.sum((-2,-1))
+    k = edit_mask.sum((-2,-1)).to(original.dtype)
+    n = eligible_mask.sum((-2,-1)).to(original.dtype)
     if (k == 0).any() or (n == 0).any():
         raise ValueError("Nonempty edit and fixed eligible window required.")
     scale = torch.as_tensor(scale, dtype=original.dtype, device=original.device)
