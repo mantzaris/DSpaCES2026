@@ -16,7 +16,7 @@ from iot_entropy.models import calendar
 from iot_entropy.psd_sensitivity import covariance_em
 from iot_entropy.reference import BlockBootstrap
 from iot_entropy.synthetic import inject,simulate,system
-from iot_entropy.utils import Budget,write_json
+from iot_entropy.utils import Budget,recorded_runtime,write_json
 
 root=Path(__file__).resolve().parents[1]
 config=json.loads((root/'configs/full.json').read_text())
@@ -24,9 +24,7 @@ base=root/'experiments/full'
 out=root/'experiments/sensitivity';out.mkdir(parents=True,exist_ok=True)
 parser=argparse.ArgumentParser();parser.add_argument('stage',choices=['graphs','samples','quality','persistence','global','unscreened'])
 args=parser.parse_args()
-spent=sum(json.loads(p.read_text())['training_seconds'] for p in base.rglob('*training.json'))
-spent+=sum(json.loads(p.read_text())['elapsed_seconds'] for p in base.glob('score-*/status.json'))
-spent+=sum(json.loads(p.read_text()).get('elapsed_seconds',0) for p in out.glob('*-status.json'))
+spent=recorded_runtime(root)
 budget=Budget(config['gpu_hour_budget'],spent);torch.set_num_threads(4)
 started=time.monotonic()
 
@@ -36,7 +34,7 @@ if args.stage=='graphs':
             budget.check();run(load_data(root,name),config,17,base,budget,graph=graph)
 
 elif args.stage=='samples':
-    for number in [32,128]:
+    for number in [32,64,128]:
         directory=out/f'B{number}';directory.mkdir(exist_ok=True)
         if not (directory/'checkpoints').exists():(directory/'checkpoints').symlink_to(base/'checkpoints',target_is_directory=True)
         local=dict(config,base_episodes=2,fault_types=['copy','noise','drift'],severities=[1.],durations=[48],generated_samples=number)
@@ -107,10 +105,11 @@ elif args.stage=='persistence':
     write_json(out/'persistence.json',{'rows':rows,'interpretation':'Score sensitivity only; frozen/paired-clean conditions are not assigned new calibrated guarantees'})
 
 elif args.stage=='global':
+    from iot_entropy.global_ablation import compare_global
     rows=[]
     for name in config['datasets']:
         data=load_data(root,name);x=data.standardized;n=len(data.node_ids)
-        window=max(96,2*n);lag=window//4;horizon=window+lag
+        window=max(96,4*int(np.ceil(2.5*n/4)));lag=window//4;horizon=window+lag
         calibration=data.issuance_indices(2,48,horizon,48+horizon)
         tests=data.issuance_indices(3,48,horizon,48+horizon)[:8]
         # Large global windows cannot cross synthetic episode boundaries.
@@ -130,6 +129,7 @@ elif args.stage=='global':
                                          'entropy':float(observed.values[0]),'reference_h_median':float(torch.nanmedian(reference.values[:,0]))})
         rows.append(row)
     write_json(out/'global.json',rows)
+    compare_global(root,config,budget)
 
 elif args.stage=='unscreened':
     rows=[]

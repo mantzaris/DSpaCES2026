@@ -48,3 +48,20 @@
   identical pre-event prefix; real-data decorrelation remains a sensor-level
   intervention. The GDN comparator and restarted four-step CUSUM deviations
   are disclosed in the implementation and manuscript.
+- Sensitivity implementation frozen while primary scoring is in progress,
+  before inspecting aggregate results: the global trace needs at least twice
+  as many common observations as sensors. Set its window to the next multiple
+  of four at or above 2.5N (minimum 96), allowing some missing rows. Report
+  calibration feasibility for every configuration. At N=64, compare global
+  and local scans at the identical W=160, d=40 using the same B=32 intact-block
+  bootstrap samples, separate calibration maxima and the original injections.
+  The trained neural horizon is only 120, so this is explicitly a longer-window
+  bootstrap sensitivity. Do not credit detections after short events end.
+- Include B=64 alongside B=32/128 on the identical limited subset so the sample
+  count comparison is paired. For reference fidelity, fix the first six disjoint
+  untouched test units in synthetic64, Intel and PEMS for three model seeds;
+  calculate raw, entropy/change, correlation and covariance fidelity. These
+  post-training audits do not choose or change a detector.
+- Runtime accounting sums GPU-enabled stage wall times, not pod rental uptime
+  or utilization-weighted kernel time. Graph-run summaries are not counted a
+  second time when individual scoring statuses already contain their duration.

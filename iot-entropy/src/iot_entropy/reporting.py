@@ -113,6 +113,13 @@ def aggregate(root: Path) -> dict:
                  'transition_unit_exceedance':float(transitions.flagged_issuances.sum()/max(transitions.issuances.sum(),1)),
                  'missed_event_seed_pairs':int(faults.fn.sum()),'oracle_mean_iou':float(faults.oracle_iou.mean()),
                  'event_trial_prevalence':float(group.is_fault.mean())}
+        detected=faults[faults.tp>0]
+        summary['detected_event_seed_pairs']=len(detected)
+        summary['conditional_detected_localization']={metric:float(detected['localization_'+metric].mean())
+                                                     for metric in ['precision','recall','f1','iou']}
+        seed_scores=faults.groupby('seed')[['tp','localization_iou']].mean()
+        summary['seed_variability']={str(seed):{'event_recall':float(row.tp),'localization_iou':float(row.localization_iou)}
+                                    for seed,row in seed_scores.iterrows()}
         for metric in block_metrics:
             name='event_recall' if metric=='tp' else metric
             summary[name]=bootstrap_mean(block_metrics[metric].to_numpy(),repeats=config['bootstrap_repetitions'])
@@ -141,4 +148,58 @@ def aggregate(root: Path) -> dict:
     # Keep individual graph variants visible, never pool them into primary rows.
     ablations=frame[frame.alpha==config['primary_alpha']].groupby(['dataset','graph','method','is_fault'])[['tp','fp','localization_iou','eligible_fraction']].mean().reset_index()
     ablations.to_csv(output/'ablations.csv',index=False)
+    directions=primary[primary.is_fault].groupby(['primary_dataset','method','actual_entropy_direction'])[['tp','localization_iou']].agg(['mean','count'])
+    directions.to_csv(output/'direction_metrics.csv')
+    topology=primary[primary.is_fault].groupby(['primary_dataset','method','affected_components'])[['tp','localization_iou']].agg(['mean','count'])
+    topology.to_csv(output/'topology_metrics.csv')
+    for filename in ['benchmark.json','fidelity-extra.json']:
+        path=root/'experiments'/filename
+        if path.exists():write_json(output/filename,json.loads(path.read_text()))
+    benchmark=root/'experiments/benchmark.json'
+    if benchmark.exists():
+        costs={x['dataset']:x['complete_detector']['mean_seconds'] for x in json.loads(benchmark.read_text())['detector']}
+        latency=primary[(primary.method=='diffusion/entropy')&primary.is_fault].copy()
+        latency['mean_compute_seconds']=latency.dataset.map(costs)
+        latency['delay_with_serial_computation_seconds']=latency.delay_seconds+latency.mean_compute_seconds
+        latency.to_csv(output/'delay_with_computation.csv',index=False)
+    feature_subset_ablations(root)
     return {'completed_scoring_configurations':len(list((root/'experiments/full').glob('score-*/status.json'))),'event_metric_rows':len(frame),'summary_rows':len(summaries)}
+
+
+def feature_subset_ablations(root: Path) -> None:
+    """Recalibrate each restricted family from saved samples, with no retraining."""
+    from .calibration import rank_pvalues
+    from .localization import participation
+    rows=[]
+    for status_file in sorted((root/'experiments/full').glob('score-*-physical-17/status.json')):
+        directory=status_file.parent;status=json.loads(status_file.read_text())
+        config=json.loads((directory/'configuration.json').read_text())
+        groups=json.loads((directory/'groups.json').read_text())
+        events=json.loads((directory/'events.json').read_text())
+        predictions=np.load(directory/'predictions.npz');times=predictions['times']
+        archive=np.load(directory/'samples/group_scores.npz')
+        for feature in ['window','size']:
+            for value in sorted({g[feature] for g in groups}):
+                selected=np.array([g[feature]==value for g in groups]);subgroups=[g['nodes'] for g in groups if g[feature]==value]
+                for method in ['diffusion/entropy','diffusion/synchronization','diffusion/combined']:
+                    column=archive['methods'].tolist().index(method)
+                    cal=archive['calibration'][:,column,:][:,selected]
+                    test=archive['scores'][:,:,column,:][:,:,selected]
+                    calmax=np.where(np.isfinite(cal),cal,-np.inf).max(-1)
+                    maximum=np.where(np.isfinite(test),test,-np.inf).max(-1)
+                    pvalues=rank_pvalues(calmax,maximum)
+                    n={'synthetic64':64,'synthetic128':128,'synthetic256':256,'intel':54,'pems':325}[status['dataset']]
+                    for i,event in enumerate(events):
+                        truth=[(event['onset'],event['onset']+event['duration']-1)] if event['is_fault'] else []
+                        alerts=alert_intervals(times,pvalues[i]<=.1,config['alert_stride'])
+                        matched=match_events(alerts,truth,0);iou=0.
+                        if matched['matches']:
+                            alert,_=matched['matches'][0];tick=int(np.where(times==alerts[alert][0])[0][0])
+                            scores=participation(test[i,tick],subgroups,n)
+                            nodes=np.argsort(-scores,kind='stable')[:int(predictions['localization_budget'])].tolist()
+                            iou=set_metrics(nodes,event['nodes'])['iou']
+                        rows.append({'dataset':status['dataset'],'method':method,'feature':feature,'value':value,
+                                     'event':event['id'],'base':event['base'],'is_fault':event['is_fault'],'kind':event['kind'],
+                                     'tp':matched['tp'],'fp':matched['fp'],'iou':iou,
+                                     'eligible_fraction':float(np.isfinite(test[i]).mean())})
+    pd.DataFrame(rows).to_csv(root/'results/group_window_ablations.csv',index=False)

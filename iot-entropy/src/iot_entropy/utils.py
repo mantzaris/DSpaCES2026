@@ -74,3 +74,21 @@ class Budget:
     def check(self) -> None:
         if self.elapsed >= self.limit_seconds:
             raise TimeoutError('Configured GPU runtime budget reached; outputs preserved')
+
+
+def recorded_runtime(root: Path) -> float:
+    """Completed GPU-stage wall time; exclude nested summaries counted already."""
+    full=root/'experiments/full'
+    training=full/'training_status.json'
+    total=(json.loads(training.read_text())['elapsed_seconds'] if training.exists()
+           else sum(json.loads(p.read_text())['training_seconds'] for p in full.rglob('*training.json')))
+    total+=sum(json.loads(p.read_text())['elapsed_seconds'] for p in full.glob('score-*/status.json'))
+    # Graph runs live under full/score-*; their stage summary is not additive.
+    for path in (root/'experiments/sensitivity').glob('*-status.json'):
+        if path.name!='graphs-status.json':total+=json.loads(path.read_text()).get('elapsed_seconds',0)
+    for name in ['benchmark.json','fidelity-extra.json']:
+        path=root/'experiments'/name
+        if path.exists():total+=json.loads(path.read_text()).get('elapsed_seconds',0)
+    pilot=root/'experiments/pilot/profile.json'
+    if pilot.exists():total+=json.loads(pilot.read_text()).get('total_seconds',0)
+    return total

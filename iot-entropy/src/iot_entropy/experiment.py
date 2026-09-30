@@ -75,7 +75,8 @@ def score_summary(scores: dict[str,torch.Tensor], scan: Scan, node_count: int) -
 
 @torch.no_grad()
 def run(data: SensorData, config: dict, seed: int, experiment_dir: Path, budget: Budget,
-        device: str = 'cuda', graph: str = 'physical', limit_events: int | None = None) -> dict:
+        device: str = 'cuda', graph: str = 'physical', limit_events: int | None = None,
+        stop_after_calibration: bool = False) -> dict:
     torch.set_num_threads(4)
     directory=experiment_dir/f'score-{data.name}-{graph}-{seed}'
     if (directory/'status.json').exists():
@@ -83,6 +84,7 @@ def run(data: SensorData, config: dict, seed: int, experiment_dir: Path, budget:
     directory.mkdir(parents=True,exist_ok=True)
     samples_dir=directory/'samples';samples_dir.mkdir(exist_ok=True)
     model,gdn=load_models(data,config,seed,experiment_dir,device,graph)
+    if device=='cuda':torch.cuda.reset_peak_memory_stats()
     scan=Scan(data.adjacency,data.coordinates,data.channels,config,device)
     write_json(directory/'groups.json',scan.records)
     values=data.standardized;horizon=max(w+w//4 for w in config['windows'])
@@ -157,6 +159,8 @@ def run(data: SensorData, config: dict, seed: int, experiment_dir: Path, budget:
                'n_units':len(calibration),'minimum_p':1/(len(calibration)+1),'eligible_fraction':calibration_quality,
                'unit':'One context-plus-target unit; all-abstained maxima encoded as -1e30 in JSON, -inf in NPZ'})
     np.savez_compressed(directory/'calibration.npz',maxima=calibration_array,indices=calibration_indices,methods=methods)
+    if stop_after_calibration:
+        return {'status':'calibrated','dataset':data.name,'seed':seed,'units':len(calibration)}
     # TEST BEGINS: all preceding settings are frozen and saved.
     bases=base_episodes(data,config);events=event_manifest(data,config,bases)
     if limit_events is not None:events=events[:limit_events]

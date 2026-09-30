@@ -5,7 +5,7 @@ import argparse
 
 from iot_entropy.data import load_data
 from iot_entropy.experiment import run
-from iot_entropy.utils import Budget,write_json
+from iot_entropy.utils import Budget,recorded_runtime,write_json
 
 parser=argparse.ArgumentParser()
 parser.add_argument('--dataset')
@@ -16,8 +16,7 @@ args=parser.parse_args()
 root=Path(__file__).resolve().parents[1]
 config=json.loads((root/'configs/full.json').read_text())
 directory=root/'experiments/full'
-previous=sum(json.loads(p.read_text())['training_seconds'] for p in directory.rglob('*training.json'))
-previous+=sum(json.loads(p.read_text())['elapsed_seconds'] for p in directory.glob('score-*/status.json'))
+previous=recorded_runtime(root)
 budget=Budget(config['gpu_hour_budget'],previous)
 if args.smoke:
     config.update(base_episodes=1,fault_types=['copy','noise','flatline'],durations=[48],severities=[1.],generated_samples=8)
