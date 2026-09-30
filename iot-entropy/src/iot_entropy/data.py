@@ -156,9 +156,24 @@ def prepare_intel(root: Path) -> SensorData:
            'graph':'Symmetric 8-nearest Euclidean coordinate proximity, metres',
            'upstream_imputation':'Raw source reports missing/truncated streams; no imputation described',
            'raw_file_sha256':digest(raw/'intel_data.txt.gz')}
-    return save_data(root,'intel',values,grid.to_numpy().view('int64'),coords.to_numpy(),
+    # Coverage-only amendment made before Intel training/test scoring: remove
+    # the terminal sustained loss of both primary-channel availability. Retain
+    # the complete original recording as an auxiliary quality-monitoring view.
+    daily=pd.DataFrame(np.isfinite(values[:,:,:2]).mean(1),index=grid).resample('D').mean()
+    low=(daily.min(axis=1)<.5).to_numpy()
+    suffix=len(low)
+    while suffix>0 and low[suffix-1]:suffix-=1
+    cutoff=daily.index[suffix] if len(low)-suffix>=3 else grid[-1]+pd.Timedelta(minutes=2)
+    keep=grid<cutoff
+    audit['daily_primary_coverage']={str(t.date()):row.tolist() for t,row in zip(daily.index,daily.to_numpy())}
+    audit['coverage_rule']='Exclude the terminal suffix of >=3 consecutive days with <50% primary-channel marginal availability; no fault/model scores used'
+    audit['quantitative_cutoff_exclusive']=str(cutoff)
+    save_data(root,'intel_full',values,grid.to_numpy().view('int64'),coords.to_numpy(),
+              proximity_graph(coords.to_numpy()),nodes,channels,['degC','percent RH','lux','V'],120,
+              dict(audit,role='Auxiliary quality view of the same Intel dataset'),observation_times=observed_times)
+    return save_data(root,'intel',values[keep],grid.to_numpy().view('int64')[keep],coords.to_numpy(),
                      proximity_graph(coords.to_numpy()),nodes,channels,['degC','percent RH','lux','V'],120,
-                     audit,observation_times=observed_times)
+                     audit,observation_times=observed_times[keep])
 
 
 def prepare_pems(root: Path) -> SensorData:

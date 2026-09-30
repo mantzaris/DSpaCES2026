@@ -5,8 +5,10 @@ __pycache__/
 .pytest_cache/
 data/raw/
 data/processed/
+literature/raw/
 experiments/**/checkpoints/
 experiments/**/samples/
+experiments/**/replay/
 *.aux
 *.bbl
 *.blg

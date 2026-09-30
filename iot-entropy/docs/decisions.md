@@ -29,3 +29,12 @@
   without an appendix. Workshop pages do not provide a separate supplementary
   policy; preserve reproducibility artifacts locally without assuming they
   can be submitted as reviewed supplementary material.
+- Coverage amendment before Intel model training or held-out scoring: the full
+  raw-span split has valid humidity coverage 4.33% in calibration and 0.257% in
+  test. Apply a data-only rule: exclude the terminal suffix of at least three
+  days with primary-channel marginal coverage below 50%. This selects an
+  exclusive cutoff of March 24, 2004. Retain earlier short outages, all 54
+  coordinate-listed motes and the original 60/15/10/15 fractions. Preserve the
+  entire raw-span processed recording as `intel_full.npz`, an auxiliary quality
+  view of the same dataset, not a fourth dataset. No detector scores informed
+  this correction. Test-group abstention remains an outcome, not an exclusion.

@@ -29,11 +29,17 @@ def system(node_count: int, seed: int = 3107) -> tuple[np.ndarray,np.ndarray,np.
 
 
 def simulate(coordinates: np.ndarray, transition: np.ndarray, length: int,
-             seed: int, device: str = 'cpu') -> np.ndarray:
+             seed: int, device: str = 'cpu', intervention: dict | None = None) -> np.ndarray:
     """Graph process with known daily/weekly and latent OU drivers, burn-in 256."""
     generator=torch.Generator(device=device).manual_seed(seed)
     n=len(coordinates)
     matrix=torch.as_tensor(transition,dtype=torch.float32,device=device)
+    changed=matrix.clone()
+    if intervention is not None:
+        nodes=torch.as_tensor(intervention['nodes'],device=device)
+        changed[nodes]=(1-intervention['severity'])*matrix[nodes]
+        changed[nodes,nodes]=0
+        changed[nodes,nodes]=.82-changed[nodes].sum(-1)
     coords=torch.as_tensor(coordinates,dtype=torch.float32,device=device)
     loadings=torch.stack((torch.ones(n,device=device),torch.sin(2*torch.pi*coords[:,0]),
                          torch.cos(2*torch.pi*coords[:,1])),1)
@@ -46,7 +52,8 @@ def simulate(coordinates: np.ndarray, transition: np.ndarray, length: int,
     for t in range(length+256):
         factors=.95*factors+factor_noise[t]
         season=.08*np.sin(2*np.pi*(t+phase)/288)+.03*np.cos(2*np.pi*(t+phase)/(288*7))
-        state=matrix@state+loadings@factors+season+noise[t]
+        active=intervention is not None and intervention['onset']<=t-256<intervention['onset']+intervention['duration']
+        state=(changed if active else matrix)@state+loadings@factors+season+noise[t]
         if t>=256: output[t-256,:,0]=state
     return output.cpu().numpy()
 

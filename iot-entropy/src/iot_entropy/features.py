@@ -67,10 +67,40 @@ def robust_location_scale(samples: torch.Tensor, floor: torch.Tensor | float) ->
     return center,1.4826*mad+floor
 
 
-def score_features(observed: Extracted, generated: Extracted, floor: torch.Tensor) -> tuple[dict[str,torch.Tensor],dict]:
+@dataclass
+class ReferenceStatistics:
+    center: torch.Tensor
+    scale: torch.Tensor
+    enough: torch.Tensor
+    low: torch.Tensor
+    high: torch.Tensor
+    matrices: list[torch.Tensor]
+    matrix_locations: list[torch.Tensor]
+    matrix_scales: list[torch.Tensor]
+    raw_centers: list[torch.Tensor]
+    raw_scales: list[torch.Tensor]
+
+
+def summarize_reference(generated: Extracted, floor: torch.Tensor) -> ReferenceStatistics:
     center,scale=robust_location_scale(generated.values,floor)
-    standardized=(observed.values[0]-center)/scale
     enough=torch.isfinite(generated.values).sum(0)>=max(4,int(.8*len(generated.values)))
+    matrices=[];locations=[];spreads=[];raw_centers=[];raw_scales=[]
+    for reference_r,reference_raw in zip(generated.correlations,generated.raw):
+        matrix_center=torch.nanmean(reference_r,dim=0)
+        distances=torch.linalg.vector_norm(reference_r-matrix_center,dim=(-2,-1))
+        location,spread=robust_location_scale(distances,.01)
+        matrices.append(matrix_center);locations.append(location);spreads.append(spread)
+        raw_center,raw_scale=robust_location_scale(reference_raw,.05)
+        raw_centers.append(raw_center);raw_scales.append(raw_scale)
+    return ReferenceStatistics(center,scale,enough,torch.nanquantile(generated.values,.05,dim=0),
+        torch.nanquantile(generated.values,.95,dim=0),matrices,locations,spreads,raw_centers,raw_scales)
+
+
+def score_features(observed: Extracted, generated: Extracted, floor: torch.Tensor,
+                   summary: ReferenceStatistics | None = None) -> tuple[dict[str,torch.Tensor],dict]:
+    summary=summarize_reference(generated,floor) if summary is None else summary
+    center,scale,enough=summary.center,summary.scale,summary.enough
+    standardized=(observed.values[0]-center)/scale
     standardized=standardized.masked_fill(~enough,float('nan'))
     def maximum(x: torch.Tensor) -> torch.Tensor:
         valid=torch.isfinite(x)
@@ -84,29 +114,21 @@ def score_features(observed: Extracted, generated: Extracted, floor: torch.Tenso
             'lower':maximum((-standardized[:,:2]).clamp_min(0))}
     for name,start in [('signed_correlation',2),('absolute_correlation',4),('disagreement',6),('concentration',8)]:
         scores[name]=maximum(standardized[:,start:start+2].abs())
-    matrix_scores=[];raw_scores=[];matrix_centers=[]
-    for observed_r,reference_r,observed_raw,reference_raw in zip(observed.correlations,generated.correlations,observed.raw,generated.raw):
-        matrix_center=torch.nanmean(reference_r,dim=0)
-        sample_dist=torch.linalg.vector_norm(reference_r-matrix_center,dim=(-2,-1))
-        actual_dist=torch.linalg.vector_norm(observed_r[0]-matrix_center,dim=(-2,-1))
-        location,spread=robust_location_scale(sample_dist,.01)
-        matrix_scores.append((actual_dist-location).abs()/spread)
-        matrix_centers.append(matrix_center)
-        prediction_center,prediction_scale=robust_location_scale(reference_raw,.05)
-        residual=(observed_raw[0]-prediction_center).abs()/prediction_scale
+    matrix_scores=[];raw_scores=[]
+    for i,(observed_r,observed_raw) in enumerate(zip(observed.correlations,observed.raw)):
+        actual_dist=torch.linalg.vector_norm(observed_r[0]-summary.matrices[i],dim=(-2,-1))
+        matrix_scores.append((actual_dist-summary.matrix_locations[i]).abs()/summary.matrix_scales[i])
+        residual=(observed_raw[0]-summary.raw_centers[i]).abs()/summary.raw_scales[i]
         raw_scores.append(torch.nanmean(residual,dim=(-2,-1)))
-    scores['matrix']=torch.cat(matrix_scores)
-    scores['raw']=torch.cat(raw_scores).masked_fill(~observed.eligible[0],float('nan'))
+    scores['matrix']=torch.cat(matrix_scores).masked_fill(~observed.eligible[0]|~enough.all(-1),float('nan'))
+    scores['raw']=torch.cat(raw_scores).masked_fill(~observed.eligible[0]|~enough.all(-1),float('nan'))
     scores['entropy_raw']=maximum(torch.stack((scores['entropy'],scores['raw']),-1))
     quality=torch.where(observed.flatline[0],torch.full_like(entropy,1e6),torch.zeros_like(entropy))
-    # Hybrid quality includes flatline; missingness is a separate data-quality
-    # stream rather than assigning missing entropy a numerical score.
     scores['quality_hybrid']=maximum(torch.stack((scores['entropy_raw'],quality),-1))
     diagnostic={'observed':observed.values[0],'reference_center':center,'reference_scale':scale,
-                'reference_low':torch.nanquantile(generated.values,.05,dim=0),
-                'reference_high':torch.nanquantile(generated.values,.95,dim=0),
+                'reference_low':summary.low,'reference_high':summary.high,
                 'eligible':observed.eligible[0],'flatline':observed.flatline[0],
-                'common_rows':observed.count[0],'matrix_center':matrix_centers,
+                'common_rows':observed.count[0],'matrix_center':summary.matrices,
                 'reference_valid_fraction':enough.float().mean()}
     return scores,diagnostic
 
@@ -120,10 +142,11 @@ def prediction_fidelity(observed: torch.Tensor, samples: torch.Tensor) -> dict:
     width=(high-low)[valid].mean()
     # Energy score with independent pairs from the same empirical ensemble;
     # normalize Euclidean norm by sqrt(number of observed dimensions).
-    dimensions=mask.sum().clamp_min(1).sqrt()
-    clean=torch.nan_to_num(samples)
-    observation=torch.nan_to_num(observed)
+    joint_mask=mask&torch.isfinite(samples).all(0)
+    dimensions=joint_mask.sum().clamp_min(1).sqrt()
+    clean=torch.where(joint_mask[None],samples,torch.zeros_like(samples))
+    observation=torch.where(joint_mask,observed,torch.zeros_like(observed))
     first=torch.linalg.vector_norm((clean-observation).flatten(1),dim=-1).mean()/dimensions
     second=torch.linalg.vector_norm((clean[:len(clean)//2]-clean[len(clean)//2:2*(len(clean)//2)]).flatten(1),dim=-1).mean()/dimensions
     return {'coverage90':float(coverage),'width90':float(width),'energy_score':float(first-.5*second),
-            'observed_fraction':float(mask.float().mean())}
+            'observed_fraction':float(mask.float().mean()),'energy_dimensions':int(joint_mask.sum())}

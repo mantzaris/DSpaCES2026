@@ -27,6 +27,9 @@ bins: last observation in the bin, with its original timestamp retained. No
 forward filling or interpolation. Keep all coordinate-listed sensors; use
 humidity's documented 0--100% range as a validity check. Primary channels are
 temperature and humidity; light/voltage are auxiliary coverage analyses.
+Before full Intel training or test scoring, apply the documented terminal
+coverage rule in `decisions.md`; the quantitative period ends before March 24,
+2004. The full raw span remains an auxiliary quality-monitoring view.
 PEMS keeps 5-minute release values, expands timestamp gaps with masked rows,
 and follows the original release evaluation's zero-as-missing convention,
 reporting exact zero and NaN counts. Audit upstream preprocessing separately.
