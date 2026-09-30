@@ -36,7 +36,7 @@ if args.stage=='graphs':
 elif args.stage=='samples':
     for number in [32,64,128]:
         directory=out/f'B{number}';directory.mkdir(exist_ok=True)
-        if not (directory/'checkpoints').exists():(directory/'checkpoints').symlink_to(base/'checkpoints',target_is_directory=True)
+        if not (directory/'checkpoints').exists():(directory/'checkpoints').symlink_to(Path('../../full/checkpoints'),target_is_directory=True)
         local=dict(config,base_episodes=2,fault_types=['copy','noise','drift'],severities=[1.],durations=[48],generated_samples=number)
         for name in ['synthetic64','pems']:run(load_data(root,name),local,17,directory,budget)
 
@@ -70,6 +70,29 @@ elif args.stage=='quality':
             results.append({'dataset':'intel','view':'full-original-span auxiliary channels',
                             'channels':full.channels,'observed_fraction':np.isfinite(full.values).mean((0,1)),
                             'quantitative_channels':data.channels})
+            auxiliary=load_data(root,'intel',primary_only=False)
+            aux_scan=Scan(auxiliary.adjacency,auxiliary.coordinates,auxiliary.channels,config,'cuda')
+            bootstrap=BlockBootstrap(auxiliary,48,120,'cuda')
+            aux_values=auxiliary.standardized
+            for start in indices:
+                budget.check()
+                block=torch.as_tensor(aux_values[start:start+120],device='cuda')
+                observed=aux_scan.extract(block)
+                samples=bootstrap.sample(aux_values[start-48:start],calendar(auxiliary.timestamps[start:start+120]),32,982+int(start))
+                generated=aux_scan.extract(samples.masked_fill(~torch.isfinite(block)[None],float('nan')))
+                low=torch.nanquantile(generated.values[:,:,0],.05,dim=0)
+                high=torch.nanquantile(generated.values[:,:,0],.95,dim=0)
+                for channel,label in enumerate(auxiliary.channels):
+                    selected=torch.tensor([g['channel']==channel for g in aux_scan.records],device='cuda')
+                    eligible=selected&observed.eligible[0]&(generated.eligible.float().mean(0)>=.8)
+                    entropy=observed.values[0,:,0]
+                    results.append({'dataset':'intel','view':'retained-span four-channel feature sensitivity',
+                                    'target_start':int(start),'channel':label,'unit':auxiliary.units[channel],
+                                    'observed_fraction':float(torch.isfinite(block[:,:,channel]).float().mean()),
+                                    'observed_group_eligible_fraction':float(observed.eligible[0,selected].float().mean()),
+                                    'joint_reference_eligible_groups':int(eligible.sum()),
+                                    'mean_h':float(torch.nanmean(entropy[selected])),
+                                    'bootstrap_h_coverage90':float(((entropy[eligible]>=low[eligible])&(entropy[eligible]<=high[eligible])).float().mean())})
     write_json(out/'quality.json',results)
 
 elif args.stage=='persistence':

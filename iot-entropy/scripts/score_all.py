@@ -24,7 +24,7 @@ if args.smoke:
     import tempfile,os
     smoke_dir=root/'experiments/scoring-smoke'
     smoke_dir.mkdir(parents=True,exist_ok=True)
-    if not (smoke_dir/'checkpoints').exists():(smoke_dir/'checkpoints').symlink_to(directory/'checkpoints',target_is_directory=True)
+    if not (smoke_dir/'checkpoints').exists():(smoke_dir/'checkpoints').symlink_to(Path('../full/checkpoints'),target_is_directory=True)
     directory=smoke_dir
 try:
     for name in ([args.dataset] if args.dataset else config['datasets']):

@@ -8,6 +8,7 @@ import numpy as np
 
 from .calibration import rank_pvalues
 from .data import load_data
+from .localization import merge_groups
 from .utils import write_json
 
 
@@ -18,10 +19,10 @@ def rounded(value):
     return value
 
 
-def build(root: Path) -> None:
+def build(root: Path, datasets: list[str] | None = None) -> None:
     destination=root/'dashboard';(destination/'data').mkdir(parents=True,exist_ok=True)
     catalog=[]
-    for name in ['synthetic64','intel','pems']:
+    for name in (datasets or ['synthetic64','intel','pems']):
         directory=root/'experiments/full'/f'score-{name}-physical-17'
         data=load_data(root,name)
         groups=json.loads((directory/'groups.json').read_text())
@@ -38,6 +39,9 @@ def build(root: Path) -> None:
                 scores=np.array([np.nan if v is None else v for v in frame['scores']['diffusion/entropy']])
                 frame['p_adjusted']=rank_pvalues(maxima,np.where(np.isfinite(scores),scores,-np.inf)).tolist()
                 frame['family_p']=float(rank_pvalues(maxima,np.max(np.where(np.isfinite(scores),scores,-np.inf))))
+                alerts=np.where((np.asarray(frame['p_adjusted'])<=.1)&np.isfinite(scores))[0]
+                alerts=alerts[np.argsort(-scores[alerts],kind='stable')].tolist()
+                frame['merged_alert_groups']=merge_groups(alerts,[g['nodes'] for g in groups],.5)
                 frame['correlations']=[matrix for family in frame['correlations'] for matrix in family]
                 frame['expected_correlations']=[matrix for family in frame['expected_correlations'] for matrix in family]
                 frame['scores']=frame['scores']['diffusion/entropy']
@@ -47,6 +51,7 @@ def build(root: Path) -> None:
                      'coordinates':data.coordinates,'edges':np.argwhere(np.triu(np.maximum(data.adjacency,data.adjacency.T)>0,1)),
                      'node_ids':data.node_ids,'channels':data.channels,'units':data.units,'center':data.center,'scale':data.scale,
                      'calibration_units':len(maxima),'alpha':.1,'checkpoint':json.loads((directory/'status.json').read_text())['checkpoint_sha256'],
+                     'strict_score_threshold':float(np.sort(maxima)[len(maxima)-int(np.floor(.1*(len(maxima)+1)))]) if .1*(len(maxima)+1)>=1 else None,
                      'graph_kind':'synthetic coupling' if name.startswith('synthetic') else 'coordinate proximity' if name=='intel' else 'release road-distance graph'}
             filename=f'{name}-{event_index}.json'
             write_json(destination/'data'/filename,payload)
