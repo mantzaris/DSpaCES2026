@@ -250,9 +250,10 @@ Under random tie breaking, symmetry makes the test rank among $n+1$ scores
 uniform. Greater-or-equal tie counting is conservative. Thus the exceedance
 probability is at most $\lfloor\alpha(n+1)\rfloor/(n+1)$.
 \end{proof}
-Real sensor blocks are not automatically exchangeable. Gaps do not establish
-this assumption; dependence, distribution shift and contamination require
-empirical evaluation. The minimum attainable $p$ is $1/(n+1)$.
+Neither independent simulation seeds nor gaps establish exchangeability:
+synthetic calendar phases differ across partitions, and real blocks remain
+dependent. Distribution shift and contamination also require empirical
+evaluation. The minimum attainable $p$ is $1/(n+1)$.
 
 Counterexamples delimit interpretation. Diagonal sign changes $S\R S$ and
 fixed-group permutations preserve the spectrum. Offsets and positive rescaling
@@ -303,6 +304,10 @@ and marginal-preserving rearrangement. Severities .6/1, durations 12/48/96 and
 connected/partly disconnected groups are balanced in a fixed 72-event grid.
 Legitimate synchronized transitions and untouched recordings are controls.
 Entropy directions are measured, not assigned from the mechanism name.
+Whitening/recoloring matches sample mean correlation and marginal moments
+when full rank. Short rank-deficient cases use a Gaussian population target
+and do not guarantee matching realized correlation. All scheduled injections
+remain in the denominators; a saved audit flags unobservable interventions.
 For direction strata, take the median within-event $\Delta H$ in the
 predefined group with greatest overlap with the injected sensor set; truth
 is used only for evaluation, never for scoring or selecting alarm thresholds.
@@ -314,7 +319,9 @@ pre-existing alarms receive no credit. No point adjustment is used. Event
 PR area integrates the upper precision envelope over attainable one-to-one
 recalls and retains the raw curve. Localization scores missed events as zero,
 with conditional detected-event results also available. Delays include window
-and stride effects; measured execution latency is reported separately.
+and stride effects. Table delays additionally include the measured mean
+complete comparison-pipeline latency under conservative serial execution;
+model-only and dedicated entropy-pipeline times are also reported separately.
 
 Resampling uses whole independent synthetic simulations or disjoint real
 recording blocks, retaining all injections and averaging training seeds within

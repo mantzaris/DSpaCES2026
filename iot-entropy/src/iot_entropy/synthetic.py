@@ -166,8 +166,9 @@ def inject(values: np.ndarray, nodes: list[int], onset: int, duration: int,
             if eig.min()>1e-7:
                 transformed=z@((vec/np.sqrt(eig))@vec.T)@((tvec*np.sqrt(np.maximum(teig,0)))@tvec.T)
             else:
-                # Rank-deficient short events preserve the covariance target
-                # in expectation, not exact observed sample correlation.
+                # Rank-deficient short events draw from the target population
+                # covariance, then restore sample margins. Their realized
+                # sample correlation need not equal the population target.
                 transformed=rng.multivariate_normal(np.zeros(m),target,size=len(z))
                 transformed=(transformed-transformed.mean(0))/np.maximum(transformed.std(0,ddof=1),1e-8)
             changed[common,:,channel]=mean+transformed*sd

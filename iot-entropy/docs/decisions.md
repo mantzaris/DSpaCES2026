@@ -41,8 +41,9 @@
 - Implementation audit before full test scoring: matched-covariance faults now
   whiten/recolor the untouched event toward equicorrelation with the same mean
   correlation, preserving means/variances exactly when full rank. Rank-deficient
-  short events preserve the correlation target in expectation; they are not
-  claimed to satisfy exact finite-sample matching. A mathematical test verifies
+  short events draw from the target population covariance and then restore
+  sample margins; their realized correlation is not guaranteed to match.
+  A mathematical test verifies
   the full-rank case. Synthetic coupling-loss events modify the affected rows
   of the stable state transition, with identical process noise and a checked
   identical pre-event prefix; real-data decorrelation remains a sensor-level
@@ -78,3 +79,16 @@
   group scores and injections; its unrestricted arm must exactly reproduce all
   primary entropy p-values. This implements actual increase/decrease-only
   monitoring without relabeling residual signs as physical slope.
+- Calibration interpretation audit: synthetic innovations are independent by
+  episode, but deterministic calendar phases differ across split seed ranges.
+  Independence alone therefore does not establish exchangeable score units in
+  the primary synthetic benchmark either. Empirical untouched exceedance is
+  reported for every dataset; the separate IID rank diagnostic supplies the
+  exchangeable-null check. Do not reinterpret a nominal alpha as a guaranteed
+  physical-fault false-positive rate.
+- The final data-only observability audit records modified/removed measurements
+  for every scheduled injection and flags no-effect cases under missingness or
+  covariance guards. All preregistered events remain in primary denominators.
+  Full-rank matched-covariance cases are checked separately from short,
+  rank-deficient population-target draws; the latter do not imply unbiased
+  finite-sample Pearson correlations after sample normalization.

@@ -8,13 +8,17 @@ import torch
 from iot_entropy.data import load_data
 from iot_entropy.synthetic import prepare_synthetic
 from iot_entropy.training import fit
-from iot_entropy.utils import Budget, digest, write_json
+from iot_entropy.utils import Budget, digest, recorded_runtime, write_json
 
 root=Path(__file__).resolve().parents[1]
 config=json.loads((root/'configs/full.json').read_text())
 directory=root/'experiments/full'
 directory.mkdir(parents=True,exist_ok=True)
-previous=sum(json.loads(p.read_text())['training_seconds'] for p in directory.glob('*training.json'))
+status_path=directory/'training_status.json'
+if status_path.exists() and json.loads(status_path.read_text())['status']=='complete':
+    print('Training already complete; preserving original runtime and lineage.')
+    raise SystemExit(0)
+previous=recorded_runtime(root)
 budget=Budget(config['gpu_hour_budget'],previous)
 torch.set_num_threads(4)
 for nodes in [64,128,256]:

@@ -13,6 +13,11 @@ while not (root/'experiments/full/scoring_status.json').exists():
     time.sleep(15)
 primary=json.loads((root/'experiments/full/scoring_status.json').read_text())
 if primary['status']!='complete':raise RuntimeError('Primary scoring did not finish: '+str(primary))
+config=json.loads((root/'configs/full.json').read_text())
+for dataset in config['datasets']:
+    for seed in config['training_seeds']:
+        if not (root/'experiments/full'/f'score-{dataset}-physical-{seed}/status.json').exists():
+            raise RuntimeError('Missing primary scoring configuration: '+dataset+' / '+str(seed))
 commands=[['scripts/benchmark.py'],['scripts/fidelity.py']]
 commands += [['scripts/sensitivities.py',stage] for stage in ['quality','global','unscreened','samples','persistence','graphs','directions']]
 completed=[]

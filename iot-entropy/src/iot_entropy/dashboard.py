@@ -30,7 +30,7 @@ def build(root: Path, datasets: list[str] | None = None) -> None:
         calibration=np.load(directory/'calibration.npz')
         index=calibration['methods'].tolist().index('diffusion/entropy')
         maxima=calibration['maxima'][:,index]
-        cases=[0,18] if name=='synthetic64' else [len(events)-2]
+        cases=[0,18,len(events)-1] if name=='synthetic64' else [len(events)-2]
         for event_index in cases:
             frames=[]
             paths=sorted((directory/'replay').glob(f'{event_index}-*.json'),key=lambda p:int(p.stem.split('-')[-1]))
@@ -42,6 +42,8 @@ def build(root: Path, datasets: list[str] | None = None) -> None:
                 alerts=np.where((np.asarray(frame['p_adjusted'])<=.1)&np.isfinite(scores))[0]
                 alerts=alerts[np.argsort(-scores[alerts],kind='stable')].tolist()
                 frame['merged_alert_groups']=merge_groups(alerts,[g['nodes'] for g in groups],.5)
+                raw=np.asarray(frame['raw'],dtype=float)
+                frame['past_common_rows']=[int(np.isfinite(raw[-g['window']-g['lag']:-g['lag'],g['nodes'],g['channel']]).all(1).sum()) for g in groups]
                 frame['correlations']=[matrix for family in frame['correlations'] for matrix in family]
                 frame['expected_correlations']=[matrix for family in frame['expected_correlations'] for matrix in family]
                 frame['scores']=frame['scores']['diffusion/entropy']
@@ -53,13 +55,16 @@ def build(root: Path, datasets: list[str] | None = None) -> None:
                      'calibration_units':len(maxima),'alpha':.1,'checkpoint':json.loads((directory/'status.json').read_text())['checkpoint_sha256'],
                      'strict_score_threshold':float(np.sort(maxima)[len(maxima)-int(np.floor(.1*(len(maxima)+1)))]) if .1*(len(maxima)+1)>=1 else None,
                      'graph_kind':'synthetic coupling' if name.startswith('synthetic') else 'coordinate proximity' if name=='intel' else 'release road-distance graph'}
+            payload['cause_status']=('controlled fault injection' if events[event_index]['is_fault']
+                                     else 'legitimate synchronized transition: synthetic negative control' if events[event_index]['kind']=='transition'
+                                     else 'unknown native cause; no confirmed failure label')
             filename=f'{name}-{event_index}.json'
             write_json(destination/'data'/filename,payload)
             # Compact array JSON for fast local replay; retain full-precision
             # source experiment files separately.
             path=destination/'data'/filename
             path.write_text(json.dumps(rounded(json.loads(path.read_text())),separators=(',',':')))
-            label=f'{name}: '+({'copy':'copy collapse','noise':'independent noise'}.get(events[event_index]['kind'],'native unlabelled recording'))
+            label=f'{name}: '+({'copy':'copy collapse','noise':'independent noise','transition':'legitimate transition control'}.get(events[event_index]['kind'],'native unlabelled recording'))
             catalog.append({'file':'data/'+filename,'label':label})
     template=(root/'src/iot_entropy/dashboard_template.html').read_text()
     (destination/'index.html').write_text(template.replace('__CATALOG__',json.dumps(catalog)))

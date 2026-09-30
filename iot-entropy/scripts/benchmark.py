@@ -13,6 +13,7 @@ from iot_entropy.entropy import window_features
 from iot_entropy.experiment import load_models
 from iot_entropy.features import Scan,score_features
 from iot_entropy.models import calendar
+from iot_entropy.localization import merge_groups,participation
 from iot_entropy.utils import Budget,recorded_runtime,synchronize,write_json
 
 root=Path(__file__).resolve().parents[1]
@@ -37,6 +38,7 @@ for name in ['synthetic64','synthetic128','synthetic256','intel','pems']:
     start=int(data.issuance_indices(1,48,120,168)[0]);values=data.standardized
     floor=torch.as_tensor(np.load(directory/f'score-{name}-physical-17/development_parameters.npz')['floor'],device='cuda')
     calibration=np.load(directory/f'score-{name}-physical-17/calibration.npz')
+    localization_budget=json.loads((directory/f'score-{name}-physical-17/development_selection.json').read_text())['localization_budget']
     column=calibration['methods'].tolist().index('diffusion/entropy');maxima=calibration['maxima'][:,column]
     context=torch.as_tensor(values[start-48:start],device='cuda')[None]
     dates=torch.as_tensor(calendar(data.timestamps[start:start+120]),device='cuda')[None]
@@ -56,7 +58,12 @@ for name in ['synthetic64','synthetic128','synthetic256','intel','pems']:
         scores,_=score_features(scan.extract(observed),predicted,floor)
         maximum=float(scores['entropy'].nan_to_num(nan=-float('inf')).max())
         p=float(rank_pvalues(maxima,maximum))
-        write_json(root/'.local/benchmark-record.json',{'score':maximum,'p':p})
+        vector=scores['entropy'].cpu().numpy()
+        adjusted=rank_pvalues(maxima,np.where(np.isfinite(vector),vector,-np.inf))
+        nodes=np.argsort(-participation(vector,scan.groups,len(data.node_ids)),kind='stable')[:localization_budget]
+        alerts=np.where((adjusted<=.1)&np.isfinite(vector))[0].tolist()
+        merged=merge_groups(alerts,scan.groups,.5)
+        write_json(root/'.local/benchmark-record.json',{'score':maximum,'p':p,'ranked_nodes':nodes,'merged_alert_groups':merged})
         synchronize('cuda');pipeline_times.append(time.perf_counter()-begin)
     results['detector'].append({'dataset':name,'model_only':summarize(model_times),'complete_detector':summarize(pipeline_times),
                               'peak_gpu_bytes':torch.cuda.max_memory_allocated(),
@@ -72,5 +79,7 @@ for label,values in [('cpu_float32',reference.float()),('cpu_float64',reference)
     kernels[label]=summarize(times)
 kernels['float32_gpu_cpu_reference_max_abs_error']=float((window_features(reference).values-window_features(reference.cuda().float()).values.cpu().double()).abs().max())
 results['kernels']=kernels
+results['pipeline_stages']=['host-to-device context/target transfer','joint generation','feature/reference statistics','robust scores',
+                            'calibration ranks','sensor participation and overlap merging','local alert-record serialization']
 results['elapsed_seconds']=time.monotonic()-started
 write_json(root/'experiments/benchmark.json',results)

@@ -142,6 +142,7 @@ def cases(root: Path) -> list[dict]:
         during=[f for f in frames if event['onset']<=f['end']<event['onset']+event['duration']]
         records.append({'event':event['id'],'group':group,'window':g['window'],'size':g['size'],
                         'actual_mean_delta_h_during_event':float(np.mean([f['observed'][group][1] for f in during])),
+                        'exceeds_scan_threshold_during_event':any(f['scores']['diffusion/entropy'][group]>critical for f in during),
                         'selection':'Fixed saved copy/noise cases; choose largest signed mean change among groups with truth IoU >= .25, for illustration only'})
     save(fig,root,'cases');write_json(root/'results/case-selection.json',records)
     return records
@@ -218,7 +219,7 @@ def calibration_cost(root: Path) -> None:
     ax.set_xticks(x);ax.set_xticklabels(labels);ax.set_ylabel('p50 seconds / issuance');ax.legend(frameon=False,fontsize=6)
     ax=axes[1,0]
     subset=frame[(frame.alpha==.1)&(frame.graph=='physical')&frame.is_fault&(frame.method=='diffusion/entropy')]
-    vals=[subset[subset.primary_dataset==d].delay_seconds.dropna().values/60 for d in ['synthetic','intel','pems']]
+    vals=[subset[subset.primary_dataset==d].delay_with_shared_pipeline_seconds.dropna().values/60 for d in ['synthetic','intel','pems']]
     ax.boxplot(vals,labels=['Synthetic','Intel','PEMS'],showfliers=False,widths=.45)
     ax.set_ylabel('Detected-event delay (min)');ax.text(.03,.96,'Missed events excluded; counts in table',transform=ax.transAxes,va='top',fontsize=6)
     ax=axes[1,1]
@@ -241,7 +242,7 @@ def tables(root: Path) -> None:
     directory=root/'manuscript/generated';directory.mkdir(exist_ok=True)
     config=json.loads((root/'configs/full.json').read_text());summary=json.loads((root/'results/summary.json').read_text())
     lines=[r'\begin{table*}[t]',r'\centering\caption{Primary datasets and frozen splits. Counts are time rows; independent synthetic episodes define the partitions. Intel and PEMS faults are controlled injections, not confirmed field failures.}',
-           r'\label{tab:data}\small',r'\begin{tabular}{lrrrrll}',r'\toprule Dataset & Nodes & Train & Dev. & Cal. / test & Interval; primary channels & Source span used\\\midrule']
+           r'\label{tab:data}\footnotesize\setlength{\tabcolsep}{4pt}',r'\begin{tabular}{lrrrrll}',r'\toprule Dataset & Nodes & Train & Dev. & Cal. / test & Interval; primary channels & Source span used\\\midrule']
     dataset_rows=[]
     for name in config['datasets']:
         data=load_data(root,name);manifest=json.loads((root/'data/manifests'/f'{name}.json').read_text())
@@ -249,7 +250,10 @@ def tables(root: Path) -> None:
         label='Synthetic '+name.replace('synthetic','') if name.startswith('synthetic') else NAMES[name]
         channels='signal' if name.startswith('synthetic') else 'temp., humidity' if name=='intel' else 'speed (mph)'
         span='independent simulations' if name.startswith('synthetic') else '28 Feb.--23 Mar. 2004' if name=='intel' else '1 Jan.--30 June 2017'
-        lines.append(f"{label} & {len(data.node_ids)} & {counts[0]:,} & {counts[1]:,} & {counts[2]:,} / {counts[3]:,} & {manifest['interval_seconds']//60} min; {channels} & {span}" + r" \\")
+        if name in ['synthetic64','intel','pems']:
+            label='Synthetic (3 configs)' if name.startswith('synthetic') else label
+            nodes='64/128/256' if name.startswith('synthetic') else str(len(data.node_ids))
+            lines.append(f"{label} & {nodes} & {counts[0]:,} & {counts[1]:,} & {counts[2]:,} / {counts[3]:,} & {manifest['interval_seconds']//60} min; {channels} & {span}" + r" \\")
         dataset_rows.append({'dataset':name,'counts':counts,'nodes':len(data.node_ids),'interval_seconds':manifest['interval_seconds']})
     lines += [r'\bottomrule\end{tabular}',r'\end{table*}']
     (directory/'datasets.tex').write_text('\n'.join(lines)+'\n')
@@ -258,13 +262,15 @@ def tables(root: Path) -> None:
              ('diffusion/entropy','Diffusion H'),('diffusion/synchronization','Diffusion S'),('diffusion/combined','Diffusion H+S'),
              ('diffusion/matrix','Diffusion full R'),('diffusion/raw','Diffusion raw'),('diffusion/entropy_raw','Diffusion H+raw'),
              ('diffusion/quality_hybrid','Diffusion quality hybrid'),('cusum','CUSUM'),('gdn','GDN adaptation')]
-    lines=[r'\begin{table*}[t]',r'\centering\caption{Main results at nominal $\alpha=.10$. Each cell is event recall / localization IoU / event-PR area. Localization counts missed events as zero. Values are averages over three training seeds; synthetic configurations form one dataset. Equal nominal calibration budgets do not imply equal realized background rates.}',
-           r'\label{tab:main}\small',r'\begin{tabular}{lccc}',r'\toprule Method & Synthetic & Intel Lab & PEMS-BAY\\\midrule']
+    lines=[r'\begin{table*}[t]',r'\centering\caption{Main results at nominal $\alpha=.10$. Each cell is recall / IoU / event-PR area / median detected-event delay (minutes). Delay adds measured mean complete comparison-pipeline latency to the observation timestamp, a conservative serial execution convention. Localization counts misses as zero. Values summarize three seeds; synthetic configurations form one dataset. Equal nominal budgets do not imply equal realized background rates.}',
+           r'\label{tab:main}\footnotesize\setlength{\tabcolsep}{4pt}',r'\begin{tabular}{lccc}',r'\toprule Method & Synthetic & Intel Lab & PEMS-BAY\\\midrule']
     for method,label in methods:
         entries=[]
         for dataset in ['synthetic','intel','pems']:
             s=next(s for s in summary if s['dataset']==dataset and s['method']==method)
-            entries.append(f"{s['event_recall']['mean']:.3f} / {s['localization_iou']['mean']:.3f} / {s['mean_event_auprc_envelope']:.3f}")
+            delay=s['median_delay_with_shared_pipeline_seconds']
+            delay_text='--' if delay is None else f'{delay/60:.1f}'
+            entries.append(f"{s['event_recall']['mean']:.3f} / {s['localization_iou']['mean']:.3f} / {s['mean_event_auprc_envelope']:.3f} / {delay_text}")
         lines.append(label+' & '+' & '.join(entries)+r' \\')
     lines.extend([r'\bottomrule\end{tabular}',r'\end{table*}'])
     (directory/'main-table.tex').write_text('\n'.join(lines)+'\n')

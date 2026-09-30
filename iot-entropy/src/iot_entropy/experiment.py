@@ -80,6 +80,8 @@ def run(data: SensorData, config: dict, seed: int, experiment_dir: Path, budget:
     torch.set_num_threads(4)
     directory=experiment_dir/f'score-{data.name}-{graph}-{seed}'
     if (directory/'status.json').exists():
+        if json.loads((directory/'configuration.json').read_text())!=config:
+            raise ValueError('Existing scoring output has another configuration; use a fresh output directory')
         return json.loads((directory/'status.json').read_text())
     directory.mkdir(parents=True,exist_ok=True)
     samples_dir=directory/'samples';samples_dir.mkdir(exist_ok=True)

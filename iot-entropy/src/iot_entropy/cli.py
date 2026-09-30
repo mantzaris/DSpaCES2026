@@ -61,6 +61,8 @@ def main() -> None:
     elif args.stage=='figures':
         from .plotting import build
         build(root)
+        from .manuscript import build as write_manuscript
+        write_manuscript(root)
     elif args.stage=='dashboard':
         from .dashboard import build
         build(root)

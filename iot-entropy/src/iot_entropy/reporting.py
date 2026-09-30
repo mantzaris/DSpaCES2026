@@ -23,8 +23,13 @@ def evaluate_directory(directory: Path, interval_seconds: int, alphas: list[floa
     status=json.loads((directory/'status.json').read_text())
     config=json.loads((directory/'configuration.json').read_text())
     events=json.loads((directory/'events.json').read_text())
-    archive=np.load(directory/'predictions.npz')
+    # NpzFile re-inflates an entire compressed array on every lookup. Materialize
+    # once before the event/method loop; values and metrics are unchanged.
+    with np.load(directory/'predictions.npz') as source:
+        archive={key:source[key] for key in source.files}
     methods=archive['methods'].tolist();times=archive['times'];budget=int(archive['localization_budget'])
+    timings=json.loads((directory/'runtime.json').read_text())['timings']
+    shared_latency=float(np.mean([r['seconds'] for r in timings if r['stage']=='calibration']))
     rows=[];curves=[];calibration_rows=[]
     for k,method in enumerate(methods):
         predictions=[]
@@ -54,6 +59,7 @@ def evaluate_directory(directory: Path, interval_seconds: int, alphas: list[floa
                      'affected_components':event.get('affected_components',0),'actual_entropy_direction':direction,
                      'paired_entropy_direction':paired_direction,'tp':matched['tp'],'fp':matched['fp'],'fn':matched['fn'],
                      'delay_seconds':delay,'eligible_fraction':float(archive['method_eligible_fraction'][i,:,k].mean()),
+                     'shared_pipeline_seconds':shared_latency,'delay_with_shared_pipeline_seconds':delay+shared_latency,
                      'observed_eligible_fraction':float(archive['eligible_fraction'][i].mean()),
                      'flagged_issuances':int(flags.sum()),'issuances':len(flags),
                      'monitoring_days':len(times)*config['alert_stride']*interval_seconds/86400,
@@ -71,8 +77,12 @@ def evaluate_directory(directory: Path, interval_seconds: int, alphas: list[floa
     return rows,curves,calibration_rows
 
 
-def aggregate(root: Path) -> dict:
+def aggregate(root: Path, allow_partial: bool = False) -> dict:
     config=json.loads((root/'configs/full.json').read_text())
+    missing=[f'{dataset}/{seed}' for dataset in config['datasets'] for seed in config['training_seeds']
+             if not (root/'experiments/full'/f'score-{dataset}-physical-{seed}/status.json').exists()]
+    if missing and not allow_partial:
+        raise RuntimeError('Primary scoring incomplete: '+', '.join(missing))
     rows=[];curves=[];calibration=[];runtimes=[];fidelity=[]
     for status_file in sorted((root/'experiments/full').glob('score-*/status.json')):
         directory=status_file.parent
@@ -91,6 +101,8 @@ def aggregate(root: Path) -> dict:
             fidelity.append({'dataset':status['dataset'],'seed':status['seed'],'graph':status['graph'],**record})
     if not rows:raise RuntimeError('No completed score outputs')
     output=root/'results';output.mkdir(exist_ok=True)
+    write_json(output/'report-coverage.json',{'primary_complete':not missing,'missing_primary_runs':missing,
+               'completed_scoring_configurations':len(list((root/'experiments/full').glob('score-*/status.json')))})
     frame=pd.DataFrame(rows);frame.to_csv(output/'event_metrics.csv.gz',index=False)
     write_json(output/'event_pr_curves.json',curves)
     pd.DataFrame(calibration).to_csv(output/'calibration_diagnostics.csv',index=False)
@@ -112,6 +124,7 @@ def aggregate(root: Path) -> dict:
                  'pooled_event_recall':float(faults.tp.mean()),
                  'macro_type_recall':float(faults.groupby('kind').tp.mean().mean()),
                  'median_delay_seconds':float(faults.delay_seconds.median()),
+                 'median_delay_with_shared_pipeline_seconds':float(faults.delay_with_shared_pipeline_seconds.median()),
                  'background_alerts_per_network_day':float(controls.fp.sum()/max(controls.monitoring_days.sum(),1e-8)),
                  'background_unit_exceedance':float(controls.flagged_issuances.sum()/max(controls.issuances.sum(),1)),
                  'transition_unit_exceedance':float(transitions.flagged_issuances.sum()/max(transitions.issuances.sum(),1)),
@@ -134,6 +147,7 @@ def aggregate(root: Path) -> dict:
         summary['mean_event_auprc_envelope']=float(np.mean(relevant))
         summaries.append(summary)
     write_json(output/'summary.json',summaries)
+    pd.json_normalize(summaries).to_csv(output/'method_comparison.csv',index=False)
     paired=[]
     comparisons=[('diffusion/entropy','diffusion/synchronization'),('diffusion/entropy','diffusion/matrix'),
                  ('diffusion/combined','diffusion/synchronization'),('diffusion/entropy','bootstrap/entropy'),
@@ -147,7 +161,19 @@ def aggregate(root: Path) -> dict:
                 paired.append({'dataset':dataset,'left':left,'right':right,'metric':metric,
                                **bootstrap_mean(difference.to_numpy(),repeats=config['bootstrap_repetitions'])})
     write_json(output/'paired_comparisons.json',paired)
-    strata=primary[primary.is_fault].groupby(['primary_dataset','method','kind','duration','severity','fault_size','actual_entropy_direction'],dropna=False)[['tp','localization_iou','delay_seconds','eligible_fraction']].mean().reset_index()
+    directional_pairs=[]
+    for (dataset,direction),group in faults.groupby(['primary_dataset','actual_entropy_direction']):
+        for left,right in comparisons[:3]:
+            for metric in ['tp','localization_iou']:
+                pivot=group.groupby(['dataset','base','method'])[metric].mean().unstack('method')
+                difference=(pivot[left]-pivot[right]).dropna()
+                directional_pairs.append({'dataset':dataset,'actual_entropy_direction':direction,'left':left,'right':right,'metric':metric,
+                                           **bootstrap_mean(difference.to_numpy(),repeats=config['bootstrap_repetitions'])})
+    write_json(output/'direction-paired-comparisons.json',directional_pairs)
+    stratifier=primary[primary.is_fault].groupby(['primary_dataset','method','kind','duration','severity','fault_size','actual_entropy_direction'],dropna=False)
+    strata=stratifier[['tp','localization_iou','delay_seconds','eligible_fraction']].mean()
+    strata['event_seed_pairs']=stratifier.size()
+    strata=strata.reset_index()
     strata.to_csv(output/'stratified_metrics.csv',index=False)
     # Keep individual graph variants visible, never pool them into primary rows.
     ablations=frame[frame.alpha==config['primary_alpha']].groupby(['dataset','graph','method','is_fault'])[['tp','fp','localization_iou','eligible_fraction']].mean().reset_index()
@@ -167,6 +193,26 @@ def aggregate(root: Path) -> dict:
         latency['delay_with_serial_computation_seconds']=latency.delay_seconds+latency.mean_compute_seconds
         latency.to_csv(output/'delay_with_computation.csv',index=False)
     feature_subset_ablations(root)
+    sample_rows=[];sample_checks=[]
+    for name in ['synthetic64','pems']:
+        archives=[];event_lists=[]
+        for count in [32,64,128]:
+            directory=root/f'experiments/sensitivity/B{count}/score-{name}-physical-17'
+            if not (directory/'status.json').exists():continue
+            metadata=json.loads((root/'data/manifests'/f'{name}.json').read_text())
+            evaluated,_,_=evaluate_directory(directory,metadata['interval_seconds'],[.1])
+            sample_rows.extend([dict(row,generated_samples=count) for row in evaluated])
+            with np.load(directory/'predictions.npz') as source:
+                column=source['methods'].tolist().index('gdn');archives.append(source['pvalues'][:,:,column])
+            event_lists.append(json.loads((directory/'events.json').read_text()))
+        if len(archives)==3:
+            for archive,events in zip(archives[1:],event_lists[1:]):
+                np.testing.assert_array_equal(archives[0],archive)
+                if events!=event_lists[0]:raise ValueError('Sample-count sensitivity changed the injection realizations')
+            sample_checks.append({'dataset':name,'identical_fault_realizations':True,'identical_gdn_control_pvalues':True})
+    if sample_rows:
+        pd.DataFrame(sample_rows).to_csv(output/'sample_count_metrics.csv',index=False)
+        write_json(output/'sample_count_consistency.json',sample_checks)
     return {'completed_scoring_configurations':len(list((root/'experiments/full').glob('score-*/status.json'))),'event_metric_rows':len(frame),'summary_rows':len(summaries)}
 
 
@@ -180,8 +226,11 @@ def feature_subset_ablations(root: Path) -> None:
         config=json.loads((directory/'configuration.json').read_text())
         groups=json.loads((directory/'groups.json').read_text())
         events=json.loads((directory/'events.json').read_text())
-        predictions=np.load(directory/'predictions.npz');times=predictions['times']
-        archive=np.load(directory/'samples/group_scores.npz')
+        with np.load(directory/'predictions.npz') as source:
+            predictions={key:source[key] for key in source.files}
+        times=predictions['times']
+        with np.load(directory/'samples/group_scores.npz') as source:
+            archive={key:source[key] for key in source.files}
         for feature in ['window','size']:
             for value in sorted({g[feature] for g in groups}):
                 selected=np.array([g[feature]==value for g in groups]);subgroups=[g['nodes'] for g in groups if g[feature]==value]

@@ -41,10 +41,11 @@ fault probabilities; native real recordings have unknown causes.
 The recorded execution uses Python 3.12, PyTorch 2.8.0 with CUDA 12.8, and an
 NVIDIA RTX A6000. `environment/gpu-inspection.json`, `experiments/benchmark.json`
 and the environment lock record hardware, driver and software. Use Python 3.11+
-for a fresh installation. Commands below run from `iot-entropy`.
+for the source package; use Python 3.12 for the recorded dependency lock.
+Commands below run from `iot-entropy`.
 
 ```bash
-python3 -m venv --system-site-packages .venv
+python3.12 -m venv --system-site-packages .venv
 source .venv/bin/activate
 .venv/bin/python -m pip install -r environment/requirements.lock.txt
 .venv/bin/python -m pip install --no-deps -e .
