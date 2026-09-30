@@ -1,5 +1,7 @@
 # Decisions
 
+2026-09-30 user update. Continue working and committing on `main`. The user will push at completion. Do not retry push authentication or create branches. Initial commit is `83cedd9`.
+
 2026-09-30. Use the existing authorized Runpod host and available SSH authentication. Do not create cloud resources. The provisional 48 to 96 GPU hours in the plan is not a spending authorization. Begin with bounded profiling and finite jobs on the existing pod.
 
 2026-09-30. Keep all local work here and remote execution in `/workspace/iot-inconsistency`. Work directly on `main`. Cache reproducible third-party downloads outside Git under this directory and retain their URLs, revisions, licenses and hashes in tracked manifests.

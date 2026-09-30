@@ -1,25 +1,23 @@
 # Research progress
 
-Updated 2026-09-30. Work is active on `main` in this directory.
+Updated 2026-09-30. Work is active on `main`. The user will push at completion. Do not make branches or retry pushing.
 
-The full 791-line specification has been read. Part C was extracted without changes and its 13 CPU checks passed. These are arithmetic checks only. No detector performance has been established.
+The complete 791-line specification was read. The exact Part C oracle passed 13 checks. Saved-input CPU and CUDA arithmetic parity passed, with maximum score-component differences of 1.11e-16 in CUDA float64 and 8.56e-8 in float32. Integration checks cover witness exclusion, duplicate conflicts, fixed edge targets, masks, costs and missing predictions. These are correctness checks, not detector accuracy claims.
 
-Runpod access works with the configured SSH agent/default identity. Hardware is NVIDIA RTX PRO 4500 Blackwell with 32623 MiB, driver 580.178.04, Python 3.12.3, PyTorch 2.8.0+cu128. Local Python is 3.8.10 and local Torch is 1.10.1 CPU. Remote project files stay under `/workspace/iot-inconsistency`.
+The existing RunPod has an RTX PRO 4500 Blackwell GPU with 32623 MiB. Project files are under `/workspace/iot-inconsistency`. Initial model runs were archived as exploratory after the fault protocol audit. Version 2 uses signed synthetic responses and paired association-attribute permutations that preserve marginal attributes and graph degrees. Native process labels remain separate from injected faults. All three dataset families are retained.
 
-CPU and CUDA saved-input parity passed. CUDA maximum score-component absolute differences were 1.11e-16 in float64 and 8.56e-8 in float32. Seven initial integration tests passed locally, including withheld-value noninterference, upstream duplicate invariance, conflict rejection and attribute-sensitive graph predictions. These tests use an untrained model and do not establish predictive quality.
+Current work is the revised training, shared baseline evaluation, development freeze and independent calibration pipeline. A 200-step pilot measured 1.24 s for eight candidates in full neural precision and 0.35 s with bfloat16 denoising. The maximum score change was 0.00352. Final score arithmetic remains float64. These are pilot timings only.
 
-Intel and SKAB downloads are pinned. SKAB contains 35 CSV files, including one anomaly-free file. Dataset adapters and split manifests are implemented for three simulator configurations, Intel and SKAB. The initial cached manifests still need the final fault protocol and latent-truth export audit before being called frozen. Core scoring, costs, normalization, witness partitioning, association discovery, PCA, GDN and conditional diffusion modules are implemented. Full-method source review and the novelty matrix are in `literature`.
+DiffAD is an independent adaptation of the paper's selection, S4 denoising, incremental conditioning and residual scoring. Its dense S4 kernel passes an independent state-recurrence test. Learning-rate selection includes the paper's value and uses only development data. PCA, GDN, backbone residual and deterministic repair alternatives are implemented. A free local Neo4j instance is running on loopback ports 17474 and 17687. Graph persistence, operator UI, final analyses and manuscript remain in progress.
 
-An isolated Runpod environment now has pinned research dependencies. Current stage is model profiling and the end-to-end inference implementation. Remaining stages are full comparator verification and training, development selection, frozen calibration and testing, ablations, graph persistence and UI, figures and manuscript verification.
-
-Resume from this directory
+Resume and inspect from this directory
 
 ```bash
-python3 reference/reference_score.py
-python3 scripts/audit_equations.py --device cpu
+python3 -m pytest -q
 bash scripts/runpod.sh sync
-bash scripts/runpod.sh exec .venv/bin/python scripts/audit_equations.py --device cuda
+bash scripts/runpod.sh exec .venv/bin/python scripts/job.py status training_v2
+bash scripts/runpod.sh exec .venv/bin/python scripts/job.py status main_experiments
 bash scripts/runpod.sh pull
 ```
 
-Do not infer completion from this file's existence. Read result manifests and run statuses. No submission or new paid resource is authorized.
+The finite main pipeline is `scripts/continue_main.sh`. It waits for revised training, tunes/trains DiffAD, evaluates development, freezes choices, calibrates, then opens test data. It resumes completed case files. Pull excludes optimizer checkpoints; preserve those and final model weights separately before ending the project. Do not infer completion from this document. No submission or new paid resource is authorized.

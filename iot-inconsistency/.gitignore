@@ -7,6 +7,8 @@ data/processed/
 literature/upstream/
 literature/downloads/
 runtime/
+results/**/*.pt
+results/**/*.tmp
 *.log
 *.aux
 *.out

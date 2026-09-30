@@ -70,7 +70,9 @@ def conditional_sample(model,context,context_mask,graph,samples=8,seed=0,samplin
     grid=torch.linspace(model.steps-1,0,min(sampling_steps,model.steps),device=context.device).long().unique(sorted=True).flip(0)
     for index,step in enumerate(grid):
         level=step.expand(b*samples)
-        noise=model.predict_noise(state,level,cached)
+        with torch.autocast(device_type=state.device.type,dtype=torch.bfloat16,
+                            enabled=state.device.type=='cuda' and getattr(model,'inference_autocast',False)):
+            noise=model.predict_noise(state,level,cached)
         alpha=model.alpha_bar[step]
         clean=(state-(1-alpha).sqrt()*noise)/alpha.sqrt()
         clean=clean.clamp(-12,12)
@@ -88,3 +90,13 @@ def training_target_mask(observed):
     tail=torch.arange(t,device=observed.device)[None,None,:]>=t-torch.randint(4,25,(b,1,1),device=observed.device)
     cells=torch.rand((b,c,t),device=observed.device)<.04
     return ((channel & tail)|cells)&observed
+
+
+class ConditionalMean(ConditionalDiffusion):
+    def __init__(self,channels,window=64,width=128,steps=32):
+        super().__init__(channels,window,width,steps)
+        # Retain only the conditional encoder and mean head, not unused denoiser weights.
+        del self.denoiser
+        self.mean_head=nn.Sequential(nn.Linear(width,width*2),nn.SiLU(),nn.Linear(width*2,window))
+    def forward(self,context,observed,graph):
+        return self.mean_head(self.encode(context,observed,graph))

@@ -28,12 +28,13 @@ def simulate(nodes, length, seed, nonlinear=True, heldout=False):
         value=z[np.maximum(np.arange(length)-lag,0),j]+.1*z[:,(j+1)%4]
         if nonlinear:
             value+=.6*np.sin(2*z[:,j]+.2*(i//4)%3)+.15*regime*z[:,(j+2)%4]**2
-        x[:,i]=offsets[j]+scales[j]*(value+correlated[:,j]+rng.normal(0,.015,length))
+        response_sign=1 if (i//4)%2==0 else -1
+        x[:,i]=offsets[j]+scales[j]*(response_sign*(value+correlated[:,j])+rng.normal(0,.015,length))
         units.append(['degC','kPa','V','lux'][j])
     assert np.isfinite(x).all() and np.max(np.abs(z))<10
     return x,z,regime,units,{'linear_spectral_radius':spectral_radius,
         'nonlinear_lipschitz_upper_bound':.035,'max_abs_latent':float(np.max(np.abs(z))),
-        'sample_seconds':1.,'seed':seed}
+        'sample_seconds':1.,'seed':seed,'generator_version':'signed-responses-v2'}
 
 
 def _windows(x,timestamps,unit,labels=None,h=64,stride=32):
@@ -48,7 +49,7 @@ def _windows(x,timestamps,unit,labels=None,h=64,stride=32):
     return result
 
 
-def synthetic_records(nodes,nonlinear):
+def synthetic_records(root,nodes,nonlinear):
     records={}; all_train=[]; manifest=[]
     for s,split in enumerate(SPLITS):
         rows=[]
@@ -59,6 +60,10 @@ def synthetic_records(nodes,nonlinear):
             meta.update(split=split,trajectory=identity,heldout_regime=(split=='test' and trajectory>=6))
             rows+=_windows(x,np.arange(len(x)),identity)
             manifest.append(meta)
+            truth_directory=root/'data/processed'/f'synthetic_{nodes}_{"nonlinear" if nonlinear else "linear"}'/'latent_truth'
+            truth_directory.mkdir(parents=True,exist_ok=True)
+            np.savez_compressed(truth_directory/(identity+'.npz'),measurements=x,latent=z,regime=r,
+                                timestamps=np.arange(len(x)),observation_fault=np.zeros_like(x,dtype=bool))
             if split=='train': all_train.append(x)
         records[split]=rows
     return records,np.concatenate(all_train),[f'sensor_{i:02d}' for i in range(nodes)],units,manifest
@@ -143,7 +148,7 @@ def skab_records(root):
 def prepare_dataset(root,name,max_windows=None):
     if name.startswith('synthetic'):
         nodes=int(name.split('_')[1]); nonlinear=name.endswith('nonlinear')
-        records,train,groups,units,manifest=synthetic_records(nodes,nonlinear)
+        records,train,groups,units,manifest=synthetic_records(root,nodes,nonlinear)
     elif name=='intel': records,train,groups,units,manifest=intel_records(root)
     elif name=='skab': records,train,groups,units,manifest=skab_records(root)
     else: raise ValueError(name)
@@ -157,8 +162,8 @@ def prepare_dataset(root,name,max_windows=None):
             rows=[rows[i] for i in indices]
         x=np.stack([transform_measurements(r['x'].T,normalizer).T for r in rows]).astype('float32')
         observed=np.isfinite(x)
-        age=np.zeros(x.shape,dtype=np.int32)
-        for t in range(1,x.shape[-1]): age[...,t]=np.where(observed[...,t],0,age[...,t-1]+1)
+        age=np.where(observed,0,-1).astype(np.int32)
+        for t in range(1,x.shape[-1]): age[...,t]=np.where(observed[...,t],0,np.where(age[...,t-1]>=0,age[...,t-1]+1,-1))
         np.savez_compressed(output/(split+'.npz'),x=x,observed=observed,age=age,
             timestamp=np.array([r['timestamp'] for r in rows]),block=np.array([r['block'] for r in rows]),
             process_label=np.array([r['process_label'] for r in rows]),reference=np.array([r['reference'] for r in rows]),
@@ -170,6 +175,6 @@ def prepare_dataset(root,name,max_windows=None):
             'meaning':'tail frequency proxy, not an authoritative fault label'},
         window=64,stride=32,interpolation='none')
     (output/'metadata.json').write_text(json.dumps(metadata,indent=2)+'\n')
-    files={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in output.glob('*.npz')}
+    files={str(p.relative_to(output)):hashlib.sha256(p.read_bytes()).hexdigest() for p in output.rglob('*.npz')}
     (root/'data/manifests'/(name+'.json')).write_text(json.dumps(dict(metadata=metadata,files=files),indent=2)+'\n')
     return output

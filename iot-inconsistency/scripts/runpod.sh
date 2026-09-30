@@ -10,7 +10,7 @@ case "${1:-status}" in
     rsync -az --exclude=.git --exclude=.venv --exclude=runtime --exclude=__pycache__ --exclude=literature/upstream --exclude=literature/downloads -e "ssh ${SSH_ARGS[*]}" ./ "$REMOTE_HOST:$REMOTE_DIR/"
     ;;
   pull)
-    rsync -az -e "ssh ${SSH_ARGS[*]}" "$REMOTE_HOST:$REMOTE_DIR/results/" results/
+    rsync -az --exclude='*.pt' --exclude='*.tmp' -e "ssh ${SSH_ARGS[*]}" "$REMOTE_HOST:$REMOTE_DIR/results/" results/
     ;;
   status)
     ssh "${SSH_ARGS[@]}" "$REMOTE_HOST" 'nvidia-smi; pgrep -af "iot-inconsistency|run_study" || true'
