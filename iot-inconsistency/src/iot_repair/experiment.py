@@ -57,14 +57,25 @@ def public_case(case):
     return {key:(value.tolist() if isinstance(value,np.ndarray) else value) for key,value in case.items() if key not in ('x','graph')}
 
 
-def load_models(root,dataset,kinds=('diffusion','mean','gdn','diffad','no_graph'),device='cuda'):
+def load_models(root,dataset,kinds=('diffusion','mean','gdn','diffad','no_graph'),device='cuda',inference_states=False):
     directory=Path(root)/'results/models'/dataset;result={}
     graph=json.loads((directory/'graph.json').read_text())
     channels=len(graph['groups'])
+    manifest_path=Path(root)/'results/model_weights/manifest.json'
+    manifest=None
     for kind in kinds:
         result[kind]=[]
         for seed in SEEDS:
-            saved=torch.load(directory/f'{kind}_{seed}.pt',map_location=device,weights_only=False)
+            checkpoint=directory/f'{kind}_{seed}.pt'
+            if checkpoint.exists() and not inference_states:
+                saved=torch.load(checkpoint,map_location=device,weights_only=False)
+            else:
+                if manifest is None:
+                    manifest={(r['dataset'],r['model']):r for r in json.loads(manifest_path.read_text())['models']}
+                entry=manifest[(dataset,f'{kind}_{seed}')]
+                with np.load(Path(root)/entry['path'],allow_pickle=False) as arrays:
+                    state={key:torch.from_numpy(arrays[key].copy()) for key in arrays.files}
+                saved=dict(config=entry['configuration'],model=state)
             cls={'diffusion':ConditionalDiffusion,'no_graph':ConditionalDiffusion,'mean':ConditionalMean,'gdn':GDN,'diffad':DiffAD}[kind]
             model=cls(channels,width=saved['config']['width']) if kind in ('diffusion','no_graph','mean') else cls(channels)
             model.load_state_dict(saved['model']);model.to(device).eval();model.inference_autocast=True

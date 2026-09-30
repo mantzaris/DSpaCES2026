@@ -21,26 +21,25 @@ def save(fig,name,sources):
 
 # Architecture labels are taken from the actual recorded study configuration.
 config=json.loads((ROOT/'configs/study.json').read_text())
-fig,ax=plt.subplots(figsize=(7.16,2.5));ax.set_xlim(0,10);ax.set_ylim(0,4);ax.axis('off')
+fig,ax=plt.subplots(figsize=(7.16,3.05));ax.set_xlim(0,10);ax.set_ylim(0,4.9);ax.axis('off')
 def box(x,y,w,h,text,color='#e9f2f7'):
     ax.add_patch(FancyBboxPatch((x,y),w,h,boxstyle='round,pad=0.04',facecolor=color,edgecolor='#617384',linewidth=.8));ax.text(x+w/2,y+h/2,text,ha='center',va='center',fontsize=8)
 def arrow(a,b,color='#52667b',style='-'):
     ax.add_patch(FancyArrowPatch(a,b,arrowstyle='-|>',mutation_scale=9,linewidth=.9,color=color,linestyle=style,connectionstyle='arc3,rad=0'))
-box(.1,2.45,1.4,.8,'Measured window\nand source identities')
-box(1.95,2.45,1.45,.8,'Canonical inputs\nFrozen hypotheses')
-box(3.85,2.45,1.5,.8,'Proposal context\nWitness targets hidden')
-box(5.85,2.45,1.55,.8,f'{config["ensemble_seeds"].__len__()} fitted models\n{config["replicates"]} proposals each')
-box(8.,2.45,1.7,.8,'Before and after\nwitness predictions')
-for left,right in [((1.5,2.85),(1.95,2.85)),((3.4,2.85),(3.85,2.85)),((5.35,2.85),(5.85,2.85)),((7.4,2.85),(8,2.85))]:arrow(left,right)
-box(1.95,1.12,1.45,.75,'Unchanged witness\ntargets and masks','#fff1d7')
-box(5.85,1.12,1.55,.75,'CRPS change\nGain R and spread U')
-arrow((2.65,2.45),(2.65,1.87));arrow((3.4,1.5),(5.85,1.5),color='#a56b00');arrow((8.85,2.45),(7.4,1.62))
-box(8,1.12,1.7,.75,'S = R − κU − λΩ\nType-specific calibration')
-arrow((7.4,1.5),(8,1.5));box(8,.05,1.7,.68,'Neo4j evidence writes\nOperator review')
-arrow((8.85,1.12),(8.85,.73))
-box(.1,.05,2.5,.65,'Training artifacts\nNormalization, relations and models','#edf1ed');arrow((1.35,.7),(4.4,2.42),style='--')
-box(3.05,.05,2.25,.65,'Separate calibration blocks\nNull tails and probabilities','#edf1ed');arrow((5.3,.37),(8,1.22),style='--')
-ax.text(4.55,1.18,'Targets reach\nscoring only',ha='center',va='top',color='#855900',fontsize=8)
+box(.1,4.,2.6,.65,'Frozen training artifacts\nScales, relations and models','#edf1ed')
+box(3.7,4.,2.6,.65,'Measured window and identities\nCanonical inputs and hypotheses')
+box(2.9,2.85,2.3,.7,'Proposal context\nWitness targets hidden')
+box(7.1,2.85,2.7,.7,'Unchanged witness targets\nFixed cell IDs and masks','#fff1d7')
+box(.2,1.65,2.2,.7,f"{len(config['ensemble_seeds'])} fitted models\n{config['replicates']} proposals per model")
+box(3.15,1.65,2.55,.7,f"Before and after predictions\n{config['predictive_samples']} draws per witness target")
+box(7.1,1.65,2.7,.7,'CRPS on identical targets\nMean gain R and spread U')
+box(.2,.25,2.2,.7,'Separate calibration blocks\nNull and probability references','#edf1ed')
+box(3.15,.25,2.55,.7,'S = R − κU − λΩ\nCalibrated review quantities')
+box(7.1,.25,2.7,.7,'Neo4j evidence writes\nOperator review')
+for left,right in [((5,4),(4,3.55)),((6.3,4.2),(8.45,3.55)),((4,2.85),(1.3,2.35)),((4.7,2.85),(4.7,2.35)),((2.4,2),(3.15,2)),((5.7,2),(7.1,2)),((8.45,1.65),(5.7,.95)),((1.3,1.65),(3.15,.95)),((2.4,.6),(3.15,.6)),((5.7,.6),(7.1,.6))]:arrow(left,right)
+arrow((8.45,2.85),(8.45,2.35),color='#a56b00');arrow((1.3,4),(.8,2.35),style='--')
+ax.text(8.6,2.6,'Scoring only',va='center',color='#855900',fontsize=8)
+ax.text(1.45,1.25,'Edit cost Ω',fontsize=8)
 save(fig,'architecture',['configs/study.json','src/iot_repair/pipeline.py','src/iot_repair/calibration.py'])
 
 analysis_path=ROOT/'results/analysis.json'
@@ -74,17 +73,27 @@ bundle_path=ROOT/'results/graph/synthetic_32_nonlinear_illustration.json'
 if bundle_path.exists():
     bundle=json.loads(bundle_path.read_text());case=bundle['case'];graph=case['graph'];view=bundle['view'];positions={n['index']:np.array([n['x'],470-n['y']]) for n in view['nodes']}
     obs=next(h for h in bundle['hypotheses'] if h['kind']=='observation');edge=next(h for h in bundle['hypotheses'] if h['kind']=='association')
-    fig,axes=plt.subplots(1,3,figsize=(7.16,2.6))
-    for panel,(ax,hypothesis,title) in enumerate(zip(axes,[None,obs,edge],['(a) Disagreement before attribution','(b) Reading hypothesis','(c) Alternative relation mask'])):
+    fig,axes=plt.subplots(1,3,figsize=(7.16,3.1))
+    for panel,(ax,hypothesis,title) in enumerate(zip(axes,[None,obs,edge],['(a) Disagreement','(b) Reading hypothesis','(c) Relation mask'])):
         ax.set_title(title,loc='left',fontsize=8.5);ax.set_xlim(35,685);ax.set_ylim(-22,475);ax.set_aspect('equal');ax.axis('off')
         witness=set(hypothesis['witness_channels']) if hypothesis else set()
+        occupied=[(p[0]-32,p[0]+32,p[1]-32,p[1]+32) for p in positions.values()]
+        occupied += [(positions[i][0]-65,positions[i][0]+65,positions[i][1]-53,positions[i][1]-25) for i in witness]
         for e in view['edges']:
             a,b=positions[e['source']],positions[e['target']];direction=b-a;norm=np.linalg.norm(direction);unit=direction/norm
             flagged=hypothesis is not None and hypothesis['kind']=='association' and hypothesis['index']==e['index']
             ax.add_patch(FancyArrowPatch(a+24*unit,b-28*unit,arrowstyle='-|>',mutation_scale=7,linewidth=1.4 if flagged else .6,
                 color='#a95300' if flagged else '#8293a0',linestyle='--' if flagged else '-',connectionstyle='arc3,rad=0.05'))
-            midpoint=(a+b)/2+np.array([-unit[1],unit[0]])*12
-            ax.text(*midpoint,f"lag {e['lag']}",fontsize=8,ha='center',va='center',bbox=dict(facecolor='white',edgecolor='none',alpha=.86,pad=.1))
+            options=[]
+            for fraction in [.5,.3,.7]:
+                for offset in [17,-17,35,-35,52,-52,80,-80]:
+                    point=a+fraction*(b-a)+np.array([-unit[1],unit[0]])*offset
+                    point=np.clip(point,[105,80],[610,405])
+                    bounds=(point[0]-65,point[0]+65,point[1]-16,point[1]+16)
+                    collisions=sum(bounds[0]<r[1] and bounds[1]>r[0] and bounds[2]<r[3] and bounds[3]>r[2] for r in occupied)
+                    options.append((collisions,abs(offset),abs(fraction-.5),point,bounds))
+            _,_,_,midpoint,bounds=min(options,key=lambda item:item[:3]);occupied.append(bounds)
+            ax.text(*midpoint,f"→{e['target']:02d} {e['lag']}s",fontsize=8,ha='center',va='center',bbox=dict(facecolor='white',edgecolor='none',alpha=.90,pad=.1))
         for i,position in positions.items():
             suspect=hypothesis is not None and hypothesis['kind']=='observation' and hypothesis['index']==i
             color='#b91c1c' if suspect else '#1769aa' if i in witness else '#52667b'
@@ -96,13 +105,14 @@ if bundle_path.exists():
             r=hypothesis;text=f"R {r['mean_gain']:.3f}   U {r['model_instability']:.3f}\nS {r['selected_score']:.3f}   p {r['candidate_null_tail']:.3f}"
             ax.text(360,-10,text,ha='center',va='top',fontsize=8)
             target=r['index'] if r['kind']=='observation' else graph['edges'][r['index']]['source']
-            ax.plot([360,positions[target][0]],[0,positions[target][1]-30],':',color='#333',lw=.7)
+            ax.plot([360,positions[target][0]],[0,positions[target][1]-30],':',color='#333333',lw=.7)
         else:
-            position=positions[obs['index']];ax.plot([360,position[0]],[0,position[1]-30],':',color='#333',lw=.7)
+            position=positions[obs['index']];ax.plot([360,position[0]],[0,position[1]-30],':',color='#333333',lw=.7)
             observed=np.asarray(obs['observed_interval'],float);median=bundle['median'][obs['index']];scale=bundle['scale'][obs['index']]
-            value=float(np.nanmean(observed)*scale+median)
-            ax.text(360,-10,f"C{obs['index']:02d} mean {value:.2f} {bundle['units'][obs['index']]}\nReading and relation reviewed",ha='center',va='top',fontsize=8)
-    fig.subplots_adjust(wspace=.08,bottom=.18);save(fig,'network',[str(bundle_path.relative_to(ROOT)),bundle['artifact']])
+            quantiles=np.asarray(obs['generated_interval_quantiles'])*scale+median;step=int(np.nanargmax(np.abs(observed*scale+median-quantiles[1])))
+            value=float(observed[step]*scale+median);lower,mid,upper=quantiles[:,step]
+            ax.text(360,-10,f"C{obs['index']:02d} = {value:.1f} {bundle['units'][obs['index']]} at t{case['stop']-8+step}\nGenerated {mid:.1f} [{lower:.1f}, {upper:.1f}]",ha='center',va='top',fontsize=8)
+    fig.subplots_adjust(wspace=.13,bottom=.18,left=.025,right=.99);save(fig,'network',[str(bundle_path.relative_to(ROOT)),bundle['artifact']])
 
 # Four empirical equation panels. The focal nonlinear configuration was fixed in the protocol.
 name='synthetic_32_nonlinear';report=reports.get(name);abl_path=ROOT/'results/ablations'/name/'analysis.json'
@@ -110,14 +120,14 @@ if report and abl_path.exists():
     ablations=json.loads(abl_path.read_text());fig,axes=plt.subplots(2,2,figsize=(7.16,5.0));axes=axes.ravel();main=report['tracks']['observation']['methods']['proposed']['window_ap']
     rows=[]
     for key,title in [('fixed_penalties','Fixed positive penalties'),('R_only','Gain only'),('no_uncertainty','No spread penalty'),('no_cost','No edit penalty')]:
-        rows.append((title,main-report['tracks']['observation']['methods'][key]['window_ap'],None,False))
+        rows.append((title,main-report['tracks']['observation']['methods'][key]['window_ap'],report['tracks']['observation']['methods'][key]['paired_main_minus_variant']['interval'],False))
     for key,title in [('deterministic','Deterministic'),('no_graph','No graph'),('no_witness_separation','Visible witnesses'),('no_provenance_deduplication','Count known copies')]:
         if key not in ablations:continue
         result=ablations[key]['metrics']['observation']['paired_main_minus_ablation'];rows.append((title,result['difference'],result['interval'],ablations[key]['scope']=='unsafe diagnostic'))
     for y,(title,difference,interval,unsafe) in enumerate(rows):
         axes[0].plot(difference,y,'s' if unsafe else 'o',color='#a95300' if unsafe else '#0072b2',ms=4)
         if interval:axes[0].plot(interval,[y,y],color='#a95300' if unsafe else '#0072b2',lw=1.2)
-    axes[0].set_yticks(range(len(rows)));axes[0].set_yticklabels([r[0] for r in rows]);axes[0].axvline(0,color='#888',lw=.7);axes[0].invert_yaxis();axes[0].set_xlabel('Main AP minus ablation AP');axes[0].set_title('(a) Paired equation ablations',loc='left')
+    axes[0].set_yticks(range(len(rows)));axes[0].set_yticklabels([r[0] for r in rows]);axes[0].axvline(0,color='#888888',lw=.7);axes[0].invert_yaxis();axes[0].set_xlabel('Main AP minus ablation AP');axes[0].set_title('(a) Paired equation ablations',loc='left')
     sensitivity=[]
     for path in (ROOT/'results/sensitivity'/name).glob('case*_E3_M*_L8_amp1.json'):
         row=json.loads(path.read_text());sensitivity.append(row)
@@ -131,12 +141,15 @@ if report and abl_path.exists():
         rates=[np.mean([r['primary_target_top1'] for r in stress if r['details']['fraction']==f]) for f in fractions]
         axes[2].plot(fractions,rates,'o-',color='#0072b2');axes[2].set_ylim(0,1.02)
     axes[2].set(xlabel='Fraction of conditioning channels corrupted',ylabel='Primary target ranked first');axes[2].set_title('(c) Contaminated source evidence',loc='left')
-    costs=report['costs'];timings=costs['baseline_timing'];points=[('Witness repair',np.median(costs['inference_seconds_per_window']),main)]
-    for method,title in [('gdn','GDN'),('backbone','Diffusion residual'),('diffad','DiffAD adaptation')]:points.append((title,timings[method],report['tracks']['observation']['methods'][method]['window_ap']))
-    for method in report['selection']['pca'].values():points.append(('PCA lag '+method.split('_')[1][3:],timings[method]['inference_seconds_per_window'],report['tracks']['observation']['methods'][method]['window_ap']))
-    for i,(title,seconds,accuracy) in enumerate(points):
-        axes[3].scatter(seconds,accuracy,s=18,color=colors[i%len(colors)]);axes[3].annotate(title,(seconds,accuracy),xytext=(3,3 if i%2 else -11),textcoords='offset points',fontsize=8)
-    axes[3].set_xscale('log');axes[3].set(xlabel='Seconds per window',ylabel='Observation average precision',ylim=(0,1.05));axes[3].set_title('(d) Detection and inference cost',loc='left')
+    latency_path=ROOT/'results/latency_scaling.json'
+    if latency_path.exists():
+        timings=json.loads(latency_path.read_text())['runs']
+        for color,dataset in zip(colors,['synthetic_32_nonlinear','synthetic_64_nonlinear']):
+            selected=[r for r in timings if r['dataset']==dataset];counts=sorted({r['tested_candidates'] for r in selected})
+            medians=[np.median([r['elapsed_seconds'] for r in selected if r['tested_candidates']==count]) for count in counts]
+            axes[3].plot(counts,medians,'o-',color=color,ms=3,label=labels[dataset])
+        axes[3].legend(frameon=False,fontsize=8)
+    axes[3].set(xlabel='Tested hypotheses per window',ylabel='Median seconds per window');axes[3].set_title('(d) Inference cost and candidate count',loc='left')
     for ax in axes:ax.grid(alpha=.15)
     fig.tight_layout();save(fig,'equations',['results/analysis.json',str(abl_path.relative_to(ROOT)),'results/sensitivity/'+name,'results/robustness/'+name])
 

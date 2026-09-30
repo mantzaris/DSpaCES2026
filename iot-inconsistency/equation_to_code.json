@@ -11,11 +11,12 @@
     ],
     "configuration": "configs/study.json",
     "results": [
-      "results/audits/",
+      "results/audits/production_equations.json",
+      "results/audits/parity_cuda.json",
       "results/study/",
       "results/sensitivity/"
     ],
-    "status": "implemented; saved production audit required after final inference"
+    "status": "implemented and executed in the primary detection pipeline; scalar and production audits passed"
   },
   {
     "specification_equation": "E2",
@@ -29,11 +30,12 @@
     ],
     "configuration": "configs/study.json",
     "results": [
-      "results/audits/",
+      "results/audits/production_equations.json",
+      "results/audits/parity_cuda.json",
       "results/study/",
       "results/sensitivity/"
     ],
-    "status": "implemented; saved production audit required after final inference"
+    "status": "implemented and executed in the primary detection pipeline; scalar and production audits passed"
   },
   {
     "specification_equation": "E3",
@@ -47,11 +49,12 @@
     ],
     "configuration": "configs/study.json",
     "results": [
-      "results/audits/",
+      "results/audits/production_equations.json",
+      "results/audits/parity_cuda.json",
       "results/study/",
       "results/sensitivity/"
     ],
-    "status": "implemented; saved production audit required after final inference"
+    "status": "implemented and executed in the primary detection pipeline; scalar and production audits passed"
   },
   {
     "specification_equation": "E4",
@@ -65,11 +68,12 @@
     ],
     "configuration": "configs/study.json",
     "results": [
-      "results/audits/",
+      "results/audits/production_equations.json",
+      "results/audits/parity_cuda.json",
       "results/study/",
       "results/sensitivity/"
     ],
-    "status": "implemented; saved production audit required after final inference"
+    "status": "implemented and executed in the primary detection pipeline; scalar and production audits passed"
   },
   {
     "specification_equation": "E5",
@@ -83,11 +87,12 @@
     ],
     "configuration": "configs/study.json",
     "results": [
-      "results/audits/",
+      "results/audits/production_equations.json",
+      "results/audits/parity_cuda.json",
       "results/study/",
       "results/sensitivity/"
     ],
-    "status": "implemented; saved production audit required after final inference"
+    "status": "implemented and executed in the primary detection pipeline; scalar and production audits passed"
   },
   {
     "specification_equation": "E6",
@@ -101,11 +106,12 @@
     ],
     "configuration": "configs/study.json",
     "results": [
-      "results/audits/",
+      "results/audits/production_equations.json",
+      "results/audits/parity_cuda.json",
       "results/study/",
       "results/sensitivity/"
     ],
-    "status": "implemented; saved production audit required after final inference"
+    "status": "implemented and executed in the primary detection pipeline; scalar and production audits passed"
   },
   {
     "specification_equation": "E7",
@@ -119,11 +125,12 @@
     ],
     "configuration": "configs/study.json",
     "results": [
-      "results/audits/",
+      "results/audits/production_equations.json",
+      "results/audits/parity_cuda.json",
       "results/study/",
       "results/sensitivity/"
     ],
-    "status": "implemented; saved production audit required after final inference"
+    "status": "implemented and executed in the primary detection pipeline; scalar and production audits passed"
   },
   {
     "specification_equation": "E8",
@@ -137,11 +144,12 @@
     ],
     "configuration": "configs/study.json",
     "results": [
-      "results/audits/",
+      "results/audits/production_equations.json",
+      "results/audits/parity_cuda.json",
       "results/study/",
       "results/sensitivity/"
     ],
-    "status": "implemented; saved production audit required after final inference"
+    "status": "implemented and executed in the primary detection pipeline; scalar and production audits passed"
   },
   {
     "specification_equation": "E9",
@@ -155,11 +163,12 @@
     ],
     "configuration": "configs/study.json",
     "results": [
-      "results/audits/",
+      "results/audits/production_equations.json",
+      "results/audits/parity_cuda.json",
       "results/study/",
       "results/sensitivity/"
     ],
-    "status": "implemented; saved production audit required after final inference"
+    "status": "implemented and executed in the primary detection pipeline; scalar and production audits passed"
   },
   {
     "specification_equation": "E10",
@@ -173,11 +182,12 @@
     ],
     "configuration": "configs/study.json",
     "results": [
-      "results/audits/",
+      "results/audits/production_equations.json",
+      "results/audits/parity_cuda.json",
       "results/study/",
       "results/sensitivity/"
     ],
-    "status": "implemented; saved production audit required after final inference"
+    "status": "implemented and executed in the primary detection pipeline; scalar and production audits passed"
   },
   {
     "specification_equation": "E11",
@@ -191,11 +201,12 @@
     ],
     "configuration": "configs/study.json",
     "results": [
-      "results/audits/",
+      "results/audits/production_equations.json",
+      "results/audits/parity_cuda.json",
       "results/study/",
       "results/sensitivity/"
     ],
-    "status": "implemented; saved production audit required after final inference"
+    "status": "implemented and executed in the primary detection pipeline; scalar and production audits passed"
   },
   {
     "specification_equation": "E12",
@@ -209,11 +220,12 @@
     ],
     "configuration": "configs/study.json",
     "results": [
-      "results/audits/",
+      "results/audits/production_equations.json",
+      "results/audits/parity_cuda.json",
       "results/study/",
       "results/sensitivity/"
     ],
-    "status": "implemented; saved production audit required after final inference"
+    "status": "implemented and executed in the primary detection pipeline; scalar and production audits passed"
   },
   {
     "specification_equation": "E13",
@@ -227,11 +239,12 @@
     ],
     "configuration": "configs/study.json",
     "results": [
-      "results/audits/",
+      "results/audits/production_equations.json",
+      "results/audits/parity_cuda.json",
       "results/study/",
       "results/sensitivity/"
     ],
-    "status": "implemented; saved production audit required after final inference"
+    "status": "implemented and executed in the primary detection pipeline; scalar and production audits passed"
   },
   {
     "specification_equation": "E14",
@@ -245,10 +258,11 @@
     ],
     "configuration": "configs/study.json",
     "results": [
-      "results/audits/",
+      "results/audits/production_equations.json",
+      "results/audits/parity_cuda.json",
       "results/study/",
       "results/sensitivity/"
     ],
-    "status": "implemented; saved production audit required after final inference"
+    "status": "implemented; native-event experiment running"
   }
 ]

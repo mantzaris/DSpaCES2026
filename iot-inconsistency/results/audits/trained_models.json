@@ -1,0 +1,199 @@
+{
+  "checks": [
+    {
+      "dataset": "synthetic_32_linear",
+      "model": "GDN",
+      "seed": 1101,
+      "max_absolute_error": 3.746829206896507e-07,
+      "reference": "independent per-edge attention and batch-normalization calculation"
+    },
+    {
+      "dataset": "synthetic_32_linear",
+      "model": "GDN",
+      "seed": 2202,
+      "max_absolute_error": 3.475154926046997e-07,
+      "reference": "independent per-edge attention and batch-normalization calculation"
+    },
+    {
+      "dataset": "synthetic_32_linear",
+      "model": "GDN",
+      "seed": 3303,
+      "max_absolute_error": 4.0876377505050243e-07,
+      "reference": "independent per-edge attention and batch-normalization calculation"
+    },
+    {
+      "dataset": "synthetic_32_linear",
+      "model": "DiffAD adaptation",
+      "seed": 1101,
+      "maximum_discrete_pole_radius": 0.9923011660575867
+    },
+    {
+      "dataset": "synthetic_32_linear",
+      "model": "DiffAD adaptation",
+      "seed": 2202,
+      "maximum_discrete_pole_radius": 0.9930737614631653
+    },
+    {
+      "dataset": "synthetic_32_linear",
+      "model": "DiffAD adaptation",
+      "seed": 3303,
+      "maximum_discrete_pole_radius": 0.9926333427429199
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "model": "GDN",
+      "seed": 1101,
+      "max_absolute_error": 3.01530516777504e-07,
+      "reference": "independent per-edge attention and batch-normalization calculation"
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "model": "GDN",
+      "seed": 2202,
+      "max_absolute_error": 3.30643924351115e-07,
+      "reference": "independent per-edge attention and batch-normalization calculation"
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "model": "GDN",
+      "seed": 3303,
+      "max_absolute_error": 1.8464155515651726e-07,
+      "reference": "independent per-edge attention and batch-normalization calculation"
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "model": "DiffAD adaptation",
+      "seed": 1101,
+      "maximum_discrete_pole_radius": 0.9938191175460815
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "model": "DiffAD adaptation",
+      "seed": 2202,
+      "maximum_discrete_pole_radius": 0.9929998517036438
+    },
+    {
+      "dataset": "synthetic_32_nonlinear",
+      "model": "DiffAD adaptation",
+      "seed": 3303,
+      "maximum_discrete_pole_radius": 0.992893636226654
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "model": "GDN",
+      "seed": 1101,
+      "max_absolute_error": 4.905067298999199e-07,
+      "reference": "independent per-edge attention and batch-normalization calculation"
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "model": "GDN",
+      "seed": 2202,
+      "max_absolute_error": 1.1177190919475777e-06,
+      "reference": "independent per-edge attention and batch-normalization calculation"
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "model": "GDN",
+      "seed": 3303,
+      "max_absolute_error": 5.111502412447066e-07,
+      "reference": "independent per-edge attention and batch-normalization calculation"
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "model": "DiffAD adaptation",
+      "seed": 1101,
+      "maximum_discrete_pole_radius": 0.99349445104599
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "model": "DiffAD adaptation",
+      "seed": 2202,
+      "maximum_discrete_pole_radius": 0.9928672313690186
+    },
+    {
+      "dataset": "synthetic_64_nonlinear",
+      "model": "DiffAD adaptation",
+      "seed": 3303,
+      "maximum_discrete_pole_radius": 0.9938283562660217
+    },
+    {
+      "dataset": "intel",
+      "model": "GDN",
+      "seed": 1101,
+      "max_absolute_error": 3.743170922110295e-07,
+      "reference": "independent per-edge attention and batch-normalization calculation"
+    },
+    {
+      "dataset": "intel",
+      "model": "GDN",
+      "seed": 2202,
+      "max_absolute_error": 8.284941597214157e-07,
+      "reference": "independent per-edge attention and batch-normalization calculation"
+    },
+    {
+      "dataset": "intel",
+      "model": "GDN",
+      "seed": 3303,
+      "max_absolute_error": 3.764888956148127e-07,
+      "reference": "independent per-edge attention and batch-normalization calculation"
+    },
+    {
+      "dataset": "intel",
+      "model": "DiffAD adaptation",
+      "seed": 1101,
+      "maximum_discrete_pole_radius": 0.9944747090339661
+    },
+    {
+      "dataset": "intel",
+      "model": "DiffAD adaptation",
+      "seed": 2202,
+      "maximum_discrete_pole_radius": 0.9943320751190186
+    },
+    {
+      "dataset": "intel",
+      "model": "DiffAD adaptation",
+      "seed": 3303,
+      "maximum_discrete_pole_radius": 0.9936881065368652
+    },
+    {
+      "dataset": "skab",
+      "model": "GDN",
+      "seed": 1101,
+      "max_absolute_error": 2.731962801760801e-06,
+      "reference": "independent per-edge attention and batch-normalization calculation"
+    },
+    {
+      "dataset": "skab",
+      "model": "GDN",
+      "seed": 2202,
+      "max_absolute_error": 3.760577406808352e-06,
+      "reference": "independent per-edge attention and batch-normalization calculation"
+    },
+    {
+      "dataset": "skab",
+      "model": "GDN",
+      "seed": 3303,
+      "max_absolute_error": 1.8691501963985502e-06,
+      "reference": "independent per-edge attention and batch-normalization calculation"
+    },
+    {
+      "dataset": "skab",
+      "model": "DiffAD adaptation",
+      "seed": 1101,
+      "maximum_discrete_pole_radius": 0.9923025369644165
+    },
+    {
+      "dataset": "skab",
+      "model": "DiffAD adaptation",
+      "seed": 2202,
+      "maximum_discrete_pole_radius": 0.9930301308631897
+    },
+    {
+      "dataset": "skab",
+      "model": "DiffAD adaptation",
+      "seed": 3303,
+      "maximum_discrete_pole_radius": 0.9936596155166626
+    }
+  ]
+}

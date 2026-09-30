@@ -25,7 +25,7 @@ All sixteen required checks have executable coverage
 | Tail ordering, ties and resolution | oracle and tail integration test |
 | Edge deletion preserves targets | attribute-sensitive graph test and pipeline fixed-target audit |
 
-`audit_saved_scores.py` must be run after final inference. It independently recomputes pairwise CRPS from every saved primary test prediction, group losses, edit cost, gain, sample standard deviation and Monte Carlo diagnostic. It also calls the exact NumPy oracle on production loss arrays and verifies artifact hashes. No illustrative score may be substituted for this audit.
+`audit_saved_scores.py` passed on all 1,092 primary test cases and 8,736 candidates. Its maximum absolute discrepancy was 7.11e-15 at tolerance 1e-10. The report is `results/audits/production_equations.json`. It independently recomputes pairwise CRPS from every saved primary test prediction, group losses, edit cost, gain, sample standard deviation and Monte Carlo diagnostic. It also calls the exact NumPy oracle on production loss arrays and verifies artifact hashes. No illustrative score may be substituted for this audit.
 
 The example R = 0.50, U = 0.05, Omega = 0.10, kappa = 1 and lambda = 0.2 gives S = 0.43. It is illustrative arithmetic only.
 
@@ -38,3 +38,7 @@ Known-copy invariance assumes canonicalization before prediction and group aggre
 The penalty derivatives are -U and -Omega. A pairwise ranking changes only when the gain difference crosses the corresponding weighted penalty difference. With one-edge masks and a fixed edge count, the edge cost is constant across hypotheses. Its penalty cannot improve within-type association ranking or a common rank-tail calibration. This structural limitation must be stated when interpreting that ablation.
 
 The rank-tail result requires exchangeability of the full score units, including selection and inference randomness. It is established conformal theory. No such exact validity is asserted for these temporally dependent or shifted sensor windows. A common-mode measurement vector has both a changed-process explanation and an unchanged-process explanation with coordinated sensor errors. The available measurements alone cannot identify which explanation is true.
+
+Witness identity hashes are scoped to one immutable decision window. A complete evidence identity combines the window artifact and its SHA-256 hash with the saved source/channel/time cell identities. The graph evidence-group ID also includes that window identity. A repeated local cell index in another window is not treated as the same observation.
+
+Trained-model CUDA copy invariance also passed with exact predictive-array equality in all five configurations under deterministic reductions. Ordinary CUDA reduction repeatability is measured in `results/audits/inference_repeatability.json`; fixed sampling seeds alone are not a bitwise-reproduction guarantee. The primary score audit uses the original saved draws and is unaffected by resampling variation.

@@ -4,11 +4,11 @@ import argparse,copy,json,sys
 import numpy as np
 import torch
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'src'))
-from iot_repair.experiment import load_models,json_save
+from iot_repair.experiment import load_models,json_save,scaled
 from iot_repair.pipeline import score_candidates,screen_candidates
 from iot_repair.faults import inject_observation,inject_association
 from iot_repair.associations import edge_residuals
-from iot_repair.baselines import gdn_residual
+from iot_repair.baselines import gdn_residual,PCADetector
 from iot_repair.metrics import candidate_score
 from iot_repair.witnesses import select_witnesses
 from iot_repair.data import simulate
@@ -18,15 +18,25 @@ p=argparse.ArgumentParser();p.add_argument('--dataset',default='synthetic_32_non
 name=a.dataset;out=ROOT/'results/robustness'/name;out.mkdir(parents=True,exist_ok=True)
 models,graph=load_models(ROOT,name,('diffusion','gdn'))
 params=json.loads((ROOT/'results/study'/name/'frozen.json').read_text());cal=json.loads((ROOT/'results/study'/name/'calibration_complete.json').read_text())
-d=np.load(ROOT/'data/processed'/name/'test.npz');base=d['x'][d['reference']];meta=json.loads((ROOT/'data/processed'/name/'metadata.json').read_text())
+scales=json.loads((ROOT/'results/study'/name/'residual_scales.json').read_text())
+pca_name=params['strongest_baseline'];pca=PCADetector.load(ROOT/'results/models'/name/(pca_name+'.npz'),lag=int(pca_name.split('_')[1][3:]))
+d=np.load(ROOT/'data/processed'/name/'test.npz');source_indices=np.flatnonzero(d['reference'])
+source_indices=source_indices[np.linspace(0,len(source_indices)-1,min(12,len(source_indices)),dtype=int)]
+base=d['x'][source_indices];meta=json.loads((ROOT/'data/processed'/name/'metadata.json').read_text())
 contaminated=None
 if name=='synthetic_32_nonlinear':contaminated,_=load_models(ROOT,name+'_contaminated',('diffusion',))
 
 def evaluate(identity,x,g,truth,details,member_models=None,candidates=None):
     path=out/(identity+'.json')
-    if path.exists():return json.loads(path.read_text())
+    if path.exists():
+        previous=json.loads(path.read_text())
+        if previous.get('stress_protocol_version')=='scaled-screen-stratified-v3':return previous
+        archive=out/'prior_stress_protocols'/previous.get('stress_protocol_version','unscaled-v1');archive.mkdir(parents=True,exist_ok=True)
+        path.replace(archive/path.name);path.with_suffix('.npz').replace(archive/path.with_suffix('.npz').name)
+    with torch.no_grad():residual=np.mean([gdn_residual(m,torch.as_tensor(x[None],device='cuda')).cpu().numpy()[0] for m in models['gdn']],axis=0)
+    residual=scaled(residual,scales['gdn'])
+    pca_scores=scaled(pca.score(x[None])[0],scales[pca_name])
     if candidates is None:
-        with torch.no_grad():residual=np.mean([gdn_residual(m,torch.as_tensor(x[None],device='cuda')).cpu().numpy()[0] for m in models['gdn']],axis=0)
         candidates=screen_candidates(residual,edge_residuals(x[None],g)[0],g)
     records,raw,abstentions=score_candidates(member_models or models['diffusion'],x,g,candidates,seed=448899,
         kappa=params['kappa'],edit_weight=params['lambda'])
@@ -35,6 +45,8 @@ def evaluate(identity,x,g,truth,details,member_models=None,candidates=None):
     observations=[r for r in records if r['kind']=='observation' and r['support_count']>=2];best=max(observations,key=lambda r:r['score']) if observations else None
     selected=max([r['score'] for r in observations],default=-1e12)
     report=dict(id=identity,dataset=name,details=details,records=records,abstentions=abstentions,candidates=candidates,
+        stress_protocol_version='scaled-screen-stratified-v3',baseline_sensor_scores={'gdn':residual.tolist(),pca_name:pca_scores.tolist()},
+        baseline_primary_target_top1={'gdn':bool(truth[int(np.nanargmax(residual))]),pca_name:bool(truth[int(np.nanargmax(pca_scores))])},
         primary_target_top1=bool(best and truth[best['index']]),primary_target_screened=any(truth[i] for kind,i in candidates if kind=='observation'),
         primary_target_best_score=max([r['score'] for r in observations if truth[r['index']]],default=None),
         observation_window_null_tail=float(null_tail_value(cal['null_references']['observation/proposed'],selected)),graph=g)
@@ -46,7 +58,7 @@ for index in range(min(12,len(base))):
     rng=np.random.default_rng(33500+index);ordering=rng.permutation(available)
     for fraction in [0.,.125,.25,.5]:
         changed=x.copy();channels=ordering[:int(round(fraction*len(available)))];changed[channels,-8:]+=2.
-        evaluate(f'conditioning_{index}_{fraction}',changed,graph,truth,dict(family='conditioning_source_contamination',fraction=fraction,contaminated_channels=channels.tolist(),primary_fault=fault,block=str(d['block'][index])))
+        evaluate(f'conditioning_{index}_{fraction}',changed,graph,truth,dict(family='conditioning_source_contamination',fraction=fraction,contaminated_channels=channels.tolist(),primary_fault=fault,block=str(d['block'][source_indices[index]]),source_index=int(source_indices[index])))
     for fraction in [.1,.3]:
         changed=copy.deepcopy(graph)
         for repeat in range(max(1,int(round(fraction*len(graph['edges'])/2)))):changed,_,_=inject_association(changed,70000+index*100+repeat,'wrong_endpoint')

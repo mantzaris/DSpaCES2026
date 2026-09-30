@@ -54,6 +54,25 @@ for dataset in config['datasets']:
             base_ids={case['base_id'] for case in positives};subset=positives+[case for case in cases if case['track']=='clean' and case['base_id'] in base_ids]
             if subset:by_family[family]={method:{k:v for k,v in summarize(subset,method,kind,params).items() if k in ('window_ap','top1','screening_recall','windows','source_blocks')} for method in result}
         report['tracks'][kind]['by_family']=by_family
+        strata={}
+        for stratum in ['known_families','heldout_families','short_interval','long_interval','heldout_regime']:
+            positive=[]
+            for case in cases:
+                if case['track']!=kind or case['fault']['status']!='injected':continue
+                unknown=case['fault']['family'] in config['observation_families_heldout']
+                heldout_regime=dataset.startswith('synthetic') and int(case['block'].split('_')[-1])>=6 and case['start']>=448
+                include=(stratum=='known_families' and not unknown) or (stratum=='heldout_families' and unknown) or (stratum=='short_interval' and case['fault'].get('duration')==4) or (stratum=='long_interval' and case['fault'].get('duration')==16) or (stratum=='heldout_regime' and heldout_regime)
+                if include:positive.append(case)
+            ids={c['base_id'] for c in positive};subset=positive+[c for c in cases if c['track']=='clean' and c['base_id'] in ids]
+            if not positive:continue
+            primary=summarize(subset,'proposed',kind,params);comparison=summarize(subset,strongest,kind,params)
+            left=primary['decisions'];right=comparison['decisions']
+            strata[stratum]=dict(proposed=primary,comparator=comparison,paired_difference=paired_ap_interval([r['y'] for r in left],[r['score'] for r in left],[r['score'] for r in right],[r['block'] for r in left],config['bootstrap_replicates']))
+        report['tracks'][kind]['predefined_strata']=strata
+        for method in ['fixed_penalties','R_only','no_uncertainty','no_cost','supervised_terms']:
+            left=result['proposed']['decisions'];right=result[method]['decisions']
+            result[method]['paired_main_minus_variant']=paired_ap_interval([r['y'] for r in left],[r['score'] for r in left],[r['score'] for r in right],[r['block'] for r in left],config['bootstrap_replicates'])
+
     allrows=[r for case in cases for r in case['records']];terms={}
     for kind in ('observation','association'):
         rows=[r for r in allrows if r['kind']==kind]

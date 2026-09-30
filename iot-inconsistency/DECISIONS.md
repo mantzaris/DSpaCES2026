@@ -21,3 +21,21 @@ Before inspecting final performance, the confidence comparison was tightened to 
 The final equation comparison also retains the prespecified arithmetic starting weights kappa = 1 and lambda = 0.2 as a fixed-positive-penalty variant. This ensures the experiment examines nonzero penalties even when development selection chooses zero. It is a fixed diagnostic comparison, not a test-tuned replacement for the selected procedure.
 
 The observation cost now casts fixed cell counts to the loss dtype before division. An independent 3/37 count-ratio test verifies float64 precision. Saved loss and replacement arrays allow affected scalar cost/score records to be corrected without changing any predictive draw or learned parameter. The correction audit records any resulting calibration-score roundoff.
+
+## Stress-screen consistency and portable inference states
+
+The targeted robustness script initially screened raw GDN deviations, whereas the main pipeline uses frozen development median/IQR scaling. This was found during a code audit before interpreting stress outcomes. The corrected stress version uses the same frozen scaling and stores conventional GDN/PCA target ranks as well. Any earlier stress case is retained under `pre_scaled_screening` and rerun. Primary experiment scores, hyperparameters and results are unchanged. Native SKAB scores now record the already selected penalties in the CUDA call itself.
+
+Inference weights are exported as exact NPZ state arrays without optimizer state or pickle. The loader falls back to these portable weights when training checkpoints are absent. A final audit reproduces saved predictions from the portable weights with the original seeds. Trained PCA states are loaded directly for subsequent native/stress evaluation rather than refitted.
+
+Secondary confidence intervals were added after viewing the primary detection results. They use the previously specified coverage levels, all dataset configurations, the common screened candidate population and whole-block resampling. They are descriptive, without multiplicity correction, and do not change the primary endpoint or frozen model choices.
+
+## CUDA repeatability and exact portable-weight verification
+
+A comparison with the channel-group ablation exposed small score differences even when source grouping is mathematically unchanged. A five-configuration audit traced repeatability limits to ordinary float32 CUDA graph reductions and subsequent bfloat16 denoising. Fixed random seeds alone do not imply bitwise reproducibility. Three replays of a saved input per configuration retained the same top observation; the audit records all prediction, loss and score differences. Original saved draws remain the empirical inputs for every published metric and independent float64 equation audit.
+
+Exact known-copy invariance passed on all five trained configurations when deterministic CUDA algorithms and `CUBLAS_WORKSPACE_CONFIG=:4096:8` were enabled. Portable NPZ and original checkpoint inference are compared in that mode, with exact state and predictive-array equality. We do not replace original scores with more favorable replay outputs or describe approximate seeded replays as bitwise identical. Numerical group-renaming differences on single-channel sources are not evidence that grouping changed the mathematical method.
+
+## Final targeted-stress sampling
+
+The final bounded stress set uses twelve evenly spaced eligible held-out reference windows, spanning the available source blocks, rather than taking the first twelve consecutive windows. This fixes the representativeness of the diagnostic controls without increasing the case budget or selecting on results. Version `scaled-screen-stratified-v3` includes the frozen screening correction. Earlier stress outputs remain in versioned subdirectories and are excluded from final summaries. Primary test cases and hyperparameters remain frozen.

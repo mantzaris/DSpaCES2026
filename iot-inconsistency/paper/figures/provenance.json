@@ -1,0 +1,23 @@
+{
+  "architecture": [
+    "configs/study.json",
+    "src/iot_repair/pipeline.py",
+    "src/iot_repair/calibration.py"
+  ],
+  "confidence": [
+    "results/analysis.json"
+  ],
+  "network": [
+    "results/graph/synthetic_32_nonlinear_illustration.json",
+    "results/study/synthetic_32_nonlinear/test/test_0084_observation.npz"
+  ],
+  "equations": [
+    "results/analysis.json",
+    "results/ablations/synthetic_32_nonlinear/analysis.json",
+    "results/sensitivity/synthetic_32_nonlinear",
+    "results/robustness/synthetic_32_nonlinear"
+  ],
+  "score_terms": [
+    "results/study/synthetic_32_nonlinear/test"
+  ]
+}

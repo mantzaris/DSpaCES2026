@@ -1,0 +1,2938 @@
+{
+  "draft": true,
+  "displayed_values": [
+    {
+      "output": "abstract_results.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "candidate_risk_coverage",
+        0,
+        "precision"
+      ],
+      "value": 0.90625,
+      "multiplier": 1,
+      "rendered": "0.906"
+    },
+    {
+      "output": "abstract_results.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "pca_lag1_rank16",
+        "candidate_risk_coverage",
+        0,
+        "precision"
+      ],
+      "value": 0.71875,
+      "multiplier": 1,
+      "rendered": "0.719"
+    },
+    {
+      "output": "abstract_results.tex",
+      "source": "results/confidence_comparisons.json",
+      "json_path": [
+        "results",
+        "synthetic_32_nonlinear",
+        "observation",
+        "paired_secondary_endpoints",
+        "precision_difference_at_0.1",
+        "interval",
+        0
+      ],
+      "value": 0.046875,
+      "multiplier": 1,
+      "rendered": "0.047"
+    },
+    {
+      "output": "abstract_results.tex",
+      "source": "results/confidence_comparisons.json",
+      "json_path": [
+        "results",
+        "synthetic_32_nonlinear",
+        "observation",
+        "paired_secondary_endpoints",
+        "precision_difference_at_0.1",
+        "interval",
+        1
+      ],
+      "value": 0.265625,
+      "multiplier": 1,
+      "rendered": "0.266"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "channels"
+      ],
+      "value": 32,
+      "multiplier": 1,
+      "rendered": "32"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "physical_sources"
+      ],
+      "value": 32,
+      "multiplier": 1,
+      "rendered": "32"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "splits",
+        "train",
+        "windows"
+      ],
+      "value": 372,
+      "multiplier": 1,
+      "rendered": "372"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "splits",
+        "development",
+        "base_windows_selected"
+      ],
+      "value": 48,
+      "multiplier": 1,
+      "rendered": "48"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "splits",
+        "calibration",
+        "base_windows_selected"
+      ],
+      "value": 96,
+      "multiplier": 1,
+      "rendered": "96"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "splits",
+        "test",
+        "base_windows_selected"
+      ],
+      "value": 80,
+      "multiplier": 1,
+      "rendered": "80"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "splits",
+        "test",
+        "missing_fraction"
+      ],
+      "value": 0.0,
+      "multiplier": 100,
+      "rendered": "0.0"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "channels"
+      ],
+      "value": 32,
+      "multiplier": 1,
+      "rendered": "32"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "physical_sources"
+      ],
+      "value": 32,
+      "multiplier": 1,
+      "rendered": "32"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "splits",
+        "train",
+        "windows"
+      ],
+      "value": 372,
+      "multiplier": 1,
+      "rendered": "372"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "splits",
+        "development",
+        "base_windows_selected"
+      ],
+      "value": 48,
+      "multiplier": 1,
+      "rendered": "48"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "splits",
+        "calibration",
+        "base_windows_selected"
+      ],
+      "value": 96,
+      "multiplier": 1,
+      "rendered": "96"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "splits",
+        "test",
+        "base_windows_selected"
+      ],
+      "value": 80,
+      "multiplier": 1,
+      "rendered": "80"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "splits",
+        "test",
+        "missing_fraction"
+      ],
+      "value": 0.0,
+      "multiplier": 100,
+      "rendered": "0.0"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "channels"
+      ],
+      "value": 64,
+      "multiplier": 1,
+      "rendered": "64"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "physical_sources"
+      ],
+      "value": 64,
+      "multiplier": 1,
+      "rendered": "64"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "splits",
+        "train",
+        "windows"
+      ],
+      "value": 372,
+      "multiplier": 1,
+      "rendered": "372"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "splits",
+        "development",
+        "base_windows_selected"
+      ],
+      "value": 48,
+      "multiplier": 1,
+      "rendered": "48"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "splits",
+        "calibration",
+        "base_windows_selected"
+      ],
+      "value": 96,
+      "multiplier": 1,
+      "rendered": "96"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "splits",
+        "test",
+        "base_windows_selected"
+      ],
+      "value": 80,
+      "multiplier": 1,
+      "rendered": "80"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "splits",
+        "test",
+        "missing_fraction"
+      ],
+      "value": 0.0,
+      "multiplier": 100,
+      "rendered": "0.0"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "intel",
+        "channels"
+      ],
+      "value": 48,
+      "multiplier": 1,
+      "rendered": "48"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "intel",
+        "physical_sources"
+      ],
+      "value": 12,
+      "multiplier": 1,
+      "rendered": "12"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "intel",
+        "splits",
+        "train",
+        "windows"
+      ],
+      "value": 107,
+      "multiplier": 1,
+      "rendered": "107"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "intel",
+        "splits",
+        "development",
+        "base_windows_selected"
+      ],
+      "value": 42,
+      "multiplier": 1,
+      "rendered": "42"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "intel",
+        "splits",
+        "calibration",
+        "base_windows_selected"
+      ],
+      "value": 41,
+      "multiplier": 1,
+      "rendered": "41"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "intel",
+        "splits",
+        "test",
+        "base_windows_selected"
+      ],
+      "value": 44,
+      "multiplier": 1,
+      "rendered": "44"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "intel",
+        "splits",
+        "test",
+        "missing_fraction"
+      ],
+      "value": 0.15077533143939395,
+      "multiplier": 100,
+      "rendered": "15.1"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "skab",
+        "channels"
+      ],
+      "value": 8,
+      "multiplier": 1,
+      "rendered": "8"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "skab",
+        "physical_sources"
+      ],
+      "value": 8,
+      "multiplier": 1,
+      "rendered": "8"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "skab",
+        "splits",
+        "train",
+        "windows"
+      ],
+      "value": 409,
+      "multiplier": 1,
+      "rendered": "409"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "skab",
+        "splits",
+        "development",
+        "base_windows_selected"
+      ],
+      "value": 48,
+      "multiplier": 1,
+      "rendered": "48"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "skab",
+        "splits",
+        "calibration",
+        "base_windows_selected"
+      ],
+      "value": 96,
+      "multiplier": 1,
+      "rendered": "96"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "skab",
+        "splits",
+        "test",
+        "base_windows_selected"
+      ],
+      "value": 80,
+      "multiplier": 1,
+      "rendered": "80"
+    },
+    {
+      "output": "datasets_table.tex",
+      "source": "results/dataset_summary.json",
+      "json_path": [
+        "skab",
+        "splits",
+        "test",
+        "missing_fraction"
+      ],
+      "value": 0.0,
+      "multiplier": 100,
+      "rendered": "0.0"
+    },
+    {
+      "output": "datasets_table.tex",
+      "sources": [
+        "results/dataset_summary.json"
+      ],
+      "operation": "minimum association window prevalence",
+      "value": 0.4444444444444444,
+      "rendered": "0.444"
+    },
+    {
+      "output": "datasets_table.tex",
+      "sources": [
+        "results/dataset_summary.json"
+      ],
+      "operation": "maximum association window prevalence",
+      "value": 0.5,
+      "rendered": "0.500"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "tracks",
+        "observation",
+        "methods",
+        "pca_lag1_rank16",
+        "window_ap"
+      ],
+      "value": 0.9821099916843763,
+      "multiplier": 1,
+      "rendered": "0.982"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "pca_lag1_rank16",
+        "window_ap"
+      ],
+      "value": 0.9818710676618778,
+      "multiplier": 1,
+      "rendered": "0.982"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "pca_lag1_rank16",
+        "window_ap"
+      ],
+      "value": 0.9372371385143166,
+      "multiplier": 1,
+      "rendered": "0.937"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "intel",
+        "tracks",
+        "observation",
+        "methods",
+        "pca_lag1_rank16",
+        "window_ap"
+      ],
+      "value": 0.5458017823171148,
+      "multiplier": 1,
+      "rendered": "0.546"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "tracks",
+        "observation",
+        "methods",
+        "pca_lag1_rank2",
+        "window_ap"
+      ],
+      "value": 0.686549021297626,
+      "multiplier": 1,
+      "rendered": "0.687"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "tracks",
+        "observation",
+        "methods",
+        "pca_lag4_rank16",
+        "window_ap"
+      ],
+      "value": 0.973723834049978,
+      "multiplier": 1,
+      "rendered": "0.974"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "pca_lag4_rank16",
+        "window_ap"
+      ],
+      "value": 0.9688009138221104,
+      "multiplier": 1,
+      "rendered": "0.969"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "pca_lag4_rank16",
+        "window_ap"
+      ],
+      "value": 0.9011249289239907,
+      "multiplier": 1,
+      "rendered": "0.901"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "intel",
+        "tracks",
+        "observation",
+        "methods",
+        "pca_lag4_rank16",
+        "window_ap"
+      ],
+      "value": 0.5539563316078119,
+      "multiplier": 1,
+      "rendered": "0.554"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "tracks",
+        "observation",
+        "methods",
+        "pca_lag4_rank16",
+        "window_ap"
+      ],
+      "value": 0.7192767897700942,
+      "multiplier": 1,
+      "rendered": "0.719"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "tracks",
+        "observation",
+        "methods",
+        "gdn",
+        "window_ap"
+      ],
+      "value": 0.7435842064417681,
+      "multiplier": 1,
+      "rendered": "0.744"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "gdn",
+        "window_ap"
+      ],
+      "value": 0.7858496456877505,
+      "multiplier": 1,
+      "rendered": "0.786"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "gdn",
+        "window_ap"
+      ],
+      "value": 0.7159176356358132,
+      "multiplier": 1,
+      "rendered": "0.716"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "intel",
+        "tracks",
+        "observation",
+        "methods",
+        "gdn",
+        "window_ap"
+      ],
+      "value": 0.5726881446978073,
+      "multiplier": 1,
+      "rendered": "0.573"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "tracks",
+        "observation",
+        "methods",
+        "gdn",
+        "window_ap"
+      ],
+      "value": 0.619430880135102,
+      "multiplier": 1,
+      "rendered": "0.619"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "tracks",
+        "observation",
+        "methods",
+        "backbone",
+        "window_ap"
+      ],
+      "value": 0.8425185393991594,
+      "multiplier": 1,
+      "rendered": "0.843"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "backbone",
+        "window_ap"
+      ],
+      "value": 0.8397466541804028,
+      "multiplier": 1,
+      "rendered": "0.840"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "backbone",
+        "window_ap"
+      ],
+      "value": 0.6949513292821614,
+      "multiplier": 1,
+      "rendered": "0.695"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "intel",
+        "tracks",
+        "observation",
+        "methods",
+        "backbone",
+        "window_ap"
+      ],
+      "value": 0.5406782382063103,
+      "multiplier": 1,
+      "rendered": "0.541"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "tracks",
+        "observation",
+        "methods",
+        "backbone",
+        "window_ap"
+      ],
+      "value": 0.6647717017605029,
+      "multiplier": 1,
+      "rendered": "0.665"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "tracks",
+        "observation",
+        "methods",
+        "diffad",
+        "window_ap"
+      ],
+      "value": 0.7825830328167922,
+      "multiplier": 1,
+      "rendered": "0.783"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "diffad",
+        "window_ap"
+      ],
+      "value": 0.751466244077712,
+      "multiplier": 1,
+      "rendered": "0.751"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "diffad",
+        "window_ap"
+      ],
+      "value": 0.7163615197381452,
+      "multiplier": 1,
+      "rendered": "0.716"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "intel",
+        "tracks",
+        "observation",
+        "methods",
+        "diffad",
+        "window_ap"
+      ],
+      "value": 0.5277619784957965,
+      "multiplier": 1,
+      "rendered": "0.528"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "tracks",
+        "observation",
+        "methods",
+        "diffad",
+        "window_ap"
+      ],
+      "value": 0.7685771367499682,
+      "multiplier": 1,
+      "rendered": "0.769"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/ablations/synthetic_32_linear/analysis.json",
+      "json_path": [
+        "deterministic",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.8117289106013013,
+      "multiplier": 1,
+      "rendered": "0.812"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/ablations/synthetic_32_nonlinear/analysis.json",
+      "json_path": [
+        "deterministic",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.8790144089357238,
+      "multiplier": 1,
+      "rendered": "0.879"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "window_ap"
+      ],
+      "value": 0.7435620014028103,
+      "multiplier": 1,
+      "rendered": "0.744"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "window_ap"
+      ],
+      "value": 0.8847454656700384,
+      "multiplier": 1,
+      "rendered": "0.885"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "window_ap"
+      ],
+      "value": 0.784626270155151,
+      "multiplier": 1,
+      "rendered": "0.785"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "intel",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "window_ap"
+      ],
+      "value": 0.5533369262355472,
+      "multiplier": 1,
+      "rendered": "0.553"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "window_ap"
+      ],
+      "value": 0.506857627545766,
+      "multiplier": 1,
+      "rendered": "0.507"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "tracks",
+        "observation",
+        "paired_difference",
+        "difference"
+      ],
+      "value": -0.23854799028156604,
+      "multiplier": 1,
+      "rendered": "-0.239"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "tracks",
+        "observation",
+        "paired_difference",
+        "interval",
+        0
+      ],
+      "value": -0.28516653613529624,
+      "multiplier": 1,
+      "rendered": "-0.285"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "tracks",
+        "observation",
+        "paired_difference",
+        "interval",
+        1
+      ],
+      "value": -0.19299755567584792,
+      "multiplier": 1,
+      "rendered": "-0.193"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "paired_difference",
+        "difference"
+      ],
+      "value": -0.0971256019918394,
+      "multiplier": 1,
+      "rendered": "-0.097"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "paired_difference",
+        "interval",
+        0
+      ],
+      "value": -0.13240443163303628,
+      "multiplier": 1,
+      "rendered": "-0.132"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "paired_difference",
+        "interval",
+        1
+      ],
+      "value": -0.0658601407250769,
+      "multiplier": 1,
+      "rendered": "-0.066"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "tracks",
+        "observation",
+        "paired_difference",
+        "difference"
+      ],
+      "value": -0.11649865876883969,
+      "multiplier": 1,
+      "rendered": "-0.116"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "tracks",
+        "observation",
+        "paired_difference",
+        "interval",
+        0
+      ],
+      "value": -0.18388743913358477,
+      "multiplier": 1,
+      "rendered": "-0.184"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "tracks",
+        "observation",
+        "paired_difference",
+        "interval",
+        1
+      ],
+      "value": -0.05664174840396551,
+      "multiplier": 1,
+      "rendered": "-0.057"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "intel",
+        "tracks",
+        "observation",
+        "paired_difference",
+        "difference"
+      ],
+      "value": -0.0006194053722646808,
+      "multiplier": 1,
+      "rendered": "-0.001"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "intel",
+        "tracks",
+        "observation",
+        "paired_difference",
+        "interval",
+        0
+      ],
+      "value": -0.0282065121952485,
+      "multiplier": 1,
+      "rendered": "-0.028"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "intel",
+        "tracks",
+        "observation",
+        "paired_difference",
+        "interval",
+        1
+      ],
+      "value": 0.03799359931043157,
+      "multiplier": 1,
+      "rendered": "0.038"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "tracks",
+        "observation",
+        "paired_difference",
+        "difference"
+      ],
+      "value": -0.21241916222432822,
+      "multiplier": 1,
+      "rendered": "-0.212"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "tracks",
+        "observation",
+        "paired_difference",
+        "interval",
+        0
+      ],
+      "value": -0.30822891663862967,
+      "multiplier": 1,
+      "rendered": "-0.308"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "tracks",
+        "observation",
+        "paired_difference",
+        "interval",
+        1
+      ],
+      "value": -0.14171622970870718,
+      "multiplier": 1,
+      "rendered": "-0.142"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "tracks",
+        "association",
+        "methods",
+        "edge_residual",
+        "window_ap"
+      ],
+      "value": 0.8851072419784118,
+      "multiplier": 1,
+      "rendered": "0.885"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "association",
+        "methods",
+        "edge_residual",
+        "window_ap"
+      ],
+      "value": 0.8315881215912313,
+      "multiplier": 1,
+      "rendered": "0.832"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "tracks",
+        "association",
+        "methods",
+        "edge_residual",
+        "window_ap"
+      ],
+      "value": 0.6248874051244435,
+      "multiplier": 1,
+      "rendered": "0.625"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "intel",
+        "tracks",
+        "association",
+        "methods",
+        "edge_residual",
+        "window_ap"
+      ],
+      "value": 0.5559106714520042,
+      "multiplier": 1,
+      "rendered": "0.556"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "tracks",
+        "association",
+        "methods",
+        "edge_residual",
+        "window_ap"
+      ],
+      "value": 0.6068140709805524,
+      "multiplier": 1,
+      "rendered": "0.607"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/ablations/synthetic_32_linear/analysis.json",
+      "json_path": [
+        "deterministic",
+        "metrics",
+        "association",
+        "window_ap"
+      ],
+      "value": 0.8834805754608389,
+      "multiplier": 1,
+      "rendered": "0.883"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/ablations/synthetic_32_nonlinear/analysis.json",
+      "json_path": [
+        "deterministic",
+        "metrics",
+        "association",
+        "window_ap"
+      ],
+      "value": 0.8246862887196653,
+      "multiplier": 1,
+      "rendered": "0.825"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "tracks",
+        "association",
+        "methods",
+        "proposed",
+        "window_ap"
+      ],
+      "value": 0.8834805754608389,
+      "multiplier": 1,
+      "rendered": "0.883"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "association",
+        "methods",
+        "proposed",
+        "window_ap"
+      ],
+      "value": 0.8246862887196653,
+      "multiplier": 1,
+      "rendered": "0.825"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "tracks",
+        "association",
+        "methods",
+        "proposed",
+        "window_ap"
+      ],
+      "value": 0.6383716002614573,
+      "multiplier": 1,
+      "rendered": "0.638"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "intel",
+        "tracks",
+        "association",
+        "methods",
+        "proposed",
+        "window_ap"
+      ],
+      "value": 0.6029909881466069,
+      "multiplier": 1,
+      "rendered": "0.603"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "tracks",
+        "association",
+        "methods",
+        "proposed",
+        "window_ap"
+      ],
+      "value": 0.5385023056807651,
+      "multiplier": 1,
+      "rendered": "0.539"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "tracks",
+        "association",
+        "paired_difference",
+        "difference"
+      ],
+      "value": -0.0016266665175729278,
+      "multiplier": 1,
+      "rendered": "-0.002"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "tracks",
+        "association",
+        "paired_difference",
+        "interval",
+        0
+      ],
+      "value": -0.04449338439729235,
+      "multiplier": 1,
+      "rendered": "-0.044"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "tracks",
+        "association",
+        "paired_difference",
+        "interval",
+        1
+      ],
+      "value": 0.0403346710580388,
+      "multiplier": 1,
+      "rendered": "0.040"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "association",
+        "paired_difference",
+        "difference"
+      ],
+      "value": -0.006901832871565983,
+      "multiplier": 1,
+      "rendered": "-0.007"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "association",
+        "paired_difference",
+        "interval",
+        0
+      ],
+      "value": -0.022877324853089596,
+      "multiplier": 1,
+      "rendered": "-0.023"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "association",
+        "paired_difference",
+        "interval",
+        1
+      ],
+      "value": 0.010513025253575014,
+      "multiplier": 1,
+      "rendered": "0.011"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "tracks",
+        "association",
+        "paired_difference",
+        "difference"
+      ],
+      "value": 0.013484195137013821,
+      "multiplier": 1,
+      "rendered": "0.013"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "tracks",
+        "association",
+        "paired_difference",
+        "interval",
+        0
+      ],
+      "value": -0.08062955962197768,
+      "multiplier": 1,
+      "rendered": "-0.081"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "tracks",
+        "association",
+        "paired_difference",
+        "interval",
+        1
+      ],
+      "value": 0.0757270720367958,
+      "multiplier": 1,
+      "rendered": "0.076"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "intel",
+        "tracks",
+        "association",
+        "paired_difference",
+        "difference"
+      ],
+      "value": 0.047080316694602664,
+      "multiplier": 1,
+      "rendered": "0.047"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "intel",
+        "tracks",
+        "association",
+        "paired_difference",
+        "interval",
+        0
+      ],
+      "value": -0.12327678368477646,
+      "multiplier": 1,
+      "rendered": "-0.123"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "intel",
+        "tracks",
+        "association",
+        "paired_difference",
+        "interval",
+        1
+      ],
+      "value": 0.10192722893282147,
+      "multiplier": 1,
+      "rendered": "0.102"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "tracks",
+        "association",
+        "paired_difference",
+        "difference"
+      ],
+      "value": -0.06831176529978733,
+      "multiplier": 1,
+      "rendered": "-0.068"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "tracks",
+        "association",
+        "paired_difference",
+        "interval",
+        0
+      ],
+      "value": -0.18184205876682522,
+      "multiplier": 1,
+      "rendered": "-0.182"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "tracks",
+        "association",
+        "paired_difference",
+        "interval",
+        1
+      ],
+      "value": 0.004093412413923703,
+      "multiplier": 1,
+      "rendered": "0.004"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "top1"
+      ],
+      "value": 0.5125,
+      "multiplier": 1,
+      "rendered": "0.512"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "top1"
+      ],
+      "value": 0.6625,
+      "multiplier": 1,
+      "rendered": "0.662"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "top1"
+      ],
+      "value": 0.425,
+      "multiplier": 1,
+      "rendered": "0.425"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "intel",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "top1"
+      ],
+      "value": 0.13636363636363635,
+      "multiplier": 1,
+      "rendered": "0.136"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "top1"
+      ],
+      "value": 0.2625,
+      "multiplier": 1,
+      "rendered": "0.263"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "screening_recall"
+      ],
+      "value": 0.6125,
+      "multiplier": 1,
+      "rendered": "0.613"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "screening_recall"
+      ],
+      "value": 0.7125,
+      "multiplier": 1,
+      "rendered": "0.713"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "screening_recall"
+      ],
+      "value": 0.4875,
+      "multiplier": 1,
+      "rendered": "0.487"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "intel",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "screening_recall"
+      ],
+      "value": 0.1590909090909091,
+      "multiplier": 1,
+      "rendered": "0.159"
+    },
+    {
+      "output": "main_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "screening_recall"
+      ],
+      "value": 0.625,
+      "multiplier": 1,
+      "rendered": "0.625"
+    },
+    {
+      "output": "results_text.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "candidate_risk_coverage",
+        0,
+        "precision"
+      ],
+      "value": 0.90625,
+      "multiplier": 1,
+      "rendered": "0.906"
+    },
+    {
+      "output": "results_text.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "pca_lag1_rank16",
+        "candidate_risk_coverage",
+        0,
+        "precision"
+      ],
+      "value": 0.71875,
+      "multiplier": 1,
+      "rendered": "0.719"
+    },
+    {
+      "output": "results_text.tex",
+      "source": "results/confidence_comparisons.json",
+      "json_path": [
+        "results",
+        "synthetic_32_nonlinear",
+        "observation",
+        "paired_secondary_endpoints",
+        "precision_difference_at_0.1",
+        "difference"
+      ],
+      "value": 0.1875,
+      "multiplier": 1,
+      "rendered": "0.188"
+    },
+    {
+      "output": "results_text.tex",
+      "source": "results/confidence_comparisons.json",
+      "json_path": [
+        "results",
+        "synthetic_32_nonlinear",
+        "observation",
+        "paired_secondary_endpoints",
+        "precision_difference_at_0.1",
+        "interval",
+        0
+      ],
+      "value": 0.046875,
+      "multiplier": 1,
+      "rendered": "0.047"
+    },
+    {
+      "output": "results_text.tex",
+      "source": "results/confidence_comparisons.json",
+      "json_path": [
+        "results",
+        "synthetic_32_nonlinear",
+        "observation",
+        "paired_secondary_endpoints",
+        "precision_difference_at_0.1",
+        "interval",
+        1
+      ],
+      "value": 0.265625,
+      "multiplier": 1,
+      "rendered": "0.266"
+    },
+    {
+      "output": "results_text.tex",
+      "source": "results/confidence_comparisons.json",
+      "json_path": [
+        "results",
+        "synthetic_32_nonlinear",
+        "observation",
+        "paired_secondary_endpoints",
+        "precision_difference_at_0.25",
+        "difference"
+      ],
+      "value": -0.03749999999999998,
+      "multiplier": 1,
+      "rendered": "-0.037"
+    },
+    {
+      "output": "results_text.tex",
+      "source": "results/confidence_comparisons.json",
+      "json_path": [
+        "results",
+        "synthetic_32_nonlinear",
+        "observation",
+        "paired_secondary_endpoints",
+        "precision_difference_at_0.25",
+        "interval",
+        0
+      ],
+      "value": -0.08749999999999997,
+      "multiplier": 1,
+      "rendered": "-0.087"
+    },
+    {
+      "output": "results_text.tex",
+      "source": "results/confidence_comparisons.json",
+      "json_path": [
+        "results",
+        "synthetic_32_nonlinear",
+        "observation",
+        "paired_secondary_endpoints",
+        "precision_difference_at_0.25",
+        "interval",
+        1
+      ],
+      "value": -0.006249999999999978,
+      "multiplier": 1,
+      "rendered": "-0.006"
+    },
+    {
+      "output": "results_text.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "probability_evaluation",
+        "brier"
+      ],
+      "value": 0.049461083370521505,
+      "multiplier": 1,
+      "rendered": "0.049"
+    },
+    {
+      "output": "results_text.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "pca_lag1_rank16",
+        "probability_evaluation",
+        "brier"
+      ],
+      "value": 0.0678870063492668,
+      "multiplier": 1,
+      "rendered": "0.068"
+    },
+    {
+      "output": "results_text.tex",
+      "source": "results/confidence_comparisons.json",
+      "json_path": [
+        "results",
+        "synthetic_32_nonlinear",
+        "observation",
+        "paired_secondary_endpoints",
+        "brier_main_minus_comparator",
+        "interval",
+        0
+      ],
+      "value": -0.02688920200703491,
+      "multiplier": 1,
+      "rendered": "-0.027"
+    },
+    {
+      "output": "results_text.tex",
+      "source": "results/confidence_comparisons.json",
+      "json_path": [
+        "results",
+        "synthetic_32_nonlinear",
+        "observation",
+        "paired_secondary_endpoints",
+        "brier_main_minus_comparator",
+        "interval",
+        1
+      ],
+      "value": -0.007227971740831178,
+      "multiplier": 1,
+      "rendered": "-0.007"
+    },
+    {
+      "output": "results_text.tex",
+      "sources": [
+        "results/analysis.json"
+      ],
+      "operation": "minimum proposed observation screening recall",
+      "value": 0.1590909090909091,
+      "rendered": "0.159"
+    },
+    {
+      "output": "results_text.tex",
+      "sources": [
+        "results/analysis.json"
+      ],
+      "operation": "maximum proposed observation screening recall",
+      "value": 0.7125,
+      "rendered": "0.713"
+    },
+    {
+      "output": "results_text.tex",
+      "source": "results/audits/association_metadata.json",
+      "json_path": [
+        "skab",
+        "metadata_only_roc_auc"
+      ],
+      "value": 0.7340305397727274,
+      "multiplier": 1,
+      "rendered": "0.734"
+    },
+    {
+      "output": "results_text.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "intel",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "null_reference_units"
+      ],
+      "value": 16,
+      "multiplier": 1,
+      "rendered": "16"
+    },
+    {
+      "output": "results_text.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "intel",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "null_resolution"
+      ],
+      "value": 0.058823529411764705,
+      "multiplier": 1,
+      "rendered": "0.059"
+    },
+    {
+      "output": "results_text.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "operating_points",
+        1,
+        "fpr"
+      ],
+      "value": 0.075,
+      "multiplier": 1,
+      "rendered": "0.075"
+    },
+    {
+      "output": "results_text.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "operating_points",
+        1,
+        "fpr"
+      ],
+      "value": 0.025,
+      "multiplier": 1,
+      "rendered": "0.025"
+    },
+    {
+      "output": "results_text.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "operating_points",
+        1,
+        "fpr"
+      ],
+      "value": 0.025,
+      "multiplier": 1,
+      "rendered": "0.025"
+    },
+    {
+      "output": "results_text.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "intel",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "operating_points",
+        1,
+        "fpr"
+      ],
+      "value": 0.0,
+      "multiplier": 1,
+      "rendered": "0.000"
+    },
+    {
+      "output": "results_text.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "operating_points",
+        1,
+        "fpr"
+      ],
+      "value": 0.05,
+      "multiplier": 1,
+      "rendered": "0.050"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "window_ap"
+      ],
+      "value": 0.7435620014028103,
+      "multiplier": 1,
+      "rendered": "0.744"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "window_ap"
+      ],
+      "value": 0.8847454656700384,
+      "multiplier": 1,
+      "rendered": "0.885"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "window_ap"
+      ],
+      "value": 0.784626270155151,
+      "multiplier": 1,
+      "rendered": "0.785"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "intel",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "window_ap"
+      ],
+      "value": 0.5533369262355472,
+      "multiplier": 1,
+      "rendered": "0.553"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "window_ap"
+      ],
+      "value": 0.506857627545766,
+      "multiplier": 1,
+      "rendered": "0.507"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "tracks",
+        "observation",
+        "methods",
+        "R_only",
+        "window_ap"
+      ],
+      "value": 0.7641241111777285,
+      "multiplier": 1,
+      "rendered": "0.764"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "R_only",
+        "window_ap"
+      ],
+      "value": 0.8847454656700384,
+      "multiplier": 1,
+      "rendered": "0.885"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "R_only",
+        "window_ap"
+      ],
+      "value": 0.7702359277751449,
+      "multiplier": 1,
+      "rendered": "0.770"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "intel",
+        "tracks",
+        "observation",
+        "methods",
+        "R_only",
+        "window_ap"
+      ],
+      "value": 0.5533369262355472,
+      "multiplier": 1,
+      "rendered": "0.553"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "tracks",
+        "observation",
+        "methods",
+        "R_only",
+        "window_ap"
+      ],
+      "value": 0.49765046937181795,
+      "multiplier": 1,
+      "rendered": "0.498"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "tracks",
+        "observation",
+        "methods",
+        "fixed_penalties",
+        "window_ap"
+      ],
+      "value": 0.716939253622896,
+      "multiplier": 1,
+      "rendered": "0.717"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "fixed_penalties",
+        "window_ap"
+      ],
+      "value": 0.8545797372139812,
+      "multiplier": 1,
+      "rendered": "0.855"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "fixed_penalties",
+        "window_ap"
+      ],
+      "value": 0.7542506930535378,
+      "multiplier": 1,
+      "rendered": "0.754"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "intel",
+        "tracks",
+        "observation",
+        "methods",
+        "fixed_penalties",
+        "window_ap"
+      ],
+      "value": 0.5330888580485557,
+      "multiplier": 1,
+      "rendered": "0.533"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "tracks",
+        "observation",
+        "methods",
+        "fixed_penalties",
+        "window_ap"
+      ],
+      "value": 0.48768165665265095,
+      "multiplier": 1,
+      "rendered": "0.488"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "tracks",
+        "observation",
+        "methods",
+        "no_uncertainty",
+        "window_ap"
+      ],
+      "value": 0.7641241111777285,
+      "multiplier": 1,
+      "rendered": "0.764"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "no_uncertainty",
+        "window_ap"
+      ],
+      "value": 0.8847454656700384,
+      "multiplier": 1,
+      "rendered": "0.885"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "no_uncertainty",
+        "window_ap"
+      ],
+      "value": 0.7702359277751449,
+      "multiplier": 1,
+      "rendered": "0.770"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "intel",
+        "tracks",
+        "observation",
+        "methods",
+        "no_uncertainty",
+        "window_ap"
+      ],
+      "value": 0.5533369262355472,
+      "multiplier": 1,
+      "rendered": "0.553"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "tracks",
+        "observation",
+        "methods",
+        "no_uncertainty",
+        "window_ap"
+      ],
+      "value": 0.49765046937181795,
+      "multiplier": 1,
+      "rendered": "0.498"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "tracks",
+        "observation",
+        "methods",
+        "no_cost",
+        "window_ap"
+      ],
+      "value": 0.7435620014028103,
+      "multiplier": 1,
+      "rendered": "0.744"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "no_cost",
+        "window_ap"
+      ],
+      "value": 0.8847454656700384,
+      "multiplier": 1,
+      "rendered": "0.885"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "no_cost",
+        "window_ap"
+      ],
+      "value": 0.784626270155151,
+      "multiplier": 1,
+      "rendered": "0.785"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "intel",
+        "tracks",
+        "observation",
+        "methods",
+        "no_cost",
+        "window_ap"
+      ],
+      "value": 0.5533369262355472,
+      "multiplier": 1,
+      "rendered": "0.553"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "tracks",
+        "observation",
+        "methods",
+        "no_cost",
+        "window_ap"
+      ],
+      "value": 0.506857627545766,
+      "multiplier": 1,
+      "rendered": "0.507"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "tracks",
+        "observation",
+        "methods",
+        "supervised_terms",
+        "window_ap"
+      ],
+      "value": 0.86140811790294,
+      "multiplier": 1,
+      "rendered": "0.861"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "supervised_terms",
+        "window_ap"
+      ],
+      "value": 0.8733848595770001,
+      "multiplier": 1,
+      "rendered": "0.873"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "tracks",
+        "observation",
+        "methods",
+        "supervised_terms",
+        "window_ap"
+      ],
+      "value": 0.7143767244517814,
+      "multiplier": 1,
+      "rendered": "0.714"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "intel",
+        "tracks",
+        "observation",
+        "methods",
+        "supervised_terms",
+        "window_ap"
+      ],
+      "value": 0.5407382625373252,
+      "multiplier": 1,
+      "rendered": "0.541"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "tracks",
+        "observation",
+        "methods",
+        "supervised_terms",
+        "window_ap"
+      ],
+      "value": 0.5520500236603615,
+      "multiplier": 1,
+      "rendered": "0.552"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/ablations/synthetic_32_linear/analysis.json",
+      "json_path": [
+        "deterministic",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.8117289106013013,
+      "multiplier": 1,
+      "rendered": "0.812"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/ablations/synthetic_32_nonlinear/analysis.json",
+      "json_path": [
+        "deterministic",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.8790144089357238,
+      "multiplier": 1,
+      "rendered": "0.879"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/ablations/synthetic_32_linear/analysis.json",
+      "json_path": [
+        "no_graph",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.5,
+      "multiplier": 1,
+      "rendered": "0.500"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/ablations/synthetic_32_linear/analysis.json",
+      "json_path": [
+        "no_witness_separation",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.7612333911065937,
+      "multiplier": 1,
+      "rendered": "0.761"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/ablations/synthetic_32_nonlinear/analysis.json",
+      "json_path": [
+        "no_witness_separation",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.8931155909610509,
+      "multiplier": 1,
+      "rendered": "0.893"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/ablations/synthetic_32_linear/analysis.json",
+      "json_path": [
+        "no_provenance_grouping",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.7586869773338311,
+      "multiplier": 1,
+      "rendered": "0.759"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/ablations/synthetic_32_nonlinear/analysis.json",
+      "json_path": [
+        "no_provenance_grouping",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.8848275363771091,
+      "multiplier": 1,
+      "rendered": "0.885"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/ablations/synthetic_32_linear/analysis.json",
+      "json_path": [
+        "no_provenance_deduplication",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.769788247781319,
+      "multiplier": 1,
+      "rendered": "0.770"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/ablations/synthetic_32_nonlinear/analysis.json",
+      "json_path": [
+        "no_provenance_deduplication",
+        "metrics",
+        "observation",
+        "window_ap"
+      ],
+      "value": 0.8877460139185778,
+      "multiplier": 1,
+      "rendered": "0.888"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "selection",
+        "kappa"
+      ],
+      "value": 0.5,
+      "multiplier": 1,
+      "rendered": "0.50"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_linear",
+        "selection",
+        "lambda"
+      ],
+      "value": 0,
+      "multiplier": 1,
+      "rendered": "0.00"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "selection",
+        "kappa"
+      ],
+      "value": 0,
+      "multiplier": 1,
+      "rendered": "0.00"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_32_nonlinear",
+        "selection",
+        "lambda"
+      ],
+      "value": 0,
+      "multiplier": 1,
+      "rendered": "0.00"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "selection",
+        "kappa"
+      ],
+      "value": 0.5,
+      "multiplier": 1,
+      "rendered": "0.50"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "synthetic_64_nonlinear",
+        "selection",
+        "lambda"
+      ],
+      "value": 0,
+      "multiplier": 1,
+      "rendered": "0.00"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "intel",
+        "selection",
+        "kappa"
+      ],
+      "value": 0,
+      "multiplier": 1,
+      "rendered": "0.00"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "intel",
+        "selection",
+        "lambda"
+      ],
+      "value": 0.05,
+      "multiplier": 1,
+      "rendered": "0.05"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "selection",
+        "kappa"
+      ],
+      "value": 1,
+      "multiplier": 1,
+      "rendered": "1.00"
+    },
+    {
+      "output": "ablation_table.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "selection",
+        "lambda"
+      ],
+      "value": 0,
+      "multiplier": 1,
+      "rendered": "0.00"
+    },
+    {
+      "output": "ablation_text.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "tracks",
+        "observation",
+        "methods",
+        "R_only",
+        "operating_points",
+        1,
+        "fpr"
+      ],
+      "value": 0.6125,
+      "multiplier": 1,
+      "rendered": "0.613"
+    },
+    {
+      "output": "ablation_text.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "operating_points",
+        1,
+        "fpr"
+      ],
+      "value": 0.05,
+      "multiplier": 1,
+      "rendered": "0.050"
+    },
+    {
+      "output": "ablation_text.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "tracks",
+        "observation",
+        "methods",
+        "R_only",
+        "operating_points",
+        1,
+        "recall"
+      ],
+      "value": 0.6375,
+      "multiplier": 1,
+      "rendered": "0.637"
+    },
+    {
+      "output": "ablation_text.tex",
+      "source": "results/analysis.json",
+      "json_path": [
+        "skab",
+        "tracks",
+        "observation",
+        "methods",
+        "proposed",
+        "operating_points",
+        1,
+        "recall"
+      ],
+      "value": 0.0125,
+      "multiplier": 1,
+      "rendered": "0.013"
+    },
+    {
+      "output": "ablation_text.tex",
+      "source": "results/audits/production_equations.json",
+      "json_path": [
+        "candidates"
+      ],
+      "value": 8736,
+      "multiplier": 1,
+      "rendered": "8736"
+    },
+    {
+      "output": "ablation_text.tex",
+      "source": "results/audits/production_equations.json",
+      "json_path": [
+        "cases"
+      ],
+      "value": 1092,
+      "multiplier": 1,
+      "rendered": "1092"
+    },
+    {
+      "output": "ablation_text.tex",
+      "sources": [
+        "results/audits/production_equations.json"
+      ],
+      "operation": "maximum error multiplied by 10^15",
+      "value": 7.105427357601002,
+      "rendered": "7.11"
+    },
+    {
+      "output": "network_caption.tex",
+      "source": "results/graph/synthetic_32_nonlinear_illustration.json",
+      "json_path": [
+        "case",
+        "start"
+      ],
+      "value": 0,
+      "multiplier": 1,
+      "rendered": "0"
+    },
+    {
+      "output": "network_caption.tex",
+      "source": "results/graph/synthetic_32_nonlinear_illustration.json",
+      "json_path": [
+        "case",
+        "stop"
+      ],
+      "value": 64,
+      "multiplier": 1,
+      "rendered": "64"
+    }
+  ],
+  "sources": {
+    "results/analysis.json": "904d06b7563e80a51c7a88a0d0dc71fa3977ac9f0f6105026db6d9b3d3eb43d6",
+    "results/confidence_comparisons.json": "fa1a5884561562ac1278bb1c244c38a1edf3adc9cc6343b078420bce1542b66f",
+    "results/dataset_summary.json": "8e41992716ca7f42ad29740bfc758f4ae3f378ee011e5e6968dd064586866802",
+    "results/ablations/synthetic_32_linear/analysis.json": "f7fa95a0ee1a5d59985ae3a8bbbb822e692e08f78795a403465e9d1cea30f497",
+    "results/ablations/synthetic_32_nonlinear/analysis.json": "acd4b4b99bfd896f2f92d5a90a6ae75a43e846ecafe61633da30a35af0494786",
+    "results/audits/association_metadata.json": "b04066bc5abf91d42b01f9d413c794e7381d70b5366954a39232898f5d83db35",
+    "results/audits/production_equations.json": "30ab85adc4e6973828bbceb9f37b631ae1bd61d020328cd842b7b4a5e11a794a",
+    "results/graph/synthetic_32_nonlinear_illustration.json": "90f7c769fafc23e4690fcfde8c205b50f11492981ddd24a389bc5b6cdbb76120"
+  },
+  "generated_outputs": {
+    "numbers.tex": "aed126156bc70de3cfd8c00ddf9b46c034c787b7d25dfb08b67a3622e6d0228a",
+    "abstract_results.tex": "9552188e546b5e7097adbe5ebc1d41b51e3fb01d899ce11f1cc0d152deb04dcf",
+    "datasets_table.tex": "75198004e9c25cf2daca4a528dcef6f7974b9eca433774229153cf82c7066145",
+    "main_table.tex": "ab1677114d2efb5bbd12eb1357b1cb7ac6846e7b70956564e0794d57fde00434",
+    "results_text.tex": "0dd3363385608557342f7e3aa5dcfed5f8edc22a4a09f07f4b47f002ce3e5705",
+    "ablation_table.tex": "7a5d9db1e856fb51337a46acf148a157e186a38ec788b76383cde5b0687f3d6f",
+    "ablation_text.tex": "31d7d333e1cd46ca24c203277074c5d61d87a245a9a507ef44ee2c23addd1935",
+    "native_text.tex": "167328d6b47384345580c8aa68ac3cf994a38efc989936345796464db5840f14",
+    "cost_text.tex": "bb2bafd24900705ff9726dd64b84ceb0c68956da59b0bb5132f00fc9b7d658a1",
+    "network_caption.tex": "60fa5697fabe9f1d51991f86fb7e463b7063264ae36897ce383928471ecf9321",
+    "conclusion_results.tex": "49fd266cba1f6f76b69e2a68cd46d275ff297b0fa7607a48dd27c673b507d675"
+  },
+  "static_numerical_sources": [
+    "configs/study.json",
+    "data/manifests",
+    "results/audits/reference_checks.json",
+    "results/audits/parity_cuda.json"
+  ],
+  "scope": "Every generated result value is recorded with its source JSON path or an explicit aggregation. Figure sources are in paper/figures/provenance.json."
+}

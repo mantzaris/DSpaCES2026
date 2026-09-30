@@ -1,0 +1,21 @@
+{
+  "tested_at": "2026-09-30T18:54:08.327Z",
+  "url": "http://127.0.0.1:8099",
+  "case_count": 10,
+  "checks": [
+    "saved case and time selection",
+    "classic SVG node-link network",
+    "observation and association selection",
+    "unchanged witness values and before/after intervals",
+    "evidence artifact download",
+    "neighborhood focus",
+    "confirm/reject/defer persistence",
+    "no uncaught browser exceptions"
+  ],
+  "reviews": [
+    "Saved confirm review · a1475bcb-56ee-4f10-9783-d2a4dcf797cc",
+    "Saved reject review · 43decaf6-d3f1-4ae3-9880-4a3f00d97f39",
+    "Saved defer review · 3da23f43-f631-4684-884a-ca7ed087da74"
+  ],
+  "scope": "automated local interface verification, not a human evaluation"
+}

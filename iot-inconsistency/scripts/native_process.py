@@ -26,7 +26,7 @@ else:
     raw,times=neural_residuals(models,values,graph)
     train=np.load(ROOT/'data/processed/skab/train.npz')['x']
     for name in params['pca'].values():
-        lag=int(name.split('_')[1][3:]);rank=int(name.split('_')[2][4:]);raw[name]=PCADetector(rank,lag).fit(train).score(values)
+        lag=int(name.split('_')[1][3:]);raw[name]=PCADetector.load(ROOT/'results/models/skab'/(name+'.npz'),lag).score(values)
     np.savez_compressed(cache,**raw);json_save(out/'timing.json',times)
 scores={name:scaled(a.mean(0) if a.ndim==3 else a,scales[name]) for name,a in raw.items()}
 rows=[]
@@ -34,7 +34,8 @@ for i,(record,x) in enumerate(zip(records,values)):
     path=out/f'window_{i:04d}.json'
     if path.exists():rows.append(json.loads(path.read_text()));continue
     residual=edge_residuals(x[None],graph)[0];candidates=screen_candidates(scores['gdn'][i],residual,graph)
-    findings,terms,abstentions=score_candidates(models['diffusion'],x,graph,candidates,seed=12000000+i*1009)
+    findings,terms,abstentions=score_candidates(models['diffusion'],x,graph,candidates,seed=12000000+i*1009,
+        kappa=params['kappa'],edit_weight=params['lambda'])
     process_p={name:float(null_tail_value(cal['null_references']['observation/'+name],np.nanmax(a[i]))) for name,a in scores.items()}
     accepted=[]
     for finding in findings:

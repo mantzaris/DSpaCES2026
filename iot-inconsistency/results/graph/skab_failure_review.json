@@ -1,0 +1,3409 @@
+{
+  "process_alert": false,
+  "process_null_tail": 0.7111111111111111,
+  "dataset": "skab",
+  "case": {
+    "base_id": "test_0000",
+    "source_index": 0,
+    "block": "other/1.csv",
+    "timestamp": 1583077512,
+    "start": 0,
+    "stop": 64,
+    "native_process_label": false,
+    "split": "test",
+    "calibration_fold": "null",
+    "id": "test_0000_observation",
+    "track": "observation",
+    "observation_truth": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      false
+    ],
+    "association_truth": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "fault": {
+      "family": "offset",
+      "seed": 700000,
+      "channels": [
+        5
+      ],
+      "start": 60,
+      "stop": 64,
+      "duration": 4,
+      "strength": 0.5,
+      "sign": -1,
+      "label_provenance": "injected observation fault",
+      "status": "injected"
+    },
+    "data_sha256": "76b5a47354f8ed7bda197265f2ed454442e1130bd1dd284d95ad8879bae750b9",
+    "graph": {
+      "version": "c780e8605b28c47c",
+      "edges": [
+        {
+          "id": "a000_007",
+          "source": 7,
+          "target": 0,
+          "lag": 3,
+          "sign": 1,
+          "magnitude": 0.6390768885612488,
+          "intercept": 0.1989915370941162,
+          "validation_gain": 105.21320343017578,
+          "validation_blocks": [
+            90.31100463867188,
+            147.3465118408203,
+            147.9242401123047,
+            35.271080017089844
+          ],
+          "training_abs_correlation": 0.9969032189108881,
+          "regime": "reference",
+          "valid_from": "training",
+          "valid_to": null
+        },
+        {
+          "id": "a000_001",
+          "source": 1,
+          "target": 0,
+          "lag": 2,
+          "sign": 1,
+          "magnitude": 0.5352932810783386,
+          "intercept": -0.020512104034423828,
+          "validation_gain": 106.52127838134766,
+          "validation_blocks": [
+            93.09284210205078,
+            147.3449249267578,
+            147.92262268066406,
+            37.72468185424805
+          ],
+          "training_abs_correlation": 0.9959974557713667,
+          "regime": "reference",
+          "valid_from": "training",
+          "valid_to": null
+        },
+        {
+          "id": "a000_004",
+          "source": 4,
+          "target": 0,
+          "lag": 3,
+          "sign": 1,
+          "magnitude": 2.963580846786499,
+          "intercept": -0.051793575286865234,
+          "validation_gain": 75.21284484863281,
+          "validation_blocks": [
+            48.31386947631836,
+            138.94284057617188,
+            121.5246810913086,
+            -7.92997932434082
+          ],
+          "training_abs_correlation": 0.9704239819253877,
+          "regime": "reference",
+          "valid_from": "training",
+          "valid_to": null
+        },
+        {
+          "id": "a001_007",
+          "source": 7,
+          "target": 1,
+          "lag": 3,
+          "sign": 1,
+          "magnitude": 1.1891100406646729,
+          "intercept": 0.3887453079223633,
+          "validation_gain": 343.11309814453125,
+          "validation_blocks": [
+            275.0623474121094,
+            508.28277587890625,
+            508.7325439453125,
+            80.37471771240234
+          ],
+          "training_abs_correlation": 0.9969254211635492,
+          "regime": "reference",
+          "valid_from": "training",
+          "valid_to": null
+        },
+        {
+          "id": "a001_000",
+          "source": 0,
+          "target": 1,
+          "lag": 2,
+          "sign": 1,
+          "magnitude": 1.8532342910766602,
+          "intercept": -0.0012545585632324219,
+          "validation_gain": 341.00494384765625,
+          "validation_blocks": [
+            271.1774597167969,
+            508.2767333984375,
+            508.72760009765625,
+            75.83795166015625
+          ],
+          "training_abs_correlation": 0.996064689987297,
+          "regime": "reference",
+          "valid_from": "training",
+          "valid_to": null
+        },
+        {
+          "id": "a001_004",
+          "source": 4,
+          "target": 1,
+          "lag": 3,
+          "sign": 1,
+          "magnitude": 5.581206798553467,
+          "intercept": -0.019260883331298828,
+          "validation_gain": 262.702880859375,
+          "validation_blocks": [
+            173.11537170410156,
+            480.8045349121094,
+            421.0368347167969,
+            -24.145246505737305
+          ],
+          "training_abs_correlation": 0.9822308987061062,
+          "regime": "reference",
+          "valid_from": "training",
+          "valid_to": null
+        },
+        {
+          "id": "a002_007",
+          "source": 7,
+          "target": 2,
+          "lag": 2,
+          "sign": 1,
+          "magnitude": 0.05044512450695038,
+          "intercept": 0.022728189826011658,
+          "validation_gain": 0.6031365394592285,
+          "validation_blocks": [
+            0.47663217782974243,
+            0.8955983519554138,
+            0.9071854948997498,
+            0.1331300288438797
+          ],
+          "training_abs_correlation": 0.7787006507073598,
+          "regime": "reference",
+          "valid_from": "training",
+          "valid_to": null
+        },
+        {
+          "id": "a002_001",
+          "source": 1,
+          "target": 2,
+          "lag": 2,
+          "sign": 1,
+          "magnitude": 0.042260847985744476,
+          "intercept": 0.005430012941360474,
+          "validation_gain": 0.6043016910552979,
+          "validation_blocks": [
+            0.48073190450668335,
+            0.8958840370178223,
+            0.9071369171142578,
+            0.1334538757801056
+          ],
+          "training_abs_correlation": 0.7781419582610865,
+          "regime": "reference",
+          "valid_from": "training",
+          "valid_to": null
+        },
+        {
+          "id": "a002_000",
+          "source": 0,
+          "target": 2,
+          "lag": 2,
+          "sign": 1,
+          "magnitude": 0.0783286765217781,
+          "intercept": 0.005413457751274109,
+          "validation_gain": 0.5973817110061646,
+          "validation_blocks": [
+            0.46932485699653625,
+            0.8958170413970947,
+            0.9072157144546509,
+            0.1171693503856659
+          ],
+          "training_abs_correlation": 0.7751491727864607,
+          "regime": "reference",
+          "valid_from": "training",
+          "valid_to": null
+        },
+        {
+          "id": "a003_004",
+          "source": 4,
+          "target": 3,
+          "lag": 1,
+          "sign": 1,
+          "magnitude": 0.028436830267310143,
+          "intercept": 0.16972915828227997,
+          "validation_gain": 0.007363012060523033,
+          "validation_blocks": [
+            0.005979020614176989,
+            0.02029312402009964,
+            0.005324930883944035,
+            -0.002145027741789818
+          ],
+          "training_abs_correlation": 0.07015142482944914,
+          "regime": "reference",
+          "valid_from": "training",
+          "valid_to": null
+        },
+        {
+          "id": "a003_007",
+          "source": 7,
+          "target": 3,
+          "lag": 1,
+          "sign": 1,
+          "magnitude": 0.005881423130631447,
+          "intercept": 0.17101939022541046,
+          "validation_gain": 0.0157479178160429,
+          "validation_blocks": [
+            0.025804707780480385,
+            0.02115468494594097,
+            0.004291546531021595,
+            0.011740732938051224
+          ],
+          "training_abs_correlation": 0.06912257932557796,
+          "regime": "reference",
+          "valid_from": "training",
+          "valid_to": null
+        },
+        {
+          "id": "a003_001",
+          "source": 1,
+          "target": 3,
+          "lag": 1,
+          "sign": 1,
+          "magnitude": 0.004923354368656874,
+          "intercept": 0.16898393630981445,
+          "validation_gain": 0.01695362478494644,
+          "validation_blocks": [
+            0.02877832017838955,
+            0.020993709564208984,
+            0.004403661470860243,
+            0.013638804666697979
+          ],
+          "training_abs_correlation": 0.06901754544282716,
+          "regime": "reference",
+          "valid_from": "training",
+          "valid_to": null
+        },
+        {
+          "id": "a004_007",
+          "source": 7,
+          "target": 4,
+          "lag": 1,
+          "sign": 1,
+          "magnitude": 0.2062780261039734,
+          "intercept": 0.04293382167816162,
+          "validation_gain": 4.417226791381836,
+          "validation_blocks": [
+            2.7666478157043457,
+            11.069086074829102,
+            5.970564365386963,
+            -2.1373915672302246
+          ],
+          "training_abs_correlation": 0.9827686511570751,
+          "regime": "reference",
+          "valid_from": "training",
+          "valid_to": null
+        },
+        {
+          "id": "a004_001",
+          "source": 1,
+          "target": 4,
+          "lag": 1,
+          "sign": 1,
+          "magnitude": 0.17284047603607178,
+          "intercept": -0.02764791250228882,
+          "validation_gain": 4.018085479736328,
+          "validation_blocks": [
+            1.9460786581039429,
+            11.076327323913574,
+            6.00361967086792,
+            -2.953684091567993
+          ],
+          "training_abs_correlation": 0.9822105843451037,
+          "regime": "reference",
+          "valid_from": "training",
+          "valid_to": null
+        },
+        {
+          "id": "a004_000",
+          "source": 0,
+          "target": 4,
+          "lag": 1,
+          "sign": 1,
+          "magnitude": 0.31770873069763184,
+          "intercept": -0.034751176834106445,
+          "validation_gain": 3.2283780574798584,
+          "validation_blocks": [
+            0.34366708993911743,
+            11.121464729309082,
+            6.0632829666137695,
+            -4.614902019500732
+          ],
+          "training_abs_correlation": 0.9703709037577446,
+          "regime": "reference",
+          "valid_from": "training",
+          "valid_to": null
+        },
+        {
+          "id": "a005_000",
+          "source": 0,
+          "target": 5,
+          "lag": 3,
+          "sign": 1,
+          "magnitude": 0.14197857677936554,
+          "intercept": 0.06600958108901978,
+          "validation_gain": 2.294149875640869,
+          "validation_blocks": [
+            3.5183396339416504,
+            1.5229718685150146,
+            1.1355072259902954,
+            2.999781370162964
+          ],
+          "training_abs_correlation": 0.9218752691672485,
+          "regime": "reference",
+          "valid_from": "training",
+          "valid_to": null
+        },
+        {
+          "id": "a005_007",
+          "source": 7,
+          "target": 5,
+          "lag": 3,
+          "sign": 1,
+          "magnitude": 0.08937767893075943,
+          "intercept": 0.08822444081306458,
+          "validation_gain": 1.8491313457489014,
+          "validation_blocks": [
+            2.569668769836426,
+            1.5453795194625854,
+            1.1695305109024048,
+            2.1119465827941895
+          ],
+          "training_abs_correlation": 0.9052167786759486,
+          "regime": "reference",
+          "valid_from": "training",
+          "valid_to": null
+        },
+        {
+          "id": "a005_001",
+          "source": 1,
+          "target": 5,
+          "lag": 3,
+          "sign": 1,
+          "magnitude": 0.07376778870820999,
+          "intercept": 0.05213305354118347,
+          "validation_gain": 2.020975112915039,
+          "validation_blocks": [
+            2.909304618835449,
+            1.5693514347076416,
+            1.201015591621399,
+            2.4042294025421143
+          ],
+          "training_abs_correlation": 0.8911756352719852,
+          "regime": "reference",
+          "valid_from": "training",
+          "valid_to": null
+        },
+        {
+          "id": "a006_001",
+          "source": 1,
+          "target": 6,
+          "lag": 3,
+          "sign": -1,
+          "magnitude": 0.007137480191886425,
+          "intercept": -0.046249862760305405,
+          "validation_gain": 0.0220186747610569,
+          "validation_blocks": [
+            0.011147759854793549,
+            0.0320790596306324,
+            0.038667574524879456,
+            0.006180303171277046
+          ],
+          "training_abs_correlation": 0.08579881228006458,
+          "regime": "reference",
+          "valid_from": "training",
+          "valid_to": null
+        },
+        {
+          "id": "a006_000",
+          "source": 0,
+          "target": 6,
+          "lag": 3,
+          "sign": -1,
+          "magnitude": 0.013196171261370182,
+          "intercept": -0.04616068676114082,
+          "validation_gain": 0.022100308910012245,
+          "validation_blocks": [
+            0.011250431649386883,
+            0.03206231817603111,
+            0.03864063322544098,
+            0.006447852589190006
+          ],
+          "training_abs_correlation": 0.08525839586656535,
+          "regime": "reference",
+          "valid_from": "training",
+          "valid_to": null
+        },
+        {
+          "id": "a006_007",
+          "source": 7,
+          "target": 6,
+          "lag": 3,
+          "sign": -1,
+          "magnitude": 0.008402323350310326,
+          "intercept": -0.048648957163095474,
+          "validation_gain": 0.021760594099760056,
+          "validation_blocks": [
+            0.010753254406154156,
+            0.03195576369762421,
+            0.038541171699762344,
+            0.005792177282273769
+          ],
+          "training_abs_correlation": 0.08467646785568186,
+          "regime": "reference",
+          "valid_from": "training",
+          "valid_to": null
+        },
+        {
+          "id": "a007_001",
+          "source": 1,
+          "target": 7,
+          "lag": 1,
+          "sign": 1,
+          "magnitude": 0.8357924222946167,
+          "intercept": -0.3524503707885742,
+          "validation_gain": 235.29469299316406,
+          "validation_blocks": [
+            177.201904296875,
+            361.0814514160156,
+            360.80426025390625,
+            42.091182708740234
+          ],
+          "training_abs_correlation": 0.9969210833593602,
+          "regime": "reference",
+          "valid_from": "training",
+          "valid_to": null
+        },
+        {
+          "id": "a007_000",
+          "source": 0,
+          "target": 7,
+          "lag": 1,
+          "sign": 1,
+          "magnitude": 1.5550168752670288,
+          "intercept": -0.33733367919921875,
+          "validation_gain": 230.59739685058594,
+          "validation_blocks": [
+            167.62924194335938,
+            361.10205078125,
+            360.8193054199219,
+            32.83900451660156
+          ],
+          "training_abs_correlation": 0.9968891220633431,
+          "regime": "reference",
+          "valid_from": "training",
+          "valid_to": null
+        },
+        {
+          "id": "a007_004",
+          "source": 4,
+          "target": 7,
+          "lag": 1,
+          "sign": 1,
+          "magnitude": 4.681992053985596,
+          "intercept": -0.35327863693237305,
+          "validation_gain": 188.12200927734375,
+          "validation_blocks": [
+            124.701904296875,
+            341.61602783203125,
+            298.54486083984375,
+            -12.374757766723633
+          ],
+          "training_abs_correlation": 0.9827651232481031,
+          "regime": "reference",
+          "valid_from": "training",
+          "valid_to": null
+        }
+      ],
+      "affinity": [
+        [
+          0.0,
+          0.9959974557713667,
+          0.7752867394285209,
+          0.06924504174861483,
+          0.9704239819253877,
+          0.9217351591720804,
+          0.08363426064051474,
+          0.9969032189108881
+        ],
+        [
+          0.996064689987297,
+          0.0,
+          0.7783145420699187,
+          0.06986404384061895,
+          0.9822308987061062,
+          0.8910674393214755,
+          0.08420331462895378,
+          0.9969254211635492
+        ],
+        [
+          0.7751491727864607,
+          0.7781419582610865,
+          0.0,
+          0.05905355378275204,
+          0.7700345071912181,
+          0.6925792119992222,
+          0.06460960507459809,
+          0.7787006507073598
+        ],
+        [
+          0.0686090559030271,
+          0.06901754544282716,
+          0.06195167500671517,
+          0.0,
+          0.07015142482944914,
+          0.06307401334648044,
+          0.011193831417784192,
+          0.06912257932557796
+        ],
+        [
+          0.9703709037577446,
+          0.9822105843451037,
+          0.7700220298278573,
+          0.07156704805127931,
+          0.0,
+          0.8325588230335103,
+          0.08159547693826026,
+          0.9827686511570751
+        ],
+        [
+          0.9218752691672485,
+          0.8911756352719852,
+          0.6924774754439798,
+          0.06300013958413135,
+          0.8327604498744892,
+          0.0,
+          0.07464264734025576,
+          0.9052167786759486
+        ],
+        [
+          0.08525839586656535,
+          0.08579881228006458,
+          0.07095130083121577,
+          0.012200189661490172,
+          0.08319918452713967,
+          0.07512552105102956,
+          0.0,
+          0.08467646785568186
+        ],
+        [
+          0.9968891220633431,
+          0.9969210833593602,
+          0.7785864659011966,
+          0.06995659132932708,
+          0.9827651232481031,
+          0.9050588485027742,
+          0.08317639368332641,
+          0.0
+        ]
+      ],
+      "groups": [
+        "Accelerometer1RMS",
+        "Accelerometer2RMS",
+        "Current",
+        "Pressure",
+        "Temperature",
+        "Thermocouple",
+        "Voltage",
+        "Volume Flow RateRMS"
+      ],
+      "predictor": "univariate ridge, alpha 1, normalized units",
+      "acceptance": "positive mean gain and positive gain in at least 3 of 4 development folds"
+    },
+    "records": [
+      {
+        "kind": "association",
+        "index": 14,
+        "raw_index": 7,
+        "status": "eligible",
+        "support_count": 2,
+        "witness_ids": [
+          "Temperature:4:56",
+          "Temperature:4:57",
+          "Temperature:4:58",
+          "Temperature:4:59",
+          "Temperature:4:60",
+          "Temperature:4:61",
+          "Temperature:4:62",
+          "Temperature:4:63",
+          "Volume Flow RateRMS:7:56",
+          "Volume Flow RateRMS:7:57",
+          "Volume Flow RateRMS:7:58",
+          "Volume Flow RateRMS:7:59",
+          "Volume Flow RateRMS:7:60",
+          "Volume Flow RateRMS:7:61",
+          "Volume Flow RateRMS:7:62",
+          "Volume Flow RateRMS:7:63"
+        ],
+        "witness_hash_before": "d58c43f7bc01929fb6a54e5a5b459a441d8d5136a424980ba6873175b6fc5c8b",
+        "witness_hash_after": "d58c43f7bc01929fb6a54e5a5b459a441d8d5136a424980ba6873175b6fc5c8b",
+        "witness_channels": [
+          4,
+          7
+        ],
+        "witness_groups": [
+          "Temperature",
+          "Volume Flow RateRMS"
+        ],
+        "model_members": 3,
+        "replicates": 8,
+        "predictive_samples": 8,
+        "graph_version": "c780e8605b28c47c",
+        "elapsed_seconds_per_candidate": 0.017543445341289043,
+        "score": 0.001463086061916561,
+        "mean_gain": 0.007697301642008473,
+        "model_instability": 0.0062342155800919116,
+        "edit_cost": 0.041666666666666664,
+        "monte_carlo_standard_error": 0.0008961645038165066,
+        "truth": false
+      },
+      {
+        "kind": "observation",
+        "index": 1,
+        "raw_index": 1,
+        "status": "eligible",
+        "support_count": 2,
+        "witness_ids": [
+          "Accelerometer1RMS:0:56",
+          "Accelerometer1RMS:0:57",
+          "Accelerometer1RMS:0:58",
+          "Accelerometer1RMS:0:59",
+          "Accelerometer1RMS:0:60",
+          "Accelerometer1RMS:0:61",
+          "Accelerometer1RMS:0:62",
+          "Accelerometer1RMS:0:63",
+          "Volume Flow RateRMS:7:56",
+          "Volume Flow RateRMS:7:57",
+          "Volume Flow RateRMS:7:58",
+          "Volume Flow RateRMS:7:59",
+          "Volume Flow RateRMS:7:60",
+          "Volume Flow RateRMS:7:61",
+          "Volume Flow RateRMS:7:62",
+          "Volume Flow RateRMS:7:63"
+        ],
+        "witness_hash_before": "82c46a0e5a59a2bbccc4cb34f60a65150435e9f604a6cf6aedb0fd351363df8f",
+        "witness_hash_after": "82c46a0e5a59a2bbccc4cb34f60a65150435e9f604a6cf6aedb0fd351363df8f",
+        "witness_channels": [
+          7,
+          0
+        ],
+        "witness_groups": [
+          "Volume Flow RateRMS",
+          "Accelerometer1RMS"
+        ],
+        "model_members": 3,
+        "replicates": 8,
+        "predictive_samples": 8,
+        "graph_version": "c780e8605b28c47c",
+        "elapsed_seconds_per_candidate": 0.017543445341289043,
+        "score": -0.0014721932168535734,
+        "mean_gain": 0.03615157577373947,
+        "model_instability": 0.03762376899059304,
+        "edit_cost": 0.5078125,
+        "monte_carlo_standard_error": 0.01249431629252731,
+        "observed_interval": [
+          -16.01856803894043,
+          -16.40837287902832,
+          -15.751335144042969,
+          -16.329248428344727,
+          -15.948058128356934,
+          -16.39708709716797,
+          -15.94975757598877,
+          -16.19684410095215
+        ],
+        "generated_interval_quantiles": [
+          [
+            -11.998974800109863,
+            -11.976012229919434,
+            -11.221394538879395,
+            -11.866247177124023,
+            -11.590912818908691,
+            -11.998456954956055,
+            -11.841858863830566,
+            -11.292961120605469
+          ],
+          [
+            -5.881567001342773,
+            -5.31719970703125,
+            -7.047377586364746,
+            -6.434286117553711,
+            -6.745210647583008,
+            -6.1422119140625,
+            -7.360715389251709,
+            -6.154849052429199
+          ],
+          [
+            6.794620513916016,
+            4.797491073608398,
+            9.257633209228516,
+            3.6042063236236572,
+            6.892533302307129,
+            9.80058479309082,
+            4.114623546600342,
+            6.901867866516113
+          ]
+        ],
+        "truth": false
+      },
+      {
+        "kind": "observation",
+        "index": 4,
+        "raw_index": 0,
+        "status": "eligible",
+        "support_count": 2,
+        "witness_ids": [
+          "Accelerometer2RMS:1:56",
+          "Accelerometer2RMS:1:57",
+          "Accelerometer2RMS:1:58",
+          "Accelerometer2RMS:1:59",
+          "Accelerometer2RMS:1:60",
+          "Accelerometer2RMS:1:61",
+          "Accelerometer2RMS:1:62",
+          "Accelerometer2RMS:1:63",
+          "Volume Flow RateRMS:7:56",
+          "Volume Flow RateRMS:7:57",
+          "Volume Flow RateRMS:7:58",
+          "Volume Flow RateRMS:7:59",
+          "Volume Flow RateRMS:7:60",
+          "Volume Flow RateRMS:7:61",
+          "Volume Flow RateRMS:7:62",
+          "Volume Flow RateRMS:7:63"
+        ],
+        "witness_hash_before": "730a1f06480bb8296adf8030c15941133a81432c6dc4198589dac09e4ad401bf",
+        "witness_hash_after": "730a1f06480bb8296adf8030c15941133a81432c6dc4198589dac09e4ad401bf",
+        "witness_channels": [
+          7,
+          1
+        ],
+        "witness_groups": [
+          "Volume Flow RateRMS",
+          "Accelerometer2RMS"
+        ],
+        "model_members": 3,
+        "replicates": 8,
+        "predictive_samples": 8,
+        "graph_version": "c780e8605b28c47c",
+        "elapsed_seconds_per_candidate": 0.017543445341289043,
+        "score": -0.00913357069433815,
+        "mean_gain": 0.015644402678068065,
+        "model_instability": 0.024777973372406215,
+        "edit_cost": 0.12573345177548212,
+        "monte_carlo_standard_error": 0.004926623546548848,
+        "observed_interval": [
+          1.0271116495132446,
+          1.0165562629699707,
+          1.0249909162521362,
+          0.9902638792991638,
+          1.0004578828811646,
+          1.046439290046692,
+          1.0012049674987793,
+          1.046439290046692
+        ],
+        "generated_interval_quantiles": [
+          [
+            0.17350463569164276,
+            -0.5365549921989441,
+            -0.2450333833694458,
+            0.9326404929161072,
+            -0.009236874990165234,
+            1.076499104499817,
+            0.6697695851325989,
+            -0.49976423382759094
+          ],
+          [
+            1.1786667108535767,
+            1.4067023992538452,
+            1.0703344345092773,
+            1.3984863758087158,
+            1.1924948692321777,
+            1.56438410282135,
+            1.4862056970596313,
+            1.2606030702590942
+          ],
+          [
+            1.9625461101531982,
+            2.7167065143585205,
+            1.9556881189346313,
+            2.6585915088653564,
+            2.3785314559936523,
+            3.21956467628479,
+            3.00992488861084,
+            2.367266893386841
+          ]
+        ],
+        "truth": false
+      },
+      {
+        "kind": "observation",
+        "index": 0,
+        "raw_index": 2,
+        "status": "eligible",
+        "support_count": 2,
+        "witness_ids": [
+          "Accelerometer2RMS:1:56",
+          "Accelerometer2RMS:1:57",
+          "Accelerometer2RMS:1:58",
+          "Accelerometer2RMS:1:59",
+          "Accelerometer2RMS:1:60",
+          "Accelerometer2RMS:1:61",
+          "Accelerometer2RMS:1:62",
+          "Accelerometer2RMS:1:63",
+          "Volume Flow RateRMS:7:56",
+          "Volume Flow RateRMS:7:57",
+          "Volume Flow RateRMS:7:58",
+          "Volume Flow RateRMS:7:59",
+          "Volume Flow RateRMS:7:60",
+          "Volume Flow RateRMS:7:61",
+          "Volume Flow RateRMS:7:62",
+          "Volume Flow RateRMS:7:63"
+        ],
+        "witness_hash_before": "730a1f06480bb8296adf8030c15941133a81432c6dc4198589dac09e4ad401bf",
+        "witness_hash_after": "730a1f06480bb8296adf8030c15941133a81432c6dc4198589dac09e4ad401bf",
+        "witness_channels": [
+          7,
+          1
+        ],
+        "witness_groups": [
+          "Volume Flow RateRMS",
+          "Accelerometer2RMS"
+        ],
+        "model_members": 3,
+        "replicates": 8,
+        "predictive_samples": 8,
+        "graph_version": "c780e8605b28c47c",
+        "elapsed_seconds_per_candidate": 0.017543445341289043,
+        "score": -0.010174242225239521,
+        "mean_gain": 0.03295333609850341,
+        "model_instability": 0.04312757832374293,
+        "edit_cost": 0.3725339894493421,
+        "monte_carlo_standard_error": 0.013074931790861118,
+        "observed_interval": [
+          -10.425559043884277,
+          -10.351421356201172,
+          -10.440878868103027,
+          -10.41562271118164,
+          -10.435391426086426,
+          -10.306716918945312,
+          -10.410862922668457,
+          -10.358898162841797
+        ],
+        "generated_interval_quantiles": [
+          [
+            -11.149284362792969,
+            -12.0,
+            -10.53841495513916,
+            -11.963371276855469,
+            -11.424342155456543,
+            -11.849549293518066,
+            -11.627045631408691,
+            -11.044978141784668
+          ],
+          [
+            -5.438594818115234,
+            -6.462682247161865,
+            -7.847273826599121,
+            -4.670223712921143,
+            -7.673215389251709,
+            -7.151329517364502,
+            -2.883795738220215,
+            -6.214330673217773
+          ],
+          [
+            6.490305423736572,
+            5.8930816650390625,
+            -0.35293957591056824,
+            7.745034694671631,
+            2.4591691493988037,
+            6.299229621887207,
+            7.076007843017578,
+            5.462046146392822
+          ]
+        ],
+        "truth": false
+      },
+      {
+        "kind": "observation",
+        "index": 7,
+        "raw_index": 3,
+        "status": "eligible",
+        "support_count": 2,
+        "witness_ids": [
+          "Accelerometer1RMS:0:56",
+          "Accelerometer1RMS:0:57",
+          "Accelerometer1RMS:0:58",
+          "Accelerometer1RMS:0:59",
+          "Accelerometer1RMS:0:60",
+          "Accelerometer1RMS:0:61",
+          "Accelerometer1RMS:0:62",
+          "Accelerometer1RMS:0:63",
+          "Accelerometer2RMS:1:56",
+          "Accelerometer2RMS:1:57",
+          "Accelerometer2RMS:1:58",
+          "Accelerometer2RMS:1:59",
+          "Accelerometer2RMS:1:60",
+          "Accelerometer2RMS:1:61",
+          "Accelerometer2RMS:1:62",
+          "Accelerometer2RMS:1:63"
+        ],
+        "witness_hash_before": "8e9b850f4e172016e2b595a011c7da2d7061186458daf08baddd4edbb65d0f39",
+        "witness_hash_after": "8e9b850f4e172016e2b595a011c7da2d7061186458daf08baddd4edbb65d0f39",
+        "witness_channels": [
+          1,
+          0
+        ],
+        "witness_groups": [
+          "Accelerometer2RMS",
+          "Accelerometer1RMS"
+        ],
+        "model_members": 3,
+        "replicates": 8,
+        "predictive_samples": 8,
+        "graph_version": "c780e8605b28c47c",
+        "elapsed_seconds_per_candidate": 0.017543445341289043,
+        "score": -0.017423390314629323,
+        "mean_gain": 0.028580253891509717,
+        "model_instability": 0.04600364420613904,
+        "edit_cost": 0.4172045861681302,
+        "monte_carlo_standard_error": 0.015513914743630371,
+        "observed_interval": [
+          -12.189677238464355,
+          -12.194538116455078,
+          -12.435304641723633,
+          -12.189677238464355,
+          -12.189677238464355,
+          -12.189677238464355,
+          -12.189677238464355,
+          -12.189677238464355
+        ],
+        "generated_interval_quantiles": [
+          [
+            -11.93730354309082,
+            -10.794039726257324,
+            -10.327430725097656,
+            -11.993291854858398,
+            -11.87095832824707,
+            -11.767815589904785,
+            -11.848644256591797,
+            -11.708832740783691
+          ],
+          [
+            -2.221371650695801,
+            -2.799342155456543,
+            -5.287777900695801,
+            -6.940328598022461,
+            -7.557644844055176,
+            -9.045221328735352,
+            -7.173054218292236,
+            -4.486471652984619
+          ],
+          [
+            5.489534378051758,
+            6.8660173416137695,
+            0.3143642842769623,
+            5.657299995422363,
+            9.193425178527832,
+            8.081686019897461,
+            5.669715881347656,
+            8.100217819213867
+          ]
+        ],
+        "truth": false
+      },
+      {
+        "kind": "association",
+        "index": 2,
+        "raw_index": 6,
+        "status": "eligible",
+        "support_count": 2,
+        "witness_ids": [
+          "Accelerometer1RMS:0:56",
+          "Accelerometer1RMS:0:57",
+          "Accelerometer1RMS:0:58",
+          "Accelerometer1RMS:0:59",
+          "Accelerometer1RMS:0:60",
+          "Accelerometer1RMS:0:61",
+          "Accelerometer1RMS:0:62",
+          "Accelerometer1RMS:0:63",
+          "Volume Flow RateRMS:7:56",
+          "Volume Flow RateRMS:7:57",
+          "Volume Flow RateRMS:7:58",
+          "Volume Flow RateRMS:7:59",
+          "Volume Flow RateRMS:7:60",
+          "Volume Flow RateRMS:7:61",
+          "Volume Flow RateRMS:7:62",
+          "Volume Flow RateRMS:7:63"
+        ],
+        "witness_hash_before": "82c46a0e5a59a2bbccc4cb34f60a65150435e9f604a6cf6aedb0fd351363df8f",
+        "witness_hash_after": "82c46a0e5a59a2bbccc4cb34f60a65150435e9f604a6cf6aedb0fd351363df8f",
+        "witness_channels": [
+          0,
+          7
+        ],
+        "witness_groups": [
+          "Accelerometer1RMS",
+          "Volume Flow RateRMS"
+        ],
+        "model_members": 3,
+        "replicates": 8,
+        "predictive_samples": 8,
+        "graph_version": "c780e8605b28c47c",
+        "elapsed_seconds_per_candidate": 0.017543445341289043,
+        "score": -0.31653791391420605,
+        "mean_gain": -0.21102345111845958,
+        "model_instability": 0.10551446279574644,
+        "edit_cost": 0.041666666666666664,
+        "monte_carlo_standard_error": 0.027712079046830932,
+        "truth": false
+      },
+      {
+        "kind": "association",
+        "index": 23,
+        "raw_index": 5,
+        "status": "eligible",
+        "support_count": 2,
+        "witness_ids": [
+          "Accelerometer2RMS:1:56",
+          "Accelerometer2RMS:1:57",
+          "Accelerometer2RMS:1:58",
+          "Accelerometer2RMS:1:59",
+          "Accelerometer2RMS:1:60",
+          "Accelerometer2RMS:1:61",
+          "Accelerometer2RMS:1:62",
+          "Accelerometer2RMS:1:63",
+          "Volume Flow RateRMS:7:56",
+          "Volume Flow RateRMS:7:57",
+          "Volume Flow RateRMS:7:58",
+          "Volume Flow RateRMS:7:59",
+          "Volume Flow RateRMS:7:60",
+          "Volume Flow RateRMS:7:61",
+          "Volume Flow RateRMS:7:62",
+          "Volume Flow RateRMS:7:63"
+        ],
+        "witness_hash_before": "730a1f06480bb8296adf8030c15941133a81432c6dc4198589dac09e4ad401bf",
+        "witness_hash_after": "730a1f06480bb8296adf8030c15941133a81432c6dc4198589dac09e4ad401bf",
+        "witness_channels": [
+          7,
+          1
+        ],
+        "witness_groups": [
+          "Volume Flow RateRMS",
+          "Accelerometer2RMS"
+        ],
+        "model_members": 3,
+        "replicates": 8,
+        "predictive_samples": 8,
+        "graph_version": "c780e8605b28c47c",
+        "elapsed_seconds_per_candidate": 0.017543445341289043,
+        "score": -0.717221719556988,
+        "mean_gain": -0.4985434669741077,
+        "model_instability": 0.21867825258288034,
+        "edit_cost": 0.041666666666666664,
+        "monte_carlo_standard_error": 0.048682032097311555,
+        "truth": false
+      },
+      {
+        "kind": "association",
+        "index": 5,
+        "raw_index": 4,
+        "status": "eligible",
+        "support_count": 2,
+        "witness_ids": [
+          "Accelerometer2RMS:1:56",
+          "Accelerometer2RMS:1:57",
+          "Accelerometer2RMS:1:58",
+          "Accelerometer2RMS:1:59",
+          "Accelerometer2RMS:1:60",
+          "Accelerometer2RMS:1:61",
+          "Accelerometer2RMS:1:62",
+          "Accelerometer2RMS:1:63",
+          "Volume Flow RateRMS:7:56",
+          "Volume Flow RateRMS:7:57",
+          "Volume Flow RateRMS:7:58",
+          "Volume Flow RateRMS:7:59",
+          "Volume Flow RateRMS:7:60",
+          "Volume Flow RateRMS:7:61",
+          "Volume Flow RateRMS:7:62",
+          "Volume Flow RateRMS:7:63"
+        ],
+        "witness_hash_before": "730a1f06480bb8296adf8030c15941133a81432c6dc4198589dac09e4ad401bf",
+        "witness_hash_after": "730a1f06480bb8296adf8030c15941133a81432c6dc4198589dac09e4ad401bf",
+        "witness_channels": [
+          1,
+          7
+        ],
+        "witness_groups": [
+          "Accelerometer2RMS",
+          "Volume Flow RateRMS"
+        ],
+        "model_members": 3,
+        "replicates": 8,
+        "predictive_samples": 8,
+        "graph_version": "c780e8605b28c47c",
+        "elapsed_seconds_per_candidate": 0.017543445341289043,
+        "score": -0.8448410496785241,
+        "mean_gain": -0.5605782280669636,
+        "model_instability": 0.2842628216115606,
+        "edit_cost": 0.041666666666666664,
+        "monte_carlo_standard_error": 0.05977195866873698,
+        "truth": false
+      }
+    ],
+    "abstentions": [],
+    "candidates": [
+      [
+        "observation",
+        4
+      ],
+      [
+        "observation",
+        1
+      ],
+      [
+        "observation",
+        0
+      ],
+      [
+        "observation",
+        7
+      ],
+      [
+        "association",
+        5
+      ],
+      [
+        "association",
+        23
+      ],
+      [
+        "association",
+        2
+      ],
+      [
+        "association",
+        14
+      ]
+    ],
+    "edge_residuals": [
+      2.7820253372192383,
+      1.7219700813293457,
+      13.318007469177246,
+      1.9815846681594849,
+      3.1341421604156494,
+      21.711435317993164,
+      0.2357766479253769,
+      0.17109566926956177,
+      0.14186936616897583,
+      0.5993430614471436,
+      0.5496598482131958,
+      0.5444506406784058,
+      3.490834951400757,
+      3.833813190460205,
+      4.356744766235352,
+      1.9294912815093994,
+      2.336728096008301,
+      2.2075774669647217,
+      0.9290592670440674,
+      0.9276055097579956,
+      0.9280269145965576,
+      1.608272671699524,
+      4.281863212585449,
+      16.624792098999023
+    ],
+    "baseline_sensor_scores": {
+      "gdn": [
+        1.0302431891032542,
+        1.174099941829085,
+        0.9267859018627962,
+        0.2680443369185943,
+        1.3470976367051077,
+        0.45179241410518195,
+        0.5870088385121666,
+        -0.5059009672552186
+      ],
+      "backbone": [
+        -1.0330651980242385,
+        -0.9016727604082503,
+        -1.019130472981642,
+        -0.35528906392675935,
+        -0.6621082417106097,
+        2.045336937249252,
+        0.10799041347650326,
+        -0.9054373426892245
+      ],
+      "diffad": [
+        -0.7814298637616045,
+        -0.8584918049683214,
+        -0.10707445540816996,
+        0.9621922757521567,
+        1.9082953630194601,
+        3.777938560923124,
+        0.8224139315777435,
+        -0.6109420539240111
+      ],
+      "pca_lag1_rank2": [
+        1.1698599001084282,
+        1.5865791368437083,
+        0.9102810462232889,
+        -0.2031051050961666,
+        2.8148966056468567,
+        1.1569433755537104,
+        0.16365004439362102,
+        1.052845262539587
+      ],
+      "pca_lag1_rank4": [
+        0.609822748329792,
+        1.9657204761264908,
+        1.010198021129933,
+        2.318314728817349,
+        3.123162056848522,
+        0.26822142281719735,
+        0.965878418413616,
+        1.2559019001987806
+      ],
+      "pca_lag1_rank8": [
+        8.96304301031946,
+        8.960180575512927,
+        8.968428640578725,
+        6.818523540792485e-05,
+        8.962895999434226,
+        8.962820077922524,
+        0.06988565033219862,
+        8.961571643885453
+      ],
+      "pca_lag1_rank16": [
+        8.96304301031946,
+        8.960180575512927,
+        8.968428640578725,
+        6.818523540792485e-05,
+        8.962895999434226,
+        8.962820077922524,
+        0.06988565033219862,
+        8.961571643885453
+      ],
+      "pca_lag4_rank2": [
+        0.5964653527900511,
+        1.9194644468052844,
+        -0.008076972781370963,
+        -0.1617388666795454,
+        3.0981819592822752,
+        0.1621341412328135,
+        0.933617244409172,
+        1.2193106104066074
+      ],
+      "pca_lag4_rank4": [
+        8.728622031275687,
+        1.3204792209738783,
+        0.19817754572409213,
+        -0.1408940386836009,
+        4.838282660038883,
+        -0.25969750999248026,
+        1.0938285955299156,
+        6.408929888977427
+      ],
+      "pca_lag4_rank8": [
+        8.769930320308264,
+        1.3001353698889966,
+        1.6772376254144945,
+        0.3564848313469786,
+        4.82699099316512,
+        -0.2284050772875385,
+        1.6593334795895982,
+        6.622300954571851
+      ],
+      "pca_lag4_rank16": [
+        7.120313140048245,
+        1.5087088736826695,
+        8.628018687490805,
+        7.906699650184598,
+        9.491779158277858,
+        15.199053004753484,
+        8.668323484911214,
+        3.3449402877478316
+      ]
+    },
+    "raw_artifact": "test_0000_observation.npz",
+    "inference_seed": 4911009,
+    "cost_precision_version": "float64-observation-cost-v2",
+    "score_parameters": {
+      "kappa": 1,
+      "lambda": 0
+    },
+    "raw_sha256": "d0d9411451d46a7d002306e19cd6e4382000f122f847a53cc7fed2d346d4895b",
+    "gpu_peak_bytes": 284162048
+  },
+  "hypotheses": [
+    {
+      "kind": "observation",
+      "index": 1,
+      "raw_index": 1,
+      "status": "eligible",
+      "support_count": 2,
+      "witness_ids": [
+        "Accelerometer1RMS:0:56",
+        "Accelerometer1RMS:0:57",
+        "Accelerometer1RMS:0:58",
+        "Accelerometer1RMS:0:59",
+        "Accelerometer1RMS:0:60",
+        "Accelerometer1RMS:0:61",
+        "Accelerometer1RMS:0:62",
+        "Accelerometer1RMS:0:63",
+        "Volume Flow RateRMS:7:56",
+        "Volume Flow RateRMS:7:57",
+        "Volume Flow RateRMS:7:58",
+        "Volume Flow RateRMS:7:59",
+        "Volume Flow RateRMS:7:60",
+        "Volume Flow RateRMS:7:61",
+        "Volume Flow RateRMS:7:62",
+        "Volume Flow RateRMS:7:63"
+      ],
+      "witness_hash_before": "82c46a0e5a59a2bbccc4cb34f60a65150435e9f604a6cf6aedb0fd351363df8f",
+      "witness_hash_after": "82c46a0e5a59a2bbccc4cb34f60a65150435e9f604a6cf6aedb0fd351363df8f",
+      "witness_channels": [
+        7,
+        0
+      ],
+      "witness_groups": [
+        "Volume Flow RateRMS",
+        "Accelerometer1RMS"
+      ],
+      "model_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "graph_version": "c780e8605b28c47c",
+      "elapsed_seconds_per_candidate": 0.017543445341289043,
+      "score": -0.0014721932168535734,
+      "mean_gain": 0.03615157577373947,
+      "model_instability": 0.03762376899059304,
+      "edit_cost": 0.5078125,
+      "monte_carlo_standard_error": 0.01249431629252731,
+      "observed_interval": [
+        -16.01856803894043,
+        -16.40837287902832,
+        -15.751335144042969,
+        -16.329248428344727,
+        -15.948058128356934,
+        -16.39708709716797,
+        -15.94975757598877,
+        -16.19684410095215
+      ],
+      "generated_interval_quantiles": [
+        [
+          -11.998974800109863,
+          -11.976012229919434,
+          -11.221394538879395,
+          -11.866247177124023,
+          -11.590912818908691,
+          -11.998456954956055,
+          -11.841858863830566,
+          -11.292961120605469
+        ],
+        [
+          -5.881567001342773,
+          -5.31719970703125,
+          -7.047377586364746,
+          -6.434286117553711,
+          -6.745210647583008,
+          -6.1422119140625,
+          -7.360715389251709,
+          -6.154849052429199
+        ],
+        [
+          6.794620513916016,
+          4.797491073608398,
+          9.257633209228516,
+          3.6042063236236572,
+          6.892533302307129,
+          9.80058479309082,
+          4.114623546600342,
+          6.901867866516113
+        ]
+      ],
+      "truth": false,
+      "selected_score": -0.0014721932168535734,
+      "candidate_null_tail": 0.24858757062146894,
+      "fault_probability": 0.11176007462148684,
+      "probability_calibration_prevalence": 0.11538461538461539,
+      "review_status": "unresolved or insufficient evidence",
+      "witness_prediction_intervals": [
+        {
+          "channel": 7,
+          "source": "Volume Flow RateRMS",
+          "unit": "L/min",
+          "observed": [
+            -12.189677238464355,
+            -12.194538116455078,
+            -12.435304641723633,
+            -12.189677238464355,
+            -12.189677238464355,
+            -12.189677238464355,
+            -12.189677238464355,
+            -12.189677238464355
+          ],
+          "before": [
+            [
+              -11.543348789215088,
+              -11.994259119033813,
+              -11.281223821640015,
+              -11.75969352722168,
+              -11.66911540031433,
+              -11.920538854598998,
+              -11.879071378707886,
+              -11.668263673782349
+            ],
+            [
+              -5.723548173904419,
+              -5.36393141746521,
+              -6.770991325378418,
+              -6.632035493850708,
+              -6.848161458969116,
+              -7.330609083175659,
+              -7.843663692474365,
+              -6.1550209522247314
+            ],
+            [
+              5.2857685327529715,
+              6.1356388330459595,
+              0.9898615121841422,
+              7.084253287315367,
+              5.536192440986631,
+              7.18438878059387,
+              7.514501619338983,
+              7.136589336395257
+            ]
+          ],
+          "after": [
+            [
+              -11.603167057037354,
+              -11.954355001449585,
+              -11.362946701049804,
+              -11.757812547683717,
+              -11.673763322830201,
+              -11.92458472251892,
+              -11.9584792137146,
+              -11.661364984512328
+            ],
+            [
+              -5.804111003875732,
+              -5.438436508178711,
+              -6.869862794876099,
+              -6.7209484577178955,
+              -6.764678001403809,
+              -7.3919031620025635,
+              -7.928180456161499,
+              -6.405697822570801
+            ],
+            [
+              5.315766787528972,
+              6.169004034996032,
+              0.760215577483177,
+              7.234953832626341,
+              5.649742865562435,
+              7.590136647224418,
+              7.612606883049007,
+              7.248579287528986
+            ]
+          ]
+        },
+        {
+          "channel": 0,
+          "source": "Accelerometer1RMS",
+          "unit": "g",
+          "observed": [
+            -10.425559043884277,
+            -10.351421356201172,
+            -10.440878868103027,
+            -10.41562271118164,
+            -10.435391426086426,
+            -10.306716918945312,
+            -10.410862922668457,
+            -10.358898162841797
+          ],
+          "before": [
+            [
+              -11.72141728401184,
+              -11.726384401321411,
+              -11.373853254318238,
+              -12.0,
+              -11.400909471511842,
+              -11.71954894065857,
+              -11.772741889953613,
+              -11.304536771774291
+            ],
+            [
+              -6.355032920837402,
+              -4.751899719238281,
+              -6.749179840087891,
+              -6.645458221435547,
+              -7.3351218700408936,
+              -7.1698620319366455,
+              -6.969244956970215,
+              -6.46384596824646
+            ],
+            [
+              5.791765141487108,
+              7.688633060455322,
+              0.7205703049898086,
+              7.194486236572265,
+              3.1740542411804173,
+              7.3163433074951145,
+              7.399473667144771,
+              6.367900848388666
+            ]
+          ],
+          "after": [
+            [
+              -11.737210988998413,
+              -11.726604318618774,
+              -11.359417057037353,
+              -11.999522686004639,
+              -11.396003246307373,
+              -11.710570192337036,
+              -11.770780086517334,
+              -11.307956123352051
+            ],
+            [
+              -6.473415851593018,
+              -4.70020604133606,
+              -7.019103527069092,
+              -6.583987236022949,
+              -7.333516836166382,
+              -7.1973302364349365,
+              -6.931679725646973,
+              -6.50874662399292
+            ],
+            [
+              4.820577812194815,
+              7.675865364074706,
+              0.40512364208698215,
+              7.192140817642211,
+              3.239200901985165,
+              7.3291996717452985,
+              7.508067440986626,
+              6.412155652046199
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "observation",
+      "index": 4,
+      "raw_index": 0,
+      "status": "eligible",
+      "support_count": 2,
+      "witness_ids": [
+        "Accelerometer2RMS:1:56",
+        "Accelerometer2RMS:1:57",
+        "Accelerometer2RMS:1:58",
+        "Accelerometer2RMS:1:59",
+        "Accelerometer2RMS:1:60",
+        "Accelerometer2RMS:1:61",
+        "Accelerometer2RMS:1:62",
+        "Accelerometer2RMS:1:63",
+        "Volume Flow RateRMS:7:56",
+        "Volume Flow RateRMS:7:57",
+        "Volume Flow RateRMS:7:58",
+        "Volume Flow RateRMS:7:59",
+        "Volume Flow RateRMS:7:60",
+        "Volume Flow RateRMS:7:61",
+        "Volume Flow RateRMS:7:62",
+        "Volume Flow RateRMS:7:63"
+      ],
+      "witness_hash_before": "730a1f06480bb8296adf8030c15941133a81432c6dc4198589dac09e4ad401bf",
+      "witness_hash_after": "730a1f06480bb8296adf8030c15941133a81432c6dc4198589dac09e4ad401bf",
+      "witness_channels": [
+        7,
+        1
+      ],
+      "witness_groups": [
+        "Volume Flow RateRMS",
+        "Accelerometer2RMS"
+      ],
+      "model_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "graph_version": "c780e8605b28c47c",
+      "elapsed_seconds_per_candidate": 0.017543445341289043,
+      "score": -0.00913357069433815,
+      "mean_gain": 0.015644402678068065,
+      "model_instability": 0.024777973372406215,
+      "edit_cost": 0.12573345177548212,
+      "monte_carlo_standard_error": 0.004926623546548848,
+      "observed_interval": [
+        1.0271116495132446,
+        1.0165562629699707,
+        1.0249909162521362,
+        0.9902638792991638,
+        1.0004578828811646,
+        1.046439290046692,
+        1.0012049674987793,
+        1.046439290046692
+      ],
+      "generated_interval_quantiles": [
+        [
+          0.17350463569164276,
+          -0.5365549921989441,
+          -0.2450333833694458,
+          0.9326404929161072,
+          -0.009236874990165234,
+          1.076499104499817,
+          0.6697695851325989,
+          -0.49976423382759094
+        ],
+        [
+          1.1786667108535767,
+          1.4067023992538452,
+          1.0703344345092773,
+          1.3984863758087158,
+          1.1924948692321777,
+          1.56438410282135,
+          1.4862056970596313,
+          1.2606030702590942
+        ],
+        [
+          1.9625461101531982,
+          2.7167065143585205,
+          1.9556881189346313,
+          2.6585915088653564,
+          2.3785314559936523,
+          3.21956467628479,
+          3.00992488861084,
+          2.367266893386841
+        ]
+      ],
+      "truth": false,
+      "selected_score": -0.00913357069433815,
+      "candidate_null_tail": 0.519774011299435,
+      "fault_probability": 0.11310141871293682,
+      "probability_calibration_prevalence": 0.11538461538461539,
+      "review_status": "unresolved or insufficient evidence",
+      "witness_prediction_intervals": [
+        {
+          "channel": 7,
+          "source": "Volume Flow RateRMS",
+          "unit": "L/min",
+          "observed": [
+            -12.189677238464355,
+            -12.194538116455078,
+            -12.435304641723633,
+            -12.189677238464355,
+            -12.189677238464355,
+            -12.189677238464355,
+            -12.189677238464355,
+            -12.189677238464355
+          ],
+          "before": [
+            [
+              -11.45394515991211,
+              -12.0,
+              -10.861149883270263,
+              -11.82598581314087,
+              -11.843353033065796,
+              -11.507611942291259,
+              -11.96358609199524,
+              -11.482186985015868
+            ],
+            [
+              -6.075305223464966,
+              -3.714614510536194,
+              -5.897425889968872,
+              -5.492945909500122,
+              -7.22289252281189,
+              -7.262653350830078,
+              -7.575366020202637,
+              -6.575762510299683
+            ],
+            [
+              2.385608100891111,
+              6.376213169097897,
+              3.6236658334732033,
+              7.6637477874755815,
+              6.504391074180594,
+              7.348126077651977,
+              6.115109992027281,
+              6.824306011199949
+            ]
+          ],
+          "after": [
+            [
+              -11.455935335159301,
+              -12.0,
+              -10.938996028900146,
+              -11.837667465209961,
+              -11.842300939559937,
+              -11.507174110412597,
+              -11.988240194320678,
+              -11.476287794113158
+            ],
+            [
+              -6.100385665893555,
+              -3.828320622444153,
+              -5.95956826210022,
+              -5.627379655838013,
+              -7.220234394073486,
+              -7.291573524475098,
+              -7.512315988540649,
+              -6.6037278175354
+            ],
+            [
+              3.0337290048599166,
+              6.556238341331482,
+              3.6312574863433817,
+              7.802701807022093,
+              6.481819987297049,
+              7.3540830373764035,
+              5.876170253753658,
+              7.016525697708129
+            ]
+          ]
+        },
+        {
+          "channel": 1,
+          "source": "Accelerometer2RMS",
+          "unit": "g",
+          "observed": [
+            -16.01856803894043,
+            -16.40837287902832,
+            -15.751335144042969,
+            -16.329248428344727,
+            -15.948058128356934,
+            -16.39708709716797,
+            -15.94975757598877,
+            -16.19684410095215
+          ],
+          "before": [
+            [
+              -11.613003015518188,
+              -12.0,
+              -11.320514345169068,
+              -11.901638269424438,
+              -11.965560340881348,
+              -11.84896731376648,
+              -11.999563932418823,
+              -11.707828950881957
+            ],
+            [
+              -5.968095302581787,
+              -5.174012660980225,
+              -6.446347951889038,
+              -5.893963575363159,
+              -7.644421100616455,
+              -8.065274715423584,
+              -7.302065372467041,
+              -6.600200891494751
+            ],
+            [
+              6.361828613281247,
+              7.138315010070791,
+              3.508094608783716,
+              7.741047835350033,
+              5.716878199577331,
+              7.142644858360288,
+              7.140397500991818,
+              8.067731213569639
+            ]
+          ],
+          "after": [
+            [
+              -11.602123355865478,
+              -12.0,
+              -11.308165979385375,
+              -11.899285316467285,
+              -11.96489405632019,
+              -11.852509260177612,
+              -11.999298572540283,
+              -11.706258487701415
+            ],
+            [
+              -5.97384786605835,
+              -5.400652885437012,
+              -6.439146518707275,
+              -5.926746606826782,
+              -7.620036602020264,
+              -8.058703899383545,
+              -7.338096380233765,
+              -6.610361099243164
+            ],
+            [
+              6.224491620063778,
+              7.126466941833486,
+              3.1538956284522994,
+              7.789657688140864,
+              5.712425160408019,
+              7.142167806625365,
+              7.185873103141781,
+              8.084005594253538
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "observation",
+      "index": 0,
+      "raw_index": 2,
+      "status": "eligible",
+      "support_count": 2,
+      "witness_ids": [
+        "Accelerometer2RMS:1:56",
+        "Accelerometer2RMS:1:57",
+        "Accelerometer2RMS:1:58",
+        "Accelerometer2RMS:1:59",
+        "Accelerometer2RMS:1:60",
+        "Accelerometer2RMS:1:61",
+        "Accelerometer2RMS:1:62",
+        "Accelerometer2RMS:1:63",
+        "Volume Flow RateRMS:7:56",
+        "Volume Flow RateRMS:7:57",
+        "Volume Flow RateRMS:7:58",
+        "Volume Flow RateRMS:7:59",
+        "Volume Flow RateRMS:7:60",
+        "Volume Flow RateRMS:7:61",
+        "Volume Flow RateRMS:7:62",
+        "Volume Flow RateRMS:7:63"
+      ],
+      "witness_hash_before": "730a1f06480bb8296adf8030c15941133a81432c6dc4198589dac09e4ad401bf",
+      "witness_hash_after": "730a1f06480bb8296adf8030c15941133a81432c6dc4198589dac09e4ad401bf",
+      "witness_channels": [
+        7,
+        1
+      ],
+      "witness_groups": [
+        "Volume Flow RateRMS",
+        "Accelerometer2RMS"
+      ],
+      "model_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "graph_version": "c780e8605b28c47c",
+      "elapsed_seconds_per_candidate": 0.017543445341289043,
+      "score": -0.010174242225239521,
+      "mean_gain": 0.03295333609850341,
+      "model_instability": 0.04312757832374293,
+      "edit_cost": 0.3725339894493421,
+      "monte_carlo_standard_error": 0.013074931790861118,
+      "observed_interval": [
+        -10.425559043884277,
+        -10.351421356201172,
+        -10.440878868103027,
+        -10.41562271118164,
+        -10.435391426086426,
+        -10.306716918945312,
+        -10.410862922668457,
+        -10.358898162841797
+      ],
+      "generated_interval_quantiles": [
+        [
+          -11.149284362792969,
+          -12.0,
+          -10.53841495513916,
+          -11.963371276855469,
+          -11.424342155456543,
+          -11.849549293518066,
+          -11.627045631408691,
+          -11.044978141784668
+        ],
+        [
+          -5.438594818115234,
+          -6.462682247161865,
+          -7.847273826599121,
+          -4.670223712921143,
+          -7.673215389251709,
+          -7.151329517364502,
+          -2.883795738220215,
+          -6.214330673217773
+        ],
+        [
+          6.490305423736572,
+          5.8930816650390625,
+          -0.35293957591056824,
+          7.745034694671631,
+          2.4591691493988037,
+          6.299229621887207,
+          7.076007843017578,
+          5.462046146392822
+        ]
+      ],
+      "truth": false,
+      "selected_score": -0.010174242225239521,
+      "candidate_null_tail": 0.5423728813559322,
+      "fault_probability": 0.11328469785570168,
+      "probability_calibration_prevalence": 0.11538461538461539,
+      "review_status": "unresolved or insufficient evidence",
+      "witness_prediction_intervals": [
+        {
+          "channel": 7,
+          "source": "Volume Flow RateRMS",
+          "unit": "L/min",
+          "observed": [
+            -12.189677238464355,
+            -12.194538116455078,
+            -12.435304641723633,
+            -12.189677238464355,
+            -12.189677238464355,
+            -12.189677238464355,
+            -12.189677238464355,
+            -12.189677238464355
+          ],
+          "before": [
+            [
+              -11.598088121414184,
+              -11.645465803146362,
+              -11.250216388702393,
+              -11.675260782241821,
+              -11.640293407440186,
+              -11.871077394485473,
+              -11.69547233581543,
+              -11.448982334136963
+            ],
+            [
+              -6.725934743881226,
+              -3.5387606620788574,
+              -6.653935670852661,
+              -5.592172861099243,
+              -7.430835485458374,
+              -7.8550684452056885,
+              -7.328755617141724,
+              -6.747716426849365
+            ],
+            [
+              6.532767248153662,
+              5.671025848388671,
+              2.062922894954681,
+              7.221017265319824,
+              5.404733204841613,
+              7.19375059604644,
+              6.497946906089781,
+              7.343814945220947
+            ]
+          ],
+          "after": [
+            [
+              -11.58111834526062,
+              -11.65044093132019,
+              -11.257253932952882,
+              -11.665778636932373,
+              -11.636295318603516,
+              -11.872199153900146,
+              -11.678341674804688,
+              -11.464473867416382
+            ],
+            [
+              -6.844958066940308,
+              -3.7199511528015137,
+              -6.71938157081604,
+              -5.852495431900024,
+              -7.422713041305542,
+              -7.889911413192749,
+              -7.4326698780059814,
+              -6.647576332092285
+            ],
+            [
+              6.673561668395967,
+              5.456914663314816,
+              1.9164372026920287,
+              7.207085275650023,
+              5.430290627479551,
+              7.25976772308349,
+              6.438045382499693,
+              7.343354153633117
+            ]
+          ]
+        },
+        {
+          "channel": 1,
+          "source": "Accelerometer2RMS",
+          "unit": "g",
+          "observed": [
+            -16.01856803894043,
+            -16.40837287902832,
+            -15.751335144042969,
+            -16.329248428344727,
+            -15.948058128356934,
+            -16.39708709716797,
+            -15.94975757598877,
+            -16.19684410095215
+          ],
+          "before": [
+            [
+              -11.778438997268676,
+              -12.0,
+              -11.209856081008912,
+              -12.0,
+              -11.979667806625367,
+              -11.93039779663086,
+              -12.0,
+              -11.655799293518067
+            ],
+            [
+              -6.19645357131958,
+              -5.13093113899231,
+              -6.808881044387817,
+              -6.362929821014404,
+              -8.089910507202148,
+              -8.324715614318848,
+              -8.28714656829834,
+              -7.480381965637207
+            ],
+            [
+              2.5876128315925593,
+              5.979845190048217,
+              1.0890481531620018,
+              8.020766687393188,
+              3.6328138113021815,
+              6.120079874992369,
+              5.547094321250912,
+              7.005290937423706
+            ]
+          ],
+          "after": [
+            [
+              -11.754410648345948,
+              -12.0,
+              -11.36543664932251,
+              -12.0,
+              -11.968792390823364,
+              -11.915828657150268,
+              -12.0,
+              -11.625167036056519
+            ],
+            [
+              -6.267576456069946,
+              -5.3089025020599365,
+              -6.914078712463379,
+              -6.371186256408691,
+              -8.294376373291016,
+              -8.25526762008667,
+              -8.236940860748291,
+              -7.808945894241333
+            ],
+            [
+              2.759768593311305,
+              6.157839703559874,
+              1.0654737889766686,
+              8.133457231521605,
+              3.3436167240142787,
+              6.037010073661804,
+              5.351039576530448,
+              7.138975930213927
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "observation",
+      "index": 7,
+      "raw_index": 3,
+      "status": "eligible",
+      "support_count": 2,
+      "witness_ids": [
+        "Accelerometer1RMS:0:56",
+        "Accelerometer1RMS:0:57",
+        "Accelerometer1RMS:0:58",
+        "Accelerometer1RMS:0:59",
+        "Accelerometer1RMS:0:60",
+        "Accelerometer1RMS:0:61",
+        "Accelerometer1RMS:0:62",
+        "Accelerometer1RMS:0:63",
+        "Accelerometer2RMS:1:56",
+        "Accelerometer2RMS:1:57",
+        "Accelerometer2RMS:1:58",
+        "Accelerometer2RMS:1:59",
+        "Accelerometer2RMS:1:60",
+        "Accelerometer2RMS:1:61",
+        "Accelerometer2RMS:1:62",
+        "Accelerometer2RMS:1:63"
+      ],
+      "witness_hash_before": "8e9b850f4e172016e2b595a011c7da2d7061186458daf08baddd4edbb65d0f39",
+      "witness_hash_after": "8e9b850f4e172016e2b595a011c7da2d7061186458daf08baddd4edbb65d0f39",
+      "witness_channels": [
+        1,
+        0
+      ],
+      "witness_groups": [
+        "Accelerometer2RMS",
+        "Accelerometer1RMS"
+      ],
+      "model_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "graph_version": "c780e8605b28c47c",
+      "elapsed_seconds_per_candidate": 0.017543445341289043,
+      "score": -0.017423390314629323,
+      "mean_gain": 0.028580253891509717,
+      "model_instability": 0.04600364420613904,
+      "edit_cost": 0.4172045861681302,
+      "monte_carlo_standard_error": 0.015513914743630371,
+      "observed_interval": [
+        -12.189677238464355,
+        -12.194538116455078,
+        -12.435304641723633,
+        -12.189677238464355,
+        -12.189677238464355,
+        -12.189677238464355,
+        -12.189677238464355,
+        -12.189677238464355
+      ],
+      "generated_interval_quantiles": [
+        [
+          -11.93730354309082,
+          -10.794039726257324,
+          -10.327430725097656,
+          -11.993291854858398,
+          -11.87095832824707,
+          -11.767815589904785,
+          -11.848644256591797,
+          -11.708832740783691
+        ],
+        [
+          -2.221371650695801,
+          -2.799342155456543,
+          -5.287777900695801,
+          -6.940328598022461,
+          -7.557644844055176,
+          -9.045221328735352,
+          -7.173054218292236,
+          -4.486471652984619
+        ],
+        [
+          5.489534378051758,
+          6.8660173416137695,
+          0.3143642842769623,
+          5.657299995422363,
+          9.193425178527832,
+          8.081686019897461,
+          5.669715881347656,
+          8.100217819213867
+        ]
+      ],
+      "truth": false,
+      "selected_score": -0.017423390314629323,
+      "candidate_null_tail": 0.6949152542372882,
+      "fault_probability": 0.1145685897262709,
+      "probability_calibration_prevalence": 0.11538461538461539,
+      "review_status": "unresolved or insufficient evidence",
+      "witness_prediction_intervals": [
+        {
+          "channel": 1,
+          "source": "Accelerometer2RMS",
+          "unit": "g",
+          "observed": [
+            -16.01856803894043,
+            -16.40837287902832,
+            -15.751335144042969,
+            -16.329248428344727,
+            -15.948058128356934,
+            -16.39708709716797,
+            -15.94975757598877,
+            -16.19684410095215
+          ],
+          "before": [
+            [
+              -11.782040405273438,
+              -11.999955940246583,
+              -11.340405082702636,
+              -12.0,
+              -11.913761091232299,
+              -11.956091260910034,
+              -11.939826774597169,
+              -11.699661779403687
+            ],
+            [
+              -6.353358030319214,
+              -4.906194686889648,
+              -6.92749810218811,
+              -5.781062602996826,
+              -7.462472200393677,
+              -7.5974836349487305,
+              -7.5840678215026855,
+              -6.956343173980713
+            ],
+            [
+              6.449027419090266,
+              7.857242178916922,
+              2.743706250190733,
+              7.8346540212631135,
+              5.3631909608840935,
+              6.771416854858398,
+              7.798909354209891,
+              7.8369320869445795
+            ]
+          ],
+          "after": [
+            [
+              -11.749075984954834,
+              -12.0,
+              -11.34449381828308,
+              -11.996951389312745,
+              -11.901972484588622,
+              -11.953037881851197,
+              -11.984012651443482,
+              -11.71818585395813
+            ],
+            [
+              -6.374825716018677,
+              -5.180092096328735,
+              -7.041475057601929,
+              -5.892578125,
+              -7.472498416900635,
+              -7.886181592941284,
+              -7.5540382862091064,
+              -6.875698566436768
+            ],
+            [
+              6.4122007608413645,
+              7.789883351325976,
+              2.6866314649581886,
+              7.749462532997124,
+              5.613420748710628,
+              6.372803878784172,
+              8.28406376838684,
+              7.861274409294127
+            ]
+          ]
+        },
+        {
+          "channel": 0,
+          "source": "Accelerometer1RMS",
+          "unit": "g",
+          "observed": [
+            -10.425559043884277,
+            -10.351421356201172,
+            -10.440878868103027,
+            -10.41562271118164,
+            -10.435391426086426,
+            -10.306716918945312,
+            -10.410862922668457,
+            -10.358898162841797
+          ],
+          "before": [
+            [
+              -11.444483089447022,
+              -11.664164400100708,
+              -11.166321802139283,
+              -11.947109031677247,
+              -11.860487604141236,
+              -11.877397823333741,
+              -11.813057565689087,
+              -11.646042394638062
+            ],
+            [
+              -6.800306797027588,
+              -5.326475620269775,
+              -7.14432692527771,
+              -6.81317138671875,
+              -7.801047325134277,
+              -7.589550733566284,
+              -7.77067494392395,
+              -7.1816725730896
+            ],
+            [
+              1.9939323127269726,
+              6.135720348358153,
+              1.299510979652399,
+              6.920051598548889,
+              2.1045334756374268,
+              6.344301056861878,
+              5.056297874450674,
+              7.074423480033872
+            ]
+          ],
+          "after": [
+            [
+              -11.505075979232789,
+              -11.679963207244873,
+              -11.373735761642456,
+              -11.93541989326477,
+              -11.902289056777954,
+              -11.87807502746582,
+              -11.804719161987304,
+              -11.650051164627076
+            ],
+            [
+              -6.685953378677368,
+              -5.331982135772705,
+              -7.145194053649902,
+              -6.875748157501221,
+              -7.779008865356445,
+              -7.510446071624756,
+              -7.6229283809661865,
+              -7.19439697265625
+            ],
+            [
+              1.9886382937431317,
+              6.143607640266417,
+              1.2720695734023992,
+              6.983684921264647,
+              2.177190983295431,
+              6.331190133094787,
+              5.0167917490005385,
+              7.058418750762937
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "association",
+      "index": 14,
+      "raw_index": 7,
+      "status": "eligible",
+      "support_count": 2,
+      "witness_ids": [
+        "Temperature:4:56",
+        "Temperature:4:57",
+        "Temperature:4:58",
+        "Temperature:4:59",
+        "Temperature:4:60",
+        "Temperature:4:61",
+        "Temperature:4:62",
+        "Temperature:4:63",
+        "Volume Flow RateRMS:7:56",
+        "Volume Flow RateRMS:7:57",
+        "Volume Flow RateRMS:7:58",
+        "Volume Flow RateRMS:7:59",
+        "Volume Flow RateRMS:7:60",
+        "Volume Flow RateRMS:7:61",
+        "Volume Flow RateRMS:7:62",
+        "Volume Flow RateRMS:7:63"
+      ],
+      "witness_hash_before": "d58c43f7bc01929fb6a54e5a5b459a441d8d5136a424980ba6873175b6fc5c8b",
+      "witness_hash_after": "d58c43f7bc01929fb6a54e5a5b459a441d8d5136a424980ba6873175b6fc5c8b",
+      "witness_channels": [
+        4,
+        7
+      ],
+      "witness_groups": [
+        "Temperature",
+        "Volume Flow RateRMS"
+      ],
+      "model_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "graph_version": "c780e8605b28c47c",
+      "elapsed_seconds_per_candidate": 0.017543445341289043,
+      "score": 0.001463086061916561,
+      "mean_gain": 0.007697301642008473,
+      "model_instability": 0.0062342155800919116,
+      "edit_cost": 0.041666666666666664,
+      "monte_carlo_standard_error": 0.0008961645038165066,
+      "truth": false,
+      "selected_score": 0.001463086061916561,
+      "candidate_null_tail": 0.05084745762711865,
+      "fault_probability": 0.09488452047099358,
+      "probability_calibration_prevalence": 0.12259615384615384,
+      "review_status": "unresolved or insufficient evidence",
+      "witness_prediction_intervals": [
+        {
+          "channel": 4,
+          "source": "Temperature",
+          "unit": "degC",
+          "observed": [
+            1.0271116495132446,
+            1.0165562629699707,
+            1.0249909162521362,
+            0.9902638792991638,
+            1.0004578828811646,
+            1.046439290046692,
+            1.0012049674987793,
+            1.046439290046692
+          ],
+          "before": [
+            [
+              0.3326737925410271,
+              -0.26074296683073045,
+              -0.02427302943542599,
+              0.8120172619819641,
+              -0.7646658331155777,
+              0.7660556524991989,
+              0.47553754448890684,
+              -0.7205862879753112
+            ],
+            [
+              1.132729709148407,
+              1.2765198945999146,
+              1.1186543703079224,
+              1.3747455477714539,
+              1.0361777544021606,
+              1.4499606490135193,
+              1.4076707363128662,
+              0.9992295503616333
+            ],
+            [
+              2.102120745182037,
+              2.384553802013396,
+              1.9720240354537963,
+              2.44069821834564,
+              1.9075594544410681,
+              3.1372917890548697,
+              2.7003244757652274,
+              2.1292151689529417
+            ]
+          ],
+          "after": [
+            [
+              0.35240458250045775,
+              -0.21504982262849806,
+              -0.0019914038479328013,
+              0.8057938754558563,
+              -0.6695898413658141,
+              0.7861870855093003,
+              0.4807555556297302,
+              -0.6274216592311859
+            ],
+            [
+              1.1239962577819824,
+              1.2733026146888733,
+              1.0581120252609253,
+              1.3501076698303223,
+              1.0338732600212097,
+              1.439315140247345,
+              1.3981121182441711,
+              0.9958445429801941
+            ],
+            [
+              2.0438706517219543,
+              2.3390141367912283,
+              1.9461693704128262,
+              2.422737622261046,
+              1.914506942033765,
+              3.0827039003372185,
+              2.656687033176421,
+              2.075426495075226
+            ]
+          ]
+        },
+        {
+          "channel": 7,
+          "source": "Volume Flow RateRMS",
+          "unit": "L/min",
+          "observed": [
+            -12.189677238464355,
+            -12.194538116455078,
+            -12.435304641723633,
+            -12.189677238464355,
+            -12.189677238464355,
+            -12.189677238464355,
+            -12.189677238464355,
+            -12.189677238464355
+          ],
+          "before": [
+            [
+              -11.427977466583252,
+              -11.863250970840454,
+              -10.811554431915283,
+              -11.816792345046997,
+              -11.749380779266357,
+              -11.872272539138795,
+              -11.992944955825806,
+              -11.653293991088868
+            ],
+            [
+              -5.366593837738037,
+              -5.074860095977783,
+              -6.187273025512695,
+              -6.610058546066284,
+              -7.612094879150391,
+              -7.835445404052734,
+              -7.921682834625244,
+              -7.179497480392456
+            ],
+            [
+              6.701728725433347,
+              7.054263043403617,
+              1.7427102804183936,
+              8.338302421569825,
+              3.284099352359766,
+              7.184438395500183,
+              5.314235305786125,
+              6.306275677680967
+            ]
+          ],
+          "after": [
+            [
+              -11.427977466583252,
+              -11.863250970840454,
+              -10.811554431915283,
+              -11.816792345046997,
+              -11.749380779266357,
+              -11.872272539138795,
+              -11.992944955825806,
+              -11.653293991088868
+            ],
+            [
+              -5.366593837738037,
+              -5.074860095977783,
+              -6.187273025512695,
+              -6.610058546066284,
+              -7.612094879150391,
+              -7.835445404052734,
+              -7.921682834625244,
+              -7.179497480392456
+            ],
+            [
+              6.701728725433347,
+              7.054263043403617,
+              1.7427102804183936,
+              8.338302421569825,
+              3.284099352359766,
+              7.184438395500183,
+              5.314235305786125,
+              6.306275677680967
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "association",
+      "index": 2,
+      "raw_index": 6,
+      "status": "eligible",
+      "support_count": 2,
+      "witness_ids": [
+        "Accelerometer1RMS:0:56",
+        "Accelerometer1RMS:0:57",
+        "Accelerometer1RMS:0:58",
+        "Accelerometer1RMS:0:59",
+        "Accelerometer1RMS:0:60",
+        "Accelerometer1RMS:0:61",
+        "Accelerometer1RMS:0:62",
+        "Accelerometer1RMS:0:63",
+        "Volume Flow RateRMS:7:56",
+        "Volume Flow RateRMS:7:57",
+        "Volume Flow RateRMS:7:58",
+        "Volume Flow RateRMS:7:59",
+        "Volume Flow RateRMS:7:60",
+        "Volume Flow RateRMS:7:61",
+        "Volume Flow RateRMS:7:62",
+        "Volume Flow RateRMS:7:63"
+      ],
+      "witness_hash_before": "82c46a0e5a59a2bbccc4cb34f60a65150435e9f604a6cf6aedb0fd351363df8f",
+      "witness_hash_after": "82c46a0e5a59a2bbccc4cb34f60a65150435e9f604a6cf6aedb0fd351363df8f",
+      "witness_channels": [
+        0,
+        7
+      ],
+      "witness_groups": [
+        "Accelerometer1RMS",
+        "Volume Flow RateRMS"
+      ],
+      "model_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "graph_version": "c780e8605b28c47c",
+      "elapsed_seconds_per_candidate": 0.017543445341289043,
+      "score": -0.31653791391420605,
+      "mean_gain": -0.21102345111845958,
+      "model_instability": 0.10551446279574644,
+      "edit_cost": 0.041666666666666664,
+      "monte_carlo_standard_error": 0.027712079046830932,
+      "truth": false,
+      "selected_score": -0.31653791391420605,
+      "candidate_null_tail": 0.8813559322033898,
+      "fault_probability": 0.28850865513383267,
+      "probability_calibration_prevalence": 0.12259615384615384,
+      "review_status": "unresolved or insufficient evidence",
+      "witness_prediction_intervals": [
+        {
+          "channel": 0,
+          "source": "Accelerometer1RMS",
+          "unit": "g",
+          "observed": [
+            -10.425559043884277,
+            -10.351421356201172,
+            -10.440878868103027,
+            -10.41562271118164,
+            -10.435391426086426,
+            -10.306716918945312,
+            -10.410862922668457,
+            -10.358898162841797
+          ],
+          "before": [
+            [
+              -11.61254849433899,
+              -12.0,
+              -11.412529277801514,
+              -12.0,
+              -11.852794551849366,
+              -11.978758478164673,
+              -12.0,
+              -11.765520000457764
+            ],
+            [
+              -6.295883417129517,
+              -7.097083806991577,
+              -7.206873416900635,
+              -7.811742544174194,
+              -8.454822540283203,
+              -8.731143474578857,
+              -8.086956977844238,
+              -7.2499518394470215
+            ],
+            [
+              2.959981548786162,
+              5.505134797096252,
+              0.4206247091293332,
+              5.9129768848419175,
+              1.9968055665492832,
+              5.55596752166748,
+              5.031720829010001,
+              5.921599578857421
+            ]
+          ],
+          "after": [
+            [
+              -11.301990413665772,
+              -11.713523054122925,
+              -10.92410740852356,
+              -11.768132209777832,
+              -11.673984479904174,
+              -11.787882947921753,
+              -11.915133953094482,
+              -11.5875403881073
+            ],
+            [
+              -5.429290533065796,
+              -4.642647981643677,
+              -6.216773986816406,
+              -6.952334642410278,
+              -7.582034349441528,
+              -7.8037073612213135,
+              -7.418823480606079,
+              -6.377639293670654
+            ],
+            [
+              2.8971173882484345,
+              5.176664113998413,
+              0.34473830759525287,
+              6.080316519737241,
+              4.589232087135311,
+              5.3533125400543184,
+              4.631785535812374,
+              5.8147647857666
+            ]
+          ]
+        },
+        {
+          "channel": 7,
+          "source": "Volume Flow RateRMS",
+          "unit": "L/min",
+          "observed": [
+            -12.189677238464355,
+            -12.194538116455078,
+            -12.435304641723633,
+            -12.189677238464355,
+            -12.189677238464355,
+            -12.189677238464355,
+            -12.189677238464355,
+            -12.189677238464355
+          ],
+          "before": [
+            [
+              -11.258405828475953,
+              -11.71037940979004,
+              -11.057517433166504,
+              -11.609218502044678,
+              -11.956172466278076,
+              -11.690360593795777,
+              -11.840139818191528,
+              -11.43580732345581
+            ],
+            [
+              -5.727506875991821,
+              -3.7832045555114746,
+              -6.1543848514556885,
+              -5.3471839427948,
+              -6.816060543060303,
+              -7.212903261184692,
+              -6.991337060928345,
+              -5.133317947387695
+            ],
+            [
+              6.313106822967515,
+              7.536600732803343,
+              5.523198628425583,
+              7.9534288167953475,
+              6.894876646995544,
+              7.121142029762263,
+              6.892889666557309,
+              7.91379280090332
+            ]
+          ],
+          "after": [
+            [
+              -11.258405828475953,
+              -11.71037940979004,
+              -11.057517433166504,
+              -11.609218502044678,
+              -11.956172466278076,
+              -11.690360593795777,
+              -11.840139818191528,
+              -11.43580732345581
+            ],
+            [
+              -5.727506875991821,
+              -3.7832045555114746,
+              -6.1543848514556885,
+              -5.3471839427948,
+              -6.816060543060303,
+              -7.212903261184692,
+              -6.991337060928345,
+              -5.133317947387695
+            ],
+            [
+              6.313106822967515,
+              7.536600732803343,
+              5.523198628425583,
+              7.9534288167953475,
+              6.894876646995544,
+              7.121142029762263,
+              6.892889666557309,
+              7.91379280090332
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "association",
+      "index": 23,
+      "raw_index": 5,
+      "status": "eligible",
+      "support_count": 2,
+      "witness_ids": [
+        "Accelerometer2RMS:1:56",
+        "Accelerometer2RMS:1:57",
+        "Accelerometer2RMS:1:58",
+        "Accelerometer2RMS:1:59",
+        "Accelerometer2RMS:1:60",
+        "Accelerometer2RMS:1:61",
+        "Accelerometer2RMS:1:62",
+        "Accelerometer2RMS:1:63",
+        "Volume Flow RateRMS:7:56",
+        "Volume Flow RateRMS:7:57",
+        "Volume Flow RateRMS:7:58",
+        "Volume Flow RateRMS:7:59",
+        "Volume Flow RateRMS:7:60",
+        "Volume Flow RateRMS:7:61",
+        "Volume Flow RateRMS:7:62",
+        "Volume Flow RateRMS:7:63"
+      ],
+      "witness_hash_before": "730a1f06480bb8296adf8030c15941133a81432c6dc4198589dac09e4ad401bf",
+      "witness_hash_after": "730a1f06480bb8296adf8030c15941133a81432c6dc4198589dac09e4ad401bf",
+      "witness_channels": [
+        7,
+        1
+      ],
+      "witness_groups": [
+        "Volume Flow RateRMS",
+        "Accelerometer2RMS"
+      ],
+      "model_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "graph_version": "c780e8605b28c47c",
+      "elapsed_seconds_per_candidate": 0.017543445341289043,
+      "score": -0.717221719556988,
+      "mean_gain": -0.4985434669741077,
+      "model_instability": 0.21867825258288034,
+      "edit_cost": 0.041666666666666664,
+      "monte_carlo_standard_error": 0.048682032097311555,
+      "truth": false,
+      "selected_score": -0.717221719556988,
+      "candidate_null_tail": 0.9774011299435028,
+      "fault_probability": 0.6903711523686243,
+      "probability_calibration_prevalence": 0.12259615384615384,
+      "review_status": "unresolved or insufficient evidence",
+      "witness_prediction_intervals": [
+        {
+          "channel": 7,
+          "source": "Volume Flow RateRMS",
+          "unit": "L/min",
+          "observed": [
+            -12.189677238464355,
+            -12.194538116455078,
+            -12.435304641723633,
+            -12.189677238464355,
+            -12.189677238464355,
+            -12.189677238464355,
+            -12.189677238464355,
+            -12.189677238464355
+          ],
+          "before": [
+            [
+              -11.493952178955078,
+              -11.656971740722657,
+              -11.328129529953003,
+              -11.750574493408203,
+              -11.808635139465332,
+              -11.687291860580444,
+              -11.871269845962525,
+              -11.610756301879883
+            ],
+            [
+              -5.294937610626221,
+              -3.209923505783081,
+              -6.537441253662109,
+              -6.624080657958984,
+              -7.327888011932373,
+              -7.130772590637207,
+              -7.792263984680176,
+              -6.55532693862915
+            ],
+            [
+              6.227232313156125,
+              7.312649655342102,
+              1.3232589185237862,
+              7.652769994735715,
+              3.8652587294578513,
+              6.490791344642639,
+              6.019276881217953,
+              7.060355925559997
+            ]
+          ],
+          "after": [
+            [
+              -10.65277042388916,
+              -10.477774047851563,
+              -10.119919347763062,
+              -11.310289001464843,
+              -11.122293043136597,
+              -11.1378089427948,
+              -11.153397703170777,
+              -10.667532253265382
+            ],
+            [
+              -3.2659504413604736,
+              -2.4941246509552,
+              -4.993579387664795,
+              -5.556330919265747,
+              -5.459559440612793,
+              -5.953146934509277,
+              -6.375961065292358,
+              -5.221908330917358
+            ],
+            [
+              3.894876062870023,
+              6.0352864027023285,
+              0.7990777850150983,
+              6.295456624031061,
+              2.9119818449020354,
+              4.908011722564697,
+              3.832040333747861,
+              5.689334321022029
+            ]
+          ]
+        },
+        {
+          "channel": 1,
+          "source": "Accelerometer2RMS",
+          "unit": "g",
+          "observed": [
+            -16.01856803894043,
+            -16.40837287902832,
+            -15.751335144042969,
+            -16.329248428344727,
+            -15.948058128356934,
+            -16.39708709716797,
+            -15.94975757598877,
+            -16.19684410095215
+          ],
+          "before": [
+            [
+              -11.6966721534729,
+              -11.999899291992188,
+              -11.183014345169067,
+              -11.99727144241333,
+              -11.907236099243164,
+              -11.944451332092285,
+              -11.997794198989869,
+              -11.766972970962524
+            ],
+            [
+              -5.999923229217529,
+              -5.010408639907837,
+              -6.652656078338623,
+              -6.244676113128662,
+              -7.653484106063843,
+              -8.092952251434326,
+              -8.417727947235107,
+              -8.114191055297852
+            ],
+            [
+              4.873794603347774,
+              7.177266788482664,
+              1.988961136341093,
+              7.656919264793395,
+              5.850914120674132,
+              7.196022891998279,
+              4.612444591522211,
+              6.994855260848999
+            ]
+          ],
+          "after": [
+            [
+              -11.6966721534729,
+              -11.999899291992188,
+              -11.183014345169067,
+              -11.99727144241333,
+              -11.907236099243164,
+              -11.944451332092285,
+              -11.997794198989869,
+              -11.766972970962524
+            ],
+            [
+              -5.999923229217529,
+              -5.010408639907837,
+              -6.652656078338623,
+              -6.244676113128662,
+              -7.653484106063843,
+              -8.092952251434326,
+              -8.417727947235107,
+              -8.114191055297852
+            ],
+            [
+              4.873794603347774,
+              7.177266788482664,
+              1.988961136341093,
+              7.656919264793395,
+              5.850914120674132,
+              7.196022891998279,
+              4.612444591522211,
+              6.994855260848999
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "association",
+      "index": 5,
+      "raw_index": 4,
+      "status": "eligible",
+      "support_count": 2,
+      "witness_ids": [
+        "Accelerometer2RMS:1:56",
+        "Accelerometer2RMS:1:57",
+        "Accelerometer2RMS:1:58",
+        "Accelerometer2RMS:1:59",
+        "Accelerometer2RMS:1:60",
+        "Accelerometer2RMS:1:61",
+        "Accelerometer2RMS:1:62",
+        "Accelerometer2RMS:1:63",
+        "Volume Flow RateRMS:7:56",
+        "Volume Flow RateRMS:7:57",
+        "Volume Flow RateRMS:7:58",
+        "Volume Flow RateRMS:7:59",
+        "Volume Flow RateRMS:7:60",
+        "Volume Flow RateRMS:7:61",
+        "Volume Flow RateRMS:7:62",
+        "Volume Flow RateRMS:7:63"
+      ],
+      "witness_hash_before": "730a1f06480bb8296adf8030c15941133a81432c6dc4198589dac09e4ad401bf",
+      "witness_hash_after": "730a1f06480bb8296adf8030c15941133a81432c6dc4198589dac09e4ad401bf",
+      "witness_channels": [
+        1,
+        7
+      ],
+      "witness_groups": [
+        "Accelerometer2RMS",
+        "Volume Flow RateRMS"
+      ],
+      "model_members": 3,
+      "replicates": 8,
+      "predictive_samples": 8,
+      "graph_version": "c780e8605b28c47c",
+      "elapsed_seconds_per_candidate": 0.017543445341289043,
+      "score": -0.8448410496785241,
+      "mean_gain": -0.5605782280669636,
+      "model_instability": 0.2842628216115606,
+      "edit_cost": 0.041666666666666664,
+      "monte_carlo_standard_error": 0.05977195866873698,
+      "truth": false,
+      "selected_score": -0.8448410496785241,
+      "candidate_null_tail": 0.9887005649717514,
+      "fault_probability": 0.7932687898741821,
+      "probability_calibration_prevalence": 0.12259615384615384,
+      "review_status": "unresolved or insufficient evidence",
+      "witness_prediction_intervals": [
+        {
+          "channel": 1,
+          "source": "Accelerometer2RMS",
+          "unit": "g",
+          "observed": [
+            -16.01856803894043,
+            -16.40837287902832,
+            -15.751335144042969,
+            -16.329248428344727,
+            -15.948058128356934,
+            -16.39708709716797,
+            -15.94975757598877,
+            -16.19684410095215
+          ],
+          "before": [
+            [
+              -11.790273571014405,
+              -11.929908990859985,
+              -11.038914823532105,
+              -12.0,
+              -11.823190593719483,
+              -11.901755571365356,
+              -11.992733383178711,
+              -11.620675039291381
+            ],
+            [
+              -5.984981298446655,
+              -3.4633949995040894,
+              -6.2509074211120605,
+              -6.539963722229004,
+              -6.971236944198608,
+              -7.799381256103516,
+              -7.244523286819458,
+              -7.025416612625122
+            ],
+            [
+              2.4571310043334926,
+              4.663012599945068,
+              1.6013738691806785,
+              5.5212181091308485,
+              2.5110098123550406,
+              5.7114678144454905,
+              4.365779542922968,
+              5.227279305458065
+            ]
+          ],
+          "after": [
+            [
+              -10.90320348739624,
+              -10.763028430938721,
+              -10.22236385345459,
+              -12.0,
+              -11.481385707855225,
+              -11.891526031494141,
+              -11.487465858459473,
+              -11.369770002365112
+            ],
+            [
+              -3.6469634771347046,
+              -2.3826712369918823,
+              -4.041269540786743,
+              -5.266640901565552,
+              -5.202679634094238,
+              -6.189646482467651,
+              -6.027320384979248,
+              -5.538652420043945
+            ],
+            [
+              3.05442191362381,
+              4.141504383087154,
+              1.8315155863761894,
+              4.747965908050529,
+              3.1359094858169407,
+              3.0576833724975567,
+              3.7696118235588068,
+              4.52048029899597
+            ]
+          ]
+        },
+        {
+          "channel": 7,
+          "source": "Volume Flow RateRMS",
+          "unit": "L/min",
+          "observed": [
+            -12.189677238464355,
+            -12.194538116455078,
+            -12.435304641723633,
+            -12.189677238464355,
+            -12.189677238464355,
+            -12.189677238464355,
+            -12.189677238464355,
+            -12.189677238464355
+          ],
+          "before": [
+            [
+              -11.378874588012696,
+              -11.90792007446289,
+              -11.139444494247437,
+              -11.902308654785156,
+              -11.90370421409607,
+              -11.95067925453186,
+              -11.96060390472412,
+              -11.578597211837769
+            ],
+            [
+              -5.65320611000061,
+              -3.9610153436660767,
+              -6.2849462032318115,
+              -5.92148756980896,
+              -7.203307390213013,
+              -7.319166898727417,
+              -7.543638229370117,
+              -4.898791074752808
+            ],
+            [
+              6.288450288772583,
+              6.1463791608810325,
+              1.4271530687808953,
+              7.510125756263731,
+              6.541768193244924,
+              6.11985440254211,
+              5.186759138107291,
+              6.958884835243215
+            ]
+          ],
+          "after": [
+            [
+              -11.378874588012696,
+              -11.90792007446289,
+              -11.139444494247437,
+              -11.902308654785156,
+              -11.90370421409607,
+              -11.95067925453186,
+              -11.96060390472412,
+              -11.578597211837769
+            ],
+            [
+              -5.65320611000061,
+              -3.9610153436660767,
+              -6.2849462032318115,
+              -5.92148756980896,
+              -7.203307390213013,
+              -7.319166898727417,
+              -7.543638229370117,
+              -4.898791074752808
+            ],
+            [
+              6.288450288772583,
+              6.1463791608810325,
+              1.4271530687808953,
+              7.510125756263731,
+              6.541768193244924,
+              6.11985440254211,
+              5.186759138107291,
+              6.958884835243215
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "artifact": "results/study/skab/test/test_0000_observation.npz",
+  "view": {
+    "nodes": [
+      {
+        "index": 7,
+        "label": "C07",
+        "x": 347.73344968868247,
+        "y": 240.88889149397278
+      },
+      {
+        "index": 0,
+        "label": "C00",
+        "x": 217.61251643319886,
+        "y": 268.9778705979228
+      },
+      {
+        "index": 1,
+        "label": "C01",
+        "x": 411.2835484514537,
+        "y": 174.36532463799296
+      },
+      {
+        "index": 4,
+        "label": "C04",
+        "x": 389.0668793862822,
+        "y": 370.0
+      },
+      {
+        "index": 5,
+        "label": "C05",
+        "x": 80.0,
+        "y": 173.4002676706407
+      },
+      {
+        "index": 2,
+        "label": "C02",
+        "x": 256.721981166758,
+        "y": 65.0
+      },
+      {
+        "index": 6,
+        "label": "C06",
+        "x": 520.4382585712731,
+        "y": 342.2353206902161
+      },
+      {
+        "index": 3,
+        "label": "C03",
+        "x": 640.0,
+        "y": 240.8582439886726
+      }
+    ],
+    "edges": [
+      {
+        "index": 3,
+        "source": 7,
+        "target": 1,
+        "lag": 3,
+        "sign": 1,
+        "label": "predicts C01, lag 3"
+      },
+      {
+        "index": 4,
+        "source": 0,
+        "target": 1,
+        "lag": 2,
+        "sign": 1,
+        "label": "predicts C01, lag 2"
+      },
+      {
+        "index": 5,
+        "source": 4,
+        "target": 1,
+        "lag": 3,
+        "sign": 1,
+        "label": "predicts C01, lag 3"
+      },
+      {
+        "index": 21,
+        "source": 1,
+        "target": 7,
+        "lag": 1,
+        "sign": 1,
+        "label": "predicts C07, lag 1"
+      },
+      {
+        "index": 1,
+        "source": 1,
+        "target": 0,
+        "lag": 2,
+        "sign": 1,
+        "label": "predicts C00, lag 2"
+      },
+      {
+        "index": 14,
+        "source": 0,
+        "target": 4,
+        "lag": 1,
+        "sign": 1,
+        "label": "predicts C04, lag 1"
+      },
+      {
+        "index": 15,
+        "source": 0,
+        "target": 5,
+        "lag": 3,
+        "sign": 1,
+        "label": "predicts C05, lag 3"
+      },
+      {
+        "index": 7,
+        "source": 1,
+        "target": 2,
+        "lag": 2,
+        "sign": 1,
+        "label": "predicts C02, lag 2"
+      },
+      {
+        "index": 19,
+        "source": 0,
+        "target": 6,
+        "lag": 3,
+        "sign": -1,
+        "label": "predicts C06, lag 3"
+      },
+      {
+        "index": 11,
+        "source": 1,
+        "target": 3,
+        "lag": 1,
+        "sign": 1,
+        "label": "predicts C03, lag 1"
+      }
+    ],
+    "pruning_rule": "All selected suspects and witnesses retained. Context uses a fixed spanning forest of strong stored relations. Coordinates use seed 9026 and deterministic collision adjustment, never fault labels.",
+    "sample_seconds": 1,
+    "layout_seed": 9026
+  },
+  "run": {
+    "id": "skab:0aed4c8f81b2f97c",
+    "ensemble_seeds": [
+      1101,
+      2202,
+      3303
+    ],
+    "members": 3,
+    "replicates": 8,
+    "predictive_samples": 8,
+    "manifest": "results/study/skab/test/provenance.json",
+    "manifest_sha256": "2a1e307e18a9d733b21388234fe961061a5bddf0e3f51ee9062603efa7b15ea2"
+  },
+  "median": [
+    0.212368,
+    0.266685,
+    2.38052,
+    0.054711,
+    89.0061,
+    28.5074,
+    229.223,
+    125.649
+  ],
+  "scale": [
+    0.012520000000000003,
+    0.00823999999999997,
+    1.2184,
+    0.32792699999999997,
+    4.149500000000003,
+    2.022500000000001,
+    12.00399999999999,
+    3.9909999999999997
+  ],
+  "units": [
+    "g",
+    "g",
+    "A",
+    "bar",
+    "degC",
+    "degC",
+    "V",
+    "L/min"
+  ],
+  "selection_rule": "first failed localization in stable file order, if available",
+  "raw_score_comparison": "within candidate type only"
+}

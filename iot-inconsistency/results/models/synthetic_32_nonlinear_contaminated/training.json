@@ -1,0 +1,44 @@
+[
+  {
+    "model": "diffusion",
+    "seed": 1101,
+    "steps": 3000,
+    "parameters": 6949440,
+    "elapsed_seconds": 15.167679194360971,
+    "gpu_hours": 0.004213244220655826,
+    "peak_vram_bytes": 170924032,
+    "device": "NVIDIA RTX PRO 4500 Blackwell",
+    "dtype": "bfloat16 autocast, float32 loss",
+    "learning_rate": 0.0008,
+    "checkpoint": "diffusion_1101.pt",
+    "sha256": "a98161d7edb027858e64e7fce08835bb0eb0f47580f91cc9bb652b58bbc1e4fc"
+  },
+  {
+    "model": "diffusion",
+    "seed": 2202,
+    "steps": 3000,
+    "parameters": 6949440,
+    "elapsed_seconds": 13.41617424506694,
+    "gpu_hours": 0.0037267150680741503,
+    "peak_vram_bytes": 257202688,
+    "device": "NVIDIA RTX PRO 4500 Blackwell",
+    "dtype": "bfloat16 autocast, float32 loss",
+    "learning_rate": 0.0008,
+    "checkpoint": "diffusion_2202.pt",
+    "sha256": "3ab0bd31633eba05ad4c0c0f0b627d563301fb6bc1323715047bce352efb0824"
+  },
+  {
+    "model": "diffusion",
+    "seed": 3303,
+    "steps": 3000,
+    "parameters": 6949440,
+    "elapsed_seconds": 13.232364734169096,
+    "gpu_hours": 0.0036756568706025265,
+    "peak_vram_bytes": 341384192,
+    "device": "NVIDIA RTX PRO 4500 Blackwell",
+    "dtype": "bfloat16 autocast, float32 loss",
+    "learning_rate": 0.0008,
+    "checkpoint": "diffusion_3303.pt",
+    "sha256": "d0cb3a807aae226fa9367ad4dd8a251285bb54cb471bd2a223aeffba93296bc7"
+  }
+]

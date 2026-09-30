@@ -1,0 +1,1196 @@
+{
+  "results": {
+    "synthetic_32_linear": {
+      "observation": {
+        "comparator": "pca_lag1_rank16",
+        "common_eligible_candidates": 640,
+        "source_blocks": 8,
+        "prevalence": 0.09375,
+        "constant_probability": 0.11197916666666667,
+        "paired_secondary_endpoints": {
+          "brier_main_minus_comparator": {
+            "difference": 0.00086838870674617,
+            "interval": [
+              -0.007891025516206124,
+              0.010801092969756716
+            ]
+          },
+          "brier_main_minus_constant": {
+            "difference": -0.014943500958012269,
+            "interval": [
+              -0.02171180987739223,
+              -0.008399580890635408
+            ]
+          },
+          "precision_difference_at_0.1": {
+            "difference": -0.046875,
+            "interval": [
+              -0.1875,
+              0.0625
+            ]
+          },
+          "precision_difference_at_0.25": {
+            "difference": -0.06874999999999998,
+            "interval": [
+              -0.11875,
+              -0.03125
+            ]
+          },
+          "precision_difference_at_0.5": {
+            "difference": -0.009374999999999994,
+            "interval": [
+              -0.01874999999999999,
+              0.0
+            ]
+          }
+        },
+        "paired_window_ap_by_comparator": {
+          "fixed_penalties": {
+            "difference": 0.026622747779914357,
+            "interval": [
+              -0.005109815169234019,
+              0.06216878117698226
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "R_only": {
+            "difference": -0.020562109774918236,
+            "interval": [
+              -0.048449575885441,
+              0.002749509952216896
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "no_uncertainty": {
+            "difference": -0.020562109774918236,
+            "interval": [
+              -0.048449575885441,
+              0.002749509952216896
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "no_cost": {
+            "difference": 0.0,
+            "interval": [
+              0.0,
+              0.0
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "supervised_terms": {
+            "difference": -0.11784611650012933,
+            "interval": [
+              -0.15142030148944347,
+              -0.08797982849737493
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "gdn": {
+            "difference": -2.220503895777881e-05,
+            "interval": [
+              -0.06138971020289835,
+              0.0670226008529174
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "backbone": {
+            "difference": -0.09895653799634907,
+            "interval": [
+              -0.1571917839932718,
+              -0.04364753373843583
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "diffad": {
+            "difference": -0.03902103141398172,
+            "interval": [
+              -0.0916989604246969,
+              0.026031268301542895
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "pca_lag1_rank16": {
+            "difference": -0.23854799028156592,
+            "interval": [
+              -0.285166536135296,
+              -0.19299755567584803
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "pca_lag4_rank16": {
+            "difference": -0.23016183264716727,
+            "interval": [
+              -0.27880324101416437,
+              -0.18446937076253805
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          }
+        }
+      },
+      "association": {
+        "comparator": "edge_residual",
+        "common_eligible_candidates": 576,
+        "source_blocks": 8,
+        "prevalence": 0.1684027777777778,
+        "constant_probability": 0.16569767441860464,
+        "paired_secondary_endpoints": {
+          "brier_main_minus_comparator": {
+            "difference": 0.027784937964563314,
+            "interval": [
+              0.020045372451405367,
+              0.03535802628292642
+            ]
+          },
+          "brier_main_minus_constant": {
+            "difference": -0.08578688887934947,
+            "interval": [
+              -0.09607537491350714,
+              -0.07433097752448622
+            ]
+          },
+          "precision_difference_at_0.1": {
+            "difference": 0.0,
+            "interval": [
+              0.0,
+              0.0
+            ]
+          },
+          "precision_difference_at_0.25": {
+            "difference": -0.0625,
+            "interval": [
+              -0.10416666666666674,
+              -0.02777777777777779
+            ]
+          },
+          "precision_difference_at_0.5": {
+            "difference": -0.02430555555555558,
+            "interval": [
+              -0.048611111111111105,
+              -0.00347222222222221
+            ]
+          }
+        },
+        "paired_window_ap_by_comparator": {
+          "fixed_penalties": {
+            "difference": 0.012644268885396603,
+            "interval": [
+              0.0028050456282203598,
+              0.02645452807904094
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "R_only": {
+            "difference": -0.015497324348220043,
+            "interval": [
+              -0.03035272375063252,
+              0.0011617548244735741
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "no_uncertainty": {
+            "difference": -0.015497324348220043,
+            "interval": [
+              -0.03035272375063252,
+              0.0011617548244735741
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "no_cost": {
+            "difference": 0.0,
+            "interval": [
+              0.0,
+              0.0
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "supervised_terms": {
+            "difference": 0.003915302868484627,
+            "interval": [
+              -0.028155309587317892,
+              0.03393205288371209
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "edge_residual": {
+            "difference": -0.0016266665175729278,
+            "interval": [
+              -0.04449338439729224,
+              0.0403346710580388
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          }
+        }
+      }
+    },
+    "synthetic_32_nonlinear": {
+      "observation": {
+        "comparator": "pca_lag1_rank16",
+        "common_eligible_candidates": 640,
+        "source_blocks": 8,
+        "prevalence": 0.1078125,
+        "constant_probability": 0.13020833333333334,
+        "paired_secondary_endpoints": {
+          "brier_main_minus_comparator": {
+            "difference": -0.018425922978745287,
+            "interval": [
+              -0.02688920200703491,
+              -0.007227971740831178
+            ]
+          },
+          "brier_main_minus_constant": {
+            "difference": -0.04722945482392292,
+            "interval": [
+              -0.06012996346777382,
+              -0.034385765860781764
+            ]
+          },
+          "precision_difference_at_0.1": {
+            "difference": 0.1875,
+            "interval": [
+              0.046875,
+              0.265625
+            ]
+          },
+          "precision_difference_at_0.25": {
+            "difference": -0.03749999999999998,
+            "interval": [
+              -0.08749999999999997,
+              -0.006249999999999978
+            ]
+          },
+          "precision_difference_at_0.5": {
+            "difference": -0.021875000000000006,
+            "interval": [
+              -0.04375000000000001,
+              -0.006249999999999978
+            ]
+          }
+        },
+        "paired_window_ap_by_comparator": {
+          "fixed_penalties": {
+            "difference": 0.03016572845605725,
+            "interval": [
+              0.008244933560958201,
+              0.049872544552862885
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "R_only": {
+            "difference": 0.0,
+            "interval": [
+              0.0,
+              0.0
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "no_uncertainty": {
+            "difference": 0.0,
+            "interval": [
+              0.0,
+              0.0
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "no_cost": {
+            "difference": 0.0,
+            "interval": [
+              0.0,
+              0.0
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "supervised_terms": {
+            "difference": 0.01136060609303835,
+            "interval": [
+              -0.020047538262395203,
+              0.040906935089337224
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "gdn": {
+            "difference": 0.09889581998228758,
+            "interval": [
+              0.031775724205339695,
+              0.1617502997127426
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "backbone": {
+            "difference": 0.04499881148963536,
+            "interval": [
+              0.0022092241126450956,
+              0.08638423160859465
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "diffad": {
+            "difference": 0.1332792215923264,
+            "interval": [
+              0.06175805814503982,
+              0.21257656478436004
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "pca_lag1_rank16": {
+            "difference": -0.0971256019918395,
+            "interval": [
+              -0.13240443163303628,
+              -0.06586014072507701
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "pca_lag4_rank16": {
+            "difference": -0.08405544815207222,
+            "interval": [
+              -0.1207230826862143,
+              -0.05126243143151314
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          }
+        }
+      },
+      "association": {
+        "comparator": "edge_residual",
+        "common_eligible_candidates": 640,
+        "source_blocks": 8,
+        "prevalence": 0.146875,
+        "constant_probability": 0.15104166666666666,
+        "paired_secondary_endpoints": {
+          "brier_main_minus_comparator": {
+            "difference": 0.01428919800527147,
+            "interval": [
+              0.007162915749412964,
+              0.02201761157700074
+            ]
+          },
+          "brier_main_minus_constant": {
+            "difference": -0.06899942303343191,
+            "interval": [
+              -0.07678210068846715,
+              -0.06147589153823849
+            ]
+          },
+          "precision_difference_at_0.1": {
+            "difference": -0.03125,
+            "interval": [
+              -0.078125,
+              0.0
+            ]
+          },
+          "precision_difference_at_0.25": {
+            "difference": -0.03749999999999998,
+            "interval": [
+              -0.09999999999999998,
+              0.025000000000000022
+            ]
+          },
+          "precision_difference_at_0.5": {
+            "difference": -0.021875000000000033,
+            "interval": [
+              -0.04375000000000001,
+              0.003124999999999989
+            ]
+          }
+        },
+        "paired_window_ap_by_comparator": {
+          "fixed_penalties": {
+            "difference": 0.01056833798529122,
+            "interval": [
+              -0.004562131914760328,
+              0.026005657447105666
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "R_only": {
+            "difference": 0.0,
+            "interval": [
+              0.0,
+              0.0
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "no_uncertainty": {
+            "difference": 0.0,
+            "interval": [
+              0.0,
+              0.0
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "no_cost": {
+            "difference": 0.0,
+            "interval": [
+              0.0,
+              0.0
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "supervised_terms": {
+            "difference": -0.0024514693579597013,
+            "interval": [
+              -0.006939700227651602,
+              0.003196938791259152
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "edge_residual": {
+            "difference": -0.006901832871566316,
+            "interval": [
+              -0.022877324853089704,
+              0.010513025253575009
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          }
+        }
+      }
+    },
+    "synthetic_64_nonlinear": {
+      "observation": {
+        "comparator": "pca_lag4_rank16",
+        "common_eligible_candidates": 640,
+        "source_blocks": 8,
+        "prevalence": 0.09375,
+        "constant_probability": 0.13541666666666666,
+        "paired_secondary_endpoints": {
+          "brier_main_minus_comparator": {
+            "difference": -3.600446117034486e-05,
+            "interval": [
+              -0.00909478097322372,
+              0.009848271637069167
+            ]
+          },
+          "brier_main_minus_constant": {
+            "difference": -0.03846796547161797,
+            "interval": [
+              -0.04981434367781197,
+              -0.027026788920214862
+            ]
+          },
+          "precision_difference_at_0.1": {
+            "difference": -0.15625,
+            "interval": [
+              -0.25,
+              -0.062109375000000355
+            ]
+          },
+          "precision_difference_at_0.25": {
+            "difference": -0.05625000000000002,
+            "interval": [
+              -0.08765625,
+              -0.03125
+            ]
+          },
+          "precision_difference_at_0.5": {
+            "difference": -0.015625,
+            "interval": [
+              -0.02812500000000001,
+              -0.0031250000000000167
+            ]
+          }
+        },
+        "paired_window_ap_by_comparator": {
+          "fixed_penalties": {
+            "difference": 0.030375577101613205,
+            "interval": [
+              0.00861931622866082,
+              0.05009242289993591
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "R_only": {
+            "difference": 0.014390342380005805,
+            "interval": [
+              -0.005295641214992086,
+              0.032533347120305076
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "no_uncertainty": {
+            "difference": 0.014390342380005805,
+            "interval": [
+              -0.005295641214992086,
+              0.032533347120305076
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "no_cost": {
+            "difference": 0.0,
+            "interval": [
+              0.0,
+              0.0
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "supervised_terms": {
+            "difference": 0.07024954570336939,
+            "interval": [
+              0.009059839765660752,
+              0.14459005275532352
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "gdn": {
+            "difference": 0.06870863451933751,
+            "interval": [
+              0.02397164739540808,
+              0.1160322175182908
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "backbone": {
+            "difference": 0.08967494087298933,
+            "interval": [
+              0.05177229838620549,
+              0.11580475432703752
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "diffad": {
+            "difference": 0.06826475041700553,
+            "interval": [
+              0.0023828640175886,
+              0.1363650284505716
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "pca_lag1_rank16": {
+            "difference": -0.1526108683591656,
+            "interval": [
+              -0.21744787962789572,
+              -0.09803905078765557
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "pca_lag4_rank16": {
+            "difference": -0.11649865876883991,
+            "interval": [
+              -0.18388743913358432,
+              -0.0566417484039654
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          }
+        }
+      },
+      "association": {
+        "comparator": "edge_residual",
+        "common_eligible_candidates": 640,
+        "source_blocks": 8,
+        "prevalence": 0.0796875,
+        "constant_probability": 0.07291666666666667,
+        "paired_secondary_endpoints": {
+          "brier_main_minus_comparator": {
+            "difference": -0.01754475349812614,
+            "interval": [
+              -0.04526348750932043,
+              0.007952853219294698
+            ]
+          },
+          "brier_main_minus_constant": {
+            "difference": -0.011611861931331966,
+            "interval": [
+              -0.01938309513463876,
+              -0.0036873761133096486
+            ]
+          },
+          "precision_difference_at_0.1": {
+            "difference": 0.0625,
+            "interval": [
+              -0.171875,
+              0.203125
+            ]
+          },
+          "precision_difference_at_0.25": {
+            "difference": -0.037500000000000006,
+            "interval": [
+              -0.1,
+              0.03125
+            ]
+          },
+          "precision_difference_at_0.5": {
+            "difference": -0.040624999999999994,
+            "interval": [
+              -0.065625,
+              -0.012499999999999983
+            ]
+          }
+        },
+        "paired_window_ap_by_comparator": {
+          "fixed_penalties": {
+            "difference": 0.008769288954299181,
+            "interval": [
+              -0.03637473650131182,
+              0.06698351713857335
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "R_only": {
+            "difference": 0.008578699394811817,
+            "interval": [
+              -0.022019086184599388,
+              0.04173780796350013
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "no_uncertainty": {
+            "difference": 0.008578699394811817,
+            "interval": [
+              -0.022019086184599388,
+              0.04173780796350013
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "no_cost": {
+            "difference": 0.0,
+            "interval": [
+              0.0,
+              0.0
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "supervised_terms": {
+            "difference": 0.07443778041278726,
+            "interval": [
+              0.004257838597977987,
+              0.13107981002728297
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          },
+          "edge_residual": {
+            "difference": 0.013484195137013821,
+            "interval": [
+              -0.08062955962197746,
+              0.0757270720367958
+            ],
+            "blocks": 8,
+            "replicates": 1000
+          }
+        }
+      }
+    },
+    "intel": {
+      "observation": {
+        "comparator": "pca_lag4_rank16",
+        "common_eligible_candidates": 352,
+        "source_blocks": 6,
+        "prevalence": 0.03125,
+        "constant_probability": 0.04,
+        "paired_secondary_endpoints": {
+          "brier_main_minus_comparator": {
+            "difference": -0.0003621889012547039,
+            "interval": [
+              -0.001554315227598971,
+              0.0006621185985623534
+            ]
+          },
+          "brier_main_minus_constant": {
+            "difference": -0.0004365495374450105,
+            "interval": [
+              -0.0017459099126555036,
+              0.0006701000540777964
+            ]
+          },
+          "precision_difference_at_0.1": {
+            "difference": 0.08333333333333333,
+            "interval": [
+              0.0,
+              0.16216216216216217
+            ]
+          },
+          "precision_difference_at_0.25": {
+            "difference": 0.03409090909090909,
+            "interval": [
+              0.0,
+              0.06818181818181818
+            ]
+          },
+          "precision_difference_at_0.5": {
+            "difference": 0.017045454545454548,
+            "interval": [
+              -0.016666666666666663,
+              0.03
+            ]
+          }
+        },
+        "paired_window_ap_by_comparator": {
+          "fixed_penalties": {
+            "difference": 0.02024806818699143,
+            "interval": [
+              -0.0025626085566831255,
+              0.06785066579643603
+            ],
+            "blocks": 6,
+            "replicates": 1000
+          },
+          "R_only": {
+            "difference": 0.0,
+            "interval": [
+              0.0,
+              0.0
+            ],
+            "blocks": 6,
+            "replicates": 1000
+          },
+          "no_uncertainty": {
+            "difference": 0.0,
+            "interval": [
+              0.0,
+              0.0
+            ],
+            "blocks": 6,
+            "replicates": 1000
+          },
+          "no_cost": {
+            "difference": 0.0,
+            "interval": [
+              0.0,
+              0.0
+            ],
+            "blocks": 6,
+            "replicates": 1000
+          },
+          "supervised_terms": {
+            "difference": 0.012598663698221935,
+            "interval": [
+              -0.012874509304594772,
+              0.03335596341455582
+            ],
+            "blocks": 6,
+            "replicates": 1000
+          },
+          "gdn": {
+            "difference": -0.019351218462260178,
+            "interval": [
+              -0.05441594109805248,
+              0.06842045600261493
+            ],
+            "blocks": 6,
+            "replicates": 1000
+          },
+          "backbone": {
+            "difference": 0.012658688029236753,
+            "interval": [
+              -0.020254743399536555,
+              0.053924636308593454
+            ],
+            "blocks": 6,
+            "replicates": 1000
+          },
+          "diffad": {
+            "difference": 0.025574947739750553,
+            "interval": [
+              -0.0010018030076060194,
+              0.06944108062947632
+            ],
+            "blocks": 6,
+            "replicates": 1000
+          },
+          "pca_lag1_rank16": {
+            "difference": 0.007535143918432241,
+            "interval": [
+              -0.016622099024554582,
+              0.0505531153009432
+            ],
+            "blocks": 6,
+            "replicates": 1000
+          },
+          "pca_lag4_rank16": {
+            "difference": -0.0006194053722647919,
+            "interval": [
+              -0.0282065121952485,
+              0.03799359931043157
+            ],
+            "blocks": 6,
+            "replicates": 1000
+          }
+        }
+      },
+      "association": {
+        "comparator": "edge_residual",
+        "common_eligible_candidates": 352,
+        "source_blocks": 6,
+        "prevalence": 0.056818181818181816,
+        "constant_probability": 0.005,
+        "paired_secondary_endpoints": {
+          "brier_main_minus_comparator": {
+            "difference": 1.938784137776548e-05,
+            "interval": [
+              -0.0002474165018690377,
+              0.00022008492426028615
+            ]
+          },
+          "brier_main_minus_constant": {
+            "difference": -3.163537607036554e-05,
+            "interval": [
+              -0.00035126109778252303,
+              0.0002476446876988722
+            ]
+          },
+          "precision_difference_at_0.1": {
+            "difference": 0.055555555555555566,
+            "interval": [
+              -0.6486486486486487,
+              0.15
+            ]
+          },
+          "precision_difference_at_0.25": {
+            "difference": 0.0,
+            "interval": [
+              -0.19999999999999998,
+              0.05437801932367148
+            ]
+          },
+          "precision_difference_at_0.5": {
+            "difference": -0.03977272727272728,
+            "interval": [
+              -0.08522727272727272,
+              0.03290570175438595
+            ]
+          }
+        },
+        "paired_window_ap_by_comparator": {
+          "fixed_penalties": {
+            "difference": -0.007150372042693309,
+            "interval": [
+              -0.05408190881677666,
+              0.014299636540833327
+            ],
+            "blocks": 6,
+            "replicates": 1000
+          },
+          "R_only": {
+            "difference": 0.0,
+            "interval": [
+              0.0,
+              0.0
+            ],
+            "blocks": 6,
+            "replicates": 1000
+          },
+          "no_uncertainty": {
+            "difference": 0.0,
+            "interval": [
+              0.0,
+              0.0
+            ],
+            "blocks": 6,
+            "replicates": 1000
+          },
+          "no_cost": {
+            "difference": 0.0,
+            "interval": [
+              0.0,
+              0.0
+            ],
+            "blocks": 6,
+            "replicates": 1000
+          },
+          "supervised_terms": {
+            "difference": 0.060040303873222456,
+            "interval": [
+              -0.019348685374334006,
+              0.12299969985468329
+            ],
+            "blocks": 6,
+            "replicates": 1000
+          },
+          "edge_residual": {
+            "difference": 0.047080316694602664,
+            "interval": [
+              -0.12327678368477646,
+              0.10192722893282147
+            ],
+            "blocks": 6,
+            "replicates": 1000
+          }
+        }
+      }
+    },
+    "skab": {
+      "observation": {
+        "comparator": "pca_lag4_rank16",
+        "common_eligible_candidates": 640,
+        "source_blocks": 10,
+        "prevalence": 0.084375,
+        "constant_probability": 0.11538461538461539,
+        "paired_secondary_endpoints": {
+          "brier_main_minus_comparator": {
+            "difference": 0.0017034797149742917,
+            "interval": [
+              -0.021315327025790507,
+              0.015739107680278485
+            ]
+          },
+          "brier_main_minus_constant": {
+            "difference": 0.00014641540142398027,
+            "interval": [
+              -0.0002746903334434668,
+              0.0005080497634300864
+            ]
+          },
+          "precision_difference_at_0.1": {
+            "difference": -0.1875,
+            "interval": [
+              -0.4063210227272727,
+              -0.11285842293906813
+            ]
+          },
+          "precision_difference_at_0.25": {
+            "difference": -0.09999999999999999,
+            "interval": [
+              -0.1375,
+              0.0062519778481012695
+            ]
+          },
+          "precision_difference_at_0.5": {
+            "difference": -0.015624999999999986,
+            "interval": [
+              -0.03246753246753245,
+              0.0062500000000000056
+            ]
+          }
+        },
+        "paired_window_ap_by_comparator": {
+          "fixed_penalties": {
+            "difference": 0.01917597089311507,
+            "interval": [
+              -0.02460448223490218,
+              0.06186713629035701
+            ],
+            "blocks": 10,
+            "replicates": 1000
+          },
+          "R_only": {
+            "difference": 0.009207158173948071,
+            "interval": [
+              -0.0832375602827247,
+              0.08469224502470638
+            ],
+            "blocks": 10,
+            "replicates": 1000
+          },
+          "no_uncertainty": {
+            "difference": 0.009207158173948071,
+            "interval": [
+              -0.0832375602827247,
+              0.08469224502470638
+            ],
+            "blocks": 10,
+            "replicates": 1000
+          },
+          "no_cost": {
+            "difference": 0.0,
+            "interval": [
+              0.0,
+              0.0
+            ],
+            "blocks": 10,
+            "replicates": 1000
+          },
+          "supervised_terms": {
+            "difference": -0.04519239611459558,
+            "interval": [
+              -0.17999031220411735,
+              0.026972939028878207
+            ],
+            "blocks": 10,
+            "replicates": 1000
+          },
+          "gdn": {
+            "difference": -0.11257325258933593,
+            "interval": [
+              -0.2350281304179422,
+              -0.02351023334927252
+            ],
+            "blocks": 10,
+            "replicates": 1000
+          },
+          "backbone": {
+            "difference": -0.15791407421473702,
+            "interval": [
+              -0.24411583491438346,
+              -0.0395882403275388
+            ],
+            "blocks": 10,
+            "replicates": 1000
+          },
+          "diffad": {
+            "difference": -0.26171950920420195,
+            "interval": [
+              -0.303507777936259,
+              -0.19581741006585618
+            ],
+            "blocks": 10,
+            "replicates": 1000
+          },
+          "pca_lag1_rank2": {
+            "difference": -0.17969139375186016,
+            "interval": [
+              -0.26943290294584793,
+              -0.10095026461229498
+            ],
+            "blocks": 10,
+            "replicates": 1000
+          },
+          "pca_lag4_rank16": {
+            "difference": -0.2124191622243281,
+            "interval": [
+              -0.30822891663862967,
+              -0.1417162297087073
+            ],
+            "blocks": 10,
+            "replicates": 1000
+          }
+        }
+      },
+      "association": {
+        "comparator": "edge_residual",
+        "common_eligible_candidates": 640,
+        "source_blocks": 10,
+        "prevalence": 0.0953125,
+        "constant_probability": 0.12259615384615384,
+        "paired_secondary_endpoints": {
+          "brier_main_minus_comparator": {
+            "difference": -0.02647111972205851,
+            "interval": [
+              -0.07879440425857344,
+              0.014741140618083919
+            ]
+          },
+          "brier_main_minus_constant": {
+            "difference": 0.02320166305517756,
+            "interval": [
+              -0.010567339064080692,
+              0.08156421158711714
+            ]
+          },
+          "precision_difference_at_0.1": {
+            "difference": -0.125,
+            "interval": [
+              -0.4033014112903226,
+              -0.03125
+            ]
+          },
+          "precision_difference_at_0.25": {
+            "difference": -0.11249999999999999,
+            "interval": [
+              -0.22565133037694013,
+              -0.03288405673274095
+            ]
+          },
+          "precision_difference_at_0.5": {
+            "difference": -0.05,
+            "interval": [
+              -0.13816780279010782,
+              0.02534530900967979
+            ]
+          }
+        },
+        "paired_window_ap_by_comparator": {
+          "fixed_penalties": {
+            "difference": 0.0,
+            "interval": [
+              0.0,
+              0.0
+            ],
+            "blocks": 10,
+            "replicates": 1000
+          },
+          "R_only": {
+            "difference": -0.05641391879407187,
+            "interval": [
+              -0.13242835891733545,
+              0.0003625686931615888
+            ],
+            "blocks": 10,
+            "replicates": 1000
+          },
+          "no_uncertainty": {
+            "difference": -0.05641391879407187,
+            "interval": [
+              -0.13242835891733545,
+              0.0003625686931615888
+            ],
+            "blocks": 10,
+            "replicates": 1000
+          },
+          "no_cost": {
+            "difference": 0.0,
+            "interval": [
+              0.0,
+              0.0
+            ],
+            "blocks": 10,
+            "replicates": 1000
+          },
+          "supervised_terms": {
+            "difference": -0.06423633445978194,
+            "interval": [
+              -0.1773859034520272,
+              0.011102639404363325
+            ],
+            "blocks": 10,
+            "replicates": 1000
+          },
+          "edge_residual": {
+            "difference": -0.06831176529978744,
+            "interval": [
+              -0.18184205876682522,
+              0.004093412413923486
+            ],
+            "blocks": 10,
+            "replicates": 1000
+          }
+        }
+      }
+    }
+  },
+  "bootstrap_replicates": 1000,
+  "scope": "Secondary descriptive comparisons. Common screened eligible candidates. Whole-block paired bootstrap. Intervals are not adjusted for multiple comparisons."
+}

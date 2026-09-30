@@ -1,0 +1,144 @@
+{
+  "exports": [
+    {
+      "statements": 797,
+      "window": "intel:test_0034_observation"
+    },
+    {
+      "statements": 797,
+      "window": "intel:test_0000_observation"
+    },
+    {
+      "statements": 197,
+      "window": "skab:test_0075_observation"
+    },
+    {
+      "statements": 197,
+      "window": "skab:test_0000_observation"
+    },
+    {
+      "statements": 557,
+      "window": "synthetic_32_linear:test_0090_observation"
+    },
+    {
+      "statements": 557,
+      "window": "synthetic_32_linear:test_0000_observation"
+    },
+    {
+      "statements": 557,
+      "window": "synthetic_32_nonlinear:test_0084_observation"
+    },
+    {
+      "statements": 557,
+      "window": "synthetic_32_nonlinear:test_0002_observation"
+    },
+    {
+      "statements": 1037,
+      "window": "synthetic_64_nonlinear:test_0095_observation"
+    },
+    {
+      "statements": 1037,
+      "window": "synthetic_64_nonlinear:test_0000_observation"
+    }
+  ],
+  "counts": [
+    {
+      "columns": [
+        "entity",
+        "count"
+      ],
+      "data": [
+        {
+          "row": [
+            "ModelRun",
+            5
+          ],
+          "meta": [
+            null,
+            null
+          ]
+        },
+        {
+          "row": [
+            "ObservationWindow",
+            10
+          ],
+          "meta": [
+            null,
+            null
+          ]
+        },
+        {
+          "row": [
+            "Disagreement",
+            10
+          ],
+          "meta": [
+            null,
+            null
+          ]
+        },
+        {
+          "row": [
+            "Sensor",
+            148
+          ],
+          "meta": [
+            null,
+            null
+          ]
+        },
+        {
+          "row": [
+            "Channel",
+            184
+          ],
+          "meta": [
+            null,
+            null
+          ]
+        },
+        {
+          "row": [
+            "AssociationVersion",
+            552
+          ],
+          "meta": [
+            null,
+            null
+          ]
+        },
+        {
+          "row": [
+            "RepairHypothesis",
+            80
+          ],
+          "meta": [
+            null,
+            null
+          ]
+        },
+        {
+          "row": [
+            "EvidenceGroup",
+            160
+          ],
+          "meta": [
+            null,
+            null
+          ]
+        },
+        {
+          "row": [
+            "OperatorDecision",
+            3
+          ],
+          "meta": [
+            null,
+            null
+          ]
+        }
+      ]
+    }
+  ]
+}

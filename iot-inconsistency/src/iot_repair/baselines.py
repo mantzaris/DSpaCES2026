@@ -23,10 +23,21 @@ class PCADetector:
         rank=min(self.rank,a.shape[-1]-1,len(a)-1)
         self.pca=PCA(n_components=rank,svd_solver='randomized',random_state=9026).fit(a)
         return self
+    @classmethod
+    def load(cls,path,lag=1):
+        with np.load(path,allow_pickle=False) as saved:
+            model=cls(saved['components'].shape[0],lag)
+            model.fill=saved['fill'].copy()
+            model.portable_components=saved['components'].copy();model.portable_mean=saved['mean'].copy()
+        return model
     def score(self,x,horizon=8):
         a=self.vectors(x); mask=np.isfinite(a); a=np.where(mask,a,self.fill)
         # sklearn's transform and inverse_transform use the separately fitted PCA mean.
-        squared=(a-self.pca.inverse_transform(self.pca.transform(a)))**2
+        if hasattr(self,'portable_components'):
+            components=self.portable_components
+            reconstructed=(a@components.T-self.portable_mean@components.T)@components+self.portable_mean
+        else:reconstructed=self.pca.inverse_transform(self.pca.transform(a))
+        squared=(a-reconstructed)**2
         squared=np.where(mask,squared,np.nan).reshape(len(x),x.shape[-1]-self.lag+1,x.shape[1],self.lag)
         return np.nanmean(squared[:,-horizon:,:,-1],axis=1)
 

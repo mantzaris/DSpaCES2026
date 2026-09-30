@@ -10,6 +10,7 @@
 \IEEEauthorblockA{School of Data, Mathematical and Statistical Sciences\\University of Central Florida\\Orlando, FL, USA\\alexander.mantzaris@ucf.edu}}
 \begin{document}
 \maketitle
+\StudyStatus
 \begin{abstract}
 A sensor disagreement can arise from an incorrect reading, a changed physical process, or an association that no longer predicts well. A repair that makes a detector quieter does not by itself distinguish these explanations. We test proposed reading replacements and association masks against separate measurements that remain unchanged. A conditional diffusion model proposes replacements without seeing the witness targets. Independently trained models then measure the change in witness prediction loss. The ranking retains separate terms for mean gain, model disagreement and edit cost. We implement and audit these equations in a batched GPU pipeline, compare them with principal component reconstruction, graph forecasting, diffusion residuals and deterministic repairs, and evaluate three dataset families. Native SKAB process events remain separate from injected sensor and association faults. \input{generated/abstract_results.tex} Versioned graph records and a conventional node-link view make each finding inspectable. The study identifies where repair evidence is useful and where simpler residuals or abstention remain preferable.
 \end{abstract}
@@ -202,28 +203,6 @@ The mandatory ablations retain gain alone, remove each penalty, use deterministi
 
 The extracted NumPy reference is the arithmetic oracle. Saved inputs verify CPU and CUDA implementations within declared tolerances. Integration tests check hidden-target noninterference, known-copy invariance, conflict rejection, immutable target membership, executable lag and sign effects, and missing-output rejection. A second audit recomputes empirical CRPS from the saved predictive samples and each production score from saved group losses. The equation map links every displayed equation to its function, test and result artifact.
 
-\section{Results}
-\input{generated/results_text.tex}
-\input{generated/main_table.tex}
-\begin{figure*}[t]
-\centering\includegraphics[width=\textwidth]{figures/confidence.pdf}
-\caption{Detection and confidence from saved final-test outputs. Observation and association tasks remain separate. Colors identify dataset configurations and line styles distinguish the repair procedure from its stated comparator. Tail values are assessed through nominal and empirical false alarms. Review risk counts incorrect attribution, including findings from unmodified reference windows.}
-\label{fig:confidence}
-\end{figure*}
-
-\subsection{Equation components and robustness}
-\input{generated/ablation_text.tex}
-\input{generated/ablation_table.tex}
-\begin{figure*}[t]
-\centering\includegraphics[width=\textwidth]{figures/equations.pdf}
-\caption{Examination of the implemented score. Paired differences include block-bootstrap intervals. Sampling sensitivity uses development windows. Source contamination and computational tradeoffs come from separate saved runs. Unsafe evidence variants are identified explicitly.}
-\label{fig:equations}
-\end{figure*}
-
-\subsection{Native process events and computational cost}
-\input{generated/native_text.tex}
-\input{generated/cost_text.tex}
-
 \section{Versioned Evidence and Operator Review}
 The implementation stores sensors, channels, observation windows, immutable association versions, disagreement records, repair hypotheses, evidence groups, model runs and operator decisions in Neo4j. Raw arrays remain in hashed files. Each association records its predictor attributes, units, discovery and validation context, validity interval and provenance. Each hypothesis links to unchanged witness identities, proposed alternatives, its score terms and the appropriate calibration quantity.
 
@@ -233,11 +212,34 @@ Selecting a reading or association exposes observed values, generated intervals,
 
 \begin{figure*}[t]
 \centering\includegraphics[width=\textwidth]{figures/network.pdf}
-\caption{An actual saved review case with fixed coordinates across the reference, observation-hypothesis and alternative-association panels. The annotation values come from the corresponding run. All highlighted sources and witnesses are retained. Context is pruned using stored predictive relations without using fault labels for layout. These selected illustrations do not estimate performance.}
+\caption[Saved operator network]{An actual saved review case with fixed coordinates across the reference, observation-hypothesis and alternative-association panels. \input{generated/network_caption.tex}}
 \label{fig:network}
 \end{figure*}
 
 The interface makes evidence inspectable. We make no claim that it improves operator accuracy or response time because this study contains no human-subject evaluation. Its purpose is to preserve the distinction between an alarm, a proposed explanation and a reviewed decision.
+
+
+\section{Results}
+\input{generated/results_text.tex}
+\input{generated/main_table.tex}
+\begin{figure*}[t]
+\centering\includegraphics[width=\textwidth]{figures/confidence.pdf}
+\caption{Detection and confidence from saved final-test outputs. Observation and association tasks remain separate. Colors identify dataset configurations and line styles distinguish the repair procedure from its stated comparator. The reliability panel uses fitted fault probabilities and labels each occupied bin with its count. Review risk counts incorrect attribution among screened candidates, including findings from unmodified reference windows. Dashed curves use the development-selected PCA variant for observations and direct edge residuals for associations.}
+\label{fig:confidence}
+\end{figure*}
+
+\subsection{Equation components and robustness}
+\input{generated/ablation_text.tex}
+\input{generated/ablation_table.tex}
+\begin{figure*}[t]
+\centering\IfFileExists{figures/equations.pdf}{\includegraphics[width=\textwidth]{figures/equations.pdf}}{\fbox{\parbox[c][2in][c]{.9\textwidth}{\centering Equation figure awaits the running secondary experiments.}}}
+\caption{Examination of the implemented score. Paired differences include block-bootstrap intervals. Sampling sensitivity uses development windows. Source contamination and computational tradeoffs come from separate saved runs. Unsafe evidence variants are identified explicitly.}
+\label{fig:equations}
+\end{figure*}
+
+\subsection{Native process events and computational cost}
+\input{generated/native_text.tex}
+\input{generated/cost_text.tex}
 
 \section{Discussion and Conclusion}
 \input{generated/conclusion_results.tex}

@@ -1,0 +1,37 @@
+{
+  "synthetic_32_linear": {
+    "marginal_checks": 128,
+    "metadata_only_roc_auc": 0.5573166669425318,
+    "metadata_only_ap": 0.02194209226789882,
+    "prevalence": 0.016666666666666666,
+    "interpretation": "preserved marginals do not imply complete joint-distribution matching; scalar metadata audit excludes values, graph version hashes and fault tags"
+  },
+  "synthetic_32_nonlinear": {
+    "marginal_checks": 128,
+    "metadata_only_roc_auc": 0.5399808843085107,
+    "metadata_only_ap": 0.042374291695347,
+    "prevalence": 0.020833333333333332,
+    "interpretation": "preserved marginals do not imply complete joint-distribution matching; scalar metadata audit excludes values, graph version hashes and fault tags"
+  },
+  "synthetic_64_nonlinear": {
+    "marginal_checks": 128,
+    "metadata_only_roc_auc": 0.5493719161184211,
+    "metadata_only_ap": 0.011691864770664407,
+    "prevalence": 0.010416666666666666,
+    "interpretation": "preserved marginals do not imply complete joint-distribution matching; scalar metadata audit excludes values, graph version hashes and fault tags"
+  },
+  "intel": {
+    "marginal_checks": 86,
+    "metadata_only_roc_auc": 0.6263758948318008,
+    "metadata_only_ap": 0.02954631061188235,
+    "prevalence": 0.013888888888888888,
+    "interpretation": "preserved marginals do not imply complete joint-distribution matching; scalar metadata audit excludes values, graph version hashes and fault tags"
+  },
+  "skab": {
+    "marginal_checks": 128,
+    "metadata_only_roc_auc": 0.7340305397727274,
+    "metadata_only_ap": 0.37698604454164575,
+    "prevalence": 0.08333333333333333,
+    "interpretation": "preserved marginals do not imply complete joint-distribution matching; scalar metadata audit excludes values, graph version hashes and fault tags"
+  }
+}

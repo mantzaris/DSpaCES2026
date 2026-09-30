@@ -46,6 +46,12 @@ def persist_bundle(bundle,url=DEFAULT_URL):
         properties.update(graph_version=case['graph']['version'],source_unit=bundle['units'][edge['source']],target_unit=bundle['units'][edge['target']],
             predictor_units='training median/IQR normalized',provenance='training discovery and development validation',confidence_status='stored predictive relation, not causal proof')
         node('AssociationVersion',identity,properties)
+        if 'association_context' in bundle:
+            # Enrich missing provenance once. Existing predictor attributes and
+            # version identities remain immutable across repeated exports.
+            statements.append(statement('MATCH (a:AssociationVersion {id:$id}) SET a.discovery_context=coalesce(a.discovery_context,$context), a.discovery_interval=coalesce(a.discovery_interval,$discovery), a.validation_interval=coalesce(a.validation_interval,$validation)',
+                id=identity,context=json.dumps(bundle['association_context']),
+                discovery=json.dumps(bundle['association_context']['train']),validation=json.dumps(bundle['association_context']['development'])))
         link('Channel',dataset+':channel:'+str(edge['source']),'SOURCE_OF','AssociationVersion',identity)
         link('AssociationVersion',identity,'PREDICTS','Channel',dataset+':channel:'+str(edge['target']))
         link('ObservationWindow',window_id,'USES_VERSION','AssociationVersion',identity)
