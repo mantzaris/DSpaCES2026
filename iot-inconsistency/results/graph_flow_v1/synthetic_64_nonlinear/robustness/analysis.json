@@ -1,0 +1,254 @@
+{
+  "graph_error_0.25": {
+    "cases": 12,
+    "eligible_fraction": 1.0,
+    "methods": {
+      "flow_ratio": {
+        "candidate_ap": null,
+        "primary_top1": 0.0,
+        "window_alarm_fraction_at_010": 1.0
+      },
+      "flow_nll": {
+        "candidate_ap": null,
+        "primary_top1": 0.0,
+        "window_alarm_fraction_at_010": 1.0
+      },
+      "pca": {
+        "candidate_ap": null,
+        "primary_top1": 0.0,
+        "window_alarm_fraction_at_010": 0.0
+      }
+    },
+    "cross_type_counts": {
+      "both": 11,
+      "reading_only": 1,
+      "relation_only": 0,
+      "neither": 0
+    },
+    "association_tail_resolution": 0.02702702702702703
+  },
+  "graph_error_0.5": {
+    "cases": 12,
+    "eligible_fraction": 1.0,
+    "methods": {
+      "flow_ratio": {
+        "candidate_ap": null,
+        "primary_top1": 0.0,
+        "window_alarm_fraction_at_010": 1.0
+      },
+      "flow_nll": {
+        "candidate_ap": null,
+        "primary_top1": 0.0,
+        "window_alarm_fraction_at_010": 1.0
+      },
+      "pca": {
+        "candidate_ap": null,
+        "primary_top1": 0.0,
+        "window_alarm_fraction_at_010": 0.0
+      }
+    },
+    "cross_type_counts": {
+      "both": 12,
+      "reading_only": 0,
+      "relation_only": 0,
+      "neither": 0
+    },
+    "association_tail_resolution": 0.02702702702702703
+  },
+  "known_copy": {
+    "cases": 12,
+    "eligible_fraction": 1.0,
+    "methods": {
+      "flow_ratio": {
+        "candidate_ap": 1.0,
+        "primary_top1": 1.0,
+        "window_alarm_fraction_at_010": 1.0
+      },
+      "flow_nll": {
+        "candidate_ap": 1.0,
+        "primary_top1": 1.0,
+        "window_alarm_fraction_at_010": 1.0
+      },
+      "pca": {
+        "candidate_ap": 1.0,
+        "primary_top1": 1.0,
+        "window_alarm_fraction_at_010": 1.0
+      }
+    },
+    "cross_type_counts": {
+      "both": 12,
+      "reading_only": 0,
+      "relation_only": 0,
+      "neither": 0
+    },
+    "association_tail_resolution": 0.02702702702702703
+  },
+  "missing_context_0.25": {
+    "cases": 12,
+    "eligible_fraction": 0.75,
+    "methods": {
+      "flow_ratio": {
+        "candidate_ap": 0.765826072076072,
+        "primary_top1": 0.8333333333333334,
+        "window_alarm_fraction_at_010": 1.0
+      },
+      "flow_nll": {
+        "candidate_ap": 0.7667730417730416,
+        "primary_top1": 0.8333333333333334,
+        "window_alarm_fraction_at_010": 1.0
+      },
+      "pca": {
+        "candidate_ap": 0.9999999999999999,
+        "primary_top1": 1.0,
+        "window_alarm_fraction_at_010": 1.0
+      }
+    },
+    "cross_type_counts": {
+      "both": 11,
+      "reading_only": 1,
+      "relation_only": 0,
+      "neither": 0
+    },
+    "association_tail_resolution": 0.02702702702702703
+  },
+  "missing_context_0.5": {
+    "cases": 12,
+    "eligible_fraction": 0.5,
+    "methods": {
+      "flow_ratio": {
+        "candidate_ap": 0.7334103904225856,
+        "primary_top1": 0.75,
+        "window_alarm_fraction_at_010": 1.0
+      },
+      "flow_nll": {
+        "candidate_ap": 0.734622912468441,
+        "primary_top1": 0.75,
+        "window_alarm_fraction_at_010": 1.0
+      },
+      "pca": {
+        "candidate_ap": 0.9999999999999999,
+        "primary_top1": 1.0,
+        "window_alarm_fraction_at_010": 1.0
+      }
+    },
+    "cross_type_counts": {
+      "both": 11,
+      "reading_only": 1,
+      "relation_only": 0,
+      "neither": 0
+    },
+    "association_tail_resolution": 0.02702702702702703
+  },
+  "multiple_sources_0.25": {
+    "cases": 12,
+    "eligible_fraction": 1.0,
+    "methods": {
+      "flow_ratio": {
+        "candidate_ap": 0.8314103101182043,
+        "primary_top1": 0.25,
+        "window_alarm_fraction_at_010": 1.0
+      },
+      "flow_nll": {
+        "candidate_ap": 0.8394669961179178,
+        "primary_top1": 0.25,
+        "window_alarm_fraction_at_010": 1.0
+      },
+      "pca": {
+        "candidate_ap": 0.8933303348479892,
+        "primary_top1": 0.0,
+        "window_alarm_fraction_at_010": 1.0
+      }
+    },
+    "cross_type_counts": {
+      "both": 12,
+      "reading_only": 0,
+      "relation_only": 0,
+      "neither": 0
+    },
+    "association_tail_resolution": 0.02702702702702703
+  },
+  "multiple_sources_0.5": {
+    "cases": 12,
+    "eligible_fraction": 1.0,
+    "methods": {
+      "flow_ratio": {
+        "candidate_ap": 0.8485589320721427,
+        "primary_top1": 0.08333333333333333,
+        "window_alarm_fraction_at_010": 1.0
+      },
+      "flow_nll": {
+        "candidate_ap": 0.8527268978748439,
+        "primary_top1": 0.08333333333333333,
+        "window_alarm_fraction_at_010": 1.0
+      },
+      "pca": {
+        "candidate_ap": 0.9371214343102013,
+        "primary_top1": 0.0,
+        "window_alarm_fraction_at_010": 1.0
+      }
+    },
+    "cross_type_counts": {
+      "both": 12,
+      "reading_only": 0,
+      "relation_only": 0,
+      "neither": 0
+    },
+    "association_tail_resolution": 0.02702702702702703
+  },
+  "reference": {
+    "cases": 12,
+    "eligible_fraction": 1.0,
+    "methods": {
+      "flow_ratio": {
+        "candidate_ap": null,
+        "primary_top1": 0.0,
+        "window_alarm_fraction_at_010": 0.08333333333333333
+      },
+      "flow_nll": {
+        "candidate_ap": null,
+        "primary_top1": 0.0,
+        "window_alarm_fraction_at_010": 0.16666666666666666
+      },
+      "pca": {
+        "candidate_ap": null,
+        "primary_top1": 0.0,
+        "window_alarm_fraction_at_010": 0.0
+      }
+    },
+    "cross_type_counts": {
+      "both": 0,
+      "reading_only": 1,
+      "relation_only": 2,
+      "neither": 9
+    },
+    "association_tail_resolution": 0.02702702702702703
+  },
+  "single_source": {
+    "cases": 12,
+    "eligible_fraction": 1.0,
+    "methods": {
+      "flow_ratio": {
+        "candidate_ap": 1.0,
+        "primary_top1": 1.0,
+        "window_alarm_fraction_at_010": 1.0
+      },
+      "flow_nll": {
+        "candidate_ap": 1.0,
+        "primary_top1": 1.0,
+        "window_alarm_fraction_at_010": 1.0
+      },
+      "pca": {
+        "candidate_ap": 1.0,
+        "primary_top1": 1.0,
+        "window_alarm_fraction_at_010": 1.0
+      }
+    },
+    "cross_type_counts": {
+      "both": 12,
+      "reading_only": 0,
+      "relation_only": 0,
+      "neither": 0
+    },
+    "association_tail_resolution": 0.02702702702702703
+  }
+}

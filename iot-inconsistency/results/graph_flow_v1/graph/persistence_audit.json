@@ -1,0 +1,368 @@
+{
+  "exports": [
+    {
+      "path": "results/graph_flow_v1/graph/cases/synthetic_32_nonlinear_correct_attribution.json",
+      "sha256": "3886379a2476194f0e4b2b47f6592ff4a944efbd1455608ab44bd3e9ee48d549",
+      "case_id": "test_0000_bias",
+      "selection_reason": "correct_attribution",
+      "persistence": {
+        "window": "graph_flow_v1:synthetic_32_nonlinear:4d71ccc0aefaa349:7cc8c08c08e3b834:test_0000_bias",
+        "hypothesis": "graph_flow_v1:synthetic_32_nonlinear:4d71ccc0aefaa349:7cc8c08c08e3b834:test_0000_bias:measurement:15",
+        "statements": 505
+      }
+    },
+    {
+      "path": "results/graph_flow_v1/graph/cases/synthetic_32_nonlinear_incorrect_attribution.json",
+      "sha256": "7e422063ad2a74a04f6bdbf0062cdb7f8f8082a9774d237fdf95051f9fd75fd8",
+      "case_id": "test_0000_replay",
+      "selection_reason": "incorrect_attribution",
+      "persistence": {
+        "window": "graph_flow_v1:synthetic_32_nonlinear:4d71ccc0aefaa349:7cc8c08c08e3b834:test_0000_replay",
+        "hypothesis": "graph_flow_v1:synthetic_32_nonlinear:4d71ccc0aefaa349:7cc8c08c08e3b834:test_0000_replay:measurement:22",
+        "statements": 505
+      }
+    },
+    {
+      "path": "results/graph_flow_v1/graph/cases/synthetic_32_nonlinear_lowest_ess_diagnostic.json",
+      "sha256": "1776ae7f55a26f0d8dfc372a6a505d93237cd56f84249c360ac7cf6cc7d1f6ea",
+      "case_id": "test_0270_drift",
+      "selection_reason": "lowest_ess_diagnostic",
+      "persistence": {
+        "window": "graph_flow_v1:synthetic_32_nonlinear:4d71ccc0aefaa349:7cc8c08c08e3b834:test_0270_drift",
+        "hypothesis": "graph_flow_v1:synthetic_32_nonlinear:4d71ccc0aefaa349:7cc8c08c08e3b834:test_0270_drift:measurement:21",
+        "statements": 505
+      }
+    },
+    {
+      "path": "results/graph_flow_v1/graph/cases/synthetic_32_nonlinear_ambiguity.json",
+      "sha256": "090b6958d284cc19948a6c5b2c1e02a41389bd95e11f3defb71e2bb9d8b9f009",
+      "case_id": "physical_common_mode_0",
+      "selection_reason": "first ambiguity pair",
+      "persistence": {
+        "window": "graph_flow_v1:synthetic_32_nonlinear:4d71ccc0aefaa349:7cc8c08c08e3b834:physical_common_mode_0",
+        "hypothesis": "graph_flow_v1:synthetic_32_nonlinear:4d71ccc0aefaa349:7cc8c08c08e3b834:physical_common_mode_0:measurement:4",
+        "statements": 505
+      }
+    },
+    {
+      "path": "results/graph_flow_v1/graph/cases/synthetic_32_nonlinear_association_review.json",
+      "sha256": "aa871131b478ccce1ceb2e9d3380f08e2ba5bd5fc3c7b0408e6a42b37751d8c6",
+      "case_id": "test_0000_clean_association_review",
+      "selection_reason": "first predeclared association error",
+      "persistence": {
+        "window": "graph_flow_v1:synthetic_32_nonlinear:4d71ccc0aefaa349:7cc8c08c08e3b834:stress:175ae95be439:test_0000_clean_association_review",
+        "hypothesis": "graph_flow_v1:synthetic_32_nonlinear:4d71ccc0aefaa349:7cc8c08c08e3b834:stress:175ae95be439:test_0000_clean_association_review:measurement:1",
+        "statements": 505
+      }
+    },
+    {
+      "path": "results/graph_flow_v1/graph/cases/skab_correct_attribution.json",
+      "sha256": "bd0a59d5539d798489cf62475342aee8fe1bdeb0d12a65a2777c41a3de6d6090",
+      "case_id": "test_0000_bias",
+      "selection_reason": "correct_attribution",
+      "persistence": {
+        "window": "graph_flow_v1:skab:4d71ccc0aefaa349:c780e8605b28c47c:test_0000_bias",
+        "hypothesis": "graph_flow_v1:skab:4d71ccc0aefaa349:c780e8605b28c47c:test_0000_bias:measurement:6",
+        "statements": 145
+      }
+    },
+    {
+      "path": "results/graph_flow_v1/graph/cases/skab_numerical_abstention.json",
+      "sha256": "755f81eb3fa785507c32a0b0ffc29c7aab4a8e4f52aa81559a03b8112aa6de53",
+      "case_id": "test_0000_bias",
+      "selection_reason": "numerical_abstention",
+      "persistence": {
+        "window": "graph_flow_v1:skab:4d71ccc0aefaa349:c780e8605b28c47c:test_0000_bias",
+        "hypothesis": "graph_flow_v1:skab:4d71ccc0aefaa349:c780e8605b28c47c:test_0000_bias:measurement:6",
+        "statements": 145
+      }
+    },
+    {
+      "path": "results/graph_flow_v1/graph/cases/skab_incorrect_attribution.json",
+      "sha256": "37b91c68c78045e870f7cd9f8427c3dfa922717b859fcdd38ac8891923983ae2",
+      "case_id": "test_0000_replay",
+      "selection_reason": "incorrect_attribution",
+      "persistence": {
+        "window": "graph_flow_v1:skab:4d71ccc0aefaa349:c780e8605b28c47c:test_0000_replay",
+        "hypothesis": "graph_flow_v1:skab:4d71ccc0aefaa349:c780e8605b28c47c:test_0000_replay:measurement:1",
+        "statements": 145
+      }
+    },
+    {
+      "path": "results/graph_flow_v1/graph/cases/skab_association_review.json",
+      "sha256": "1ad77d05f221be7ccab1bea2166a0e30f160a699e444b17755317e4e255ac0a8",
+      "case_id": "test_0000_clean_association_review",
+      "selection_reason": "first predeclared association error",
+      "persistence": {
+        "window": "graph_flow_v1:skab:4d71ccc0aefaa349:c780e8605b28c47c:stress:3faf6db49f53:test_0000_clean_association_review",
+        "hypothesis": "graph_flow_v1:skab:4d71ccc0aefaa349:c780e8605b28c47c:stress:3faf6db49f53:test_0000_clean_association_review:measurement:7",
+        "statements": 145
+      }
+    },
+    {
+      "path": "results/graph_flow_v1/graph/cases/synthetic_32_linear_correct_attribution.json",
+      "sha256": "5f7b02674340708f157879b9da18c6d5c3d39b15fa5d44deab506e919d3550c6",
+      "case_id": "test_0000_bias",
+      "selection_reason": "correct_attribution",
+      "persistence": {
+        "window": "graph_flow_v1:synthetic_32_linear:4d71ccc0aefaa349:af6e5cea0a6003d0:test_0000_bias",
+        "hypothesis": "graph_flow_v1:synthetic_32_linear:4d71ccc0aefaa349:af6e5cea0a6003d0:test_0000_bias:measurement:10",
+        "statements": 505
+      }
+    },
+    {
+      "path": "results/graph_flow_v1/graph/cases/synthetic_32_linear_incorrect_attribution.json",
+      "sha256": "df4eb4b52078ce2ebff8122b6c92eb1e886d94258a7aad66b3ae03e4e9cf6736",
+      "case_id": "test_0000_replay",
+      "selection_reason": "incorrect_attribution",
+      "persistence": {
+        "window": "graph_flow_v1:synthetic_32_linear:4d71ccc0aefaa349:af6e5cea0a6003d0:test_0000_replay",
+        "hypothesis": "graph_flow_v1:synthetic_32_linear:4d71ccc0aefaa349:af6e5cea0a6003d0:test_0000_replay:measurement:7",
+        "statements": 505
+      }
+    },
+    {
+      "path": "results/graph_flow_v1/graph/cases/synthetic_32_linear_lowest_ess_diagnostic.json",
+      "sha256": "f65dde8301d61c7f2a01d2178d0135aeb3f056b059a8fa33afc6f3292a2ac495",
+      "case_id": "test_0341_noise",
+      "selection_reason": "lowest_ess_diagnostic",
+      "persistence": {
+        "window": "graph_flow_v1:synthetic_32_linear:4d71ccc0aefaa349:af6e5cea0a6003d0:test_0341_noise",
+        "hypothesis": "graph_flow_v1:synthetic_32_linear:4d71ccc0aefaa349:af6e5cea0a6003d0:test_0341_noise:measurement:29",
+        "statements": 505
+      }
+    },
+    {
+      "path": "results/graph_flow_v1/graph/cases/synthetic_32_linear_ambiguity.json",
+      "sha256": "5e69295389f885547d7876fd0d66f38b9d8a472ca8462f8763520503257369fa",
+      "case_id": "physical_common_mode_0",
+      "selection_reason": "first ambiguity pair",
+      "persistence": {
+        "window": "graph_flow_v1:synthetic_32_linear:4d71ccc0aefaa349:af6e5cea0a6003d0:physical_common_mode_0",
+        "hypothesis": "graph_flow_v1:synthetic_32_linear:4d71ccc0aefaa349:af6e5cea0a6003d0:physical_common_mode_0:measurement:16",
+        "statements": 505
+      }
+    },
+    {
+      "path": "results/graph_flow_v1/graph/cases/synthetic_32_linear_association_review.json",
+      "sha256": "0a7855168ed8cdb34a1af8ef7fefb64297092755a4e6c303a53a458e7376a270",
+      "case_id": "test_0000_clean_association_review",
+      "selection_reason": "first predeclared association error",
+      "persistence": {
+        "window": "graph_flow_v1:synthetic_32_linear:4d71ccc0aefaa349:af6e5cea0a6003d0:stress:29ba84a9946b:test_0000_clean_association_review",
+        "hypothesis": "graph_flow_v1:synthetic_32_linear:4d71ccc0aefaa349:af6e5cea0a6003d0:stress:29ba84a9946b:test_0000_clean_association_review:measurement:7",
+        "statements": 505
+      }
+    },
+    {
+      "path": "results/graph_flow_v1/graph/cases/synthetic_64_nonlinear_correct_attribution.json",
+      "sha256": "e2d95330c31865c04f797b718025d93782f8bcef5a4db15d46a37e7232c130c8",
+      "case_id": "test_0000_bias",
+      "selection_reason": "correct_attribution",
+      "persistence": {
+        "window": "graph_flow_v1:synthetic_64_nonlinear:4d71ccc0aefaa349:f29ce1dd050b05a4:test_0000_bias",
+        "hypothesis": "graph_flow_v1:synthetic_64_nonlinear:4d71ccc0aefaa349:f29ce1dd050b05a4:test_0000_bias:measurement:1",
+        "statements": 985
+      }
+    },
+    {
+      "path": "results/graph_flow_v1/graph/cases/synthetic_64_nonlinear_incorrect_attribution.json",
+      "sha256": "21da682bd03efcc9b9ae125cd8396465f1dd7265b7dc8a272fbe503d41ce291a",
+      "case_id": "test_0000_replay",
+      "selection_reason": "incorrect_attribution",
+      "persistence": {
+        "window": "graph_flow_v1:synthetic_64_nonlinear:4d71ccc0aefaa349:f29ce1dd050b05a4:test_0000_replay",
+        "hypothesis": "graph_flow_v1:synthetic_64_nonlinear:4d71ccc0aefaa349:f29ce1dd050b05a4:test_0000_replay:measurement:57",
+        "statements": 985
+      }
+    },
+    {
+      "path": "results/graph_flow_v1/graph/cases/synthetic_64_nonlinear_numerical_abstention.json",
+      "sha256": "c66e80fb513ed5071ab6e8cad1b8680c4c3dc31a3758069b86594289995bdf2f",
+      "case_id": "test_0024_replay",
+      "selection_reason": "numerical_abstention",
+      "persistence": {
+        "window": "graph_flow_v1:synthetic_64_nonlinear:4d71ccc0aefaa349:f29ce1dd050b05a4:test_0024_replay",
+        "hypothesis": "graph_flow_v1:synthetic_64_nonlinear:4d71ccc0aefaa349:f29ce1dd050b05a4:test_0024_replay:measurement:47",
+        "statements": 985
+      }
+    },
+    {
+      "path": "results/graph_flow_v1/graph/cases/synthetic_64_nonlinear_ambiguity.json",
+      "sha256": "50e1aa9a09e21278d6f76dda5b5244ea6dcc87b4b9b27b390a114190ed70a523",
+      "case_id": "physical_common_mode_0",
+      "selection_reason": "first ambiguity pair",
+      "persistence": {
+        "window": "graph_flow_v1:synthetic_64_nonlinear:4d71ccc0aefaa349:f29ce1dd050b05a4:physical_common_mode_0",
+        "hypothesis": "graph_flow_v1:synthetic_64_nonlinear:4d71ccc0aefaa349:f29ce1dd050b05a4:physical_common_mode_0:measurement:0",
+        "statements": 985
+      }
+    },
+    {
+      "path": "results/graph_flow_v1/graph/cases/synthetic_64_nonlinear_association_review.json",
+      "sha256": "2e28f261f4e5e088f01e607d10f78877946955f405b1ce2e4b30e164c88d333b",
+      "case_id": "test_0000_clean_association_review",
+      "selection_reason": "first predeclared association error",
+      "persistence": {
+        "window": "graph_flow_v1:synthetic_64_nonlinear:4d71ccc0aefaa349:f29ce1dd050b05a4:stress:a004497faac5:test_0000_clean_association_review",
+        "hypothesis": "graph_flow_v1:synthetic_64_nonlinear:4d71ccc0aefaa349:f29ce1dd050b05a4:stress:a004497faac5:test_0000_clean_association_review:measurement:18",
+        "statements": 985
+      }
+    },
+    {
+      "path": "results/graph_flow_v1/graph/cases/intel_incorrect_attribution.json",
+      "sha256": "ce6eca26f54807b68e4bfde3599e2197384aaacc5ccf7b6183b80e34f39930f6",
+      "case_id": "test_0000_bias",
+      "selection_reason": "incorrect_attribution",
+      "persistence": {
+        "window": "graph_flow_v1:intel:4d71ccc0aefaa349:79dd89df8c9ffc81:test_0000_bias",
+        "hypothesis": "graph_flow_v1:intel:4d71ccc0aefaa349:79dd89df8c9ffc81:test_0000_bias:measurement:12",
+        "statements": 745
+      }
+    },
+    {
+      "path": "results/graph_flow_v1/graph/cases/intel_numerical_abstention.json",
+      "sha256": "04eb88e73c2a020896ce66ecd7626979b9b480bfff97b2492f6f778a1d0d8703",
+      "case_id": "test_0000_bias",
+      "selection_reason": "numerical_abstention",
+      "persistence": {
+        "window": "graph_flow_v1:intel:4d71ccc0aefaa349:79dd89df8c9ffc81:test_0000_bias",
+        "hypothesis": "graph_flow_v1:intel:4d71ccc0aefaa349:79dd89df8c9ffc81:test_0000_bias:measurement:12",
+        "statements": 745
+      }
+    },
+    {
+      "path": "results/graph_flow_v1/graph/cases/intel_correct_attribution.json",
+      "sha256": "57bbe1bd1e5dc29278a1a7de0df73f60f3cfed29dba1b5fc317d93cb9d972645",
+      "case_id": "test_0002_spike",
+      "selection_reason": "correct_attribution",
+      "persistence": {
+        "window": "graph_flow_v1:intel:4d71ccc0aefaa349:79dd89df8c9ffc81:test_0002_spike",
+        "hypothesis": "graph_flow_v1:intel:4d71ccc0aefaa349:79dd89df8c9ffc81:test_0002_spike:measurement:44",
+        "statements": 745
+      }
+    },
+    {
+      "path": "results/graph_flow_v1/graph/cases/intel_association_review.json",
+      "sha256": "f0d20c132ae2a792d3b7c3602aeeb3983b17161ac905fe3859fbdd8b1fbd4b1a",
+      "case_id": "test_0000_clean_association_review",
+      "selection_reason": "first predeclared association error",
+      "persistence": {
+        "window": "graph_flow_v1:intel:4d71ccc0aefaa349:79dd89df8c9ffc81:stress:30c60f220e1b:test_0000_clean_association_review",
+        "hypothesis": "graph_flow_v1:intel:4d71ccc0aefaa349:79dd89df8c9ffc81:stress:30c60f220e1b:test_0000_clean_association_review:measurement:8",
+        "statements": 745
+      }
+    }
+  ],
+  "counts": [
+    {
+      "columns": [
+        "labels(n)[0]",
+        "count(*)"
+      ],
+      "data": [
+        {
+          "row": [
+            "ModelRun",
+            10
+          ],
+          "meta": [
+            null,
+            null
+          ]
+        },
+        {
+          "row": [
+            "ObservationWindow",
+            21
+          ],
+          "meta": [
+            null,
+            null
+          ]
+        },
+        {
+          "row": [
+            "PhysicalSource",
+            148
+          ],
+          "meta": [
+            null,
+            null
+          ]
+        },
+        {
+          "row": [
+            "Sensor",
+            184
+          ],
+          "meta": [
+            null,
+            null
+          ]
+        },
+        {
+          "row": [
+            "AssociationVersion",
+            1104
+          ],
+          "meta": [
+            null,
+            null
+          ]
+        },
+        {
+          "row": [
+            "FaultHypothesis",
+            26
+          ],
+          "meta": [
+            null,
+            null
+          ]
+        },
+        {
+          "row": [
+            "GenerationBundle",
+            21
+          ],
+          "meta": [
+            null,
+            null
+          ]
+        },
+        {
+          "row": [
+            "ScoreEvidence",
+            26
+          ],
+          "meta": [
+            null,
+            null
+          ]
+        },
+        {
+          "row": [
+            "RepairProposal",
+            21
+          ],
+          "meta": [
+            null,
+            null
+          ]
+        },
+        {
+          "row": [
+            "ReviewDecision",
+            3
+          ],
+          "meta": [
+            null,
+            null
+          ]
+        }
+      ]
+    }
+  ],
+  "idempotent": true
+}

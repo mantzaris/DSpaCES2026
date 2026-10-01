@@ -1,0 +1,25 @@
+{
+  "datasets": {
+    "synthetic_32_nonlinear": {
+      "path": "results/graph_flow_v1/synthetic_32_nonlinear/calibration.json",
+      "sha256": "b8aa5aa737dd349aa36ff7e99d4a80aa16667e0aa9fdb81d01f835852f230aaa"
+    },
+    "skab": {
+      "path": "results/graph_flow_v1/skab/calibration.json",
+      "sha256": "00ed86e450cda3170ad2afec988007aad804cfd4e41825ba7cc223dcf5360f25"
+    },
+    "synthetic_32_linear": {
+      "path": "results/graph_flow_v1/synthetic_32_linear/calibration.json",
+      "sha256": "a6cf00affb84b064856650377da6735883bcd3d9949e6507187e96cc269c414d"
+    },
+    "synthetic_64_nonlinear": {
+      "path": "results/graph_flow_v1/synthetic_64_nonlinear/calibration.json",
+      "sha256": "b7aee39215503b4ebc51d922bb7de71823364e082d56c58935b34c7ff4ed1b3c"
+    },
+    "intel": {
+      "path": "results/graph_flow_v1/intel/calibration.json",
+      "sha256": "230551c8e9b42b2c3c647fc0dfeddb08cdc5ba4912c831da581eb8e66e32b44f"
+    }
+  },
+  "protocol_lock_sha256": "4d71ccc0aefaa3491e9aa018c31135f4d2c116f4a43239f53f820a1c8986e376"
+}

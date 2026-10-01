@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\caption{Oracle-target repair distributions on eligible injected faults. Width and scores use training-normalized measurement units. Interval coverage is measured for nominal 90\% marginal intervals. Lower CRPS and energy score are better.}
+\label{tab:repair}
+\small
+\begin{tabular}{llrrrr}
+\toprule
+Config. & Prior & CRPS & Coverage & Width & Energy \\
+\midrule
+S32L & Flow & 0.157 & 0.930 & 1.328 & 0.468 \\
+S32L & PPCA & 0.024 & 0.961 & 0.169 & 0.081 \\
+S32N & Flow & 0.039 & 0.975 & 0.341 & 0.129 \\
+S32N & PPCA & 0.027 & 0.909 & 0.167 & 0.092 \\
+S64N & Flow & 0.084 & 0.912 & 0.488 & 0.285 \\
+S64N & PPCA & 0.069 & 0.875 & 0.329 & 0.238 \\
+Intel & Flow & 3.494 & 0.399 & 1.154 & 9.905 \\
+Intel & PPCA & 0.827 & 0.344 & 0.232 & 2.454 \\
+SKAB & Flow & 0.391 & 0.775 & 1.202 & 1.249 \\
+SKAB & PPCA & 0.267 & 0.778 & 0.602 & 0.877 \\
+\bottomrule
+\end{tabular}
+\end{table}

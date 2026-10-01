@@ -1,35 +1,45 @@
-# Graph-flow revision in progress
+# Graph-flow study completed
 
-Updated 2026-10-01 UTC. Work stays on `main`, with local commits only. The user will push. Unrelated `iot-entropy` work is preserved. No paid resource has been created.
+Updated 2026-10-01 UTC. Work stays on `main`, with local commits only. The user will push. Unrelated `iot-entropy` work is preserved. No paper was submitted, external site published, branch created or paid resource created.
 
-The new namespace is `results/graph_flow_v1/`. The original 306 tracked study files are hashed in `legacy.json`. `paper/legacy/witness_20260930.tar.xz` preserves the previous paper exactly. Original results and evidence bundles remain unchanged. The current main manuscript still describes that preserved study.
+All six finite stages are complete. The reference arithmetic and GPU pilot passed. Development, three-member model selection, calibration, final paired experiments, shared-case legacy comparisons, registered stress strata, production replay, isolated runtime, Neo4j export and browser checks completed. The new IEEE manuscript compiles to ten pages including references. Final PDF and figure checks are recorded in `results/graph_flow_v1/completion.json`.
 
-The eight reference check groups and 17 focused CPU tests pass. The graph flow trains and generates on the existing RTX PRO 4500 GPU. Its 22,048-parameter Gaussian pilot trained in 9.694 seconds, reduced validation NLL from 10.6692 to 5.7215, and reproduced saved GPU score arithmetic with zero discrepancy. These are pilot diagnostics, not benchmark superiority evidence. See `pilot.json` and `evidence/pilot.npz`.
+The namespace is `results/graph_flow_v1/`. Its protocol locked at 2026-10-01 02:03:02 UTC. All sixteen frozen numerical source hashes still match. The final study has 1,500 cases and 54,080 candidates. Directional H1 is supported against both PCA and same-flow NLL, but the latter improvement misses the 0.02 practical margin. H2 remains inconclusive. H3 is not established. Intel calibration and SKAB repair failures remain prominent in the manuscript. Detailed findings are in `graph_flow_claims_audit.md`.
 
-All 20 flow capacity/context development fits completed. Three-member selected ensembles, own-history ablations, learning curves and official GANF fits have completed. Development-selected PCA, single and mixture PPCA, all-channel PPCA and a portable tree classifier are implemented. PPCA observed-context conditionals agree with the full Gaussian reference. The shared final scorer, separate calibration roles, block bootstrap, repair-risk calculation, legacy rerun, and robustness stages are implemented but not yet final-executed.
+The eight scalar check groups and all forty tests pass. Independent production auditing reconstructs 107,620 calibration/test scores within 9.10e-13. Thirty generation bundles were replayed from trained models and saved latent draws on the existing RTX PRO 4500. The compact publication audit verifies 6,351 records and reproduces all 100 dataset/method AP values. These numerical checks do not validate the fitted distributions as physical truth.
 
-Two pre-final implementation corrections are documented. A completely unavailable Intel window now retains the full candidate population with floor scores. Irregular SKAB timestamps require elapsed-time drift ramps. Earlier index-ramp development artifacts are preserved under `development/chronology_correction/`, and affected development selections are being rerun. No new final-test score has yet been examined. The exact protocol lock will be written only after these checks.
+`execution_jobs.json` preserves the failed initial audit, a reporting-variable failure during the first resume, and successful `graph_flow_finish_resume` completion at 02:45:47 UTC. Both failures were corrected without changing predictions, calibration or model selection. Database schema/data transactions were separated for Neo4j compatibility. `DECISIONS.md` records these corrections.
 
-Model checkpoints remain outside Git. Compact selections, numerical evidence and code are committed. Primary hypotheses remain untested. Neural flexibility, likelihood-ratio benefit and safe repair coverage are not assumed.
+The original 166 tracked result files remain byte-identical. `legacy.json` hashes the full 306-file starting study. The exact old manuscript is preserved in `paper/legacy/witness_20260930.tar.xz`, including its original PDF and source hashes. Historical completion details below refer to that archive, not the current main paper.
 
-Current validation and resume commands
+Six new evidence bundles total 86.93 MiB. They preserve exact result JSON, compact candidate evidence and full representative generations. Raw caches, model checkpoints, temporary files and logs are excluded from Git. All required checkpoint paths were verified locally and against the existing pod. Three superseded local sklearn pickle files were never transferred and are unnecessary because the frozen portable arrays are present. The model manifest states this distinction.
 
-```bash
-OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 python3 -m pytest tests/test_graph_flow.py -q
-bash scripts/runpod.sh exec .venv/bin/python scripts/job.py status graph_flow_neural_resume
-bash scripts/runpod.sh sync
-bash scripts/runpod.sh push-flow-baselines
-bash scripts/runpod.sh exec .venv/bin/python scripts/job.py launch graph_flow_chronology bash scripts/graph_flow_chronology_resume.sh
-bash scripts/runpod.sh pull-flow
-```
+No mandatory finite-stage work is blocked. Optional MTGFlow training and dynamic graph adaptation were not included. No human operator study or untouched real-environment validation was performed. A public clone supports saved-evidence replay but requires weights or retraining for model inference.
 
-Once the chronology correction and common-scorer smoke pass, the finite final job is
+## Resume and verification commands
+
+The GPU job is complete. Do not relaunch training merely to check its status.
 
 ```bash
-bash scripts/runpod.sh exec .venv/bin/python scripts/job.py launch graph_flow_final bash scripts/graph_flow_final.sh
+bash scripts/runpod.sh exec .venv/bin/python scripts/job.py status graph_flow_finish_resume
+python3 scripts/package_graph_flow.py verify
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python3 scripts/audit_graph_flow_publication.py
+python3 scripts/figures_graph_flow.py
+python3 scripts/make_graph_flow_paper.py
+latexmk -pdf -interaction=nonstopmode -halt-on-error -cd paper/main.tex
 ```
 
-That job repeats development sampling diagnostics, freezes model/data/code choices, scores and calibrates disjoint calibration roles, runs the paired final cases, recomputes equations and executes the predeclared stress conditions. Do not start it concurrently with development. Runtime paths and exact hashes are in each run record. Graph persistence, the new operator evidence view, final figures and the revised compiled paper remain to be completed from those results.
+Saved summary records and graph artifacts suffice for the paper build. For individual candidate inspection, `python3 scripts/package_graph_flow.py restore` expands explicitly named compact arrays and protects edited files. Do not overwrite finalized local presentation files with a broad remote pull. The README gives isolated reproduction stages and prerequisites.
+
+For the local operator application
+
+```bash
+bash scripts/neo4j.sh start
+python3 scripts/export_graph_flow.py --persist-only
+python3 operator/server.py --port 8100
+```
+
+Open `http://127.0.0.1:8100/flow`. Twenty-three saved cases cover success, failure, numerical inadequacy, ambiguity and association review. Automated browser accept/reject/defer records are separate from measurements and are not human-study evidence.
 
 ## Preserved legacy completion record
 
@@ -39,7 +49,7 @@ The full specification was read and implemented. Part C was extracted and execut
 
 All finite stages are complete, including revised training, primary evaluation, inference ablations, native SKAB events, model export, GPU verification and corrected stress analysis. The existing RTX PRO 4500 Blackwell was used. The remote directory remains `/workspace/iot-inconsistency`. All 78 inference states are preserved locally in `results/model_weights`, with exact-array and deterministic checkpoint-replay verification. Optimizer checkpoints remain on the pod. Ordinary CUDA reduction repeatability is measured separately and is not claimed to be bitwise exact.
 
-The paper is complete at `paper/main.pdf`, in standard IEEE conference format with 10 pages including references. It reports a limited S32N precision benefit at 10% screened-candidate coverage, its reversal at broader coverage, stronger PCA detection, association ambiguity, failed robustness conditions and measured costs. Native process labels remain separate from injected sensor and association faults. The conventional total-error PCA supplement is explicitly distinguished from the frozen channel-maximum primary comparison.
+The preserved paper is complete in `paper/legacy/witness_20260930.tar.xz`, in standard IEEE conference format with 10 pages including references. It reports a limited S32N precision benefit at 10% screened-candidate coverage, its reversal at broader coverage, stronger PCA detection, association ambiguity, failed robustness conditions and measured costs. Native process labels remain separate from injected sensor and association faults. The conventional total-error PCA supplement is explicitly distinguished from the frozen channel-maximum primary comparison.
 
 Neo4j stores versioned evidence for ten saved review cases. The node-link interface passed browser verification. Confirm, reject and defer records are labeled automated interface tests, not human diagnoses. Repeated evidence import changes no entity counts. The four required scientific figures and two supplemental plots come from saved outputs with source and output hashes.
 

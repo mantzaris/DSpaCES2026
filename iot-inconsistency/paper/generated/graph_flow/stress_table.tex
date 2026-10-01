@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\caption{Registered stress diagnostics on twelve source windows per configuration. First three columns give primary-target top-one rates. The last gives measurement alarms under a graph-only error affecting half the stored associations. This is cross-type confusion, not association diagnosis.}
+\label{tab:stress}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Config. & Single & Half missing & Half faulty & Graph alarm \\
+\midrule
+S32L & 1.000 & 1.000 & 0.000 & 0.083 \\
+S32N & 1.000 & 0.917 & 0.000 & 1.000 \\
+S64N & 1.000 & 0.750 & 0.083 & 1.000 \\
+Intel & 0.083 & 0.250 & 0.167 & 0.750 \\
+SKAB & 0.833 & 0.750 & 0.167 & 0.250 \\
+\bottomrule
+\end{tabular}
+\end{table}

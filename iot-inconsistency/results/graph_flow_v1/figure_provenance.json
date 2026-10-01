@@ -1,0 +1,486 @@
+{
+  "architecture": {
+    "inputs": {
+      "results/graph_flow_v1/protocol_lock.json": "4d71ccc0aefaa3491e9aa018c31135f4d2c116f4a43239f53f820a1c8986e376",
+      "results/graph_flow_v1/analysis.json": "15f79bf3461582652bb5206d74b570b8d663254836111c67913d831ef4f32c9b",
+      "results/graph_flow_v1/runtime.json": "dc73e5a799d359998f26480b3aeda25e6374177e158d852a5897023cbb3b989b"
+    },
+    "outputs": {
+      "paper/figures/graph_flow/architecture.pdf": "989a48b4879737890ab5738c7f1f24f159b52d0c2732845750c2047b24ec941e",
+      "paper/figures/graph_flow/architecture.svg": "f0582eb597a9ed0b6896732484017755a25fee788919880d82922442af1f8e97",
+      "paper/figures/graph_flow/architecture.png": "05c79869efce89c119ad39d518ba47b7b39ebb4d9a0fc1f5ec672a4b653ccd1c"
+    },
+    "details": {
+      "protocol_sha256": "4d71ccc0aefaa3491e9aa018c31135f4d2c116f4a43239f53f820a1c8986e376"
+    }
+  },
+  "performance": {
+    "inputs": {
+      "results/graph_flow_v1/protocol_lock.json": "4d71ccc0aefaa3491e9aa018c31135f4d2c116f4a43239f53f820a1c8986e376",
+      "results/graph_flow_v1/analysis.json": "15f79bf3461582652bb5206d74b570b8d663254836111c67913d831ef4f32c9b",
+      "results/graph_flow_v1/runtime.json": "dc73e5a799d359998f26480b3aeda25e6374177e158d852a5897023cbb3b989b",
+      "results/graph_flow_v1/synthetic_32_nonlinear/precision_recall.npz": "02adfde58dd295f90455e413e75e53ab7931fdfbe415e348cde3b2779d6bee37",
+      "results/graph_flow_v1/intel/precision_recall.npz": "6cfcd8ab3951f0758b700e0c42d67817c503cfeb8bfbdca115745a0d8eae3acc",
+      "results/graph_flow_v1/skab/precision_recall.npz": "8aa298ce0031a69dc9c7faf75808e2c37ac9b7a3cdc215849561bb70639ceff7"
+    },
+    "outputs": {
+      "paper/figures/graph_flow/performance.pdf": "c5821ffa67fe281b1386de282337f3267af1a0f1d74c1f9e403e62b04d7dcb9a",
+      "paper/figures/graph_flow/performance.svg": "01505d7d5d82f17673200607220d25df4201700719f06556154e2ee9c282adef",
+      "paper/figures/graph_flow/performance.png": "f40dc10dcb16bc7c85c62220ef483d7851100e22568b395a1dc055e2a77bf010"
+    },
+    "details": null
+  },
+  "confidence": {
+    "inputs": {
+      "results/graph_flow_v1/protocol_lock.json": "4d71ccc0aefaa3491e9aa018c31135f4d2c116f4a43239f53f820a1c8986e376",
+      "results/graph_flow_v1/analysis.json": "15f79bf3461582652bb5206d74b570b8d663254836111c67913d831ef4f32c9b",
+      "results/graph_flow_v1/runtime.json": "dc73e5a799d359998f26480b3aeda25e6374177e158d852a5897023cbb3b989b",
+      "results/graph_flow_v1/synthetic_32_nonlinear/precision_recall.npz": "02adfde58dd295f90455e413e75e53ab7931fdfbe415e348cde3b2779d6bee37",
+      "results/graph_flow_v1/intel/precision_recall.npz": "6cfcd8ab3951f0758b700e0c42d67817c503cfeb8bfbdca115745a0d8eae3acc",
+      "results/graph_flow_v1/skab/precision_recall.npz": "8aa298ce0031a69dc9c7faf75808e2c37ac9b7a3cdc215849561bb70639ceff7"
+    },
+    "outputs": {
+      "paper/figures/graph_flow/confidence.pdf": "5a2c0348802c6ec53b353023dfde5745171827e0d86e0fb4ea3efa6017576c12",
+      "paper/figures/graph_flow/confidence.svg": "01677a15d2a547604aab839553f806da920c71bce6cf80cc08f919b11b8d5b54",
+      "paper/figures/graph_flow/confidence.png": "de087b567960e9d478e307b5e169c24fd94617fde3d5b22f4016399fa8d9693e"
+    },
+    "details": {
+      "synthetic_32_nonlinear": {
+        "reliability_bins": [
+          {
+            "left": 0.0,
+            "right": 0.1,
+            "count": 10048,
+            "predicted": 0.006854543527378968,
+            "observed": 0.011345541401273885
+          },
+          {
+            "left": 0.1,
+            "right": 0.2,
+            "count": 23,
+            "predicted": 0.1482577195381296,
+            "observed": 0.21739130434782608
+          },
+          {
+            "left": 0.2,
+            "right": 0.30000000000000004,
+            "count": 17,
+            "predicted": 0.24900529797366885,
+            "observed": 0.17647058823529413
+          },
+          {
+            "left": 0.30000000000000004,
+            "right": 0.4,
+            "count": 6,
+            "predicted": 0.34644902503741504,
+            "observed": 0.0
+          },
+          {
+            "left": 0.4,
+            "right": 0.5,
+            "count": 4,
+            "predicted": 0.4399752846120103,
+            "observed": 0.25
+          },
+          {
+            "left": 0.5,
+            "right": 0.6000000000000001,
+            "count": 0,
+            "predicted": null,
+            "observed": null
+          },
+          {
+            "left": 0.6000000000000001,
+            "right": 0.7000000000000001,
+            "count": 2,
+            "predicted": 0.6294093804002991,
+            "observed": 0.5
+          },
+          {
+            "left": 0.7000000000000001,
+            "right": 0.8,
+            "count": 2,
+            "predicted": 0.7749431778822906,
+            "observed": 0.0
+          },
+          {
+            "left": 0.8,
+            "right": 0.9,
+            "count": 3,
+            "predicted": 0.8765694415875959,
+            "observed": 0.6666666666666666
+          },
+          {
+            "left": 0.9,
+            "right": 1.0,
+            "count": 135,
+            "predicted": 0.9984359981686318,
+            "observed": 0.9629629629629629
+          }
+        ],
+        "repair_policies": {
+          "flow_ratio": {
+            "threshold": 0.25,
+            "cases": 320,
+            "accepted": 134,
+            "coverage": 0.41875,
+            "failures": 0,
+            "risk": 0.0,
+            "harmful": 0,
+            "harmful_rate": 0.0,
+            "wilson_upper": 0.01979102957886936,
+            "mean_improvement": 7.217470042439784
+          },
+          "pca": {
+            "threshold": 0.25,
+            "cases": 320,
+            "accepted": 160,
+            "coverage": 0.5,
+            "failures": 0,
+            "risk": 0.0,
+            "harmful": 0,
+            "harmful_rate": 0.0,
+            "wilson_upper": 0.01662846511962105,
+            "mean_improvement": 6.06274484576683
+          },
+          "ppca": {
+            "threshold": 0.5,
+            "cases": 320,
+            "accepted": 166,
+            "coverage": 0.51875,
+            "failures": 0,
+            "risk": 0.0,
+            "harmful": 0,
+            "harmful_rate": 0.0,
+            "wilson_upper": 0.016037075004779487,
+            "mean_improvement": 5.879989340586088
+          }
+        }
+      },
+      "intel": {
+        "reliability_bins": [
+          {
+            "left": 0.0,
+            "right": 0.1,
+            "count": 9393,
+            "predicted": 0.017551249862301336,
+            "observed": 0.010433301394655595
+          },
+          {
+            "left": 0.1,
+            "right": 0.2,
+            "count": 233,
+            "predicted": 0.1424241831563667,
+            "observed": 0.030042918454935622
+          },
+          {
+            "left": 0.2,
+            "right": 0.30000000000000004,
+            "count": 105,
+            "predicted": 0.23223665680832153,
+            "observed": 0.009523809523809525
+          },
+          {
+            "left": 0.30000000000000004,
+            "right": 0.4,
+            "count": 50,
+            "predicted": 0.3504459736105676,
+            "observed": 0.0
+          },
+          {
+            "left": 0.4,
+            "right": 0.5,
+            "count": 65,
+            "predicted": 0.4568599922447374,
+            "observed": 0.03076923076923077
+          },
+          {
+            "left": 0.5,
+            "right": 0.6000000000000001,
+            "count": 53,
+            "predicted": 0.5523773460616862,
+            "observed": 0.03773584905660377
+          },
+          {
+            "left": 0.6000000000000001,
+            "right": 0.7000000000000001,
+            "count": 48,
+            "predicted": 0.6558487398310872,
+            "observed": 0.125
+          },
+          {
+            "left": 0.7000000000000001,
+            "right": 0.8,
+            "count": 35,
+            "predicted": 0.745515374054577,
+            "observed": 0.05714285714285714
+          },
+          {
+            "left": 0.8,
+            "right": 0.9,
+            "count": 56,
+            "predicted": 0.8500058619993557,
+            "observed": 0.0
+          },
+          {
+            "left": 0.9,
+            "right": 1.0,
+            "count": 522,
+            "predicted": 0.9900352784589751,
+            "observed": 0.038314176245210725
+          }
+        ],
+        "repair_policies": {
+          "flow_ratio": {
+            "threshold": null,
+            "cases": 220,
+            "accepted": 0,
+            "coverage": 0.0,
+            "failures": 0,
+            "risk": null,
+            "harmful": 0,
+            "harmful_rate": null,
+            "wilson_upper": null,
+            "mean_improvement": null
+          },
+          "pca": {
+            "threshold": null,
+            "cases": 220,
+            "accepted": 0,
+            "coverage": 0.0,
+            "failures": 0,
+            "risk": null,
+            "harmful": 0,
+            "harmful_rate": null,
+            "wilson_upper": null,
+            "mean_improvement": null
+          },
+          "ppca": {
+            "threshold": null,
+            "cases": 220,
+            "accepted": 0,
+            "coverage": 0.0,
+            "failures": 0,
+            "risk": null,
+            "harmful": 0,
+            "harmful_rate": null,
+            "wilson_upper": null,
+            "mean_improvement": null
+          }
+        }
+      },
+      "skab": {
+        "reliability_bins": [
+          {
+            "left": 0.0,
+            "right": 0.1,
+            "count": 1936,
+            "predicted": 0.03793873880706896,
+            "observed": 0.03977272727272727
+          },
+          {
+            "left": 0.1,
+            "right": 0.2,
+            "count": 411,
+            "predicted": 0.13141286477682806,
+            "observed": 0.07542579075425791
+          },
+          {
+            "left": 0.2,
+            "right": 0.30000000000000004,
+            "count": 43,
+            "predicted": 0.2588033160279533,
+            "observed": 0.27906976744186046
+          },
+          {
+            "left": 0.30000000000000004,
+            "right": 0.4,
+            "count": 23,
+            "predicted": 0.3400542060770231,
+            "observed": 0.21739130434782608
+          },
+          {
+            "left": 0.4,
+            "right": 0.5,
+            "count": 10,
+            "predicted": 0.45677000305571813,
+            "observed": 0.6
+          },
+          {
+            "left": 0.5,
+            "right": 0.6000000000000001,
+            "count": 4,
+            "predicted": 0.5348581407758642,
+            "observed": 1.0
+          },
+          {
+            "left": 0.6000000000000001,
+            "right": 0.7000000000000001,
+            "count": 7,
+            "predicted": 0.6602532386706013,
+            "observed": 0.8571428571428571
+          },
+          {
+            "left": 0.7000000000000001,
+            "right": 0.8,
+            "count": 3,
+            "predicted": 0.7611418857059545,
+            "observed": 1.0
+          },
+          {
+            "left": 0.8,
+            "right": 0.9,
+            "count": 4,
+            "predicted": 0.8657618991597965,
+            "observed": 1.0
+          },
+          {
+            "left": 0.9,
+            "right": 1.0,
+            "count": 119,
+            "predicted": 0.9941740721538035,
+            "observed": 0.8991596638655462
+          }
+        ],
+        "repair_policies": {
+          "flow_ratio": {
+            "threshold": 0.25,
+            "cases": 320,
+            "accepted": 123,
+            "coverage": 0.384375,
+            "failures": 24,
+            "risk": 0.1951219512195122,
+            "harmful": 24,
+            "harmful_rate": 0.1951219512195122,
+            "wilson_upper": 0.26019200816984484,
+            "mean_improvement": 3.970697343114251
+          },
+          "pca": {
+            "threshold": 0.75,
+            "cases": 320,
+            "accepted": 140,
+            "coverage": 0.4375,
+            "failures": 52,
+            "risk": 0.37142857142857144,
+            "harmful": 52,
+            "harmful_rate": 0.37142857142857144,
+            "wilson_upper": 0.4404414429519038,
+            "mean_improvement": 5.374426042999874
+          },
+          "ppca": {
+            "threshold": 0.75,
+            "cases": 320,
+            "accepted": 169,
+            "coverage": 0.528125,
+            "failures": 31,
+            "risk": 0.1834319526627219,
+            "harmful": 30,
+            "harmful_rate": 0.17751479289940827,
+            "wilson_upper": 0.23725674680243047,
+            "mean_improvement": 8.911124317276451
+          }
+        }
+      }
+    }
+  },
+  "network": {
+    "inputs": {
+      "results/graph_flow_v1/protocol_lock.json": "4d71ccc0aefaa3491e9aa018c31135f4d2c116f4a43239f53f820a1c8986e376",
+      "results/graph_flow_v1/analysis.json": "15f79bf3461582652bb5206d74b570b8d663254836111c67913d831ef4f32c9b",
+      "results/graph_flow_v1/runtime.json": "dc73e5a799d359998f26480b3aeda25e6374177e158d852a5897023cbb3b989b",
+      "results/graph_flow_v1/synthetic_32_nonlinear/precision_recall.npz": "02adfde58dd295f90455e413e75e53ab7931fdfbe415e348cde3b2779d6bee37",
+      "results/graph_flow_v1/intel/precision_recall.npz": "6cfcd8ab3951f0758b700e0c42d67817c503cfeb8bfbdca115745a0d8eae3acc",
+      "results/graph_flow_v1/skab/precision_recall.npz": "8aa298ce0031a69dc9c7faf75808e2c37ac9b7a3cdc215849561bb70639ceff7",
+      "results/graph_flow_v1/graph/export_manifest.json": "ee82788a855cc857ce733cb17b6945c2747f893b5b74eb0c45c5f69b9aa1bee9",
+      "results/graph_flow_v1/graph/cases/synthetic_32_nonlinear_correct_attribution.json": "3886379a2476194f0e4b2b47f6592ff4a944efbd1455608ab44bd3e9ee48d549"
+    },
+    "outputs": {
+      "paper/figures/graph_flow/network.pdf": "bcfe2ef5cb3be9545d334a4c98fcf8ba5c8a65439116e09ca91205f78fc09a81",
+      "paper/figures/graph_flow/network.svg": "59bb31ea3b8d8a48c451a3431fa9befe70812fba507ab804db3b2675f2ba90f7",
+      "paper/figures/graph_flow/network.png": "2c3b2868a0b71fb0285906a2a6111c2ae2a7360601a71927e40a4a1c65441d7b"
+    },
+    "details": {
+      "case_id": "test_0000_bias",
+      "dataset": "synthetic_32_nonlinear",
+      "selection_reason": "correct_attribution",
+      "rendered_nodes": [
+        15,
+        11,
+        19,
+        7,
+        23
+      ],
+      "rendered_edges": [
+        "a015_011",
+        "a015_019",
+        "a015_007",
+        "a023_015"
+      ]
+    }
+  },
+  "repair": {
+    "inputs": {
+      "results/graph_flow_v1/protocol_lock.json": "4d71ccc0aefaa3491e9aa018c31135f4d2c116f4a43239f53f820a1c8986e376",
+      "results/graph_flow_v1/analysis.json": "15f79bf3461582652bb5206d74b570b8d663254836111c67913d831ef4f32c9b",
+      "results/graph_flow_v1/runtime.json": "dc73e5a799d359998f26480b3aeda25e6374177e158d852a5897023cbb3b989b",
+      "results/graph_flow_v1/synthetic_32_nonlinear/precision_recall.npz": "02adfde58dd295f90455e413e75e53ab7931fdfbe415e348cde3b2779d6bee37",
+      "results/graph_flow_v1/intel/precision_recall.npz": "6cfcd8ab3951f0758b700e0c42d67817c503cfeb8bfbdca115745a0d8eae3acc",
+      "results/graph_flow_v1/skab/precision_recall.npz": "8aa298ce0031a69dc9c7faf75808e2c37ac9b7a3cdc215849561bb70639ceff7",
+      "results/graph_flow_v1/graph/export_manifest.json": "ee82788a855cc857ce733cb17b6945c2747f893b5b74eb0c45c5f69b9aa1bee9",
+      "results/graph_flow_v1/graph/cases/synthetic_32_nonlinear_correct_attribution.json": "3886379a2476194f0e4b2b47f6592ff4a944efbd1455608ab44bd3e9ee48d549",
+      "results/graph_flow_v1/graph/cases/synthetic_32_nonlinear_incorrect_attribution.json": "7e422063ad2a74a04f6bdbf0062cdb7f8f8082a9774d237fdf95051f9fd75fd8",
+      "results/graph_flow_v1/graph/cases/skab_numerical_abstention.json": "755f81eb3fa785507c32a0b0ffc29c7aab4a8e4f52aa81559a03b8112aa6de53"
+    },
+    "outputs": {
+      "paper/figures/graph_flow/repair.pdf": "3eb572734ec3d6185421cbe67d1313bc6e556e7511c094ba35ddb7b14a78be37",
+      "paper/figures/graph_flow/repair.svg": "8a36d54173f824abb4b85138e4a9712851a86e3a5e0605bd2219e90482cd0a0e",
+      "paper/figures/graph_flow/repair.png": "d41dec6d7b8e590e3536141005a50b4085c3c83930322853aaf98c7b909ecdf3"
+    },
+    "details": {
+      "cases": [
+        {
+          "dataset": "synthetic_32_nonlinear",
+          "case": "test_0000_bias",
+          "reason": "correct_attribution"
+        },
+        {
+          "dataset": "synthetic_32_nonlinear",
+          "case": "test_0000_replay",
+          "reason": "incorrect_attribution"
+        },
+        {
+          "dataset": "skab",
+          "case": "test_0000_bias",
+          "reason": "numerical_abstention"
+        }
+      ]
+    }
+  },
+  "equations": {
+    "inputs": {
+      "results/graph_flow_v1/protocol_lock.json": "4d71ccc0aefaa3491e9aa018c31135f4d2c116f4a43239f53f820a1c8986e376",
+      "results/graph_flow_v1/analysis.json": "15f79bf3461582652bb5206d74b570b8d663254836111c67913d831ef4f32c9b",
+      "results/graph_flow_v1/runtime.json": "dc73e5a799d359998f26480b3aeda25e6374177e158d852a5897023cbb3b989b",
+      "results/graph_flow_v1/synthetic_32_nonlinear/precision_recall.npz": "02adfde58dd295f90455e413e75e53ab7931fdfbe415e348cde3b2779d6bee37",
+      "results/graph_flow_v1/intel/precision_recall.npz": "6cfcd8ab3951f0758b700e0c42d67817c503cfeb8bfbdca115745a0d8eae3acc",
+      "results/graph_flow_v1/skab/precision_recall.npz": "8aa298ce0031a69dc9c7faf75808e2c37ac9b7a3cdc215849561bb70639ceff7",
+      "results/graph_flow_v1/graph/export_manifest.json": "ee82788a855cc857ce733cb17b6945c2747f893b5b74eb0c45c5f69b9aa1bee9",
+      "results/graph_flow_v1/graph/cases/synthetic_32_nonlinear_correct_attribution.json": "3886379a2476194f0e4b2b47f6592ff4a944efbd1455608ab44bd3e9ee48d549",
+      "results/graph_flow_v1/graph/cases/synthetic_32_nonlinear_incorrect_attribution.json": "7e422063ad2a74a04f6bdbf0062cdb7f8f8082a9774d237fdf95051f9fd75fd8",
+      "results/graph_flow_v1/graph/cases/skab_numerical_abstention.json": "755f81eb3fa785507c32a0b0ffc29c7aab4a8e4f52aa81559a03b8112aa6de53",
+      "results/graph_flow_v1/development/synthetic_32_linear_sampling.json": "84498c6b4678806a16c8872503cc5f79d4b11248cabc4cad493fec0afbed25e5",
+      "results/graph_flow_v1/development/synthetic_32_nonlinear_sampling.json": "f2e4d942a5d69a43be2e216665fdcc728af6219e734c9fa8d0ffeb84a0b9e8ac",
+      "results/graph_flow_v1/development/synthetic_64_nonlinear_sampling.json": "03d7ea242339d214ac4f7f3dd1b28ffd29ebfec043805ffd8a09bc9ba2cc5786",
+      "results/graph_flow_v1/development/intel_sampling.json": "bbc85688e39551c4b3091df1fc4cce92b472751597d195b2e2a7360499c3b16e",
+      "results/graph_flow_v1/development/skab_sampling.json": "21f1f86f41f64b0032ff456b8b4bbc9f30e662aeaaa037fcc5b1a4e6a29e4d38"
+    },
+    "outputs": {
+      "paper/figures/graph_flow/equations.pdf": "7809cd2b6e8d16fff312007b8fca91a7e8439ac919dd2fc1f10d99c81a191b38",
+      "paper/figures/graph_flow/equations.svg": "be2d56043a94d5c387b0b11dc1407d1cdcb0abb4628c977ce0bac2ebb4bbd1cd",
+      "paper/figures/graph_flow/equations.png": "2b288c1080e9e8def662ac499e6c6f418a2fcfa7e08750912b822cc508a9d752"
+    },
+    "details": {
+      "development_cost_scope": "Includes optional offline distribution metrics. Runtime panel excludes all reference-truth metrics."
+    }
+  }
+}

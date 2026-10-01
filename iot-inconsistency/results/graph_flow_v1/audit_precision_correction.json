@@ -1,0 +1,24 @@
+{
+  "recorded_utc": "2026-10-01T02:38:27.453076+00:00",
+  "scope": "Independent audit precision correction only",
+  "first_job": {
+    "name": "graph_flow_final",
+    "started": "2026-10-01T02:02:24.442560+00:00",
+    "failed": "2026-10-01T02:36:00.312729+00:00",
+    "stage": "audit",
+    "error": "AssertionError in compact score replay"
+  },
+  "cause": "SciPy logsumexp retained float32 normal-log-density inputs; production score_candidates promotes these values to float64 before ensemble reduction.",
+  "first_diagnostic": {
+    "files_above_1e_minus_7": 3140,
+    "maximum_absolute_error": 2.566152033978142e-05
+  },
+  "correction": "Explicit float64 casts in the independent replay, with identical stored inputs and unchanged tolerances.",
+  "predictions_changed": false,
+  "models_changed": false,
+  "calibration_changed": false,
+  "protocol_lock_changed": false,
+  "original_auditor": "src/iot_repair/flow_audit.py",
+  "corrected_auditor": "scripts/audit_graph_flow_production.py",
+  "corrected_auditor_sha256": "cc10f65ec432c8722bbb06fe61d8b34787f0e69ef7c405841c9acb52eb356245"
+}

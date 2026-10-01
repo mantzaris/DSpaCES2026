@@ -8,10 +8,12 @@
     "evidence": [
       "results/graph_flow_v1/reference_checks.json",
       "results/graph_flow_v1/numerical_cpu.xml",
-      "results/graph_flow_v1/pilot.json"
+      "results/graph_flow_v1/pilot.json",
+      "results/graph_flow_v1/production_equation_audit.json",
+      "results/graph_flow_v1/publication_audit.json"
     ],
-    "production_evidence_expected": "results/graph_flow_v1/production_equation_audit.json",
-    "production_status": "pending full benchmark execution"
+    "production_status": "executed and independently audited",
+    "numerical_limits": "See equation_audit_graph_flow.md. Monte Carlo integration and fitted-model validity are distinct from arithmetic agreement."
   },
   {
     "study": "graph_flow_v1",
@@ -22,10 +24,12 @@
     "evidence": [
       "results/graph_flow_v1/reference_checks.json",
       "results/graph_flow_v1/numerical_cpu.xml",
-      "results/graph_flow_v1/pilot.json"
+      "results/graph_flow_v1/pilot.json",
+      "results/graph_flow_v1/production_equation_audit.json",
+      "results/graph_flow_v1/publication_audit.json"
     ],
-    "production_evidence_expected": "results/graph_flow_v1/production_equation_audit.json",
-    "production_status": "pending full benchmark execution"
+    "production_status": "executed and independently audited",
+    "numerical_limits": "See equation_audit_graph_flow.md. Monte Carlo integration and fitted-model validity are distinct from arithmetic agreement."
   },
   {
     "study": "graph_flow_v1",
@@ -36,10 +40,16 @@
     "evidence": [
       "results/graph_flow_v1/reference_checks.json",
       "results/graph_flow_v1/numerical_cpu.xml",
-      "results/graph_flow_v1/pilot.json"
+      "results/graph_flow_v1/pilot.json",
+      "results/graph_flow_v1/protocol_lock.json",
+      "results/graph_flow_v1/development/synthetic_32_nonlinear_members.json",
+      "results/graph_flow_v1/development/skab_members.json",
+      "results/graph_flow_v1/development/synthetic_32_linear_members.json",
+      "results/graph_flow_v1/development/synthetic_64_nonlinear_members.json",
+      "results/graph_flow_v1/development/intel_members.json"
     ],
-    "production_evidence_expected": "results/graph_flow_v1/production_equation_audit.json",
-    "production_status": "pending full benchmark execution"
+    "production_status": "GPU training executed with saved loss and development-selection histories",
+    "numerical_limits": "See equation_audit_graph_flow.md. Monte Carlo integration and fitted-model validity are distinct from arithmetic agreement."
   },
   {
     "study": "graph_flow_v1",
@@ -50,10 +60,12 @@
     "evidence": [
       "results/graph_flow_v1/reference_checks.json",
       "results/graph_flow_v1/numerical_cpu.xml",
-      "results/graph_flow_v1/pilot.json"
+      "results/graph_flow_v1/pilot.json",
+      "results/graph_flow_v1/production_equation_audit.json",
+      "results/graph_flow_v1/publication_audit.json"
     ],
-    "production_evidence_expected": "results/graph_flow_v1/production_equation_audit.json",
-    "production_status": "pending full benchmark execution"
+    "production_status": "executed and independently audited",
+    "numerical_limits": "See equation_audit_graph_flow.md. Monte Carlo integration and fitted-model validity are distinct from arithmetic agreement."
   },
   {
     "study": "graph_flow_v1",
@@ -64,10 +76,12 @@
     "evidence": [
       "results/graph_flow_v1/reference_checks.json",
       "results/graph_flow_v1/numerical_cpu.xml",
-      "results/graph_flow_v1/pilot.json"
+      "results/graph_flow_v1/pilot.json",
+      "results/graph_flow_v1/production_equation_audit.json",
+      "results/graph_flow_v1/publication_audit.json"
     ],
-    "production_evidence_expected": "results/graph_flow_v1/production_equation_audit.json",
-    "production_status": "pending full benchmark execution"
+    "production_status": "executed and independently audited",
+    "numerical_limits": "See equation_audit_graph_flow.md. Monte Carlo integration and fitted-model validity are distinct from arithmetic agreement."
   },
   {
     "study": "graph_flow_v1",
@@ -78,10 +92,12 @@
     "evidence": [
       "results/graph_flow_v1/reference_checks.json",
       "results/graph_flow_v1/numerical_cpu.xml",
-      "results/graph_flow_v1/pilot.json"
+      "results/graph_flow_v1/pilot.json",
+      "results/graph_flow_v1/production_equation_audit.json",
+      "results/graph_flow_v1/publication_audit.json"
     ],
-    "production_evidence_expected": "results/graph_flow_v1/production_equation_audit.json",
-    "production_status": "pending full benchmark execution"
+    "production_status": "executed and independently audited",
+    "numerical_limits": "See equation_audit_graph_flow.md. Monte Carlo integration and fitted-model validity are distinct from arithmetic agreement."
   },
   {
     "study": "graph_flow_v1",
@@ -92,10 +108,12 @@
     "evidence": [
       "results/graph_flow_v1/reference_checks.json",
       "results/graph_flow_v1/numerical_cpu.xml",
-      "results/graph_flow_v1/pilot.json"
+      "results/graph_flow_v1/pilot.json",
+      "results/graph_flow_v1/production_equation_audit.json",
+      "results/graph_flow_v1/publication_audit.json"
     ],
-    "production_evidence_expected": "results/graph_flow_v1/production_equation_audit.json",
-    "production_status": "pending full benchmark execution"
+    "production_status": "executed and independently audited",
+    "numerical_limits": "See equation_audit_graph_flow.md. Monte Carlo integration and fitted-model validity are distinct from arithmetic agreement."
   },
   {
     "study": "graph_flow_v1",
@@ -106,10 +124,12 @@
     "evidence": [
       "results/graph_flow_v1/reference_checks.json",
       "results/graph_flow_v1/numerical_cpu.xml",
-      "results/graph_flow_v1/pilot.json"
+      "results/graph_flow_v1/pilot.json",
+      "results/graph_flow_v1/production_equation_audit.json",
+      "results/graph_flow_v1/publication_audit.json"
     ],
-    "production_evidence_expected": "results/graph_flow_v1/production_equation_audit.json",
-    "production_status": "pending full benchmark execution"
+    "production_status": "executed and independently audited",
+    "numerical_limits": "See equation_audit_graph_flow.md. Monte Carlo integration and fitted-model validity are distinct from arithmetic agreement."
   },
   {
     "study": "graph_flow_v1",
@@ -120,10 +140,12 @@
     "evidence": [
       "results/graph_flow_v1/reference_checks.json",
       "results/graph_flow_v1/numerical_cpu.xml",
-      "results/graph_flow_v1/pilot.json"
+      "results/graph_flow_v1/pilot.json",
+      "results/graph_flow_v1/production_equation_audit.json",
+      "results/graph_flow_v1/publication_audit.json"
     ],
-    "production_evidence_expected": "results/graph_flow_v1/production_equation_audit.json",
-    "production_status": "pending full benchmark execution"
+    "production_status": "executed and independently audited",
+    "numerical_limits": "See equation_audit_graph_flow.md. Monte Carlo integration and fitted-model validity are distinct from arithmetic agreement."
   },
   {
     "study": "graph_flow_v1",
@@ -134,10 +156,12 @@
     "evidence": [
       "results/graph_flow_v1/reference_checks.json",
       "results/graph_flow_v1/numerical_cpu.xml",
-      "results/graph_flow_v1/pilot.json"
+      "results/graph_flow_v1/pilot.json",
+      "results/graph_flow_v1/production_equation_audit.json",
+      "results/graph_flow_v1/publication_audit.json"
     ],
-    "production_evidence_expected": "results/graph_flow_v1/production_equation_audit.json",
-    "production_status": "pending full benchmark execution"
+    "production_status": "executed and independently audited",
+    "numerical_limits": "See equation_audit_graph_flow.md. Monte Carlo integration and fitted-model validity are distinct from arithmetic agreement."
   },
   {
     "study": "graph_flow_v1",
@@ -148,10 +172,12 @@
     "evidence": [
       "results/graph_flow_v1/reference_checks.json",
       "results/graph_flow_v1/numerical_cpu.xml",
-      "results/graph_flow_v1/pilot.json"
+      "results/graph_flow_v1/pilot.json",
+      "results/graph_flow_v1/production_equation_audit.json",
+      "results/graph_flow_v1/publication_audit.json"
     ],
-    "production_evidence_expected": "results/graph_flow_v1/production_equation_audit.json",
-    "production_status": "pending full benchmark execution"
+    "production_status": "executed and independently audited",
+    "numerical_limits": "See equation_audit_graph_flow.md. Monte Carlo integration and fitted-model validity are distinct from arithmetic agreement."
   },
   {
     "study": "graph_flow_v1",
@@ -162,9 +188,13 @@
     "evidence": [
       "results/graph_flow_v1/reference_checks.json",
       "results/graph_flow_v1/numerical_cpu.xml",
-      "results/graph_flow_v1/pilot.json"
+      "results/graph_flow_v1/pilot.json",
+      "results/graph_flow_v1/production_equation_audit.json",
+      "results/graph_flow_v1/publication_audit.json",
+      "results/graph_flow_v1/intel/flow_ratio_repair_rows.json",
+      "results/graph_flow_v1/skab/flow_ratio_repair_rows.json"
     ],
-    "production_evidence_expected": "results/graph_flow_v1/production_equation_audit.json",
-    "production_status": "pending full benchmark execution"
+    "production_status": "executed and independently audited",
+    "numerical_limits": "See equation_audit_graph_flow.md. Monte Carlo integration and fitted-model validity are distinct from arithmetic agreement."
   }
 ]

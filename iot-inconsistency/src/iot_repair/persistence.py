@@ -8,6 +8,18 @@ LABELS=['Sensor','Channel','ObservationWindow','AssociationVersion','Disagreemen
 
 
 def transaction(statements,url=DEFAULT_URL):
+    # Neo4j forbids schema changes and data writes in one transaction. Keep the
+    # response order while committing schema setup before the evidence batch.
+    schema=[s for s in statements if s['statement'].lstrip().upper().startswith(('CREATE CONSTRAINT','CREATE INDEX'))]
+    if schema and len(schema)!=len(statements):
+        schema_result=transaction(schema,url)
+        data=[s for s in statements if s not in schema]
+        data_result=transaction(data,url)
+        ordered=[];si=di=0
+        for item in statements:
+            if item in schema:ordered.append(schema_result[si]);si+=1
+            else:ordered.append(data_result[di]);di+=1
+        return ordered
     request=urllib.request.Request(url,data=json.dumps({'statements':statements}).encode(),headers={'Content-Type':'application/json'})
     with urllib.request.urlopen(request,timeout=30) as response:result=json.load(response)
     if result.get('errors'):raise RuntimeError(json.dumps(result['errors']))

@@ -40,3 +40,10 @@ results/**/*.tmp
 *.synctex.gz
 /results/graph_flow_v1/.*.lock
 /results/graph_flow_v1/development/*.log
+# Full case files stay local. Publication bundles keep exact JSON and explicitly
+# named compact arrays, with original hashes and an audited omission inventory.
+/results/graph_flow_v1/*/calibration/
+/results/graph_flow_v1/*/test/
+/results/graph_flow_v1/compact/
+/results/graph_flow_v1/evidence/*.npz
+/paper/figures/graph_flow/*.png

@@ -1,262 +1,269 @@
 \documentclass[conference]{IEEEtran}
 \usepackage{amsmath,amssymb,booktabs,graphicx,microtype,url,xcolor}
 \usepackage[hidelinks]{hyperref}
-\hypersetup{pdftitle={Testing Sensor and Association Repairs with Separate Witness Evidence in IoT Networks},pdfauthor={Alexander V. Mantzaris}}
+\hypersetup{pdftitle={Graph Conditional Flows for Sensor Fault Testing and Repair},pdfauthor={Alexander V. Mantzaris}}
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\1}{\mathbf{1}}
-\newcommand{\method}{witness repair}
-\input{generated/numbers.tex}
-\title{Testing Sensor and Association Repairs with Separate Witness Evidence in IoT Networks}
+\newcommand{\LME}{\operatorname{LME}}
+\renewcommand{\theequation}{E\arabic{equation}}
+\input{generated/graph_flow/numbers.tex}
+\title{Graph Conditional Flows for Sensor Fault Testing and Repair}
 \author{\IEEEauthorblockN{Alexander V. Mantzaris}
 \IEEEauthorblockA{School of Data, Mathematical and Statistical Sciences\\University of Central Florida\\Orlando, FL, USA\\alexander.mantzaris@ucf.edu}}
 \begin{document}
 \maketitle
-\StudyStatus
 \begin{abstract}
-A sensor disagreement can arise from an incorrect reading, a changed physical process, or an association that no longer predicts well. A repair that makes a detector quieter does not by itself distinguish these explanations. We test proposed reading replacements and association masks against separate measurements that remain unchanged. A conditional diffusion model proposes replacements without seeing the witness targets. Independently trained models then measure the change in witness prediction loss. The ranking retains separate terms for mean gain, model disagreement and edit cost. We implement and audit these equations in a batched GPU pipeline, compare them with principal component reconstruction, graph forecasting, diffusion residuals and deterministic repairs, and evaluate three dataset families. Native SKAB process events remain separate from injected sensor and association faults. \input{generated/abstract_results.tex} Versioned graph records and a conventional node-link view make each finding inspectable. The study identifies where repair evidence is useful and where simpler residuals or abstention remain preferable.
+An unusual sensor interval can reflect an incorrect measurement or a legitimate process change. We test fault localization with a neural normalizing flow conditioned on history and other physical sources through a predictive graph. GPU-generated reference intervals pass through normalized bias, drift, noise and stuck-reading channels. Integrating these possibilities gives a fault density whose ratio to the ordinary flow density supplies the detection score. Weighted generations provide conditional repairs. Comparators include PCA, the identical flow's likelihood, matched probabilistic PCA and the author GANF implementation. The fixed protocol covers a synthetic family, Intel Berkeley and SKAB, with sensor injections separate from native process events. \input{generated/graph_flow/abstract_results.tex} Versioned graph evidence and a sensor network view expose useful explanations and failures.
 \end{abstract}
 \begin{IEEEkeywords}
-IoT data quality, sensor monitoring, fault attribution, diffusion models, evidence provenance
+sensor data quality, conditional generation, fault localization, likelihood ratio, repair uncertainty
 \end{IEEEkeywords}
 
 \section{Introduction}
-Digital twins and shared data spaces rely on measurements whose meaning can change over time. A temperature reading may drift, a flow sensor may stop updating, or a learned relation between pressure and flow may become outdated after a process change. These situations can produce similar detector alarms while calling for different operator responses. An alert that identifies a surprising measurement is useful. A review record that also states what evidence supports a particular explanation is useful for a different reason.
+Distributed sensing connects physical measurements to digital twins and shared data spaces. Surprise alone does not identify a broken sensor. A coordinated physical change can be rare while every sensor reports it correctly. A stuck interval can be wrong without having an extreme value. Operators need evidence about named measurements and proposed changes.
 
-We examine a simple question. If a suspect reading were replaced, would that change improve predictions of other measurements that the replacement procedure did not see? We ask the same question about masking a stored predictive association. The supporting measurements are called witnesses. They are fixed before either prediction is scored. Their values are never repaired to make a hypothesis appear successful.
+The normal explanation treats the recorded interval as a conditional model draw. The fault explanation generates an uncorrupted interval and passes it through a measurement corruption channel. Integrating over plausible references gives a likelihood ratio and weighted repair distribution. Supporting sensors are conditioning information, not independent withheld witnesses. Predictive edges do not establish causation.
 
-This separation addresses a weakness in evaluating a repair only through the detector that proposed it. A replacement can reduce its own reconstruction error or change a classifier decision without providing independent evidence that the proposed diagnosis is correct. We instead require a measurable improvement on unchanged targets from other sources. This is an evidence test under a fitted model. It is not a physical intervention or a proof of causality.
+Our primary hypothesis H1 is that this integrated score improves sensor-interval average precision over both a development-selected PCA detector and ordinary negative log likelihood from the identical flow. H2 asks whether a flexible neural distribution improves on conditional Gaussian or probabilistic PCA models using the same corruption channels. H3 asks whether a separately selected recommendation policy increases useful repair coverage at a controlled failure rate. H3 is secondary and cannot replace an unsupported detection claim.
 
-The distinction matters for shared sensor data. Several records may be copies of one device's message. Several channels may belong to the same device. Counting them as independent witnesses can give a misleading impression of support. Our pipeline canonicalizes known copies before model inputs are constructed and groups witness evidence by its physical source. Distinct source identifiers still do not imply statistical independence.
-
-The study contributes an executable evidence-separation procedure for comparing observation and association hypotheses, an empirical examination of every term in its ranking, and a versioned review interface linked to the saved evidence. We test a penalized score rather than presuming that each penalty helps. The strongest eligible comparator is selected using development data before the final evaluation. Native process alerts have a separate decision path so an unresolved repair does not suppress an event alarm.
+The contribution is an audited empirical procedure with tests of inaccessible targets, mismatched faults and corrupted context. The earlier diffusion witness study is preserved and rerun on shared cases. Fresh synthetic trajectories provide new simulator tests. Previously examined real partitions provide prospective injection tests, not untouched field validation.
 
 \section{Related Work}
-Principal component analysis offers a well established residual approach to multivariate monitoring~\cite{pca}. Its reconstruction identifies departures from a fitted linear subspace. It is inexpensive and can localize large sensor contributions. A temporal embedding gives this baseline access to recent history, although the reconstruction remains linear.
+PCA residuals are established monitoring tools~\cite{pca}. Probabilistic PCA and its mixture extension supply normalized distributions, generation and uncertainty~\cite{ppca,mppca}. Neural benefits must therefore be measured against these probabilistic repair alternatives.
 
-GDN learns sensor embeddings, selects neighbors through their similarity, and uses graph attention for forecasting~\cite{gdn}. Its per-sensor forecast deviations already support localization. Our comparison retains those capabilities. The additional question here is whether a reading edit or stored relation mask improves separate witness predictions. Hara et al. localize anomalies through dependency graph differences and give consistency results under their assumptions~\cite{hara}. Their result does not provide a general guarantee for the finite repair scores studied here.
+GANF combines recurrence, learned graphs and flows for anomaly detection~\cite{ganf}. MTGFlow studies dynamic graphs and entity-specific densities~\cite{mtgflow}. Recent work examines departures in conditional-flow latent dynamics~\cite{latentflow}. We use unchanged author GANF classes with documented evaluation adapters. Our affine couplings follow established constructions~\cite{realnvp}. Neither graph conditioning nor invertibility is new here.
 
-CSDI establishes conditional diffusion for time-series imputation and evaluates predictive distributions with the continuous ranked probability score~\cite{csdi}. DiffAD uses selected observations, increasing conditioning weights and a multiscale state-space denoiser for anomaly detection~\cite{diffad}. TSAD-C combines diffusion decontamination with temporal and graph reconstruction~\cite{tsadc}. Thus, neither diffusion nor its combination with sensor graphs constitutes the contribution of this paper.
+Likelihood ratios for distributional anomalies have substantial precedent~\cite{ratio}. Bayesian sensor diagnosis predates neural flows~\cite{bayesfault}, and particle filtering integrates uncertain latent system states when assessing sensor fault explanations~\cite{wright}. A flow prior combined with a structured noise likelihood has also been used for inverse recovery~\cite{whang}. These are close conceptual predecessors. Our study evaluates a particular combination of masked graph context, normalized short-block corruption channels, marginal likelihood comparison and weighted repair. We do not claim invention of likelihood ratios or Bayes' rule.
 
-Shi et al. explain graph detector decisions using selected sensor perturbations and an edit penalty~\cite{shi}. CAGAD uses diffusion to construct counterfactual graph information and improve anomaly representations~\cite{cagad}. These approaches motivate a careful distinction between changing a detector's output and validating a proposed edit against measurements excluded from its construction. Our procedure makes the latter separation explicit and audits it at the model input boundary.
+CSDI and PriSTI generate conditional imputations~\cite{csdi,pristi}. ImDiffusion uses diffusion imputation for anomaly detection~\cite{imdiffusion}, and GDN uses graph-based forecast deviations~\cite{gdn}. We retain GDN and documented diffusion comparators. Our earlier procedure tested repairs against excluded witness measurements. The present conditional likelihood method does not inherit that independence claim. A source comparison matrix records implementation differences.
 
-Calibration also has established foundations. Recent work uses latent features to improve anomaly thresholding without optimizing on test labels~\cite{xu}. Ordinary rank-tail calibration supplies a useful reference comparison when its score units satisfy the required assumptions~\cite{conformal}. We report its empirical behavior under temporal dependence and changed conditions. Following concerns identified in systematic benchmarking~\cite{benchmark}, we avoid point adjustment and do not infer a universal advantage from a favorable injected example.
+\section{Conditional Fault Explanations}
+\subsection{Candidate population and allowed information}
+A candidate $h$ names one channel and its final eight completed observations in a 64-step window. The window stride is 32. Let $y_h\in\mathbb R^{D_h}$ be the recorded target block and $z_h$ a possible uncorrupted noisy measurement. The primary implementation requires all $D_h=8$ target values. An unavailable target receives an availability flag and a common ranking floor, so excluded faults remain misses. It is never filled with zero and evaluated as a complete density.
 
-\section{Repair Evidence}
-\subsection{Inputs and predictive associations}
-Let $X$ contain a decision window with $C$ channels and $T$ time steps. An availability mask records which values were observed. Each channel has a physical source identifier. We use only data available by the end of the decision window. Training medians $m_i$ and interquartile ranges determine the normalization
+Training medians and interquartile scales normalize each channel. Missing context has an explicit mask. We remove the candidate source's target interval from all channels belonging to that physical source before computing temporal features, lagged inputs or graph messages. Earlier observations of that source remain allowed. Known copies of the same measurement are canonicalized before input construction. Tests alter hidden values and aliases while holding latent draws fixed. The context and generated prior must remain unchanged, although the evaluated target density should change.
+
+The frozen graph $G$ contains predictive associations selected using training and development data. Each edge stores direction, lag, units, training correlation and development support. The encoder uses up to three incoming channels from distinct other source groups, a shared gated recurrent unit, source embeddings and a masked mean of graph messages. Its context vector is $c_h=\operatorname{Encoder}_{\psi}(C_h,G)$. All data are available by the decision timestamp. Graph lags and recurrent steps count observations. They do not claim equal elapsed time in irregular recordings.
+
+\subsection{Neural density and actual generation}
+An invertible conditional flow maps a target block to a standard normal latent vector. With $f_\theta$ denoting the forward map,
 \begin{equation}
- z_{i,t}=\frac{x_{i,t}-m_i}{s_i},\qquad
- s_i=\max\{\operatorname{IQR}_{\mathrm{train},i},\epsilon_i\}.
- \label{eq:normalization}
+ \log p_\theta(y_h\mid c_h)=\log p_0(f_\theta(y_h;c_h))
+ +\log\left|\det\frac{\partial f_\theta}{\partial y_h}\right|.
 \end{equation}
-The training rule for $\epsilon_i$ is saved with each channel. An unavailable value is represented by a mask, never by an observed zero. Losses on normalized predictions use unit scale so the same measurement is not divided by its scale twice.
-
-A directed association stores a source, target, lag, sign and fitted coefficient. Arrows indicate prediction direction. They do not assert a causal link. Candidate relations are screened on training data with a sparse neighbor cap. A ridge predictor uses each relation's actual lag and sign. The development gain is
+The conditioner is fixed when this target Jacobian is evaluated. Alternating affine couplings have triangular Jacobians and bounded neural log scales. A conditional location and scale transform precedes them. Generation applies the inverse on the GPU,
 \begin{equation}
- G_a=\frac{1}{|J_a|}\sum_{t\in J_a}
- \left[(z_{j,t}-\bar z_j)^2-
- (z_{j,t}-\widehat f_a(z_{i,t-\tau_a}))^2\right].
- \label{eq:association}
+ \epsilon_h^{(m)}\sim\mathcal N(0,I),\qquad
+ z_h^{(m)}=f_\theta^{-1}(\epsilon_h^{(m)};c_h).
 \end{equation}
-The target set $J_a$ is fixed. We retain positive average gain with positive gain in at least three of four development folds. These checks favor repeatable predictive use but do not establish a physical relationship.
-
-\subsection{Proposal and witness separation}
-A hypothesis names either an observation interval to replace or one association to mask. Screening uses GDN sensor deviations and direct association residuals. It proposes at most four hypotheses of each type. This screening is part of the calibrated pipeline. A true fault that screening misses remains a miss in the attribution metrics.
-
-Witness selection uses frozen training affinity and current availability. For a reading hypothesis, it excludes the suspect physical source and chooses up to two other source groups. For an association hypothesis, it prioritizes its target and then another source group while excluding the source of the disputed relation. A selected group contributes one available channel and its observed target cells in the final eight steps.
-
-The proposal context excludes the edited reading interval and all channels from the withheld witness source groups over the target interval. The witness predictor also hides those witness intervals. Earlier context remains available. This prevents an alternate channel or a known copied message from revealing a hidden target. Only the loss calculation receives the actual witness values.
-
-We train independent conditional diffusion models with the usual masked noise objective
+These are numerical sensor trajectories. They enter both the fault score and the repair calculation below. The reference training objective is
 \begin{equation}
- \mathcal L_{\mathrm{denoise}}=
- \E\left[\frac{\sum_{i,t} H_{i,t}
- (\varepsilon_{i,t}-\varepsilon_\theta(\widetilde Z_s,s,C_H))^2}
- {\sum_{i,t} H_{i,t}}\right].
- \label{eq:diffusion}
+ \mathcal L_{\rm density}=-\frac{1}{N}\sum_{h=1}^{N}\log p_\theta(y_h\mid c_h).
 \end{equation}
-Here $H$ contains observed training targets and $C_H$ is the visible context. The encoder receives visible measurements, availability, lagged association predictions and their availability. A temporal multilayer network provides the denoiser. The architecture uses the established conditional objective but is not an exact CSDI architecture reproduction.
+Reference denotes the declared training population, not certified healthy instrumentation. Saved records contain masks, contexts, latent draws, generated intervals and model hashes for representative production cases.
 
-For each hypothesis, every model draws $M$ proposals. Observation proposals replace only eligible observed cells. Association proposals mask only the named relation during prediction. They do not remove its target channel or its loss. Each proposal produces paired predictions before and after the edit with $L$ draws per witness target. The model, witness identities, valid cells, horizon and normalizers stay fixed in the pair. Fresh inference randomness is used across replicates, with common noise within each before and after pair.
-
-\begin{figure*}[t]
- \centering\includegraphics[width=\textwidth]{figures/architecture.pdf}
- \caption{Executed dataflow. Witness target values reach the loss calculation through a separate path. They do not enter repair generation. Training and calibration artifacts are frozen before test evaluation. Model reads and graph persistence have distinct roles.}
+\begin{figure*}[!t]
+ \centering\includegraphics[width=\textwidth]{figures/graph_flow/architecture.pdf}
+ \caption{Executed dataflow. The recorded target reaches density and corruption evaluation but is removed from the generation context. Generated trajectories directly enter the marginal fault density and the weighted repair. Graph persistence stores evidence references after numerical scoring.}
  \label{fig:architecture}
 \end{figure*}
 
-\subsection{Losses and ranking}
-For predictive samples $y^{(1)},\ldots,y^{(L)}$ and an observed target $y$, the empirical continuous ranked probability score is
+\subsection{Normalized corruption channels}
+The normal explanation uses the flow density directly,
 \begin{equation}
- \ell=\frac{1}{s}\left[\frac{1}{L}\sum_l|y^{(l)}-y|
- -\frac{1}{2L^2}\sum_{l,l'}|y^{(l)}-y^{(l')}|\right].
- \label{eq:crps}
+ p_{{\rm normal},h}(y_h\mid C_h,G)=p_\theta(y_h\mid c_h).
 \end{equation}
-This established loss evaluates a predictive distribution~\cite{crps}. It reduces to scaled absolute error for a deterministic prediction. Our implementation uses the equivalent sorted-sample formula and verifies it against the pairwise expression above.
-
-For witness group $g$, the fixed cell set $J_g(h)$ gives
+The fault explanation uses a normalized mixture
 \begin{equation}
- L^{b/a}_{e,m,g}(h)=\frac{1}{|J_g(h)|}
- \sum_{(i,t)\in J_g(h)}\ell^{b/a}_{e,m,i,t}(h).
- \label{eq:group}
+ q_\phi(y\mid z)=\sum_{k=1}^{4}\pi_k\mathcal N(y;H_kz,R_k),
+ \qquad \pi_k=\tfrac14.
 \end{equation}
-The superscripts denote predictions before and after the proposed edit. An empty group is ineligible. A missing prediction is a failure or abstention. It cannot become a zero loss. The paired group improvement is
+For bias, drift and excess noise, $H_k=I$. For a stuck reading, $H_k=\1 e_1^T$, so the uncertain stuck level is centered on the first generated reference value. Let $s\in\{1,2\}$ be the development-selected scale and $r=0.25$ the fixed noise floor. The covariances are
+\[
+\begin{split}
+ R_{\rm bias}&=s^2\1\1^T+r^2I,\qquad
+ R_{\rm drift}=s^2tt^T+r^2I,\\
+ R_{\rm noise}&=s^2I,\qquad
+ R_{\rm stuck}=s^2\1\1^T+r^2I.
+\end{split}
+\]
+Here $t$ is the actual target timestamp ramp rescaled to $[-1,1]$. Bias and drift amplitudes are shared across the block. Independent amplitudes at every coordinate would be different models. Positive floors make each covariance positive definite. Cholesky-based determinants and quadratic forms give valid Gaussian densities. Dropout is an availability event and is not represented by a numeric corruption density.
+
+The marginal fault density and log ratio are
+\begin{align}
+ p_{{\rm fault},h}(y_h\mid c_h)&=\int q_\phi(y_h\mid z)p_\theta(z\mid c_h)\,dz, \\
+ S_h&=\log p_{{\rm fault},h}(y_h\mid c_h)-\log p_\theta(y_h\mid c_h).
+\end{align}
+Positive $S_h$ favors the declared fault model. It is not itself a calibrated probability or proof of sensor failure. With generated trajectories from (E2),
 \begin{equation}
- \Delta_{e,m,g}(h)=L^b_{e,m,g}(h)-L^a_{e,m,g}(h).
- \label{eq:delta}
+ \widehat S_h=\log\left[\frac{1}{M}\sum_{m=1}^{M}q_\phi(y_h\mid z_h^{(m)})\right]
+ -\log p_\theta(y_h\mid c_h).
 \end{equation}
-With equal weight for each unique eligible source group, the model and ensemble gains are
+We use stable log-sum-exp arithmetic. The logarithm of the average density is essential. Averaging log densities or taking the best generation does not implement this integral. The density estimate is unbiased under independent prior sampling, but its logarithm generally has downward bias.
+
+For $E$ equally weighted trained models with $M$ samples each,
 \begin{equation}
- R_e(h)=\frac{1}{M}\sum_m\sum_g w_g\Delta_{e,m,g}(h),
- \quad R(h)=\frac{1}{E}\sum_e R_e(h).
- \label{eq:gain}
+\begin{split}
+ \widehat S_{h,E}={}&\LME_{e,m}\bigl[\log q_\phi(y_h\mid z_h^{(e,m)})\bigr]\\
+ &-\LME_e\bigl[\log p_{\theta_e}(y_h\mid c_h)\bigr],
+\end{split}
 \end{equation}
-Model disagreement is the sample standard deviation
+where $\LME(a_1,\ldots,a_n)=\log(\sum_i\exp(a_i)/n)$. The ordinary-flow comparator is the negative second term's underlying mixture log density, using exactly the same checkpoints. An average of member log ratios is a separately labeled ablation.
+
+\subsection{Repair distribution and numerical adequacy}
+Bayes' rule under the fault explanation gives
 \begin{equation}
- U(h)=\sqrt{\frac{1}{E-1}\sum_e\left(R_e(h)-R(h)\right)^2}.
- \label{eq:instability}
+ p(z\mid y_h,c_h,H_{1,h})=
+ \frac{q_\phi(y_h\mid z)p_\theta(z\mid c_h)}{p_{{\rm fault},h}(y_h\mid c_h)}.
 \end{equation}
-It is not divided by $\sqrt E$. It measures stability across independently trained members rather than a proven posterior uncertainty. For $E=1$, this quantity is unavailable and we label the corresponding analysis uncertainty free.
-
-Observation edit cost combines its extent and magnitude
+For a uniform ensemble, we normalize $q_\phi(y_h\mid z_h^{(e,m)})$ over all generated members and samples to obtain weights $w_{e,m}$. Weighted means evaluate squared-error repair, and weighted medians and marginal quantiles are also retained. The reference truth never chooses a sample. A mean need not preserve a physical mode.
 \begin{equation}
- \Omega_o=\rho\frac{k}{N}+(1-\rho)\frac{1}{EMk}
- \sum_{e,m}\sum_{j\in H}
- \min\left\{\frac{|\widehat x^{e,m}_j-x_j|}{c s_j},1\right\}.
- \label{eq:cost}
+ \operatorname{ESS}_h=\left(\sum_{e,m}w_{e,m}^2\right)^{-1}.
 \end{equation}
-Here $k$ is the fixed number of edited observed cells and $N$ is the original observed window size. We use $\rho=0.5$ and $c=3$. A relation mask costs the number of masked associations divided by the original unique association count. These costs have different meanings and are calibrated separately. Dropout receives an explicit availability alarm and a numeric-edit abstention.
+An ESS below 16 prevents a repair recommendation but leaves the detection score in the evaluated population. Low ESS identifies poor importance-sampling resolution, not necessarily large physical uncertainty. Repeated sampling seeds and a finite draw grid diagnose this limitation separately from differences between trained models.
 
-The score used for ranking is
+We apply a proposed action to the full evaluated window. With normalized squared loss $L$ summed over observed cells and divided by eight, reference $y_j^\star$, acceptance $a_j$ and useful-improvement threshold $\delta=0.01$,
 \begin{equation}
- \boxed{S(h)=R(h)-\kappa U(h)-\lambda\Omega(h).}
- \label{eq:score}
+\begin{split}
+ \Delta_j&=L(y_j,y_j^\star)-L(\operatorname{repair}_j,y_j^\star),\\
+ F_j&=\1\{\text{wrong target}\ \text{or}\ \Delta_j\leq\delta\},\\
+ \operatorname{Coverage}&=\frac{\sum_j a_j}{n},\quad
+ \operatorname{Risk}=\frac{\sum_j a_jF_j}{\sum_j a_j}.
+\end{split}
 \end{equation}
-Negative scores are retained. Development data choose nonnegative $\kappa$ and $\lambda$ before calibration. As an illustrative arithmetic check only, $R=0.50$, $U=0.05$, $\Omega=0.10$, $\kappa=1$ and $\lambda=0.2$ give $S=0.43$. This example is not detector performance.
+A wrong-target action includes damage to previously correct measurements. Harmful edits have $\Delta_j<0$. No accepted action gives zero coverage and undefined risk. On real datasets the repair reference is the pre-injection recording, not unknown physical truth.
 
-The Monte Carlo diagnostic is separate from $U$. For $D_{e,m}=\sum_gw_g\Delta_{e,m,g}$, it is
-\begin{equation}
- \operatorname{SE}_{\mathrm{MC}}=
- \sqrt{\frac{1}{E^2}\sum_e\frac{\widehat{\operatorname{Var}}_m(D_{e,m})}{M}}.
- \label{eq:mc}
-\end{equation}
-It reports variability from the paired draws conditional on the fitted members. Before predictions are resampled for every replicate so this calculation includes their sampling variation.
+\section{Mathematical Checks and Limits}
+\subsection{Normalization and the ideal ratio}
+For fixed context, both the flow and every corruption channel are normalized on the same continuous target space. Nonnegativity permits exchanging integrals in (E6). Integrating first over $y$ yields $\int p_\theta(z\mid c)\,dz=1$. Thus the fault explanation is a normalized density. Quantized readings use a consistent continuous approximation for both explanations.
 
-\subsection{Calibration and separate process alerts}
-A frozen score $Z$ is compared with reference scores from $B$ calibration units using
-\begin{equation}
- p(Z)=\frac{1+\sum_{b=1}^{B}\1\{Z_b\geq Z\}}{B+1}.
- \label{eq:tail}
-\end{equation}
-Ties count in the upper tail. Candidate references use the same screening procedure and are separated by hypothesis type and source support. Window references instead rerun the complete procedure and retain the maximum eligible score of that type. A window with no eligible hypothesis receives a fixed floor and a separate insufficient-evidence flag.
+If the true healthy conditional law is exactly $p_{\rm normal}$ and $p_{\rm fault}$ is absolutely continuous with respect to it, then
+\[
+ \E_{H_0}[\exp(S_h)\mid c_h]=\int p_{\rm fault}(y\mid c_h)\,dy=1.
+\]
+Markov's inequality implies $\Pr_{H_0}(S_h\geq\log(1/\alpha)\mid c_h)\leq\alpha$. This is an established likelihood-ratio consequence. Density error, context contamination and distribution shift can invalidate its use for a fitted detector. A maximum across candidates does not inherit this single-candidate bound. A fixed convex mixture of valid ratios retains the ideal expectation property by linearity, but weights selected from the tested observation need separate justification. Our operational alarms therefore calibrate the actual maximum over all candidates.
 
-The tail value is not a fault probability. Where labeled calibration examples are available, a disjoint set of whole blocks fits a logistic map
-\begin{equation}
- q(h)=\sigma(a\widetilde S(h)+b).
- \label{eq:probability}
-\end{equation}
-The centering and scale of $\widetilde S$ are fitted on that calibration fold. Each map describes one injected fault type against unmodified references, not exclusive diagnosis among competing fault types. We report probability error and its prevalence dependence. A separate supervised comparator combines $R$, $U$ and $\Omega$ using only development labels.
+\subsection{Gaussian reference and units}
+For $z\sim\mathcal N(\mu,\Sigma)$ and $y=z+\eta$ with independent $\eta\sim\mathcal N(0,R)$, Gaussian convolution gives $p_{\rm fault}(y)=\mathcal N(y;\mu,\Sigma+R)$. Subtracting normal log densities gives
+\[
+ S=-\tfrac12\log\frac{|\Sigma+R|}{|\Sigma|}
+ +\tfrac12(y-\mu)^T[\Sigma^{-1}-(\Sigma+R)^{-1}](y-\mu).
+\]
+Completing the square gives repair mean $\mu+\Sigma(\Sigma+R)^{-1}(y-\mu)$ and covariance $\Sigma-\Sigma(\Sigma+R)^{-1}\Sigma$. Replacing $z$ by $H_kz$ extends the formula to every channel in (E5). Conditional PPCA uses these exact integrations and mixture posterior weights. It therefore tests the same fault knowledge without neural Monte Carlo integration.
 
-Finally, the conventional process alert and attribution decision are distinct
-\begin{equation}
- A_t=\1\{p_{\mathrm{process},t}\leq\alpha\},\qquad
- B_h=\1\{|\mathcal G_h|\geq2,\ p_h\leq\alpha\}.
- \label{eq:decision}
-\end{equation}
-The process path uses a calibrated conventional window residual, with GDN as the review system's default. It retains an alert when every repair hypothesis abstains. Failed repair evidence does not prove that an event is physical. It can remain unresolved.
+For a common invertible coordinate change $u=g(y)$, consistently transformed normal and fault densities both acquire $|\det Dg^{-1}(u)|$. Their ratio is unchanged. This is a statement about transforming the same two distributions, not retraining on arbitrary scales or changing the corruption prior. Numerical tests include a non-diagonal affine change of units.
 
-\section{Properties and Limits}
-\textit{Known-copy invariance.} Suppose exact copies have known identities, conflicting copies are rejected, and canonicalization occurs before model inputs and witness aggregation. Fix the model parameters, unique observations and inference randomness. Adding known copies then leaves the score unchanged. Canonicalization first returns the same ordered input matrix and association messages. The proposal and prediction distributions therefore coincide. Unique witness cells and group weights also coincide, giving the same losses, $R$ and $U$. The unique edit set and original unique graph preserve $\Omega$, so Eq.~\eqref{eq:score} is unchanged. If deduplication is applied only after prediction, the conclusion need not hold because repeated upstream messages may already have changed the predictions.
+\subsection{Identifiability}
+Consider two sensors reporting a common process $x_t$. A genuine change to $x_t+a_t$ gives observations $(x_t+a_t,x_t+a_t)$. An unchanged process with additive failure $a_t$ in both sensors gives the identical observations. No function of these measurements can distinguish the explanations without further information. The stress study constructs and stores such paired observations and distinct latent truth. The ambiguity label denotes this known counterexample. It does not claim that the detector recognizes every ambiguous situation.
 
-\textit{Penalty behavior.} Holding the predictive evidence fixed gives $\partial S/\partial\lambda=-\Omega$ and $\partial S/\partial\kappa=-U$. For two hypotheses, the first ranks above the second exactly when its gain advantage exceeds $\kappa$ times its disagreement difference plus $\lambda$ times its cost difference. These identities describe the formula. They do not establish that either penalty improves classification. Our ablations directly test that question.
+\section{Experimental Protocol}
+\subsection{Datasets, independence and candidates}
+Table~\ref{tab:data} gives the complete final candidate population. S32L, S32N and S64N are linear 32-channel, nonlinear 32-channel and nonlinear 64-channel configurations of one coupled synthetic family. They share a simulator design and are not counted as independent datasets. New final trajectories separate latent process state, uncorrupted noisy measurements and injected corruption. The last two of twelve final trajectories use the predeclared operating-regime shift. The linear setting is retained.
 
-\textit{Conditional rank validity.} For a frozen complete pipeline and exchangeable calibration and test score units under the stated reference population, Eq.~\eqref{eq:tail} is super-uniform by the standard rank argument. Among the $B+1$ exchangeable scores, the test score's descending rank is uniform in the absence of ties. Counting ties conservatively can only increase the tail value. This is established conformal reasoning~\cite{conformal}, not a new guarantee for dependent sensor streams. A candidate reference and a window-maximum reference define different units. Neither supplies unlimited-horizon false-alarm control. Temporal spacing by itself does not establish exchangeability.
+Intel contains 48 channels from twelve physical motes with temperature, humidity, light and voltage measurements~\cite{intel}. Completed five-minute bins preserve availability without interpolation. Chronological splits and gaps remain unchanged. SKAB retains eight sensor/process channels and experiment-level splits~\cite{skab}. Native process-event labels remain a separate task. Only reference windows without native events supply controlled fault cases. Training-only scaling and physical-source groups are reused throughout.
 
-An identifiability limit remains even with exact computation. Let one physical process produce measurements $x$ and another produce $x'$. The second set is also explained by the first process with coordinated sensor errors $x'-x$. The observed data are identical under both stories. Any procedure receiving only those measurements and the same prior associations returns the same result for both. Reliable attribution consequently needs informative redundancy, sufficiently reliable conditioning sources and an adequate predictive model. The experiments include this construction and a changed physical response that makes stored relations stale.
+Every real partition had informed the preceding study. New injections do not establish transfer to untouched environments. No test observation moves into training. Synthetic training, development and calibration retain earlier sources so the legacy comparator has the same training opportunity.
 
-\section{Experimental Design}
-\subsection{Data and label scope}
-We retain three primary dataset families. The simulator has stable coupled latent dynamics, delayed measurements, positive and negative response signs, heterogeneous units, correlated noise and smooth nonlinear responses. A matched linear configuration favors linear alternatives. We use 32-channel linear and nonlinear configurations and a 64-channel nonlinear configuration. Training, development, calibration and test use independent trajectories. A larger operating-regime shift appears only in the final two test trajectories. Latent states and clean measurements are saved.
+We sample reference windows by source block, then create one unchanged copy and four fault copies. Development and calibration use bias, drift, excess noise and stuck readings. Each final reference has two known-family faults and two held-out-family faults, rotating across spike, scale, replay and delay. Final severities are new draws from the frozen range. Candidate labels require an actual change in an observed target coordinate. Wholly unobservable injection attempts remain availability outcomes. Other physical sources are unchanged by primary injections. This does not certify that real supporting recordings are physically fault-free.
 
-Intel Berkeley contains irregular environmental measurements from physical motes~\cite{intel}. We select 12 motes using training availability and retain their temperature, humidity, light and voltage channels. Measurements are aggregated within completed five-minute bins. The decision timestamp is the right boundary of the bin. We do not interpolate missing values. Chronological partitions have gaps of 64 bins. Raw timestamps and source records remain available. Intel does not supply comprehensive sensor-fault truth, so our controlled task identifies added corruptions relative to unadjudicated measured reference windows.
+\input{generated/graph_flow/data_table.tex}
 
-SKAB contains 34 labeled experiments and one anomaly-free file with eight process channels~\cite{skab}. Entire experiments are assigned to partitions. Native labels identify process anomalies. They are never converted into broken-sensor labels. The controlled attribution track uses held-out windows with normal native labels and adds separate observation or association faults. The native track evaluates the full test experiments independently.
+\subsection{Development selection and comparators}
+The flow grid crosses two width/layer pairs, $(32,4)$ and $(64,6)$, with context lengths 32 and 56. Each fit uses 600 AdamW steps, batches of 128, learning rate 0.001 and weight decay 0.0001. Normal development likelihood selects checkpoints and capacity. Three fixed seeds form one density-mixture ensemble, not three ensemble repetitions. S32N and SKAB learning curves use one quarter, one half and all training blocks. Table~\ref{tab:runtime} gives model and training sizes.
 
-\input{generated/datasets_table.tex}
+Development also selects between corruption scales 1 and 2. The draw grid is $M\in\{32,128,512,2048\}$. We choose the smallest budget whose 95th percentile absolute score difference from the 2048-draw reference is at most 0.25 and rank correlation is at least 0.98, or use the maximum if no smaller budget passes. These are finite numerical diagnostics, not exact-integration guarantees. Separate sampling seeds test repeatability. All choices, data hashes and numerical source hashes are locked before final scoring.
 
-Each controlled base window has an unmodified copy, one observation-fault copy and one association-fault copy in the same partition. Observation faults include offset, drift, stuck values, spikes, noise and coordinated changes. Replay, scale changes and delays are held-out families. Strength and duration vary. Missingness is a separate availability track. Association faults permute paired endpoints, lags, signs or parameter tuples. These permutations preserve degree counts and marginal attribute distributions. A metadata-only classifier tests remaining joint-distribution shortcuts. Parameter-version mismatch is reported as a surrogate, separately from the physical response-change experiment.
+PCA retains current and four-lag reconstruction with ranks 2, 4, 8 and 16 where valid. Development candidate AP selects the model. Its score averages current-channel squared reconstruction residual over the same eight-step target. Window maxima and the conventional full residual norm remain separately stored. Conditional PPCA and two-component mixture PPCA use ranks 2, 4 or 8 selected by normal development likelihood. They condition on the same graph-restricted observations and apply exactly the same $q_\phi$. An all-channel PPCA variant is named separately. Missing context is marginalized during conditional evaluation. Training context is mean-filled for parameter estimation, which is a limitation when missingness is informative.
 
-\subsection{Comparators and implementation}
-PCA fits its own training mean after robust normalization. We evaluate current and four-step lag embeddings, choose rank on development data and exclude full-rank reconstruction. The frozen common protocol takes the maximum standardized current-coordinate reconstruction contribution, matching the graph detector's aggregation. A final formula audit also evaluates the conventional total squared reconstruction error and mean contributions over all embedded sensor coordinates. These supplemental results retain the original primary comparison. GDN uses the verified one-head attention architecture with learned embeddings, neighbor selection, multiplicative output embeddings and batch normalization. Its test-based normalization and test-optimal threshold paths are replaced by the shared protocol.
+The GANF comparison imports the authors' unchanged recurrent, graph and autoregressive-flow classes at a pinned revision. Widths 16 and 32, ten outer graph-optimization iterations and forty steps per iteration form its bounded grid. The adapter excludes missing target losses and same-source adjacency, and aggregates the final eight coordinate densities. GANF can use preceding target observations inside that interval and fills missing context for its original architecture without a mask input. Finite graph optimization can leave a nonzero acyclicity residual. We report it rather than claiming exact convergence. MTGFlow was inspected but not executed within the fixed budget.
 
-The generative comparisons include the same diffusion backbone scored by residuals, deterministic conditional-mean replacements evaluated on the same witnesses, and an independent DiffAD adaptation. The latter implements the paper's density-ratio selection, bicubic conditioning, increasing replacement weights and multiscale state-space denoising. Its structured state-space kernel uses a dense calculation of the normal-plus-low-rank dynamics~\cite{s4}. The original code snapshot differs from several paper components, so we do not claim an exact author-code reproduction. The density estimator, numerical floors, window length and development learning-rate search are documented. Sampling retains the paper's 100 reverse steps and integer-step conditioning weight.
+A modest gradient-boosted classifier receives shape, earlier history, PCA residual and availability features. It is trained on the same four development fault mechanisms injected into training windows. This tests whether explicit fault information alone explains gains. The old diffusion witness, GDN, backbone residual and documented DiffAD adaptation are rerun on the shared manifests. The witness method retains its top-four screen. Excluded candidates receive a floor and true faults remain misses. Its old window-level results remain separately archived.
 
-Direct association-prediction residuals provide a simple comparator for relation faults. PCA and GDN are not assigned zero association accuracy because they do not natively output the stored association hypotheses. All comparators share measurements, partitions, fault manifests and calibration opportunities. Their reference residual centering and scaling use unmodified development data. PCA fills absent input coordinates with training medians. GDN uses zero fills after robust centering and excludes missing targets from its residuals. Conditional diffusion also receives availability masks.
+\subsection{Confidence and decision policy}
+Whole calibration source blocks have three disjoint roles. Labeled blocks fit a logistic probability calibration using a robustly scaled score and scorable indicator, with the same opportunity for every comparator. Separate normal blocks calibrate the maximum score over the actual candidate procedure. If there are $n$ normal calibration windows,
+\[
+ p_{\rm window}=\frac{1+\sum_{b=1}^{n}\1\{S_{\max,b}\geq S_{\max,{\rm new}}\}}{n+1}.
+\]
+The minimum value is $1/(n+1)$. Small calibration populations cannot support arbitrary nominal false-alarm levels. Dependence and shift also limit guarantees.
 
-Our conditional model has approximately seven million parameters per member. GDN uses 64-dimensional sensor embeddings and five selected neighbors. The main procedure uses three separately trained members, eight paired proposals, eight predictive samples and 12 reverse sampling steps. Neural denoising uses bfloat16, diffusion states use float32, and witness losses and score differences accumulate in float64. Every neural comparator uses the same three training seeds. This is one three-member ensemble, not three independent ensemble repetitions.
+The remaining calibration blocks select a repair probability threshold from a fixed grid. We maximize coverage subject to at least ten actions and a one-sided 95\% Wilson failure upper bound at most 0.10. If no threshold qualifies, the policy abstains. This bound is a calibration diagnostic under dependent data, not a guaranteed deployment risk. Actual test failure and harm remain reported. Marginal CRPS, interval coverage and width, and a joint energy score assess distributions~\cite{crps}. The flow energy estimate uses 512 weighted sample pairs.
 
-\subsection{Endpoints and audits}
-The primary endpoint is observation-fault average precision at the window level. The comparator for that endpoint is the strongest eligible baseline selected on development data. We also report candidate average precision, top-one and top-three attribution, reciprocal rank, screening recall and achieved false-alarm rates. Relation results are separate. Paired bootstrap intervals resample whole trajectories, Intel days or whole SKAB experiments, preserving shared observations and cross-channel dependence. We do not pool the different dataset prevalences.
+\subsection{Endpoints and uncertainty}
+Primary AP pools all sensor intervals, including clean windows and uncorrupted candidates. We never average AP only over windows containing a fault. For comparator $b$, the registered contrast is
+\[
+ \Delta_b=\tfrac13\sum_{d\in\{\mathrm{synthetic,Intel,SKAB}\}}
+       (\operatorname{AP}_{\rm ratio,d}-\operatorname{AP}_{b,d}),
+\]
+averaging the three synthetic configurations within their family first. A chosen usefulness margin is 0.02 absolute AP. Directional H1 requires positive evidence against both PCA and same-flow NLL.
 
-The main penalty grid uses $\kappa\in\{0,0.5,1,2\}$ and $\lambda\in\{0,0.05,0.2\}$. Development sensitivity also varies ensemble count, proposal count, predictive samples and neural precision. Choices are frozen before calibration. Calibration blocks are divided between reference tails and labeled probability fitting. The final test results cannot alter these choices.
-
-The mandatory ablations retain gain alone, remove each penalty, use deterministic replacements, remove graph conditioning, allow witness values into proposal generation and disable provenance protections. Unsafe variants are labeled diagnostics. Additional stress tests contaminate conditioning sources, add graph errors, alias copied messages, reduce witness support and contaminate training windows. Unknown fault families and unseen operating regimes are reported separately.
-
-The extracted NumPy reference is the arithmetic oracle. Saved inputs verify CPU and CUDA implementations within declared tolerances. Integration tests check hidden-target noninterference, known-copy invariance, conflict rejection, immutable target membership, executable lag and sign effects, and missing-output rejection. A second audit recomputes empirical CRPS from the saved predictive samples and each production score from saved group losses. The equation map links every displayed equation to its function, test and result artifact.
-
-\section{Versioned Evidence and Operator Review}
-The implementation stores sensors, channels, observation windows, immutable association versions, disagreement records, repair hypotheses, evidence groups, model runs and operator decisions in Neo4j. Raw arrays remain in hashed files. Each association records its predictor attributes, units, discovery and validation context, validity interval and provenance. Each hypothesis links to unchanged witness identities, proposed alternatives, its score terms and the appropriate calibration quantity.
-
-The operator view is a conventional two-dimensional node-link network. Gray arrows show stored prediction direction and lag. A red double outline marks a suspect reading. A blue outline marks a witness. Orange dashed arrows mark associations under review. Black dotted connectors join explanatory annotations and do not represent learned relations. Shape and line patterns supplement color.
-
-Selecting a reading or association exposes observed values, generated intervals, $R$, $U$, $\Omega$, $S$, the sampling diagnostic, reference tail, optional fitted probability, support count, rival hypotheses and graph and model versions. A time selector loads saved decision windows. A neighborhood control restricts the displayed context. Confirm, reject and defer actions create operator-decision records. These actions do not overwrite measurements or actuate equipment.
-
-\begin{figure*}[t]
-\centering\includegraphics[width=\textwidth]{figures/network.pdf}
-\caption[Saved operator network]{An actual saved review case with fixed coordinates across the reference, observation-hypothesis and alternative-association panels. \input{generated/network_caption.tex}}
-\label{fig:network}
-\end{figure*}
-
-The interface makes evidence inspectable. We make no claim that it improves operator accuracy or response time because this study contains no human-subject evaluation. Its purpose is to preserve the distinction between an alarm, a proposed explanation and a reviewed decision.
-
+We use 1000 paired whole-block bootstrap replicates. Synthetic trajectories, Intel time blocks and SKAB experiments are resampled, retaining all correlated candidates and injected copies. Paired 32-channel synthetic seeds share bootstrap draws. The two primary contrasts use 97.5\% individual intervals, yielding a Bonferroni simultaneous 95\% statement. Dataset intervals are descriptive. Few real source blocks limit their stability, and training seeds are not independent test subjects. Secondary metrics cover localization, window detection, calibration, review precision, repairs and actual costs.
 
 \section{Results}
-\input{generated/results_text.tex}
-\input{generated/main_table.tex}
-\begin{figure*}[t]
-\centering\includegraphics[width=\textwidth]{figures/confidence.pdf}
-\caption{Detection and confidence from saved final-test outputs. Observation and association tasks remain separate. Colors identify dataset configurations and line styles distinguish the repair procedure from its stated comparator. The reliability panel uses fitted fault probabilities and lists occupied-bin counts from left to right. Review risk counts incorrect attribution among screened candidates, including findings from unmodified reference windows. Dashed curves use the development-selected PCA variant for observations and direct edge residuals for associations.}
-\label{fig:confidence}
+\subsection{Primary comparison and neural contribution}
+\input{generated/graph_flow/ap_table.tex}
+\input{generated/graph_flow/primary_results.tex}
+\begin{figure*}[!t]
+ \centering\includegraphics[width=\textwidth]{figures/graph_flow/performance.pdf}
+ \caption{Sensor-interval precision--recall curves and paired AP differences. All configurations contribute to the three-family macro contrast. Dataset intervals are 95\%. The two primary macro intervals are 97.5\% individually.}
+ \label{fig:performance}
+\end{figure*}
+\input{generated/graph_flow/strata.tex}
+
+\subsection{Calibration, review and repair}
+\input{generated/graph_flow/confidence_results.tex}
+\input{generated/graph_flow/confidence_table.tex}
+\input{generated/graph_flow/repair_table.tex}
+\begin{figure*}[!t]
+ \centering\includegraphics[width=\textwidth]{figures/graph_flow/confidence.pdf}
+ \caption{Reliability, review precision and repair risk. Reliability insets count successive bins, five per line. Risk insets count actions at maximum coverage. Curves are threshold sweeps. Table~\ref{tab:confidence} gives calibration-selected actions. Zero coverage has undefined risk.}
+ \label{fig:confidence}
+\end{figure*}
+\begin{figure*}[!t]
+ \centering\includegraphics[width=\textwidth]{figures/graph_flow/repair.pdf}
+ \caption{Cases chosen by frozen success, failure and numerical-adequacy rules. Gray trajectories are GPU generations. Blue bands are weighted 90\% marginal intervals. Reference truth is only for offline evaluation. Low ESS limits repair reliability. Case IDs and hashes are distributed with the figure.}
+ \label{fig:repair}
 \end{figure*}
 
-\subsection{Equation components and robustness}
-\input{generated/ablation_text.tex}
-\input{generated/robustness_text.tex}
-\input{generated/ablation_table.tex}
-\begin{figure*}[t]
-\centering\IfFileExists{figures/equations.pdf}{\includegraphics[width=\textwidth]{figures/equations.pdf}}{\fbox{\parbox[c][2in][c]{.9\textwidth}{\centering Equation figure awaits the running secondary experiments.}}}
-\caption{Examination of the implemented score. Paired differences include block-bootstrap intervals. Sampling sensitivity uses development windows. Source contamination and computational tradeoffs come from separate saved runs. Unsafe evidence variants are identified explicitly.}
-\label{fig:equations}
+\subsection{Ablations and adverse conditions}
+\input{generated/graph_flow/ablation_results.tex}
+\input{generated/graph_flow/stress_table.tex}
+\begin{figure*}[!t]
+ \centering\includegraphics[width=\textwidth]{figures/graph_flow/equations.pdf}
+ \caption{Equation contributions and computational costs. The plug-in replaces integration by the generated prior mean. Repeated seeds use fixed development cases. Panel (c) includes offline distribution metrics. Panel (d) measures operational scoring and repair without truth-dependent metrics.}
+ \label{fig:equations}
 \end{figure*}
 
-\subsection{Native process events and computational cost}
-\input{generated/native_text.tex}
-\input{generated/cost_text.tex}
+\subsection{Numerical evidence and computation}
+The scalar reference passes eight check groups. Forty local tests include eighteen flow checks covering inverse/Jacobian agreement, Gaussian integrals and posteriors, normalized corruption, units, stable mixture arithmetic, masking, missingness, source copies, chunking and repair damage. A Gaussian simulator trained a 22,048-parameter flow on the GPU. Validation NLL changed from \PilotInitial{} to \PilotFinal{} in \PilotTime{} seconds. This verifies computation, not benchmark superiority.
 
-\section{Discussion and Conclusion}
-\input{generated/conclusion_results.tex}
-The evidence-separation rule offers a concrete way to question a proposed repair. It requires the edit to explain measurements that were excluded from its construction, preserves disagreement between models and records why a finding was accepted or deferred. This makes an unsuccessful or ambiguous repair informative without turning it into a physical diagnosis.
+Production auditing recomputes \AuditCandidates{} calibration and final candidate scores from saved component integrals, with maximum discrepancy \AuditMaximum. Independently evaluated NumPy corruption densities and GPU model/draw replay cover \ReplayBundles{} full generation bundles. Maximum generation, normal-density, corruption-density and ratio discrepancies are \ReplayGeneration, \ReplayDensity, \ReplayCorruption{} and \ReplayRatio, respectively. Weighted posterior means agree within \ReplayPosterior. An autograd determinant from a trained model agrees with its analytic determinant within \ReplayJacobian. These checks establish implementation agreement, not adequacy of the fitted real-world distributions.
 
-Several limits remain. Controlled corruptions do not cover all field failures. Intel reference windows are not expert-adjudicated healthy data. SKAB native labels identify process events rather than defective sensors. The number of independent blocks is limited, particularly for Intel. The three-member ensemble does not measure variation across independent ensembles. Association masks test a model's predictive use of a relation and cannot establish its physical cause. The DiffAD comparison is a documented independent adaptation with a bounded tuning budget.
+\input{generated/graph_flow/runtime_table.tex}
+\input{generated/graph_flow/runtime_results.tex}
 
-Finite calibration also limits what confidence can mean. A small reference set cannot support arbitrarily small tail levels. Temporal dependence and changing operating conditions can increase empirical false alarms. Fitted probabilities depend on the labeled calibration population and may transfer poorly to unseen faults. Distinct source identifiers do not eliminate shared physical disturbances or undocumented copies.
+\section{Graph Evidence and Operator Review}
+Versioned Neo4j records link sensors, physical sources, windows, associations, models, fault hypotheses, generations, scores and repairs. Large arrays are content-addressed files. Original observations remain immutable. Accept, reject and defer decisions are separate records and do not apply repairs automatically.
 
-\section*{Reproducibility}
-The accompanying artifact includes the extracted reference, source and dependency locks, dataset acquisition hashes, partition and fault manifests, trained weights, raw score arrays, equation and claim audits, graph exports, figure scripts and local operator application. The main and secondary experiment commands are resumable. Every numerical table and figure is generated from saved result files. Model and dataset licenses and adaptation choices are recorded with the literature audit.
+The conventional two-dimensional network names sensors and annotates directed edges with lag and training correlation. Red outlines mark disputed intervals and blue outlines mark supporting sources. Amber dashed edges denote separately assessed association disputes. Details show observed and generated trajectories, weighted repair intervals, ESS, benchmark probability and abstention. Reading scores do not imply per-edge certainty.
 
-\section*{Acknowledgment}
-We acknowledge the Intel Berkeley Research Lab data contributors and the creators of the Skoltech Anomaly Benchmark for providing the measured datasets.
+\begin{figure}[!t]
+ \centering\includegraphics[width=\columnwidth]{figures/graph_flow/network.pdf}
+ \caption{Saved S32N sensor network case with a topology-selected neighborhood. Gray arrows denote predictive associations, blue outlines mark conditioning sources, and red marks the disputed interval. Its score does not certify individual edges.}
+ \label{fig:network}
+\end{figure}
+\input{generated/graph_flow/interface_results.tex}
+
+\section{Discussion and Limitations}
+\input{generated/graph_flow/discussion_results.tex}
+The evaluated candidate is a short, complete, single-channel block. Primary injections affect one source at a time, with corrupted supporting sources studied separately. This is not a general multichannel failure model. Missing targets reduce population coverage substantially in Intel. Complete-target eligibility makes the density valid, but it does not solve observed-data flow inference. Quantization is approximated continuously, and temporal encoders do not fully represent irregular elapsed time.
+
+The benchmark fault prevalence is determined by the injection design. Calibrated probabilities cannot be transported directly to operational failure prevalence or a mixture of physical and association events. Synthetic mechanisms and source blocks are limited, and the real test environments were previously examined. The finite architecture and comparator budgets do not establish the best attainable performance of any model family. Automated browser verification demonstrates interface behavior, not usefulness in a human operator study.
+
+The previous window-level witness study remains recoverable and cannot be treated as independent confirmation. Reproduction bundles retain configuration locks, failed checks, score components and source hashes. Raw caches and model weights stay outside Git, with exact local and GPU locations documented. The paper can be rebuilt from distributed evidence without retraining.
+
+\section{Conclusion}
+\input{generated/graph_flow/conclusion_results.tex}
+
 \bibliographystyle{IEEEtran}
-\IEEEtriggeratref{9}
-\bibliography{references}
+\bibliography{references,graph_flow}
 \end{document}

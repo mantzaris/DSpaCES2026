@@ -1,105 +1,90 @@
-# Separate witness evidence for IoT repair hypotheses
+# Graph conditional generation for sensor fault testing
 
-This directory implements the DSpaCES 2026 research specification in `DSpaCES_2026_research_plan_and_Codex_prompt.txt`. The detector is executable. Its equations are evaluated on actual GPU-generated predictions, with saved NumPy/CUDA arithmetic checks and production score audits.
+This project implements and executes a corruption-aware neural normalizing flow for the DSpaCES 2026 study. Actual GPU-generated sensor intervals enter a normalized fault likelihood and a weighted repair distribution. The frozen comparison covers the synthetic network family, Intel Berkeley and SKAB. Native process events remain separate from injected sensor and association faults.
 
-The research and 10-page IEEE paper are complete. Work stays on `main`, and the user will push the local commits. No paper was submitted and no paid resource was created. Read [PROGRESS.md](PROGRESS.md) for completion details and [DECISIONS.md](DECISIONS.md) for protocol corrections.
+Work stays on `main`. Commit locally and let the user push. Do not submit the paper, publish externally or create paid resources. The existing RunPod is the only authorized GPU infrastructure. Preserve unrelated repository work.
 
-The measured benefit is limited to high-precision review at 10% screened-candidate coverage in one nonlinear synthetic configuration. It reverses at broader coverage. PCA is stronger for overall observation detection, association differences are inconclusive, and mixed fault types can give competing explanations. These findings and unsuccessful robustness conditions remain in the paper and artifacts.
+Family-macro AP is 0.438 for the ratio, 0.307 for PCA and 0.423 for likelihood from the identical flow. Both paired primary intervals are positive, supporting directional H1 for this protocol. The 0.015 gain over same-flow likelihood misses the chosen 0.02 practical margin. H2, neural benefit over matched Gaussian models, remains inconclusive. H3, a general repair coverage advantage at controlled risk, is not established. Supervised trees are stronger in every configuration. Intel confidence transfers poorly and SKAB repair risk exceeds the calibration target in point estimate.
 
-The primary study uses one synthetic sensor-network family, Intel Berkeley measurements and SKAB. Native SKAB process events never become sensor-fault labels. The implementation includes PCA with current and lagged inputs, GDN, the conditional backbone's residual detector, deterministic repairs, and a documented independent DiffAD adaptation.
+[graph_flow_claims_audit.md](graph_flow_claims_audit.md) gives exact contrasts and limits. Real recording partitions had already informed the earlier study. Fresh injections on those recordings are not untouched field validation.
 
-## Artifacts
+## Paper and evidence
 
-- [paper/main.tex](paper/main.tex) and [paper/main.pdf](paper/main.pdf) contain the IEEE manuscript. Generated text is sourced through [results/paper_claims.json](results/paper_claims.json).
-- [results/analysis.json](results/analysis.json) contains the primary results, paired source-block intervals, probability evaluations, operating points and fault-family subsets.
-- `results/evidence/` contains six compressed bundles and a checksum manifest. They preserve the exact finalized JSON records for primary and secondary experiments, including negative findings. Run the restore command below to expand them into their original locations.
-- Compact primary arrays retain inputs, masks, truth, replacements, witness losses and score components. Repeated predictive draws are omitted from these explicitly named `results/compact/` files. Twenty-one complete draw files cover all ten operator examples and independent CRPS checks. Original array paths and hashes remain distinct from compact paths and hashes.
-- `results/ablations/`, `results/robustness/`, `results/native/` and `results/sensitivity/` retain their result summaries directly, with detailed records in the bundles. Native process labels remain separate from injected faults.
-- [equation_audit.md](equation_audit.md), [equation_to_code.json](equation_to_code.json) and [CLAIMS_AUDIT.md](CLAIMS_AUDIT.md) connect the method to code and evidence.
-- `results/model_weights/manifest.json` records exact neural state hashes. The 78 neural state files, full predictive draws and superseded intermediate runs remain locally and on the existing pod, outside Git. The small PCA states and all source code remain in Git. Optimizer checkpoints are excluded from ordinary result pulls.
-- [literature/NOVELTY_MATRIX.md](literature/NOVELTY_MATRIX.md) records full-method comparisons and adaptation limits. `literature/sources.json` and data acquisition manifests record primary sources, versions and licenses.
+- [paper/main.pdf](paper/main.pdf) and [paper/main.tex](paper/main.tex) are the new IEEE manuscript. Numerical prose and tables are generated through [paper_claims.json](results/graph_flow_v1/paper_claims.json). [figure_provenance.json](results/graph_flow_v1/figure_provenance.json) hashes figure sources and outputs.
+- [docs/graph_flow_protocol.md](docs/graph_flow_protocol.md), [configs/graph_flow_v1.json](configs/graph_flow_v1.json) and [protocol_lock.json](results/graph_flow_v1/protocol_lock.json) record the finite experiment and pre-test choices. The lock was created at 2026-10-01 02:03:02 UTC.
+- [analysis.json](results/graph_flow_v1/analysis.json) retains every primary comparison, paired block interval, calibration and repair result. [robustness.json](results/graph_flow_v1/robustness.json) and [runtime.json](results/graph_flow_v1/runtime.json) record adverse conditions and isolated costs.
+- [equation_audit_graph_flow.md](equation_audit_graph_flow.md) and [equation_to_code_graph_flow.json](equation_to_code_graph_flow.json) connect E1–E12 to code, tests and production evidence. The production audit reconstructs 107,620 scores and replays 30 full generation bundles on the GPU.
+- [publication/manifest.json](results/graph_flow_v1/publication/manifest.json) describes six compressed bundles totaling 86.93 MiB. They retain exact JSON, compact candidate arrays and complete representative generation arrays. Explicit omission lists distinguish compact files from original full files. Every retained array is exact.
+- [model_manifest.json](results/graph_flow_v1/model_manifest.json) records hashes and local/pod locations for 261 model and metadata files, including 70 neural checkpoints. All 119 model paths referenced by the lock were verified locally. Weights, raw caches, logs and temporary files are outside Git.
+- [literature/graph_flow_novelty_matrix.md](literature/graph_flow_novelty_matrix.md) records primary-source comparisons. Flows, likelihood ratios and Bayesian repairs are established constructions, not newly invented equations.
 
-## Local verification and rendering
+Published evidence supports metric and equation replay without weights. A fresh clone alone does **not** support model inference replay. An independent user must retrain or obtain the exact weights. Raw data can be reacquired from pinned public sources. Hashes identify artifacts but do not guarantee their continued availability on a temporary pod.
 
-The arithmetic reference requires NumPy. Full analysis requires the Python packages in `requirements-runpod.txt`. The recorded GPU environment is `results/environment.lock.txt`. Local artifact analysis also works with the older installed Python 3.8 environment; exact hardware/software reproduction should use the recorded environment.
+## Rebuild without training
+
+Run from this directory. Summary JSON, graph cases and precision-recall arrays suffice to regenerate the paper. Verification and publication auditing stream compressed evidence without expanding it.
 
 ```bash
-python3 scripts/package_results.py restore
-python3 scripts/audit_publication.py
-python3 reference/reference_score.py
-python3 scripts/audit_equations.py --device cpu
-python3 -m pytest -q
-python3 scripts/analyze.py
-python3 scripts/analyze_confidence.py
-python3 scripts/analyze_cross_type.py
-python3 scripts/analyze_equations.py
-python3 scripts/evaluate_pca_total.py
-python3 scripts/figures.py
-python3 scripts/make_paper.py
+python3 scripts/package_graph_flow.py verify
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python3 scripts/audit_graph_flow_publication.py
+python3 reference/reference_graph_flow.py
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python3 -m pytest -q
+python3 scripts/figures_graph_flow.py
+python3 scripts/make_graph_flow_paper.py
 latexmk -pdf -interaction=nonstopmode -halt-on-error -cd paper/main.tex
 ```
 
-The restore command checks every file and refuses to overwrite changed local evidence. Expansion needs about 2.4 GiB in a fresh checkout. `package_results.py verify` checks the bundles without expanding them. The publication audit reads primary arrays directly from the bundles and checks all 1,092 test cases, 40 PCA settings, 21 complete CRPS examples, the claim sources and the saved manuscript and figure hashes. Run it before regenerating the published files. `results/audits/production_equations.json` retains the original all-case E4 audit. Repeating that broader draw audit or `scripts/audit_final.py` requires the full local or RunPod archive. Packaging does not change any saved scientific result.
+The reference has eight check groups. Forty tests include eighteen new flow tests. The actual GPU environment is [environment_gpu.json](results/graph_flow_v1/environment_gpu.json), with pinned dependencies in `requirements-runpod.txt`. Older local Python 3.8 works for evidence replay and plotting. Use the recorded environment for exact hardware/software replication.
 
-Final paper generation requires completed experiments and audits. `make_paper.py --draft` remains available only for clearly marked intermediate layouts. The vendored IEEE class and bibliography style retain their original license notices. Analysis regenerated under different NumPy or scikit-learn versions can differ in final floating-point digits. The saved outputs and environment lock identify the published values.
+`python3 scripts/package_graph_flow.py restore` expands exact JSON and arrays under explicitly separate `results/graph_flow_v1/compact/` paths. It refuses to overwrite edited files. Compact NPZ files have their own hashes, distinct from the full originals. Full cases and original draws remain locally and on the pod, outside Git. `scripts/diagnose_graph_flow.py` can read full or compact predictions.
 
-## Data and model reproduction
+## Where neural generation occurs
 
-Raw and processed dataset caches are ignored by Git. Acquire the pinned public sources and prepare the three families with the commands below. The acquisition and processed-file manifests provide checksums. SKAB experiment assignment, Intel chronological gaps, training-only scales, source groups, availability masks and simulator latent truth are retained.
+`src/iot_repair/graph_flow_model.py` supplies `GraphFlow.log_prob` and `GraphFlow.sample`. A temporal/graph encoder conditions invertible neural affine couplings. `sample` draws normal latent vectors and executes the inverse on the GPU. `flow_inference.py` passes these generated intervals to `GaussianCorruption.log_prob` in `flow_math.py`, integrates densities in log space, forms the ensemble ratio and weights the generations for repairs.
 
-```bash
-python3 scripts/acquire.py
-python3 scripts/prepare_data.py
-python3 scripts/summarize_design.py
-python3 scripts/export_graph.py
-```
+The conditioner removes the tested source interval before features. Complete targets are required. Unavailable targets receive flags and a ranking floor, retaining true faults as misses. Supporting sensors are conditioning information, never independent witnesses. Full evidence saves inputs, masks, latent draws, generations and component log densities.
 
-Main inference automatically loads local `results/model_weights/<configuration>/*.npz` when optimizer checkpoints are absent. These neural weights are excluded from the Git distribution. PCA states are in `results/models/<configuration>/`. Rebuilding metrics and figures from restored records and compact arrays does not require GPU inference or retraining. The original GPU predictions remain the definitive full empirical archive. Ordinary float32 GPU reductions can change small seeded scores; [results/audits/inference_repeatability.json](results/audits/inference_repeatability.json) measures that effect. Deterministic CUDA mode verifies exact portable/checkpoint agreement and known-copy invariance separately.
+Comparisons include current/lagged PCA, identical-flow NLL, graph PPCA, mixture PPCA, all-channel PPCA, pinned author GANF classes, fault-aware trees and rerun legacy diffusion/GDN methods. GANF's adapters and finite graph-optimization limits are documented. MTGFlow was inspected but was outside the optional execution budget.
 
-## Existing RunPod execution
+## Existing GPU workflow
 
-The helper uses only the already authorized pod. It does not create, resize, purchase or delete resources. Remote files live under `/workspace/iot-inconsistency`.
+The finite experiment is complete. Inspect its status without relaunching training.
 
 ```bash
-bash scripts/runpod.sh sync
-bash scripts/runpod.sh exec .venv/bin/python scripts/job.py status main_experiments
-bash scripts/runpod.sh exec .venv/bin/python scripts/job.py status secondary_experiments
-bash scripts/runpod.sh exec .venv/bin/python scripts/job.py status finish_artifacts
-bash scripts/runpod.sh exec .venv/bin/python scripts/job.py status verify_final_gpu
-bash scripts/runpod.sh exec .venv/bin/python scripts/job.py status final_stress
-bash scripts/runpod.sh pull
+bash scripts/runpod.sh exec .venv/bin/python scripts/job.py status graph_flow_finish_resume
 ```
 
-`sync` excludes all results, preventing local snapshots from overwriting running experiments. `pull` excludes optimizer checkpoints. The job wrapper writes a finite command, PID, status and log. Completed model and case files are resumed. Do not launch a second job against the same output directory or run other GPU work during latency measurement. The main stage freezes development choices and calibrates before evaluating test cases. The secondary stage runs ablations and native events. The artifact stage benchmarks inference and exports model states. Verification and final stress analysis follow in that order.
+[execution_jobs.json](results/graph_flow_v1/execution_jobs.json) preserves two failed audit/reporting attempts and the successful resume. Predictions and the protocol lock did not change during those corrections. [DECISIONS.md](DECISIONS.md) explains them.
 
-For a clean rerun, retain the existing results as immutable evidence and select a new output root through an isolated copy of this project directory. Do not mix partially regenerated runs with the published manifest. The experiment scripts and configuration, rather than test outcomes, specify seeds, masks, budgets and candidate screening.
-
-After dataset preparation in that isolated copy on the existing GPU, run these finite stages sequentially. They expect the recorded `.venv` environment. The first stage discovers associations and trains diffusion, GDN, deterministic and graph-free models. The main stage tunes and trains DiffAD, runs development sensitivity, freezes choices and evaluates calibration and test partitions.
+For reproduction, use an isolated directory copy and distinct output namespace, preserving published results. Numerical modules reject changed source/configuration hashes. The legacy dataset preprocessing, legacy model states and pinned GANF source are prerequisites. After they are available, the finite stages are
 
 ```bash
-.venv/bin/python scripts/job.py run training_v2 bash scripts/train_main.sh
-.venv/bin/python scripts/job.py run main_experiments bash scripts/continue_main.sh
-.venv/bin/python scripts/job.py run secondary_experiments bash scripts/secondary.sh
-.venv/bin/python scripts/job.py run finish_artifacts bash scripts/finish_artifacts.sh
-.venv/bin/python scripts/job.py run verify_final_gpu bash scripts/verify_final_gpu.sh
-.venv/bin/python scripts/job.py run final_stress bash scripts/final_stress.sh
-.venv/bin/python scripts/audit_inference_repeatability.py
-.venv/bin/python scripts/evaluate_pca_total.py
-.venv/bin/python scripts/analyze_cross_type.py
+.venv/bin/python scripts/graph_flow_pilot.py
+bash scripts/graph_flow_develop.sh
+.venv/bin/python scripts/graph_flow.py baselines
+bash scripts/graph_flow_neural.sh
+bash scripts/graph_flow_final.sh
+bash scripts/graph_flow_finish.sh
 ```
 
-The first run executed development sensitivity separately before freezing. `continue_main.sh` now includes that idempotent command so a clean rerun cannot omit it. The portable/checkpoint audit requires the original optimizer checkpoints on the GPU. CPU analysis and rendering use the restored result records and compact arrays. To rebuild the distribution from the full archive, run `python3 scripts/package_results.py pack`, then `python3 scripts/audit_publication.py`.
+`runpod.sh sync` excludes results. `pull-flow` excludes models, caches and raw bundles. Do not broadly pull over finalized local presentation or publication artifacts. Use targeted transfers. Do not run concurrent jobs against one output path or during timing. Helpers do not create, resize or purchase resources.
 
-## Neo4j and the operator view
+## Neo4j and operator view
 
-Neo4j Community is local, bound to loopback and requires Docker. No cloud database is created.
+The graph has 23 rule-selected cases covering success, failure, numerical inadequacy, ambiguity and association review. Repeated import preserves entity counts. Observations remain immutable and review decisions are separate records.
 
 ```bash
 bash scripts/neo4j.sh start
-python3 scripts/persist_graph.py
-python3 operator/server.py
+python3 scripts/export_graph_flow.py --persist-only
+python3 operator/server.py --port 8100
 ```
 
-Open `http://127.0.0.1:8099`. Select a saved window, click a channel or a scored edge, inspect unchanged witness predictions and the score terms, and record a confirm, reject or defer decision. Gray arrows are predictive associations. Double red circles, blue witness outlines and dashed orange disputed edges retain distinct meanings. Empirical prediction intervals, null-tail values and fitted fault probabilities are labeled separately. The graph stores file references and immutable association versions. Review decisions never modify measurements or actuate equipment.
+Open `http://127.0.0.1:8100/flow`. The classic network uses named nodes, directed lag/correlation annotations, red disputed intervals, blue supporting sources and amber dashed edges only for assessed association disputes. Details show actual generations, weighted intervals, score meaning, ESS, benchmark probability and accept/reject/defer actions. Actions do not replace measurements.
 
-`results/interface/browser_verification.json` and PNG previews document browser testing. Automated decisions explicitly say that they are interface tests, not human diagnoses. Stop the local database with `bash scripts/neo4j.sh stop` when desired.
+[graph/interface/browser_verification.json](results/graph_flow_v1/graph/interface/browser_verification.json) and screenshots document browser checks. Automated review records are interface tests, not a human operator study. Neo4j uses the existing local container and binds to loopback.
+
+## Preserved witness study
+
+Original results and legacy evidence bundles are unchanged. [legacy.json](results/graph_flow_v1/legacy.json) hashes the 306-file starting study. `paper/legacy/witness_20260930.tar.xz` preserves its exact paper, PDF, figures and bibliography. The original equation map and claims audit remain separate.
+
+[docs/witness_legacy_readme.md](docs/witness_legacy_readme.md) preserves older reproduction instructions. Run legacy manuscript generators only in an isolated copy of the archived study because they write the main paper paths. New and old endpoints, manifests and checkpoints remain separate.

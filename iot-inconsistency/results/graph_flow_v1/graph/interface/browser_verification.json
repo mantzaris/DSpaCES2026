@@ -1,0 +1,25 @@
+{
+  "tested_at": "2026-10-01T03:12:20.113Z",
+  "url": "http://127.0.0.1:8100/flow",
+  "case_count": 23,
+  "checks": [
+    "saved case selection",
+    "named classic 2D sensor network",
+    "annotated predictive edges",
+    "actual prior draws and weighted intervals",
+    "reference truth hidden by default",
+    "evidence download",
+    "accept/reject/defer persistence",
+    "immutable observed values",
+    "separately assessed association selection",
+    "ambiguity and numerical abstention",
+    "narrow-screen layout",
+    "no uncaught browser exceptions"
+  ],
+  "reviews": [
+    "Saved accept review · graph_flow_v1:decision:58f4ff93-a180-481e-b53b-e904676b3257",
+    "Saved reject review · graph_flow_v1:decision:c1412cf9-21ef-49c8-8e39-b8ed596f396a",
+    "Saved defer review · graph_flow_v1:decision:4ac759d3-b2e5-4bef-86d0-973cd56ce637"
+  ],
+  "scope": "Automated local interface verification. Not a human operator study and not authorization to apply a repair."
+}

@@ -1,10 +1,48 @@
 # Graph-flow equations and assumptions
 
 This is a separate equation namespace from the preserved witness study. Its map is
-`equation_to_code_graph_flow.json`. Arithmetic tests and the Gaussian GPU pilot
-have passed. Full benchmark production replay will be recorded in
-`results/graph_flow_v1/production_equation_audit.json` after execution. A missing
-production record means that stage has not passed yet.
+`equation_to_code_graph_flow.json`. The eight scalar reference groups, forty local
+tests and actual Gaussian GPU training pilot passed. The production audit and
+independent compact-evidence audit are complete. Numerical agreement is not proof
+of good detection, calibration or physical validity.
+
+## Executed evidence
+
+`results/graph_flow_v1/production_equation_audit.json` records 107,620 calibration
+and final candidate scores independently reconstructed in double precision. The
+maximum absolute error is 9.094947017729282e-13. Thirty full bundles replay original
+model weights and latent draws on the RTX PRO 4500. Generated intervals and normal
+log densities agree exactly in this replay. Independent NumPy corruption densities
+agree within 9.123368727159686e-12, likelihood ratios within 3.950617610826157e-12,
+and weighted posterior means within 1.971756091734278e-12. A trained-model autograd
+log determinant agrees within 3.552713678800501e-15. The largest float32 inverse
+round-trip error is 1.52587890625e-5. These are measured tolerances, not a claim of
+arbitrary cross-platform bitwise reproducibility.
+
+The initial audit kept saved float32 logs in a SciPy reduction even though the
+production score promotes them to float64. Its failed attempt and explicit
+precision correction are retained in `audit_precision_correction.json`.
+`scripts/audit_graph_flow_production.py` corrects the independent audit. No saved
+prediction, checkpoint, calibration or protocol choice changed.
+
+`publication_audit.json` streams 6,351 compressed records, repeats all production
+score arithmetic, independently recovers 100 dataset/method AP values, recomputes
+q and posterior means from thirty full generation bundles, and verifies claim and
+figure hashes. It needs neither raw data nor model weights. GPU model replay is a
+separate check requiring those weights. `publication/manifest.json` records which
+compact arrays omit redundant fields and retains exact original-file hashes.
+Independent E11 recomputation agrees within 2.091837814077735e-11. Fifteen saved
+final actions also replay E12 directly from recorded/reference windows and the
+weighted repair, including wrong-target damage. The largest loss-difference error
+is 4.7066350816749036e-11, with identical attribution, failure and harm flags.
+
+E3 is exercised by the saved training losses, selected development likelihoods
+and generation checks in `protocol_lock.json`, `development/*_models.json`,
+`development/*_members.json` and `pilot.json`. Seventy distinct neural fits include
+flow, GANF and the pilot. E12 is applied to the full window in every saved repair
+row. Exact wrong-target damage and undefined empty-acceptance risk have focused
+tests. The distribution scores and policy summaries are preserved in each
+configuration's `analysis.json` and `*_repair_rows.json` files.
 
 ## Density and generation
 

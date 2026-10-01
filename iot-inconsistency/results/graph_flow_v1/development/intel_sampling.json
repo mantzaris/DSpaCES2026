@@ -1,0 +1,159 @@
+{
+  "dataset": "intel",
+  "case_ids": [
+    "development_0000_clean",
+    "development_0002_stuck",
+    "development_0005_noise",
+    "development_0009_noise",
+    "development_0014_drift",
+    "development_0018_drift",
+    "development_0023_bias",
+    "development_0026_bias",
+    "development_0030_clean",
+    "development_0033_clean",
+    "development_0035_stuck",
+    "development_0041_stuck"
+  ],
+  "sampling_seeds": 3,
+  "model_ensemble_repetitions": 1,
+  "repeatability": [
+    {
+      "samples": 32,
+      "repeat_absolute_difference_p95": 0.06493934300918003,
+      "repeat_absolute_difference_max": 1.414709580026825,
+      "spearman_vs_repeat0": [
+        0.9999715143035524,
+        0.9999679781481313
+      ]
+    },
+    {
+      "samples": 128,
+      "repeat_absolute_difference_p95": 0.029311631500509527,
+      "repeat_absolute_difference_max": 0.5505791107486484,
+      "spearman_vs_repeat0": [
+        0.9999889331432192,
+        0.9999903737991316
+      ]
+    },
+    {
+      "samples": 512,
+      "repeat_absolute_difference_p95": 0.014520394533785508,
+      "repeat_absolute_difference_max": 0.408273753567995,
+      "spearman_vs_repeat0": [
+        0.9999959399697018,
+        0.9999959399697018
+      ]
+    },
+    {
+      "samples": 2048,
+      "repeat_absolute_difference_p95": 0.007696134042873837,
+      "repeat_absolute_difference_max": 0.10453185071821025,
+      "spearman_vs_repeat0": [
+        0.9999978390161316,
+        0.9999976425630528
+      ]
+    }
+  ],
+  "profiles": [
+    {
+      "samples": 32,
+      "repetitions": [
+        {
+          "seconds": 0.02500528795644641,
+          "peak_gpu_bytes": 45700608,
+          "candidates": 48,
+          "mean_ess": 90.9359753091807
+        },
+        {
+          "seconds": 0.022716872859746218,
+          "peak_gpu_bytes": 45700608,
+          "candidates": 48,
+          "mean_ess": 90.89221823091844
+        },
+        {
+          "seconds": 0.022712563630193472,
+          "peak_gpu_bytes": 45700608,
+          "candidates": 48,
+          "mean_ess": 90.98846425427998
+        }
+      ]
+    },
+    {
+      "samples": 128,
+      "repetitions": [
+        {
+          "seconds": 0.023071923293173313,
+          "peak_gpu_bytes": 46659072,
+          "candidates": 48,
+          "mean_ess": 363.81317918647864
+        },
+        {
+          "seconds": 0.02311500208452344,
+          "peak_gpu_bytes": 46659072,
+          "candidates": 48,
+          "mean_ess": 364.1211048493854
+        },
+        {
+          "seconds": 0.023068721871823072,
+          "peak_gpu_bytes": 46659072,
+          "candidates": 48,
+          "mean_ess": 363.84794765098997
+        }
+      ]
+    },
+    {
+      "samples": 512,
+      "repetitions": [
+        {
+          "seconds": 0.04343420313671231,
+          "peak_gpu_bytes": 66664960,
+          "candidates": 48,
+          "mean_ess": 1455.108337970767
+        },
+        {
+          "seconds": 0.04171739565208554,
+          "peak_gpu_bytes": 66664960,
+          "candidates": 48,
+          "mean_ess": 1454.9506619801002
+        },
+        {
+          "seconds": 0.04153721686452627,
+          "peak_gpu_bytes": 66664960,
+          "candidates": 48,
+          "mean_ess": 1454.9723291966855
+        }
+      ]
+    },
+    {
+      "samples": 2048,
+      "repetitions": [
+        {
+          "seconds": 0.12181309796869755,
+          "peak_gpu_bytes": 238565888,
+          "candidates": 48,
+          "mean_ess": 5820.0567908084495
+        },
+        {
+          "seconds": 0.12201577657833695,
+          "peak_gpu_bytes": 238565888,
+          "candidates": 48,
+          "mean_ess": 5819.612932451909
+        },
+        {
+          "seconds": 0.12225280702114105,
+          "peak_gpu_bytes": 238565888,
+          "candidates": 48,
+          "mean_ess": 5819.358512603376
+        }
+      ]
+    }
+  ],
+  "arrays_sha256": "2b8a7449da31bd3699b8ab28360e0710268a865c59fa7aaa9cf543356762f9a2",
+  "primary_samples": 32,
+  "profiling_case_id": "development_0000_clean",
+  "gpu_processes": [
+    "162510, .venv/bin/python, 950 MiB"
+  ],
+  "other_gpu_processes": [],
+  "caveat": "M=2048 is a finite reference, not the exact integral. Repeatability is not a bound on model error."
+}

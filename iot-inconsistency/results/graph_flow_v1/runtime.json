@@ -1,0 +1,1077 @@
+{
+  "synthetic_32_nonlinear": {
+    "case_id": "test_0000_clean",
+    "eligible_candidates": 32,
+    "draws": 32,
+    "ensemble_members": 3,
+    "methods": {
+      "flow_ratio_and_repair": {
+        "repetitions": [
+          {
+            "seconds": 0.02361409179866314,
+            "peak_gpu_bytes": 50123264
+          },
+          {
+            "seconds": 0.022734904196113348,
+            "peak_gpu_bytes": 50123264
+          },
+          {
+            "seconds": 0.023764781653881073,
+            "peak_gpu_bytes": 50123264
+          },
+          {
+            "seconds": 0.022677564062178135,
+            "peak_gpu_bytes": 50123264
+          },
+          {
+            "seconds": 0.022616444155573845,
+            "peak_gpu_bytes": 50123264
+          },
+          {
+            "seconds": 0.02247061487287283,
+            "peak_gpu_bytes": 50123264
+          },
+          {
+            "seconds": 0.02221467485651374,
+            "peak_gpu_bytes": 50123264
+          }
+        ],
+        "median_seconds": 0.022677564062178135
+      },
+      "same_flow_nll": {
+        "repetitions": [
+          {
+            "seconds": 0.010018186178058386,
+            "peak_gpu_bytes": 49894400
+          },
+          {
+            "seconds": 0.010148325003683567,
+            "peak_gpu_bytes": 49894400
+          },
+          {
+            "seconds": 0.01011271495372057,
+            "peak_gpu_bytes": 49894400
+          },
+          {
+            "seconds": 0.010185955092310905,
+            "peak_gpu_bytes": 49894400
+          },
+          {
+            "seconds": 0.010126374661922455,
+            "peak_gpu_bytes": 49894400
+          },
+          {
+            "seconds": 0.010140125174075365,
+            "peak_gpu_bytes": 49894400
+          },
+          {
+            "seconds": 0.00992809608578682,
+            "peak_gpu_bytes": 49894400
+          }
+        ],
+        "median_seconds": 0.010126374661922455
+      },
+      "single_flow_nll": {
+        "repetitions": [
+          {
+            "seconds": 0.004509598948061466,
+            "peak_gpu_bytes": 49893376
+          },
+          {
+            "seconds": 0.004515328910201788,
+            "peak_gpu_bytes": 49893376
+          },
+          {
+            "seconds": 0.004505358636379242,
+            "peak_gpu_bytes": 49893376
+          },
+          {
+            "seconds": 0.004507689271122217,
+            "peak_gpu_bytes": 49893376
+          },
+          {
+            "seconds": 0.004501969087868929,
+            "peak_gpu_bytes": 49893376
+          },
+          {
+            "seconds": 0.004504928831011057,
+            "peak_gpu_bytes": 49893376
+          },
+          {
+            "seconds": 0.004513249266892672,
+            "peak_gpu_bytes": 49893376
+          }
+        ],
+        "median_seconds": 0.004507689271122217
+      },
+      "pca": {
+        "repetitions": [
+          {
+            "seconds": 0.00014206022024154663,
+            "peak_gpu_bytes": 9875968
+          },
+          {
+            "seconds": 0.0001468597911298275,
+            "peak_gpu_bytes": 9875968
+          },
+          {
+            "seconds": 0.0001314086839556694,
+            "peak_gpu_bytes": 9875968
+          },
+          {
+            "seconds": 0.00012992927804589272,
+            "peak_gpu_bytes": 9875968
+          },
+          {
+            "seconds": 0.0001232498325407505,
+            "peak_gpu_bytes": 9875968
+          },
+          {
+            "seconds": 0.0001254999078810215,
+            "peak_gpu_bytes": 9875968
+          },
+          {
+            "seconds": 0.00012020021677017212,
+            "peak_gpu_bytes": 9875968
+          }
+        ],
+        "median_seconds": 0.00012992927804589272
+      },
+      "ppca_ratio_and_repair": {
+        "repetitions": [
+          {
+            "seconds": 0.07296287082135677,
+            "peak_gpu_bytes": 9875968
+          },
+          {
+            "seconds": 0.07308596139773726,
+            "peak_gpu_bytes": 9875968
+          },
+          {
+            "seconds": 0.07297500129789114,
+            "peak_gpu_bytes": 9875968
+          },
+          {
+            "seconds": 0.07389128860086203,
+            "peak_gpu_bytes": 9875968
+          },
+          {
+            "seconds": 0.07356028957292438,
+            "peak_gpu_bytes": 9875968
+          },
+          {
+            "seconds": 0.0737045700661838,
+            "peak_gpu_bytes": 9875968
+          },
+          {
+            "seconds": 0.07447747699916363,
+            "peak_gpu_bytes": 9875968
+          }
+        ],
+        "median_seconds": 0.07356028957292438
+      },
+      "ganf": {
+        "repetitions": [
+          {
+            "seconds": 0.0033282218500971794,
+            "peak_gpu_bytes": 24132096
+          },
+          {
+            "seconds": 0.0033889110200107098,
+            "peak_gpu_bytes": 24132096
+          },
+          {
+            "seconds": 0.003342652227729559,
+            "peak_gpu_bytes": 24132096
+          },
+          {
+            "seconds": 0.003286312334239483,
+            "peak_gpu_bytes": 24132096
+          },
+          {
+            "seconds": 0.003275951836258173,
+            "peak_gpu_bytes": 24132096
+          },
+          {
+            "seconds": 0.0032829721458256245,
+            "peak_gpu_bytes": 24132096
+          },
+          {
+            "seconds": 0.003293281886726618,
+            "peak_gpu_bytes": 24132096
+          }
+        ],
+        "median_seconds": 0.003293281886726618
+      }
+    },
+    "gpu_processes": [
+      "173879, .venv/bin/python, 306 MiB"
+    ],
+    "torch": "2.8.0+cu128",
+    "cuda": "12.8",
+    "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+    "cuda_matmul_tf32": false,
+    "cudnn_tf32": true,
+    "scope": "Seven warm batch-one-window wall times. Model loading and database excluded. Conditional repair summaries included, hidden-reference metrics excluded. Returned raw evidence transfer included. PPCA and PCA run on the CPU. Peak allocation includes resident models."
+  },
+  "skab": {
+    "case_id": "test_0000_clean",
+    "eligible_candidates": 8,
+    "draws": 2048,
+    "ensemble_members": 3,
+    "methods": {
+      "flow_ratio_and_repair": {
+        "repetitions": [
+          {
+            "seconds": 0.11283549293875694,
+            "peak_gpu_bytes": 54693376
+          },
+          {
+            "seconds": 0.1118016461841762,
+            "peak_gpu_bytes": 54693376
+          },
+          {
+            "seconds": 0.11249091289937496,
+            "peak_gpu_bytes": 54693376
+          },
+          {
+            "seconds": 0.11216948507353663,
+            "peak_gpu_bytes": 54693376
+          },
+          {
+            "seconds": 0.11285094311460853,
+            "peak_gpu_bytes": 54693376
+          },
+          {
+            "seconds": 0.11217284528538585,
+            "peak_gpu_bytes": 54693376
+          },
+          {
+            "seconds": 0.11265157395973802,
+            "peak_gpu_bytes": 54693376
+          }
+        ],
+        "median_seconds": 0.11249091289937496
+      },
+      "same_flow_nll": {
+        "repetitions": [
+          {
+            "seconds": 0.009109908249229193,
+            "peak_gpu_bytes": 27147264
+          },
+          {
+            "seconds": 0.009202376939356327,
+            "peak_gpu_bytes": 27147264
+          },
+          {
+            "seconds": 0.009170707315206528,
+            "peak_gpu_bytes": 27147264
+          },
+          {
+            "seconds": 0.009364827070385218,
+            "peak_gpu_bytes": 27147264
+          },
+          {
+            "seconds": 0.009340017102658749,
+            "peak_gpu_bytes": 27147264
+          },
+          {
+            "seconds": 0.00933104706928134,
+            "peak_gpu_bytes": 27147264
+          },
+          {
+            "seconds": 0.009344518184661865,
+            "peak_gpu_bytes": 27147264
+          }
+        ],
+        "median_seconds": 0.00933104706928134
+      },
+      "single_flow_nll": {
+        "repetitions": [
+          {
+            "seconds": 0.00420591002330184,
+            "peak_gpu_bytes": 27146240
+          },
+          {
+            "seconds": 0.004333389922976494,
+            "peak_gpu_bytes": 27146240
+          },
+          {
+            "seconds": 0.0042840903624892235,
+            "peak_gpu_bytes": 27146240
+          },
+          {
+            "seconds": 0.004168319050222635,
+            "peak_gpu_bytes": 27146240
+          },
+          {
+            "seconds": 0.004284929949790239,
+            "peak_gpu_bytes": 27146240
+          },
+          {
+            "seconds": 0.004195069894194603,
+            "peak_gpu_bytes": 27146240
+          },
+          {
+            "seconds": 0.004170778673142195,
+            "peak_gpu_bytes": 27146240
+          }
+        ],
+        "median_seconds": 0.00420591002330184
+      },
+      "pca": {
+        "repetitions": [
+          {
+            "seconds": 0.00010515935719013214,
+            "peak_gpu_bytes": 9860608
+          },
+          {
+            "seconds": 0.00010230019688606262,
+            "peak_gpu_bytes": 9860608
+          },
+          {
+            "seconds": 0.00010246923193335533,
+            "peak_gpu_bytes": 9860608
+          },
+          {
+            "seconds": 0.00010527996346354485,
+            "peak_gpu_bytes": 9860608
+          },
+          {
+            "seconds": 9.62698832154274e-05,
+            "peak_gpu_bytes": 9860608
+          },
+          {
+            "seconds": 9.547965601086617e-05,
+            "peak_gpu_bytes": 9860608
+          },
+          {
+            "seconds": 9.257998317480087e-05,
+            "peak_gpu_bytes": 9860608
+          }
+        ],
+        "median_seconds": 0.00010230019688606262
+      },
+      "ppca_ratio_and_repair": {
+        "repetitions": [
+          {
+            "seconds": 0.017943895887583494,
+            "peak_gpu_bytes": 9860608
+          },
+          {
+            "seconds": 0.017833516001701355,
+            "peak_gpu_bytes": 9860608
+          },
+          {
+            "seconds": 0.017720735631883144,
+            "peak_gpu_bytes": 9860608
+          },
+          {
+            "seconds": 0.017760276328772306,
+            "peak_gpu_bytes": 9860608
+          },
+          {
+            "seconds": 0.017568096984177828,
+            "peak_gpu_bytes": 9860608
+          },
+          {
+            "seconds": 0.017242548055946827,
+            "peak_gpu_bytes": 9860608
+          },
+          {
+            "seconds": 0.016932088881731033,
+            "peak_gpu_bytes": 9860608
+          }
+        ],
+        "median_seconds": 0.017720735631883144
+      },
+      "ganf": {
+        "repetitions": [
+          {
+            "seconds": 0.003375072032213211,
+            "peak_gpu_bytes": 19729920
+          },
+          {
+            "seconds": 0.0034074517898261547,
+            "peak_gpu_bytes": 19729920
+          },
+          {
+            "seconds": 0.003288551699370146,
+            "peak_gpu_bytes": 19729920
+          },
+          {
+            "seconds": 0.003299641888588667,
+            "peak_gpu_bytes": 19729920
+          },
+          {
+            "seconds": 0.0032845609821379185,
+            "peak_gpu_bytes": 19729920
+          },
+          {
+            "seconds": 0.003268051892518997,
+            "peak_gpu_bytes": 19729920
+          },
+          {
+            "seconds": 0.0032708318904042244,
+            "peak_gpu_bytes": 19729920
+          }
+        ],
+        "median_seconds": 0.003288551699370146
+      }
+    },
+    "gpu_processes": [
+      "173879, .venv/bin/python, 404 MiB"
+    ],
+    "torch": "2.8.0+cu128",
+    "cuda": "12.8",
+    "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+    "cuda_matmul_tf32": false,
+    "cudnn_tf32": true,
+    "scope": "Seven warm batch-one-window wall times. Model loading and database excluded. Conditional repair summaries included, hidden-reference metrics excluded. Returned raw evidence transfer included. PPCA and PCA run on the CPU. Peak allocation includes resident models."
+  },
+  "synthetic_32_linear": {
+    "case_id": "test_0000_clean",
+    "eligible_candidates": 32,
+    "draws": 32,
+    "ensemble_members": 3,
+    "methods": {
+      "flow_ratio_and_repair": {
+        "repetitions": [
+          {
+            "seconds": 0.022756073623895645,
+            "peak_gpu_bytes": 36680192
+          },
+          {
+            "seconds": 0.022759484127163887,
+            "peak_gpu_bytes": 36680192
+          },
+          {
+            "seconds": 0.022381914779543877,
+            "peak_gpu_bytes": 36680192
+          },
+          {
+            "seconds": 0.02218971587717533,
+            "peak_gpu_bytes": 36680192
+          },
+          {
+            "seconds": 0.022301905322819948,
+            "peak_gpu_bytes": 36680192
+          },
+          {
+            "seconds": 0.022239715792238712,
+            "peak_gpu_bytes": 36680192
+          },
+          {
+            "seconds": 0.02233456587418914,
+            "peak_gpu_bytes": 36680192
+          }
+        ],
+        "median_seconds": 0.02233456587418914
+      },
+      "same_flow_nll": {
+        "repetitions": [
+          {
+            "seconds": 0.010263153817504644,
+            "peak_gpu_bytes": 36451328
+          },
+          {
+            "seconds": 0.01024141488596797,
+            "peak_gpu_bytes": 36451328
+          },
+          {
+            "seconds": 0.01023202482610941,
+            "peak_gpu_bytes": 36451328
+          },
+          {
+            "seconds": 0.010182035155594349,
+            "peak_gpu_bytes": 36451328
+          },
+          {
+            "seconds": 0.010168875101953745,
+            "peak_gpu_bytes": 36451328
+          },
+          {
+            "seconds": 0.010172035079449415,
+            "peak_gpu_bytes": 36451328
+          },
+          {
+            "seconds": 0.010211274959146976,
+            "peak_gpu_bytes": 36451328
+          }
+        ],
+        "median_seconds": 0.010211274959146976
+      },
+      "single_flow_nll": {
+        "repetitions": [
+          {
+            "seconds": 0.00462602823972702,
+            "peak_gpu_bytes": 36450304
+          },
+          {
+            "seconds": 0.004613788798451424,
+            "peak_gpu_bytes": 36450304
+          },
+          {
+            "seconds": 0.00459732860326767,
+            "peak_gpu_bytes": 36450304
+          },
+          {
+            "seconds": 0.00463672773912549,
+            "peak_gpu_bytes": 36450304
+          },
+          {
+            "seconds": 0.004618838895112276,
+            "peak_gpu_bytes": 36450304
+          },
+          {
+            "seconds": 0.004620429128408432,
+            "peak_gpu_bytes": 36450304
+          },
+          {
+            "seconds": 0.004621108993887901,
+            "peak_gpu_bytes": 36450304
+          }
+        ],
+        "median_seconds": 0.004620429128408432
+      },
+      "pca": {
+        "repetitions": [
+          {
+            "seconds": 0.0001513189636170864,
+            "peak_gpu_bytes": 9875968
+          },
+          {
+            "seconds": 0.00013659987598657608,
+            "peak_gpu_bytes": 9875968
+          },
+          {
+            "seconds": 0.00012686988338828087,
+            "peak_gpu_bytes": 9875968
+          },
+          {
+            "seconds": 0.00012656906619668007,
+            "peak_gpu_bytes": 9875968
+          },
+          {
+            "seconds": 0.00012730015441775322,
+            "peak_gpu_bytes": 9875968
+          },
+          {
+            "seconds": 0.00013048900291323662,
+            "peak_gpu_bytes": 9875968
+          },
+          {
+            "seconds": 0.0001242300495505333,
+            "peak_gpu_bytes": 9875968
+          }
+        ],
+        "median_seconds": 0.00012730015441775322
+      },
+      "ppca_ratio_and_repair": {
+        "repetitions": [
+          {
+            "seconds": 0.07400195812806487,
+            "peak_gpu_bytes": 9875968
+          },
+          {
+            "seconds": 0.07367016887292266,
+            "peak_gpu_bytes": 9875968
+          },
+          {
+            "seconds": 0.07395657803863287,
+            "peak_gpu_bytes": 9875968
+          },
+          {
+            "seconds": 0.07324492977932096,
+            "peak_gpu_bytes": 9875968
+          },
+          {
+            "seconds": 0.07280406076461077,
+            "peak_gpu_bytes": 9875968
+          },
+          {
+            "seconds": 0.07275692094117403,
+            "peak_gpu_bytes": 9875968
+          },
+          {
+            "seconds": 0.07389811798930168,
+            "peak_gpu_bytes": 9875968
+          }
+        ],
+        "median_seconds": 0.07367016887292266
+      },
+      "ganf": {
+        "repetitions": [
+          {
+            "seconds": 0.0033200420439243317,
+            "peak_gpu_bytes": 24132096
+          },
+          {
+            "seconds": 0.003312341868877411,
+            "peak_gpu_bytes": 24132096
+          },
+          {
+            "seconds": 0.00331325177103281,
+            "peak_gpu_bytes": 24132096
+          },
+          {
+            "seconds": 0.00329887168481946,
+            "peak_gpu_bytes": 24132096
+          },
+          {
+            "seconds": 0.003311482258141041,
+            "peak_gpu_bytes": 24132096
+          },
+          {
+            "seconds": 0.003286811988800764,
+            "peak_gpu_bytes": 24132096
+          },
+          {
+            "seconds": 0.0032919421792030334,
+            "peak_gpu_bytes": 24132096
+          }
+        ],
+        "median_seconds": 0.003311482258141041
+      }
+    },
+    "gpu_processes": [
+      "173879, .venv/bin/python, 404 MiB"
+    ],
+    "torch": "2.8.0+cu128",
+    "cuda": "12.8",
+    "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+    "cuda_matmul_tf32": false,
+    "cudnn_tf32": true,
+    "scope": "Seven warm batch-one-window wall times. Model loading and database excluded. Conditional repair summaries included, hidden-reference metrics excluded. Returned raw evidence transfer included. PPCA and PCA run on the CPU. Peak allocation includes resident models."
+  },
+  "synthetic_64_nonlinear": {
+    "case_id": "test_0000_clean",
+    "eligible_candidates": 64,
+    "draws": 128,
+    "ensemble_members": 3,
+    "methods": {
+      "flow_ratio_and_repair": {
+        "repetitions": [
+          {
+            "seconds": 0.02301636291667819,
+            "peak_gpu_bytes": 83240960
+          },
+          {
+            "seconds": 0.02321442309767008,
+            "peak_gpu_bytes": 83240960
+          },
+          {
+            "seconds": 0.022904873825609684,
+            "peak_gpu_bytes": 83240960
+          },
+          {
+            "seconds": 0.023144463077187538,
+            "peak_gpu_bytes": 83240960
+          },
+          {
+            "seconds": 0.022827963810414076,
+            "peak_gpu_bytes": 83240960
+          },
+          {
+            "seconds": 0.022996192798018456,
+            "peak_gpu_bytes": 83240960
+          },
+          {
+            "seconds": 0.02309718308970332,
+            "peak_gpu_bytes": 83240960
+          }
+        ],
+        "median_seconds": 0.02301636291667819
+      },
+      "same_flow_nll": {
+        "repetitions": [
+          {
+            "seconds": 0.01036650501191616,
+            "peak_gpu_bytes": 81512960
+          },
+          {
+            "seconds": 0.010575114283710718,
+            "peak_gpu_bytes": 81512960
+          },
+          {
+            "seconds": 0.010601093992590904,
+            "peak_gpu_bytes": 81512960
+          },
+          {
+            "seconds": 0.010467863641679287,
+            "peak_gpu_bytes": 81512960
+          },
+          {
+            "seconds": 0.010422294028103352,
+            "peak_gpu_bytes": 81512960
+          },
+          {
+            "seconds": 0.01064116321504116,
+            "peak_gpu_bytes": 81512960
+          },
+          {
+            "seconds": 0.010535434354096651,
+            "peak_gpu_bytes": 81512960
+          }
+        ],
+        "median_seconds": 0.010535434354096651
+      },
+      "single_flow_nll": {
+        "repetitions": [
+          {
+            "seconds": 0.004967007786035538,
+            "peak_gpu_bytes": 81511936
+          },
+          {
+            "seconds": 0.005018598400056362,
+            "peak_gpu_bytes": 81511936
+          },
+          {
+            "seconds": 0.005248566623777151,
+            "peak_gpu_bytes": 81511936
+          },
+          {
+            "seconds": 0.004982718266546726,
+            "peak_gpu_bytes": 81511936
+          },
+          {
+            "seconds": 0.005028378218412399,
+            "peak_gpu_bytes": 81511936
+          },
+          {
+            "seconds": 0.004988187924027443,
+            "peak_gpu_bytes": 81511936
+          },
+          {
+            "seconds": 0.004977257922291756,
+            "peak_gpu_bytes": 81511936
+          }
+        ],
+        "median_seconds": 0.004988187924027443
+      },
+      "pca": {
+        "repetitions": [
+          {
+            "seconds": 0.00011339038610458374,
+            "peak_gpu_bytes": 9918976
+          },
+          {
+            "seconds": 0.00011685909703373909,
+            "peak_gpu_bytes": 9918976
+          },
+          {
+            "seconds": 0.00010883994400501251,
+            "peak_gpu_bytes": 9918976
+          },
+          {
+            "seconds": 0.00011148909106850624,
+            "peak_gpu_bytes": 9918976
+          },
+          {
+            "seconds": 0.00010527018457651138,
+            "peak_gpu_bytes": 9918976
+          },
+          {
+            "seconds": 0.00010181870311498642,
+            "peak_gpu_bytes": 9918976
+          },
+          {
+            "seconds": 0.00010100984945893288,
+            "peak_gpu_bytes": 9918976
+          }
+        ],
+        "median_seconds": 0.00010883994400501251
+      },
+      "ppca_ratio_and_repair": {
+        "repetitions": [
+          {
+            "seconds": 0.16941440384835005,
+            "peak_gpu_bytes": 9918976
+          },
+          {
+            "seconds": 0.16827303683385253,
+            "peak_gpu_bytes": 9918976
+          },
+          {
+            "seconds": 0.1672338992357254,
+            "peak_gpu_bytes": 9918976
+          },
+          {
+            "seconds": 0.1696297130547464,
+            "peak_gpu_bytes": 9918976
+          },
+          {
+            "seconds": 0.1688078958541155,
+            "peak_gpu_bytes": 9918976
+          },
+          {
+            "seconds": 0.16892611607909203,
+            "peak_gpu_bytes": 9918976
+          },
+          {
+            "seconds": 0.1695200139656663,
+            "peak_gpu_bytes": 9918976
+          }
+        ],
+        "median_seconds": 0.16892611607909203
+      },
+      "ganf": {
+        "repetitions": [
+          {
+            "seconds": 0.003358551301062107,
+            "peak_gpu_bytes": 30024704
+          },
+          {
+            "seconds": 0.003336462192237377,
+            "peak_gpu_bytes": 30024704
+          },
+          {
+            "seconds": 0.003668780904263258,
+            "peak_gpu_bytes": 30024704
+          },
+          {
+            "seconds": 0.003342672251164913,
+            "peak_gpu_bytes": 30024704
+          },
+          {
+            "seconds": 0.00331009179353714,
+            "peak_gpu_bytes": 30024704
+          },
+          {
+            "seconds": 0.003290120977908373,
+            "peak_gpu_bytes": 30024704
+          },
+          {
+            "seconds": 0.003307152073830366,
+            "peak_gpu_bytes": 30024704
+          }
+        ],
+        "median_seconds": 0.003336462192237377
+      }
+    },
+    "gpu_processes": [
+      "173879, .venv/bin/python, 404 MiB"
+    ],
+    "torch": "2.8.0+cu128",
+    "cuda": "12.8",
+    "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+    "cuda_matmul_tf32": false,
+    "cudnn_tf32": true,
+    "scope": "Seven warm batch-one-window wall times. Model loading and database excluded. Conditional repair summaries included, hidden-reference metrics excluded. Returned raw evidence transfer included. PPCA and PCA run on the CPU. Peak allocation includes resident models."
+  },
+  "intel": {
+    "case_id": "test_0000_clean",
+    "eligible_candidates": 48,
+    "draws": 32,
+    "ensemble_members": 3,
+    "methods": {
+      "flow_ratio_and_repair": {
+        "repetitions": [
+          {
+            "seconds": 0.02249279525130987,
+            "peak_gpu_bytes": 45875712
+          },
+          {
+            "seconds": 0.022483234759420156,
+            "peak_gpu_bytes": 45875712
+          },
+          {
+            "seconds": 0.022356615867465734,
+            "peak_gpu_bytes": 45875712
+          },
+          {
+            "seconds": 0.022470615338534117,
+            "peak_gpu_bytes": 45875712
+          },
+          {
+            "seconds": 0.02249903418123722,
+            "peak_gpu_bytes": 45875712
+          },
+          {
+            "seconds": 0.022735713981091976,
+            "peak_gpu_bytes": 45875712
+          },
+          {
+            "seconds": 0.022551495116204023,
+            "peak_gpu_bytes": 45875712
+          }
+        ],
+        "median_seconds": 0.02249279525130987
+      },
+      "same_flow_nll": {
+        "repetitions": [
+          {
+            "seconds": 0.01026270492002368,
+            "peak_gpu_bytes": 45536256
+          },
+          {
+            "seconds": 0.010209904983639717,
+            "peak_gpu_bytes": 45536256
+          },
+          {
+            "seconds": 0.010127805173397064,
+            "peak_gpu_bytes": 45536256
+          },
+          {
+            "seconds": 0.010125045198947191,
+            "peak_gpu_bytes": 45536256
+          },
+          {
+            "seconds": 0.010173525661230087,
+            "peak_gpu_bytes": 45536256
+          },
+          {
+            "seconds": 0.010462944861501455,
+            "peak_gpu_bytes": 45536256
+          },
+          {
+            "seconds": 0.010243684984743595,
+            "peak_gpu_bytes": 45536256
+          }
+        ],
+        "median_seconds": 0.010209904983639717
+      },
+      "single_flow_nll": {
+        "repetitions": [
+          {
+            "seconds": 0.004674688912928104,
+            "peak_gpu_bytes": 45535232
+          },
+          {
+            "seconds": 0.004699228797107935,
+            "peak_gpu_bytes": 45535232
+          },
+          {
+            "seconds": 0.004706878215074539,
+            "peak_gpu_bytes": 45535232
+          },
+          {
+            "seconds": 0.004702048376202583,
+            "peak_gpu_bytes": 45535232
+          },
+          {
+            "seconds": 0.00469529815018177,
+            "peak_gpu_bytes": 45535232
+          },
+          {
+            "seconds": 0.004707749001681805,
+            "peak_gpu_bytes": 45535232
+          },
+          {
+            "seconds": 0.004695849027484655,
+            "peak_gpu_bytes": 45535232
+          }
+        ],
+        "median_seconds": 0.004699228797107935
+      },
+      "pca": {
+        "repetitions": [
+          {
+            "seconds": 0.00015904894098639488,
+            "peak_gpu_bytes": 9894400
+          },
+          {
+            "seconds": 0.00015755975618958473,
+            "peak_gpu_bytes": 9894400
+          },
+          {
+            "seconds": 0.00015388010069727898,
+            "peak_gpu_bytes": 9894400
+          },
+          {
+            "seconds": 0.00015089893713593483,
+            "peak_gpu_bytes": 9894400
+          },
+          {
+            "seconds": 0.00015192991122603416,
+            "peak_gpu_bytes": 9894400
+          },
+          {
+            "seconds": 0.00014808913692831993,
+            "peak_gpu_bytes": 9894400
+          },
+          {
+            "seconds": 0.0001483098603785038,
+            "peak_gpu_bytes": 9894400
+          }
+        ],
+        "median_seconds": 0.00015192991122603416
+      },
+      "ppca_ratio_and_repair": {
+        "repetitions": [
+          {
+            "seconds": 0.11295564193278551,
+            "peak_gpu_bytes": 9894400
+          },
+          {
+            "seconds": 0.11322807241231203,
+            "peak_gpu_bytes": 9894400
+          },
+          {
+            "seconds": 0.11281688325107098,
+            "peak_gpu_bytes": 9894400
+          },
+          {
+            "seconds": 0.11381095973774791,
+            "peak_gpu_bytes": 9894400
+          },
+          {
+            "seconds": 0.11296106269583106,
+            "peak_gpu_bytes": 9894400
+          },
+          {
+            "seconds": 0.11316712200641632,
+            "peak_gpu_bytes": 9894400
+          },
+          {
+            "seconds": 0.11289090290665627,
+            "peak_gpu_bytes": 9894400
+          }
+        ],
+        "median_seconds": 0.11296106269583106
+      },
+      "ganf": {
+        "repetitions": [
+          {
+            "seconds": 0.0033480720594525337,
+            "peak_gpu_bytes": 27075584
+          },
+          {
+            "seconds": 0.0034558908082544804,
+            "peak_gpu_bytes": 27075584
+          },
+          {
+            "seconds": 0.0033427318558096886,
+            "peak_gpu_bytes": 27075584
+          },
+          {
+            "seconds": 0.0033372221514582634,
+            "peak_gpu_bytes": 27075584
+          },
+          {
+            "seconds": 0.00337044196203351,
+            "peak_gpu_bytes": 27075584
+          },
+          {
+            "seconds": 0.0034021511673927307,
+            "peak_gpu_bytes": 27075584
+          },
+          {
+            "seconds": 0.0033990321680903435,
+            "peak_gpu_bytes": 27075584
+          }
+        ],
+        "median_seconds": 0.00337044196203351
+      }
+    },
+    "gpu_processes": [
+      "173879, .venv/bin/python, 404 MiB"
+    ],
+    "torch": "2.8.0+cu128",
+    "cuda": "12.8",
+    "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+    "cuda_matmul_tf32": false,
+    "cudnn_tf32": true,
+    "scope": "Seven warm batch-one-window wall times. Model loading and database excluded. Conditional repair summaries included, hidden-reference metrics excluded. Returned raw evidence transfer included. PPCA and PCA run on the CPU. Peak allocation includes resident models."
+  }
+}

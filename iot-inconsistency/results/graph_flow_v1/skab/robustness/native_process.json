@@ -1,0 +1,16 @@
+{
+  "cases": 224,
+  "native_event_windows": 78,
+  "label_scope": "original target-interval process anomaly, never sensor-fault truth",
+  "methods": {
+    "flow_ratio": {
+      "window_ap": 0.5359568818170463
+    },
+    "flow_nll": {
+      "window_ap": 0.545848795460503
+    },
+    "pca": {
+      "window_ap": 0.49887412123549474
+    }
+  }
+}

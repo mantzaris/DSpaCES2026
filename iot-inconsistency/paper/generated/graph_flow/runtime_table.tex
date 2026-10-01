@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\caption{Selected model size, training intervals and operational latency on the RTX PRO 4500. Times are medians of seven warm full-window calls including repair summaries. Loading and offline truth metrics are excluded.}
+\label{tab:runtime}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Config. & Params (k) & Train $N$ & $M$ & Ratio (ms) \\
+\midrule
+S32L & 96.9 & 11904 & 32 & 22.3 \\
+S32N & 96.9 & 11904 & 32 & 22.7 \\
+S64N & 97.4 & 23808 & 128 & 23.0 \\
+Intel & 97.2 & 5072 & 32 & 22.5 \\
+SKAB & 96.5 & 3272 & 2048 & 112.5 \\
+\bottomrule
+\end{tabular}
+\end{table}

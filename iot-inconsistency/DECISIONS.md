@@ -1,5 +1,65 @@
 # Decisions
 
+## Graph-flow revision completed on 2026-10-01
+
+The new question and namespace are distinct from the witness study. The current
+checkout was inspected and 306 original tracked files were hashed before revision.
+An exact paper archive preserves the previous source, PDF, figures and bibliography.
+All 166 original tracked result files remain unchanged. Work continues on `main`,
+with no push because the user will push at completion.
+
+The executed compact architecture grid has two paired width/layer settings,
+(32, 4) and (64, 6), crossed with two context lengths. It is not an eight-setting
+independent cross of widths and layer counts. Affine neural couplings avoid a new
+spline dependency and give exact triangular Jacobians. Three selected training
+seeds form one density mixture. Every final choice comes from the protocol lock.
+All sixteen frozen numerical module hashes remain unchanged.
+
+Development corrections preceded the lock. They handle wholly unavailable Intel
+windows without evaluating invalid target densities, use actual irregular SKAB
+timestamps for drift, and keep Gaussian-mixture weights in log space. Earlier
+development attempts remain in named correction directories. These changes did
+not inspect final outcomes.
+
+Two post-scoring failures were limited to auditing and reporting. The independent
+SciPy audit initially reduced saved float32 normal log densities without matching
+production's explicit float64 promotion. A separate corrected audit now repeats
+the production arithmetic and agrees within 9.10e-13. The initial failed report is
+preserved. The first robustness resume later shadowed a local function named
+`score` with a reporting array. A separate wrapper renamed only that reporting
+variable, retained completed stress cases, and completed the remaining strata.
+No test score, model, calibration, prior, sample budget or selection was changed.
+`execution_jobs.json`, `audit_precision_correction.json` and
+`stress_reporting_correction.json` retain this history.
+
+Neo4j rejects mixed schema and data writes in one transaction. The shared storage
+adapter now separates schema statements from evidence statements while preserving
+result order. Numerical kernels do not use this adapter. Repeated new-namespace
+import is idempotent, the legacy numerical tests still pass, and automated browser
+reviews are explicitly labeled interface checks. Original observations remain
+immutable. Figure and UI layout changes affect only presentation.
+
+The results support directional H1 but miss the practical same-flow margin. H2 is
+inconclusive and H3 is not established. The stronger supervised result, PCA's two
+synthetic wins, held-out-fault degradation, Intel alarm failure, SKAB harmful edits
+and finite-sampling limits remain in the paper. A better member-average log-ratio
+ablation was not substituted for the frozen density-mixture method. No search for
+a favorable test outcome was launched.
+
+Six compact archives retain exact JSON and all specified score evidence. Every
+retained array is checked for exact equality during packing. Omitted redundant
+fields are listed in the manifest, and compact paths are distinct from original
+paths. Thirty complete production generation bundles retain all arrays. Checkpoints,
+raw data, caches, logs and temporary build files stay outside Git. Model manifests
+record local and verified pod locations, including local-only superseded files.
+Independent inference reproduction requires these weights or retraining.
+
+The new paper uses the standard IEEE class and ten pages including references.
+Repetition and redundant URLs in fully identified published references were removed
+to fit the venue limit. Complete primary-source links remain in the literature
+matrix. No margins or base font size were reduced. No supplementary-paper permission
+was assumed, and no submission or new resource was created.
+
 2026-09-30 user update. Continue working and committing on `main`. The user will push at completion. Do not retry push authentication or create branches. Initial commit is `83cedd9`.
 
 2026-09-30. Use the existing authorized Runpod host and available SSH authentication. Do not create cloud resources. The provisional 48 to 96 GPU hours in the plan is not a spending authorization. Begin with bounded profiling and finite jobs on the existing pod.

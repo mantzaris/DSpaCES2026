@@ -1,0 +1,19 @@
+{
+  "recorded_utc": "2026-10-01T02:43:18.261589+00:00",
+  "scope": "Stress reporting variable name correction",
+  "failed_stage": "robustness",
+  "error": "TypeError: numpy.ndarray object is not callable",
+  "cause": "A report array shadowed the nested score function before the first ambiguity case.",
+  "corrected_script": "scripts/robustness_graph_flow.py",
+  "sha256": "ed9d0c125d7b05e756c65452c12c2212d74fffe0434305c3c8e51ff81d2bf536",
+  "primary_predictions_changed": false,
+  "protocol_choices_changed": false,
+  "original_protocol_sources_changed": false,
+  "original_source": "src/iot_repair/flow_robustness.py",
+  "failed_job": {
+    "name": "graph_flow_finish",
+    "started": "2026-10-01T02:39:35.179427+00:00",
+    "finished": "2026-10-01T02:40:11.763605+00:00"
+  },
+  "completed_before_failure": "Corrected production equation audit passed; first dataset stress scores were computed but not yet saved by the failing stage."
+}

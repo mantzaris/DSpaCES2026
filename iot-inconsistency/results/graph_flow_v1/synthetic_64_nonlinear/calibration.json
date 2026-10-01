@@ -1,0 +1,1969 @@
+{
+  "dataset": "synthetic_64_nonlinear",
+  "methods": {
+    "all_ppca": {
+      "probability": {
+        "center": -2.3184317494467965,
+        "scale": 4.149531677881719,
+        "features": [
+          "standardized clipped raw score",
+          "scorable indicator"
+        ],
+        "candidates": 5760,
+        "positives": 72,
+        "prevalence": 0.0125,
+        "coefficient": [
+          0.34366902203498356,
+          0.009234039256195141
+        ],
+        "intercept": -5.480846576410861,
+        "constant": false
+      },
+      "normal_window_maxima": [
+        40.23321285061895,
+        28.051923825985494,
+        37.745903049418764,
+        22.49454285168882,
+        6.222870519861946,
+        24.419733755008185,
+        46.949557730527786,
+        24.82908425477885,
+        28.505435398980673,
+        13.736587713554739,
+        21.712745911459084,
+        20.918059521898705,
+        29.95289718553083,
+        39.00308191405982,
+        13.595575265743982,
+        34.600142142064335,
+        8.256658657213158,
+        9.287528876632738,
+        25.863413270036933,
+        45.05195240695274,
+        29.28331478612679,
+        16.543060588999204,
+        17.13227921764818,
+        9.193146068333547,
+        10.736958423475986,
+        23.05689073934159,
+        46.145820262055985,
+        23.43877944862279,
+        9.082344192372776,
+        36.18258399382737,
+        45.68828167091553,
+        46.320206013638256,
+        53.38416426360395,
+        9.829194863095807,
+        40.44710269364973,
+        72.97032960864578
+      ],
+      "normal_windows": 36,
+      "minimum_window_p": 0.02702702702702703,
+      "role_blocks": {
+        "normal_window_tail": [
+          "calibration_trajectory_0",
+          "calibration_trajectory_1",
+          "calibration_trajectory_2",
+          "calibration_trajectory_3"
+        ],
+        "fault_probability": [
+          "calibration_trajectory_4",
+          "calibration_trajectory_5"
+        ],
+        "repair_policy": [
+          "calibration_trajectory_6",
+          "calibration_trajectory_7"
+        ]
+      }
+    },
+    "flow_nll": {
+      "probability": {
+        "center": -9.549352608198028,
+        "scale": 12.478969446234998,
+        "features": [
+          "standardized clipped raw score",
+          "scorable indicator"
+        ],
+        "candidates": 5760,
+        "positives": 72,
+        "prevalence": 0.0125,
+        "coefficient": [
+          1.012551484800122,
+          0.017732314732366403
+        ],
+        "intercept": -5.8712119317549645,
+        "constant": false
+      },
+      "normal_window_maxima": [
+        5.978535014512824,
+        8.203356834306247,
+        8.602655439588853,
+        8.428603960576766,
+        8.720828059921182,
+        7.84310473443905,
+        9.268842047629352,
+        6.950653077968659,
+        8.851150025440695,
+        5.919665846184817,
+        5.634067329155729,
+        6.0381336692913035,
+        11.437560414161615,
+        7.473121949692037,
+        5.504622200083624,
+        6.732097711030217,
+        6.10530727220101,
+        7.485775239960322,
+        10.61874835973072,
+        6.449849959944451,
+        8.34960684679135,
+        5.323486107592102,
+        8.835497673825104,
+        5.389382518369845,
+        5.169168038215261,
+        10.150163961298984,
+        5.904540942704081,
+        7.394199523715701,
+        5.256541295020848,
+        6.3518971659727255,
+        7.937685225900637,
+        9.550273388897477,
+        6.1229472324641,
+        6.8786451878297985,
+        6.271054923013087,
+        7.91299694621537
+      ],
+      "normal_windows": 36,
+      "minimum_window_p": 0.02702702702702703,
+      "role_blocks": {
+        "normal_window_tail": [
+          "calibration_trajectory_0",
+          "calibration_trajectory_1",
+          "calibration_trajectory_2",
+          "calibration_trajectory_3"
+        ],
+        "fault_probability": [
+          "calibration_trajectory_4",
+          "calibration_trajectory_5"
+        ],
+        "repair_policy": [
+          "calibration_trajectory_6",
+          "calibration_trajectory_7"
+        ]
+      },
+      "repair_policy": {
+        "threshold": 0.25,
+        "calibration": {
+          "threshold": 0.25,
+          "cases": 90,
+          "accepted": 36,
+          "coverage": 0.4,
+          "failures": 0,
+          "risk": 0.0,
+          "harmful": 0,
+          "harmful_rate": 0.0,
+          "wilson_upper": 0.06990067087687774,
+          "mean_improvement": 3.2364918072738322
+        },
+        "grid": [
+          {
+            "threshold": 0.25,
+            "cases": 90,
+            "accepted": 36,
+            "coverage": 0.4,
+            "failures": 0,
+            "risk": 0.0,
+            "harmful": 0,
+            "harmful_rate": 0.0,
+            "wilson_upper": 0.06990067087687774,
+            "mean_improvement": 3.2364918072738322
+          },
+          {
+            "threshold": 0.5,
+            "cases": 90,
+            "accepted": 34,
+            "coverage": 0.37777777777777777,
+            "failures": 0,
+            "risk": 0.0,
+            "harmful": 0,
+            "harmful_rate": 0.0,
+            "wilson_upper": 0.07370939644250228,
+            "mean_improvement": 3.264205964780664
+          },
+          {
+            "threshold": 0.75,
+            "cases": 90,
+            "accepted": 31,
+            "coverage": 0.34444444444444444,
+            "failures": 0,
+            "risk": 0.0,
+            "harmful": 0,
+            "harmful_rate": 0.0,
+            "wilson_upper": 0.08026998460298299,
+            "mean_improvement": 3.2630008817275264
+          },
+          {
+            "threshold": 0.9,
+            "cases": 90,
+            "accepted": 31,
+            "coverage": 0.34444444444444444,
+            "failures": 0,
+            "risk": 0.0,
+            "harmful": 0,
+            "harmful_rate": 0.0,
+            "wilson_upper": 0.08026998460298299,
+            "mean_improvement": 3.2630008817275264
+          },
+          {
+            "threshold": 0.95,
+            "cases": 90,
+            "accepted": 31,
+            "coverage": 0.34444444444444444,
+            "failures": 0,
+            "risk": 0.0,
+            "harmful": 0,
+            "harmful_rate": 0.0,
+            "wilson_upper": 0.08026998460298299,
+            "mean_improvement": 3.2630008817275264
+          },
+          {
+            "threshold": 0.99,
+            "cases": 90,
+            "accepted": 29,
+            "coverage": 0.32222222222222224,
+            "failures": 0,
+            "risk": 0.0,
+            "harmful": 0,
+            "harmful_rate": 0.0,
+            "wilson_upper": 0.08533345148341677,
+            "mean_improvement": 3.3798508813606625
+          }
+        ],
+        "rule": "Largest calibration coverage with one-sided 95% Wilson upper bound <= 0.1 and at least 10 recommendations; otherwise abstain.",
+        "blocks": [
+          "calibration_trajectory_6",
+          "calibration_trajectory_7"
+        ],
+        "dependent_cases_caveat": "Wilson is a development selection heuristic, not a dependent-data guarantee"
+      }
+    },
+    "flow_plugin": {
+      "probability": {
+        "center": -9.365019362560309,
+        "scale": 9.348350482605609,
+        "features": [
+          "standardized clipped raw score",
+          "scorable indicator"
+        ],
+        "candidates": 5760,
+        "positives": 72,
+        "prevalence": 0.0125,
+        "coefficient": [
+          0.7573536836595589,
+          0.03856972208524488
+        ],
+        "intercept": -5.703760644440692,
+        "constant": false
+      },
+      "normal_window_maxima": [
+        2.053611779051902,
+        -0.38390112524602005,
+        4.127425370714919,
+        5.597603190205712,
+        -1.114549807473217,
+        2.20838580781069,
+        2.5133691239608504,
+        2.418919404794072,
+        4.935977191696058,
+        -0.7083233599151599,
+        1.5844717466359781,
+        2.2895859997849364,
+        4.445828520881037,
+        1.4529100171744043,
+        -1.249072602671136,
+        -0.7135063193047748,
+        0.9505233546595191,
+        1.6680237255134394,
+        0.5087883020564421,
+        0.14310922271725923,
+        -1.092753913964048,
+        0.7759201979869115,
+        -1.072780071337136,
+        0.050277389857582566,
+        2.212495546892604,
+        1.382204137045147,
+        1.4895388127149332,
+        0.12626194052430995,
+        -0.7997114869368169,
+        0.653953023466209,
+        0.2794248430653956,
+        0.382984923233491,
+        1.0010625317750605,
+        -0.4418877692426193,
+        0.49274607444802054,
+        -1.2462580217083739
+      ],
+      "normal_windows": 36,
+      "minimum_window_p": 0.02702702702702703,
+      "role_blocks": {
+        "normal_window_tail": [
+          "calibration_trajectory_0",
+          "calibration_trajectory_1",
+          "calibration_trajectory_2",
+          "calibration_trajectory_3"
+        ],
+        "fault_probability": [
+          "calibration_trajectory_4",
+          "calibration_trajectory_5"
+        ],
+        "repair_policy": [
+          "calibration_trajectory_6",
+          "calibration_trajectory_7"
+        ]
+      }
+    },
+    "flow_ratio": {
+      "probability": {
+        "center": -9.621107120186917,
+        "scale": 9.937116448432702,
+        "features": [
+          "standardized clipped raw score",
+          "scorable indicator"
+        ],
+        "candidates": 5760,
+        "positives": 72,
+        "prevalence": 0.0125,
+        "coefficient": [
+          0.8065253263778157,
+          0.06991445039774681
+        ],
+        "intercept": -5.758862623877003,
+        "constant": false
+      },
+      "normal_window_maxima": [
+        1.4288155581058328,
+        1.211876473348375,
+        4.010242145902463,
+        5.021977951400657,
+        -1.0438372992540668,
+        1.4235423921599635,
+        1.8022335539246792,
+        1.9401811134890399,
+        4.640685462925002,
+        -0.18967942162453877,
+        0.9285506505506351,
+        1.0006989039211147,
+        3.3845140636414324,
+        1.1054026658795415,
+        -1.5873502546259797,
+        -0.772753342243659,
+        0.5218888278717371,
+        1.7496605910686949,
+        0.20944325255004337,
+        -0.13987702900331378,
+        -1.3859675442958697,
+        0.5294878507894083,
+        -0.6712479896266075,
+        -0.36378112346939595,
+        1.5254325690398742,
+        1.7470233746887054,
+        1.045469078773623,
+        -0.04267383109042466,
+        -1.209911250581647,
+        0.04759686069613078,
+        -0.8256706503058349,
+        0.40356535409929073,
+        0.6396296652310793,
+        -0.8143300915505414,
+        -0.5737872171137459,
+        -1.6081091806051164
+      ],
+      "normal_windows": 36,
+      "minimum_window_p": 0.02702702702702703,
+      "role_blocks": {
+        "normal_window_tail": [
+          "calibration_trajectory_0",
+          "calibration_trajectory_1",
+          "calibration_trajectory_2",
+          "calibration_trajectory_3"
+        ],
+        "fault_probability": [
+          "calibration_trajectory_4",
+          "calibration_trajectory_5"
+        ],
+        "repair_policy": [
+          "calibration_trajectory_6",
+          "calibration_trajectory_7"
+        ]
+      },
+      "repair_policy": {
+        "threshold": 0.25,
+        "calibration": {
+          "threshold": 0.25,
+          "cases": 90,
+          "accepted": 36,
+          "coverage": 0.4,
+          "failures": 0,
+          "risk": 0.0,
+          "harmful": 0,
+          "harmful_rate": 0.0,
+          "wilson_upper": 0.06990067087687774,
+          "mean_improvement": 3.1045040064826153
+        },
+        "grid": [
+          {
+            "threshold": 0.25,
+            "cases": 90,
+            "accepted": 36,
+            "coverage": 0.4,
+            "failures": 0,
+            "risk": 0.0,
+            "harmful": 0,
+            "harmful_rate": 0.0,
+            "wilson_upper": 0.06990067087687774,
+            "mean_improvement": 3.1045040064826153
+          },
+          {
+            "threshold": 0.5,
+            "cases": 90,
+            "accepted": 35,
+            "coverage": 0.3888888888888889,
+            "failures": 0,
+            "risk": 0.0,
+            "harmful": 0,
+            "harmful_rate": 0.0,
+            "wilson_upper": 0.07175452748451365,
+            "mean_improvement": 3.186079563591703
+          },
+          {
+            "threshold": 0.75,
+            "cases": 90,
+            "accepted": 31,
+            "coverage": 0.34444444444444444,
+            "failures": 0,
+            "risk": 0.0,
+            "harmful": 0,
+            "harmful_rate": 0.0,
+            "wilson_upper": 0.08026998460298299,
+            "mean_improvement": 3.2630008817275264
+          },
+          {
+            "threshold": 0.9,
+            "cases": 90,
+            "accepted": 31,
+            "coverage": 0.34444444444444444,
+            "failures": 0,
+            "risk": 0.0,
+            "harmful": 0,
+            "harmful_rate": 0.0,
+            "wilson_upper": 0.08026998460298299,
+            "mean_improvement": 3.2630008817275264
+          },
+          {
+            "threshold": 0.95,
+            "cases": 90,
+            "accepted": 31,
+            "coverage": 0.34444444444444444,
+            "failures": 0,
+            "risk": 0.0,
+            "harmful": 0,
+            "harmful_rate": 0.0,
+            "wilson_upper": 0.08026998460298299,
+            "mean_improvement": 3.2630008817275264
+          },
+          {
+            "threshold": 0.99,
+            "cases": 90,
+            "accepted": 29,
+            "coverage": 0.32222222222222224,
+            "failures": 0,
+            "risk": 0.0,
+            "harmful": 0,
+            "harmful_rate": 0.0,
+            "wilson_upper": 0.08533345148341677,
+            "mean_improvement": 3.2812942428566654
+          }
+        ],
+        "rule": "Largest calibration coverage with one-sided 95% Wilson upper bound <= 0.1 and at least 10 recommendations; otherwise abstain.",
+        "blocks": [
+          "calibration_trajectory_6",
+          "calibration_trajectory_7"
+        ],
+        "dependent_cases_caveat": "Wilson is a development selection heuristic, not a dependent-data guarantee"
+      }
+    },
+    "flow_single": {
+      "probability": {
+        "center": -8.937047308271406,
+        "scale": 9.23547459260402,
+        "features": [
+          "standardized clipped raw score",
+          "scorable indicator"
+        ],
+        "candidates": 5760,
+        "positives": 72,
+        "prevalence": 0.0125,
+        "coefficient": [
+          0.7468529690970287,
+          0.0949123393000399
+        ],
+        "intercept": -5.8329044948961,
+        "constant": false
+      },
+      "normal_window_maxima": [
+        0.7112587903692544,
+        -0.11946758578618422,
+        6.195218316614186,
+        3.887577134431236,
+        -0.03170055361247748,
+        2.2331177305198437,
+        1.2570834938176692,
+        2.5776468826660914,
+        6.785679562963264,
+        0.4049892468104268,
+        1.140368223336004,
+        1.426483755956336,
+        8.02747438375695,
+        0.8942304342720462,
+        -1.0826791099592104,
+        -1.0322652880225398,
+        0.7600170147693754,
+        2.449182801026808,
+        -0.06857692915933278,
+        -0.7402624591040787,
+        -0.8796714345157266,
+        1.0400780205323228,
+        1.1910995937448323,
+        -0.42025638823552036,
+        2.05947145987696,
+        2.9099716688786366,
+        0.03615910489686769,
+        0.17174487185411813,
+        -0.9030380158118163,
+        0.14010307826845736,
+        -0.8306233159071041,
+        0.6896523813206556,
+        1.785231199033949,
+        -0.407368493225591,
+        1.4033683072356036,
+        -0.6755921012121391
+      ],
+      "normal_windows": 36,
+      "minimum_window_p": 0.02702702702702703,
+      "role_blocks": {
+        "normal_window_tail": [
+          "calibration_trajectory_0",
+          "calibration_trajectory_1",
+          "calibration_trajectory_2",
+          "calibration_trajectory_3"
+        ],
+        "fault_probability": [
+          "calibration_trajectory_4",
+          "calibration_trajectory_5"
+        ],
+        "repair_policy": [
+          "calibration_trajectory_6",
+          "calibration_trajectory_7"
+        ]
+      }
+    },
+    "ganf": {
+      "probability": {
+        "center": -25.985655070441116,
+        "scale": 1.841191245364751,
+        "features": [
+          "standardized clipped raw score",
+          "scorable indicator"
+        ],
+        "candidates": 5760,
+        "positives": 72,
+        "prevalence": 0.0125,
+        "coefficient": [
+          0.1672557146017784,
+          0.0022042632371457455
+        ],
+        "intercept": -4.890984042514603,
+        "constant": false
+      },
+      "normal_window_maxima": [
+        -13.134110386848878,
+        -21.298721565032473,
+        -24.08465956284275,
+        17.42707800057726,
+        -16.215032796876407,
+        -23.634597464615542,
+        -5.363059315213021,
+        -8.169927460842732,
+        -19.456426583693563,
+        -20.915239995541775,
+        -16.478398328857406,
+        -17.831272264362955,
+        26.362730004259124,
+        -5.769714203096722,
+        -22.630568610283895,
+        -15.31781389319425,
+        -22.12292683652605,
+        -14.34318389354642,
+        -10.492127116055205,
+        -20.97960159926744,
+        -24.18369502229159,
+        -5.867911179002667,
+        -22.730570039274674,
+        -24.513078938085155,
+        -15.228216678261463,
+        -21.643236225595306,
+        -14.307600152005376,
+        -19.540512137652442,
+        1.2673573888820646,
+        1.037762651143403,
+        -24.307641885313593,
+        -16.22602760822853,
+        -23.602297704827592,
+        -19.551016884183667,
+        -0.19878876775285637,
+        9.632656792864134
+      ],
+      "normal_windows": 36,
+      "minimum_window_p": 0.02702702702702703,
+      "role_blocks": {
+        "normal_window_tail": [
+          "calibration_trajectory_0",
+          "calibration_trajectory_1",
+          "calibration_trajectory_2",
+          "calibration_trajectory_3"
+        ],
+        "fault_probability": [
+          "calibration_trajectory_4",
+          "calibration_trajectory_5"
+        ],
+        "repair_policy": [
+          "calibration_trajectory_6",
+          "calibration_trajectory_7"
+        ]
+      }
+    },
+    "legacy_backbone": {
+      "probability": {
+        "center": 0.05969505713812061,
+        "scale": 1.0926674089610495,
+        "features": [
+          "standardized clipped raw score",
+          "scorable indicator"
+        ],
+        "candidates": 5760,
+        "positives": 72,
+        "prevalence": 0.0125,
+        "coefficient": [
+          0.5972144180999936,
+          0.020956886650277867
+        ],
+        "intercept": -5.377926404384629,
+        "constant": false
+      },
+      "normal_window_maxima": [
+        3.396143010349386,
+        2.94664456465351,
+        2.486109700207635,
+        3.825810061299365,
+        3.579147414481352,
+        1.7741631916511351,
+        2.3378577056171945,
+        3.160279433823574,
+        3.703971923467816,
+        3.11676751714246,
+        2.2962568506745584,
+        2.246318269876327,
+        16.90798477542191,
+        2.270981214559958,
+        2.2999396778631978,
+        2.8035401085153007,
+        3.438303973363081,
+        3.2614372585073563,
+        2.4388350816474116,
+        2.591856499472854,
+        6.0378848078403475,
+        5.196848857621111,
+        2.595389979831809,
+        2.5375414196405166,
+        3.592448762443227,
+        3.5231001870499603,
+        1.8015281647561003,
+        5.160588790939293,
+        3.8772737608538197,
+        2.745076333095172,
+        3.2362263084291176,
+        3.833541502004861,
+        1.8427788053179754,
+        3.5120506591295397,
+        3.731524278167987,
+        3.670762719754173
+      ],
+      "normal_windows": 36,
+      "minimum_window_p": 0.02702702702702703,
+      "role_blocks": {
+        "normal_window_tail": [
+          "calibration_trajectory_0",
+          "calibration_trajectory_1",
+          "calibration_trajectory_2",
+          "calibration_trajectory_3"
+        ],
+        "fault_probability": [
+          "calibration_trajectory_4",
+          "calibration_trajectory_5"
+        ],
+        "repair_policy": [
+          "calibration_trajectory_6",
+          "calibration_trajectory_7"
+        ]
+      }
+    },
+    "legacy_diffad": {
+      "probability": {
+        "center": -0.06563089014957002,
+        "scale": 0.8703672570170309,
+        "features": [
+          "standardized clipped raw score",
+          "scorable indicator"
+        ],
+        "candidates": 5760,
+        "positives": 72,
+        "prevalence": 0.0125,
+        "coefficient": [
+          0.11947423358774924,
+          0.0009158173387056531
+        ],
+        "intercept": -4.79671631480998,
+        "constant": false
+      },
+      "normal_window_maxima": [
+        7.3295255222171205,
+        1.885064590860989,
+        3.2197364321269073,
+        15.868855085885766,
+        2.381356400104586,
+        2.743684130246568,
+        3.770062561489648,
+        6.977422156787032,
+        3.5627874418689256,
+        2.4289822287165994,
+        1.8632709324243073,
+        4.476264640382602,
+        3.873125878724542,
+        0.868819761705594,
+        5.0925717184791095,
+        3.08515911308249,
+        8.40869484439195,
+        0.19322811167058257,
+        2.3810810908328457,
+        0.5180044116450538,
+        24.736887530865374,
+        36.89355868807191,
+        4.208477200906396,
+        6.538957043833238,
+        4.224196915994288,
+        1.8239814698075225,
+        2.779495085804747,
+        9.618835633915245,
+        19.02221514824144,
+        4.325033172365146,
+        6.262373709859016,
+        29.66338831863477,
+        0.46307778602098376,
+        0.43085703597320973,
+        1.3421311817282435,
+        4.657188179872618
+      ],
+      "normal_windows": 36,
+      "minimum_window_p": 0.02702702702702703,
+      "role_blocks": {
+        "normal_window_tail": [
+          "calibration_trajectory_0",
+          "calibration_trajectory_1",
+          "calibration_trajectory_2",
+          "calibration_trajectory_3"
+        ],
+        "fault_probability": [
+          "calibration_trajectory_4",
+          "calibration_trajectory_5"
+        ],
+        "repair_policy": [
+          "calibration_trajectory_6",
+          "calibration_trajectory_7"
+        ]
+      }
+    },
+    "legacy_gdn": {
+      "probability": {
+        "center": 0.04806965993802814,
+        "scale": 1.1262243158788974,
+        "features": [
+          "standardized clipped raw score",
+          "scorable indicator"
+        ],
+        "candidates": 5760,
+        "positives": 72,
+        "prevalence": 0.0125,
+        "coefficient": [
+          0.8414140290594595,
+          0.024282455879262976
+        ],
+        "intercept": -5.371055996705905,
+        "constant": false
+      },
+      "normal_window_maxima": [
+        2.699648841040412,
+        2.2152093588211477,
+        1.3875512517604587,
+        2.6626303430397162,
+        1.9263018163714063,
+        1.4992012409126139,
+        2.2726370968491443,
+        1.9722188415906368,
+        3.06497017865419,
+        1.4111402955078356,
+        3.6151908706373255,
+        2.1730539242466627,
+        6.553711529656107,
+        3.1933955266628073,
+        1.3475850733984247,
+        2.8912428633147993,
+        1.3949503510468078,
+        2.9876190726803853,
+        3.688152509832134,
+        1.5666100586977845,
+        1.208103946162972,
+        1.7071804807120756,
+        2.581986577107032,
+        1.6503997036261469,
+        3.0622019919101073,
+        2.3183157455079684,
+        2.095085335690924,
+        1.5784582569565797,
+        5.72660849833215,
+        2.0628112596277064,
+        1.1856648146819047,
+        1.8531078905144114,
+        1.2370348605073584,
+        1.9787582600034275,
+        3.2048452659363296,
+        2.154237418012891
+      ],
+      "normal_windows": 36,
+      "minimum_window_p": 0.02702702702702703,
+      "role_blocks": {
+        "normal_window_tail": [
+          "calibration_trajectory_0",
+          "calibration_trajectory_1",
+          "calibration_trajectory_2",
+          "calibration_trajectory_3"
+        ],
+        "fault_probability": [
+          "calibration_trajectory_4",
+          "calibration_trajectory_5"
+        ],
+        "repair_policy": [
+          "calibration_trajectory_6",
+          "calibration_trajectory_7"
+        ]
+      }
+    },
+    "legacy_witness": {
+      "probability": {
+        "center": -0.012239708874243301,
+        "scale": 0.0656761977558057,
+        "features": [
+          "standardized clipped raw score",
+          "scorable indicator"
+        ],
+        "candidates": 5760,
+        "positives": 72,
+        "prevalence": 0.0125,
+        "coefficient": [
+          1.8043084976569255,
+          2.9776518404630163
+        ],
+        "intercept": -5.335825147580569,
+        "constant": false
+      },
+      "normal_window_maxima": [
+        0.007394684861453382,
+        -0.007454617042335332,
+        -7.082460779069703e-07,
+        -0.0085543595188982,
+        0.007432651511742855,
+        0.022265951966593,
+        0.012157512627861898,
+        -0.006349894048234613,
+        -0.0030785134862262287,
+        0.032491770097010646,
+        0.0009275358415535727,
+        -5.988345245816901e-06,
+        -2.336582168214342e-05,
+        0.003060014671837148,
+        0.007827386801443586,
+        -0.007405030208153239,
+        -0.0012478982684587222,
+        -9.708317361474654e-06,
+        -0.044382927442509025,
+        0.0006066424087041739,
+        -0.002137023083545548,
+        0.0019801981718692383,
+        0.02900831231138524,
+        5.766299910672332e-06,
+        0.0016062620335321638,
+        -3.4837591837982314e-05,
+        0.0004969195294728989,
+        0.014209141481127247,
+        0.007145553864753837,
+        0.008872221927894731,
+        -0.00403040992180859,
+        0.005974926565031252,
+        0.0005256291664105161,
+        0.014531694991508661,
+        4.087981448860313e-06,
+        0.0035033239270348404
+      ],
+      "normal_windows": 36,
+      "minimum_window_p": 0.02702702702702703,
+      "role_blocks": {
+        "normal_window_tail": [
+          "calibration_trajectory_0",
+          "calibration_trajectory_1",
+          "calibration_trajectory_2",
+          "calibration_trajectory_3"
+        ],
+        "fault_probability": [
+          "calibration_trajectory_4",
+          "calibration_trajectory_5"
+        ],
+        "repair_policy": [
+          "calibration_trajectory_6",
+          "calibration_trajectory_7"
+        ]
+      }
+    },
+    "mean_member_ratios": {
+      "probability": {
+        "center": -9.084207515850405,
+        "scale": 9.504824519958376,
+        "features": [
+          "standardized clipped raw score",
+          "scorable indicator"
+        ],
+        "candidates": 5760,
+        "positives": 72,
+        "prevalence": 0.0125,
+        "coefficient": [
+          0.4543437024856107,
+          0.05923658757266802
+        ],
+        "intercept": -5.474090091765534,
+        "constant": false
+      },
+      "normal_window_maxima": [
+        1.668031864315601,
+        0.5651600515433775,
+        4.732757283653268,
+        7.794176376151168,
+        -0.5716339116026239,
+        1.443971058234847,
+        1.9802255539070228,
+        2.0375324587733323,
+        5.128008090831866,
+        -0.06929438212593848,
+        0.986759672734338,
+        1.0970692973623448,
+        7.220007579985787,
+        1.1718600826310217,
+        -1.5593843668005252,
+        -0.8429777911598789,
+        0.5421071263190085,
+        2.2810345392303093,
+        0.4329039740073455,
+        -0.1414833809070724,
+        -1.2928607096595244,
+        1.876852234759036,
+        -1.373450476231499,
+        -0.3564432962984461,
+        1.5850494756599605,
+        2.0799166664004742,
+        1.8037283491310583,
+        -0.08937800897892778,
+        -1.2037961740367935,
+        0.06613104120772709,
+        -0.8202094490754623,
+        0.34288253285278236,
+        0.8225011330017621,
+        -0.7939625462867694,
+        -0.5782201645262921,
+        -1.5119321944190278
+      ],
+      "normal_windows": 36,
+      "minimum_window_p": 0.02702702702702703,
+      "role_blocks": {
+        "normal_window_tail": [
+          "calibration_trajectory_0",
+          "calibration_trajectory_1",
+          "calibration_trajectory_2",
+          "calibration_trajectory_3"
+        ],
+        "fault_probability": [
+          "calibration_trajectory_4",
+          "calibration_trajectory_5"
+        ],
+        "repair_policy": [
+          "calibration_trajectory_6",
+          "calibration_trajectory_7"
+        ]
+      }
+    },
+    "mixture_ppca": {
+      "probability": {
+        "center": -11.038107683334774,
+        "scale": 11.046213694562613,
+        "features": [
+          "standardized clipped raw score",
+          "scorable indicator"
+        ],
+        "candidates": 5760,
+        "positives": 72,
+        "prevalence": 0.0125,
+        "coefficient": [
+          0.23803160542318932,
+          -0.0012664713576679837
+        ],
+        "intercept": -5.749522629245648,
+        "constant": false
+      },
+      "normal_window_maxima": [
+        2.1777340468863153,
+        10.02205833759047,
+        16.092854439803332,
+        19.593451576975887,
+        7.6512143955121665,
+        2.2661452437535186,
+        5.468088797318399,
+        6.609551214958161,
+        7.394513625070575,
+        1.0097468371511642,
+        1.5833879452162996,
+        16.553993204058948,
+        42.84282088412355,
+        6.090835651644204,
+        2.7332232978842175,
+        7.807389426278002,
+        7.166387139986135,
+        4.186115629331283,
+        5.778040424912064,
+        3.70335214980131,
+        6.3061697225120135,
+        5.280880309350591,
+        7.325913110913566,
+        10.278212095913652,
+        4.519535526274864,
+        12.504829106916606,
+        1.9533980440259722,
+        11.340003895572327,
+        6.772103510878604,
+        4.110024599206199,
+        10.6025161515512,
+        9.418639833944246,
+        3.2393562935326825,
+        7.1441613101891965,
+        26.04988875550619,
+        13.984404119441075
+      ],
+      "normal_windows": 36,
+      "minimum_window_p": 0.02702702702702703,
+      "role_blocks": {
+        "normal_window_tail": [
+          "calibration_trajectory_0",
+          "calibration_trajectory_1",
+          "calibration_trajectory_2",
+          "calibration_trajectory_3"
+        ],
+        "fault_probability": [
+          "calibration_trajectory_4",
+          "calibration_trajectory_5"
+        ],
+        "repair_policy": [
+          "calibration_trajectory_6",
+          "calibration_trajectory_7"
+        ]
+      },
+      "repair_policy": {
+        "threshold": 0.25,
+        "calibration": {
+          "threshold": 0.25,
+          "cases": 90,
+          "accepted": 43,
+          "coverage": 0.4777777777777778,
+          "failures": 0,
+          "risk": 0.0,
+          "harmful": 0,
+          "harmful_rate": 0.0,
+          "wilson_upper": 0.059195083345037536,
+          "mean_improvement": 3.2129110545695667
+        },
+        "grid": [
+          {
+            "threshold": 0.25,
+            "cases": 90,
+            "accepted": 43,
+            "coverage": 0.4777777777777778,
+            "failures": 0,
+            "risk": 0.0,
+            "harmful": 0,
+            "harmful_rate": 0.0,
+            "wilson_upper": 0.059195083345037536,
+            "mean_improvement": 3.2129110545695667
+          },
+          {
+            "threshold": 0.5,
+            "cases": 90,
+            "accepted": 42,
+            "coverage": 0.4666666666666667,
+            "failures": 0,
+            "risk": 0.0,
+            "harmful": 0,
+            "harmful_rate": 0.0,
+            "wilson_upper": 0.060519193931140136,
+            "mean_improvement": 3.2749876208864954
+          },
+          {
+            "threshold": 0.75,
+            "cases": 90,
+            "accepted": 36,
+            "coverage": 0.4,
+            "failures": 0,
+            "risk": 0.0,
+            "harmful": 0,
+            "harmful_rate": 0.0,
+            "wilson_upper": 0.06990067087687774,
+            "mean_improvement": 3.487111820109785
+          },
+          {
+            "threshold": 0.9,
+            "cases": 90,
+            "accepted": 0,
+            "coverage": 0.0,
+            "failures": 0,
+            "risk": null,
+            "harmful": 0,
+            "harmful_rate": null,
+            "wilson_upper": null,
+            "mean_improvement": null
+          },
+          {
+            "threshold": 0.95,
+            "cases": 90,
+            "accepted": 0,
+            "coverage": 0.0,
+            "failures": 0,
+            "risk": null,
+            "harmful": 0,
+            "harmful_rate": null,
+            "wilson_upper": null,
+            "mean_improvement": null
+          },
+          {
+            "threshold": 0.99,
+            "cases": 90,
+            "accepted": 0,
+            "coverage": 0.0,
+            "failures": 0,
+            "risk": null,
+            "harmful": 0,
+            "harmful_rate": null,
+            "wilson_upper": null,
+            "mean_improvement": null
+          }
+        ],
+        "rule": "Largest calibration coverage with one-sided 95% Wilson upper bound <= 0.1 and at least 10 recommendations; otherwise abstain.",
+        "blocks": [
+          "calibration_trajectory_6",
+          "calibration_trajectory_7"
+        ],
+        "dependent_cases_caveat": "Wilson is a development selection heuristic, not a dependent-data guarantee"
+      }
+    },
+    "own_history": {
+      "probability": {
+        "center": -9.43568548173365,
+        "scale": 9.774011371307672,
+        "features": [
+          "standardized clipped raw score",
+          "scorable indicator"
+        ],
+        "candidates": 5760,
+        "positives": 72,
+        "prevalence": 0.0125,
+        "coefficient": [
+          3.7380598189854037,
+          0.046217576804155724
+        ],
+        "intercept": -7.6568100818048705,
+        "constant": false
+      },
+      "normal_window_maxima": [
+        -0.3273338264997947,
+        0.7883411298376206,
+        5.168588885208558,
+        5.567988708243929,
+        -0.875904176327527,
+        1.285165872335992,
+        2.010083942447194,
+        -0.25093504983242143,
+        3.815651925130446,
+        0.037465791251978686,
+        0.6148452981697572,
+        1.1761302959314612,
+        1.7211455877980075,
+        1.1941264728631173,
+        -1.5281815223345792,
+        -0.6223741563278171,
+        1.8063106807993874,
+        0.8426475294023117,
+        -0.07163291717565201,
+        0.19074392384124472,
+        -1.351638475266399,
+        0.3200968588545985,
+        -0.4404722072924674,
+        1.8317735677332063,
+        0.13123174194913645,
+        0.5557756582790372,
+        -0.7583653743553747,
+        0.25921358888236323,
+        -1.2649575982930248,
+        1.32788679331607,
+        -0.6157917687035868,
+        0.9609317973307148,
+        2.0516455924380077,
+        -1.4279195872943724,
+        -0.04743602525773838,
+        3.6273179108452096
+      ],
+      "normal_windows": 36,
+      "minimum_window_p": 0.02702702702702703,
+      "role_blocks": {
+        "normal_window_tail": [
+          "calibration_trajectory_0",
+          "calibration_trajectory_1",
+          "calibration_trajectory_2",
+          "calibration_trajectory_3"
+        ],
+        "fault_probability": [
+          "calibration_trajectory_4",
+          "calibration_trajectory_5"
+        ],
+        "repair_policy": [
+          "calibration_trajectory_6",
+          "calibration_trajectory_7"
+        ]
+      }
+    },
+    "pca": {
+      "probability": {
+        "center": 0.001572188688442111,
+        "scale": 0.004019397776573896,
+        "features": [
+          "standardized clipped raw score",
+          "scorable indicator"
+        ],
+        "candidates": 5760,
+        "positives": 72,
+        "prevalence": 0.0125,
+        "coefficient": [
+          0.2551261107842358,
+          0.020462444496943982
+        ],
+        "intercept": -6.698302514286443,
+        "constant": false
+      },
+      "normal_window_maxima": [
+        0.014931653626263142,
+        0.0531645342707634,
+        0.01965981535613537,
+        0.017921082675457,
+        0.04504271224141121,
+        0.02512318082153797,
+        0.047868672758340836,
+        0.050546012818813324,
+        0.0483560748398304,
+        0.018391968682408333,
+        0.06141882762312889,
+        0.017294442281126976,
+        0.0333624966442585,
+        0.02336244471371174,
+        0.024587800726294518,
+        0.05959276854991913,
+        0.013701057061553001,
+        0.04375433921813965,
+        0.023504363372921944,
+        0.021659674122929573,
+        0.022459741681814194,
+        0.03130906820297241,
+        0.026827028021216393,
+        0.01673520728945732,
+        0.04891586676239967,
+        0.04996559023857117,
+        0.014690902084112167,
+        0.02216373011469841,
+        0.02520112507045269,
+        0.013299502432346344,
+        0.031053833663463593,
+        0.04109843820333481,
+        0.017534714192152023,
+        0.020407406613230705,
+        0.04041789099574089,
+        0.018382636830210686
+      ],
+      "normal_windows": 36,
+      "minimum_window_p": 0.02702702702702703,
+      "role_blocks": {
+        "normal_window_tail": [
+          "calibration_trajectory_0",
+          "calibration_trajectory_1",
+          "calibration_trajectory_2",
+          "calibration_trajectory_3"
+        ],
+        "fault_probability": [
+          "calibration_trajectory_4",
+          "calibration_trajectory_5"
+        ],
+        "repair_policy": [
+          "calibration_trajectory_6",
+          "calibration_trajectory_7"
+        ]
+      },
+      "repair_policy": {
+        "threshold": null,
+        "calibration": null,
+        "grid": [
+          {
+            "threshold": 0.25,
+            "cases": 90,
+            "accepted": 52,
+            "coverage": 0.5777777777777777,
+            "failures": 3,
+            "risk": 0.057692307692307696,
+            "harmful": 3,
+            "harmful_rate": 0.057692307692307696,
+            "wilson_upper": 0.13584483225524907,
+            "mean_improvement": 2.335230532600172
+          },
+          {
+            "threshold": 0.5,
+            "cases": 90,
+            "accepted": 49,
+            "coverage": 0.5444444444444444,
+            "failures": 3,
+            "risk": 0.061224489795918366,
+            "harmful": 3,
+            "harmful_rate": 0.061224489795918366,
+            "wilson_upper": 0.14363654747113097,
+            "mean_improvement": 2.4715342461445804
+          },
+          {
+            "threshold": 0.75,
+            "cases": 90,
+            "accepted": 0,
+            "coverage": 0.0,
+            "failures": 0,
+            "risk": null,
+            "harmful": 0,
+            "harmful_rate": null,
+            "wilson_upper": null,
+            "mean_improvement": null
+          },
+          {
+            "threshold": 0.9,
+            "cases": 90,
+            "accepted": 0,
+            "coverage": 0.0,
+            "failures": 0,
+            "risk": null,
+            "harmful": 0,
+            "harmful_rate": null,
+            "wilson_upper": null,
+            "mean_improvement": null
+          },
+          {
+            "threshold": 0.95,
+            "cases": 90,
+            "accepted": 0,
+            "coverage": 0.0,
+            "failures": 0,
+            "risk": null,
+            "harmful": 0,
+            "harmful_rate": null,
+            "wilson_upper": null,
+            "mean_improvement": null
+          },
+          {
+            "threshold": 0.99,
+            "cases": 90,
+            "accepted": 0,
+            "coverage": 0.0,
+            "failures": 0,
+            "risk": null,
+            "harmful": 0,
+            "harmful_rate": null,
+            "wilson_upper": null,
+            "mean_improvement": null
+          }
+        ],
+        "rule": "Largest calibration coverage with one-sided 95% Wilson upper bound <= 0.1 and at least 10 recommendations; otherwise abstain.",
+        "blocks": [
+          "calibration_trajectory_6",
+          "calibration_trajectory_7"
+        ],
+        "dependent_cases_caveat": "Wilson is a development selection heuristic, not a dependent-data guarantee"
+      }
+    },
+    "ppca": {
+      "probability": {
+        "center": -10.41280319165883,
+        "scale": 10.750192753185173,
+        "features": [
+          "standardized clipped raw score",
+          "scorable indicator"
+        ],
+        "candidates": 5760,
+        "positives": 72,
+        "prevalence": 0.0125,
+        "coefficient": [
+          0.24224606598731158,
+          0.01784338751438337
+        ],
+        "intercept": -5.770928818915251,
+        "constant": false
+      },
+      "normal_window_maxima": [
+        0.49737810506619295,
+        9.937976155391876,
+        18.44228152065332,
+        12.275483847954252,
+        6.09661850165239,
+        1.5685378267517347,
+        5.673500302870222,
+        6.954237109184865,
+        3.5537202617377326,
+        -0.2339481256056164,
+        1.9165084701442963,
+        32.47691805108624,
+        50.3348601904119,
+        7.944690036633334,
+        4.549758403217856,
+        10.026943950052509,
+        11.825981108569856,
+        4.197859549806859,
+        3.1469769748308245,
+        3.856739949811214,
+        8.549232405485332,
+        9.237621757785035,
+        7.81997216052179,
+        8.399884612326511,
+        4.219053790893943,
+        12.991246865769567,
+        2.3679153045422083,
+        8.078800371352415,
+        5.890073538345815,
+        3.3963503643665574,
+        8.200431630137748,
+        10.089223493105298,
+        3.5484197951712177,
+        4.263921236797506,
+        42.93171102995213,
+        10.29426351592728
+      ],
+      "normal_windows": 36,
+      "minimum_window_p": 0.02702702702702703,
+      "role_blocks": {
+        "normal_window_tail": [
+          "calibration_trajectory_0",
+          "calibration_trajectory_1",
+          "calibration_trajectory_2",
+          "calibration_trajectory_3"
+        ],
+        "fault_probability": [
+          "calibration_trajectory_4",
+          "calibration_trajectory_5"
+        ],
+        "repair_policy": [
+          "calibration_trajectory_6",
+          "calibration_trajectory_7"
+        ]
+      },
+      "repair_policy": {
+        "threshold": 0.25,
+        "calibration": {
+          "threshold": 0.25,
+          "cases": 90,
+          "accepted": 44,
+          "coverage": 0.4888888888888889,
+          "failures": 0,
+          "risk": 0.0,
+          "harmful": 0,
+          "harmful_rate": 0.0,
+          "wilson_upper": 0.05792767311988476,
+          "mean_improvement": 3.1934980706010636
+        },
+        "grid": [
+          {
+            "threshold": 0.25,
+            "cases": 90,
+            "accepted": 44,
+            "coverage": 0.4888888888888889,
+            "failures": 0,
+            "risk": 0.0,
+            "harmful": 0,
+            "harmful_rate": 0.0,
+            "wilson_upper": 0.05792767311988476,
+            "mean_improvement": 3.1934980706010636
+          },
+          {
+            "threshold": 0.5,
+            "cases": 90,
+            "accepted": 41,
+            "coverage": 0.45555555555555555,
+            "failures": 0,
+            "risk": 0.0,
+            "harmful": 0,
+            "harmful_rate": 0.0,
+            "wilson_upper": 0.061903896857776995,
+            "mean_improvement": 3.3070062087741716
+          },
+          {
+            "threshold": 0.75,
+            "cases": 90,
+            "accepted": 37,
+            "coverage": 0.4111111111111111,
+            "failures": 0,
+            "risk": 0.0,
+            "harmful": 0,
+            "harmful_rate": 0.0,
+            "wilson_upper": 0.06814019451020385,
+            "mean_improvement": 3.638255790616657
+          },
+          {
+            "threshold": 0.9,
+            "cases": 90,
+            "accepted": 0,
+            "coverage": 0.0,
+            "failures": 0,
+            "risk": null,
+            "harmful": 0,
+            "harmful_rate": null,
+            "wilson_upper": null,
+            "mean_improvement": null
+          },
+          {
+            "threshold": 0.95,
+            "cases": 90,
+            "accepted": 0,
+            "coverage": 0.0,
+            "failures": 0,
+            "risk": null,
+            "harmful": 0,
+            "harmful_rate": null,
+            "wilson_upper": null,
+            "mean_improvement": null
+          },
+          {
+            "threshold": 0.99,
+            "cases": 90,
+            "accepted": 0,
+            "coverage": 0.0,
+            "failures": 0,
+            "risk": null,
+            "harmful": 0,
+            "harmful_rate": null,
+            "wilson_upper": null,
+            "mean_improvement": null
+          }
+        ],
+        "rule": "Largest calibration coverage with one-sided 95% Wilson upper bound <= 0.1 and at least 10 recommendations; otherwise abstain.",
+        "blocks": [
+          "calibration_trajectory_6",
+          "calibration_trajectory_7"
+        ],
+        "dependent_cases_caveat": "Wilson is a development selection heuristic, not a dependent-data guarantee"
+      }
+    },
+    "supervised": {
+      "probability": {
+        "center": 0.0003585813224768226,
+        "scale": 0.000963924366927903,
+        "features": [
+          "standardized clipped raw score",
+          "scorable indicator"
+        ],
+        "candidates": 5760,
+        "positives": 72,
+        "prevalence": 0.0125,
+        "coefficient": [
+          0.28386401688120505,
+          0.0336679200960768
+        ],
+        "intercept": -9.107453673399718,
+        "constant": false
+      },
+      "normal_window_maxima": [
+        0.003353474301270655,
+        0.15089750340041114,
+        0.0042656613713869,
+        0.00927415969764531,
+        0.009740783539718918,
+        0.008591521451065908,
+        0.028999066760681032,
+        0.014196877434816778,
+        0.046945851865735654,
+        0.07215411838391078,
+        0.06505349303497827,
+        0.09961481414629612,
+        0.07459891316459802,
+        0.15577371739993903,
+        0.005195039631515327,
+        0.013295420921109267,
+        0.003480036494844324,
+        0.01325476207478893,
+        0.3316720967568823,
+        0.004069705507302123,
+        0.01426441639653908,
+        0.0038368945646064167,
+        0.03203218707632547,
+        0.01986406802450729,
+        0.06991977125236419,
+        0.4380950782668836,
+        0.003265666036986676,
+        0.1298134224077477,
+        0.0046914419966212,
+        0.005783352406758951,
+        0.0072409417417023825,
+        0.06543834591188714,
+        0.04023768595803889,
+        0.013584134309189857,
+        0.12608865738197128,
+        0.013669815817083982
+      ],
+      "normal_windows": 36,
+      "minimum_window_p": 0.02702702702702703,
+      "role_blocks": {
+        "normal_window_tail": [
+          "calibration_trajectory_0",
+          "calibration_trajectory_1",
+          "calibration_trajectory_2",
+          "calibration_trajectory_3"
+        ],
+        "fault_probability": [
+          "calibration_trajectory_4",
+          "calibration_trajectory_5"
+        ],
+        "repair_policy": [
+          "calibration_trajectory_6",
+          "calibration_trajectory_7"
+        ]
+      }
+    },
+    "without_bias": {
+      "probability": {
+        "center": -9.633707480159085,
+        "scale": 9.833507386818965,
+        "features": [
+          "standardized clipped raw score",
+          "scorable indicator"
+        ],
+        "candidates": 5760,
+        "positives": 72,
+        "prevalence": 0.0125,
+        "coefficient": [
+          0.7963601821017047,
+          0.0064278334292958775
+        ],
+        "intercept": -5.678823159906349,
+        "constant": false
+      },
+      "normal_window_maxima": [
+        1.6420818836915787,
+        1.4513994956402945,
+        4.021744318503057,
+        5.215363277155228,
+        -1.3094490884667087,
+        1.6702934652656527,
+        2.0254824345406055,
+        2.051384938970854,
+        4.662115849677311,
+        -0.3253010353411936,
+        1.1629747415344696,
+        1.2765000669328606,
+        3.6379892560985723,
+        1.1600856317948907,
+        -1.7382654852825645,
+        -1.139360557417806,
+        0.42245148500160834,
+        1.5582424126457086,
+        0.23083876753694765,
+        0.09670618778893747,
+        -1.437388281129687,
+        0.48151723327951057,
+        -1.042696162145491,
+        -0.33587134235649563,
+        1.7390753712940912,
+        1.931223429429549,
+        0.8329834805633505,
+        -0.2395857967667001,
+        -1.1566855792314217,
+        0.16547017569435774,
+        -0.575691033280725,
+        0.006156078888801986,
+        0.6328119023224268,
+        -0.87926130712433,
+        -0.5459421840160923,
+        -1.7287841953096836
+      ],
+      "normal_windows": 36,
+      "minimum_window_p": 0.02702702702702703,
+      "role_blocks": {
+        "normal_window_tail": [
+          "calibration_trajectory_0",
+          "calibration_trajectory_1",
+          "calibration_trajectory_2",
+          "calibration_trajectory_3"
+        ],
+        "fault_probability": [
+          "calibration_trajectory_4",
+          "calibration_trajectory_5"
+        ],
+        "repair_policy": [
+          "calibration_trajectory_6",
+          "calibration_trajectory_7"
+        ]
+      }
+    },
+    "without_drift": {
+      "probability": {
+        "center": -9.848238687337432,
+        "scale": 9.838395880688703,
+        "features": [
+          "standardized clipped raw score",
+          "scorable indicator"
+        ],
+        "candidates": 5760,
+        "positives": 72,
+        "prevalence": 0.0125,
+        "coefficient": [
+          0.7987821924299108,
+          0.0025826420158301527
+        ],
+        "intercept": -5.666507841443405,
+        "constant": false
+      },
+      "normal_window_maxima": [
+        1.7128848806928376,
+        -0.7129773410300628,
+        3.6239459633656765,
+        5.3096552722971335,
+        -1.2215044175399965,
+        1.7057011111191451,
+        2.084238726460397,
+        2.2229394722864817,
+        4.795781582577288,
+        -0.6759617741595214,
+        1.2114722384124592,
+        -0.5737802635928642,
+        3.668422427535893,
+        1.279254125863166,
+        -1.6034610287182929,
+        -0.5236081431933766,
+        0.7910787561097292,
+        1.923857796142114,
+        0.0850427513967511,
+        -0.9822643914854166,
+        -1.2663468893009755,
+        0.8112604453285126,
+        -1.1023334917746777,
+        -0.0987761988207323,
+        1.804520835635373,
+        0.9829345048308946,
+        1.316669169891031,
+        0.24472359999266313,
+        -1.2658163543906351,
+        0.17053993668737455,
+        -0.5775976074098141,
+        0.6273253156574938,
+        0.5494005100096393,
+        -0.5859895494484322,
+        -0.6444708950463447,
+        -1.3542274913662453
+      ],
+      "normal_windows": 36,
+      "minimum_window_p": 0.02702702702702703,
+      "role_blocks": {
+        "normal_window_tail": [
+          "calibration_trajectory_0",
+          "calibration_trajectory_1",
+          "calibration_trajectory_2",
+          "calibration_trajectory_3"
+        ],
+        "fault_probability": [
+          "calibration_trajectory_4",
+          "calibration_trajectory_5"
+        ],
+        "repair_policy": [
+          "calibration_trajectory_6",
+          "calibration_trajectory_7"
+        ]
+      }
+    },
+    "without_noise": {
+      "probability": {
+        "center": -9.333425696828245,
+        "scale": 9.935556923278176,
+        "features": [
+          "standardized clipped raw score",
+          "scorable indicator"
+        ],
+        "candidates": 5760,
+        "positives": 72,
+        "prevalence": 0.0125,
+        "coefficient": [
+          0.8114573486364209,
+          0.03494339097013714
+        ],
+        "intercept": -5.685811217996401,
+        "constant": false
+      },
+      "normal_window_maxima": [
+        1.7164861115181425,
+        1.4991134622710902,
+        4.2979227047598645,
+        5.309653723755954,
+        -0.7635992293544902,
+        1.7112218167996442,
+        2.089904156452901,
+        2.227853578994273,
+        4.928332167136351,
+        0.09788564143907141,
+        1.2162257430113423,
+        1.2883168568776089,
+        3.6721880328807393,
+        1.3929778608223238,
+        -1.300120845429321,
+        -0.4855796886502244,
+        0.8095183209594783,
+        2.0371979269671314,
+        0.49712076099683333,
+        0.1476140238298136,
+        -1.098324099757086,
+        0.8171409766153968,
+        -0.3882288625349002,
+        -0.0761077055125603,
+        1.8131090953898599,
+        2.033030834323611,
+        1.3331057220526779,
+        0.24456688622628509,
+        -0.9222318772220426,
+        0.33524449570844306,
+        -0.5379953230595651,
+        0.6884582566231927,
+        0.9272058495964854,
+        -0.5266970719271038,
+        -0.2862129144062884,
+        -1.320585934788049
+      ],
+      "normal_windows": 36,
+      "minimum_window_p": 0.02702702702702703,
+      "role_blocks": {
+        "normal_window_tail": [
+          "calibration_trajectory_0",
+          "calibration_trajectory_1",
+          "calibration_trajectory_2",
+          "calibration_trajectory_3"
+        ],
+        "fault_probability": [
+          "calibration_trajectory_4",
+          "calibration_trajectory_5"
+        ],
+        "repair_policy": [
+          "calibration_trajectory_6",
+          "calibration_trajectory_7"
+        ]
+      }
+    },
+    "without_stuck": {
+      "probability": {
+        "center": -9.798895462257958,
+        "scale": 9.509746903136799,
+        "features": [
+          "standardized clipped raw score",
+          "scorable indicator"
+        ],
+        "candidates": 5760,
+        "positives": 72,
+        "prevalence": 0.0125,
+        "coefficient": [
+          0.7655779647033732,
+          0.01029286757339025
+        ],
+        "intercept": -5.674317292206621,
+        "constant": false
+      },
+      "normal_window_maxima": [
+        -0.8693517215889264,
+        1.4995537047978127,
+        3.985468690771783,
+        2.9016963340143818,
+        -0.7585502681307279,
+        1.1745782378189578,
+        -0.5972511316468623,
+        0.43632892872890494,
+        3.9010376017403194,
+        0.008231109979833562,
+        -1.3089222919912098,
+        1.288378547441539,
+        1.6565252399325512,
+        0.23962595895320682,
+        -1.5532401401182856,
+        -1.0147242973687804,
+        -0.2711087858589707,
+        1.320080291946443,
+        0.19782925534124907,
+        0.1477047697884748,
+        -1.3145045127768133,
+        -0.14968546117659898,
+        -0.38356740216867635,
+        -1.0703415040230357,
+        -0.7135230995416944,
+        2.0347047152996893,
+        0.4414636473439195,
+        -0.008512928774175421,
+        -1.1566729397311786,
+        -0.8420739333830971,
+        -0.728222879043658,
+        0.6908603010538901,
+        0.3650357556626105,
+        -1.5522397057965627,
+        -0.9207700788804267,
+        -1.9544816912236733
+      ],
+      "normal_windows": 36,
+      "minimum_window_p": 0.02702702702702703,
+      "role_blocks": {
+        "normal_window_tail": [
+          "calibration_trajectory_0",
+          "calibration_trajectory_1",
+          "calibration_trajectory_2",
+          "calibration_trajectory_3"
+        ],
+        "fault_probability": [
+          "calibration_trajectory_4",
+          "calibration_trajectory_5"
+        ],
+        "repair_policy": [
+          "calibration_trajectory_6",
+          "calibration_trajectory_7"
+        ]
+      }
+    }
+  }
+}

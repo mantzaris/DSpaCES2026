@@ -1,5 +1,14 @@
 # Paper build
 
+The current `main.tex` is the completed graph-flow study. From the project root,
+run `python3 scripts/figures_graph_flow.py`, then
+`python3 scripts/make_graph_flow_paper.py`, then
+`latexmk -pdf -interaction=nonstopmode -halt-on-error -cd paper/main.tex`.
+The compiled PDF has ten pages including references. Source/figure hashes and
+visual inspection are recorded in `results/graph_flow_v1/completion.json`.
+The exact former paper is in `legacy/witness_20260930.tar.xz`. Legacy generators
+write the main paths and must only run in an isolated copy of that archive.
+
 The workshop accepts full papers up to 10 pages including references, in IEEE two-column format. The official page was checked on 2026-09-30 and lists an October 15 submission deadline and a December 14 online workshop. No submission is authorized. The checked workshop and submission pages did not specify an anonymity rule or deadline timezone. Verify those details before the user submits.
 
 Sources

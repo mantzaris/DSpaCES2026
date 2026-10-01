@@ -1,0 +1,153 @@
+{
+  "inputs": {
+    "results/graph_flow_v1/analysis.json": "15f79bf3461582652bb5206d74b570b8d663254836111c67913d831ef4f32c9b",
+    "results/graph_flow_v1/protocol_lock.json": "4d71ccc0aefaa3491e9aa018c31135f4d2c116f4a43239f53f820a1c8986e376",
+    "results/graph_flow_v1/production_equation_audit.json": "4db4adeebeb6575b7a5b014afaaa0e0ad200b4a2bf1ad2b983f4c94f3a22f936",
+    "results/graph_flow_v1/runtime.json": "dc73e5a799d359998f26480b3aeda25e6374177e158d852a5897023cbb3b989b",
+    "results/graph_flow_v1/robustness.json": "286998d9ba8e76fef673a0d38a03636d1377ef8209bb7fd7525c59ffd335fb17",
+    "results/graph_flow_v1/pilot.json": "d9a02b8f61c8eb62b41cb76e862a1f2c6de2e554ba2561f122288237400db9fe",
+    "results/graph_flow_v1/data_manifest.json": "163aa41bab831106fd6161f7b7f64c3a2aaafeccd4a5dfd233c319b942c2fa35",
+    "results/graph_flow_v1/skab/robustness/native_process.json": "f06d2c2f2bae5208e0cec3dc5d7e6807cd0aededb94135fff4dd27b5f5a46f9e",
+    "results/graph_flow_v1/development/synthetic_32_linear_sampling.json": "84498c6b4678806a16c8872503cc5f79d4b11248cabc4cad493fec0afbed25e5",
+    "results/graph_flow_v1/development/synthetic_32_nonlinear_sampling.json": "f2e4d942a5d69a43be2e216665fdcc728af6219e734c9fa8d0ffeb84a0b9e8ac",
+    "results/graph_flow_v1/development/synthetic_64_nonlinear_sampling.json": "03d7ea242339d214ac4f7f3dd1b28ffd29ebfec043805ffd8a09bc9ba2cc5786",
+    "results/graph_flow_v1/development/intel_sampling.json": "bbc85688e39551c4b3091df1fc4cce92b472751597d195b2e2a7360499c3b16e",
+    "results/graph_flow_v1/development/skab_sampling.json": "21f1f86f41f64b0032ff456b8b4bbc9f30e662aeaaa037fcc5b1a4e6a29e4d38",
+    "results/graph_flow_v1/synthetic_32_nonlinear/robustness/cases.json": "288e1e6cee1efa3159febd5f9b0a224e19c23c67376a9616d3d06463af743dde",
+    "results/graph_flow_v1/synthetic_32_nonlinear/robustness/ambiguity.json": "b158620d11805dad63e9e5c836bb354896522fb26cae5447edc7f523c68f3a65",
+    "results/graph_flow_v1/development/intel_baselines.json": "4e2bc5be2e5188b0d87a4bd94cc1b9abdf690a6be3e3fa5eb54ff6213a35bcec",
+    "results/graph_flow_v1/development/intel_ganf.json": "52aa9a26451ec3c68dd83bd77c5347a203a74649bad9e543774d84a73b425148",
+    "results/graph_flow_v1/development/intel_members.json": "9961eb852c385b371a3ceb307fce206c29bbee0a114860009ae10647352ec49f",
+    "results/graph_flow_v1/development/intel_models.json": "7699e1b13015b36f001a4a84239025a404c150088a6a8286a6acc7659ced8937",
+    "results/graph_flow_v1/development/intel_scoring.json": "26e4db838e2433f2b60164612d1dae518eea6ec40970257c07b9a04272dd57df",
+    "results/graph_flow_v1/development/skab_baselines.json": "a087d099d8c97ed568e8e07dd61947f48a8f2de1cf0141dd2da702e05814e49e",
+    "results/graph_flow_v1/development/skab_ganf.json": "06d89cbd14ce3ebd0366d2d6f928a7a862255cd36a4870c0a9767c8f225e3ff8",
+    "results/graph_flow_v1/development/skab_members.json": "b40e57718a1731bc34c784bdcb3672a99a4fd6eaafc67cf0a0c49e4af75de5d5",
+    "results/graph_flow_v1/development/skab_models.json": "d5936d1f67989fc9b0370818fd15d8b09bd479256750a8b3af905b224630df57",
+    "results/graph_flow_v1/development/skab_scoring.json": "d83ae8363d9391ed8ecac595175993865c6f6ff8783cf9deda5a422c054dd8ae",
+    "results/graph_flow_v1/development/synthetic_32_linear_baselines.json": "7260f749e2613870cb8ddaffde02b1bca23ffb1e5f0535cef30fe06523c7afa5",
+    "results/graph_flow_v1/development/synthetic_32_linear_ganf.json": "26b4366b52586dc8feb545b145359218d9dbf4b78c74539d4d1005e88584926c",
+    "results/graph_flow_v1/development/synthetic_32_linear_members.json": "29a078423d3831e2ffdc3b01b445bfcbf9a2ebf6c542478ba00cb47e544e1dab",
+    "results/graph_flow_v1/development/synthetic_32_linear_models.json": "8ce4eb6d8b48414075aa863d52e18319f5d553b108e1d4f5688657906754bd6c",
+    "results/graph_flow_v1/development/synthetic_32_linear_scoring.json": "79d02fc1102c2985d4db6bcd2d13ad6793d9735306b68737b61cbed34292ed67",
+    "results/graph_flow_v1/development/synthetic_32_nonlinear_baselines.json": "5d907d4169aa32dff7efcdf0f75784827e275d1c7dd5ef7618f4876ce31ef08a",
+    "results/graph_flow_v1/development/synthetic_32_nonlinear_ganf.json": "d863f09c4cd4c12436902231dce42dca32bf023c9ecdc7d8a9269b6708f05653",
+    "results/graph_flow_v1/development/synthetic_32_nonlinear_members.json": "29353da7bef1bcb03c20d386f8d08e9b250b85be296efec23fa122e1231989df",
+    "results/graph_flow_v1/development/synthetic_32_nonlinear_models.json": "d55c4955dfa792af9ff1bc9352f947abd18dd61eeb43db00c6d7c9f93054e46a",
+    "results/graph_flow_v1/development/synthetic_32_nonlinear_scoring.json": "f7d1932908b0f9a7b3092565a915cb6199b3d686d3a77ae17eed64bb8b8c4031",
+    "results/graph_flow_v1/development/synthetic_64_nonlinear_baselines.json": "5a2441678d0ff30cc929e897861cdf94fbe5d4b60e1b2fce1b5568a62f6a3be0",
+    "results/graph_flow_v1/development/synthetic_64_nonlinear_ganf.json": "a4c442b50082d3e71c5eeab2135cb4ca8824f28e074a5008a889f62bb3c93ceb",
+    "results/graph_flow_v1/development/synthetic_64_nonlinear_members.json": "8a54a0a3f6a5620c2b2e5b8aae1a363ac6f1c02d32d00b9b753ecc068145e655",
+    "results/graph_flow_v1/development/synthetic_64_nonlinear_models.json": "2aa7f080db6fb0b94863a28d3fe3d6133fccef30116c58a222ac629d00e0b7cb",
+    "results/graph_flow_v1/development/synthetic_64_nonlinear_scoring.json": "3761306f00d61dab450743bec521df6ca7f19a16f327e65df68b16eb6219f1a2",
+    "results/graph_flow_v1/graph/interface/browser_verification.json": "9e6d44e94f9ab7db5212a7b96b811bfcf6a345476a3a4b4ac187e5ec333046e2",
+    "results/graph_flow_v1/graph/persistence_audit.json": "493120be95c5c358ea48dd10c3952071c98277675742096dfec5b34755906af0"
+  },
+  "outputs": {
+    "paper/generated/graph_flow/ap_table.tex": "5b52195dcaeedeb1faba7bcaf581671ea4a42b302252caa69f98c7e598a52420",
+    "paper/generated/graph_flow/data_table.tex": "4fd66fd5dcff6055f0d01e3c6a27e4ac88bca38b9097ff36fef82879d22cdb4e",
+    "paper/generated/graph_flow/contrasts.tex": "e2b9bd9843d4f1d64fa39685dee02cbdab8bb74c3f477faa95243b016971e835",
+    "paper/generated/graph_flow/confidence_table.tex": "5fe5016f104ba05380ba1fbe01cc2b1931145eb9d68b34ff897236593edb78b1",
+    "paper/generated/graph_flow/repair_table.tex": "8ff57b2e873e4fba75bbffca4451f7a4670aa291c3f102a505fd81128dcac657",
+    "paper/generated/graph_flow/runtime_table.tex": "0b64c5540f09d51c91ac29f2b3296deb3e5bcae2e5d47dd1f4f82f39729a5a3f",
+    "paper/generated/graph_flow/localization.tex": "755a55b4662d30236cf29cdb7e9f2f86a728991c90d68002bc734476b2ab49b0",
+    "paper/generated/graph_flow/strata.tex": "1b4847068e2b588db675cc2ee8e98a6cf40f3c16fe55d5dcaa9af208b3fd4b4a",
+    "paper/generated/graph_flow/stress_table.tex": "fe9589e69eef647f210104bdc0d3508b91bcc5fade7efd9fb8f8d99ea780a404",
+    "paper/generated/graph_flow/ablations.tex": "f8aa42f16ad7d83c0b87355b21e8c8c14c2c58a1f1fff20dd6a522d7765057b1",
+    "paper/generated/graph_flow/numbers.tex": "4afaa8da24dab8e8d46909a9f508a61e7be543e33dd007983d979247a7f087b9",
+    "paper/generated/graph_flow/abstract_results.tex": "ea87e2c7f601a9b3da16c0bff2f07cce01db73dff0cbfc06ad4c7590979e696f",
+    "paper/generated/graph_flow/primary_results.tex": "44e9008ae932187b9877b397f795376fc9c0fd4309c8ecf108ea62518cb37d48",
+    "paper/generated/graph_flow/confidence_results.tex": "fe41e341ab1c1cc69dc4b0cd1f46af0f88b229e947159fd7fbe8a3471175c656",
+    "paper/generated/graph_flow/ablation_results.tex": "527ad331dfebbd3bcb40ed85a2a9ed89270220b8e4ef52550a237ecb382ce088",
+    "paper/generated/graph_flow/runtime_results.tex": "5be535b8c66549222a686b88001cb8f9c0d73ed1833193507cd5069ea97cd181",
+    "paper/generated/graph_flow/interface_results.tex": "f2373878156fa553f40e8fc9fd81657bb93d2fe3001fe79621dee2c251570ca2",
+    "paper/generated/graph_flow/discussion_results.tex": "c199c79402d55ced0e40a19c8ad3aaa78ed5f96403f583f6eea0bf9e89c199e0",
+    "paper/generated/graph_flow/conclusion_results.tex": "9bef0e5ad6e3c3e67c3c6966589b383b6c5aad944392e3a16b1975fee99cdf62"
+  },
+  "claims": {
+    "reported_macros": {
+      "MacroRatioAP": "0.438",
+      "MacroPCAAP": "0.307",
+      "MacroNLLAP": "0.423",
+      "PCADifference": "0.131",
+      "NLLDifference": "0.015",
+      "PPCADifference": "0.054",
+      "TotalCases": "1,500",
+      "TotalCandidates": "54,080",
+      "AuditCandidates": "107,620",
+      "AuditMaximum": "$9.09\\times10^{-13}$",
+      "PilotTime": "9.69",
+      "PilotInitial": "10.669",
+      "PilotFinal": "5.722",
+      "PilotInverse": "$7.15\\times10^{-7}$",
+      "IntelEligibility": "65.0",
+      "IntelMisses": "37",
+      "ReplayDensity": "0",
+      "ReplayGeneration": "0",
+      "ReplayCorruption": "$9.12\\times10^{-12}$",
+      "ReplayRatio": "$3.95\\times10^{-12}$",
+      "ReplayPosterior": "$1.97\\times10^{-12}$",
+      "ReplayJacobian": "$3.55\\times10^{-15}$",
+      "ReplayBundles": "30"
+    },
+    "primary_hypotheses": {
+      "pca": {
+        "macro_ap_difference": 0.1311208434153924,
+        "interval": [
+          0.09265032700426701,
+          0.14723801725311422
+        ],
+        "interval_level": 0.975,
+        "family_differences": {
+          "synthetic": -0.017046807828654014,
+          "intel": 0.05742412935849877,
+          "skab": 0.3529852087163325
+        },
+        "practical_margin_reached": true,
+        "interpretation": "positive"
+      },
+      "flow_nll": {
+        "macro_ap_difference": 0.014807682432626479,
+        "interval": [
+          0.005239365899584635,
+          0.02736600298547789
+        ],
+        "interval_level": 0.975,
+        "family_differences": {
+          "synthetic": 0.002943670511021327,
+          "intel": 0.017406255827026942,
+          "skab": 0.024073120959831162
+        },
+        "practical_margin_reached": false,
+        "interpretation": "positive"
+      },
+      "ppca": {
+        "macro_ap_difference": 0.053903802522884375,
+        "interval": [
+          -0.006611909154560226,
+          0.08242918190140387
+        ],
+        "interval_level": 0.95,
+        "family_differences": {
+          "synthetic": -0.015863298233071643,
+          "intel": 0.04302099884578322,
+          "skab": 0.13455370695594154
+        },
+        "practical_margin_reached": true,
+        "interpretation": "inconclusive"
+      }
+    },
+    "scope": {
+      "primary": "All declared sensor intervals",
+      "three_families": true,
+      "real_recordings_previously_examined": true,
+      "empirical_inputs": "analysis.json, protocol_lock.json, runtime.json, production_equation_audit.json and robustness.json"
+    },
+    "resource_totals": {
+      "distinct_neural_fits": 70,
+      "neural_training_seconds": 649.5934864971787,
+      "peak_training_gpu_bytes": 527778816
+    }
+  },
+  "interpretation": "Generated values trace to complete immutable source records. Tables use their named dataset/method keys; no value is invented or manually rounded from a chart."
+}

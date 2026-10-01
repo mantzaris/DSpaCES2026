@@ -187,5 +187,13 @@
     "path": "literature/downloads/graph_flow/structuredflows.pdf",
     "sha256": "f48d5bc2e45ba110fdfa82bc502e84cfa445c33d94d3b6421afc00a2dc78c1c2",
     "status": "downloaded"
+  },
+  {
+    "name": "mixture_ppca_original",
+    "url": "https://www.miketipping.com/papers/met-mppca.pdf",
+    "path": "literature/downloads/mixture_ppca.pdf",
+    "sha256": "87ec7bac0a64b5a27425a78dd3cff475ba39036838642361fafc34bb3cbf5f1c",
+    "status": "downloaded",
+    "reviewed": "Sections 3 and 4 including posterior and responsibility-weighted covariance updates"
   }
 ]

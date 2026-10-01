@@ -1,0 +1,502 @@
+{
+  "synthetic_32_nonlinear": {
+    "test_manifest_sha256": "ed9a03230e5766242fef4c43f473b231916cfd8950a89f3703cee2d0b13cadac",
+    "candidates": 10240,
+    "faults": 256,
+    "legacy_screened_candidates": 1280,
+    "legacy_population_screen_fraction": 0.125,
+    "legacy_screen_fault_recall": 0.73828125,
+    "legacy_scorable_fault_recall": 0.73828125,
+    "availability_fraction": 1.0,
+    "fault_families": {
+      "bias": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 0.9419738252510534,
+          "flow_nll": 0.9417001670589631,
+          "pca": 0.9990530303030303,
+          "ppca": 0.8540542254475412,
+          "supervised": 1.0
+        }
+      },
+      "drift": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 1.0,
+          "flow_nll": 1.0,
+          "pca": 1.0,
+          "ppca": 1.0,
+          "supervised": 1.0
+        }
+      },
+      "noise": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 1.0,
+          "flow_nll": 1.0,
+          "pca": 0.9895833333333333,
+          "ppca": 0.9737029265335975,
+          "supervised": 1.0
+        }
+      },
+      "stuck": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 0.689011584211928,
+          "flow_nll": 0.6839734109284882,
+          "pca": 0.855148619040058,
+          "ppca": 0.8346503750012282,
+          "supervised": 0.9083662437600349
+        }
+      },
+      "spike": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 1.0,
+          "flow_nll": 1.0,
+          "pca": 1.0,
+          "ppca": 1.0,
+          "supervised": 1.0
+        }
+      },
+      "scale": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 0.3081567030451366,
+          "flow_nll": 0.30790454568255915,
+          "pca": 0.5407522706166846,
+          "ppca": 0.6324469856357787,
+          "supervised": 0.5664065353575598
+        }
+      },
+      "replay": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 0.0277275535436403,
+          "flow_nll": 0.02611640892624331,
+          "pca": 0.024845724955646156,
+          "ppca": 0.2482861513420015,
+          "supervised": 0.00767467825019141
+        }
+      },
+      "delay": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 0.012367571473883069,
+          "flow_nll": 0.012160101346470886,
+          "pca": 0.011061679088856866,
+          "ppca": 0.015754679153582696,
+          "supervised": 0.008950508139849605
+        }
+      }
+    }
+  },
+  "skab": {
+    "test_manifest_sha256": "b6f88c3133cca7adc2b245495658bdfa5f77e29b84c84d31191e89d2bed1db9c",
+    "candidates": 2560,
+    "faults": 255,
+    "legacy_screened_candidates": 1280,
+    "legacy_population_screen_fraction": 0.5,
+    "legacy_screen_fault_recall": 0.7607843137254902,
+    "legacy_scorable_fault_recall": 0.7607843137254902,
+    "availability_fraction": 1.0,
+    "fault_families": {
+      "bias": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 0.7098873920507885,
+          "flow_nll": 0.6560844955132479,
+          "pca": 0.20094611565856513,
+          "ppca": 0.5302924003469066,
+          "supervised": 0.7809876935974772
+        }
+      },
+      "drift": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 0.8171098290065824,
+          "flow_nll": 0.8281702843384644,
+          "pca": 0.23649962270391978,
+          "ppca": 0.5209862233544951,
+          "supervised": 0.8993806453100881
+        }
+      },
+      "noise": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 0.8695193006224977,
+          "flow_nll": 0.9347212899787758,
+          "pca": 0.4161044092662834,
+          "ppca": 0.6374138397526433,
+          "supervised": 0.9264004855735035
+        }
+      },
+      "stuck": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 0.35019080790357615,
+          "flow_nll": 0.14661134655686867,
+          "pca": 0.06222665169323045,
+          "ppca": 0.21707458159287824,
+          "supervised": 0.8573158535139715
+        }
+      },
+      "spike": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 0.8666859419451628,
+          "flow_nll": 0.8989599875140177,
+          "pca": 0.3364744155999932,
+          "ppca": 0.5405905603046739,
+          "supervised": 0.8839883454917202
+        }
+      },
+      "scale": {
+        "cases": 96,
+        "positive_candidates": 31,
+        "ap": {
+          "flow_ratio": 0.41898767859990743,
+          "flow_nll": 0.3883995046394133,
+          "pca": 0.2440299951919745,
+          "ppca": 0.4042255658691879,
+          "supervised": 0.5479790325370258
+        }
+      },
+      "replay": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 0.06012701861829916,
+          "flow_nll": 0.049261796398996915,
+          "pca": 0.049958846719085605,
+          "ppca": 0.06815123110861282,
+          "supervised": 0.024961453650819677
+        }
+      },
+      "delay": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 0.038701236588065964,
+          "flow_nll": 0.04531645028129341,
+          "pca": 0.045332466801270344,
+          "ppca": 0.04425000608991403,
+          "supervised": 0.04239839206424574
+        }
+      }
+    }
+  },
+  "synthetic_32_linear": {
+    "test_manifest_sha256": "e0006f165313640104748866ba66a7d519954ffb04d806acf68e8891c765c414",
+    "candidates": 10240,
+    "faults": 256,
+    "legacy_screened_candidates": 1280,
+    "legacy_population_screen_fraction": 0.125,
+    "legacy_screen_fault_recall": 0.68359375,
+    "legacy_scorable_fault_recall": 0.68359375,
+    "availability_fraction": 1.0,
+    "fault_families": {
+      "bias": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 0.8892705450100918,
+          "flow_nll": 0.8900053336426501,
+          "pca": 1.0,
+          "ppca": 0.9314603682747709,
+          "supervised": 1.0
+        }
+      },
+      "drift": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 1.0,
+          "flow_nll": 1.0,
+          "pca": 1.0,
+          "ppca": 0.9453025723316104,
+          "supervised": 1.0
+        }
+      },
+      "noise": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 1.0,
+          "flow_nll": 1.0,
+          "pca": 0.9950657894736842,
+          "ppca": 0.9653557516583722,
+          "supervised": 1.0
+        }
+      },
+      "stuck": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 0.1657879629898252,
+          "flow_nll": 0.16007665678069447,
+          "pca": 0.9144654660433625,
+          "ppca": 0.7948985809303637,
+          "supervised": 0.961019627154245
+        }
+      },
+      "spike": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 1.0,
+          "flow_nll": 1.0,
+          "pca": 1.0,
+          "ppca": 0.9914367492492493,
+          "supervised": 1.0
+        }
+      },
+      "scale": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 0.333034106047887,
+          "flow_nll": 0.333799256407938,
+          "pca": 0.730500589022037,
+          "ppca": 0.6588204265285358,
+          "supervised": 0.627775012556599
+        }
+      },
+      "replay": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 0.012567284108431987,
+          "flow_nll": 0.012519369789787408,
+          "pca": 0.43739453258140165,
+          "ppca": 0.787278826976146,
+          "supervised": 0.017278626932554778
+        }
+      },
+      "delay": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 0.013980478673758779,
+          "flow_nll": 0.013686391662384011,
+          "pca": 0.010353993615420078,
+          "ppca": 0.313589329287183,
+          "supervised": 0.00898334177763127
+        }
+      }
+    }
+  },
+  "synthetic_64_nonlinear": {
+    "test_manifest_sha256": "898531f359e8560952dd03265c709cc75acf999db0c2638ec3680dcec0455837",
+    "candidates": 20480,
+    "faults": 256,
+    "legacy_screened_candidates": 1280,
+    "legacy_population_screen_fraction": 0.0625,
+    "legacy_screen_fault_recall": 0.5859375,
+    "legacy_scorable_fault_recall": 0.5859375,
+    "availability_fraction": 1.0,
+    "fault_families": {
+      "bias": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 0.8162973942062712,
+          "flow_nll": 0.8246010042968407,
+          "pca": 0.8239623381314055,
+          "ppca": 0.7964349858620121,
+          "supervised": 0.8896949951314004
+        }
+      },
+      "drift": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 0.9684637776478612,
+          "flow_nll": 0.9550993605994028,
+          "pca": 0.8734410615315593,
+          "ppca": 0.9721470658970659,
+          "supervised": 0.9500449581746574
+        }
+      },
+      "noise": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 0.9880419687285518,
+          "flow_nll": 0.9950657894736842,
+          "pca": 0.7489361875461518,
+          "ppca": 0.9643613222763667,
+          "supervised": 0.9533168859649123
+        }
+      },
+      "stuck": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 0.7832682694098225,
+          "flow_nll": 0.699894294316281,
+          "pca": 0.8379934762753097,
+          "ppca": 0.7984696116813994,
+          "supervised": 0.9407283365858947
+        }
+      },
+      "spike": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 0.984375,
+          "flow_nll": 0.9891581632653061,
+          "pca": 0.8546627341636059,
+          "ppca": 0.922460242925091,
+          "supervised": 0.9790205144557823
+        }
+      },
+      "scale": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 0.27063608347206264,
+          "flow_nll": 0.25852711402082956,
+          "pca": 0.20833545911475895,
+          "ppca": 0.4021523310564019,
+          "supervised": 0.32757177504676943
+        }
+      },
+      "replay": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 0.04075190005081866,
+          "flow_nll": 0.013366532323787898,
+          "pca": 0.1470607419308501,
+          "ppca": 0.1666177638800276,
+          "supervised": 0.017120729451746274
+        }
+      },
+      "delay": {
+        "cases": 96,
+        "positive_candidates": 32,
+        "ap": {
+          "flow_ratio": 0.0044441702743226955,
+          "flow_nll": 0.0046085384728179555,
+          "pca": 0.009700741071642621,
+          "ppca": 0.004702531774572504,
+          "supervised": 0.006814266712797086
+        }
+      }
+    }
+  },
+  "intel": {
+    "test_manifest_sha256": "2d66f5f48828dd52b878b015082ffed39ff600b7d30f89156a574feb33ab0784",
+    "candidates": 10560,
+    "faults": 138,
+    "legacy_screened_candidates": 880,
+    "legacy_population_screen_fraction": 0.08333333333333333,
+    "legacy_screen_fault_recall": 0.10144927536231885,
+    "legacy_scorable_fault_recall": 0.09420289855072464,
+    "availability_fraction": 0.6496212121212122,
+    "fault_families": {
+      "bias": {
+        "cases": 66,
+        "positive_candidates": 21,
+        "ap": {
+          "flow_ratio": 0.014087726470333873,
+          "flow_nll": 0.012323154389816564,
+          "pca": 0.007305505483792712,
+          "ppca": 0.01715275834968119,
+          "supervised": 0.344482999348589
+        }
+      },
+      "drift": {
+        "cases": 66,
+        "positive_candidates": 22,
+        "ap": {
+          "flow_ratio": 0.15213071259855002,
+          "flow_nll": 0.08476870005536562,
+          "pca": 0.01432441456204864,
+          "ppca": 0.02577780860462315,
+          "supervised": 0.5315449916854285
+        }
+      },
+      "noise": {
+        "cases": 66,
+        "positive_candidates": 21,
+        "ap": {
+          "flow_ratio": 0.15895790119125644,
+          "flow_nll": 0.13754240379804036,
+          "pca": 0.013746131044699758,
+          "ppca": 0.030155123767919,
+          "supervised": 0.1664116269055806
+        }
+      },
+      "stuck": {
+        "cases": 66,
+        "positive_candidates": 21,
+        "ap": {
+          "flow_ratio": 0.009221700182772777,
+          "flow_nll": 0.008996174337371435,
+          "pca": 0.007731363931233788,
+          "ppca": 0.014036317593560142,
+          "supervised": 0.6340367583607622
+        }
+      },
+      "spike": {
+        "cases": 66,
+        "positive_candidates": 17,
+        "ap": {
+          "flow_ratio": 0.10318733196059793,
+          "flow_nll": 0.08952264537231157,
+          "pca": 0.012526233134440394,
+          "ppca": 0.028899802984654298,
+          "supervised": 0.3931352528670328
+        }
+      },
+      "scale": {
+        "cases": 66,
+        "positive_candidates": 18,
+        "ap": {
+          "flow_ratio": 0.005862817720291976,
+          "flow_nll": 0.005886993862818749,
+          "pca": 0.009092595153480036,
+          "ppca": 0.014731327101969923,
+          "supervised": 0.27021074284440577
+        }
+      },
+      "replay": {
+        "cases": 66,
+        "positive_candidates": 7,
+        "ap": {
+          "flow_ratio": 0.0025233906646862526,
+          "flow_nll": 0.002542147072395005,
+          "pca": 0.00307441505103132,
+          "ppca": 0.0033152565458428153,
+          "supervised": 0.002864580153121289
+        }
+      },
+      "delay": {
+        "cases": 66,
+        "positive_candidates": 11,
+        "ap": {
+          "flow_ratio": 0.004255817600255772,
+          "flow_nll": 0.004218595803947104,
+          "pca": 0.00733148873933771,
+          "ppca": 0.005729367005256825,
+          "supervised": 0.0056100590394012806
+        }
+      }
+    }
+  }
+}

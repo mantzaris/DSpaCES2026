@@ -17,11 +17,16 @@ def main():
     lock_path.parent.mkdir(parents=True,exist_ok=True)
     lock=lock_path.open('w')
     fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
-    if args.stage in ('sampling','audit'):
-        from iot_repair.flow_audit import sampling_development,audit_production
-        (sampling_development if args.stage=='sampling' else audit_production)(ROOT)
+    if args.stage=='audit':
+        # Independent replay corrects its float32 SciPy reduction. The frozen
+        # numerical scorer and all protocol-hashed modules remain unchanged.
+        from audit_graph_flow_production import audit_production
+        audit_production(ROOT)
+    elif args.stage=='sampling':
+        from iot_repair.flow_audit import sampling_development
+        sampling_development(ROOT)
     elif args.stage=='robustness':
-        from iot_repair.flow_robustness import run_robustness
+        from robustness_graph_flow import run_robustness
         run_robustness(ROOT)
     elif args.stage=='freeze':
         from iot_repair.flow_execution import freeze
