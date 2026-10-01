@@ -1,0 +1,170 @@
+[
+  {
+    "study": "graph_flow_v1",
+    "equation": "E1",
+    "implementation": "src/iot_repair/graph_flow_model.py:GraphFlow.log_prob",
+    "test": "tests/test_graph_flow.py:test_flow_inverse_and_independent_autograd_jacobian",
+    "configuration": "configs/graph_flow_v1.json:capacities",
+    "evidence": [
+      "results/graph_flow_v1/reference_checks.json",
+      "results/graph_flow_v1/numerical_cpu.xml",
+      "results/graph_flow_v1/pilot.json"
+    ],
+    "production_evidence_expected": "results/graph_flow_v1/production_equation_audit.json",
+    "production_status": "pending full benchmark execution"
+  },
+  {
+    "study": "graph_flow_v1",
+    "equation": "E2",
+    "implementation": "src/iot_repair/graph_flow_model.py:GraphFlow.sample",
+    "test": "tests/test_graph_flow.py:test_target_and_same_source_masking_and_known_copy_invariance",
+    "configuration": "configs/graph_flow_v1.json:sample_counts",
+    "evidence": [
+      "results/graph_flow_v1/reference_checks.json",
+      "results/graph_flow_v1/numerical_cpu.xml",
+      "results/graph_flow_v1/pilot.json"
+    ],
+    "production_evidence_expected": "results/graph_flow_v1/production_equation_audit.json",
+    "production_status": "pending full benchmark execution"
+  },
+  {
+    "study": "graph_flow_v1",
+    "equation": "E3",
+    "implementation": "src/iot_repair/flow_training.py:fit_flow",
+    "test": "tests/test_graph_flow.py:test_draw_chunking_and_gaussian_reduction",
+    "configuration": "configs/graph_flow_v1.json:training_steps",
+    "evidence": [
+      "results/graph_flow_v1/reference_checks.json",
+      "results/graph_flow_v1/numerical_cpu.xml",
+      "results/graph_flow_v1/pilot.json"
+    ],
+    "production_evidence_expected": "results/graph_flow_v1/production_equation_audit.json",
+    "production_status": "pending full benchmark execution"
+  },
+  {
+    "study": "graph_flow_v1",
+    "equation": "E4",
+    "implementation": "src/iot_repair/flow_inference.py:infer_case",
+    "test": "tests/test_graph_flow.py:test_production_flow_path_recomputes_from_saved_density_components",
+    "configuration": "configs/graph_flow_v1.json:seeds",
+    "evidence": [
+      "results/graph_flow_v1/reference_checks.json",
+      "results/graph_flow_v1/numerical_cpu.xml",
+      "results/graph_flow_v1/pilot.json"
+    ],
+    "production_evidence_expected": "results/graph_flow_v1/production_equation_audit.json",
+    "production_status": "pending full benchmark execution"
+  },
+  {
+    "study": "graph_flow_v1",
+    "equation": "E5",
+    "implementation": "src/iot_repair/flow_math.py:GaussianCorruption.component_log_prob",
+    "test": "tests/test_graph_flow.py:test_component_densities_covariance_and_normalization",
+    "configuration": "configs/graph_flow_v1.json:measurement_noise_floor",
+    "evidence": [
+      "results/graph_flow_v1/reference_checks.json",
+      "results/graph_flow_v1/numerical_cpu.xml",
+      "results/graph_flow_v1/pilot.json"
+    ],
+    "production_evidence_expected": "results/graph_flow_v1/production_equation_audit.json",
+    "production_status": "pending full benchmark execution"
+  },
+  {
+    "study": "graph_flow_v1",
+    "equation": "E6",
+    "implementation": "src/iot_repair/flow_math.py:gaussian_fault_posterior",
+    "test": "tests/test_graph_flow.py:test_multivariate_gaussian_integral_and_posterior_monte_carlo",
+    "configuration": "configs/graph_flow_v1.json:corruption_scale_grid",
+    "evidence": [
+      "results/graph_flow_v1/reference_checks.json",
+      "results/graph_flow_v1/numerical_cpu.xml",
+      "results/graph_flow_v1/pilot.json"
+    ],
+    "production_evidence_expected": "results/graph_flow_v1/production_equation_audit.json",
+    "production_status": "pending full benchmark execution"
+  },
+  {
+    "study": "graph_flow_v1",
+    "equation": "E7",
+    "implementation": "src/iot_repair/flow_math.py:score_candidates",
+    "test": "tests/test_graph_flow.py:test_user_reference",
+    "configuration": "configs/graph_flow_v1.json:primary_contrasts",
+    "evidence": [
+      "results/graph_flow_v1/reference_checks.json",
+      "results/graph_flow_v1/numerical_cpu.xml",
+      "results/graph_flow_v1/pilot.json"
+    ],
+    "production_evidence_expected": "results/graph_flow_v1/production_equation_audit.json",
+    "production_status": "pending full benchmark execution"
+  },
+  {
+    "study": "graph_flow_v1",
+    "equation": "E8",
+    "implementation": "src/iot_repair/flow_inference.py:infer_case",
+    "test": "tests/test_graph_flow.py:test_mixture_log_mean_and_extreme_log_stability",
+    "configuration": "configs/graph_flow_v1.json:sample_counts",
+    "evidence": [
+      "results/graph_flow_v1/reference_checks.json",
+      "results/graph_flow_v1/numerical_cpu.xml",
+      "results/graph_flow_v1/pilot.json"
+    ],
+    "production_evidence_expected": "results/graph_flow_v1/production_equation_audit.json",
+    "production_status": "pending full benchmark execution"
+  },
+  {
+    "study": "graph_flow_v1",
+    "equation": "E9",
+    "implementation": "src/iot_repair/flow_math.py:score_candidates",
+    "test": "tests/test_graph_flow.py:test_mixture_log_mean_and_extreme_log_stability",
+    "configuration": "configs/graph_flow_v1.json:seeds",
+    "evidence": [
+      "results/graph_flow_v1/reference_checks.json",
+      "results/graph_flow_v1/numerical_cpu.xml",
+      "results/graph_flow_v1/pilot.json"
+    ],
+    "production_evidence_expected": "results/graph_flow_v1/production_equation_audit.json",
+    "production_status": "pending full benchmark execution"
+  },
+  {
+    "study": "graph_flow_v1",
+    "equation": "E10",
+    "implementation": "src/iot_repair/flow_math.py:summarize_repairs",
+    "test": "tests/test_graph_flow.py:test_multivariate_gaussian_integral_and_posterior_monte_carlo",
+    "configuration": "configs/graph_flow_v1.json:numerical_minimum_ess",
+    "evidence": [
+      "results/graph_flow_v1/reference_checks.json",
+      "results/graph_flow_v1/numerical_cpu.xml",
+      "results/graph_flow_v1/pilot.json"
+    ],
+    "production_evidence_expected": "results/graph_flow_v1/production_equation_audit.json",
+    "production_status": "pending full benchmark execution"
+  },
+  {
+    "study": "graph_flow_v1",
+    "equation": "E11",
+    "implementation": "src/iot_repair/flow_math.py:score_candidates",
+    "test": "tests/test_graph_flow.py:test_production_flow_path_recomputes_from_saved_density_components",
+    "configuration": "configs/graph_flow_v1.json:numerical_minimum_ess",
+    "evidence": [
+      "results/graph_flow_v1/reference_checks.json",
+      "results/graph_flow_v1/numerical_cpu.xml",
+      "results/graph_flow_v1/pilot.json"
+    ],
+    "production_evidence_expected": "results/graph_flow_v1/production_equation_audit.json",
+    "production_status": "pending full benchmark execution"
+  },
+  {
+    "study": "graph_flow_v1",
+    "equation": "E12",
+    "implementation": "src/iot_repair/flow_math.py:repair_outcome",
+    "test": "tests/test_graph_flow.py:test_weighted_crps_and_wrong_target_repair_damage",
+    "configuration": "configs/graph_flow_v1.json:repair_useful_improvement",
+    "evidence": [
+      "results/graph_flow_v1/reference_checks.json",
+      "results/graph_flow_v1/numerical_cpu.xml",
+      "results/graph_flow_v1/pilot.json"
+    ],
+    "production_evidence_expected": "results/graph_flow_v1/production_equation_audit.json",
+    "production_status": "pending full benchmark execution"
+  }
+]

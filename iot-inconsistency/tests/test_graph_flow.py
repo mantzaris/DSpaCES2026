@@ -201,3 +201,45 @@ def test_candidate_chunking_preserves_same_saved_latent_population():
     second=infer_case(models,values,example_graph(),32,sample_count=32,candidate_chunk=4,seed=51)
     np.testing.assert_array_equal(first['raw']['latent'],second['raw']['latent'])
     np.testing.assert_allclose(first['raw']['score'],second['raw']['score'],atol=1e-5)
+
+
+def test_drift_uses_elapsed_time_with_irregular_samples():
+    from iot_repair.flow_data import inject
+    times=np.array([0.,1.,2.,3.,6.,7.,8.,10.]);ramp=2*times/10-1
+    channel=GaussianCorruption(8,scale=1.7,times=times)
+    np.testing.assert_allclose(channel.covariance[1].numpy(),1.7**2*np.outer(ramp,ramp)+.25**2*np.eye(8),atol=1e-12)
+    values,metadata=inject(np.zeros((2,64)),0,'drift',2.,91,times=times)
+    assert np.allclose(values[0,-8:],2*ramp) or np.allclose(values[0,-8:],-2*ramp)
+    assert np.all(values[1]==0)
+
+
+def test_block_weighted_ap_matches_explicit_resampling_with_ties():
+    from iot_repair.flow_analysis import weighted_ap_preparation
+    from sklearn.metrics import average_precision_score
+    truth=np.array([[1,0,0],[0,0,0],[0,1,0]],bool)
+    scores=np.array([[4.,3.,2.],[1.,-1e12,-1e12],[2.,-1e12,-1e12]])
+    weights=np.array([2,0,3]);rows=np.repeat(np.arange(3),weights)
+    expected=average_precision_score(truth[rows].ravel(),scores[rows].ravel())
+    assert abs(weighted_ap_preparation(truth,scores)(weights)-expected)<1e-12
+
+
+def test_repair_abstention_has_undefined_risk_and_disjoint_calibration_roles():
+    from iot_repair.flow_confidence import risk_point
+    from iot_repair.flow_data import calibration_roles
+    point=risk_point([dict(adequate=False,probability=.99,failed=True,harmful=True,improvement=-1.)],.5)
+    assert point['coverage']==0 and point['risk'] is None and point['harmful_rate'] is None
+    roles=calibration_roles(['day1','day2','day3','day4','day5'])
+    assert set(roles.values())=={'normal_window_tail','fault_probability','repair_policy'}
+
+
+def test_mixture_context_weights_remain_in_log_space_for_extreme_evidence():
+    from iot_repair.flow_gaussian import conditional_components
+    from scipy.special import logsumexp
+    components=[]
+    for target_mean,context_mean in [(100.,0.),(0.,50.)]:
+        components.append(dict(mean=np.r_[np.full(8,target_mean),context_mean],loading=np.zeros((9,1)),noise=1.,weight=.5))
+    model=dict(context_keep=np.array([True]),components=components)
+    log_weights,conditional=conditional_components(model,np.array([0.]),log_weights=True)
+    assert np.isfinite(log_weights).all() and log_weights[1]<-1000
+    logs=[w+gaussian_log_prob(np.zeros(8),mean,cov) for w,(mean,cov) in zip(log_weights,conditional)]
+    assert logsumexp(logs)>-1300

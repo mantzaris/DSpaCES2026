@@ -1,0 +1,595 @@
+{
+  "members": [
+    {
+      "id": "244cf4d456f7184be737",
+      "path": "results/graph_flow_v1/models/244cf4d456f7184be737.pt",
+      "sha256": "cef7b6122bf1b5e4db3e9a9b3401f083474e907f8a3da1f85232a44c0faddedd",
+      "specification": {
+        "dataset": "intel",
+        "capacity": {
+          "width": 64,
+          "layers": 6
+        },
+        "context_length": 32,
+        "seed": 20261011,
+        "mode": "graph",
+        "fraction": 1.0,
+        "steps": 600,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "batch": 128,
+        "train_sha256": "5a2c95b1e70dab133b442b7cf90351dcb02994b0b682eb80d8debeefca0aacdd",
+        "development_sha256": "4aaf175188da6b8eb878253a2067360445c6639c548ca4bc3bc7faadd7b11042",
+        "graph_sha256": "fd6b6f3d7b5dd12b5bb1ac373ed6fef19fc5026dfee4e0612256f2d941ad63f6",
+        "model_code_sha256": "98febb4e7bdb41cf983bea9c3e20558de3885456d332c66545d34fd9dbb81c9f"
+      },
+      "best_step": 600,
+      "development_nll": -10.693123817443848,
+      "history": [
+        {
+          "step": 100,
+          "training_nll": -4.707732677459717,
+          "development_nll": -4.196692943572998
+        },
+        {
+          "step": 200,
+          "training_nll": -7.0088067054748535,
+          "development_nll": -5.56165885925293
+        },
+        {
+          "step": 300,
+          "training_nll": -7.31400203704834,
+          "development_nll": -6.652821063995361
+        },
+        {
+          "step": 400,
+          "training_nll": -10.961708068847656,
+          "development_nll": -8.775886535644531
+        },
+        {
+          "step": 500,
+          "training_nll": -7.813528060913086,
+          "development_nll": -9.82021427154541
+        },
+        {
+          "step": 600,
+          "training_nll": -10.712799072265625,
+          "development_nll": -10.693123817443848
+        }
+      ],
+      "training_seconds": 11.825352587271482,
+      "peak_gpu_bytes": 180414464,
+      "parameters": 97152,
+      "training_volume": {
+        "windows": 107,
+        "source_blocks": 14,
+        "block_ids": [
+          "12476",
+          "12477",
+          "12478",
+          "12479",
+          "12480",
+          "12481",
+          "12482",
+          "12483",
+          "12484",
+          "12485",
+          "12486",
+          "12487",
+          "12488",
+          "12489"
+        ],
+        "candidates": 5072,
+        "eligible_fraction": 0.9875389408099688
+      },
+      "development_volume": {
+        "windows": 42,
+        "source_blocks": 6,
+        "block_ids": [
+          "12489",
+          "12490",
+          "12491",
+          "12492",
+          "12493",
+          "12494"
+        ],
+        "candidates": 1932,
+        "eligible_fraction": 0.9583333333333334
+      },
+      "generation_during_training": true
+    },
+    {
+      "id": "4c89e5262fde9995813b",
+      "path": "results/graph_flow_v1/models/4c89e5262fde9995813b.pt",
+      "sha256": "838c39e0c2ba22aa3ab7527b080faaa8d11cc30d2fbecd005926a48fab0e3ede",
+      "specification": {
+        "dataset": "intel",
+        "capacity": {
+          "width": 64,
+          "layers": 6
+        },
+        "context_length": 32,
+        "seed": 20261022,
+        "mode": "graph",
+        "fraction": 1.0,
+        "steps": 600,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "batch": 128,
+        "train_sha256": "5a2c95b1e70dab133b442b7cf90351dcb02994b0b682eb80d8debeefca0aacdd",
+        "development_sha256": "4aaf175188da6b8eb878253a2067360445c6639c548ca4bc3bc7faadd7b11042",
+        "graph_sha256": "fd6b6f3d7b5dd12b5bb1ac373ed6fef19fc5026dfee4e0612256f2d941ad63f6",
+        "model_code_sha256": "98febb4e7bdb41cf983bea9c3e20558de3885456d332c66545d34fd9dbb81c9f"
+      },
+      "best_step": 600,
+      "development_nll": -9.298310279846191,
+      "history": [
+        {
+          "step": 100,
+          "training_nll": -0.8523745536804199,
+          "development_nll": -1.5761032104492188
+        },
+        {
+          "step": 200,
+          "training_nll": -6.504029273986816,
+          "development_nll": -4.3173980712890625
+        },
+        {
+          "step": 300,
+          "training_nll": -6.398293495178223,
+          "development_nll": -2.993304967880249
+        },
+        {
+          "step": 400,
+          "training_nll": -8.093862533569336,
+          "development_nll": -7.0212721824646
+        },
+        {
+          "step": 500,
+          "training_nll": -8.322996139526367,
+          "development_nll": -8.00819206237793
+        },
+        {
+          "step": 600,
+          "training_nll": -8.876201629638672,
+          "development_nll": -9.298310279846191
+        }
+      ],
+      "training_seconds": 11.40992183983326,
+      "peak_gpu_bytes": 179687424,
+      "parameters": 97152,
+      "training_volume": {
+        "windows": 107,
+        "source_blocks": 14,
+        "block_ids": [
+          "12476",
+          "12477",
+          "12478",
+          "12479",
+          "12480",
+          "12481",
+          "12482",
+          "12483",
+          "12484",
+          "12485",
+          "12486",
+          "12487",
+          "12488",
+          "12489"
+        ],
+        "candidates": 5072,
+        "eligible_fraction": 0.9875389408099688
+      },
+      "development_volume": {
+        "windows": 42,
+        "source_blocks": 6,
+        "block_ids": [
+          "12489",
+          "12490",
+          "12491",
+          "12492",
+          "12493",
+          "12494"
+        ],
+        "candidates": 1932,
+        "eligible_fraction": 0.9583333333333334
+      },
+      "generation_during_training": true
+    },
+    {
+      "id": "f454812d43a394e73d5a",
+      "path": "results/graph_flow_v1/models/f454812d43a394e73d5a.pt",
+      "sha256": "9d5e56b93fa522385dc97aabb2e49dc4f3350da3497e714d2bb47a580b0bc021",
+      "specification": {
+        "dataset": "intel",
+        "capacity": {
+          "width": 64,
+          "layers": 6
+        },
+        "context_length": 32,
+        "seed": 20261033,
+        "mode": "graph",
+        "fraction": 1.0,
+        "steps": 600,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "batch": 128,
+        "train_sha256": "5a2c95b1e70dab133b442b7cf90351dcb02994b0b682eb80d8debeefca0aacdd",
+        "development_sha256": "4aaf175188da6b8eb878253a2067360445c6639c548ca4bc3bc7faadd7b11042",
+        "graph_sha256": "fd6b6f3d7b5dd12b5bb1ac373ed6fef19fc5026dfee4e0612256f2d941ad63f6",
+        "model_code_sha256": "98febb4e7bdb41cf983bea9c3e20558de3885456d332c66545d34fd9dbb81c9f"
+      },
+      "best_step": 500,
+      "development_nll": -8.462516784667969,
+      "history": [
+        {
+          "step": 100,
+          "training_nll": -4.554093360900879,
+          "development_nll": -3.628108263015747
+        },
+        {
+          "step": 200,
+          "training_nll": -6.576669692993164,
+          "development_nll": -6.650032997131348
+        },
+        {
+          "step": 300,
+          "training_nll": -8.713550567626953,
+          "development_nll": -6.935680389404297
+        },
+        {
+          "step": 400,
+          "training_nll": -8.289984703063965,
+          "development_nll": -7.500020503997803
+        },
+        {
+          "step": 500,
+          "training_nll": -9.486103057861328,
+          "development_nll": -8.462516784667969
+        },
+        {
+          "step": 600,
+          "training_nll": -11.129924774169922,
+          "development_nll": -8.309688568115234
+        }
+      ],
+      "training_seconds": 11.282419092953205,
+      "peak_gpu_bytes": 180414464,
+      "parameters": 97152,
+      "training_volume": {
+        "windows": 107,
+        "source_blocks": 14,
+        "block_ids": [
+          "12476",
+          "12477",
+          "12478",
+          "12479",
+          "12480",
+          "12481",
+          "12482",
+          "12483",
+          "12484",
+          "12485",
+          "12486",
+          "12487",
+          "12488",
+          "12489"
+        ],
+        "candidates": 5072,
+        "eligible_fraction": 0.9875389408099688
+      },
+      "development_volume": {
+        "windows": 42,
+        "source_blocks": 6,
+        "block_ids": [
+          "12489",
+          "12490",
+          "12491",
+          "12492",
+          "12493",
+          "12494"
+        ],
+        "candidates": 1932,
+        "eligible_fraction": 0.9583333333333334
+      },
+      "generation_during_training": true
+    }
+  ],
+  "own_history": [
+    {
+      "id": "96c6fddc73b3825ff209",
+      "path": "results/graph_flow_v1/models/96c6fddc73b3825ff209.pt",
+      "sha256": "4164e2a8f2fc82195cca21000e86bf8a94f2ff963051bce09aaf218c086c449e",
+      "specification": {
+        "dataset": "intel",
+        "capacity": {
+          "width": 64,
+          "layers": 6
+        },
+        "context_length": 32,
+        "seed": 20261011,
+        "mode": "own_history",
+        "fraction": 1.0,
+        "steps": 600,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "batch": 128,
+        "train_sha256": "5a2c95b1e70dab133b442b7cf90351dcb02994b0b682eb80d8debeefca0aacdd",
+        "development_sha256": "4aaf175188da6b8eb878253a2067360445c6639c548ca4bc3bc7faadd7b11042",
+        "graph_sha256": "fd6b6f3d7b5dd12b5bb1ac373ed6fef19fc5026dfee4e0612256f2d941ad63f6",
+        "model_code_sha256": "98febb4e7bdb41cf983bea9c3e20558de3885456d332c66545d34fd9dbb81c9f"
+      },
+      "best_step": 500,
+      "development_nll": -9.500859260559082,
+      "history": [
+        {
+          "step": 100,
+          "training_nll": -0.8565291166305542,
+          "development_nll": -1.4602528810501099
+        },
+        {
+          "step": 200,
+          "training_nll": -3.9827446937561035,
+          "development_nll": -1.5436687469482422
+        },
+        {
+          "step": 300,
+          "training_nll": -4.333026885986328,
+          "development_nll": -2.753330945968628
+        },
+        {
+          "step": 400,
+          "training_nll": -7.7985005378723145,
+          "development_nll": -6.426934719085693
+        },
+        {
+          "step": 500,
+          "training_nll": -7.584268093109131,
+          "development_nll": -9.500859260559082
+        },
+        {
+          "step": 600,
+          "training_nll": -8.17526626586914,
+          "development_nll": -8.701858520507812
+        }
+      ],
+      "training_seconds": 11.480593550950289,
+      "peak_gpu_bytes": 180414464,
+      "parameters": 97152,
+      "training_volume": {
+        "windows": 107,
+        "source_blocks": 14,
+        "block_ids": [
+          "12476",
+          "12477",
+          "12478",
+          "12479",
+          "12480",
+          "12481",
+          "12482",
+          "12483",
+          "12484",
+          "12485",
+          "12486",
+          "12487",
+          "12488",
+          "12489"
+        ],
+        "candidates": 5072,
+        "eligible_fraction": 0.9875389408099688
+      },
+      "development_volume": {
+        "windows": 42,
+        "source_blocks": 6,
+        "block_ids": [
+          "12489",
+          "12490",
+          "12491",
+          "12492",
+          "12493",
+          "12494"
+        ],
+        "candidates": 1932,
+        "eligible_fraction": 0.9583333333333334
+      },
+      "generation_during_training": true
+    },
+    {
+      "id": "68c68e6726d46df4dc2a",
+      "path": "results/graph_flow_v1/models/68c68e6726d46df4dc2a.pt",
+      "sha256": "386c9fe4b08ab1da4238877dd224e60f1adae4f635f507b11f308ffe3bd11f0b",
+      "specification": {
+        "dataset": "intel",
+        "capacity": {
+          "width": 64,
+          "layers": 6
+        },
+        "context_length": 32,
+        "seed": 20261022,
+        "mode": "own_history",
+        "fraction": 1.0,
+        "steps": 600,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "batch": 128,
+        "train_sha256": "5a2c95b1e70dab133b442b7cf90351dcb02994b0b682eb80d8debeefca0aacdd",
+        "development_sha256": "4aaf175188da6b8eb878253a2067360445c6639c548ca4bc3bc7faadd7b11042",
+        "graph_sha256": "fd6b6f3d7b5dd12b5bb1ac373ed6fef19fc5026dfee4e0612256f2d941ad63f6",
+        "model_code_sha256": "98febb4e7bdb41cf983bea9c3e20558de3885456d332c66545d34fd9dbb81c9f"
+      },
+      "best_step": 600,
+      "development_nll": -8.006485939025879,
+      "history": [
+        {
+          "step": 100,
+          "training_nll": -2.636343479156494,
+          "development_nll": -0.5734719038009644
+        },
+        {
+          "step": 200,
+          "training_nll": -4.258963584899902,
+          "development_nll": -0.7793823480606079
+        },
+        {
+          "step": 300,
+          "training_nll": -3.985642433166504,
+          "development_nll": -1.4142396450042725
+        },
+        {
+          "step": 400,
+          "training_nll": -2.826672315597534,
+          "development_nll": -3.0567615032196045
+        },
+        {
+          "step": 500,
+          "training_nll": -3.675126075744629,
+          "development_nll": -3.7511250972747803
+        },
+        {
+          "step": 600,
+          "training_nll": -7.210034370422363,
+          "development_nll": -8.006485939025879
+        }
+      ],
+      "training_seconds": 11.643319139722735,
+      "peak_gpu_bytes": 180414464,
+      "parameters": 97152,
+      "training_volume": {
+        "windows": 107,
+        "source_blocks": 14,
+        "block_ids": [
+          "12476",
+          "12477",
+          "12478",
+          "12479",
+          "12480",
+          "12481",
+          "12482",
+          "12483",
+          "12484",
+          "12485",
+          "12486",
+          "12487",
+          "12488",
+          "12489"
+        ],
+        "candidates": 5072,
+        "eligible_fraction": 0.9875389408099688
+      },
+      "development_volume": {
+        "windows": 42,
+        "source_blocks": 6,
+        "block_ids": [
+          "12489",
+          "12490",
+          "12491",
+          "12492",
+          "12493",
+          "12494"
+        ],
+        "candidates": 1932,
+        "eligible_fraction": 0.9583333333333334
+      },
+      "generation_during_training": true
+    },
+    {
+      "id": "eefa3b7bd5d060db9a09",
+      "path": "results/graph_flow_v1/models/eefa3b7bd5d060db9a09.pt",
+      "sha256": "76dfbfa72ebfc557b928b8a621c95764a8c169191add628f9709a4207a3c94c0",
+      "specification": {
+        "dataset": "intel",
+        "capacity": {
+          "width": 64,
+          "layers": 6
+        },
+        "context_length": 32,
+        "seed": 20261033,
+        "mode": "own_history",
+        "fraction": 1.0,
+        "steps": 600,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "batch": 128,
+        "train_sha256": "5a2c95b1e70dab133b442b7cf90351dcb02994b0b682eb80d8debeefca0aacdd",
+        "development_sha256": "4aaf175188da6b8eb878253a2067360445c6639c548ca4bc3bc7faadd7b11042",
+        "graph_sha256": "fd6b6f3d7b5dd12b5bb1ac373ed6fef19fc5026dfee4e0612256f2d941ad63f6",
+        "model_code_sha256": "98febb4e7bdb41cf983bea9c3e20558de3885456d332c66545d34fd9dbb81c9f"
+      },
+      "best_step": 600,
+      "development_nll": -7.814272403717041,
+      "history": [
+        {
+          "step": 100,
+          "training_nll": 2.608572483062744,
+          "development_nll": 4.453282833099365
+        },
+        {
+          "step": 200,
+          "training_nll": -3.3068413734436035,
+          "development_nll": 7.038806438446045
+        },
+        {
+          "step": 300,
+          "training_nll": -4.0590081214904785,
+          "development_nll": -1.0320624113082886
+        },
+        {
+          "step": 400,
+          "training_nll": -2.630009174346924,
+          "development_nll": -2.5958821773529053
+        },
+        {
+          "step": 500,
+          "training_nll": -4.975920677185059,
+          "development_nll": -4.687992572784424
+        },
+        {
+          "step": 600,
+          "training_nll": -8.189525604248047,
+          "development_nll": -7.814272403717041
+        }
+      ],
+      "training_seconds": 11.780229383148253,
+      "peak_gpu_bytes": 180414464,
+      "parameters": 97152,
+      "training_volume": {
+        "windows": 107,
+        "source_blocks": 14,
+        "block_ids": [
+          "12476",
+          "12477",
+          "12478",
+          "12479",
+          "12480",
+          "12481",
+          "12482",
+          "12483",
+          "12484",
+          "12485",
+          "12486",
+          "12487",
+          "12488",
+          "12489"
+        ],
+        "candidates": 5072,
+        "eligible_fraction": 0.9875389408099688
+      },
+      "development_volume": {
+        "windows": 42,
+        "source_blocks": 6,
+        "block_ids": [
+          "12489",
+          "12490",
+          "12491",
+          "12492",
+          "12493",
+          "12494"
+        ],
+        "candidates": 1932,
+        "eligible_fraction": 0.9583333333333334
+      },
+      "generation_during_training": true
+    }
+  ],
+  "learning_curve": []
+}

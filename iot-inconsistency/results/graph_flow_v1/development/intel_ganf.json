@@ -1,0 +1,467 @@
+{
+  "grid": [
+    {
+      "path": "results/graph_flow_v1/models/ganf_3f1be4576c34aeb539cb.pt",
+      "sha256": "2f307d2a07cadbe48a36e6d48ebc011380004b50e00632481e868b308b52b678",
+      "specification": {
+        "dataset": "intel",
+        "width": 16,
+        "seed": 20261011,
+        "outer": 10,
+        "steps_per_outer": 40,
+        "revision": "bce38333b109f325a403dae9aff4987ae5bd6e1f",
+        "adapter_sha256": "b3158a64dc38521e418d4fffa4c4f7f52d5999f05720346cf3bbb8d32d64f065",
+        "train_sha256": "5a2c95b1e70dab133b442b7cf90351dcb02994b0b682eb80d8debeefca0aacdd"
+      },
+      "development_nll": -1.6953914679863535,
+      "history": [
+        {
+          "outer": 1,
+          "development_nll": 0.46758345564900033,
+          "acyclicity": 0.13954544067382812,
+          "rho": 1.0,
+          "alpha": 0.0
+        },
+        {
+          "outer": 2,
+          "development_nll": -1.1300477836897016,
+          "acyclicity": 0.030132293701171875,
+          "rho": 1.0,
+          "alpha": 0.13954544067382812
+        },
+        {
+          "outer": 3,
+          "development_nll": -1.0910312605373294,
+          "acyclicity": 0.02178955078125,
+          "rho": 1.0,
+          "alpha": 0.169677734375
+        },
+        {
+          "outer": 4,
+          "development_nll": -0.9069455412220326,
+          "acyclicity": 0.008502960205078125,
+          "rho": 10.0,
+          "alpha": 0.3875732421875
+        },
+        {
+          "outer": 5,
+          "development_nll": -0.9855041833197794,
+          "acyclicity": 0.00511932373046875,
+          "rho": 10.0,
+          "alpha": 0.47260284423828125
+        },
+        {
+          "outer": 6,
+          "development_nll": -1.193365751633906,
+          "acyclicity": 0.004970550537109375,
+          "rho": 100.0,
+          "alpha": 0.9845352172851562
+        },
+        {
+          "outer": 7,
+          "development_nll": -1.3814849979421215,
+          "acyclicity": 0.00189971923828125,
+          "rho": 1000.0,
+          "alpha": 5.955085754394531
+        },
+        {
+          "outer": 8,
+          "development_nll": -1.3610026144973817,
+          "acyclicity": 0.0014801025390625,
+          "rho": 1000.0,
+          "alpha": 7.854804992675781
+        },
+        {
+          "outer": 9,
+          "development_nll": -1.50442082808533,
+          "acyclicity": 0.000476837158203125,
+          "rho": 10000.0,
+          "alpha": 22.65583038330078
+        },
+        {
+          "outer": 10,
+          "development_nll": -1.6953914679863535,
+          "acyclicity": 0.00035858154296875,
+          "rho": 10000.0,
+          "alpha": 27.42420196533203
+        }
+      ],
+      "training_seconds": 5.998511113226414,
+      "peak_gpu_bytes": 214470656,
+      "parameters": 4914,
+      "selected_outer": 10,
+      "adapter": "Official unchanged model; common data splits; missing losses excluded; same-source diagonal forbidden; last-eight coordinate NLL aggregation; finite augmented-Lagrangian budget"
+    },
+    {
+      "path": "results/graph_flow_v1/models/ganf_de4f60857fa52a6bb72a.pt",
+      "sha256": "f2e851ae4ec919ea45bc10ce7617474610059d76e266799db0eb1b3f88f4ed34",
+      "specification": {
+        "dataset": "intel",
+        "width": 32,
+        "seed": 20261011,
+        "outer": 10,
+        "steps_per_outer": 40,
+        "revision": "bce38333b109f325a403dae9aff4987ae5bd6e1f",
+        "adapter_sha256": "b3158a64dc38521e418d4fffa4c4f7f52d5999f05720346cf3bbb8d32d64f065",
+        "train_sha256": "5a2c95b1e70dab133b442b7cf90351dcb02994b0b682eb80d8debeefca0aacdd"
+      },
+      "development_nll": -1.7794643565534751,
+      "history": [
+        {
+          "outer": 1,
+          "development_nll": -0.021977707969692162,
+          "acyclicity": 0.15506744384765625,
+          "rho": 1.0,
+          "alpha": 0.0
+        },
+        {
+          "outer": 2,
+          "development_nll": -0.3528250115290781,
+          "acyclicity": 0.06931686401367188,
+          "rho": 1.0,
+          "alpha": 0.15506744384765625
+        },
+        {
+          "outer": 3,
+          "development_nll": -0.22869370586718502,
+          "acyclicity": 0.04355621337890625,
+          "rho": 1.0,
+          "alpha": 0.22438430786132812
+        },
+        {
+          "outer": 4,
+          "development_nll": -1.146916281537607,
+          "acyclicity": 0.024265289306640625,
+          "rho": 10.0,
+          "alpha": 0.6599464416503906
+        },
+        {
+          "outer": 5,
+          "development_nll": -1.2274398876348778,
+          "acyclicity": 0.005157470703125,
+          "rho": 100.0,
+          "alpha": 3.086475372314453
+        },
+        {
+          "outer": 6,
+          "development_nll": -1.5775014225394717,
+          "acyclicity": 0.00611114501953125,
+          "rho": 100.0,
+          "alpha": 3.602222442626953
+        },
+        {
+          "outer": 7,
+          "development_nll": -1.4917244463563155,
+          "acyclicity": 0.0020599365234375,
+          "rho": 1000.0,
+          "alpha": 9.713367462158203
+        },
+        {
+          "outer": 8,
+          "development_nll": -1.7794643565534751,
+          "acyclicity": 0.000591278076171875,
+          "rho": 1000.0,
+          "alpha": 11.773303985595703
+        },
+        {
+          "outer": 9,
+          "development_nll": -1.528088150339178,
+          "acyclicity": 0.00023651123046875,
+          "rho": 1000.0,
+          "alpha": 12.364582061767578
+        },
+        {
+          "outer": 10,
+          "development_nll": -1.7238787041812123,
+          "acyclicity": 5.7220458984375e-05,
+          "rho": 1000.0,
+          "alpha": 12.601093292236328
+        }
+      ],
+      "training_seconds": 4.546084387227893,
+      "peak_gpu_bytes": 397614592,
+      "parameters": 12130,
+      "selected_outer": 8,
+      "adapter": "Official unchanged model; common data splits; missing losses excluded; same-source diagonal forbidden; last-eight coordinate NLL aggregation; finite augmented-Lagrangian budget"
+    }
+  ],
+  "members": [
+    {
+      "path": "results/graph_flow_v1/models/ganf_de4f60857fa52a6bb72a.pt",
+      "sha256": "f2e851ae4ec919ea45bc10ce7617474610059d76e266799db0eb1b3f88f4ed34",
+      "specification": {
+        "dataset": "intel",
+        "width": 32,
+        "seed": 20261011,
+        "outer": 10,
+        "steps_per_outer": 40,
+        "revision": "bce38333b109f325a403dae9aff4987ae5bd6e1f",
+        "adapter_sha256": "b3158a64dc38521e418d4fffa4c4f7f52d5999f05720346cf3bbb8d32d64f065",
+        "train_sha256": "5a2c95b1e70dab133b442b7cf90351dcb02994b0b682eb80d8debeefca0aacdd"
+      },
+      "development_nll": -1.7794643565534751,
+      "history": [
+        {
+          "outer": 1,
+          "development_nll": -0.021977707969692162,
+          "acyclicity": 0.15506744384765625,
+          "rho": 1.0,
+          "alpha": 0.0
+        },
+        {
+          "outer": 2,
+          "development_nll": -0.3528250115290781,
+          "acyclicity": 0.06931686401367188,
+          "rho": 1.0,
+          "alpha": 0.15506744384765625
+        },
+        {
+          "outer": 3,
+          "development_nll": -0.22869370586718502,
+          "acyclicity": 0.04355621337890625,
+          "rho": 1.0,
+          "alpha": 0.22438430786132812
+        },
+        {
+          "outer": 4,
+          "development_nll": -1.146916281537607,
+          "acyclicity": 0.024265289306640625,
+          "rho": 10.0,
+          "alpha": 0.6599464416503906
+        },
+        {
+          "outer": 5,
+          "development_nll": -1.2274398876348778,
+          "acyclicity": 0.005157470703125,
+          "rho": 100.0,
+          "alpha": 3.086475372314453
+        },
+        {
+          "outer": 6,
+          "development_nll": -1.5775014225394717,
+          "acyclicity": 0.00611114501953125,
+          "rho": 100.0,
+          "alpha": 3.602222442626953
+        },
+        {
+          "outer": 7,
+          "development_nll": -1.4917244463563155,
+          "acyclicity": 0.0020599365234375,
+          "rho": 1000.0,
+          "alpha": 9.713367462158203
+        },
+        {
+          "outer": 8,
+          "development_nll": -1.7794643565534751,
+          "acyclicity": 0.000591278076171875,
+          "rho": 1000.0,
+          "alpha": 11.773303985595703
+        },
+        {
+          "outer": 9,
+          "development_nll": -1.528088150339178,
+          "acyclicity": 0.00023651123046875,
+          "rho": 1000.0,
+          "alpha": 12.364582061767578
+        },
+        {
+          "outer": 10,
+          "development_nll": -1.7238787041812123,
+          "acyclicity": 5.7220458984375e-05,
+          "rho": 1000.0,
+          "alpha": 12.601093292236328
+        }
+      ],
+      "training_seconds": 4.546084387227893,
+      "peak_gpu_bytes": 397614592,
+      "parameters": 12130,
+      "selected_outer": 8,
+      "adapter": "Official unchanged model; common data splits; missing losses excluded; same-source diagonal forbidden; last-eight coordinate NLL aggregation; finite augmented-Lagrangian budget"
+    },
+    {
+      "path": "results/graph_flow_v1/models/ganf_f012a27ce858da346a2d.pt",
+      "sha256": "d41b9b366a5aa4ae5b6773bbcd9b2354fa6d8f407f73bfdb00ff4382c386b550",
+      "specification": {
+        "dataset": "intel",
+        "width": 32,
+        "seed": 20261022,
+        "outer": 10,
+        "steps_per_outer": 40,
+        "revision": "bce38333b109f325a403dae9aff4987ae5bd6e1f",
+        "adapter_sha256": "b3158a64dc38521e418d4fffa4c4f7f52d5999f05720346cf3bbb8d32d64f065",
+        "train_sha256": "5a2c95b1e70dab133b442b7cf90351dcb02994b0b682eb80d8debeefca0aacdd"
+      },
+      "development_nll": -2.0701355348500474,
+      "history": [
+        {
+          "outer": 1,
+          "development_nll": 0.0538699891899397,
+          "acyclicity": 0.14435958862304688,
+          "rho": 1.0,
+          "alpha": 0.0
+        },
+        {
+          "outer": 2,
+          "development_nll": -1.1920931599095526,
+          "acyclicity": 0.08724212646484375,
+          "rho": 1.0,
+          "alpha": 0.14435958862304688
+        },
+        {
+          "outer": 3,
+          "development_nll": -1.5959416250545462,
+          "acyclicity": 0.03484344482421875,
+          "rho": 10.0,
+          "alpha": 1.0167808532714844
+        },
+        {
+          "outer": 4,
+          "development_nll": -1.4006076784899635,
+          "acyclicity": 0.009357452392578125,
+          "rho": 10.0,
+          "alpha": 1.3652153015136719
+        },
+        {
+          "outer": 5,
+          "development_nll": -1.6641327901856553,
+          "acyclicity": 0.001644134521484375,
+          "rho": 10.0,
+          "alpha": 1.4587898254394531
+        },
+        {
+          "outer": 6,
+          "development_nll": -1.61202011762139,
+          "acyclicity": 0.000354766845703125,
+          "rho": 10.0,
+          "alpha": 1.4752311706542969
+        },
+        {
+          "outer": 7,
+          "development_nll": -1.687712916038559,
+          "acyclicity": 0.000431060791015625,
+          "rho": 10.0,
+          "alpha": 1.4787788391113281
+        },
+        {
+          "outer": 8,
+          "development_nll": -1.8037542645192002,
+          "acyclicity": 0.000293731689453125,
+          "rho": 100.0,
+          "alpha": 1.5218849182128906
+        },
+        {
+          "outer": 9,
+          "development_nll": -2.0701355348500474,
+          "acyclicity": 4.57763671875e-05,
+          "rho": 1000.0,
+          "alpha": 1.8156166076660156
+        },
+        {
+          "outer": 10,
+          "development_nll": -1.8017826682005713,
+          "acyclicity": 0.00072479248046875,
+          "rho": 1000.0,
+          "alpha": 1.8613929748535156
+        }
+      ],
+      "training_seconds": 4.834530697204173,
+      "peak_gpu_bytes": 397614592,
+      "parameters": 12130,
+      "selected_outer": 9,
+      "adapter": "Official unchanged model; common data splits; missing losses excluded; same-source diagonal forbidden; last-eight coordinate NLL aggregation; finite augmented-Lagrangian budget"
+    },
+    {
+      "path": "results/graph_flow_v1/models/ganf_501a8470d52ab96fa929.pt",
+      "sha256": "71e50cb510d6e9e8fc7bd19abb6caa1adb02fd4727149c9e9017a4f1630455aa",
+      "specification": {
+        "dataset": "intel",
+        "width": 32,
+        "seed": 20261033,
+        "outer": 10,
+        "steps_per_outer": 40,
+        "revision": "bce38333b109f325a403dae9aff4987ae5bd6e1f",
+        "adapter_sha256": "b3158a64dc38521e418d4fffa4c4f7f52d5999f05720346cf3bbb8d32d64f065",
+        "train_sha256": "5a2c95b1e70dab133b442b7cf90351dcb02994b0b682eb80d8debeefca0aacdd"
+      },
+      "development_nll": -2.2287207930022217,
+      "history": [
+        {
+          "outer": 1,
+          "development_nll": -1.171250949909255,
+          "acyclicity": 0.14950180053710938,
+          "rho": 1.0,
+          "alpha": 0.0
+        },
+        {
+          "outer": 2,
+          "development_nll": -1.2577352830698587,
+          "acyclicity": 0.0853424072265625,
+          "rho": 1.0,
+          "alpha": 0.14950180053710938
+        },
+        {
+          "outer": 3,
+          "development_nll": -1.6919404306172643,
+          "acyclicity": 0.0204925537109375,
+          "rho": 10.0,
+          "alpha": 1.0029258728027344
+        },
+        {
+          "outer": 4,
+          "development_nll": -1.3650316553772612,
+          "acyclicity": 0.008235931396484375,
+          "rho": 10.0,
+          "alpha": 1.2078514099121094
+        },
+        {
+          "outer": 5,
+          "development_nll": -1.4271951426630434,
+          "acyclicity": 0.003345489501953125,
+          "rho": 10.0,
+          "alpha": 1.2902107238769531
+        },
+        {
+          "outer": 6,
+          "development_nll": -1.9843094826047287,
+          "acyclicity": 0.00183868408203125,
+          "rho": 10.0,
+          "alpha": 1.3236656188964844
+        },
+        {
+          "outer": 7,
+          "development_nll": -1.5742974080649,
+          "acyclicity": 0.000446319580078125,
+          "rho": 100.0,
+          "alpha": 1.5075340270996094
+        },
+        {
+          "outer": 8,
+          "development_nll": -1.7667032167367502,
+          "acyclicity": 0.0001220703125,
+          "rho": 100.0,
+          "alpha": 1.5521659851074219
+        },
+        {
+          "outer": 9,
+          "development_nll": -2.2287207930022217,
+          "acyclicity": 5.7220458984375e-05,
+          "rho": 100.0,
+          "alpha": 1.5643730163574219
+        },
+        {
+          "outer": 10,
+          "development_nll": -1.7753245497461123,
+          "acyclicity": 1.1444091796875e-05,
+          "rho": 100.0,
+          "alpha": 1.5700950622558594
+        }
+      ],
+      "training_seconds": 4.073569566011429,
+      "peak_gpu_bytes": 397614592,
+      "parameters": 12130,
+      "selected_outer": 9,
+      "adapter": "Official unchanged model; common data splits; missing losses excluded; same-source diagonal forbidden; last-eight coordinate NLL aggregation; finite augmented-Lagrangian budget"
+    }
+  ],
+  "selection": "Minimum normal development coordinate NLL"
+}

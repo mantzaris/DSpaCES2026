@@ -4,10 +4,15 @@ from http.server import SimpleHTTPRequestHandler,ThreadingHTTPServer
 import argparse,json,sys,urllib.parse
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'src'))
 from iot_repair.persistence import log_decision
+from iot_repair.flow_persistence import flow_review
 class Handler(SimpleHTTPRequestHandler):
     def __init__(self,*args,**kwargs):super().__init__(*args,directory=str(ROOT),**kwargs)
     def do_GET(self):
+        if self.path in ('/flow','/flow?test=1'):self.path='/operator/flow.html'+('?test=1' if '?' in self.path else '')
         if self.path=='/':self.path='/operator/index.html'
+        if self.path=='/api/flow/cases':
+            paths=sorted((ROOT/'results/graph_flow_v1/graph/cases').glob('*.json'))
+            self.send_json([str(p.relative_to(ROOT)) for p in paths]);return
         if self.path=='/api/cases':
             paths=sorted((ROOT/'results/graph').glob('*.json'));self.send_json([str(p.relative_to(ROOT)) for p in paths if p.name!='persistence_audit.json']);return
         if self.path.startswith('/runtime/') or self.path.startswith('/data/raw/'):
@@ -16,14 +21,16 @@ class Handler(SimpleHTTPRequestHandler):
     def send_json(self,value,status=200):
         content=json.dumps(value).encode();self.send_response(status);self.send_header('Content-Type','application/json');self.send_header('Content-Length',str(len(content)));self.end_headers();self.wfile.write(content)
     def do_POST(self):
-        if self.path!='/api/decision':self.send_error(404);return
+        if self.path not in ('/api/decision','/api/flow/decision'):self.send_error(404);return
         origin=self.headers.get('Origin')
         if origin and urllib.parse.urlparse(origin).netloc!=self.headers.get('Host'):
             self.send_error(403);return
         try:
             length=int(self.headers.get('Content-Length','0'))
             if length>8192:raise ValueError('Request too large')
-            data=json.loads(self.rfile.read(length));record=log_decision(ROOT,data['hypothesis_id'],data['action'],data.get('note',''))
+            data=json.loads(self.rfile.read(length))
+            record=(flow_review(ROOT,data['hypothesis_id'],data['action'],data.get('note',''),data.get('purpose','operator_review'))
+                    if self.path=='/api/flow/decision' else log_decision(ROOT,data['hypothesis_id'],data['action'],data.get('note','')))
             self.send_json(record)
         except Exception as error:self.send_json({'error':str(error)},400)
 if __name__=='__main__':

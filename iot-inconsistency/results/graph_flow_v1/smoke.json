@@ -1,0 +1,152 @@
+{
+  "synthetic_32_nonlinear": {
+    "timing": {
+      "flow": 0.6703067473135889,
+      "own_history": 0.022515582852065563,
+      "ppca": 0.08128772675991058,
+      "mixture_ppca": 0.09822618495672941,
+      "all_ppca": 0.05575745087116957,
+      "pca": 0.0003658486530184746,
+      "supervised": 0.010653343982994556,
+      "ganf": 0.013696455396711826
+    },
+    "methods": [
+      "score_flow_ratio",
+      "score_flow_nll",
+      "score_flow_plugin",
+      "score_flow_single",
+      "score_mean_member_ratios",
+      "score_without_bias",
+      "score_without_drift",
+      "score_without_noise",
+      "score_without_stuck",
+      "score_own_history",
+      "score_ppca",
+      "score_mixture_ppca",
+      "score_all_ppca",
+      "score_pca",
+      "score_supervised",
+      "score_ganf"
+    ]
+  },
+  "skab": {
+    "timing": {
+      "flow": 0.031096051912754774,
+      "own_history": 0.02110954700037837,
+      "ppca": 0.018970762845128775,
+      "mixture_ppca": 0.02304729213938117,
+      "all_ppca": 0.013475717045366764,
+      "pca": 0.0002517891116440296,
+      "supervised": 0.006828133016824722,
+      "ganf": 0.0035877511836588383
+    },
+    "methods": [
+      "score_flow_ratio",
+      "score_flow_nll",
+      "score_flow_plugin",
+      "score_flow_single",
+      "score_mean_member_ratios",
+      "score_without_bias",
+      "score_without_drift",
+      "score_without_noise",
+      "score_without_stuck",
+      "score_own_history",
+      "score_ppca",
+      "score_mixture_ppca",
+      "score_all_ppca",
+      "score_pca",
+      "score_supervised",
+      "score_ganf"
+    ]
+  },
+  "synthetic_32_linear": {
+    "timing": {
+      "flow": 0.02352283103391528,
+      "own_history": 0.021650316193699837,
+      "ppca": 0.08006389997899532,
+      "mixture_ppca": 0.10038047982379794,
+      "all_ppca": 0.054788012988865376,
+      "pca": 0.00031992001459002495,
+      "supervised": 0.007895780261605978,
+      "ganf": 0.003565471153706312
+    },
+    "methods": [
+      "score_flow_ratio",
+      "score_flow_nll",
+      "score_flow_plugin",
+      "score_flow_single",
+      "score_mean_member_ratios",
+      "score_without_bias",
+      "score_without_drift",
+      "score_without_noise",
+      "score_without_stuck",
+      "score_own_history",
+      "score_ppca",
+      "score_mixture_ppca",
+      "score_all_ppca",
+      "score_pca",
+      "score_supervised",
+      "score_ganf"
+    ]
+  },
+  "synthetic_64_nonlinear": {
+    "timing": {
+      "flow": 0.024149749893695116,
+      "own_history": 0.022031434811651707,
+      "ppca": 0.18152169696986675,
+      "mixture_ppca": 0.21527922293171287,
+      "all_ppca": 0.11523400293663144,
+      "pca": 0.00026712892577052116,
+      "supervised": 0.012179580051451921,
+      "ganf": 0.0037330803461372852
+    },
+    "methods": [
+      "score_flow_ratio",
+      "score_flow_nll",
+      "score_flow_plugin",
+      "score_flow_single",
+      "score_mean_member_ratios",
+      "score_without_bias",
+      "score_without_drift",
+      "score_without_noise",
+      "score_without_stuck",
+      "score_own_history",
+      "score_ppca",
+      "score_mixture_ppca",
+      "score_all_ppca",
+      "score_pca",
+      "score_supervised",
+      "score_ganf"
+    ]
+  },
+  "intel": {
+    "timing": {
+      "flow": 0.023894039914011955,
+      "own_history": 0.022212685085833073,
+      "ppca": 0.1281247199513018,
+      "mixture_ppca": 0.15425332495942712,
+      "all_ppca": 0.08301042299717665,
+      "pca": 0.0004301988519728184,
+      "supervised": 0.008630258031189442,
+      "ganf": 0.003885930869728327
+    },
+    "methods": [
+      "score_flow_ratio",
+      "score_flow_nll",
+      "score_flow_plugin",
+      "score_flow_single",
+      "score_mean_member_ratios",
+      "score_without_bias",
+      "score_without_drift",
+      "score_without_noise",
+      "score_without_stuck",
+      "score_own_history",
+      "score_ppca",
+      "score_mixture_ppca",
+      "score_all_ppca",
+      "score_pca",
+      "score_supervised",
+      "score_ganf"
+    ]
+  }
+}

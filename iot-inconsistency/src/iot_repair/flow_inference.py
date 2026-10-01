@@ -13,7 +13,7 @@ FLOOR=-1e12
 
 @torch.no_grad()
 def infer_case(models, values, graph, context_length, sample_count=512, scale=1., seed=1,
-               context_mode='graph', draw_chunk=128, reference=None, sensitivity=False, candidate_chunk=64):
+               context_mode='graph', draw_chunk=128, reference=None, sensitivity=False, candidate_chunk=64,times=None):
     """Exhaustive candidates, with explicit unavailable-target outputs.
 
     Reference truth is used only after all score and posterior computations.
@@ -37,7 +37,7 @@ def infer_case(models, values, graph, context_length, sample_count=512, scale=1.
             generated=np.empty((0,members,sample_count,8)),log_normal_members=np.empty((0,members)),
             log_corruption=np.empty((0,members,sample_count)),log_fault_components=np.empty((0,4)),
             log_normal=np.empty(0),log_fault=np.empty(0),score=np.empty(0),posterior_weights=np.empty((0,members*sample_count)),
-            posterior_mean=np.empty((0,8)),seed=np.array(seed),corruption_scale=np.array(scale))
+            posterior_mean=np.empty((0,8)),seed=np.array(seed),corruption_scale=np.array(scale),target_times=np.arange(8) if times is None else np.asarray(times))
         return dict(scores=scores,eligible=eligible.cpu().numpy(),ess=np.zeros(channels),numerical_adequate=np.zeros(channels,bool),
                     repairs={key:np.full((channels,8),np.nan) for key in ('mean','median','lower','upper','variance','width')},
                     repair_metrics={key:np.empty(0) for key in ('posterior_crps','prior_crps','interval_coverage','interval_width','energy_score')},
@@ -46,7 +46,7 @@ def infer_case(models, values, graph, context_length, sample_count=512, scale=1.
     start=time.perf_counter()
     inputs=build_context(observed[None].expand(len(query),-1,-1),query,graph,context_length,mode=context_mode)
     target=observed[query,-8:]
-    channel=GaussianCorruption(8,scale=scale,device=device)
+    channel=GaussianCorruption(8,scale=scale,device=device,times=times)
     generations=[];latents=[];normal=[];q_logs=[];component_logs=[]
     for member,model in enumerate(models):
         model.eval();encoded=model.encode(inputs)
@@ -82,7 +82,7 @@ def infer_case(models, values, graph, context_length, sample_count=512, scale=1.
             scores['M'+str(count)]=np.full(channels,FLOOR)
             scores['M'+str(count)][query.cpu().numpy()]=value.ratio.cpu().numpy()
         for alternative in [1.,2.]:
-            q=GaussianCorruption(8,scale=alternative,device=device)
+            q=GaussianCorruption(8,scale=alternative,device=device,times=times)
             logs=q.log_prob(target,flat)
             value=torch.logsumexp(logs,1)-math.log(flat.shape[1])-evidence.log_normal
             scores['scale_'+str(alternative)]=np.full(channels,FLOOR)
@@ -114,7 +114,7 @@ def infer_case(models, values, graph, context_length, sample_count=512, scale=1.
              posterior_weights=evidence.weights.cpu().numpy(),posterior_mean=posterior['mean'].cpu().numpy(),
              context_values=inputs.sequence.cpu().numpy(),context_neighbors=inputs.neighbors.cpu().numpy(),
              context_attributes=inputs.attributes.cpu().numpy(),context_support=inputs.support.cpu().numpy(),
-             seed=np.array(seed),corruption_scale=np.array(scale))
+             seed=np.array(seed),corruption_scale=np.array(scale),target_times=channel.times)
     return dict(scores=scores,eligible=eligible.cpu().numpy(),ess=ess,numerical_adequate=ess>=16,
                 repairs=repairs,repair_metrics=metrics,raw=raw,seconds=elapsed,
                 peak_gpu_bytes=torch.cuda.max_memory_allocated() if device.type=='cuda' else 0)

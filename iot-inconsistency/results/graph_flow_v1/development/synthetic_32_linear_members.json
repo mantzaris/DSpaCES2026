@@ -1,0 +1,595 @@
+{
+  "members": [
+    {
+      "id": "e2f70799fa3c809c8fb4",
+      "path": "results/graph_flow_v1/models/e2f70799fa3c809c8fb4.pt",
+      "sha256": "87b3d8e8f4d248fa8b7f822cf5abc098d822ad235f9bf412174f43312d3d5fd9",
+      "specification": {
+        "dataset": "synthetic_32_linear",
+        "capacity": {
+          "width": 64,
+          "layers": 6
+        },
+        "context_length": 32,
+        "seed": 20261011,
+        "mode": "graph",
+        "fraction": 1.0,
+        "steps": 600,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "batch": 128,
+        "train_sha256": "7a73d65786e0ced4159b5f9dc41a1fc037c68f56c09868d088666db69cba0ae8",
+        "development_sha256": "5f8e25f57f53de6070e40e7078db4ce645ebc5dd8d3d355d02735e9c8c235d20",
+        "graph_sha256": "d68d420a6124ae2a4163138f143df6569b8b990e74931ef6118652f5f37a6771",
+        "model_code_sha256": "98febb4e7bdb41cf983bea9c3e20558de3885456d332c66545d34fd9dbb81c9f"
+      },
+      "best_step": 600,
+      "development_nll": -10.475720405578613,
+      "history": [
+        {
+          "step": 100,
+          "training_nll": -3.3725392818450928,
+          "development_nll": -2.2451436519622803
+        },
+        {
+          "step": 200,
+          "training_nll": -4.582777976989746,
+          "development_nll": -4.485911846160889
+        },
+        {
+          "step": 300,
+          "training_nll": -4.835906982421875,
+          "development_nll": -5.297479152679443
+        },
+        {
+          "step": 400,
+          "training_nll": -7.945947647094727,
+          "development_nll": -7.295199871063232
+        },
+        {
+          "step": 500,
+          "training_nll": -9.467970848083496,
+          "development_nll": -9.38321590423584
+        },
+        {
+          "step": 600,
+          "training_nll": -10.336271286010742,
+          "development_nll": -10.475720405578613
+        }
+      ],
+      "training_seconds": 12.285133705940098,
+      "peak_gpu_bytes": 191714304,
+      "parameters": 96896,
+      "training_volume": {
+        "windows": 372,
+        "source_blocks": 12,
+        "block_ids": [
+          "train_trajectory_0",
+          "train_trajectory_1",
+          "train_trajectory_10",
+          "train_trajectory_11",
+          "train_trajectory_2",
+          "train_trajectory_3",
+          "train_trajectory_4",
+          "train_trajectory_5",
+          "train_trajectory_6",
+          "train_trajectory_7",
+          "train_trajectory_8",
+          "train_trajectory_9"
+        ],
+        "candidates": 11904,
+        "eligible_fraction": 1.0
+      },
+      "development_volume": {
+        "windows": 160,
+        "source_blocks": 8,
+        "block_ids": [
+          "development_trajectory_0",
+          "development_trajectory_1",
+          "development_trajectory_2",
+          "development_trajectory_3",
+          "development_trajectory_4",
+          "development_trajectory_5",
+          "development_trajectory_6",
+          "development_trajectory_7"
+        ],
+        "candidates": 5120,
+        "eligible_fraction": 1.0
+      },
+      "generation_during_training": true
+    },
+    {
+      "id": "1d15db15cc8c37432355",
+      "path": "results/graph_flow_v1/models/1d15db15cc8c37432355.pt",
+      "sha256": "d1c7f9728d60cd179d2455150cd36df05f755a415895f972554dfc7fc09c3485",
+      "specification": {
+        "dataset": "synthetic_32_linear",
+        "capacity": {
+          "width": 64,
+          "layers": 6
+        },
+        "context_length": 32,
+        "seed": 20261022,
+        "mode": "graph",
+        "fraction": 1.0,
+        "steps": 600,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "batch": 128,
+        "train_sha256": "7a73d65786e0ced4159b5f9dc41a1fc037c68f56c09868d088666db69cba0ae8",
+        "development_sha256": "5f8e25f57f53de6070e40e7078db4ce645ebc5dd8d3d355d02735e9c8c235d20",
+        "graph_sha256": "d68d420a6124ae2a4163138f143df6569b8b990e74931ef6118652f5f37a6771",
+        "model_code_sha256": "98febb4e7bdb41cf983bea9c3e20558de3885456d332c66545d34fd9dbb81c9f"
+      },
+      "best_step": 600,
+      "development_nll": -8.475764274597168,
+      "history": [
+        {
+          "step": 100,
+          "training_nll": -3.365590810775757,
+          "development_nll": -2.830714464187622
+        },
+        {
+          "step": 200,
+          "training_nll": -4.084423065185547,
+          "development_nll": -4.460267543792725
+        },
+        {
+          "step": 300,
+          "training_nll": -5.346517562866211,
+          "development_nll": -6.086817264556885
+        },
+        {
+          "step": 400,
+          "training_nll": -8.062662124633789,
+          "development_nll": -7.6679887771606445
+        },
+        {
+          "step": 500,
+          "training_nll": -8.51137924194336,
+          "development_nll": -8.192973136901855
+        },
+        {
+          "step": 600,
+          "training_nll": -8.94002914428711,
+          "development_nll": -8.475764274597168
+        }
+      ],
+      "training_seconds": 11.76772200409323,
+      "peak_gpu_bytes": 191714304,
+      "parameters": 96896,
+      "training_volume": {
+        "windows": 372,
+        "source_blocks": 12,
+        "block_ids": [
+          "train_trajectory_0",
+          "train_trajectory_1",
+          "train_trajectory_10",
+          "train_trajectory_11",
+          "train_trajectory_2",
+          "train_trajectory_3",
+          "train_trajectory_4",
+          "train_trajectory_5",
+          "train_trajectory_6",
+          "train_trajectory_7",
+          "train_trajectory_8",
+          "train_trajectory_9"
+        ],
+        "candidates": 11904,
+        "eligible_fraction": 1.0
+      },
+      "development_volume": {
+        "windows": 160,
+        "source_blocks": 8,
+        "block_ids": [
+          "development_trajectory_0",
+          "development_trajectory_1",
+          "development_trajectory_2",
+          "development_trajectory_3",
+          "development_trajectory_4",
+          "development_trajectory_5",
+          "development_trajectory_6",
+          "development_trajectory_7"
+        ],
+        "candidates": 5120,
+        "eligible_fraction": 1.0
+      },
+      "generation_during_training": true
+    },
+    {
+      "id": "5c5400ff2f15f472a94d",
+      "path": "results/graph_flow_v1/models/5c5400ff2f15f472a94d.pt",
+      "sha256": "29b3c456b4d63ec5b623bab177718b83ed1562d0f1a5b8cba5d49b54b67ef7b8",
+      "specification": {
+        "dataset": "synthetic_32_linear",
+        "capacity": {
+          "width": 64,
+          "layers": 6
+        },
+        "context_length": 32,
+        "seed": 20261033,
+        "mode": "graph",
+        "fraction": 1.0,
+        "steps": 600,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "batch": 128,
+        "train_sha256": "7a73d65786e0ced4159b5f9dc41a1fc037c68f56c09868d088666db69cba0ae8",
+        "development_sha256": "5f8e25f57f53de6070e40e7078db4ce645ebc5dd8d3d355d02735e9c8c235d20",
+        "graph_sha256": "d68d420a6124ae2a4163138f143df6569b8b990e74931ef6118652f5f37a6771",
+        "model_code_sha256": "98febb4e7bdb41cf983bea9c3e20558de3885456d332c66545d34fd9dbb81c9f"
+      },
+      "best_step": 600,
+      "development_nll": -8.8223237991333,
+      "history": [
+        {
+          "step": 100,
+          "training_nll": -3.5346667766571045,
+          "development_nll": -3.1586081981658936
+        },
+        {
+          "step": 200,
+          "training_nll": -4.497947692871094,
+          "development_nll": -4.0020222663879395
+        },
+        {
+          "step": 300,
+          "training_nll": -6.579899787902832,
+          "development_nll": -6.227720737457275
+        },
+        {
+          "step": 400,
+          "training_nll": -8.469064712524414,
+          "development_nll": -7.981851100921631
+        },
+        {
+          "step": 500,
+          "training_nll": -8.659933090209961,
+          "development_nll": -8.735692977905273
+        },
+        {
+          "step": 600,
+          "training_nll": -8.711568832397461,
+          "development_nll": -8.8223237991333
+        }
+      ],
+      "training_seconds": 11.829457608051598,
+      "peak_gpu_bytes": 191714304,
+      "parameters": 96896,
+      "training_volume": {
+        "windows": 372,
+        "source_blocks": 12,
+        "block_ids": [
+          "train_trajectory_0",
+          "train_trajectory_1",
+          "train_trajectory_10",
+          "train_trajectory_11",
+          "train_trajectory_2",
+          "train_trajectory_3",
+          "train_trajectory_4",
+          "train_trajectory_5",
+          "train_trajectory_6",
+          "train_trajectory_7",
+          "train_trajectory_8",
+          "train_trajectory_9"
+        ],
+        "candidates": 11904,
+        "eligible_fraction": 1.0
+      },
+      "development_volume": {
+        "windows": 160,
+        "source_blocks": 8,
+        "block_ids": [
+          "development_trajectory_0",
+          "development_trajectory_1",
+          "development_trajectory_2",
+          "development_trajectory_3",
+          "development_trajectory_4",
+          "development_trajectory_5",
+          "development_trajectory_6",
+          "development_trajectory_7"
+        ],
+        "candidates": 5120,
+        "eligible_fraction": 1.0
+      },
+      "generation_during_training": true
+    }
+  ],
+  "own_history": [
+    {
+      "id": "fd59445cb5c274047407",
+      "path": "results/graph_flow_v1/models/fd59445cb5c274047407.pt",
+      "sha256": "3d4bec72ee74e452aafc2ffefe09fe3ce335c0560af93e6254564bf0be170a8a",
+      "specification": {
+        "dataset": "synthetic_32_linear",
+        "capacity": {
+          "width": 64,
+          "layers": 6
+        },
+        "context_length": 32,
+        "seed": 20261011,
+        "mode": "own_history",
+        "fraction": 1.0,
+        "steps": 600,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "batch": 128,
+        "train_sha256": "7a73d65786e0ced4159b5f9dc41a1fc037c68f56c09868d088666db69cba0ae8",
+        "development_sha256": "5f8e25f57f53de6070e40e7078db4ce645ebc5dd8d3d355d02735e9c8c235d20",
+        "graph_sha256": "d68d420a6124ae2a4163138f143df6569b8b990e74931ef6118652f5f37a6771",
+        "model_code_sha256": "98febb4e7bdb41cf983bea9c3e20558de3885456d332c66545d34fd9dbb81c9f"
+      },
+      "best_step": 600,
+      "development_nll": -8.51602840423584,
+      "history": [
+        {
+          "step": 100,
+          "training_nll": -2.592074394226074,
+          "development_nll": -1.5960973501205444
+        },
+        {
+          "step": 200,
+          "training_nll": -2.6256465911865234,
+          "development_nll": -3.245227813720703
+        },
+        {
+          "step": 300,
+          "training_nll": -4.736617088317871,
+          "development_nll": -4.978774547576904
+        },
+        {
+          "step": 400,
+          "training_nll": -7.787198066711426,
+          "development_nll": -7.110449314117432
+        },
+        {
+          "step": 500,
+          "training_nll": -8.064323425292969,
+          "development_nll": -8.020543098449707
+        },
+        {
+          "step": 600,
+          "training_nll": -8.267316818237305,
+          "development_nll": -8.51602840423584
+        }
+      ],
+      "training_seconds": 11.922817341983318,
+      "peak_gpu_bytes": 191714304,
+      "parameters": 96896,
+      "training_volume": {
+        "windows": 372,
+        "source_blocks": 12,
+        "block_ids": [
+          "train_trajectory_0",
+          "train_trajectory_1",
+          "train_trajectory_10",
+          "train_trajectory_11",
+          "train_trajectory_2",
+          "train_trajectory_3",
+          "train_trajectory_4",
+          "train_trajectory_5",
+          "train_trajectory_6",
+          "train_trajectory_7",
+          "train_trajectory_8",
+          "train_trajectory_9"
+        ],
+        "candidates": 11904,
+        "eligible_fraction": 1.0
+      },
+      "development_volume": {
+        "windows": 160,
+        "source_blocks": 8,
+        "block_ids": [
+          "development_trajectory_0",
+          "development_trajectory_1",
+          "development_trajectory_2",
+          "development_trajectory_3",
+          "development_trajectory_4",
+          "development_trajectory_5",
+          "development_trajectory_6",
+          "development_trajectory_7"
+        ],
+        "candidates": 5120,
+        "eligible_fraction": 1.0
+      },
+      "generation_during_training": true
+    },
+    {
+      "id": "496025ea5d350243b21c",
+      "path": "results/graph_flow_v1/models/496025ea5d350243b21c.pt",
+      "sha256": "c6171eb13b67dba2cd51981e0bae62d0e6a660eafb6c4483b0210c820f31655e",
+      "specification": {
+        "dataset": "synthetic_32_linear",
+        "capacity": {
+          "width": 64,
+          "layers": 6
+        },
+        "context_length": 32,
+        "seed": 20261022,
+        "mode": "own_history",
+        "fraction": 1.0,
+        "steps": 600,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "batch": 128,
+        "train_sha256": "7a73d65786e0ced4159b5f9dc41a1fc037c68f56c09868d088666db69cba0ae8",
+        "development_sha256": "5f8e25f57f53de6070e40e7078db4ce645ebc5dd8d3d355d02735e9c8c235d20",
+        "graph_sha256": "d68d420a6124ae2a4163138f143df6569b8b990e74931ef6118652f5f37a6771",
+        "model_code_sha256": "98febb4e7bdb41cf983bea9c3e20558de3885456d332c66545d34fd9dbb81c9f"
+      },
+      "best_step": 500,
+      "development_nll": -8.588385581970215,
+      "history": [
+        {
+          "step": 100,
+          "training_nll": -2.333953619003296,
+          "development_nll": -2.9368114471435547
+        },
+        {
+          "step": 200,
+          "training_nll": -3.6448919773101807,
+          "development_nll": -3.380807638168335
+        },
+        {
+          "step": 300,
+          "training_nll": -5.66373348236084,
+          "development_nll": -5.998042583465576
+        },
+        {
+          "step": 400,
+          "training_nll": -8.096994400024414,
+          "development_nll": -8.020639419555664
+        },
+        {
+          "step": 500,
+          "training_nll": -8.772075653076172,
+          "development_nll": -8.588385581970215
+        },
+        {
+          "step": 600,
+          "training_nll": -8.822818756103516,
+          "development_nll": -8.559344291687012
+        }
+      ],
+      "training_seconds": 11.849348958116025,
+      "peak_gpu_bytes": 191714304,
+      "parameters": 96896,
+      "training_volume": {
+        "windows": 372,
+        "source_blocks": 12,
+        "block_ids": [
+          "train_trajectory_0",
+          "train_trajectory_1",
+          "train_trajectory_10",
+          "train_trajectory_11",
+          "train_trajectory_2",
+          "train_trajectory_3",
+          "train_trajectory_4",
+          "train_trajectory_5",
+          "train_trajectory_6",
+          "train_trajectory_7",
+          "train_trajectory_8",
+          "train_trajectory_9"
+        ],
+        "candidates": 11904,
+        "eligible_fraction": 1.0
+      },
+      "development_volume": {
+        "windows": 160,
+        "source_blocks": 8,
+        "block_ids": [
+          "development_trajectory_0",
+          "development_trajectory_1",
+          "development_trajectory_2",
+          "development_trajectory_3",
+          "development_trajectory_4",
+          "development_trajectory_5",
+          "development_trajectory_6",
+          "development_trajectory_7"
+        ],
+        "candidates": 5120,
+        "eligible_fraction": 1.0
+      },
+      "generation_during_training": true
+    },
+    {
+      "id": "5ca466fb66dd8562b01e",
+      "path": "results/graph_flow_v1/models/5ca466fb66dd8562b01e.pt",
+      "sha256": "35407fec3a086473059fabafc5d68723e318e21057dc65b44516c13481202e7c",
+      "specification": {
+        "dataset": "synthetic_32_linear",
+        "capacity": {
+          "width": 64,
+          "layers": 6
+        },
+        "context_length": 32,
+        "seed": 20261033,
+        "mode": "own_history",
+        "fraction": 1.0,
+        "steps": 600,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "batch": 128,
+        "train_sha256": "7a73d65786e0ced4159b5f9dc41a1fc037c68f56c09868d088666db69cba0ae8",
+        "development_sha256": "5f8e25f57f53de6070e40e7078db4ce645ebc5dd8d3d355d02735e9c8c235d20",
+        "graph_sha256": "d68d420a6124ae2a4163138f143df6569b8b990e74931ef6118652f5f37a6771",
+        "model_code_sha256": "98febb4e7bdb41cf983bea9c3e20558de3885456d332c66545d34fd9dbb81c9f"
+      },
+      "best_step": 600,
+      "development_nll": -8.622177124023438,
+      "history": [
+        {
+          "step": 100,
+          "training_nll": -3.963618755340576,
+          "development_nll": -3.702960252761841
+        },
+        {
+          "step": 200,
+          "training_nll": -4.626379013061523,
+          "development_nll": -4.117122173309326
+        },
+        {
+          "step": 300,
+          "training_nll": -7.616757392883301,
+          "development_nll": -7.772218227386475
+        },
+        {
+          "step": 400,
+          "training_nll": -8.60085678100586,
+          "development_nll": -8.619794845581055
+        },
+        {
+          "step": 500,
+          "training_nll": -8.766050338745117,
+          "development_nll": -8.598402976989746
+        },
+        {
+          "step": 600,
+          "training_nll": -8.909425735473633,
+          "development_nll": -8.622177124023438
+        }
+      ],
+      "training_seconds": 12.13622230105102,
+      "peak_gpu_bytes": 191714304,
+      "parameters": 96896,
+      "training_volume": {
+        "windows": 372,
+        "source_blocks": 12,
+        "block_ids": [
+          "train_trajectory_0",
+          "train_trajectory_1",
+          "train_trajectory_10",
+          "train_trajectory_11",
+          "train_trajectory_2",
+          "train_trajectory_3",
+          "train_trajectory_4",
+          "train_trajectory_5",
+          "train_trajectory_6",
+          "train_trajectory_7",
+          "train_trajectory_8",
+          "train_trajectory_9"
+        ],
+        "candidates": 11904,
+        "eligible_fraction": 1.0
+      },
+      "development_volume": {
+        "windows": 160,
+        "source_blocks": 8,
+        "block_ids": [
+          "development_trajectory_0",
+          "development_trajectory_1",
+          "development_trajectory_2",
+          "development_trajectory_3",
+          "development_trajectory_4",
+          "development_trajectory_5",
+          "development_trajectory_6",
+          "development_trajectory_7"
+        ],
+        "candidates": 5120,
+        "eligible_fraction": 1.0
+      },
+      "generation_during_training": true
+    }
+  ],
+  "learning_curve": []
+}

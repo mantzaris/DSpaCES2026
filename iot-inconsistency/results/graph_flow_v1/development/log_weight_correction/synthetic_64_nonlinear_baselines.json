@@ -298,6 +298,5 @@
       "training_seconds": 0.11107567100407323
     }
   ],
-  "selection": "PCA and classifier use development candidate AP; PPCA ranks and mixture fits use normal development NLL",
-  "inference_log_weight_correction": "Development selection recomputed with mixture weights kept in log space until posterior normalization. Training parameters unchanged."
+  "selection": "PCA and classifier use development candidate AP; PPCA ranks and mixture fits use normal development NLL"
 }

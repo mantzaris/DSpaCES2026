@@ -32,7 +32,7 @@ def finish_neural_development(root):
             models=[load_flow(root,r) for r in members];cases=build_cases(root,dataset,'development');graph=graph_for(root,dataset)
             scores={};ess=[];truth=[];eligible=[];timing=[]
             for i,case in enumerate(cases):
-                result=infer_case(models,case['values'],graph,spec['context_length'],sample_count=2048,scale=1.,seed=20261001+i,sensitivity=True)
+                result=infer_case(models,case['values'],graph,spec['context_length'],sample_count=2048,scale=1.,seed=20261001+i,sensitivity=True,times=case['target_times'])
                 for key,value in result['scores'].items():scores.setdefault(key,[]).append(value)
                 ess.append(result['ess']);truth.append(case['truth']);eligible.append(result['eligible']);timing.append(result['seconds'])
                 if i%25==0:print(dataset,'development score',i,'/',len(cases),flush=True)
@@ -43,7 +43,7 @@ def finish_neural_development(root):
             if scale!=1.:
                 for key in ['M32','M128','M512','M2048']:scores[key]=[]
                 for i,case in enumerate(cases):
-                    result=infer_case(models,case['values'],graph,spec['context_length'],sample_count=2048,scale=scale,seed=20261001+i,sensitivity=True)
+                    result=infer_case(models,case['values'],graph,spec['context_length'],sample_count=2048,scale=scale,seed=20261001+i,sensitivity=True,times=case['target_times'])
                     for key in ['M32','M128','M512','M2048']:scores[key].append(result['scores'][key])
                 for key in ['M32','M128','M512','M2048']:scores[key]=np.asarray(scores[key])
             sensitivity=[];chosen=2048

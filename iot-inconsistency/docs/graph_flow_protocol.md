@@ -63,3 +63,55 @@ Equation audits include inverse/Jacobian checks, Gaussian closed forms, correlat
 Case selection uses the first successful attribution, first failed attribution and first numerically inadequate or ambiguous case in deterministic case order, with declared fallbacks. The classic 2D network view keeps context, disputed readings and explicitly tested disputed associations distinct. No generated reading replaces an observation. Browser actions are interface tests, not a human study.
 
 The live workshop page was checked on 2026-10-01. Full papers allow ten IEEE two-column pages including references. The main manuscript will remain self-contained within that limit. No separate supplement is presumed accepted. Source https://sites.google.com/unisalento.it/ieee-dspaces-2026/home.
+
+## Development implementation clarifications before the lock
+
+The timestamp audit found nonuniform SKAB sample intervals. Both injected drift
+and the drift-channel covariance therefore use the eight actual timestamps from
+the original experiment file. Intel uses completed 300-second bins and synthetic
+data use one-second steps. Flow temporal encoders and graph lags use observation
+indices and availability, without treating a lagged row as an exact elapsed-second
+lag. This limitation is stated for irregular recordings. Earlier SKAB development
+scores using an index ramp are preserved in `development/chronology_correction/`
+and cannot select the final configuration.
+
+A completely unavailable target population produces a complete vector of floor
+scores and availability flags. It produces no numeric density or repair. A failed
+Intel development population assertion exposed this path, and the correction
+precedes final scoring. Partial and fully missing faults remain in coverage and
+miss accounting. No test outcome selected either correction.
+
+PPCA fits joint target and allowed context observations. Training missing context
+is mean-filled only while estimating its parameters. At scoring time, missing
+context is marginalized and never treated as an observed zero. Single and
+two-component PPCA use rank 2, 4 or 8, selected by normal development NLL.
+Two-component fits use twelve bounded EM updates. An all-channel PPCA variant
+has more context than graph-restricted models and is named separately.
+
+The modest classifier is trained on four declared fault families injected into
+training reference windows and tuned on development candidate AP. It sees target
+shape, earlier history, PCA residual and availability. Its exported tree traversal
+is checked against sklearn predictions before use on the GPU host.
+
+The official GANF architecture is imported without modifications. Adapters exclude
+missing target losses, prohibit adjacency between channels from the same physical
+source, select on development density, and sum the final eight coordinate log
+densities. Its recurrent factorization can use preceding values inside the tested
+interval. This differs from the proposed block-masked generation policy and is
+reported explicitly. Missing context is filled with zero for this original
+architecture, which has no explicit availability-mask input. The finite graph
+optimization may leave a nonzero acyclicity residual. We report that residual and
+do not claim exact DAG convergence.
+
+Probability calibration uses the raw score, robustly scaled on its labeled
+calibration role, and a scorable indicator for every method. It describes the
+benchmark candidate prevalence. Repair recommendations take the maximum raw-score
+candidate, apply the shared eligibility rule, and apply the calibration-selected
+probability threshold. Flow repairs also require ESS at least sixteen. This
+sampling rule is distinct from fault confidence. Recorded sensor quantization is
+approximated by a continuous density consistently in both hypotheses.
+
+The 32-channel linear and nonlinear synthetic configurations use paired generator
+seeds. Their block bootstrap draws are therefore shared. The 64-channel trajectories,
+Intel blocks and SKAB experiments are independently resampled. Correlated channels
+and injected copies never become independent test subjects.

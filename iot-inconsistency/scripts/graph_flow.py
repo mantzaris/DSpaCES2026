@@ -8,7 +8,7 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'src'))
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('stage',choices=['prepare','develop_models','neural','baselines','sampling','freeze','calibration','calibrate','test','legacy_calibration','legacy_test','analyze','audit','smoke'])
+    parser.add_argument('stage',choices=['prepare','develop_models','neural','baselines','sampling','freeze','calibration','calibrate','test','legacy_calibration','legacy_test','analyze','audit','smoke','robustness'])
     args=parser.parse_args()
     import torch
     torch.set_num_threads(4)
@@ -20,6 +20,9 @@ def main():
     if args.stage in ('sampling','audit'):
         from iot_repair.flow_audit import sampling_development,audit_production
         (sampling_development if args.stage=='sampling' else audit_production)(ROOT)
+    elif args.stage=='robustness':
+        from iot_repair.flow_robustness import run_robustness
+        run_robustness(ROOT)
     elif args.stage=='freeze':
         from iot_repair.flow_execution import freeze
         freeze(ROOT)

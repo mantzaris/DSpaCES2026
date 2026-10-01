@@ -100,7 +100,7 @@ def load_ppca(root,record):
     with path.open('rb') as stream:return pickle.load(stream)
 
 
-def conditional_components(model,context):
+def conditional_components(model,context,log_weights=False):
     context=context[model['context_keep']];observed=np.isfinite(context)
     components=[];logs=[]
     for component in model['components']:
@@ -110,26 +110,27 @@ def conditional_components(model,context):
         posterior_cov=np.linalg.inv(precision);latent_mean=posterior_cov@wc.T@(xc-mc)/noise
         components.append((mean[:8]+wy@latent_mean,noise*np.eye(8)+wy@posterior_cov@wy.T))
         logs.append(float(lowrank_log_prob(xc,mc,wc,noise))+np.log(component['weight']))
-    weights=np.exp(logs-logsumexp(logs))
+    normalized=np.asarray(logs)-logsumexp(logs)
+    weights=normalized if log_weights else np.exp(normalized)
     return weights,components
 
 
-def infer_ppca(models,values,graph,length,scale=1.,mode='graph',seed=1,reference=None,draws=512):
-    channel=GaussianCorruption(8,scale=scale);channels=values.shape[0]
+def infer_ppca(models,values,graph,length,scale=1.,mode='graph',seed=1,reference=None,draws=512,times=None):
+    channel=GaussianCorruption(8,scale=scale,times=times);channels=values.shape[0]
     eligible=np.isfinite(values[:,-8:]).all(-1)
     scores=np.full(channels,-1e12);normal=np.full(channels,-1e12);means=np.full((channels,8),np.nan)
     prior_means=means.copy();lower=means.copy();upper=means.copy();metrics=np.full((channels,4),np.nan)
     rng=np.random.default_rng(seed);start=time.perf_counter()
     for query in np.flatnonzero(eligible):
         context=context_matrix(values[None],int(query),graph,length,mode)[0]
-        weights,components=conditional_components(models[query],context)
+        log_weights,components=conditional_components(models[query],context,log_weights=True)
         posteriors=[gaussian_fault_posterior(values[query,-8:],mean,cov,channel) for mean,cov in components]
-        log_normal=logsumexp([np.log(w)+p['log_normal'] for w,p in zip(weights,posteriors)])
-        log_fault=logsumexp([np.log(w)+p['log_fault'] for w,p in zip(weights,posteriors)])
-        posterior_weights=np.exp([np.log(w)+p['log_fault']-log_fault for w,p in zip(weights,posteriors)])
+        log_normal=logsumexp([w+p['log_normal'] for w,p in zip(log_weights,posteriors)])
+        log_fault=logsumexp([w+p['log_fault'] for w,p in zip(log_weights,posteriors)])
+        posterior_weights=np.exp([w+p['log_fault']-log_fault for w,p in zip(log_weights,posteriors)])
         scores[query]=log_fault-log_normal;normal[query]=-log_normal
         means[query]=sum(w*p['mean'] for w,p in zip(posterior_weights,posteriors))
-        prior_means[query]=sum(w*p[0] for w,p in zip(weights,components))
+        prior_means[query]=sum(w*p[0] for w,p in zip(np.exp(log_weights),components))
         component_weights=np.concatenate([w*p['component_weights'] for w,p in zip(posterior_weights,posteriors)])
         component_means=np.concatenate([p['component_means'] for p in posteriors])
         component_covariances=np.concatenate([p['component_covariances'] for p in posteriors])

@@ -1,20 +1,35 @@
 # Graph-flow revision in progress
 
-Updated 2026-10-01 UTC. The new authorized study is under `results/graph_flow_v1/`. Work remains on `main`, with local commits only. Unrelated `iot-entropy` modifications are present and are not part of this task.
+Updated 2026-10-01 UTC. Work stays on `main`, with local commits only. The user will push. Unrelated `iot-entropy` work is preserved. No paid resource has been created.
 
-The live repository and GPU workflow were inspected. The authorized RTX PRO 4500 is reachable. The old study is preserved by hashes in `results/graph_flow_v1/legacy.json` and the exact paper archive `paper/legacy/witness_20260930.tar.xz`. Existing result files and evidence bundles remain immutable. The current main paper still describes the legacy study until the new experiments are complete.
+The new namespace is `results/graph_flow_v1/`. The original 306 tracked study files are hashed in `legacy.json`. `paper/legacy/witness_20260930.tar.xz` preserves the previous paper exactly. Original results and evidence bundles remain unchanged. The current main manuscript still describes that preserved study.
 
-The eight scalar reference groups passed. Ten new CPU tests passed for inverse/Jacobian consistency, masking and copies, density normalization, mixture arithmetic, Gaussian integration/posterior moments, unit changes, weighted CRPS and wrong-target damage. Neural graph-conditioned flow and corruption/repair kernels are implemented. GPU model training, development selection, final scoring, production audits, new graph exports and manuscript revision are still pending.
+The eight reference check groups and 17 focused CPU tests pass. The graph flow trains and generates on the existing RTX PRO 4500 GPU. Its 22,048-parameter Gaussian pilot trained in 9.694 seconds, reduced validation NLL from 10.6692 to 5.7215, and reproduced saved GPU score arithmetic with zero discrepancy. These are pilot diagnostics, not benchmark superiority evidence. See `pilot.json` and `evidence/pilot.npz`.
 
-The finite pre-evaluation protocol is in `docs/graph_flow_protocol.md` and `configs/graph_flow_v1.json`. No new final test has been scored. Real environments have prior project exposure. Fresh synthetic final trajectories will be generated; training/development/calibration retain the original observations so the legacy comparator receives the same training data.
+All 20 flow capacity/context development fits completed. Three-member selected ensembles, own-history ablations, learning curves and official GANF fits have completed. Development-selected PCA, single and mixture PPCA, all-channel PPCA and a portable tree classifier are implemented. PPCA observed-context conditionals agree with the full Gaussian reference. The shared final scorer, separate calibration roles, block bootstrap, repair-risk calculation, legacy rerun, and robustness stages are implemented but not yet final-executed.
 
-Current local verification
+Two pre-final implementation corrections are documented. A completely unavailable Intel window now retains the full candidate population with floor scores. Irregular SKAB timestamps require elapsed-time drift ramps. Earlier index-ramp development artifacts are preserved under `development/chronology_correction/`, and affected development selections are being rerun. No new final-test score has yet been examined. The exact protocol lock will be written only after these checks.
+
+Model checkpoints remain outside Git. Compact selections, numerical evidence and code are committed. Primary hypotheses remain untested. Neural flexibility, likelihood-ratio benefit and safe repair coverage are not assumed.
+
+Current validation and resume commands
 
 ```bash
-python3 reference/reference_graph_flow.py
 OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 python3 -m pytest tests/test_graph_flow.py -q
-bash scripts/runpod.sh status
+bash scripts/runpod.sh exec .venv/bin/python scripts/job.py status graph_flow_neural_resume
+bash scripts/runpod.sh sync
+bash scripts/runpod.sh push-flow-baselines
+bash scripts/runpod.sh exec .venv/bin/python scripts/job.py launch graph_flow_chronology bash scripts/graph_flow_chronology_resume.sh
+bash scripts/runpod.sh pull-flow
 ```
+
+Once the chronology correction and common-scorer smoke pass, the finite final job is
+
+```bash
+bash scripts/runpod.sh exec .venv/bin/python scripts/job.py launch graph_flow_final bash scripts/graph_flow_final.sh
+```
+
+That job repeats development sampling diagnostics, freezes model/data/code choices, scores and calibrates disjoint calibration roles, runs the paired final cases, recomputes equations and executes the predeclared stress conditions. Do not start it concurrently with development. Runtime paths and exact hashes are in each run record. Graph persistence, the new operator evidence view, final figures and the revised compiled paper remain to be completed from those results.
 
 ## Preserved legacy completion record
 

@@ -2,6 +2,8 @@
 import json
 from pathlib import Path
 import time
+import os
+import subprocess
 
 import numpy as np
 import torch
@@ -29,7 +31,7 @@ def sampling_development(root):
         for repeat in range(3):
             for ordinal,case in enumerate(selected):
                 result=infer_case(models,case['values'],graph,selection['models']['selected']['specification']['context_length'],2048,
-                     selection['scoring']['scale'],seed=72000000+repeat*100000+ordinal*101,sensitivity=True)
+                     selection['scoring']['scale'],seed=72000000+repeat*100000+ordinal*101,sensitivity=True,times=case['target_times'])
                 for m in scores:scores[m].append(result['scores']['M'+str(m)])
                 timings.append(result['seconds']);eligibility.append(result['eligible'])
         eligibility=np.asarray(eligibility).reshape(3,12,-1)[0]
@@ -40,19 +42,23 @@ def sampling_development(root):
                 repeat_absolute_difference_max=float(difference.max()),
                 spearman_vs_repeat0=[float(spearmanr(values[0,eligibility],values[r,eligibility]).statistic) for r in (1,2)]))
         # Exclusive-GPU profiles follow model fitting. Each M has its own timed execution.
-        profile=[];case=selected[1]
+        profile=[];case=next(c for c in selected if np.isfinite(c['values'][:,-8:]).all(-1).any())
+        process_lines=subprocess.check_output(['nvidia-smi','--query-compute-apps=pid,process_name,used_gpu_memory','--format=csv,noheader'],text=True).strip().splitlines()
+        other_gpu_processes=[line for line in process_lines if line.split(',')[0].strip()!=str(os.getpid())]
+        if other_gpu_processes:raise RuntimeError('Exclusive timing requires the other GPU processes to finish: '+str(other_gpu_processes))
         for m in config['sample_counts']:
             measured=[]
             for repeat in range(3):
                 torch.cuda.reset_peak_memory_stats()
                 result=infer_case(models,case['values'],graph,selection['models']['selected']['specification']['context_length'],m,
-                     selection['scoring']['scale'],seed=73000000+repeat,reference=case['reference'])
+                     selection['scoring']['scale'],seed=73000000+repeat,reference=case['reference'],times=case['target_times'])
                 measured.append(dict(seconds=result['seconds'],peak_gpu_bytes=result['peak_gpu_bytes'],
                                      candidates=int(result['eligible'].sum()),mean_ess=float(result['ess'][result['eligible']].mean())))
             profile.append(dict(samples=m,repetitions=measured))
         arrays=path.with_suffix('.npz');np.savez_compressed(arrays,**{'M'+str(k):v for k,v in score_arrays.items()},eligible=eligibility)
         json_save(path,dict(dataset=dataset,case_ids=[c['id'] for c in selected],sampling_seeds=3,model_ensemble_repetitions=1,
                    repeatability=report,profiles=profile,arrays_sha256=sha256(arrays),primary_samples=selection['scoring']['sample_count'],
+                   profiling_case_id=case['id'],gpu_processes=process_lines,other_gpu_processes=other_gpu_processes,
                    caveat='M=2048 is a finite reference, not the exact integral. Repeatability is not a bound on model error.'))
         del models;torch.cuda.empty_cache()
 
@@ -86,7 +92,7 @@ def audit_production(root):
                         transformed,_=model.transform(target,encoded);restored,_=model.transform(transformed,encoded,inverse=True)
                         inverse_error=max(inverse_error,float((restored-target).abs().max()))
                 # E5 independently evaluated with NumPy Cholesky, not the Torch kernel.
-                channel=GaussianCorruption(8,scale=float(raw['corruption_scale']));generated=raw['generated'].astype(float)
+                channel=GaussianCorruption(8,scale=float(raw['corruption_scale']),times=raw['target_times']);generated=raw['generated'].astype(float)
                 components=[]
                 for mapping,covariance in zip(channel.maps,channel.covariance.numpy()):
                     difference=raw['input'][raw['query'],-8:][:,None,None]-np.einsum('ij,bemj->bemi',mapping,generated)
@@ -101,10 +107,20 @@ def audit_production(root):
                 weights=np.exp(log_q.reshape(len(query),-1)-logsumexp(log_q.reshape(len(query),-1),axis=1,keepdims=True))
                 repair=(weights[...,None]*generated.reshape(len(query),-1,8)).sum(1)
                 repair_error=float(np.max(np.abs(repair-raw['posterior_mean'])))
+                # Autograd determinant from an actually trained flow on the GPU.
+                import copy
+                audit_model=copy.deepcopy(models[0]).double()
+                with torch.no_grad():encoded=models[0].encode(inputs).detach()[:1].double()
+                point=target[0].double().detach().requires_grad_(True)
+                jacobian=torch.autograd.functional.jacobian(lambda y:audit_model.transform(y[None],encoded)[0][0],point)
+                determinant=audit_model.transform(point[None],encoded)[1][0]
+                jacobian_error=float((torch.linalg.slogdet(jacobian)[1]-determinant).abs())
+                del audit_model
                 assert generation_error<1e-4 and density_error<1e-4 and q_error<1e-6 and score_error<1e-6 and repair_error<1e-6
+                assert jacobian_error<1e-8
                 summary.append(dict(path=str(path.relative_to(root)),sha256=sha256(path),generated_max_error=generation_error,
                     normal_density_max_error=density_error,corruption_density_max_error=q_error,ratio_max_error=score_error,
-                    repair_mean_max_error=repair_error,inverse_max_error=inverse_error,candidates=len(query)))
+                    repair_mean_max_error=repair_error,inverse_max_error=inverse_error,autograd_logdet_error=jacobian_error,candidates=len(query)))
         del models;torch.cuda.empty_cache()
     record=dict(compact_candidate_scores_recomputed=total,compact_max_error=max_error,full_generation_and_density_replays=summary,
                 distinction='All compact scores recomputed from saved component integrals. Listed full bundles independently recompute q from actual generations and replay generations/densities from exact GPU weights and saved latent draws.')

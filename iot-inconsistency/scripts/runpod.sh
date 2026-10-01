@@ -14,11 +14,11 @@ case "${1:-status}" in
     ;;
   pull-flow)
     mkdir -p results/graph_flow_v1
-    rsync -az --exclude=models --exclude=raw --exclude=cache --exclude='*.tmp' -e "ssh ${SSH_ARGS[*]}" "$REMOTE_HOST:$REMOTE_DIR/results/graph_flow_v1/" results/graph_flow_v1/
+    rsync -az --exclude=models --exclude=raw --exclude=cache --exclude='*_baselines.json' --exclude='*.tmp' -e "ssh ${SSH_ARGS[*]}" "$REMOTE_HOST:$REMOTE_DIR/results/graph_flow_v1/" results/graph_flow_v1/
     ;;
   push-flow-baselines)
     ssh "${SSH_ARGS[@]}" "$REMOTE_HOST" "mkdir -p $REMOTE_DIR/results/graph_flow_v1/models $REMOTE_DIR/results/graph_flow_v1/development"
-    rsync -az --include='ppca_*.pkl' --include='ppca_*.json' --include='*_supervised.npz' --exclude='*' -e "ssh ${SSH_ARGS[*]}" results/graph_flow_v1/models/ "$REMOTE_HOST:$REMOTE_DIR/results/graph_flow_v1/models/"
+    rsync -az --include='ppca_*.pkl' --include='ppca_*.json' --include='supervised_*.npz' --exclude='*' -e "ssh ${SSH_ARGS[*]}" results/graph_flow_v1/models/ "$REMOTE_HOST:$REMOTE_DIR/results/graph_flow_v1/models/"
     rsync -az --include='*_baselines.json' --exclude='*' -e "ssh ${SSH_ARGS[*]}" results/graph_flow_v1/development/ "$REMOTE_HOST:$REMOTE_DIR/results/graph_flow_v1/development/"
     ;;
   status)

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 export OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4
+.venv/bin/python scripts/graph_flow.py smoke
 .venv/bin/python scripts/graph_flow.py sampling
 .venv/bin/python scripts/graph_flow.py freeze
 .venv/bin/python scripts/graph_flow.py calibration
@@ -10,3 +11,5 @@ export OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4
 .venv/bin/python scripts/graph_flow.py legacy_test
 .venv/bin/python scripts/graph_flow.py analyze
 .venv/bin/python scripts/graph_flow.py audit
+
+.venv/bin/python scripts/graph_flow.py robustness

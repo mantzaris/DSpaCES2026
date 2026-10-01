@@ -64,8 +64,8 @@ def normal_development_nll(root,dataset,record):
         eligible=np.isfinite(values[:,query,-8:]).all(-1);raw=values[eligible]
         context=context_matrix(raw,query,graph,spec['length'],spec['mode'])
         for row in range(len(raw)):
-            weights,components=conditional_components(model,context[row])
-            logs.append(logsumexp([np.log(w)+gaussian_log_prob(raw[row,query,-8:],mean,cov) for w,(mean,cov) in zip(weights,components)]))
+            weights,components=conditional_components(model,context[row],log_weights=True)
+            logs.append(logsumexp([w+gaussian_log_prob(raw[row,query,-8:],mean,cov) for w,(mean,cov) in zip(weights,components)]))
     return float(-np.mean(logs))
 
 
@@ -111,6 +111,9 @@ def develop_baselines(root):
         portable.update({'tree_%03d'%i:tree[0].nodes for i,tree in enumerate(classifier._predictors)})
         np.testing.assert_allclose(classifier_probability(portable,dev_features),classifier.predict_proba(dev_features)[:,1],atol=1e-12)
         np.savez_compressed(path,**portable)
+        immutable=path.parent/('supervised_'+sha256(path)[:20]+'.npz')
+        if not immutable.exists():immutable.write_bytes(path.read_bytes())
+        path=immutable
         supervised=dict(supervised_grid[index],path=str(path.relative_to(root)),sha256=sha256(path),
                         training_fault_cases=len(train_cases),training_candidates=int(train_eligible.sum()),features='target shape, own past contrast, PCA residual and target availability')
         json_save(destination,dict(pca=selected_pca,pca_grid=pca_grid,ppca_grid=ppca_grid,**selected,supervised=supervised,supervised_grid=supervised_grid,

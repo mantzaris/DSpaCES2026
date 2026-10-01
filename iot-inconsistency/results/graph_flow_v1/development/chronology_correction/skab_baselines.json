@@ -1,54 +1,54 @@
 {
   "pca": {
     "name": "pca_lag4_rank16",
-    "average_precision": 0.47789912252567307,
+    "average_precision": 0.47769084018778774,
     "sha256": "42e691552129d3715f6c6a34d4f63a7986dc826bbbda9ac4c76595db9761a637"
   },
   "pca_grid": [
     {
       "name": "pca_lag1_rank2",
-      "average_precision": 0.35801280318743506,
+      "average_precision": 0.3571243790251525,
       "sha256": "4b5e767dd64abe4a2c36584ed7ab3e1781f0281876e9d0c9cb1be7f32e687bc1"
     },
     {
       "name": "pca_lag1_rank4",
-      "average_precision": 0.24076956227285956,
+      "average_precision": 0.24018130390299394,
       "sha256": "6949b574daba526a82bb6c0001c7f53e04a8386bec3ca6651003ace68a9478f3"
     },
     {
       "name": "pca_lag1_rank8",
-      "average_precision": 0.19598761120873986,
+      "average_precision": 0.19578547739757526,
       "sha256": "be9a0929a623f26fddd87217a11d2502daefb47f527dd3b8299a778aa4a003ee"
     },
     {
       "name": "pca_lag1_rank16",
-      "average_precision": 0.19598761120873986,
+      "average_precision": 0.19578547739757526,
       "sha256": "be9a0929a623f26fddd87217a11d2502daefb47f527dd3b8299a778aa4a003ee"
     },
     {
       "name": "pca_lag4_rank2",
-      "average_precision": 0.3886712640196087,
+      "average_precision": 0.38774203873482416,
       "sha256": "52a5b0c6ce4252d70a77314982d85395447de6a99c1bf7a35263b9b78fc429ca"
     },
     {
       "name": "pca_lag4_rank4",
-      "average_precision": 0.4605591921477545,
+      "average_precision": 0.45947932677075876,
       "sha256": "83b871e5088aec497e08a792f5ae3a0fb7495e112d16a8ee8a5ca49a5d94a59d"
     },
     {
       "name": "pca_lag4_rank8",
-      "average_precision": 0.43266921467886815,
+      "average_precision": 0.43135349207249535,
       "sha256": "3c11e22008d7213b12989ea54e417703d84683e35bcf8405ac8810c5f85a0769"
     },
     {
       "name": "pca_lag4_rank16",
-      "average_precision": 0.47789912252567307,
+      "average_precision": 0.47769084018778774,
       "sha256": "42e691552129d3715f6c6a34d4f63a7986dc826bbbda9ac4c76595db9761a637"
     }
   ],
   "ppca_grid": [
     {
-      "path": "results/graph_flow_v1/models/ppca_2e4a9e212a646d1bdae8.pkl",
+      "path": "results/graph_flow_v1/models/ppca_1915acc8224a702bc6d4.pkl",
       "sha256": "dd94bf3144182255bfc64b6e8d4642aa9bec888e99ec19e424aa605b5fc41428",
       "specification": {
         "dataset": "skab",
@@ -57,17 +57,17 @@
         "mixtures": 1,
         "mode": "graph",
         "variance_floor": 0.0025,
-        "code_sha256": "517563f6ff7279e9015a2cc11e49389832462074a66710ee63ccf002e9b99a80",
+        "code_sha256": "1d67293cd73f90c4b52612654311dc863bcb5c6ffacc968c4507f49296ab4d13",
         "train_sha256": "5f8c0b47257e422d8a0c982ed2f4c3fcbe4617681c0a7218347f34b537336f79"
       },
-      "training_seconds": 0.049280660998192616,
+      "training_seconds": 0.04241016299783951,
       "training_windows": 409,
       "source_blocks": 7,
       "missing_training_context": "training-mean fill for parameter fitting, exact observed-context marginal at inference",
       "development_nll": 31.265517411171924
     },
     {
-      "path": "results/graph_flow_v1/models/ppca_33a62ab5496d8b68e4cb.pkl",
+      "path": "results/graph_flow_v1/models/ppca_71a93a2c4372c3ca3697.pkl",
       "sha256": "c49dfbc934dfc9fb336b2eaa2a3d7707ed05618f6d8bdd5208dad165e417483b",
       "specification": {
         "dataset": "skab",
@@ -76,17 +76,17 @@
         "mixtures": 1,
         "mode": "graph",
         "variance_floor": 0.0025,
-        "code_sha256": "517563f6ff7279e9015a2cc11e49389832462074a66710ee63ccf002e9b99a80",
+        "code_sha256": "1d67293cd73f90c4b52612654311dc863bcb5c6ffacc968c4507f49296ab4d13",
         "train_sha256": "5f8c0b47257e422d8a0c982ed2f4c3fcbe4617681c0a7218347f34b537336f79"
       },
-      "training_seconds": 0.049131004998344,
+      "training_seconds": 0.04448794099880615,
       "training_windows": 409,
       "source_blocks": 7,
       "missing_training_context": "training-mean fill for parameter fitting, exact observed-context marginal at inference",
       "development_nll": 1.708561770577848
     },
     {
-      "path": "results/graph_flow_v1/models/ppca_3ddee702a95d42e26860.pkl",
+      "path": "results/graph_flow_v1/models/ppca_84e2014d88490d8bf839.pkl",
       "sha256": "dfd4c4020d72e71627e7626cf912b1e97126b801b50925d098b63ad3de4f4274",
       "specification": {
         "dataset": "skab",
@@ -95,17 +95,17 @@
         "mixtures": 1,
         "mode": "graph",
         "variance_floor": 0.0025,
-        "code_sha256": "517563f6ff7279e9015a2cc11e49389832462074a66710ee63ccf002e9b99a80",
+        "code_sha256": "1d67293cd73f90c4b52612654311dc863bcb5c6ffacc968c4507f49296ab4d13",
         "train_sha256": "5f8c0b47257e422d8a0c982ed2f4c3fcbe4617681c0a7218347f34b537336f79"
       },
-      "training_seconds": 0.04179557300085435,
+      "training_seconds": 0.04217836700263433,
       "training_windows": 409,
       "source_blocks": 7,
       "missing_training_context": "training-mean fill for parameter fitting, exact observed-context marginal at inference",
       "development_nll": 1.6108631429804277
     },
     {
-      "path": "results/graph_flow_v1/models/ppca_f0c1347d9678da90bf9f.pkl",
+      "path": "results/graph_flow_v1/models/ppca_1b3d3236ffe6a8012622.pkl",
       "sha256": "c38d4feb1b1ab8d0ee2e81ef38321cb1b7de699ef0cb152fe07442d03b590433",
       "specification": {
         "dataset": "skab",
@@ -114,17 +114,17 @@
         "mixtures": 2,
         "mode": "graph",
         "variance_floor": 0.0025,
-        "code_sha256": "517563f6ff7279e9015a2cc11e49389832462074a66710ee63ccf002e9b99a80",
+        "code_sha256": "1d67293cd73f90c4b52612654311dc863bcb5c6ffacc968c4507f49296ab4d13",
         "train_sha256": "5f8c0b47257e422d8a0c982ed2f4c3fcbe4617681c0a7218347f34b537336f79"
       },
-      "training_seconds": 0.5818919399971492,
+      "training_seconds": 0.5550092670018785,
       "training_windows": 409,
       "source_blocks": 7,
       "missing_training_context": "training-mean fill for parameter fitting, exact observed-context marginal at inference",
       "development_nll": 82.46234892377375
     },
     {
-      "path": "results/graph_flow_v1/models/ppca_f9e3d3d6c20d4ab97a55.pkl",
+      "path": "results/graph_flow_v1/models/ppca_42878ef04b10835b5d71.pkl",
       "sha256": "7d5bd77fcf570150923b9030a08398f46f5fa8136ba3c8c60b4437cea8fc9413",
       "specification": {
         "dataset": "skab",
@@ -133,17 +133,17 @@
         "mixtures": 2,
         "mode": "graph",
         "variance_floor": 0.0025,
-        "code_sha256": "517563f6ff7279e9015a2cc11e49389832462074a66710ee63ccf002e9b99a80",
+        "code_sha256": "1d67293cd73f90c4b52612654311dc863bcb5c6ffacc968c4507f49296ab4d13",
         "train_sha256": "5f8c0b47257e422d8a0c982ed2f4c3fcbe4617681c0a7218347f34b537336f79"
       },
-      "training_seconds": 0.6190327369986335,
+      "training_seconds": 0.5808839439996518,
       "training_windows": 409,
       "source_blocks": 7,
       "missing_training_context": "training-mean fill for parameter fitting, exact observed-context marginal at inference",
       "development_nll": 11.931455705095441
     },
     {
-      "path": "results/graph_flow_v1/models/ppca_1f560ab3eccc5343d228.pkl",
+      "path": "results/graph_flow_v1/models/ppca_9e9bdf8a88ed36d86147.pkl",
       "sha256": "ba629a70bcd12fe3a3446296c06f2a2affde5c3fdf4b99223873f48b66eb24b1",
       "specification": {
         "dataset": "skab",
@@ -152,17 +152,17 @@
         "mixtures": 2,
         "mode": "graph",
         "variance_floor": 0.0025,
-        "code_sha256": "517563f6ff7279e9015a2cc11e49389832462074a66710ee63ccf002e9b99a80",
+        "code_sha256": "1d67293cd73f90c4b52612654311dc863bcb5c6ffacc968c4507f49296ab4d13",
         "train_sha256": "5f8c0b47257e422d8a0c982ed2f4c3fcbe4617681c0a7218347f34b537336f79"
       },
-      "training_seconds": 0.6681006790022366,
+      "training_seconds": 0.6245032360020559,
       "training_windows": 409,
       "source_blocks": 7,
       "missing_training_context": "training-mean fill for parameter fitting, exact observed-context marginal at inference",
       "development_nll": 56.35947783213748
     },
     {
-      "path": "results/graph_flow_v1/models/ppca_8cd63cd8e8e9455d1d87.pkl",
+      "path": "results/graph_flow_v1/models/ppca_4faa5155f85d04f31c63.pkl",
       "sha256": "95794a5d17eea6b43b287fbb45cb4aced4d32aae5754fc46a12179983c9b3954",
       "specification": {
         "dataset": "skab",
@@ -171,17 +171,17 @@
         "mixtures": 1,
         "mode": "all_channels",
         "variance_floor": 0.0025,
-        "code_sha256": "517563f6ff7279e9015a2cc11e49389832462074a66710ee63ccf002e9b99a80",
+        "code_sha256": "1d67293cd73f90c4b52612654311dc863bcb5c6ffacc968c4507f49296ab4d13",
         "train_sha256": "5f8c0b47257e422d8a0c982ed2f4c3fcbe4617681c0a7218347f34b537336f79"
       },
-      "training_seconds": 0.0466925330038066,
+      "training_seconds": 0.043385423996369354,
       "training_windows": 409,
       "source_blocks": 7,
       "missing_training_context": "training-mean fill for parameter fitting, exact observed-context marginal at inference",
       "development_nll": 12.770740345873158
     },
     {
-      "path": "results/graph_flow_v1/models/ppca_c46a480f1e83086073cb.pkl",
+      "path": "results/graph_flow_v1/models/ppca_4b19fd39f111938dc950.pkl",
       "sha256": "6faf495c4744fea9e389222c5a0a4a6a4f91f1a146ada0e3d4eff742bb545681",
       "specification": {
         "dataset": "skab",
@@ -190,17 +190,17 @@
         "mixtures": 1,
         "mode": "all_channels",
         "variance_floor": 0.0025,
-        "code_sha256": "517563f6ff7279e9015a2cc11e49389832462074a66710ee63ccf002e9b99a80",
+        "code_sha256": "1d67293cd73f90c4b52612654311dc863bcb5c6ffacc968c4507f49296ab4d13",
         "train_sha256": "5f8c0b47257e422d8a0c982ed2f4c3fcbe4617681c0a7218347f34b537336f79"
       },
-      "training_seconds": 0.05359932099963771,
+      "training_seconds": 0.047142577001068275,
       "training_windows": 409,
       "source_blocks": 7,
       "missing_training_context": "training-mean fill for parameter fitting, exact observed-context marginal at inference",
       "development_nll": 6.098874110498375
     },
     {
-      "path": "results/graph_flow_v1/models/ppca_d76742c7f23282cb724a.pkl",
+      "path": "results/graph_flow_v1/models/ppca_24dd39800b1fbe4b34af.pkl",
       "sha256": "8159597549131fecf70c42cb18bd06266bc08df1f48925e0463c1d783f028f4b",
       "specification": {
         "dataset": "skab",
@@ -209,10 +209,10 @@
         "mixtures": 1,
         "mode": "all_channels",
         "variance_floor": 0.0025,
-        "code_sha256": "517563f6ff7279e9015a2cc11e49389832462074a66710ee63ccf002e9b99a80",
+        "code_sha256": "1d67293cd73f90c4b52612654311dc863bcb5c6ffacc968c4507f49296ab4d13",
         "train_sha256": "5f8c0b47257e422d8a0c982ed2f4c3fcbe4617681c0a7218347f34b537336f79"
       },
-      "training_seconds": 0.05508419100078754,
+      "training_seconds": 0.05150678099744255,
       "training_windows": 409,
       "source_blocks": 7,
       "missing_training_context": "training-mean fill for parameter fitting, exact observed-context marginal at inference",
@@ -220,7 +220,7 @@
     }
   ],
   "ppca": {
-    "path": "results/graph_flow_v1/models/ppca_3ddee702a95d42e26860.pkl",
+    "path": "results/graph_flow_v1/models/ppca_84e2014d88490d8bf839.pkl",
     "sha256": "dfd4c4020d72e71627e7626cf912b1e97126b801b50925d098b63ad3de4f4274",
     "specification": {
       "dataset": "skab",
@@ -229,17 +229,17 @@
       "mixtures": 1,
       "mode": "graph",
       "variance_floor": 0.0025,
-      "code_sha256": "517563f6ff7279e9015a2cc11e49389832462074a66710ee63ccf002e9b99a80",
+      "code_sha256": "1d67293cd73f90c4b52612654311dc863bcb5c6ffacc968c4507f49296ab4d13",
       "train_sha256": "5f8c0b47257e422d8a0c982ed2f4c3fcbe4617681c0a7218347f34b537336f79"
     },
-    "training_seconds": 0.04179557300085435,
+    "training_seconds": 0.04217836700263433,
     "training_windows": 409,
     "source_blocks": 7,
     "missing_training_context": "training-mean fill for parameter fitting, exact observed-context marginal at inference",
     "development_nll": 1.6108631429804277
   },
   "mixture_ppca": {
-    "path": "results/graph_flow_v1/models/ppca_f9e3d3d6c20d4ab97a55.pkl",
+    "path": "results/graph_flow_v1/models/ppca_42878ef04b10835b5d71.pkl",
     "sha256": "7d5bd77fcf570150923b9030a08398f46f5fa8136ba3c8c60b4437cea8fc9413",
     "specification": {
       "dataset": "skab",
@@ -248,17 +248,17 @@
       "mixtures": 2,
       "mode": "graph",
       "variance_floor": 0.0025,
-      "code_sha256": "517563f6ff7279e9015a2cc11e49389832462074a66710ee63ccf002e9b99a80",
+      "code_sha256": "1d67293cd73f90c4b52612654311dc863bcb5c6ffacc968c4507f49296ab4d13",
       "train_sha256": "5f8c0b47257e422d8a0c982ed2f4c3fcbe4617681c0a7218347f34b537336f79"
     },
-    "training_seconds": 0.6190327369986335,
+    "training_seconds": 0.5808839439996518,
     "training_windows": 409,
     "source_blocks": 7,
     "missing_training_context": "training-mean fill for parameter fitting, exact observed-context marginal at inference",
     "development_nll": 11.931455705095441
   },
   "all_ppca": {
-    "path": "results/graph_flow_v1/models/ppca_d76742c7f23282cb724a.pkl",
+    "path": "results/graph_flow_v1/models/ppca_24dd39800b1fbe4b34af.pkl",
     "sha256": "8159597549131fecf70c42cb18bd06266bc08df1f48925e0463c1d783f028f4b",
     "specification": {
       "dataset": "skab",
@@ -267,10 +267,10 @@
       "mixtures": 1,
       "mode": "all_channels",
       "variance_floor": 0.0025,
-      "code_sha256": "517563f6ff7279e9015a2cc11e49389832462074a66710ee63ccf002e9b99a80",
+      "code_sha256": "1d67293cd73f90c4b52612654311dc863bcb5c6ffacc968c4507f49296ab4d13",
       "train_sha256": "5f8c0b47257e422d8a0c982ed2f4c3fcbe4617681c0a7218347f34b537336f79"
     },
-    "training_seconds": 0.05508419100078754,
+    "training_seconds": 0.05150678099744255,
     "training_windows": 409,
     "source_blocks": 7,
     "missing_training_context": "training-mean fill for parameter fitting, exact observed-context marginal at inference",
@@ -278,10 +278,10 @@
   },
   "supervised": {
     "depth": 2,
-    "average_precision": 0.8976058157429072,
-    "training_seconds": 0.03924286799883703,
-    "path": "results/graph_flow_v1/models/supervised_1fe0debe3846bdb81426.npz",
-    "sha256": "1fe0debe3846bdb81426d695cd8d44b6726f548f01ff1a077d41178cc9274249",
+    "average_precision": 0.9079393657921883,
+    "training_seconds": 0.039540881996799726,
+    "path": "results/graph_flow_v1/models/supervised_skab_index_time.npz",
+    "sha256": "4061a84d52003ee62dc8701225b7e25757bd1920d5c9faffbb1aca9e03a71dfa",
     "training_fault_cases": 160,
     "training_candidates": 1280,
     "features": "target shape, own past contrast, PCA residual and target availability"
@@ -289,15 +289,14 @@
   "supervised_grid": [
     {
       "depth": 2,
-      "average_precision": 0.8976058157429072,
-      "training_seconds": 0.03924286799883703
+      "average_precision": 0.9079393657921883,
+      "training_seconds": 0.039540881996799726
     },
     {
       "depth": 3,
-      "average_precision": 0.8937454331329029,
-      "training_seconds": 0.05523020600230666
+      "average_precision": 0.903193410094926,
+      "training_seconds": 0.056290414002432954
     }
   ],
-  "selection": "PCA and classifier use development candidate AP; PPCA ranks and mixture fits use normal development NLL",
-  "inference_log_weight_correction": "Development selection recomputed with mixture weights kept in log space until posterior normalization. Training parameters unchanged."
+  "selection": "PCA and classifier use development candidate AP; PPCA ranks and mixture fits use normal development NLL"
 }

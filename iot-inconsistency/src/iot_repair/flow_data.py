@@ -1,6 +1,7 @@
 """Versioned data access, exhaustive candidates and fixed fault manifests."""
 import hashlib
 import json
+from functools import lru_cache
 from pathlib import Path
 
 import numpy as np
@@ -111,10 +112,13 @@ def calibration_roles(blocks):
     return {block:('normal_window_tail' if i<normal else 'fault_probability' if i<normal+probability else 'repair_policy') for i,block in enumerate(blocks)}
 
 
-def inject(reference,channel,family,severity,seed,horizon=8):
+def inject(reference,channel,family,severity,seed,horizon=8,times=None):
     """One numeric channel fault. No supporting physical source is edited."""
     rng=np.random.default_rng(seed);values=reference.copy();target=values[channel,-horizon:]
-    mask=np.isfinite(target);original=target.copy();sign=float(rng.choice([-1,1]));ramp=np.linspace(-1,1,horizon)
+    mask=np.isfinite(target);original=target.copy();sign=float(rng.choice([-1,1]))
+    times=np.arange(horizon,dtype=float) if times is None else np.asarray(times,dtype=float)
+    if len(times)!=horizon or not np.all(np.diff(times)>0):raise ValueError('Increasing target timestamps required')
+    ramp=2*(times-times[0])/(times[-1]-times[0])-1
     if family=='bias':replacement=target+sign*severity
     elif family=='drift':replacement=target+sign*severity*ramp
     elif family=='noise':replacement=target+rng.normal(0,severity,horizon)
@@ -138,6 +142,13 @@ def inject(reference,channel,family,severity,seed,horizon=8):
         label_scope='controlled numeric change relative to unadjudicated recorded reference')
 
 
+@lru_cache(maxsize=40)
+def recording_timestamps(root,block):
+    import pandas as pd
+    frame=pd.read_csv(Path(root)/'data/raw/SKAB/data'/block,sep=';',usecols=['datetime'])
+    return pd.to_datetime(frame.datetime).to_numpy(dtype='datetime64[ns]').astype('int64')/1e9
+
+
 def build_cases(root,dataset,split):
     config=configuration(root);data=load_data(root,dataset,split)
     count=config['base_windows'].get(split,32)
@@ -148,12 +159,15 @@ def build_cases(root,dataset,split):
     result=[]
     for ordinal,index in enumerate(indices):
         reference=data['x'][index];channels=reference.shape[0]
+        times=(recording_timestamps(str(Path(root).resolve()),str(data['block'][index]))[int(data['stop'][index])-8:int(data['stop'][index])]
+               if dataset=='skab' else np.arange(8,dtype=float)*(300 if dataset=='intel' else 1))
         common=dict(base_id=f'{split}_{index:04d}',source_index=int(index),block=str(data['block'][index]),
             timestamp=int(data['timestamp'][index]),start=int(data['start'][index]),stop=int(data['stop'][index]),
             native_process_label=bool(data['process_label'][index]),split=split,
             calibration_role=roles.get(str(data['block'][index]),'not_calibration'),
             heldout_regime=bool(dataset.startswith('synthetic') and split=='test' and int(str(data['block'][index]).split('_')[-1])>=10),
             reference_sha256=hashlib.sha256(reference.tobytes()).hexdigest())
+        common['target_times']=times.tolist()
         result.append(dict(common,id=common['base_id']+'_clean',track='clean',fault=dict(family='unmodified',target=None,edited_observed_cells=0),
                            values=reference.copy(),reference=reference,truth=np.zeros(channels,bool)))
         for copy in range(4):
@@ -164,7 +178,7 @@ def build_cases(root,dataset,split):
             else:
                 family=config['faults_development'][copy];severity=config['development_severities'][(ordinal+copy)%3]
             channel=int(rng.integers(channels))
-            values,fault=inject(reference,channel,family,severity,offset+index*101+copy*17)
+            values,fault=inject(reference,channel,family,severity,offset+index*101+copy*17,times=times)
             truth=np.zeros(channels,bool);truth[channel]=fault['edited_observed_cells']>0
             result.append(dict(common,id=common['base_id']+'_'+family,track='measurement',fault=fault,
                                values=values,reference=reference,truth=truth))
