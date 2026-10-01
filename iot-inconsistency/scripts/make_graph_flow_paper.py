@@ -2,6 +2,7 @@
 from pathlib import Path
 import hashlib
 import json
+import re
 
 import numpy as np
 
@@ -23,6 +24,29 @@ def read(relative):
 
 def write(name,text):
     path=OUT/name;path.write_text(text+'\n');OUTPUTS[str(path.relative_to(ROOT))]=digest(path)
+
+
+def refresh_inline_main():
+    """Refresh evidence-derived blocks while keeping the manuscript in one file."""
+    path=ROOT/'paper/main.tex';original=path.read_text();names=[]
+    pattern=re.compile(r'(?P<start>% BEGIN GENERATED graph_flow/(?P<name>[a-z_]+\.tex)\n)'
+                       r'.*?(?P<end>% END GENERATED graph_flow/(?P=name)(?=\n|$))',re.S)
+    def replace(match):
+        name=match['name'];source=OUT/name
+        if str(source.relative_to(ROOT)) not in OUTPUTS:
+            raise ValueError('Inline section was not generated: '+name)
+        if name in names:
+            raise ValueError('Duplicate inline section: '+name)
+        names.append(name)
+        return match['start']+source.read_text()+match['end']
+    updated=pattern.sub(replace,original)
+    if not {'numbers.tex','primary_results.tex'}.issubset(names):
+        raise ValueError('The single-file manuscript is missing its generated blocks')
+    if re.search(r'\\(?:input|include|bibliography|bibliographystyle)\{',updated):
+        raise ValueError('The manuscript must contain its own text and bibliography')
+    if updated!=original:path.write_text(updated)
+    OUTPUTS[str(path.relative_to(ROOT))]=digest(path)
+    return names
 
 
 def number(value,places=3):return '--' if value is None else f'{value:.{places}f}'
@@ -212,6 +236,7 @@ def main():
     CLAIMS['scope']=dict(primary='All declared sensor intervals',three_families=True,real_recordings_previously_examined=True,
                         empirical_inputs='analysis.json, protocol_lock.json, runtime.json, production_equation_audit.json and robustness.json')
     CLAIMS['resource_totals']=dict(distinct_neural_fits=len(fits)+1,neural_training_seconds=all_seconds,peak_training_gpu_bytes=max(gpu_peaks))
+    CLAIMS['inline_sections']=refresh_inline_main()
     (RESULT/'paper_claims.json').write_text(json.dumps(dict(inputs=SOURCES,outputs=OUTPUTS,claims=CLAIMS,
         interpretation='Generated values trace to complete immutable source records. Tables use their named dataset/method keys; no value is invented or manually rounded from a chart.'),indent=2)+'\n')
     print(json.dumps(dict(macros=scalar,h1_supported=report['h1_supported'],h2_supported=report['h2_supported']),indent=2))

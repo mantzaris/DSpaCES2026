@@ -4,6 +4,14 @@ Updated 2026-10-01 UTC. Work stays on `main`, with local commits only. The user 
 
 All six finite stages are complete. The reference arithmetic and GPU pilot passed. Development, three-member model selection, calibration, final paired experiments, shared-case legacy comparisons, registered stress strata, production replay, isolated runtime, Neo4j export and browser checks completed. The new IEEE manuscript compiles to ten pages including references. Final PDF and figure checks are recorded in `results/graph_flow_v1/completion.json`.
 
+The manuscript is now consolidated into `paper/main.tex`, including its sixteen
+generated sections and eighteen bibliography entries. A clean build needs only
+that source, the IEEE class, figures and installed TeX packages. Compile directly
+with `latexmk -pdf -interaction=nonstopmode -halt-on-error -cd paper/main.tex`.
+The extracted prose is unchanged apart from line wrapping. Build evidence is in
+`results/graph_flow_v1/single_tex_build.json`. The evidence generator refreshes the
+inline sections without restoring external LaTeX dependencies.
+
 The namespace is `results/graph_flow_v1/`. Its protocol locked at 2026-10-01 02:03:02 UTC. All sixteen frozen numerical source hashes still match. The final study has 1,500 cases and 54,080 candidates. Directional H1 is supported against both PCA and same-flow NLL, but the latter improvement misses the 0.02 practical margin. H2 remains inconclusive. H3 is not established. Intel calibration and SKAB repair failures remain prominent in the manuscript. Detailed findings are in `graph_flow_claims_audit.md`.
 
 The eight scalar check groups and all forty tests pass. Independent production auditing reconstructs 107,620 calibration/test scores within 9.10e-13. Thirty generation bundles were replayed from trained models and saved latent draws on the existing RTX PRO 4500. The compact publication audit verifies 6,351 records and reproduces all 100 dataset/method AP values. These numerical checks do not validate the fitted distributions as physical truth.

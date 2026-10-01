@@ -62,7 +62,8 @@
     "paper/generated/graph_flow/runtime_results.tex": "5be535b8c66549222a686b88001cb8f9c0d73ed1833193507cd5069ea97cd181",
     "paper/generated/graph_flow/interface_results.tex": "f2373878156fa553f40e8fc9fd81657bb93d2fe3001fe79621dee2c251570ca2",
     "paper/generated/graph_flow/discussion_results.tex": "c199c79402d55ced0e40a19c8ad3aaa78ed5f96403f583f6eea0bf9e89c199e0",
-    "paper/generated/graph_flow/conclusion_results.tex": "9bef0e5ad6e3c3e67c3c6966589b383b6c5aad944392e3a16b1975fee99cdf62"
+    "paper/generated/graph_flow/conclusion_results.tex": "9bef0e5ad6e3c3e67c3c6966589b383b6c5aad944392e3a16b1975fee99cdf62",
+    "paper/main.tex": "7385a62692baa3e148b972a648869b5493e331b9499b5fce7dece9207249fade"
   },
   "claims": {
     "reported_macros": {
@@ -147,7 +148,25 @@
       "distinct_neural_fits": 70,
       "neural_training_seconds": 649.5934864971787,
       "peak_training_gpu_bytes": 527778816
-    }
+    },
+    "inline_sections": [
+      "numbers.tex",
+      "abstract_results.tex",
+      "data_table.tex",
+      "ap_table.tex",
+      "primary_results.tex",
+      "strata.tex",
+      "confidence_results.tex",
+      "confidence_table.tex",
+      "repair_table.tex",
+      "ablation_results.tex",
+      "stress_table.tex",
+      "runtime_table.tex",
+      "runtime_results.tex",
+      "interface_results.tex",
+      "discussion_results.tex",
+      "conclusion_results.tex"
+    ]
   },
   "interpretation": "Generated values trace to complete immutable source records. Tables use their named dataset/method keys; no value is invented or manually rounded from a chart."
 }

@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "created_utc": "2026-10-01T15:37:08.661293+00:00",
+  "source": "paper/main.tex",
+  "source_sha256": "7385a62692baa3e148b972a648869b5493e331b9499b5fce7dece9207249fade",
+  "previous_source_sha256": "63f2c8d3d5776a94a5bb895a95540b6470192fe29099b94eb153493f12e726c4",
+  "pdf": "paper/main.pdf",
+  "pdf_sha256": "f8b0bad3bd69fac83367d89ec32ad09e896e0fda840da638e7604afba54eaf2e",
+  "previous_pdf_sha256": "6359fe5be631e1152e7b3ec7df49df0835d839eaa25179fd508ff31883119464",
+  "compile_from": "iot-inconsistency/paper",
+  "command": "latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex",
+  "required_project_files": [
+    "main.tex",
+    "IEEEtran.cls",
+    "figures/"
+  ],
+  "isolated_clean_build": "Passed using only main.tex, IEEEtran.cls and figures; no generated fragments, bibliography database or existing auxiliary files.",
+  "inline_generated_sections": 16,
+  "bibliography_entries": 18,
+  "generator_preserves_inline_source": true,
+  "checks": {
+    "text_identical": false,
+    "isolated_text_identical": true,
+    "pages": 10,
+    "page_render_identical": {
+      "1": false,
+      "2": true,
+      "3": true,
+      "4": true,
+      "5": true,
+      "6": true,
+      "7": true,
+      "8": true,
+      "9": false,
+      "10": true
+    },
+    "normalized_text_identical": true
+  },
+  "warnings_and_overfull_boxes": [],
+  "underfull_box_notices": 7,
+  "visual_review": "Pages 1 and 9 inspected after consolidation. Other eight pages render identically to the previously reviewed PDF at 1100-pixel page height. Prose and numerical content are unchanged after normalizing line wrapping.",
+  "temporary_builds_and_renders": "Ignored runtime/single_tex/; not included in Git."
+}

@@ -20,6 +20,20 @@ Family-macro AP is 0.438 for the ratio, 0.307 for PCA and 0.423 for likelihood f
 
 Published evidence supports metric and equation replay without weights. A fresh clone alone does **not** support model inference replay. An independent user must retrain or obtain the exact weights. Raw data can be reacquired from pinned public sources. Hashes identify artifacts but do not guarantee their continued availability on a temporary pod.
 
+## Compile the paper
+
+All manuscript text, tables and references are in `paper/main.tex`. From this
+project directory, compile the committed source directly
+
+```bash
+latexmk -pdf -interaction=nonstopmode -halt-on-error -cd paper/main.tex
+```
+
+The output is `paper/main.pdf`, with ten pages including references. Keep the
+figure files and `paper/IEEEtran.cls` in place. Separate generated LaTeX fragments
+and bibliography databases are not required for compilation. See
+[paper/BUILD.md](paper/BUILD.md) for regeneration details.
+
 ## Rebuild without training
 
 Run from this directory. Summary JSON, graph cases and precision-recall arrays suffice to regenerate the paper. Verification and publication auditing stream compressed evidence without expanding it.

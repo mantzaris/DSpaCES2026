@@ -1,6 +1,6 @@
 {
   "status": "complete",
-  "created_utc": "2026-10-01T03:33:27.300389+00:00",
+  "created_utc": "2026-10-01T15:37:10.782991+00:00",
   "mandatory_stages_complete": [
     1,
     2,
@@ -69,9 +69,9 @@
   "independent_repair_action_checks": 15,
   "paper": {
     "path": "paper/main.pdf",
-    "sha256": "6359fe5be631e1152e7b3ec7df49df0835d839eaa25179fd508ff31883119464",
+    "sha256": "f8b0bad3bd69fac83367d89ec32ad09e896e0fda840da638e7604afba54eaf2e",
     "pages": 10,
-    "source_sha256": "63f2c8d3d5776a94a5bb895a95540b6470192fe29099b94eb153493f12e726c4",
+    "source_sha256": "7385a62692baa3e148b972a648869b5493e331b9499b5fce7dece9207249fade",
     "warnings": []
   },
   "venue": {
@@ -79,7 +79,7 @@
     "checked_utc_date": "2026-10-01",
     "full_paper_limit_including_references": 10
   },
-  "visual_review_pdf_sha256": "6359fe5be631e1152e7b3ec7df49df0835d839eaa25179fd508ff31883119464",
+  "visual_review_pdf_sha256": "f8b0bad3bd69fac83367d89ec32ad09e896e0fda840da638e7604afba54eaf2e",
   "visually_reviewed_pages": [
     1,
     2,
@@ -106,7 +106,7 @@
     "results/graph_flow_v1/model_manifest.json": "237246a2ebc5bd55a8f4b59dc8e44adc09fa7af300d17b5a18290d4b74cd5f40",
     "results/graph_flow_v1/model_remote_audit.json": "c02f6fb9e4b7283e75ee6c3cd27ff97fe15a2e3d94451f15e56e07a50ab546e4",
     "results/graph_flow_v1/execution_jobs.json": "f3e5a10b97ec4032ba95bc87a7f2c2fbcc2f01f835d5386937eee230479d9331",
-    "results/graph_flow_v1/paper_claims.json": "424c45040d9a352feb5c86698f881ba2ad0933c60f7443faab9271b0463d7fca",
+    "results/graph_flow_v1/paper_claims.json": "b2b7d1e00b13a5894d161aff3446d6fcf23b010128f6eacd56eeb54703c88225",
     "results/graph_flow_v1/figure_provenance.json": "e078f82d64d66df38920d1472b8a6abb307f6382f40d1ad31db75cf60ebf8710",
     "results/graph_flow_v1/graph/persistence_audit.json": "493120be95c5c358ea48dd10c3952071c98277675742096dfec5b34755906af0",
     "results/graph_flow_v1/graph/interface/browser_verification.json": "9e6d44e94f9ab7db5212a7b96b811bfcf6a345476a3a4b4ac187e5ec333046e2"

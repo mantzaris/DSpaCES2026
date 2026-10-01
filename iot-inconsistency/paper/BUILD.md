@@ -1,9 +1,24 @@
 # Paper build
 
-The current `main.tex` is the completed graph-flow study. From the project root,
-run `python3 scripts/figures_graph_flow.py`, then
-`python3 scripts/make_graph_flow_paper.py`, then
-`latexmk -pdf -interaction=nonstopmode -halt-on-error -cd paper/main.tex`.
+The current `main.tex` contains the complete graph-flow manuscript, including
+all tables, numerical macros and the bibliography. Compile from this directory
+
+```bash
+latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+```
+
+This produces `main.pdf`. Keep `IEEEtran.cls` and `figures/` alongside the source.
+No separate LaTeX fragments, `.bib` files, BibTeX run or Python generation step
+is needed to compile. A clean build with only the main source, class and figure
+files is recorded in `../results/graph_flow_v1/single_tex_build.json`.
+
+To regenerate figures and numerical content from saved evidence, run
+`python3 scripts/figures_graph_flow.py` and
+`python3 scripts/make_graph_flow_paper.py` from the project root, then compile.
+The latter refreshes the marked generated sections inside `main.tex` and their
+hash ledger. Separate generated fragments and bibliography sources remain as
+provenance, not compilation dependencies. Edit reference entries directly in
+the embedded `thebibliography` environment when revising the manuscript.
 The compiled PDF has ten pages including references. Source/figure hashes and
 visual inspection are recorded in `results/graph_flow_v1/completion.json`.
 The exact former paper is in `legacy/witness_20260930.tar.xz`. Legacy generators
@@ -18,4 +33,4 @@ Sources
 
 The author line uses the author's existing adjacent manuscript for identity and affiliation. It does not reuse that project's results or prose.
 
-The results generator must require complete primary, ablation and native result artifacts. It must not substitute illustrative or pilot numbers for final performance. Compile with `latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex` from this directory after generating all figures and tables. Inspect every rendered page and record the final page count and warnings.
+The results generator must require complete primary, ablation and native result artifacts. It must not substitute illustrative or pilot numbers for final performance. Inspect changed rendered pages and record the final page count and warnings.
