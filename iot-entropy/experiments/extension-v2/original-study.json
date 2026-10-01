@@ -141,11 +141,6 @@
       "background_unit_exceedance": 0.0811965811965812
     }
   ],
-  "diffusion_entropy_90_coverage": {
-    "synthetic64": 0.3719806844989459,
-    "intel": 0.22191466391086578,
-    "pems": 0.5208199885156419
-  },
   "files": {
     "configs/full.json": "d0dc6dc90eb58d18e00a74f0e94b6b3c461084f9f31cc1cceab2e2f8b7ed4064",
     "docs/protocol.md": "cdddaddc8a9b56eb6b3f489a5739dc10ac35dffd41fd7d9b5042b735e01c6da3",
@@ -155,5 +150,16 @@
     "results/manuscript-claims.json": "6f32be613fe35d2a42f91a37600d746d17e39f48176b7e413bbdf032694f0660",
     "results/fidelity-extra.json.gz": "e61217476bb36d147416556c372ee59c28c889cf4645e35f62aa2684b402af62",
     "data/manifests/raw_sources.json": "59c5f9c481677bdf8d2cb4741a099ca102dfc1ad17f60982561e3c9845791887"
-  }
+  },
+  "diffusion_entropy_90_coverage_unrestricted": {
+    "synthetic64": 0.3719806844989459,
+    "intel": 0.22191466391086578,
+    "pems": 0.5208199885156419
+  },
+  "diffusion_entropy_90_coverage_common_support": {
+    "synthetic64": 0.3719806844989459,
+    "intel": 0.09166666782564586,
+    "pems": 0.520587166150411
+  },
+  "fidelity_checkpoint_note": "The historical manuscript reports reference-common support; Intel unrestricted diffusion support gives a different denominator and 0.222 coverage, not the manuscript 0.092."
 }

@@ -1,0 +1,10 @@
+{
+  "command": "PYTHONPATH=src .venv/bin/python -m pytest tests -q --disable-warnings",
+  "environment": "RunPod RTX A6000, Python 3.12.3, torch 2.8.0+cu128",
+  "passed": 19,
+  "failed": 0,
+  "pytest_seconds": 8.6,
+  "gpu_budget_additional_seconds": 8.6,
+  "scope": "core mathematical, temporal CPU/GPU, leakage, event, localization and extension integration checks",
+  "participation_optimization_check": "Two CPU integration tests re-run; old loop and batched weighting agree to 1e-12."
+}

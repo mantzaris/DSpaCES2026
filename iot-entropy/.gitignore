@@ -9,6 +9,14 @@ literature/raw/
 experiments/**/checkpoints
 experiments/**/samples/
 experiments/**/replay/
+experiments/extension-v2/cache/
+experiments/extension-v2/*/measurements.npz
+experiments/extension-v2/*/replay.json
+experiments/extension-v2/*/support.json
+experiments/extension-v2/*/fidelity.json
+experiments/extension-v2/*/timings.json
+experiments/extension-v2/*/references.json
+experiments/extension-v2/*/groups.json
 # Rebuildable local presentation exports and downloaded distribution archive.
 dashboard/data/
 dashboard/validation/*.png
