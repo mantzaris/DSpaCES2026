@@ -1,0 +1,159 @@
+{
+  "original_revision": "b900da1bf4b3b4f1b8ab2310257af842de587562",
+  "preservation": "Original output namespaces unchanged; original manuscript and code recoverable at original_revision.",
+  "historical_checkpoints": [
+    {
+      "dataset": "synthetic",
+      "method": "diffusion/entropy",
+      "event_recall": {
+        "high": 0.4213348765432097,
+        "low": 0.22993827160493824,
+        "mean": 0.32561728395061723,
+        "n": 36
+      },
+      "localization_iou": {
+        "high": 0.02733718645264363,
+        "low": 0.009881994326874591,
+        "mean": 0.017495696080589138,
+        "n": 36
+      },
+      "eligible_fraction": {
+        "high": 0.9862173560661852,
+        "low": 0.9717210576421131,
+        "mean": 0.9792851118577849,
+        "n": 36
+      },
+      "background_unit_exceedance": 0.24002849002849003
+    },
+    {
+      "dataset": "synthetic",
+      "method": "diffusion/synchronization",
+      "event_recall": {
+        "high": 0.41207561728395053,
+        "low": 0.21755401234567895,
+        "mean": 0.31481481481481477,
+        "n": 36
+      },
+      "localization_iou": {
+        "high": 0.02985423314177921,
+        "low": 0.013545763752083755,
+        "mean": 0.02132577800453407,
+        "n": 36
+      },
+      "eligible_fraction": {
+        "high": 0.9862173560661852,
+        "low": 0.9717210576421131,
+        "mean": 0.9792851118577849,
+        "n": 36
+      },
+      "background_unit_exceedance": 0.2336182336182336
+    },
+    {
+      "dataset": "intel",
+      "method": "diffusion/entropy",
+      "event_recall": {
+        "high": 0.18981481481481483,
+        "low": 0.027777777777777776,
+        "mean": 0.10648148148148148,
+        "n": 8
+      },
+      "localization_iou": {
+        "high": 0.016254127030897878,
+        "low": 0.00206307102858827,
+        "mean": 0.008922703096058384,
+        "n": 8
+      },
+      "eligible_fraction": {
+        "high": 0.057414715600478096,
+        "low": 0.01974396092981705,
+        "mean": 0.039312811675901886,
+        "n": 8
+      },
+      "background_unit_exceedance": 0.3076923076923077
+    },
+    {
+      "dataset": "intel",
+      "method": "diffusion/synchronization",
+      "event_recall": {
+        "high": 0.40289351851851835,
+        "low": 0.07858796296296296,
+        "mean": 0.25,
+        "n": 8
+      },
+      "localization_iou": {
+        "high": 0.05810611990433478,
+        "low": 0.007776802185327091,
+        "mean": 0.031121003043645845,
+        "n": 8
+      },
+      "eligible_fraction": {
+        "high": 0.057414715600478096,
+        "low": 0.01974396092981705,
+        "mean": 0.039312811675901886,
+        "n": 8
+      },
+      "background_unit_exceedance": 0.4391025641025641
+    },
+    {
+      "dataset": "pems",
+      "method": "diffusion/entropy",
+      "event_recall": {
+        "high": 0.26851851851851855,
+        "low": 0.027777777777777776,
+        "mean": 0.13888888888888887,
+        "n": 12
+      },
+      "localization_iou": {
+        "high": 0.015828788672459085,
+        "low": 0.0,
+        "mean": 0.005793835274711525,
+        "n": 12
+      },
+      "eligible_fraction": {
+        "high": 0.9771975849651627,
+        "low": 0.9431502549598617,
+        "mean": 0.9622091775139174,
+        "n": 12
+      },
+      "background_unit_exceedance": 0.03205128205128205
+    },
+    {
+      "dataset": "pems",
+      "method": "diffusion/synchronization",
+      "event_recall": {
+        "high": 0.3241898148148147,
+        "low": 0.05555555555555555,
+        "mean": 0.18055555555555555,
+        "n": 12
+      },
+      "localization_iou": {
+        "high": 0.010659893864551491,
+        "low": 0.0008092125739184563,
+        "mean": 0.004961742050887429,
+        "n": 12
+      },
+      "eligible_fraction": {
+        "high": 0.9771975849651627,
+        "low": 0.9431502549598617,
+        "mean": 0.9622091775139174,
+        "n": 12
+      },
+      "background_unit_exceedance": 0.0811965811965812
+    }
+  ],
+  "diffusion_entropy_90_coverage": {
+    "synthetic64": 0.3719806844989459,
+    "intel": 0.22191466391086578,
+    "pems": 0.5208199885156419
+  },
+  "files": {
+    "configs/full.json": "d0dc6dc90eb58d18e00a74f0e94b6b3c461084f9f31cc1cceab2e2f8b7ed4064",
+    "docs/protocol.md": "cdddaddc8a9b56eb6b3f489a5739dc10ac35dffd41fd7d9b5042b735e01c6da3",
+    "manuscript/paper.tex": "c15a24e8842c78a5652943bfd4292899057a70c0e66d939005696e801dfc8a27",
+    "manuscript/paper.pdf": "e8c1cf5c8ebe217b2f7c713058e6c37eb9654d98879b6e6393c92fd4ca742592",
+    "results/summary.json.gz": "542726a2d8ff85050b7148e17a878228fce34fa386dd50d5f47b4e714520126a",
+    "results/manuscript-claims.json": "6f32be613fe35d2a42f91a37600d746d17e39f48176b7e413bbdf032694f0660",
+    "results/fidelity-extra.json.gz": "e61217476bb36d147416556c372ee59c28c889cf4645e35f62aa2684b402af62",
+    "data/manifests/raw_sources.json": "59c5f9c481677bdf8d2cb4741a099ca102dfc1ad17f60982561e3c9845791887"
+  }
+}
