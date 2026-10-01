@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "scope": "Simple Gaussian training pilot; no H1/H2 benchmark claim",
+  "model_parameters": 22048,
+  "steps": 600,
+  "train_candidates": 1024,
+  "validation_candidates": 512,
+  "initial_validation_nll": 10.669214248657227,
+  "final_validation_nll": 5.721531867980957,
+  "training_seconds": 9.69404391432181,
+  "peak_gpu_bytes": 175826432,
+  "inverse_max_absolute_error": 7.152557373046875e-07,
+  "generated_conditional_mean_mae": 0.04847220331430435,
+  "generated_variance_absolute_error": 0.024380967020988464,
+  "sampled_gpu_score_max_absolute_error": 0.0,
+  "mean_ess": 236.15685942499186,
+  "model_path": "results/graph_flow_v1/models/pilot.pt",
+  "model_sha256": "1d2c3993dc49e68c530943a21efbb3b3507d6e391b53cf6e2c7635b2972c6dba",
+  "evidence_path": "results/graph_flow_v1/evidence/pilot.npz",
+  "evidence_sha256": "024b29352a6384ac792b3f568c5ec94e9d790877e980761f556fe2364f64b04c",
+  "losses": [
+    {
+      "step": 100,
+      "training_nll": 5.809239387512207
+    },
+    {
+      "step": 200,
+      "training_nll": 5.7188568115234375
+    },
+    {
+      "step": 300,
+      "training_nll": 5.71265983581543
+    },
+    {
+      "step": 400,
+      "training_nll": 5.492459297180176
+    },
+    {
+      "step": 500,
+      "training_nll": 5.5182013511657715
+    },
+    {
+      "step": 600,
+      "training_nll": 5.713086128234863
+    }
+  ],
+  "environment": {
+    "torch": "2.8.0+cu128",
+    "numpy": "2.2.6",
+    "python": "3.12.3",
+    "cuda": "12.8",
+    "gpu": "NVIDIA RTX PRO 4500 Blackwell",
+    "other_gpu_processes": []
+  },
+  "source_sha256": {
+    "src/iot_repair/graph_flow_model.py": "98febb4e7bdb41cf983bea9c3e20558de3885456d332c66545d34fd9dbb81c9f",
+    "src/iot_repair/flow_math.py": "66ce2270bf0dc5c32a37967aa11716eb7db575771c01a246882862939934c6a4",
+    "scripts/graph_flow_pilot.py": "0278b92588eb663ac5afacf7144f571d6ebff85f990cfd5c89c167ef1d110ba3"
+  }
+}

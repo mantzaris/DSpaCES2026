@@ -151,3 +151,53 @@ def test_weighted_crps_and_wrong_target_repair_damage():
     reference=np.zeros((2,8));observed=reference.copy();observed[0]=2
     outcome=repair_outcome(observed,reference,np.ones(8),1,[True,False])
     assert outcome['failed'] and outcome['harmful'] and outcome['improvement']==-1
+
+
+def test_ppca_observed_context_matches_full_gaussian_conditioning():
+    from iot_repair.flow_gaussian import conditional_components, lowrank_log_prob
+    rng=np.random.default_rng(49);mean=rng.normal(size=13);loading=rng.normal(size=(13,3));noise=.2
+    covariance=loading@loading.T+noise*np.eye(13);context=rng.normal(size=5);context[2]=np.nan
+    model=dict(context_keep=np.ones(5,bool),components=[dict(mean=mean,loading=loading,noise=noise,weight=1.)])
+    weights,components=conditional_components(model,context)
+    observed=8+np.flatnonzero(np.isfinite(context));cross=covariance[:8,observed]
+    gain=np.linalg.solve(covariance[np.ix_(observed,observed)],cross.T).T
+    expected_mean=mean[:8]+gain@(context[np.isfinite(context)]-mean[observed])
+    expected_covariance=covariance[:8,:8]-gain@cross.T
+    np.testing.assert_allclose(components[0][0],expected_mean,atol=1e-12)
+    np.testing.assert_allclose(components[0][1],expected_covariance,atol=1e-12)
+    point=rng.normal(size=13)
+    assert abs(lowrank_log_prob(point,mean,loading,noise)-multivariate_normal.logpdf(point,mean,covariance))<1e-10
+
+
+def test_production_flow_path_recomputes_from_saved_density_components():
+    from iot_repair.flow_inference import infer_case
+    from scipy.special import logsumexp
+    torch.manual_seed(14);models=[GraphFlow(4,width=8,layers=2) for _ in range(2)]
+    values=np.random.default_rng(14).normal(size=(4,64)).astype('float32');values[3,-1]=np.nan
+    result=infer_case(models,values,example_graph(),32,sample_count=32,reference=values)
+    raw=result['raw'];expected=logsumexp(raw['log_corruption'].reshape(3,-1),axis=1)-np.log(64)
+    expected-=logsumexp(raw['log_normal_members'],axis=1)-np.log(2)
+    np.testing.assert_allclose(raw['score'],expected,atol=1e-12)
+    assert not result['eligible'][3] and result['scores']['flow_ratio'][3]==-1e12
+    assert result['repairs']['mean'].shape==(4,8)
+    assert np.isfinite(result['repair_metrics']['posterior_crps']).all()
+
+
+def test_wholly_unavailable_window_retains_complete_candidate_universe():
+    from iot_repair.flow_inference import infer_case
+    models=[GraphFlow(4,width=8,layers=2)]
+    values=np.ones((4,64),dtype='float32');values[:,-8:]=np.nan
+    result=infer_case(models,values,example_graph(),32,sample_count=32,sensitivity=True,reference=values)
+    assert set(['flow_ratio','flow_nll','M32','scale_1.0','scale_2.0','without_bias'])<=set(result['scores'])
+    for value in result['scores'].values():assert value.shape==(4,) and (value==-1e12).all()
+    assert not result['eligible'].any() and result['repairs']['mean'].shape==(4,8)
+
+
+def test_candidate_chunking_preserves_same_saved_latent_population():
+    from iot_repair.flow_inference import infer_case
+    torch.manual_seed(11);models=[GraphFlow(4,width=8,layers=2)]
+    values=np.random.default_rng(11).normal(size=(4,64)).astype('float32')
+    first=infer_case(models,values,example_graph(),32,sample_count=32,candidate_chunk=1,seed=51)
+    second=infer_case(models,values,example_graph(),32,sample_count=32,candidate_chunk=4,seed=51)
+    np.testing.assert_array_equal(first['raw']['latent'],second['raw']['latent'])
+    np.testing.assert_allclose(first['raw']['score'],second['raw']['score'],atol=1e-5)

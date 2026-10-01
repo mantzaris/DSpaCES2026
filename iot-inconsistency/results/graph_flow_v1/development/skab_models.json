@@ -1,0 +1,470 @@
+{
+  "grid": [
+    {
+      "id": "7c5d45aa14e851350c41",
+      "path": "results/graph_flow_v1/models/7c5d45aa14e851350c41.pt",
+      "sha256": "d0eb20931cbb721ee6ec6246b1990ea61171d07476bfea1607cc5ff7cf731602",
+      "specification": {
+        "dataset": "skab",
+        "capacity": {
+          "width": 32,
+          "layers": 4
+        },
+        "context_length": 32,
+        "seed": 20261011,
+        "mode": "graph",
+        "fraction": 1.0,
+        "steps": 600,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "batch": 128,
+        "train_sha256": "5f8c0b47257e422d8a0c982ed2f4c3fcbe4617681c0a7218347f34b537336f79",
+        "development_sha256": "146db78b364db1c4399110346a71e699b3293d799d7272fecc0c802f13ae810a",
+        "graph_sha256": "a9a69bb3022baa39b1aad495a2b80077aa40502a49cf876c4a41d6a3bd261b07",
+        "model_code_sha256": "98febb4e7bdb41cf983bea9c3e20558de3885456d332c66545d34fd9dbb81c9f"
+      },
+      "best_step": 400,
+      "development_nll": 7.185139179229736,
+      "history": [
+        {
+          "step": 100,
+          "training_nll": 6.413057327270508,
+          "development_nll": 9.773841857910156
+        },
+        {
+          "step": 200,
+          "training_nll": 5.1010284423828125,
+          "development_nll": 8.918632507324219
+        },
+        {
+          "step": 300,
+          "training_nll": 2.9810075759887695,
+          "development_nll": 8.291121482849121
+        },
+        {
+          "step": 400,
+          "training_nll": 0.6556751728057861,
+          "development_nll": 7.185139179229736
+        },
+        {
+          "step": 500,
+          "training_nll": 1.577331304550171,
+          "development_nll": 7.400554180145264
+        },
+        {
+          "step": 600,
+          "training_nll": -2.763519525527954,
+          "development_nll": 10.84499454498291
+        }
+      ],
+      "training_seconds": 9.217648128047585,
+      "peak_gpu_bytes": 102976000,
+      "parameters": 22112,
+      "training_volume": {
+        "windows": 409,
+        "source_blocks": 7,
+        "block_ids": [
+          "anomaly-free/anomaly-free.csv",
+          "other/11.csv",
+          "other/5.csv",
+          "valve1/5.csv",
+          "valve2/0.csv",
+          "valve2/2.csv",
+          "valve2/3.csv"
+        ],
+        "candidates": 3272,
+        "eligible_fraction": 1.0
+      },
+      "development_volume": {
+        "windows": 92,
+        "source_blocks": 8,
+        "block_ids": [
+          "other/3.csv",
+          "other/4.csv",
+          "other/9.csv",
+          "valve1/0.csv",
+          "valve1/1.csv",
+          "valve1/3.csv",
+          "valve1/8.csv",
+          "valve1/9.csv"
+        ],
+        "candidates": 736,
+        "eligible_fraction": 1.0
+      },
+      "generation_during_training": true
+    },
+    {
+      "id": "659ee51598104f3ff4c7",
+      "path": "results/graph_flow_v1/models/659ee51598104f3ff4c7.pt",
+      "sha256": "64470c67803cb52b34a311499c2df35a70968ef9ae54691e286cf6001a8f1dc5",
+      "specification": {
+        "dataset": "skab",
+        "capacity": {
+          "width": 64,
+          "layers": 6
+        },
+        "context_length": 32,
+        "seed": 20261011,
+        "mode": "graph",
+        "fraction": 1.0,
+        "steps": 600,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "batch": 128,
+        "train_sha256": "5f8c0b47257e422d8a0c982ed2f4c3fcbe4617681c0a7218347f34b537336f79",
+        "development_sha256": "146db78b364db1c4399110346a71e699b3293d799d7272fecc0c802f13ae810a",
+        "graph_sha256": "a9a69bb3022baa39b1aad495a2b80077aa40502a49cf876c4a41d6a3bd261b07",
+        "model_code_sha256": "98febb4e7bdb41cf983bea9c3e20558de3885456d332c66545d34fd9dbb81c9f"
+      },
+      "best_step": 300,
+      "development_nll": 5.723870277404785,
+      "history": [
+        {
+          "step": 100,
+          "training_nll": 16.283742904663086,
+          "development_nll": 22.074968338012695
+        },
+        {
+          "step": 200,
+          "training_nll": 3.8752553462982178,
+          "development_nll": 7.448118209838867
+        },
+        {
+          "step": 300,
+          "training_nll": 0.7004474401473999,
+          "development_nll": 5.723870277404785
+        },
+        {
+          "step": 400,
+          "training_nll": -1.9996826648712158,
+          "development_nll": 6.155849456787109
+        },
+        {
+          "step": 500,
+          "training_nll": -0.8928651809692383,
+          "development_nll": 6.840142250061035
+        },
+        {
+          "step": 600,
+          "training_nll": -3.879131555557251,
+          "development_nll": 7.310580730438232
+        }
+      ],
+      "training_seconds": 11.300455722026527,
+      "peak_gpu_bytes": 177023488,
+      "parameters": 96512,
+      "training_volume": {
+        "windows": 409,
+        "source_blocks": 7,
+        "block_ids": [
+          "anomaly-free/anomaly-free.csv",
+          "other/11.csv",
+          "other/5.csv",
+          "valve1/5.csv",
+          "valve2/0.csv",
+          "valve2/2.csv",
+          "valve2/3.csv"
+        ],
+        "candidates": 3272,
+        "eligible_fraction": 1.0
+      },
+      "development_volume": {
+        "windows": 92,
+        "source_blocks": 8,
+        "block_ids": [
+          "other/3.csv",
+          "other/4.csv",
+          "other/9.csv",
+          "valve1/0.csv",
+          "valve1/1.csv",
+          "valve1/3.csv",
+          "valve1/8.csv",
+          "valve1/9.csv"
+        ],
+        "candidates": 736,
+        "eligible_fraction": 1.0
+      },
+      "generation_during_training": true
+    },
+    {
+      "id": "972af8c3d608216edee1",
+      "path": "results/graph_flow_v1/models/972af8c3d608216edee1.pt",
+      "sha256": "6dfbb406671ba71852f31d868ac5186aa6f8a46e84b8a2dcbdb6f380364eee5f",
+      "specification": {
+        "dataset": "skab",
+        "capacity": {
+          "width": 32,
+          "layers": 4
+        },
+        "context_length": 56,
+        "seed": 20261011,
+        "mode": "graph",
+        "fraction": 1.0,
+        "steps": 600,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "batch": 128,
+        "train_sha256": "5f8c0b47257e422d8a0c982ed2f4c3fcbe4617681c0a7218347f34b537336f79",
+        "development_sha256": "146db78b364db1c4399110346a71e699b3293d799d7272fecc0c802f13ae810a",
+        "graph_sha256": "a9a69bb3022baa39b1aad495a2b80077aa40502a49cf876c4a41d6a3bd261b07",
+        "model_code_sha256": "98febb4e7bdb41cf983bea9c3e20558de3885456d332c66545d34fd9dbb81c9f"
+      },
+      "best_step": 500,
+      "development_nll": 6.76963472366333,
+      "history": [
+        {
+          "step": 100,
+          "training_nll": 6.315150260925293,
+          "development_nll": 9.546107292175293
+        },
+        {
+          "step": 200,
+          "training_nll": 5.908774375915527,
+          "development_nll": 24.1131649017334
+        },
+        {
+          "step": 300,
+          "training_nll": 3.0794363021850586,
+          "development_nll": 8.264716148376465
+        },
+        {
+          "step": 400,
+          "training_nll": 0.08171872049570084,
+          "development_nll": 8.834912300109863
+        },
+        {
+          "step": 500,
+          "training_nll": 1.298677921295166,
+          "development_nll": 6.76963472366333
+        },
+        {
+          "step": 600,
+          "training_nll": -2.8777589797973633,
+          "development_nll": 8.581369400024414
+        }
+      ],
+      "training_seconds": 9.127342273946851,
+      "peak_gpu_bytes": 159924736,
+      "parameters": 22112,
+      "training_volume": {
+        "windows": 409,
+        "source_blocks": 7,
+        "block_ids": [
+          "anomaly-free/anomaly-free.csv",
+          "other/11.csv",
+          "other/5.csv",
+          "valve1/5.csv",
+          "valve2/0.csv",
+          "valve2/2.csv",
+          "valve2/3.csv"
+        ],
+        "candidates": 3272,
+        "eligible_fraction": 1.0
+      },
+      "development_volume": {
+        "windows": 92,
+        "source_blocks": 8,
+        "block_ids": [
+          "other/3.csv",
+          "other/4.csv",
+          "other/9.csv",
+          "valve1/0.csv",
+          "valve1/1.csv",
+          "valve1/3.csv",
+          "valve1/8.csv",
+          "valve1/9.csv"
+        ],
+        "candidates": 736,
+        "eligible_fraction": 1.0
+      },
+      "generation_during_training": true
+    },
+    {
+      "id": "d2c984e823501ceca492",
+      "path": "results/graph_flow_v1/models/d2c984e823501ceca492.pt",
+      "sha256": "021bdce68a68d6c704d176590301b81c691bc46cf1b49d920bd5fd6794aa0930",
+      "specification": {
+        "dataset": "skab",
+        "capacity": {
+          "width": 64,
+          "layers": 6
+        },
+        "context_length": 56,
+        "seed": 20261011,
+        "mode": "graph",
+        "fraction": 1.0,
+        "steps": 600,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "batch": 128,
+        "train_sha256": "5f8c0b47257e422d8a0c982ed2f4c3fcbe4617681c0a7218347f34b537336f79",
+        "development_sha256": "146db78b364db1c4399110346a71e699b3293d799d7272fecc0c802f13ae810a",
+        "graph_sha256": "a9a69bb3022baa39b1aad495a2b80077aa40502a49cf876c4a41d6a3bd261b07",
+        "model_code_sha256": "98febb4e7bdb41cf983bea9c3e20558de3885456d332c66545d34fd9dbb81c9f"
+      },
+      "best_step": 500,
+      "development_nll": 5.233617305755615,
+      "history": [
+        {
+          "step": 100,
+          "training_nll": 5.87024450302124,
+          "development_nll": 11.005542755126953
+        },
+        {
+          "step": 200,
+          "training_nll": 4.666143417358398,
+          "development_nll": 7.901373863220215
+        },
+        {
+          "step": 300,
+          "training_nll": 3.919496774673462,
+          "development_nll": 19.384349822998047
+        },
+        {
+          "step": 400,
+          "training_nll": -1.0174691677093506,
+          "development_nll": 6.816080093383789
+        },
+        {
+          "step": 500,
+          "training_nll": -0.5071643590927124,
+          "development_nll": 5.233617305755615
+        },
+        {
+          "step": 600,
+          "training_nll": -4.048959255218506,
+          "development_nll": 14.527321815490723
+        }
+      ],
+      "training_seconds": 12.269349276088178,
+      "peak_gpu_bytes": 287252992,
+      "parameters": 96512,
+      "training_volume": {
+        "windows": 409,
+        "source_blocks": 7,
+        "block_ids": [
+          "anomaly-free/anomaly-free.csv",
+          "other/11.csv",
+          "other/5.csv",
+          "valve1/5.csv",
+          "valve2/0.csv",
+          "valve2/2.csv",
+          "valve2/3.csv"
+        ],
+        "candidates": 3272,
+        "eligible_fraction": 1.0
+      },
+      "development_volume": {
+        "windows": 92,
+        "source_blocks": 8,
+        "block_ids": [
+          "other/3.csv",
+          "other/4.csv",
+          "other/9.csv",
+          "valve1/0.csv",
+          "valve1/1.csv",
+          "valve1/3.csv",
+          "valve1/8.csv",
+          "valve1/9.csv"
+        ],
+        "candidates": 736,
+        "eligible_fraction": 1.0
+      },
+      "generation_during_training": true
+    }
+  ],
+  "selected": {
+    "id": "d2c984e823501ceca492",
+    "path": "results/graph_flow_v1/models/d2c984e823501ceca492.pt",
+    "sha256": "021bdce68a68d6c704d176590301b81c691bc46cf1b49d920bd5fd6794aa0930",
+    "specification": {
+      "dataset": "skab",
+      "capacity": {
+        "width": 64,
+        "layers": 6
+      },
+      "context_length": 56,
+      "seed": 20261011,
+      "mode": "graph",
+      "fraction": 1.0,
+      "steps": 600,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "batch": 128,
+      "train_sha256": "5f8c0b47257e422d8a0c982ed2f4c3fcbe4617681c0a7218347f34b537336f79",
+      "development_sha256": "146db78b364db1c4399110346a71e699b3293d799d7272fecc0c802f13ae810a",
+      "graph_sha256": "a9a69bb3022baa39b1aad495a2b80077aa40502a49cf876c4a41d6a3bd261b07",
+      "model_code_sha256": "98febb4e7bdb41cf983bea9c3e20558de3885456d332c66545d34fd9dbb81c9f"
+    },
+    "best_step": 500,
+    "development_nll": 5.233617305755615,
+    "history": [
+      {
+        "step": 100,
+        "training_nll": 5.87024450302124,
+        "development_nll": 11.005542755126953
+      },
+      {
+        "step": 200,
+        "training_nll": 4.666143417358398,
+        "development_nll": 7.901373863220215
+      },
+      {
+        "step": 300,
+        "training_nll": 3.919496774673462,
+        "development_nll": 19.384349822998047
+      },
+      {
+        "step": 400,
+        "training_nll": -1.0174691677093506,
+        "development_nll": 6.816080093383789
+      },
+      {
+        "step": 500,
+        "training_nll": -0.5071643590927124,
+        "development_nll": 5.233617305755615
+      },
+      {
+        "step": 600,
+        "training_nll": -4.048959255218506,
+        "development_nll": 14.527321815490723
+      }
+    ],
+    "training_seconds": 12.269349276088178,
+    "peak_gpu_bytes": 287252992,
+    "parameters": 96512,
+    "training_volume": {
+      "windows": 409,
+      "source_blocks": 7,
+      "block_ids": [
+        "anomaly-free/anomaly-free.csv",
+        "other/11.csv",
+        "other/5.csv",
+        "valve1/5.csv",
+        "valve2/0.csv",
+        "valve2/2.csv",
+        "valve2/3.csv"
+      ],
+      "candidates": 3272,
+      "eligible_fraction": 1.0
+    },
+    "development_volume": {
+      "windows": 92,
+      "source_blocks": 8,
+      "block_ids": [
+        "other/3.csv",
+        "other/4.csv",
+        "other/9.csv",
+        "valve1/0.csv",
+        "valve1/1.csv",
+        "valve1/3.csv",
+        "valve1/8.csv",
+        "valve1/9.csv"
+      ],
+      "candidates": 736,
+      "eligible_fraction": 1.0
+    },
+    "generation_during_training": true
+  },
+  "selection": "Minimum normal development candidate NLL; no final evaluation access"
+}

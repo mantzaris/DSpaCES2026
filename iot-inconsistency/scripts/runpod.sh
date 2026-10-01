@@ -12,6 +12,15 @@ case "${1:-status}" in
   pull)
     rsync -az --exclude='*.pt' --exclude='*.tmp' -e "ssh ${SSH_ARGS[*]}" "$REMOTE_HOST:$REMOTE_DIR/results/" results/
     ;;
+  pull-flow)
+    mkdir -p results/graph_flow_v1
+    rsync -az --exclude=models --exclude=raw --exclude=cache --exclude='*.tmp' -e "ssh ${SSH_ARGS[*]}" "$REMOTE_HOST:$REMOTE_DIR/results/graph_flow_v1/" results/graph_flow_v1/
+    ;;
+  push-flow-baselines)
+    ssh "${SSH_ARGS[@]}" "$REMOTE_HOST" "mkdir -p $REMOTE_DIR/results/graph_flow_v1/models $REMOTE_DIR/results/graph_flow_v1/development"
+    rsync -az --include='ppca_*.pkl' --include='ppca_*.json' --include='*_supervised.npz' --exclude='*' -e "ssh ${SSH_ARGS[*]}" results/graph_flow_v1/models/ "$REMOTE_HOST:$REMOTE_DIR/results/graph_flow_v1/models/"
+    rsync -az --include='*_baselines.json' --exclude='*' -e "ssh ${SSH_ARGS[*]}" results/graph_flow_v1/development/ "$REMOTE_HOST:$REMOTE_DIR/results/graph_flow_v1/development/"
+    ;;
   status)
     ssh "${SSH_ARGS[@]}" "$REMOTE_HOST" 'nvidia-smi; pgrep -af "iot-inconsistency|run_study" || true'
     ;;
@@ -20,5 +29,5 @@ case "${1:-status}" in
     printf -v COMMAND '%q ' "$@"
     ssh "${SSH_ARGS[@]}" "$REMOTE_HOST" "cd $REMOTE_DIR && $COMMAND"
     ;;
-  *) echo 'Usage: bash scripts/runpod.sh {sync|pull|status|exec COMMAND...}' >&2; exit 2;;
+  *) echo 'Usage: bash scripts/runpod.sh {sync|pull|pull-flow|push-flow-baselines|status|exec COMMAND...}' >&2; exit 2;;
 esac

@@ -1,0 +1,302 @@
+{
+  "pca": {
+    "name": "pca_lag4_rank4",
+    "average_precision": 0.8865114988175605,
+    "sha256": "1146a89ab0e679ff22630c854b32b1619f72d77e86f9ae9b712f243e8a091b78"
+  },
+  "pca_grid": [
+    {
+      "name": "pca_lag1_rank2",
+      "average_precision": 0.597946003290979,
+      "sha256": "50e8026b78c53c7b8e170dd6cec473ce9ae76d6960b0036bb5706993e9e8b5ed"
+    },
+    {
+      "name": "pca_lag1_rank4",
+      "average_precision": 0.7855664266025727,
+      "sha256": "bb8740d571d60ca2ada25177c94507f807fc54c0426e5f1d96395b07286d0851"
+    },
+    {
+      "name": "pca_lag1_rank8",
+      "average_precision": 0.6595953013545129,
+      "sha256": "69f86b9b11fcdaf6b7c1dfb94d7ed0a4375fbf82e42d8ee6f59369e055db0904"
+    },
+    {
+      "name": "pca_lag1_rank16",
+      "average_precision": 0.46349387459643254,
+      "sha256": "ce1f0f0df7f18319df1eb9c211f44c4057d8d7bf6291e32c6acf8aeb851839f3"
+    },
+    {
+      "name": "pca_lag4_rank2",
+      "average_precision": 0.5981114827163632,
+      "sha256": "dc5bef7b74a332bd0b10b488282080fdfadec6acdf74d2bb20782456b03a201a"
+    },
+    {
+      "name": "pca_lag4_rank4",
+      "average_precision": 0.8865114988175605,
+      "sha256": "1146a89ab0e679ff22630c854b32b1619f72d77e86f9ae9b712f243e8a091b78"
+    },
+    {
+      "name": "pca_lag4_rank8",
+      "average_precision": 0.8096226955387992,
+      "sha256": "646c5e82c417a41901a0a38c794bb47911f455c3af32b716a235de1f8355265c"
+    },
+    {
+      "name": "pca_lag4_rank16",
+      "average_precision": 0.7613412985794404,
+      "sha256": "a5c3a92d646d86c6d7520af9ad5cf79b80dd69f31983ab93c36b6a22ec89bf4e"
+    }
+  ],
+  "ppca_grid": [
+    {
+      "path": "results/graph_flow_v1/models/ppca_833b8ed8c4b708deed42.pkl",
+      "sha256": "6112bff988e3b96a74b739ef91e22132c1c1bd844029656a095a14d0a14b11f5",
+      "specification": {
+        "dataset": "synthetic_32_linear",
+        "length": 32,
+        "rank": 2,
+        "mixtures": 1,
+        "mode": "graph",
+        "variance_floor": 0.0025,
+        "code_sha256": "1d67293cd73f90c4b52612654311dc863bcb5c6ffacc968c4507f49296ab4d13",
+        "train_sha256": "7a73d65786e0ced4159b5f9dc41a1fc037c68f56c09868d088666db69cba0ae8"
+      },
+      "training_seconds": 0.20450455699756276,
+      "training_windows": 372,
+      "source_blocks": 12,
+      "missing_training_context": "training-mean fill for parameter fitting, exact observed-context marginal at inference",
+      "development_nll": -10.891514651272093
+    },
+    {
+      "path": "results/graph_flow_v1/models/ppca_f0b25f57f1d15b1aa1e8.pkl",
+      "sha256": "c654841de1a23a764850d0e2c4aab1b542b428f5e7cd517c8db30ebf25b6c589",
+      "specification": {
+        "dataset": "synthetic_32_linear",
+        "length": 32,
+        "rank": 4,
+        "mixtures": 1,
+        "mode": "graph",
+        "variance_floor": 0.0025,
+        "code_sha256": "1d67293cd73f90c4b52612654311dc863bcb5c6ffacc968c4507f49296ab4d13",
+        "train_sha256": "7a73d65786e0ced4159b5f9dc41a1fc037c68f56c09868d088666db69cba0ae8"
+      },
+      "training_seconds": 0.2065891640013433,
+      "training_windows": 372,
+      "source_blocks": 12,
+      "missing_training_context": "training-mean fill for parameter fitting, exact observed-context marginal at inference",
+      "development_nll": -12.400618712650939
+    },
+    {
+      "path": "results/graph_flow_v1/models/ppca_abf959b4f7cba9aab81a.pkl",
+      "sha256": "3d77d4a1ef5c03358707fc5044b6d0362b9c06b1af7054bfa7d471978c6f8915",
+      "specification": {
+        "dataset": "synthetic_32_linear",
+        "length": 32,
+        "rank": 8,
+        "mixtures": 1,
+        "mode": "graph",
+        "variance_floor": 0.0025,
+        "code_sha256": "1d67293cd73f90c4b52612654311dc863bcb5c6ffacc968c4507f49296ab4d13",
+        "train_sha256": "7a73d65786e0ced4159b5f9dc41a1fc037c68f56c09868d088666db69cba0ae8"
+      },
+      "training_seconds": 0.2039791260031052,
+      "training_windows": 372,
+      "source_blocks": 12,
+      "missing_training_context": "training-mean fill for parameter fitting, exact observed-context marginal at inference",
+      "development_nll": -13.604582664076423
+    },
+    {
+      "path": "results/graph_flow_v1/models/ppca_0689148a4f01fd47eb12.pkl",
+      "sha256": "4b58e593569bfabf3954b5a6780188a321bc850c39973ccf79495c27586e0e8d",
+      "specification": {
+        "dataset": "synthetic_32_linear",
+        "length": 32,
+        "rank": 2,
+        "mixtures": 2,
+        "mode": "graph",
+        "variance_floor": 0.0025,
+        "code_sha256": "1d67293cd73f90c4b52612654311dc863bcb5c6ffacc968c4507f49296ab4d13",
+        "train_sha256": "7a73d65786e0ced4159b5f9dc41a1fc037c68f56c09868d088666db69cba0ae8"
+      },
+      "training_seconds": 1.8113917849987047,
+      "training_windows": 372,
+      "source_blocks": 12,
+      "missing_training_context": "training-mean fill for parameter fitting, exact observed-context marginal at inference",
+      "development_nll": -11.320588944974858
+    },
+    {
+      "path": "results/graph_flow_v1/models/ppca_11f66ecbad7c51c22f6a.pkl",
+      "sha256": "0ecd9e63ce344266cbc39893f041c91969318f0291943be3cd3d5df53d8c6c14",
+      "specification": {
+        "dataset": "synthetic_32_linear",
+        "length": 32,
+        "rank": 4,
+        "mixtures": 2,
+        "mode": "graph",
+        "variance_floor": 0.0025,
+        "code_sha256": "1d67293cd73f90c4b52612654311dc863bcb5c6ffacc968c4507f49296ab4d13",
+        "train_sha256": "7a73d65786e0ced4159b5f9dc41a1fc037c68f56c09868d088666db69cba0ae8"
+      },
+      "training_seconds": 1.8956218629973591,
+      "training_windows": 372,
+      "source_blocks": 12,
+      "missing_training_context": "training-mean fill for parameter fitting, exact observed-context marginal at inference",
+      "development_nll": -12.582457328314096
+    },
+    {
+      "path": "results/graph_flow_v1/models/ppca_c4927fc83b5ec8c7195c.pkl",
+      "sha256": "b0f4a1285c7243b89b6b89e5e7a027947f153ea011372a852e07d592894af66b",
+      "specification": {
+        "dataset": "synthetic_32_linear",
+        "length": 32,
+        "rank": 8,
+        "mixtures": 2,
+        "mode": "graph",
+        "variance_floor": 0.0025,
+        "code_sha256": "1d67293cd73f90c4b52612654311dc863bcb5c6ffacc968c4507f49296ab4d13",
+        "train_sha256": "7a73d65786e0ced4159b5f9dc41a1fc037c68f56c09868d088666db69cba0ae8"
+      },
+      "training_seconds": 1.973944596000365,
+      "training_windows": 372,
+      "source_blocks": 12,
+      "missing_training_context": "training-mean fill for parameter fitting, exact observed-context marginal at inference",
+      "development_nll": -13.605601685814644
+    },
+    {
+      "path": "results/graph_flow_v1/models/ppca_50478b28129c4aff49c3.pkl",
+      "sha256": "17e9e358efd7031698d96245ca7b6afff720da3db3d5d4d6561eff058ddb30fc",
+      "specification": {
+        "dataset": "synthetic_32_linear",
+        "length": 32,
+        "rank": 2,
+        "mixtures": 1,
+        "mode": "all_channels",
+        "variance_floor": 0.0025,
+        "code_sha256": "1d67293cd73f90c4b52612654311dc863bcb5c6ffacc968c4507f49296ab4d13",
+        "train_sha256": "7a73d65786e0ced4159b5f9dc41a1fc037c68f56c09868d088666db69cba0ae8"
+      },
+      "training_seconds": 0.4453779780014884,
+      "training_windows": 372,
+      "source_blocks": 12,
+      "missing_training_context": "training-mean fill for parameter fitting, exact observed-context marginal at inference",
+      "development_nll": 2.9456841934118336
+    },
+    {
+      "path": "results/graph_flow_v1/models/ppca_9a3b795f59b45db83662.pkl",
+      "sha256": "d909b1afc2df833704af81a5be6e7018c05235d3473bdc409b540d3c86e9c210",
+      "specification": {
+        "dataset": "synthetic_32_linear",
+        "length": 32,
+        "rank": 4,
+        "mixtures": 1,
+        "mode": "all_channels",
+        "variance_floor": 0.0025,
+        "code_sha256": "1d67293cd73f90c4b52612654311dc863bcb5c6ffacc968c4507f49296ab4d13",
+        "train_sha256": "7a73d65786e0ced4159b5f9dc41a1fc037c68f56c09868d088666db69cba0ae8"
+      },
+      "training_seconds": 0.4673021480048192,
+      "training_windows": 372,
+      "source_blocks": 12,
+      "missing_training_context": "training-mean fill for parameter fitting, exact observed-context marginal at inference",
+      "development_nll": -2.009599598980112
+    },
+    {
+      "path": "results/graph_flow_v1/models/ppca_6d388d9c3f3375adf8d6.pkl",
+      "sha256": "9a11910f96e964ce4a410df5f6c1df6d443e3ee3100f5923387d07d7ec75e53c",
+      "specification": {
+        "dataset": "synthetic_32_linear",
+        "length": 32,
+        "rank": 8,
+        "mixtures": 1,
+        "mode": "all_channels",
+        "variance_floor": 0.0025,
+        "code_sha256": "1d67293cd73f90c4b52612654311dc863bcb5c6ffacc968c4507f49296ab4d13",
+        "train_sha256": "7a73d65786e0ced4159b5f9dc41a1fc037c68f56c09868d088666db69cba0ae8"
+      },
+      "training_seconds": 0.48691231200064067,
+      "training_windows": 372,
+      "source_blocks": 12,
+      "missing_training_context": "training-mean fill for parameter fitting, exact observed-context marginal at inference",
+      "development_nll": -11.135337792713264
+    }
+  ],
+  "ppca": {
+    "path": "results/graph_flow_v1/models/ppca_abf959b4f7cba9aab81a.pkl",
+    "sha256": "3d77d4a1ef5c03358707fc5044b6d0362b9c06b1af7054bfa7d471978c6f8915",
+    "specification": {
+      "dataset": "synthetic_32_linear",
+      "length": 32,
+      "rank": 8,
+      "mixtures": 1,
+      "mode": "graph",
+      "variance_floor": 0.0025,
+      "code_sha256": "1d67293cd73f90c4b52612654311dc863bcb5c6ffacc968c4507f49296ab4d13",
+      "train_sha256": "7a73d65786e0ced4159b5f9dc41a1fc037c68f56c09868d088666db69cba0ae8"
+    },
+    "training_seconds": 0.2039791260031052,
+    "training_windows": 372,
+    "source_blocks": 12,
+    "missing_training_context": "training-mean fill for parameter fitting, exact observed-context marginal at inference",
+    "development_nll": -13.604582664076423
+  },
+  "mixture_ppca": {
+    "path": "results/graph_flow_v1/models/ppca_c4927fc83b5ec8c7195c.pkl",
+    "sha256": "b0f4a1285c7243b89b6b89e5e7a027947f153ea011372a852e07d592894af66b",
+    "specification": {
+      "dataset": "synthetic_32_linear",
+      "length": 32,
+      "rank": 8,
+      "mixtures": 2,
+      "mode": "graph",
+      "variance_floor": 0.0025,
+      "code_sha256": "1d67293cd73f90c4b52612654311dc863bcb5c6ffacc968c4507f49296ab4d13",
+      "train_sha256": "7a73d65786e0ced4159b5f9dc41a1fc037c68f56c09868d088666db69cba0ae8"
+    },
+    "training_seconds": 1.973944596000365,
+    "training_windows": 372,
+    "source_blocks": 12,
+    "missing_training_context": "training-mean fill for parameter fitting, exact observed-context marginal at inference",
+    "development_nll": -13.605601685814644
+  },
+  "all_ppca": {
+    "path": "results/graph_flow_v1/models/ppca_6d388d9c3f3375adf8d6.pkl",
+    "sha256": "9a11910f96e964ce4a410df5f6c1df6d443e3ee3100f5923387d07d7ec75e53c",
+    "specification": {
+      "dataset": "synthetic_32_linear",
+      "length": 32,
+      "rank": 8,
+      "mixtures": 1,
+      "mode": "all_channels",
+      "variance_floor": 0.0025,
+      "code_sha256": "1d67293cd73f90c4b52612654311dc863bcb5c6ffacc968c4507f49296ab4d13",
+      "train_sha256": "7a73d65786e0ced4159b5f9dc41a1fc037c68f56c09868d088666db69cba0ae8"
+    },
+    "training_seconds": 0.48691231200064067,
+    "training_windows": 372,
+    "source_blocks": 12,
+    "missing_training_context": "training-mean fill for parameter fitting, exact observed-context marginal at inference",
+    "development_nll": -11.135337792713264
+  },
+  "supervised": {
+    "depth": 2,
+    "average_precision": 0.9525877283487257,
+    "training_seconds": 0.05886742499569664,
+    "path": "results/graph_flow_v1/models/synthetic_32_linear_supervised.npz",
+    "sha256": "48b63972fc9143487f68cfdc8c2de51d3b0db5eb2a0a04222744106ee34f6c55",
+    "training_fault_cases": 160,
+    "training_candidates": 5120,
+    "features": "target shape, own past contrast, PCA residual and target availability"
+  },
+  "supervised_grid": [
+    {
+      "depth": 2,
+      "average_precision": 0.9525877283487257,
+      "training_seconds": 0.05886742499569664
+    },
+    {
+      "depth": 3,
+      "average_precision": 0.9479683735507959,
+      "training_seconds": 0.07761686600133544
+    }
+  ],
+  "selection": "PCA and classifier use development candidate AP; PPCA ranks and mixture fits use normal development NLL"
+}

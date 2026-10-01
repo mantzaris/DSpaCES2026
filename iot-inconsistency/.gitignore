@@ -38,3 +38,5 @@ results/**/*.tmp
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+/results/graph_flow_v1/.*.lock
+/results/graph_flow_v1/development/*.log

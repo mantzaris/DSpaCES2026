@@ -1,0 +1,467 @@
+{
+  "grid": [
+    {
+      "path": "results/graph_flow_v1/models/ganf_662c09c4f8cbc4c2e977.pt",
+      "sha256": "694a9798a7e422dcb44a7660090729a3ccf85dfe75ea1bde6ac938c17e0f0968",
+      "specification": {
+        "dataset": "skab",
+        "width": 16,
+        "seed": 20261011,
+        "outer": 10,
+        "steps_per_outer": 40,
+        "revision": "bce38333b109f325a403dae9aff4987ae5bd6e1f",
+        "adapter_sha256": "b3158a64dc38521e418d4fffa4c4f7f52d5999f05720346cf3bbb8d32d64f065",
+        "train_sha256": "5f8c0b47257e422d8a0c982ed2f4c3fcbe4617681c0a7218347f34b537336f79"
+      },
+      "development_nll": 0.4442227197730023,
+      "history": [
+        {
+          "outer": 1,
+          "development_nll": 3.1221256256103516,
+          "acyclicity": 0.22857093811035156,
+          "rho": 1.0,
+          "alpha": 0.0
+        },
+        {
+          "outer": 2,
+          "development_nll": 1.5979075846464739,
+          "acyclicity": 0.10047721862792969,
+          "rho": 1.0,
+          "alpha": 0.22857093811035156
+        },
+        {
+          "outer": 3,
+          "development_nll": 0.7345250533974689,
+          "acyclicity": 0.06957054138183594,
+          "rho": 1.0,
+          "alpha": 0.32904815673828125
+        },
+        {
+          "outer": 4,
+          "development_nll": 0.7140613846156908,
+          "acyclicity": 0.028675079345703125,
+          "rho": 10.0,
+          "alpha": 1.0247535705566406
+        },
+        {
+          "outer": 5,
+          "development_nll": 0.6647797719292019,
+          "acyclicity": 0.013672828674316406,
+          "rho": 10.0,
+          "alpha": 1.3115043640136719
+        },
+        {
+          "outer": 6,
+          "development_nll": 0.5255116172458815,
+          "acyclicity": 0.00737762451171875,
+          "rho": 10.0,
+          "alpha": 1.448232650756836
+        },
+        {
+          "outer": 7,
+          "development_nll": 0.5325354596842891,
+          "acyclicity": 0.004322052001953125,
+          "rho": 100.0,
+          "alpha": 2.185995101928711
+        },
+        {
+          "outer": 8,
+          "development_nll": 0.452036712480628,
+          "acyclicity": 0.0013275146484375,
+          "rho": 1000.0,
+          "alpha": 6.508047103881836
+        },
+        {
+          "outer": 9,
+          "development_nll": 0.49446697857068933,
+          "acyclicity": 0.0007343292236328125,
+          "rho": 1000.0,
+          "alpha": 7.835561752319336
+        },
+        {
+          "outer": 10,
+          "development_nll": 0.4442227197730023,
+          "acyclicity": 0.00038242340087890625,
+          "rho": 10000.0,
+          "alpha": 15.178853988647461
+        }
+      ],
+      "training_seconds": 4.645142042078078,
+      "peak_gpu_bytes": 57552896,
+      "parameters": 2674,
+      "selected_outer": 10,
+      "adapter": "Official unchanged model; common data splits; missing losses excluded; same-source diagonal forbidden; last-eight coordinate NLL aggregation; finite augmented-Lagrangian budget"
+    },
+    {
+      "path": "results/graph_flow_v1/models/ganf_a4a0343f1fb2472f1e07.pt",
+      "sha256": "0b87cef8373465c201b442e36519101c3d4ef6dacfd418a2189966987b7bcc9d",
+      "specification": {
+        "dataset": "skab",
+        "width": 32,
+        "seed": 20261011,
+        "outer": 10,
+        "steps_per_outer": 40,
+        "revision": "bce38333b109f325a403dae9aff4987ae5bd6e1f",
+        "adapter_sha256": "b3158a64dc38521e418d4fffa4c4f7f52d5999f05720346cf3bbb8d32d64f065",
+        "train_sha256": "5f8c0b47257e422d8a0c982ed2f4c3fcbe4617681c0a7218347f34b537336f79"
+      },
+      "development_nll": 0.31904838396155316,
+      "history": [
+        {
+          "outer": 1,
+          "development_nll": 2.5590209131655484,
+          "acyclicity": 0.2208423614501953,
+          "rho": 1.0,
+          "alpha": 0.0
+        },
+        {
+          "outer": 2,
+          "development_nll": 0.9693386036416759,
+          "acyclicity": 0.12233352661132812,
+          "rho": 1.0,
+          "alpha": 0.2208423614501953
+        },
+        {
+          "outer": 3,
+          "development_nll": 1.1413128065026326,
+          "acyclicity": 0.07454872131347656,
+          "rho": 10.0,
+          "alpha": 1.4441776275634766
+        },
+        {
+          "outer": 4,
+          "development_nll": 0.8645300761513088,
+          "acyclicity": 0.023511886596679688,
+          "rho": 100.0,
+          "alpha": 8.899049758911133
+        },
+        {
+          "outer": 5,
+          "development_nll": 0.6532289826351664,
+          "acyclicity": 0.010135650634765625,
+          "rho": 100.0,
+          "alpha": 11.250238418579102
+        },
+        {
+          "outer": 6,
+          "development_nll": 0.8213800243709398,
+          "acyclicity": 0.0042877197265625,
+          "rho": 100.0,
+          "alpha": 12.263803482055664
+        },
+        {
+          "outer": 7,
+          "development_nll": 0.31904838396155316,
+          "acyclicity": 0.00081634521484375,
+          "rho": 100.0,
+          "alpha": 12.692575454711914
+        },
+        {
+          "outer": 8,
+          "development_nll": 0.6609016294064729,
+          "acyclicity": 0.0003795623779296875,
+          "rho": 100.0,
+          "alpha": 12.774209976196289
+        },
+        {
+          "outer": 9,
+          "development_nll": 0.5762994082077689,
+          "acyclicity": 0.00011157989501953125,
+          "rho": 100.0,
+          "alpha": 12.812166213989258
+        },
+        {
+          "outer": 10,
+          "development_nll": 0.5920339563618535,
+          "acyclicity": 3.147125244140625e-05,
+          "rho": 100.0,
+          "alpha": 12.823324203491211
+        }
+      ],
+      "training_seconds": 4.824444168712944,
+      "peak_gpu_bytes": 88305664,
+      "parameters": 9890,
+      "selected_outer": 7,
+      "adapter": "Official unchanged model; common data splits; missing losses excluded; same-source diagonal forbidden; last-eight coordinate NLL aggregation; finite augmented-Lagrangian budget"
+    }
+  ],
+  "members": [
+    {
+      "path": "results/graph_flow_v1/models/ganf_a4a0343f1fb2472f1e07.pt",
+      "sha256": "0b87cef8373465c201b442e36519101c3d4ef6dacfd418a2189966987b7bcc9d",
+      "specification": {
+        "dataset": "skab",
+        "width": 32,
+        "seed": 20261011,
+        "outer": 10,
+        "steps_per_outer": 40,
+        "revision": "bce38333b109f325a403dae9aff4987ae5bd6e1f",
+        "adapter_sha256": "b3158a64dc38521e418d4fffa4c4f7f52d5999f05720346cf3bbb8d32d64f065",
+        "train_sha256": "5f8c0b47257e422d8a0c982ed2f4c3fcbe4617681c0a7218347f34b537336f79"
+      },
+      "development_nll": 0.31904838396155316,
+      "history": [
+        {
+          "outer": 1,
+          "development_nll": 2.5590209131655484,
+          "acyclicity": 0.2208423614501953,
+          "rho": 1.0,
+          "alpha": 0.0
+        },
+        {
+          "outer": 2,
+          "development_nll": 0.9693386036416759,
+          "acyclicity": 0.12233352661132812,
+          "rho": 1.0,
+          "alpha": 0.2208423614501953
+        },
+        {
+          "outer": 3,
+          "development_nll": 1.1413128065026326,
+          "acyclicity": 0.07454872131347656,
+          "rho": 10.0,
+          "alpha": 1.4441776275634766
+        },
+        {
+          "outer": 4,
+          "development_nll": 0.8645300761513088,
+          "acyclicity": 0.023511886596679688,
+          "rho": 100.0,
+          "alpha": 8.899049758911133
+        },
+        {
+          "outer": 5,
+          "development_nll": 0.6532289826351664,
+          "acyclicity": 0.010135650634765625,
+          "rho": 100.0,
+          "alpha": 11.250238418579102
+        },
+        {
+          "outer": 6,
+          "development_nll": 0.8213800243709398,
+          "acyclicity": 0.0042877197265625,
+          "rho": 100.0,
+          "alpha": 12.263803482055664
+        },
+        {
+          "outer": 7,
+          "development_nll": 0.31904838396155316,
+          "acyclicity": 0.00081634521484375,
+          "rho": 100.0,
+          "alpha": 12.692575454711914
+        },
+        {
+          "outer": 8,
+          "development_nll": 0.6609016294064729,
+          "acyclicity": 0.0003795623779296875,
+          "rho": 100.0,
+          "alpha": 12.774209976196289
+        },
+        {
+          "outer": 9,
+          "development_nll": 0.5762994082077689,
+          "acyclicity": 0.00011157989501953125,
+          "rho": 100.0,
+          "alpha": 12.812166213989258
+        },
+        {
+          "outer": 10,
+          "development_nll": 0.5920339563618535,
+          "acyclicity": 3.147125244140625e-05,
+          "rho": 100.0,
+          "alpha": 12.823324203491211
+        }
+      ],
+      "training_seconds": 4.824444168712944,
+      "peak_gpu_bytes": 88305664,
+      "parameters": 9890,
+      "selected_outer": 7,
+      "adapter": "Official unchanged model; common data splits; missing losses excluded; same-source diagonal forbidden; last-eight coordinate NLL aggregation; finite augmented-Lagrangian budget"
+    },
+    {
+      "path": "results/graph_flow_v1/models/ganf_529b7e6ede039487a573.pt",
+      "sha256": "cf1bc94fc743ef6a8cdabd36d06783e40c4243b14b4c544899d7868e0fc151ba",
+      "specification": {
+        "dataset": "skab",
+        "width": 32,
+        "seed": 20261022,
+        "outer": 10,
+        "steps_per_outer": 40,
+        "revision": "bce38333b109f325a403dae9aff4987ae5bd6e1f",
+        "adapter_sha256": "b3158a64dc38521e418d4fffa4c4f7f52d5999f05720346cf3bbb8d32d64f065",
+        "train_sha256": "5f8c0b47257e422d8a0c982ed2f4c3fcbe4617681c0a7218347f34b537336f79"
+      },
+      "development_nll": 0.011558325394340183,
+      "history": [
+        {
+          "outer": 1,
+          "development_nll": 2.8378144969110903,
+          "acyclicity": 0.22939491271972656,
+          "rho": 1.0,
+          "alpha": 0.0
+        },
+        {
+          "outer": 2,
+          "development_nll": 1.0806380043859067,
+          "acyclicity": 0.10422325134277344,
+          "rho": 1.0,
+          "alpha": 0.22939491271972656
+        },
+        {
+          "outer": 3,
+          "development_nll": 0.6818355166393778,
+          "acyclicity": 0.08361625671386719,
+          "rho": 1.0,
+          "alpha": 0.3336181640625
+        },
+        {
+          "outer": 4,
+          "development_nll": 0.36966448244841205,
+          "acyclicity": 0.047260284423828125,
+          "rho": 10.0,
+          "alpha": 1.1697807312011719
+        },
+        {
+          "outer": 5,
+          "development_nll": 0.5280484634896984,
+          "acyclicity": 0.021495819091796875,
+          "rho": 100.0,
+          "alpha": 5.895809173583984
+        },
+        {
+          "outer": 6,
+          "development_nll": 0.6593079307804937,
+          "acyclicity": 0.007541656494140625,
+          "rho": 100.0,
+          "alpha": 8.045391082763672
+        },
+        {
+          "outer": 7,
+          "development_nll": 0.2547215378802756,
+          "acyclicity": 0.0032138824462890625,
+          "rho": 100.0,
+          "alpha": 8.799556732177734
+        },
+        {
+          "outer": 8,
+          "development_nll": 0.5840529980866805,
+          "acyclicity": 0.0013275146484375,
+          "rho": 100.0,
+          "alpha": 9.12094497680664
+        },
+        {
+          "outer": 9,
+          "development_nll": 0.011558325394340183,
+          "acyclicity": 0.0005474090576171875,
+          "rho": 100.0,
+          "alpha": 9.25369644165039
+        },
+        {
+          "outer": 10,
+          "development_nll": 0.731130812479102,
+          "acyclicity": 0.00015354156494140625,
+          "rho": 100.0,
+          "alpha": 9.30843734741211
+        }
+      ],
+      "training_seconds": 4.745410088915378,
+      "peak_gpu_bytes": 88305664,
+      "parameters": 9890,
+      "selected_outer": 9,
+      "adapter": "Official unchanged model; common data splits; missing losses excluded; same-source diagonal forbidden; last-eight coordinate NLL aggregation; finite augmented-Lagrangian budget"
+    },
+    {
+      "path": "results/graph_flow_v1/models/ganf_f88c53274f3d39438517.pt",
+      "sha256": "1df4bd605556a23ef467f5c2dd899c1bea1a3d812f1d3b49d5c61b4ead0c3b2d",
+      "specification": {
+        "dataset": "skab",
+        "width": 32,
+        "seed": 20261033,
+        "outer": 10,
+        "steps_per_outer": 40,
+        "revision": "bce38333b109f325a403dae9aff4987ae5bd6e1f",
+        "adapter_sha256": "b3158a64dc38521e418d4fffa4c4f7f52d5999f05720346cf3bbb8d32d64f065",
+        "train_sha256": "5f8c0b47257e422d8a0c982ed2f4c3fcbe4617681c0a7218347f34b537336f79"
+      },
+      "development_nll": 0.2026024694028108,
+      "history": [
+        {
+          "outer": 1,
+          "development_nll": 2.261814366216245,
+          "acyclicity": 0.3633556365966797,
+          "rho": 1.0,
+          "alpha": 0.0
+        },
+        {
+          "outer": 2,
+          "development_nll": 0.4518869026847508,
+          "acyclicity": 0.16247177124023438,
+          "rho": 1.0,
+          "alpha": 0.3633556365966797
+        },
+        {
+          "outer": 3,
+          "development_nll": 0.542925036471823,
+          "acyclicity": 0.12905120849609375,
+          "rho": 1.0,
+          "alpha": 0.5258274078369141
+        },
+        {
+          "outer": 4,
+          "development_nll": 0.7078712297522504,
+          "acyclicity": 0.08465957641601562,
+          "rho": 10.0,
+          "alpha": 1.8163394927978516
+        },
+        {
+          "outer": 5,
+          "development_nll": 0.7483013609181279,
+          "acyclicity": 0.030307769775390625,
+          "rho": 100.0,
+          "alpha": 10.282297134399414
+        },
+        {
+          "outer": 6,
+          "development_nll": 0.46549985719763715,
+          "acyclicity": 0.0099334716796875,
+          "rho": 100.0,
+          "alpha": 13.313074111938477
+        },
+        {
+          "outer": 7,
+          "development_nll": 0.4567077263541844,
+          "acyclicity": 0.0055713653564453125,
+          "rho": 100.0,
+          "alpha": 14.306421279907227
+        },
+        {
+          "outer": 8,
+          "development_nll": 0.6186912474424943,
+          "acyclicity": 0.0015668869018554688,
+          "rho": 1000.0,
+          "alpha": 19.87778663635254
+        },
+        {
+          "outer": 9,
+          "development_nll": 0.2026024694028108,
+          "acyclicity": 0.00032329559326171875,
+          "rho": 1000.0,
+          "alpha": 21.444673538208008
+        },
+        {
+          "outer": 10,
+          "development_nll": 0.2518034395964249,
+          "acyclicity": 0.0001316070556640625,
+          "rho": 1000.0,
+          "alpha": 21.767969131469727
+        }
+      ],
+      "training_seconds": 4.930690650362521,
+      "peak_gpu_bytes": 88305664,
+      "parameters": 9890,
+      "selected_outer": 9,
+      "adapter": "Official unchanged model; common data splits; missing losses excluded; same-source diagonal forbidden; last-eight coordinate NLL aggregation; finite augmented-Lagrangian budget"
+    }
+  ],
+  "selection": "Minimum normal development coordinate NLL"
+}
