@@ -27,9 +27,18 @@ def archive_json(path: Path) -> dict:
     return {'path':str(path),'sha256':digest(path),'compressed_bytes':target.stat().st_size}
 
 
+def finite_median(values) -> float:
+    x=np.asarray(values,dtype=float);x=x[np.isfinite(x)]
+    return float(np.median(x)) if len(x) else float('nan')
+
+
 def event_rows(directory: Path) -> tuple[list,list,list,list]:
     config=read_json(directory/'configuration.json'); events=read_json(directory/'events.json')
-    pred=np.load(directory/'predictions.npz'); cal=np.load(directory/'calibration.npz')
+    # NpzFile indexing decompresses on every access; cache arrays once.
+    with np.load(directory/'predictions.npz') as archive:
+        pred={key:archive[key] for key in archive.files}
+    with np.load(directory/'calibration.npz') as archive:
+        cal={key:archive[key] for key in archive.files}
     status=read_json(directory/'status.json')
     dataset=status['dataset']; seed=status['seed']; times=pred['times'];methods=pred['methods'].tolist()
     interval=120 if dataset=='intel' else 300
@@ -108,12 +117,14 @@ def aggregate(frame: pd.DataFrame, curves: list) -> list:
             'localization_recall':bootstrap_mean(blocks.recall.to_numpy()),
             'detected_iou':float(faults[faults.tp==1].iou.mean()),
             'detected_f1':float(faults[faults.tp==1].f1.mean()),
+            'detected_localization_precision':float(faults[faults.tp==1].precision.mean()),
+            'detected_localization_recall':float(faults[faults.tp==1].recall.mean()),
             'availability':bootstrap_mean(blocks.availability.to_numpy()),
             'missed_event_seed_pairs':int(faults.fn.sum()),
             'background_exceedance':float(controls.scheduled_exceedance.mean()),
             'transition_exceedance':float(transitions.scheduled_exceedance.mean()),
             'background_alerts_per_day':float(controls.fp.sum()/controls.monitoring_seconds.sum()*86400),
-            'median_delay_seconds':float(faults.delay_seconds.median()),
+            'median_delay_seconds':finite_median(faults.delay_seconds),
             'oracle_iou':float(faults.oracle_iou.mean()),
             'observable_event_fraction':float(faults.event_has_valid_scan.mean()),
             'recall_given_any_valid_scan':float(faults[faults.event_has_valid_scan].tp.mean()),
@@ -138,7 +149,7 @@ def paired(frame: pd.DataFrame) -> list:
             left=group[group.method==a];right=group[group.method==b]
             merge=left.merge(right,on=['configuration','seed','event','block'],suffixes=('_a','_b'),validate='one_to_one')
             if not len(merge):continue
-            for metric in ['tp','iou','f1']:
+            for metric in ['tp','iou','f1','participation_iou','direct_iou','combined_iou']:
                 merge['difference']=merge[metric+'_a']-merge[metric+'_b']
                 block=merge.groupby('block').difference.mean().to_numpy()
                 rows.append({'dataset':dataset,'a':a,'b':b,'metric':metric,**bootstrap_mean(block),
@@ -159,9 +170,19 @@ def build(root: Path) -> dict:
         timings=read_json(path/'timings.json')
         ticks=[t for t in timings if t.get('stage')=='complete_test_tick']
         generation=[t['generation_seconds'] for t in timings if 'generation_seconds' in t]
+        single=[];post=[]
+        for tick in ticks:
+            start=read_json(path/'data-lineage.json')['extension_blocks'][tick['base']][0]+tick['time']-119
+            units=[t for t in timings if t.get('split')==3 and t.get('target_start')==start and 'generation_seconds' in t]
+            gen=sum(t['generation_seconds'] for t in units)
+            measure=sum(t['measure_summary_seconds'] for t in units)
+            observation=max(0,tick['seconds']-gen-measure)/tick['events']
+            single.append(gen+measure+observation);post.append(measure+observation)
         cost.append({'configuration':status['dataset'],'seed':status['seed'],'total_seconds':status['elapsed_seconds'],
             'peak_gpu_bytes':status['peak_gpu_bytes'],'shared_tick_median_seconds':np.median([t['seconds'] for t in ticks]),
             'amortized_episode_tick_seconds':np.median([t['seconds']/t['events'] for t in ticks]),
+            'estimated_single_episode_seconds':np.median(single),
+            'estimated_post_observation_seconds':np.median(post),
             'reference_generation_median_seconds':np.median(generation)})
         lineage.append({'configuration':status['dataset'],'seed':status['seed'],**read_json(path/'data-lineage.json')})
         print(path.name,flush=True)
@@ -182,11 +203,13 @@ def build(root: Path) -> dict:
         for (dataset,method,value),group in fault.groupby(['dataset','method',key],observed=True):
             strata.append({'dataset':dataset,'method':method,'stratum':key,'value':str(value),
                 'trials':len(group),'recall':group.tp.mean(),'iou':group.iou.mean(),'availability':group.availability.mean(),
-                'median_delay_seconds':group.delay_seconds.median()})
+                'median_delay_seconds':finite_median(group.delay_seconds)})
     pd.DataFrame(strata).to_csv(out/'strata.csv.gz',index=False,compression='gzip')
     report={'completed_runs':[p.parent.name for p in completed],'expected_runs':15,'complete':len(completed)==15,
-            'independent_primary_datasets':3,'recording_or_simulation_blocks':20,
-            'fault_realizations':360,'source_namespace':'experiments/extension-v2',
+            'independent_primary_datasets':int(frame.dataset.nunique()),
+            'recording_or_simulation_blocks':int(frame.block.nunique()),
+            'fault_realizations':int(len(fault[['configuration','event']].drop_duplicates())),
+            'source_namespace':'experiments/extension-v2',
             'original_namespace':'experiments/full','original_revision':read_json(directory/'original-study.json')['original_revision'],
             'inference':'exploratory paired block bootstrap; no equivalence test; reused Intel background',
             'common_support':'Common feature group/window/channel support within each reference; operational reference contrasts retain model-specific support.'}

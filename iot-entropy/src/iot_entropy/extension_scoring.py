@@ -26,7 +26,7 @@ def combine(*xs: torch.Tensor) -> torch.Tensor:
     return maximum(torch.stack(xs,-1))
 
 
-def extract(samples: torch.Tensor, scan: Scan, config: dict) -> dict:
+def extract(samples: torch.Tensor, scan: Scan, config: dict, include_temporal: bool = True) -> dict:
     if samples.ndim==3: samples=samples[None]
     spatial=scan.extract(samples)
     changes=[]
@@ -36,8 +36,10 @@ def extract(samples: torch.Tensor, scan: Scan, config: dict) -> dict:
         d=f.window//4
         previous=window_features(chosen[:,:,-f.window-d:-d],scan.shrinkage).correlation
         changes.append(current-previous)
-    return {'spatial':spatial,'matrix_changes':changes,
-            'temporal':{w:trajectory(samples,w,config) for w in config['windows']}}
+    result={'spatial':spatial,'matrix_changes':changes}
+    if include_temporal:
+        result['temporal']={w:trajectory(samples,w,config) for w in config['windows']}
+    return result
 
 
 def summaries(generated: dict, floors: dict, config: dict) -> dict:
@@ -85,10 +87,18 @@ def score(observed: dict, generated: dict, summary: dict, scan: Scan,
             'ACF':maximum(a[...,2:5]), 'difference_variance':a[...,5],
             'variance':a[...,6], 'trend':a[...,7], 'predictive_mean':a[...,8], 'CUSUM':a[...,9]}
         signed[w] = z
-    group_temporal = {}
-    for name in sensors[config['windows'][0]]:
-        group_temporal[name] = torch.cat([aggregate(sensors[f.window][name],f.nodes,
-                      fraction,config['minimum_sensor_coverage']) for f in scan.families])
+    temporal_names=list(sensors[config['windows'][0]])
+    matrices={w:torch.stack([sensors[w][name] for name in temporal_names],-1) for w in config['windows']}
+    batches=[]
+    for f in scan.families:
+        # G,m,C,feature -> G,C,feature,m, sharing the sorting/support kernel.
+        x=matrices[f.window][f.nodes].permute(0,2,3,1)
+        valid=torch.isfinite(x);m=f.nodes.shape[1];k=math.ceil(fraction*m)
+        selected=x.masked_fill(~valid,-float('inf')).topk(k,dim=-1).values.mean(-1)
+        enough=valid.sum(-1)>=max(k,math.ceil(config['minimum_sensor_coverage']*m))
+        batches.append(selected.masked_fill(~enough,float('nan')).flatten(0,1))
+    all_groups=torch.cat(batches,0)
+    group_temporal={name:all_groups[:,j] for j,name in enumerate(temporal_names)}
     spatial_z=((observed['spatial'].values[0]-summary['spatial'].center)/summary['spatial'].scale)
     spatial_z=spatial_z.masked_fill(~summary['spatial'].enough,float('nan')).reshape(-1,5,2)
     pair_scores=maximum(spatial_z.abs()).masked_fill(~torch.isfinite(spatial_z).all(-1),float('nan'))

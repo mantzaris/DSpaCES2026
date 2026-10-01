@@ -28,6 +28,15 @@ def test_extension_endpoints_common_support_and_families():
         'temporal':{w:floor_from_development(generated['temporal'][w]['u']) for w in config['windows']}}
     summary=summaries(generated,floors,config)
     scored=score(actual,generated,summary,scan,floors,config,.25)
+    from iot_entropy.extension_scoring import aggregate, maximum
+    for index,key in [(0,'PE'),(1,'SE')]:
+        parts=[]
+        for family in scan.families:
+            ref=summary['temporal'][family.window]
+            z=((actual['temporal'][family.window]['u'][0]-ref['center'])/ref['scale']).masked_fill(~ref['enough'],float('nan'))
+            a=maximum(z.abs()).masked_fill(~torch.isfinite(z).all(-1),float('nan'))
+            parts.append(aggregate(a[...,index],family.nodes,.25,.5))
+        torch.testing.assert_close(scored['groups'][key],torch.cat(parts),atol=1e-6,rtol=1e-6,equal_nan=True)
     names,maxima,available,rank=summarize_scores(scored,scan,12,12)
     assert len(names)==25 and rank.shape==(25,3,12)
     from iot_entropy.localization import participation

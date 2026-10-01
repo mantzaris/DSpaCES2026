@@ -61,6 +61,10 @@ def extension_data(root: Path, name: str, config: dict, device: str) -> tuple[Se
                          'blocks excluded from original primary and six-unit fidelity audit; whole release previously available',
                         'old_test_overlap_rows':overlap,'original_primary_blocks':old,
                         'original_fidelity_intervals':audit, 'bounds':data.bounds})
+        # Expanded audit found a v1 long-window diagnostic spanning these blocks.
+        # This changes the reuse disclosure, not the already frozen selection.
+        lineage['validation_status'] = 'exploratory reused recording backgrounds'
+        lineage['prior_global_diagnostic_overlap'] = True
     lineage['extension_blocks'] = bases
     lineage['split_episodes'] = data.episode_bounds
     return data, bases, lineage
