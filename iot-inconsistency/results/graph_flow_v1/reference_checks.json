@@ -1,0 +1,19 @@
+{
+  "passed_check_groups": 8,
+  "checks": {
+    "analytic_sign_and_values": [
+      -0.8047189562170503,
+      2.7952810437829494
+    ],
+    "monte_carlo_score": 2.795776302556228,
+    "posterior_mean_and_variance": [
+      0.5996542394757681,
+      0.7974601110393431
+    ],
+    "mixture_of_densities": 0.6931471805599453,
+    "unit_change_invariance": 2.795281043782949,
+    "ideal_null_mean_likelihood_ratio": 0.9999999999999993,
+    "log_space_stability": 1.6201145069589984,
+    "invalid_input_rejection": 2
+  }
+}

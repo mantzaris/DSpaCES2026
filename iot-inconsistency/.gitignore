@@ -25,6 +25,11 @@ results/**/*.tmp
 /results/compact/
 /results/pilot/
 /results/audits/job_failures/
+# Graph-flow research keeps training state and full sampling output off Git.
+/results/graph_flow_v1/models/
+/results/graph_flow_v1/raw/
+/results/graph_flow_v1/cache/
+/results/graph_flow_v1/**/*.tmp
 *.log
 *.aux
 *.out

@@ -1,0 +1,163 @@
+[
+  {
+    "name": "ganf",
+    "url": "https://arxiv.org/pdf/2202.07857",
+    "path": "literature/downloads/graph_flow/ganf.pdf",
+    "sha256": "f40c13587070e62b632a3410434f03eb67f4aad350a89868a3f156703c3524b7",
+    "status": "downloaded"
+  },
+  {
+    "name": "mtgflow",
+    "url": "https://arxiv.org/pdf/2208.02108",
+    "path": "literature/downloads/graph_flow/mtgflow.pdf",
+    "sha256": "094a120545966f04d64a1a116761982896cf8c0c7caade87964cfa8bf8e0923d",
+    "status": "downloaded"
+  },
+  {
+    "name": "mtgflow_extended",
+    "url": "https://arxiv.org/pdf/2312.11549",
+    "path": "literature/downloads/graph_flow/mtgflow_extended.pdf",
+    "sha256": "4614f0efec354c52a336688fbf8a17460dd2af848ec17b2274743d89bdfb8b91",
+    "status": "downloaded"
+  },
+  {
+    "name": "likelihood_ratios",
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2019/file/1e79596878b2320cac26dd792a6c51c9-Paper.pdf",
+    "path": "literature/downloads/graph_flow/likelihood_ratios.pdf",
+    "sha256": "343d67588bd81f50b81ab3aec4818d7f769600896a8db740eccc790363e5aa44",
+    "status": "downloaded"
+  },
+  {
+    "name": "csdi",
+    "url": "https://arxiv.org/pdf/2107.03502",
+    "path": "literature/downloads/graph_flow/csdi.pdf",
+    "sha256": "4d5e4402b98af8cb60a77a6fd3cd942d98b6314776b709d425cd87233ff3c809",
+    "status": "downloaded"
+  },
+  {
+    "name": "pristi",
+    "url": "https://arxiv.org/pdf/2302.09746",
+    "path": "literature/downloads/graph_flow/pristi.pdf",
+    "sha256": "1946ab822e7b28f795eddb7d1a4a7fcc5b2d511eaf3410c661c8d350a6b81ace",
+    "status": "downloaded"
+  },
+  {
+    "name": "imdiffusion",
+    "url": "https://arxiv.org/pdf/2307.00754",
+    "path": "literature/downloads/graph_flow/imdiffusion.pdf",
+    "sha256": "c812af3f933870aefc7458d3a9d17ea02fc8319151182adc6d7d9a7c1620d01d",
+    "status": "downloaded"
+  },
+  {
+    "name": "GANF code",
+    "revision": "bce38333b109f325a403dae9aff4987ae5bd6e1f",
+    "path": "literature/upstream/GANF/README.md",
+    "url": "https://raw.githubusercontent.com/EnyanDai/GANF/bce38333b109f325a403dae9aff4987ae5bd6e1f/README.md",
+    "sha256": "5216bbd8f5a685ae65652d2e2bc4ef01e5e245e84f14b33ac9d28e8e643f1f98",
+    "status": "downloaded"
+  },
+  {
+    "name": "GANF code",
+    "revision": "bce38333b109f325a403dae9aff4987ae5bd6e1f",
+    "path": "literature/upstream/GANF/dataset.py",
+    "url": "https://raw.githubusercontent.com/EnyanDai/GANF/bce38333b109f325a403dae9aff4987ae5bd6e1f/dataset.py",
+    "sha256": "959e0a42cb6c7808075df9aaa0d915dfe01eb96516b20ef3c178616d77959883",
+    "status": "downloaded"
+  },
+  {
+    "name": "GANF code",
+    "revision": "bce38333b109f325a403dae9aff4987ae5bd6e1f",
+    "path": "literature/upstream/GANF/eval_water.py",
+    "url": "https://raw.githubusercontent.com/EnyanDai/GANF/bce38333b109f325a403dae9aff4987ae5bd6e1f/eval_water.py",
+    "sha256": "b509cdbaaad75f782ea37b7ba4b9c9543f4583e1d0898d71e94b5f4205303230",
+    "status": "downloaded"
+  },
+  {
+    "name": "GANF code",
+    "revision": "bce38333b109f325a403dae9aff4987ae5bd6e1f",
+    "path": "literature/upstream/GANF/example_baseline/train_SVDD_water.py",
+    "url": "https://raw.githubusercontent.com/EnyanDai/GANF/bce38333b109f325a403dae9aff4987ae5bd6e1f/example_baseline/train_SVDD_water.py",
+    "sha256": "681198be13ff63963e1af55921924477bd150c5c27dce59fe6c51a66ecc1b8bd",
+    "status": "downloaded"
+  },
+  {
+    "name": "GANF code",
+    "revision": "bce38333b109f325a403dae9aff4987ae5bd6e1f",
+    "path": "literature/upstream/GANF/models/DROCC.py",
+    "url": "https://raw.githubusercontent.com/EnyanDai/GANF/bce38333b109f325a403dae9aff4987ae5bd6e1f/models/DROCC.py",
+    "sha256": "3eb6e3da51eaad85d175677c1c4976a7f8026ced0e4d50093aa92f0fe0064ecb",
+    "status": "downloaded"
+  },
+  {
+    "name": "GANF code",
+    "revision": "bce38333b109f325a403dae9aff4987ae5bd6e1f",
+    "path": "literature/upstream/GANF/models/DeepSAD.py",
+    "url": "https://raw.githubusercontent.com/EnyanDai/GANF/bce38333b109f325a403dae9aff4987ae5bd6e1f/models/DeepSAD.py",
+    "sha256": "38545aea3f01bb592fc10de1988b180712b7b577e797ad4b0ba6d8e67c29f4c8",
+    "status": "downloaded"
+  },
+  {
+    "name": "GANF code",
+    "revision": "bce38333b109f325a403dae9aff4987ae5bd6e1f",
+    "path": "literature/upstream/GANF/models/GAN.py",
+    "url": "https://raw.githubusercontent.com/EnyanDai/GANF/bce38333b109f325a403dae9aff4987ae5bd6e1f/models/GAN.py",
+    "sha256": "622138ec13f357c84d2a28c2d8606b3ee9986e5280152f72448ee0becfb69264",
+    "status": "downloaded"
+  },
+  {
+    "name": "GANF code",
+    "revision": "bce38333b109f325a403dae9aff4987ae5bd6e1f",
+    "path": "literature/upstream/GANF/models/GANF.py",
+    "url": "https://raw.githubusercontent.com/EnyanDai/GANF/bce38333b109f325a403dae9aff4987ae5bd6e1f/models/GANF.py",
+    "sha256": "2d891bdc707ebfdabe9561224f82bf9a739b4eed89d29469ffbd0e4d5de21cd7",
+    "status": "downloaded"
+  },
+  {
+    "name": "GANF code",
+    "revision": "bce38333b109f325a403dae9aff4987ae5bd6e1f",
+    "path": "literature/upstream/GANF/models/NF.py",
+    "url": "https://raw.githubusercontent.com/EnyanDai/GANF/bce38333b109f325a403dae9aff4987ae5bd6e1f/models/NF.py",
+    "sha256": "f2d7513d5825e8ec4499b714c4dd188324de16bf9cc64924f2656ac575624a19",
+    "status": "downloaded"
+  },
+  {
+    "name": "GANF code",
+    "revision": "bce38333b109f325a403dae9aff4987ae5bd6e1f",
+    "path": "literature/upstream/GANF/models/RNN.py",
+    "url": "https://raw.githubusercontent.com/EnyanDai/GANF/bce38333b109f325a403dae9aff4987ae5bd6e1f/models/RNN.py",
+    "sha256": "d3a183db956da35f5e819885d025d29f3b708c534f120c023702ac22c1023ea4",
+    "status": "downloaded"
+  },
+  {
+    "name": "GANF code",
+    "revision": "bce38333b109f325a403dae9aff4987ae5bd6e1f",
+    "path": "literature/upstream/GANF/models/graph_layer.py",
+    "url": "https://raw.githubusercontent.com/EnyanDai/GANF/bce38333b109f325a403dae9aff4987ae5bd6e1f/models/graph_layer.py",
+    "sha256": "93d1d94ae62f123ba840a2cdb778cb482c30a18b1f81cf028778d1373b2a2cdd",
+    "status": "downloaded"
+  },
+  {
+    "name": "GANF code",
+    "revision": "bce38333b109f325a403dae9aff4987ae5bd6e1f",
+    "path": "literature/upstream/GANF/train_traffic.py",
+    "url": "https://raw.githubusercontent.com/EnyanDai/GANF/bce38333b109f325a403dae9aff4987ae5bd6e1f/train_traffic.py",
+    "sha256": "ec5eaf3202dac234dc465260e8a0d2b84af3a6ad286f38ec4a36aefdced6eb14",
+    "status": "downloaded"
+  },
+  {
+    "name": "GANF code",
+    "revision": "bce38333b109f325a403dae9aff4987ae5bd6e1f",
+    "path": "literature/upstream/GANF/train_water.py",
+    "url": "https://raw.githubusercontent.com/EnyanDai/GANF/bce38333b109f325a403dae9aff4987ae5bd6e1f/train_water.py",
+    "sha256": "8a585211c50e9966b7cb0ccfbf1032aa1cca8ba1a3fbfbae80f9d5f8d399241a",
+    "status": "downloaded"
+  },
+  {
+    "name": "GANF code",
+    "revision": "bce38333b109f325a403dae9aff4987ae5bd6e1f",
+    "path": "literature/upstream/GANF/utils.py",
+    "url": "https://raw.githubusercontent.com/EnyanDai/GANF/bce38333b109f325a403dae9aff4987ae5bd6e1f/utils.py",
+    "sha256": "55ca16669fcaf113ddf49e3073f8c54d237403293501251f8813a3c24ce7a39f",
+    "status": "downloaded"
+  }
+]

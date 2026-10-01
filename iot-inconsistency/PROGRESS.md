@@ -1,4 +1,22 @@
-# Completed research artifact
+# Graph-flow revision in progress
+
+Updated 2026-10-01 UTC. The new authorized study is under `results/graph_flow_v1/`. Work remains on `main`, with local commits only. Unrelated `iot-entropy` modifications are present and are not part of this task.
+
+The live repository and GPU workflow were inspected. The authorized RTX PRO 4500 is reachable. The old study is preserved by hashes in `results/graph_flow_v1/legacy.json` and the exact paper archive `paper/legacy/witness_20260930.tar.xz`. Existing result files and evidence bundles remain immutable. The current main paper still describes the legacy study until the new experiments are complete.
+
+The eight scalar reference groups passed. Ten new CPU tests passed for inverse/Jacobian consistency, masking and copies, density normalization, mixture arithmetic, Gaussian integration/posterior moments, unit changes, weighted CRPS and wrong-target damage. Neural graph-conditioned flow and corruption/repair kernels are implemented. GPU model training, development selection, final scoring, production audits, new graph exports and manuscript revision are still pending.
+
+The finite pre-evaluation protocol is in `docs/graph_flow_protocol.md` and `configs/graph_flow_v1.json`. No new final test has been scored. Real environments have prior project exposure. Fresh synthetic final trajectories will be generated; training/development/calibration retain the original observations so the legacy comparator receives the same training data.
+
+Current local verification
+
+```bash
+python3 reference/reference_graph_flow.py
+OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 python3 -m pytest tests/test_graph_flow.py -q
+bash scripts/runpod.sh status
+```
+
+## Preserved legacy completion record
 
 Updated 2026-09-30. Work is on `main`. The user will perform the final push. No branch, paper submission or new paid resource was created.
 
