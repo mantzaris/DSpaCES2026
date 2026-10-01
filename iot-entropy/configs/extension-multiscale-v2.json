@@ -1,0 +1,18 @@
+{
+  "study": "exploratory-calibrated-multiscale-v2",
+  "parent_protocol_revision": "18b9c4a7",
+  "datasets": ["synthetic64", "synthetic128", "synthetic256", "intel", "pems"],
+  "seed": 17,
+  "physical_window": 96,
+  "physical_change_lag": 24,
+  "scales": [1, 2],
+  "references": ["bootstrap", "diffusion"],
+  "families": ["S", "PE", "SE", "T", "ST", "SB", "TB", "B", "BST"],
+  "generated_samples": 64,
+  "minimum_reference_samples": 52,
+  "alpha": 0.1,
+  "bootstrap_repetitions": 1000,
+  "bootstrap_seed": 204791,
+  "cumulative_gpu_hour_limit": 8.0,
+  "stage_hour_limit": 0.5
+}

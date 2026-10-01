@@ -1,0 +1,7 @@
+{
+  "gpu_hour_budget": 8.0,
+  "authorization": "User explicitly replied: up to 8 hours total",
+  "scope": "Cumulative experiment-stage time on the existing Pod; no infrastructure provisioning or billing changes",
+  "supersedes_hours": 4.0,
+  "original_stop_ledger": "window-attempt-0.json"
+}
