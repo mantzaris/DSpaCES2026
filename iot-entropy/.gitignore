@@ -22,6 +22,9 @@ dashboard/data/
 dashboard/validation/*.png
 manuscript/figures/*.png
 manuscript/figures-v2/*.png
+results/extension-v2/event-pr-curves.json
+results/extension-v2/summary.json
+results/extension-v2/paired.json
 manuscript/vendor/*.zip
 *.aux
 *.bbl
@@ -105,3 +108,19 @@ manuscript/vendor/*.zip
 /results/fidelity-extra.json
 /results/retrospective_budgets.json
 /results/summary.json
+results/extension-v2/reference-fidelity.csv
+results/extension-v2/retrospective-operating-points.csv
+results/extension-v2/calibration.csv
+
+# Original CSV outputs retained byte-for-byte in lossless storage archives.
+/results/ablations.csv
+/results/calibration_diagnostics.csv
+/results/delay_with_computation.csv
+/results/fidelity.csv
+/results/group_window_ablations.csv
+/results/method_comparison.csv
+/results/retrospective_operating_curves.csv
+/results/runtime.csv
+/results/sample_count_metrics.csv
+/results/stratified_metrics.csv
+/results/topology_metrics.csv

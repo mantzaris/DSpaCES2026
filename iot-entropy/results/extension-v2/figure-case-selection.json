@@ -1,0 +1,29 @@
+{
+  "event": {
+    "affected_components": 1,
+    "base": 0,
+    "base_start": 58592,
+    "base_stop": 58904,
+    "duration": 12,
+    "extension": true,
+    "id": "copy-000",
+    "is_fault": true,
+    "kind": "copy",
+    "nodes": [
+      4,
+      8,
+      25,
+      31,
+      39,
+      57
+    ],
+    "onset": 192,
+    "oracle_group_iou": 0.285714,
+    "partly_disconnected": false,
+    "seed": 97100,
+    "severity": 0.6
+  },
+  "group_index": 90,
+  "rule": "First prespecified copy event, first affected sensor; best-overlap group uses injection labels for illustration only.",
+  "sensor_index": 4
+}

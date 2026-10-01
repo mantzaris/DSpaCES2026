@@ -1,0 +1,10 @@
+\begin{table*}[t]\centering\small
+\caption{Paired fidelity on unchanged backgrounds: seed 17, first two blocks, decisions 167/263. References share evaluated raw coordinates or eligible feature units; donor masks can still change per-draw support. Raw, H, PE, SE: 90\% coverage; TV: ordinal-pattern total variation; ES: normalized energy score (lower is better). Temporal entries use W=96. Means omit undefined units; counts and widths are saved.}\label{tab:fidelity}
+\begin{tabular}{llrrrrrrrr}\toprule Dataset&Reference&Raw&H&PE&SE&ACF1 MAE&Ordinal TV&R RMSE&ES\\\midrule
+Synthetic & Block & 0.875 & 0.812 & 0.855 & 0.858 & 0.034 & 0.081 & 0.236 & 0.578 \\
+Synthetic & Diffusion & 0.803 & 0.513 & 0.429 & 0.222 & 0.047 & 0.150 & 0.313 & 1.747 \\
+Intel Lab & Block & 0.616 & 1.000 & 0.887 & 0.953 & 0.013 & 0.378 & 0.467 & 7.234 \\
+Intel Lab & Diffusion & 0.714 & 0.083 & 0.214 & 0.000 & 0.114 & 0.406 & 0.525 & 6.336 \\
+PEMS-BAY & Block & 0.847 & 0.819 & 0.873 & 0.862 & 0.121 & 0.094 & 0.288 & 1.501 \\
+PEMS-BAY & Diffusion & 0.739 & 0.494 & 0.699 & 0.430 & 0.163 & 0.118 & 0.360 & 2.055 \\
+\bottomrule\end{tabular}\end{table*}

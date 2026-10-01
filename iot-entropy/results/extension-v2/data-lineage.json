@@ -1,0 +1,7682 @@
+[
+  {
+    "audit_amendment": "docs/extension-audit-amendment.md",
+    "background_status": "reused inspected real recordings",
+    "bounds": [
+      0,
+      10782,
+      13477,
+      15274,
+      17970
+    ],
+    "configuration": "intel",
+    "extension_blocks": [
+      [
+        15274,
+        15586
+      ],
+      [
+        15586,
+        15898
+      ],
+      [
+        15898,
+        16210
+      ],
+      [
+        16210,
+        16522
+      ]
+    ],
+    "interval_seconds": 120,
+    "old_test_overlap_rows": 1248,
+    "original_fidelity_intervals": [
+      [
+        15274,
+        15442
+      ],
+      [
+        15442,
+        15610
+      ],
+      [
+        15610,
+        15778
+      ],
+      [
+        15778,
+        15946
+      ],
+      [
+        15946,
+        16114
+      ],
+      [
+        16114,
+        16282
+      ]
+    ],
+    "original_primary_blocks": [
+      [
+        15274,
+        15586
+      ],
+      [
+        15586,
+        15898
+      ],
+      [
+        15898,
+        16210
+      ],
+      [
+        16210,
+        16522
+      ],
+      [
+        16522,
+        16834
+      ],
+      [
+        16834,
+        17146
+      ],
+      [
+        17146,
+        17458
+      ],
+      [
+        17458,
+        17770
+      ]
+    ],
+    "primary_channels": [
+      "temperature",
+      "humidity"
+    ],
+    "prior_global_diagnostic_overlap": true,
+    "seed": 17,
+    "source_processed_sha256": "b68fb7e9fe6f2fa2c64a48e2cd92d8c641cd3d0cc741f62b7e6c9678848559aa",
+    "split_episodes": [
+      [
+        0,
+        10782,
+        0
+      ],
+      [
+        10782,
+        13477,
+        1
+      ],
+      [
+        13477,
+        15274,
+        2
+      ],
+      [
+        15274,
+        17970,
+        3
+      ]
+    ],
+    "training_scaling_reused": true,
+    "units": [
+      "degC",
+      "percent RH"
+    ],
+    "validation_status": "exploratory reused recording backgrounds"
+  },
+  {
+    "audit_amendment": "docs/extension-audit-amendment.md",
+    "background_status": "reused inspected real recordings",
+    "bounds": [
+      0,
+      10782,
+      13477,
+      15274,
+      17970
+    ],
+    "configuration": "intel",
+    "extension_blocks": [
+      [
+        15274,
+        15586
+      ],
+      [
+        15586,
+        15898
+      ],
+      [
+        15898,
+        16210
+      ],
+      [
+        16210,
+        16522
+      ]
+    ],
+    "interval_seconds": 120,
+    "old_test_overlap_rows": 1248,
+    "original_fidelity_intervals": [
+      [
+        15274,
+        15442
+      ],
+      [
+        15442,
+        15610
+      ],
+      [
+        15610,
+        15778
+      ],
+      [
+        15778,
+        15946
+      ],
+      [
+        15946,
+        16114
+      ],
+      [
+        16114,
+        16282
+      ]
+    ],
+    "original_primary_blocks": [
+      [
+        15274,
+        15586
+      ],
+      [
+        15586,
+        15898
+      ],
+      [
+        15898,
+        16210
+      ],
+      [
+        16210,
+        16522
+      ],
+      [
+        16522,
+        16834
+      ],
+      [
+        16834,
+        17146
+      ],
+      [
+        17146,
+        17458
+      ],
+      [
+        17458,
+        17770
+      ]
+    ],
+    "primary_channels": [
+      "temperature",
+      "humidity"
+    ],
+    "prior_global_diagnostic_overlap": true,
+    "seed": 29,
+    "source_processed_sha256": "b68fb7e9fe6f2fa2c64a48e2cd92d8c641cd3d0cc741f62b7e6c9678848559aa",
+    "split_episodes": [
+      [
+        0,
+        10782,
+        0
+      ],
+      [
+        10782,
+        13477,
+        1
+      ],
+      [
+        13477,
+        15274,
+        2
+      ],
+      [
+        15274,
+        17970,
+        3
+      ]
+    ],
+    "training_scaling_reused": true,
+    "units": [
+      "degC",
+      "percent RH"
+    ],
+    "validation_status": "exploratory reused recording backgrounds"
+  },
+  {
+    "audit_amendment": "docs/extension-audit-amendment.md",
+    "background_status": "reused inspected real recordings",
+    "bounds": [
+      0,
+      10782,
+      13477,
+      15274,
+      17970
+    ],
+    "configuration": "intel",
+    "extension_blocks": [
+      [
+        15274,
+        15586
+      ],
+      [
+        15586,
+        15898
+      ],
+      [
+        15898,
+        16210
+      ],
+      [
+        16210,
+        16522
+      ]
+    ],
+    "interval_seconds": 120,
+    "old_test_overlap_rows": 1248,
+    "original_fidelity_intervals": [
+      [
+        15274,
+        15442
+      ],
+      [
+        15442,
+        15610
+      ],
+      [
+        15610,
+        15778
+      ],
+      [
+        15778,
+        15946
+      ],
+      [
+        15946,
+        16114
+      ],
+      [
+        16114,
+        16282
+      ]
+    ],
+    "original_primary_blocks": [
+      [
+        15274,
+        15586
+      ],
+      [
+        15586,
+        15898
+      ],
+      [
+        15898,
+        16210
+      ],
+      [
+        16210,
+        16522
+      ],
+      [
+        16522,
+        16834
+      ],
+      [
+        16834,
+        17146
+      ],
+      [
+        17146,
+        17458
+      ],
+      [
+        17458,
+        17770
+      ]
+    ],
+    "primary_channels": [
+      "temperature",
+      "humidity"
+    ],
+    "prior_global_diagnostic_overlap": true,
+    "seed": 43,
+    "source_processed_sha256": "b68fb7e9fe6f2fa2c64a48e2cd92d8c641cd3d0cc741f62b7e6c9678848559aa",
+    "split_episodes": [
+      [
+        0,
+        10782,
+        0
+      ],
+      [
+        10782,
+        13477,
+        1
+      ],
+      [
+        13477,
+        15274,
+        2
+      ],
+      [
+        15274,
+        17970,
+        3
+      ]
+    ],
+    "training_scaling_reused": true,
+    "units": [
+      "degC",
+      "percent RH"
+    ],
+    "validation_status": "exploratory reused recording backgrounds"
+  },
+  {
+    "audit_amendment": "docs/extension-audit-amendment.md",
+    "background_status": "blocks excluded from original primary and six-unit fidelity audit; whole release previously available",
+    "bounds": [
+      0,
+      31276,
+      39096,
+      44308,
+      52128
+    ],
+    "configuration": "pems",
+    "extension_blocks": [
+      [
+        45868,
+        46180
+      ],
+      [
+        46492,
+        46804
+      ],
+      [
+        47116,
+        47428
+      ],
+      [
+        47740,
+        48052
+      ]
+    ],
+    "interval_seconds": 300,
+    "old_test_overlap_rows": 0,
+    "original_fidelity_intervals": [
+      [
+        44308,
+        44476
+      ],
+      [
+        44476,
+        44644
+      ],
+      [
+        44644,
+        44812
+      ],
+      [
+        44812,
+        44980
+      ],
+      [
+        44980,
+        45148
+      ],
+      [
+        45148,
+        45316
+      ]
+    ],
+    "original_primary_blocks": [
+      [
+        44308,
+        44620
+      ],
+      [
+        44932,
+        45244
+      ],
+      [
+        45556,
+        45868
+      ],
+      [
+        46180,
+        46492
+      ],
+      [
+        46804,
+        47116
+      ],
+      [
+        47428,
+        47740
+      ],
+      [
+        48364,
+        48676
+      ],
+      [
+        48988,
+        49300
+      ],
+      [
+        49612,
+        49924
+      ],
+      [
+        50236,
+        50548
+      ],
+      [
+        50860,
+        51172
+      ],
+      [
+        51796,
+        52108
+      ]
+    ],
+    "primary_channels": [
+      "speed"
+    ],
+    "prior_global_diagnostic_overlap": true,
+    "seed": 17,
+    "source_processed_sha256": "bc51433e2f80c74766c65cee21f5dd50005fadda19e82de7ac6e6dd287f7c306",
+    "split_episodes": [
+      [
+        0,
+        31276,
+        0
+      ],
+      [
+        31276,
+        39096,
+        1
+      ],
+      [
+        39096,
+        44308,
+        2
+      ],
+      [
+        44308,
+        52128,
+        3
+      ]
+    ],
+    "training_scaling_reused": true,
+    "units": [
+      "mph"
+    ],
+    "validation_status": "exploratory reused recording backgrounds"
+  },
+  {
+    "audit_amendment": "docs/extension-audit-amendment.md",
+    "background_status": "blocks excluded from original primary and six-unit fidelity audit; whole release previously available",
+    "bounds": [
+      0,
+      31276,
+      39096,
+      44308,
+      52128
+    ],
+    "configuration": "pems",
+    "extension_blocks": [
+      [
+        45868,
+        46180
+      ],
+      [
+        46492,
+        46804
+      ],
+      [
+        47116,
+        47428
+      ],
+      [
+        47740,
+        48052
+      ]
+    ],
+    "interval_seconds": 300,
+    "old_test_overlap_rows": 0,
+    "original_fidelity_intervals": [
+      [
+        44308,
+        44476
+      ],
+      [
+        44476,
+        44644
+      ],
+      [
+        44644,
+        44812
+      ],
+      [
+        44812,
+        44980
+      ],
+      [
+        44980,
+        45148
+      ],
+      [
+        45148,
+        45316
+      ]
+    ],
+    "original_primary_blocks": [
+      [
+        44308,
+        44620
+      ],
+      [
+        44932,
+        45244
+      ],
+      [
+        45556,
+        45868
+      ],
+      [
+        46180,
+        46492
+      ],
+      [
+        46804,
+        47116
+      ],
+      [
+        47428,
+        47740
+      ],
+      [
+        48364,
+        48676
+      ],
+      [
+        48988,
+        49300
+      ],
+      [
+        49612,
+        49924
+      ],
+      [
+        50236,
+        50548
+      ],
+      [
+        50860,
+        51172
+      ],
+      [
+        51796,
+        52108
+      ]
+    ],
+    "primary_channels": [
+      "speed"
+    ],
+    "prior_global_diagnostic_overlap": true,
+    "seed": 29,
+    "source_processed_sha256": "bc51433e2f80c74766c65cee21f5dd50005fadda19e82de7ac6e6dd287f7c306",
+    "split_episodes": [
+      [
+        0,
+        31276,
+        0
+      ],
+      [
+        31276,
+        39096,
+        1
+      ],
+      [
+        39096,
+        44308,
+        2
+      ],
+      [
+        44308,
+        52128,
+        3
+      ]
+    ],
+    "training_scaling_reused": true,
+    "units": [
+      "mph"
+    ],
+    "validation_status": "exploratory reused recording backgrounds"
+  },
+  {
+    "audit_amendment": "docs/extension-audit-amendment.md",
+    "background_status": "blocks excluded from original primary and six-unit fidelity audit; whole release previously available",
+    "bounds": [
+      0,
+      31276,
+      39096,
+      44308,
+      52128
+    ],
+    "configuration": "pems",
+    "extension_blocks": [
+      [
+        45868,
+        46180
+      ],
+      [
+        46492,
+        46804
+      ],
+      [
+        47116,
+        47428
+      ],
+      [
+        47740,
+        48052
+      ]
+    ],
+    "interval_seconds": 300,
+    "old_test_overlap_rows": 0,
+    "original_fidelity_intervals": [
+      [
+        44308,
+        44476
+      ],
+      [
+        44476,
+        44644
+      ],
+      [
+        44644,
+        44812
+      ],
+      [
+        44812,
+        44980
+      ],
+      [
+        44980,
+        45148
+      ],
+      [
+        45148,
+        45316
+      ]
+    ],
+    "original_primary_blocks": [
+      [
+        44308,
+        44620
+      ],
+      [
+        44932,
+        45244
+      ],
+      [
+        45556,
+        45868
+      ],
+      [
+        46180,
+        46492
+      ],
+      [
+        46804,
+        47116
+      ],
+      [
+        47428,
+        47740
+      ],
+      [
+        48364,
+        48676
+      ],
+      [
+        48988,
+        49300
+      ],
+      [
+        49612,
+        49924
+      ],
+      [
+        50236,
+        50548
+      ],
+      [
+        50860,
+        51172
+      ],
+      [
+        51796,
+        52108
+      ]
+    ],
+    "primary_channels": [
+      "speed"
+    ],
+    "prior_global_diagnostic_overlap": true,
+    "seed": 43,
+    "source_processed_sha256": "bc51433e2f80c74766c65cee21f5dd50005fadda19e82de7ac6e6dd287f7c306",
+    "split_episodes": [
+      [
+        0,
+        31276,
+        0
+      ],
+      [
+        31276,
+        39096,
+        1
+      ],
+      [
+        39096,
+        44308,
+        2
+      ],
+      [
+        44308,
+        52128,
+        3
+      ]
+    ],
+    "training_scaling_reused": true,
+    "units": [
+      "mph"
+    ],
+    "validation_status": "exploratory reused recording backgrounds"
+  },
+  {
+    "background_status": "independent new synthetic seeds",
+    "bounds": [
+      0,
+      49152,
+      50400,
+      58592,
+      59840
+    ],
+    "configuration": "synthetic128",
+    "extension_blocks": [
+      [
+        58592,
+        58904
+      ],
+      [
+        58904,
+        59216
+      ],
+      [
+        59216,
+        59528
+      ],
+      [
+        59528,
+        59840
+      ]
+    ],
+    "interval_seconds": 300,
+    "old_test_overlap_rows": 0,
+    "primary_channels": [
+      "signal"
+    ],
+    "seed": 17,
+    "seeds": [
+      {
+        "episode": 0,
+        "seed": 9128100,
+        "split": 1,
+        "start": 49152,
+        "stop": 49464
+      },
+      {
+        "episode": 1,
+        "seed": 9128101,
+        "split": 1,
+        "start": 49464,
+        "stop": 49776
+      },
+      {
+        "episode": 2,
+        "seed": 9128102,
+        "split": 1,
+        "start": 49776,
+        "stop": 50088
+      },
+      {
+        "episode": 3,
+        "seed": 9128103,
+        "split": 1,
+        "start": 50088,
+        "stop": 50400
+      },
+      {
+        "episode": 0,
+        "seed": 9128200,
+        "split": 2,
+        "start": 50400,
+        "stop": 50656
+      },
+      {
+        "episode": 1,
+        "seed": 9128201,
+        "split": 2,
+        "start": 50656,
+        "stop": 50912
+      },
+      {
+        "episode": 2,
+        "seed": 9128202,
+        "split": 2,
+        "start": 50912,
+        "stop": 51168
+      },
+      {
+        "episode": 3,
+        "seed": 9128203,
+        "split": 2,
+        "start": 51168,
+        "stop": 51424
+      },
+      {
+        "episode": 4,
+        "seed": 9128204,
+        "split": 2,
+        "start": 51424,
+        "stop": 51680
+      },
+      {
+        "episode": 5,
+        "seed": 9128205,
+        "split": 2,
+        "start": 51680,
+        "stop": 51936
+      },
+      {
+        "episode": 6,
+        "seed": 9128206,
+        "split": 2,
+        "start": 51936,
+        "stop": 52192
+      },
+      {
+        "episode": 7,
+        "seed": 9128207,
+        "split": 2,
+        "start": 52192,
+        "stop": 52448
+      },
+      {
+        "episode": 8,
+        "seed": 9128208,
+        "split": 2,
+        "start": 52448,
+        "stop": 52704
+      },
+      {
+        "episode": 9,
+        "seed": 9128209,
+        "split": 2,
+        "start": 52704,
+        "stop": 52960
+      },
+      {
+        "episode": 10,
+        "seed": 9128210,
+        "split": 2,
+        "start": 52960,
+        "stop": 53216
+      },
+      {
+        "episode": 11,
+        "seed": 9128211,
+        "split": 2,
+        "start": 53216,
+        "stop": 53472
+      },
+      {
+        "episode": 12,
+        "seed": 9128212,
+        "split": 2,
+        "start": 53472,
+        "stop": 53728
+      },
+      {
+        "episode": 13,
+        "seed": 9128213,
+        "split": 2,
+        "start": 53728,
+        "stop": 53984
+      },
+      {
+        "episode": 14,
+        "seed": 9128214,
+        "split": 2,
+        "start": 53984,
+        "stop": 54240
+      },
+      {
+        "episode": 15,
+        "seed": 9128215,
+        "split": 2,
+        "start": 54240,
+        "stop": 54496
+      },
+      {
+        "episode": 16,
+        "seed": 9128216,
+        "split": 2,
+        "start": 54496,
+        "stop": 54752
+      },
+      {
+        "episode": 17,
+        "seed": 9128217,
+        "split": 2,
+        "start": 54752,
+        "stop": 55008
+      },
+      {
+        "episode": 18,
+        "seed": 9128218,
+        "split": 2,
+        "start": 55008,
+        "stop": 55264
+      },
+      {
+        "episode": 19,
+        "seed": 9128219,
+        "split": 2,
+        "start": 55264,
+        "stop": 55520
+      },
+      {
+        "episode": 20,
+        "seed": 9128220,
+        "split": 2,
+        "start": 55520,
+        "stop": 55776
+      },
+      {
+        "episode": 21,
+        "seed": 9128221,
+        "split": 2,
+        "start": 55776,
+        "stop": 56032
+      },
+      {
+        "episode": 22,
+        "seed": 9128222,
+        "split": 2,
+        "start": 56032,
+        "stop": 56288
+      },
+      {
+        "episode": 23,
+        "seed": 9128223,
+        "split": 2,
+        "start": 56288,
+        "stop": 56544
+      },
+      {
+        "episode": 24,
+        "seed": 9128224,
+        "split": 2,
+        "start": 56544,
+        "stop": 56800
+      },
+      {
+        "episode": 25,
+        "seed": 9128225,
+        "split": 2,
+        "start": 56800,
+        "stop": 57056
+      },
+      {
+        "episode": 26,
+        "seed": 9128226,
+        "split": 2,
+        "start": 57056,
+        "stop": 57312
+      },
+      {
+        "episode": 27,
+        "seed": 9128227,
+        "split": 2,
+        "start": 57312,
+        "stop": 57568
+      },
+      {
+        "episode": 28,
+        "seed": 9128228,
+        "split": 2,
+        "start": 57568,
+        "stop": 57824
+      },
+      {
+        "episode": 29,
+        "seed": 9128229,
+        "split": 2,
+        "start": 57824,
+        "stop": 58080
+      },
+      {
+        "episode": 30,
+        "seed": 9128230,
+        "split": 2,
+        "start": 58080,
+        "stop": 58336
+      },
+      {
+        "episode": 31,
+        "seed": 9128231,
+        "split": 2,
+        "start": 58336,
+        "stop": 58592
+      },
+      {
+        "episode": 0,
+        "seed": 9128300,
+        "split": 3,
+        "start": 58592,
+        "stop": 58904
+      },
+      {
+        "episode": 1,
+        "seed": 9128301,
+        "split": 3,
+        "start": 58904,
+        "stop": 59216
+      },
+      {
+        "episode": 2,
+        "seed": 9128302,
+        "split": 3,
+        "start": 59216,
+        "stop": 59528
+      },
+      {
+        "episode": 3,
+        "seed": 9128303,
+        "split": 3,
+        "start": 59528,
+        "stop": 59840
+      }
+    ],
+    "source_processed_sha256": "f8316ff0068e19f2034c159135467aa4c29a5c7c31af0c7231fc6afeb028522f",
+    "split_episodes": [
+      [
+        0,
+        1024,
+        0
+      ],
+      [
+        1024,
+        2048,
+        0
+      ],
+      [
+        2048,
+        3072,
+        0
+      ],
+      [
+        3072,
+        4096,
+        0
+      ],
+      [
+        4096,
+        5120,
+        0
+      ],
+      [
+        5120,
+        6144,
+        0
+      ],
+      [
+        6144,
+        7168,
+        0
+      ],
+      [
+        7168,
+        8192,
+        0
+      ],
+      [
+        8192,
+        9216,
+        0
+      ],
+      [
+        9216,
+        10240,
+        0
+      ],
+      [
+        10240,
+        11264,
+        0
+      ],
+      [
+        11264,
+        12288,
+        0
+      ],
+      [
+        12288,
+        13312,
+        0
+      ],
+      [
+        13312,
+        14336,
+        0
+      ],
+      [
+        14336,
+        15360,
+        0
+      ],
+      [
+        15360,
+        16384,
+        0
+      ],
+      [
+        16384,
+        17408,
+        0
+      ],
+      [
+        17408,
+        18432,
+        0
+      ],
+      [
+        18432,
+        19456,
+        0
+      ],
+      [
+        19456,
+        20480,
+        0
+      ],
+      [
+        20480,
+        21504,
+        0
+      ],
+      [
+        21504,
+        22528,
+        0
+      ],
+      [
+        22528,
+        23552,
+        0
+      ],
+      [
+        23552,
+        24576,
+        0
+      ],
+      [
+        24576,
+        25600,
+        0
+      ],
+      [
+        25600,
+        26624,
+        0
+      ],
+      [
+        26624,
+        27648,
+        0
+      ],
+      [
+        27648,
+        28672,
+        0
+      ],
+      [
+        28672,
+        29696,
+        0
+      ],
+      [
+        29696,
+        30720,
+        0
+      ],
+      [
+        30720,
+        31744,
+        0
+      ],
+      [
+        31744,
+        32768,
+        0
+      ],
+      [
+        32768,
+        33792,
+        0
+      ],
+      [
+        33792,
+        34816,
+        0
+      ],
+      [
+        34816,
+        35840,
+        0
+      ],
+      [
+        35840,
+        36864,
+        0
+      ],
+      [
+        36864,
+        37888,
+        0
+      ],
+      [
+        37888,
+        38912,
+        0
+      ],
+      [
+        38912,
+        39936,
+        0
+      ],
+      [
+        39936,
+        40960,
+        0
+      ],
+      [
+        40960,
+        41984,
+        0
+      ],
+      [
+        41984,
+        43008,
+        0
+      ],
+      [
+        43008,
+        44032,
+        0
+      ],
+      [
+        44032,
+        45056,
+        0
+      ],
+      [
+        45056,
+        46080,
+        0
+      ],
+      [
+        46080,
+        47104,
+        0
+      ],
+      [
+        47104,
+        48128,
+        0
+      ],
+      [
+        48128,
+        49152,
+        0
+      ],
+      [
+        49152,
+        49464,
+        1
+      ],
+      [
+        49464,
+        49776,
+        1
+      ],
+      [
+        49776,
+        50088,
+        1
+      ],
+      [
+        50088,
+        50400,
+        1
+      ],
+      [
+        50400,
+        50656,
+        2
+      ],
+      [
+        50656,
+        50912,
+        2
+      ],
+      [
+        50912,
+        51168,
+        2
+      ],
+      [
+        51168,
+        51424,
+        2
+      ],
+      [
+        51424,
+        51680,
+        2
+      ],
+      [
+        51680,
+        51936,
+        2
+      ],
+      [
+        51936,
+        52192,
+        2
+      ],
+      [
+        52192,
+        52448,
+        2
+      ],
+      [
+        52448,
+        52704,
+        2
+      ],
+      [
+        52704,
+        52960,
+        2
+      ],
+      [
+        52960,
+        53216,
+        2
+      ],
+      [
+        53216,
+        53472,
+        2
+      ],
+      [
+        53472,
+        53728,
+        2
+      ],
+      [
+        53728,
+        53984,
+        2
+      ],
+      [
+        53984,
+        54240,
+        2
+      ],
+      [
+        54240,
+        54496,
+        2
+      ],
+      [
+        54496,
+        54752,
+        2
+      ],
+      [
+        54752,
+        55008,
+        2
+      ],
+      [
+        55008,
+        55264,
+        2
+      ],
+      [
+        55264,
+        55520,
+        2
+      ],
+      [
+        55520,
+        55776,
+        2
+      ],
+      [
+        55776,
+        56032,
+        2
+      ],
+      [
+        56032,
+        56288,
+        2
+      ],
+      [
+        56288,
+        56544,
+        2
+      ],
+      [
+        56544,
+        56800,
+        2
+      ],
+      [
+        56800,
+        57056,
+        2
+      ],
+      [
+        57056,
+        57312,
+        2
+      ],
+      [
+        57312,
+        57568,
+        2
+      ],
+      [
+        57568,
+        57824,
+        2
+      ],
+      [
+        57824,
+        58080,
+        2
+      ],
+      [
+        58080,
+        58336,
+        2
+      ],
+      [
+        58336,
+        58592,
+        2
+      ],
+      [
+        58592,
+        58904,
+        3
+      ],
+      [
+        58904,
+        59216,
+        3
+      ],
+      [
+        59216,
+        59528,
+        3
+      ],
+      [
+        59528,
+        59840,
+        3
+      ]
+    ],
+    "training_scaling_reused": true,
+    "units": [
+      "arbitrary units"
+    ]
+  },
+  {
+    "background_status": "independent new synthetic seeds",
+    "bounds": [
+      0,
+      49152,
+      50400,
+      58592,
+      59840
+    ],
+    "configuration": "synthetic128",
+    "extension_blocks": [
+      [
+        58592,
+        58904
+      ],
+      [
+        58904,
+        59216
+      ],
+      [
+        59216,
+        59528
+      ],
+      [
+        59528,
+        59840
+      ]
+    ],
+    "interval_seconds": 300,
+    "old_test_overlap_rows": 0,
+    "primary_channels": [
+      "signal"
+    ],
+    "seed": 29,
+    "seeds": [
+      {
+        "episode": 0,
+        "seed": 9128100,
+        "split": 1,
+        "start": 49152,
+        "stop": 49464
+      },
+      {
+        "episode": 1,
+        "seed": 9128101,
+        "split": 1,
+        "start": 49464,
+        "stop": 49776
+      },
+      {
+        "episode": 2,
+        "seed": 9128102,
+        "split": 1,
+        "start": 49776,
+        "stop": 50088
+      },
+      {
+        "episode": 3,
+        "seed": 9128103,
+        "split": 1,
+        "start": 50088,
+        "stop": 50400
+      },
+      {
+        "episode": 0,
+        "seed": 9128200,
+        "split": 2,
+        "start": 50400,
+        "stop": 50656
+      },
+      {
+        "episode": 1,
+        "seed": 9128201,
+        "split": 2,
+        "start": 50656,
+        "stop": 50912
+      },
+      {
+        "episode": 2,
+        "seed": 9128202,
+        "split": 2,
+        "start": 50912,
+        "stop": 51168
+      },
+      {
+        "episode": 3,
+        "seed": 9128203,
+        "split": 2,
+        "start": 51168,
+        "stop": 51424
+      },
+      {
+        "episode": 4,
+        "seed": 9128204,
+        "split": 2,
+        "start": 51424,
+        "stop": 51680
+      },
+      {
+        "episode": 5,
+        "seed": 9128205,
+        "split": 2,
+        "start": 51680,
+        "stop": 51936
+      },
+      {
+        "episode": 6,
+        "seed": 9128206,
+        "split": 2,
+        "start": 51936,
+        "stop": 52192
+      },
+      {
+        "episode": 7,
+        "seed": 9128207,
+        "split": 2,
+        "start": 52192,
+        "stop": 52448
+      },
+      {
+        "episode": 8,
+        "seed": 9128208,
+        "split": 2,
+        "start": 52448,
+        "stop": 52704
+      },
+      {
+        "episode": 9,
+        "seed": 9128209,
+        "split": 2,
+        "start": 52704,
+        "stop": 52960
+      },
+      {
+        "episode": 10,
+        "seed": 9128210,
+        "split": 2,
+        "start": 52960,
+        "stop": 53216
+      },
+      {
+        "episode": 11,
+        "seed": 9128211,
+        "split": 2,
+        "start": 53216,
+        "stop": 53472
+      },
+      {
+        "episode": 12,
+        "seed": 9128212,
+        "split": 2,
+        "start": 53472,
+        "stop": 53728
+      },
+      {
+        "episode": 13,
+        "seed": 9128213,
+        "split": 2,
+        "start": 53728,
+        "stop": 53984
+      },
+      {
+        "episode": 14,
+        "seed": 9128214,
+        "split": 2,
+        "start": 53984,
+        "stop": 54240
+      },
+      {
+        "episode": 15,
+        "seed": 9128215,
+        "split": 2,
+        "start": 54240,
+        "stop": 54496
+      },
+      {
+        "episode": 16,
+        "seed": 9128216,
+        "split": 2,
+        "start": 54496,
+        "stop": 54752
+      },
+      {
+        "episode": 17,
+        "seed": 9128217,
+        "split": 2,
+        "start": 54752,
+        "stop": 55008
+      },
+      {
+        "episode": 18,
+        "seed": 9128218,
+        "split": 2,
+        "start": 55008,
+        "stop": 55264
+      },
+      {
+        "episode": 19,
+        "seed": 9128219,
+        "split": 2,
+        "start": 55264,
+        "stop": 55520
+      },
+      {
+        "episode": 20,
+        "seed": 9128220,
+        "split": 2,
+        "start": 55520,
+        "stop": 55776
+      },
+      {
+        "episode": 21,
+        "seed": 9128221,
+        "split": 2,
+        "start": 55776,
+        "stop": 56032
+      },
+      {
+        "episode": 22,
+        "seed": 9128222,
+        "split": 2,
+        "start": 56032,
+        "stop": 56288
+      },
+      {
+        "episode": 23,
+        "seed": 9128223,
+        "split": 2,
+        "start": 56288,
+        "stop": 56544
+      },
+      {
+        "episode": 24,
+        "seed": 9128224,
+        "split": 2,
+        "start": 56544,
+        "stop": 56800
+      },
+      {
+        "episode": 25,
+        "seed": 9128225,
+        "split": 2,
+        "start": 56800,
+        "stop": 57056
+      },
+      {
+        "episode": 26,
+        "seed": 9128226,
+        "split": 2,
+        "start": 57056,
+        "stop": 57312
+      },
+      {
+        "episode": 27,
+        "seed": 9128227,
+        "split": 2,
+        "start": 57312,
+        "stop": 57568
+      },
+      {
+        "episode": 28,
+        "seed": 9128228,
+        "split": 2,
+        "start": 57568,
+        "stop": 57824
+      },
+      {
+        "episode": 29,
+        "seed": 9128229,
+        "split": 2,
+        "start": 57824,
+        "stop": 58080
+      },
+      {
+        "episode": 30,
+        "seed": 9128230,
+        "split": 2,
+        "start": 58080,
+        "stop": 58336
+      },
+      {
+        "episode": 31,
+        "seed": 9128231,
+        "split": 2,
+        "start": 58336,
+        "stop": 58592
+      },
+      {
+        "episode": 0,
+        "seed": 9128300,
+        "split": 3,
+        "start": 58592,
+        "stop": 58904
+      },
+      {
+        "episode": 1,
+        "seed": 9128301,
+        "split": 3,
+        "start": 58904,
+        "stop": 59216
+      },
+      {
+        "episode": 2,
+        "seed": 9128302,
+        "split": 3,
+        "start": 59216,
+        "stop": 59528
+      },
+      {
+        "episode": 3,
+        "seed": 9128303,
+        "split": 3,
+        "start": 59528,
+        "stop": 59840
+      }
+    ],
+    "source_processed_sha256": "f8316ff0068e19f2034c159135467aa4c29a5c7c31af0c7231fc6afeb028522f",
+    "split_episodes": [
+      [
+        0,
+        1024,
+        0
+      ],
+      [
+        1024,
+        2048,
+        0
+      ],
+      [
+        2048,
+        3072,
+        0
+      ],
+      [
+        3072,
+        4096,
+        0
+      ],
+      [
+        4096,
+        5120,
+        0
+      ],
+      [
+        5120,
+        6144,
+        0
+      ],
+      [
+        6144,
+        7168,
+        0
+      ],
+      [
+        7168,
+        8192,
+        0
+      ],
+      [
+        8192,
+        9216,
+        0
+      ],
+      [
+        9216,
+        10240,
+        0
+      ],
+      [
+        10240,
+        11264,
+        0
+      ],
+      [
+        11264,
+        12288,
+        0
+      ],
+      [
+        12288,
+        13312,
+        0
+      ],
+      [
+        13312,
+        14336,
+        0
+      ],
+      [
+        14336,
+        15360,
+        0
+      ],
+      [
+        15360,
+        16384,
+        0
+      ],
+      [
+        16384,
+        17408,
+        0
+      ],
+      [
+        17408,
+        18432,
+        0
+      ],
+      [
+        18432,
+        19456,
+        0
+      ],
+      [
+        19456,
+        20480,
+        0
+      ],
+      [
+        20480,
+        21504,
+        0
+      ],
+      [
+        21504,
+        22528,
+        0
+      ],
+      [
+        22528,
+        23552,
+        0
+      ],
+      [
+        23552,
+        24576,
+        0
+      ],
+      [
+        24576,
+        25600,
+        0
+      ],
+      [
+        25600,
+        26624,
+        0
+      ],
+      [
+        26624,
+        27648,
+        0
+      ],
+      [
+        27648,
+        28672,
+        0
+      ],
+      [
+        28672,
+        29696,
+        0
+      ],
+      [
+        29696,
+        30720,
+        0
+      ],
+      [
+        30720,
+        31744,
+        0
+      ],
+      [
+        31744,
+        32768,
+        0
+      ],
+      [
+        32768,
+        33792,
+        0
+      ],
+      [
+        33792,
+        34816,
+        0
+      ],
+      [
+        34816,
+        35840,
+        0
+      ],
+      [
+        35840,
+        36864,
+        0
+      ],
+      [
+        36864,
+        37888,
+        0
+      ],
+      [
+        37888,
+        38912,
+        0
+      ],
+      [
+        38912,
+        39936,
+        0
+      ],
+      [
+        39936,
+        40960,
+        0
+      ],
+      [
+        40960,
+        41984,
+        0
+      ],
+      [
+        41984,
+        43008,
+        0
+      ],
+      [
+        43008,
+        44032,
+        0
+      ],
+      [
+        44032,
+        45056,
+        0
+      ],
+      [
+        45056,
+        46080,
+        0
+      ],
+      [
+        46080,
+        47104,
+        0
+      ],
+      [
+        47104,
+        48128,
+        0
+      ],
+      [
+        48128,
+        49152,
+        0
+      ],
+      [
+        49152,
+        49464,
+        1
+      ],
+      [
+        49464,
+        49776,
+        1
+      ],
+      [
+        49776,
+        50088,
+        1
+      ],
+      [
+        50088,
+        50400,
+        1
+      ],
+      [
+        50400,
+        50656,
+        2
+      ],
+      [
+        50656,
+        50912,
+        2
+      ],
+      [
+        50912,
+        51168,
+        2
+      ],
+      [
+        51168,
+        51424,
+        2
+      ],
+      [
+        51424,
+        51680,
+        2
+      ],
+      [
+        51680,
+        51936,
+        2
+      ],
+      [
+        51936,
+        52192,
+        2
+      ],
+      [
+        52192,
+        52448,
+        2
+      ],
+      [
+        52448,
+        52704,
+        2
+      ],
+      [
+        52704,
+        52960,
+        2
+      ],
+      [
+        52960,
+        53216,
+        2
+      ],
+      [
+        53216,
+        53472,
+        2
+      ],
+      [
+        53472,
+        53728,
+        2
+      ],
+      [
+        53728,
+        53984,
+        2
+      ],
+      [
+        53984,
+        54240,
+        2
+      ],
+      [
+        54240,
+        54496,
+        2
+      ],
+      [
+        54496,
+        54752,
+        2
+      ],
+      [
+        54752,
+        55008,
+        2
+      ],
+      [
+        55008,
+        55264,
+        2
+      ],
+      [
+        55264,
+        55520,
+        2
+      ],
+      [
+        55520,
+        55776,
+        2
+      ],
+      [
+        55776,
+        56032,
+        2
+      ],
+      [
+        56032,
+        56288,
+        2
+      ],
+      [
+        56288,
+        56544,
+        2
+      ],
+      [
+        56544,
+        56800,
+        2
+      ],
+      [
+        56800,
+        57056,
+        2
+      ],
+      [
+        57056,
+        57312,
+        2
+      ],
+      [
+        57312,
+        57568,
+        2
+      ],
+      [
+        57568,
+        57824,
+        2
+      ],
+      [
+        57824,
+        58080,
+        2
+      ],
+      [
+        58080,
+        58336,
+        2
+      ],
+      [
+        58336,
+        58592,
+        2
+      ],
+      [
+        58592,
+        58904,
+        3
+      ],
+      [
+        58904,
+        59216,
+        3
+      ],
+      [
+        59216,
+        59528,
+        3
+      ],
+      [
+        59528,
+        59840,
+        3
+      ]
+    ],
+    "training_scaling_reused": true,
+    "units": [
+      "arbitrary units"
+    ]
+  },
+  {
+    "background_status": "independent new synthetic seeds",
+    "bounds": [
+      0,
+      49152,
+      50400,
+      58592,
+      59840
+    ],
+    "configuration": "synthetic128",
+    "extension_blocks": [
+      [
+        58592,
+        58904
+      ],
+      [
+        58904,
+        59216
+      ],
+      [
+        59216,
+        59528
+      ],
+      [
+        59528,
+        59840
+      ]
+    ],
+    "interval_seconds": 300,
+    "old_test_overlap_rows": 0,
+    "primary_channels": [
+      "signal"
+    ],
+    "seed": 43,
+    "seeds": [
+      {
+        "episode": 0,
+        "seed": 9128100,
+        "split": 1,
+        "start": 49152,
+        "stop": 49464
+      },
+      {
+        "episode": 1,
+        "seed": 9128101,
+        "split": 1,
+        "start": 49464,
+        "stop": 49776
+      },
+      {
+        "episode": 2,
+        "seed": 9128102,
+        "split": 1,
+        "start": 49776,
+        "stop": 50088
+      },
+      {
+        "episode": 3,
+        "seed": 9128103,
+        "split": 1,
+        "start": 50088,
+        "stop": 50400
+      },
+      {
+        "episode": 0,
+        "seed": 9128200,
+        "split": 2,
+        "start": 50400,
+        "stop": 50656
+      },
+      {
+        "episode": 1,
+        "seed": 9128201,
+        "split": 2,
+        "start": 50656,
+        "stop": 50912
+      },
+      {
+        "episode": 2,
+        "seed": 9128202,
+        "split": 2,
+        "start": 50912,
+        "stop": 51168
+      },
+      {
+        "episode": 3,
+        "seed": 9128203,
+        "split": 2,
+        "start": 51168,
+        "stop": 51424
+      },
+      {
+        "episode": 4,
+        "seed": 9128204,
+        "split": 2,
+        "start": 51424,
+        "stop": 51680
+      },
+      {
+        "episode": 5,
+        "seed": 9128205,
+        "split": 2,
+        "start": 51680,
+        "stop": 51936
+      },
+      {
+        "episode": 6,
+        "seed": 9128206,
+        "split": 2,
+        "start": 51936,
+        "stop": 52192
+      },
+      {
+        "episode": 7,
+        "seed": 9128207,
+        "split": 2,
+        "start": 52192,
+        "stop": 52448
+      },
+      {
+        "episode": 8,
+        "seed": 9128208,
+        "split": 2,
+        "start": 52448,
+        "stop": 52704
+      },
+      {
+        "episode": 9,
+        "seed": 9128209,
+        "split": 2,
+        "start": 52704,
+        "stop": 52960
+      },
+      {
+        "episode": 10,
+        "seed": 9128210,
+        "split": 2,
+        "start": 52960,
+        "stop": 53216
+      },
+      {
+        "episode": 11,
+        "seed": 9128211,
+        "split": 2,
+        "start": 53216,
+        "stop": 53472
+      },
+      {
+        "episode": 12,
+        "seed": 9128212,
+        "split": 2,
+        "start": 53472,
+        "stop": 53728
+      },
+      {
+        "episode": 13,
+        "seed": 9128213,
+        "split": 2,
+        "start": 53728,
+        "stop": 53984
+      },
+      {
+        "episode": 14,
+        "seed": 9128214,
+        "split": 2,
+        "start": 53984,
+        "stop": 54240
+      },
+      {
+        "episode": 15,
+        "seed": 9128215,
+        "split": 2,
+        "start": 54240,
+        "stop": 54496
+      },
+      {
+        "episode": 16,
+        "seed": 9128216,
+        "split": 2,
+        "start": 54496,
+        "stop": 54752
+      },
+      {
+        "episode": 17,
+        "seed": 9128217,
+        "split": 2,
+        "start": 54752,
+        "stop": 55008
+      },
+      {
+        "episode": 18,
+        "seed": 9128218,
+        "split": 2,
+        "start": 55008,
+        "stop": 55264
+      },
+      {
+        "episode": 19,
+        "seed": 9128219,
+        "split": 2,
+        "start": 55264,
+        "stop": 55520
+      },
+      {
+        "episode": 20,
+        "seed": 9128220,
+        "split": 2,
+        "start": 55520,
+        "stop": 55776
+      },
+      {
+        "episode": 21,
+        "seed": 9128221,
+        "split": 2,
+        "start": 55776,
+        "stop": 56032
+      },
+      {
+        "episode": 22,
+        "seed": 9128222,
+        "split": 2,
+        "start": 56032,
+        "stop": 56288
+      },
+      {
+        "episode": 23,
+        "seed": 9128223,
+        "split": 2,
+        "start": 56288,
+        "stop": 56544
+      },
+      {
+        "episode": 24,
+        "seed": 9128224,
+        "split": 2,
+        "start": 56544,
+        "stop": 56800
+      },
+      {
+        "episode": 25,
+        "seed": 9128225,
+        "split": 2,
+        "start": 56800,
+        "stop": 57056
+      },
+      {
+        "episode": 26,
+        "seed": 9128226,
+        "split": 2,
+        "start": 57056,
+        "stop": 57312
+      },
+      {
+        "episode": 27,
+        "seed": 9128227,
+        "split": 2,
+        "start": 57312,
+        "stop": 57568
+      },
+      {
+        "episode": 28,
+        "seed": 9128228,
+        "split": 2,
+        "start": 57568,
+        "stop": 57824
+      },
+      {
+        "episode": 29,
+        "seed": 9128229,
+        "split": 2,
+        "start": 57824,
+        "stop": 58080
+      },
+      {
+        "episode": 30,
+        "seed": 9128230,
+        "split": 2,
+        "start": 58080,
+        "stop": 58336
+      },
+      {
+        "episode": 31,
+        "seed": 9128231,
+        "split": 2,
+        "start": 58336,
+        "stop": 58592
+      },
+      {
+        "episode": 0,
+        "seed": 9128300,
+        "split": 3,
+        "start": 58592,
+        "stop": 58904
+      },
+      {
+        "episode": 1,
+        "seed": 9128301,
+        "split": 3,
+        "start": 58904,
+        "stop": 59216
+      },
+      {
+        "episode": 2,
+        "seed": 9128302,
+        "split": 3,
+        "start": 59216,
+        "stop": 59528
+      },
+      {
+        "episode": 3,
+        "seed": 9128303,
+        "split": 3,
+        "start": 59528,
+        "stop": 59840
+      }
+    ],
+    "source_processed_sha256": "f8316ff0068e19f2034c159135467aa4c29a5c7c31af0c7231fc6afeb028522f",
+    "split_episodes": [
+      [
+        0,
+        1024,
+        0
+      ],
+      [
+        1024,
+        2048,
+        0
+      ],
+      [
+        2048,
+        3072,
+        0
+      ],
+      [
+        3072,
+        4096,
+        0
+      ],
+      [
+        4096,
+        5120,
+        0
+      ],
+      [
+        5120,
+        6144,
+        0
+      ],
+      [
+        6144,
+        7168,
+        0
+      ],
+      [
+        7168,
+        8192,
+        0
+      ],
+      [
+        8192,
+        9216,
+        0
+      ],
+      [
+        9216,
+        10240,
+        0
+      ],
+      [
+        10240,
+        11264,
+        0
+      ],
+      [
+        11264,
+        12288,
+        0
+      ],
+      [
+        12288,
+        13312,
+        0
+      ],
+      [
+        13312,
+        14336,
+        0
+      ],
+      [
+        14336,
+        15360,
+        0
+      ],
+      [
+        15360,
+        16384,
+        0
+      ],
+      [
+        16384,
+        17408,
+        0
+      ],
+      [
+        17408,
+        18432,
+        0
+      ],
+      [
+        18432,
+        19456,
+        0
+      ],
+      [
+        19456,
+        20480,
+        0
+      ],
+      [
+        20480,
+        21504,
+        0
+      ],
+      [
+        21504,
+        22528,
+        0
+      ],
+      [
+        22528,
+        23552,
+        0
+      ],
+      [
+        23552,
+        24576,
+        0
+      ],
+      [
+        24576,
+        25600,
+        0
+      ],
+      [
+        25600,
+        26624,
+        0
+      ],
+      [
+        26624,
+        27648,
+        0
+      ],
+      [
+        27648,
+        28672,
+        0
+      ],
+      [
+        28672,
+        29696,
+        0
+      ],
+      [
+        29696,
+        30720,
+        0
+      ],
+      [
+        30720,
+        31744,
+        0
+      ],
+      [
+        31744,
+        32768,
+        0
+      ],
+      [
+        32768,
+        33792,
+        0
+      ],
+      [
+        33792,
+        34816,
+        0
+      ],
+      [
+        34816,
+        35840,
+        0
+      ],
+      [
+        35840,
+        36864,
+        0
+      ],
+      [
+        36864,
+        37888,
+        0
+      ],
+      [
+        37888,
+        38912,
+        0
+      ],
+      [
+        38912,
+        39936,
+        0
+      ],
+      [
+        39936,
+        40960,
+        0
+      ],
+      [
+        40960,
+        41984,
+        0
+      ],
+      [
+        41984,
+        43008,
+        0
+      ],
+      [
+        43008,
+        44032,
+        0
+      ],
+      [
+        44032,
+        45056,
+        0
+      ],
+      [
+        45056,
+        46080,
+        0
+      ],
+      [
+        46080,
+        47104,
+        0
+      ],
+      [
+        47104,
+        48128,
+        0
+      ],
+      [
+        48128,
+        49152,
+        0
+      ],
+      [
+        49152,
+        49464,
+        1
+      ],
+      [
+        49464,
+        49776,
+        1
+      ],
+      [
+        49776,
+        50088,
+        1
+      ],
+      [
+        50088,
+        50400,
+        1
+      ],
+      [
+        50400,
+        50656,
+        2
+      ],
+      [
+        50656,
+        50912,
+        2
+      ],
+      [
+        50912,
+        51168,
+        2
+      ],
+      [
+        51168,
+        51424,
+        2
+      ],
+      [
+        51424,
+        51680,
+        2
+      ],
+      [
+        51680,
+        51936,
+        2
+      ],
+      [
+        51936,
+        52192,
+        2
+      ],
+      [
+        52192,
+        52448,
+        2
+      ],
+      [
+        52448,
+        52704,
+        2
+      ],
+      [
+        52704,
+        52960,
+        2
+      ],
+      [
+        52960,
+        53216,
+        2
+      ],
+      [
+        53216,
+        53472,
+        2
+      ],
+      [
+        53472,
+        53728,
+        2
+      ],
+      [
+        53728,
+        53984,
+        2
+      ],
+      [
+        53984,
+        54240,
+        2
+      ],
+      [
+        54240,
+        54496,
+        2
+      ],
+      [
+        54496,
+        54752,
+        2
+      ],
+      [
+        54752,
+        55008,
+        2
+      ],
+      [
+        55008,
+        55264,
+        2
+      ],
+      [
+        55264,
+        55520,
+        2
+      ],
+      [
+        55520,
+        55776,
+        2
+      ],
+      [
+        55776,
+        56032,
+        2
+      ],
+      [
+        56032,
+        56288,
+        2
+      ],
+      [
+        56288,
+        56544,
+        2
+      ],
+      [
+        56544,
+        56800,
+        2
+      ],
+      [
+        56800,
+        57056,
+        2
+      ],
+      [
+        57056,
+        57312,
+        2
+      ],
+      [
+        57312,
+        57568,
+        2
+      ],
+      [
+        57568,
+        57824,
+        2
+      ],
+      [
+        57824,
+        58080,
+        2
+      ],
+      [
+        58080,
+        58336,
+        2
+      ],
+      [
+        58336,
+        58592,
+        2
+      ],
+      [
+        58592,
+        58904,
+        3
+      ],
+      [
+        58904,
+        59216,
+        3
+      ],
+      [
+        59216,
+        59528,
+        3
+      ],
+      [
+        59528,
+        59840,
+        3
+      ]
+    ],
+    "training_scaling_reused": true,
+    "units": [
+      "arbitrary units"
+    ]
+  },
+  {
+    "background_status": "independent new synthetic seeds",
+    "bounds": [
+      0,
+      49152,
+      50400,
+      58592,
+      59840
+    ],
+    "configuration": "synthetic256",
+    "extension_blocks": [
+      [
+        58592,
+        58904
+      ],
+      [
+        58904,
+        59216
+      ],
+      [
+        59216,
+        59528
+      ],
+      [
+        59528,
+        59840
+      ]
+    ],
+    "interval_seconds": 300,
+    "old_test_overlap_rows": 0,
+    "primary_channels": [
+      "signal"
+    ],
+    "seed": 17,
+    "seeds": [
+      {
+        "episode": 0,
+        "seed": 9256100,
+        "split": 1,
+        "start": 49152,
+        "stop": 49464
+      },
+      {
+        "episode": 1,
+        "seed": 9256101,
+        "split": 1,
+        "start": 49464,
+        "stop": 49776
+      },
+      {
+        "episode": 2,
+        "seed": 9256102,
+        "split": 1,
+        "start": 49776,
+        "stop": 50088
+      },
+      {
+        "episode": 3,
+        "seed": 9256103,
+        "split": 1,
+        "start": 50088,
+        "stop": 50400
+      },
+      {
+        "episode": 0,
+        "seed": 9256200,
+        "split": 2,
+        "start": 50400,
+        "stop": 50656
+      },
+      {
+        "episode": 1,
+        "seed": 9256201,
+        "split": 2,
+        "start": 50656,
+        "stop": 50912
+      },
+      {
+        "episode": 2,
+        "seed": 9256202,
+        "split": 2,
+        "start": 50912,
+        "stop": 51168
+      },
+      {
+        "episode": 3,
+        "seed": 9256203,
+        "split": 2,
+        "start": 51168,
+        "stop": 51424
+      },
+      {
+        "episode": 4,
+        "seed": 9256204,
+        "split": 2,
+        "start": 51424,
+        "stop": 51680
+      },
+      {
+        "episode": 5,
+        "seed": 9256205,
+        "split": 2,
+        "start": 51680,
+        "stop": 51936
+      },
+      {
+        "episode": 6,
+        "seed": 9256206,
+        "split": 2,
+        "start": 51936,
+        "stop": 52192
+      },
+      {
+        "episode": 7,
+        "seed": 9256207,
+        "split": 2,
+        "start": 52192,
+        "stop": 52448
+      },
+      {
+        "episode": 8,
+        "seed": 9256208,
+        "split": 2,
+        "start": 52448,
+        "stop": 52704
+      },
+      {
+        "episode": 9,
+        "seed": 9256209,
+        "split": 2,
+        "start": 52704,
+        "stop": 52960
+      },
+      {
+        "episode": 10,
+        "seed": 9256210,
+        "split": 2,
+        "start": 52960,
+        "stop": 53216
+      },
+      {
+        "episode": 11,
+        "seed": 9256211,
+        "split": 2,
+        "start": 53216,
+        "stop": 53472
+      },
+      {
+        "episode": 12,
+        "seed": 9256212,
+        "split": 2,
+        "start": 53472,
+        "stop": 53728
+      },
+      {
+        "episode": 13,
+        "seed": 9256213,
+        "split": 2,
+        "start": 53728,
+        "stop": 53984
+      },
+      {
+        "episode": 14,
+        "seed": 9256214,
+        "split": 2,
+        "start": 53984,
+        "stop": 54240
+      },
+      {
+        "episode": 15,
+        "seed": 9256215,
+        "split": 2,
+        "start": 54240,
+        "stop": 54496
+      },
+      {
+        "episode": 16,
+        "seed": 9256216,
+        "split": 2,
+        "start": 54496,
+        "stop": 54752
+      },
+      {
+        "episode": 17,
+        "seed": 9256217,
+        "split": 2,
+        "start": 54752,
+        "stop": 55008
+      },
+      {
+        "episode": 18,
+        "seed": 9256218,
+        "split": 2,
+        "start": 55008,
+        "stop": 55264
+      },
+      {
+        "episode": 19,
+        "seed": 9256219,
+        "split": 2,
+        "start": 55264,
+        "stop": 55520
+      },
+      {
+        "episode": 20,
+        "seed": 9256220,
+        "split": 2,
+        "start": 55520,
+        "stop": 55776
+      },
+      {
+        "episode": 21,
+        "seed": 9256221,
+        "split": 2,
+        "start": 55776,
+        "stop": 56032
+      },
+      {
+        "episode": 22,
+        "seed": 9256222,
+        "split": 2,
+        "start": 56032,
+        "stop": 56288
+      },
+      {
+        "episode": 23,
+        "seed": 9256223,
+        "split": 2,
+        "start": 56288,
+        "stop": 56544
+      },
+      {
+        "episode": 24,
+        "seed": 9256224,
+        "split": 2,
+        "start": 56544,
+        "stop": 56800
+      },
+      {
+        "episode": 25,
+        "seed": 9256225,
+        "split": 2,
+        "start": 56800,
+        "stop": 57056
+      },
+      {
+        "episode": 26,
+        "seed": 9256226,
+        "split": 2,
+        "start": 57056,
+        "stop": 57312
+      },
+      {
+        "episode": 27,
+        "seed": 9256227,
+        "split": 2,
+        "start": 57312,
+        "stop": 57568
+      },
+      {
+        "episode": 28,
+        "seed": 9256228,
+        "split": 2,
+        "start": 57568,
+        "stop": 57824
+      },
+      {
+        "episode": 29,
+        "seed": 9256229,
+        "split": 2,
+        "start": 57824,
+        "stop": 58080
+      },
+      {
+        "episode": 30,
+        "seed": 9256230,
+        "split": 2,
+        "start": 58080,
+        "stop": 58336
+      },
+      {
+        "episode": 31,
+        "seed": 9256231,
+        "split": 2,
+        "start": 58336,
+        "stop": 58592
+      },
+      {
+        "episode": 0,
+        "seed": 9256300,
+        "split": 3,
+        "start": 58592,
+        "stop": 58904
+      },
+      {
+        "episode": 1,
+        "seed": 9256301,
+        "split": 3,
+        "start": 58904,
+        "stop": 59216
+      },
+      {
+        "episode": 2,
+        "seed": 9256302,
+        "split": 3,
+        "start": 59216,
+        "stop": 59528
+      },
+      {
+        "episode": 3,
+        "seed": 9256303,
+        "split": 3,
+        "start": 59528,
+        "stop": 59840
+      }
+    ],
+    "source_processed_sha256": "8b3f150d75e643a1197dd5338884866fb8365b67c71bac2c55440d83f5b172ec",
+    "split_episodes": [
+      [
+        0,
+        1024,
+        0
+      ],
+      [
+        1024,
+        2048,
+        0
+      ],
+      [
+        2048,
+        3072,
+        0
+      ],
+      [
+        3072,
+        4096,
+        0
+      ],
+      [
+        4096,
+        5120,
+        0
+      ],
+      [
+        5120,
+        6144,
+        0
+      ],
+      [
+        6144,
+        7168,
+        0
+      ],
+      [
+        7168,
+        8192,
+        0
+      ],
+      [
+        8192,
+        9216,
+        0
+      ],
+      [
+        9216,
+        10240,
+        0
+      ],
+      [
+        10240,
+        11264,
+        0
+      ],
+      [
+        11264,
+        12288,
+        0
+      ],
+      [
+        12288,
+        13312,
+        0
+      ],
+      [
+        13312,
+        14336,
+        0
+      ],
+      [
+        14336,
+        15360,
+        0
+      ],
+      [
+        15360,
+        16384,
+        0
+      ],
+      [
+        16384,
+        17408,
+        0
+      ],
+      [
+        17408,
+        18432,
+        0
+      ],
+      [
+        18432,
+        19456,
+        0
+      ],
+      [
+        19456,
+        20480,
+        0
+      ],
+      [
+        20480,
+        21504,
+        0
+      ],
+      [
+        21504,
+        22528,
+        0
+      ],
+      [
+        22528,
+        23552,
+        0
+      ],
+      [
+        23552,
+        24576,
+        0
+      ],
+      [
+        24576,
+        25600,
+        0
+      ],
+      [
+        25600,
+        26624,
+        0
+      ],
+      [
+        26624,
+        27648,
+        0
+      ],
+      [
+        27648,
+        28672,
+        0
+      ],
+      [
+        28672,
+        29696,
+        0
+      ],
+      [
+        29696,
+        30720,
+        0
+      ],
+      [
+        30720,
+        31744,
+        0
+      ],
+      [
+        31744,
+        32768,
+        0
+      ],
+      [
+        32768,
+        33792,
+        0
+      ],
+      [
+        33792,
+        34816,
+        0
+      ],
+      [
+        34816,
+        35840,
+        0
+      ],
+      [
+        35840,
+        36864,
+        0
+      ],
+      [
+        36864,
+        37888,
+        0
+      ],
+      [
+        37888,
+        38912,
+        0
+      ],
+      [
+        38912,
+        39936,
+        0
+      ],
+      [
+        39936,
+        40960,
+        0
+      ],
+      [
+        40960,
+        41984,
+        0
+      ],
+      [
+        41984,
+        43008,
+        0
+      ],
+      [
+        43008,
+        44032,
+        0
+      ],
+      [
+        44032,
+        45056,
+        0
+      ],
+      [
+        45056,
+        46080,
+        0
+      ],
+      [
+        46080,
+        47104,
+        0
+      ],
+      [
+        47104,
+        48128,
+        0
+      ],
+      [
+        48128,
+        49152,
+        0
+      ],
+      [
+        49152,
+        49464,
+        1
+      ],
+      [
+        49464,
+        49776,
+        1
+      ],
+      [
+        49776,
+        50088,
+        1
+      ],
+      [
+        50088,
+        50400,
+        1
+      ],
+      [
+        50400,
+        50656,
+        2
+      ],
+      [
+        50656,
+        50912,
+        2
+      ],
+      [
+        50912,
+        51168,
+        2
+      ],
+      [
+        51168,
+        51424,
+        2
+      ],
+      [
+        51424,
+        51680,
+        2
+      ],
+      [
+        51680,
+        51936,
+        2
+      ],
+      [
+        51936,
+        52192,
+        2
+      ],
+      [
+        52192,
+        52448,
+        2
+      ],
+      [
+        52448,
+        52704,
+        2
+      ],
+      [
+        52704,
+        52960,
+        2
+      ],
+      [
+        52960,
+        53216,
+        2
+      ],
+      [
+        53216,
+        53472,
+        2
+      ],
+      [
+        53472,
+        53728,
+        2
+      ],
+      [
+        53728,
+        53984,
+        2
+      ],
+      [
+        53984,
+        54240,
+        2
+      ],
+      [
+        54240,
+        54496,
+        2
+      ],
+      [
+        54496,
+        54752,
+        2
+      ],
+      [
+        54752,
+        55008,
+        2
+      ],
+      [
+        55008,
+        55264,
+        2
+      ],
+      [
+        55264,
+        55520,
+        2
+      ],
+      [
+        55520,
+        55776,
+        2
+      ],
+      [
+        55776,
+        56032,
+        2
+      ],
+      [
+        56032,
+        56288,
+        2
+      ],
+      [
+        56288,
+        56544,
+        2
+      ],
+      [
+        56544,
+        56800,
+        2
+      ],
+      [
+        56800,
+        57056,
+        2
+      ],
+      [
+        57056,
+        57312,
+        2
+      ],
+      [
+        57312,
+        57568,
+        2
+      ],
+      [
+        57568,
+        57824,
+        2
+      ],
+      [
+        57824,
+        58080,
+        2
+      ],
+      [
+        58080,
+        58336,
+        2
+      ],
+      [
+        58336,
+        58592,
+        2
+      ],
+      [
+        58592,
+        58904,
+        3
+      ],
+      [
+        58904,
+        59216,
+        3
+      ],
+      [
+        59216,
+        59528,
+        3
+      ],
+      [
+        59528,
+        59840,
+        3
+      ]
+    ],
+    "training_scaling_reused": true,
+    "units": [
+      "arbitrary units"
+    ]
+  },
+  {
+    "background_status": "independent new synthetic seeds",
+    "bounds": [
+      0,
+      49152,
+      50400,
+      58592,
+      59840
+    ],
+    "configuration": "synthetic256",
+    "extension_blocks": [
+      [
+        58592,
+        58904
+      ],
+      [
+        58904,
+        59216
+      ],
+      [
+        59216,
+        59528
+      ],
+      [
+        59528,
+        59840
+      ]
+    ],
+    "interval_seconds": 300,
+    "old_test_overlap_rows": 0,
+    "primary_channels": [
+      "signal"
+    ],
+    "seed": 29,
+    "seeds": [
+      {
+        "episode": 0,
+        "seed": 9256100,
+        "split": 1,
+        "start": 49152,
+        "stop": 49464
+      },
+      {
+        "episode": 1,
+        "seed": 9256101,
+        "split": 1,
+        "start": 49464,
+        "stop": 49776
+      },
+      {
+        "episode": 2,
+        "seed": 9256102,
+        "split": 1,
+        "start": 49776,
+        "stop": 50088
+      },
+      {
+        "episode": 3,
+        "seed": 9256103,
+        "split": 1,
+        "start": 50088,
+        "stop": 50400
+      },
+      {
+        "episode": 0,
+        "seed": 9256200,
+        "split": 2,
+        "start": 50400,
+        "stop": 50656
+      },
+      {
+        "episode": 1,
+        "seed": 9256201,
+        "split": 2,
+        "start": 50656,
+        "stop": 50912
+      },
+      {
+        "episode": 2,
+        "seed": 9256202,
+        "split": 2,
+        "start": 50912,
+        "stop": 51168
+      },
+      {
+        "episode": 3,
+        "seed": 9256203,
+        "split": 2,
+        "start": 51168,
+        "stop": 51424
+      },
+      {
+        "episode": 4,
+        "seed": 9256204,
+        "split": 2,
+        "start": 51424,
+        "stop": 51680
+      },
+      {
+        "episode": 5,
+        "seed": 9256205,
+        "split": 2,
+        "start": 51680,
+        "stop": 51936
+      },
+      {
+        "episode": 6,
+        "seed": 9256206,
+        "split": 2,
+        "start": 51936,
+        "stop": 52192
+      },
+      {
+        "episode": 7,
+        "seed": 9256207,
+        "split": 2,
+        "start": 52192,
+        "stop": 52448
+      },
+      {
+        "episode": 8,
+        "seed": 9256208,
+        "split": 2,
+        "start": 52448,
+        "stop": 52704
+      },
+      {
+        "episode": 9,
+        "seed": 9256209,
+        "split": 2,
+        "start": 52704,
+        "stop": 52960
+      },
+      {
+        "episode": 10,
+        "seed": 9256210,
+        "split": 2,
+        "start": 52960,
+        "stop": 53216
+      },
+      {
+        "episode": 11,
+        "seed": 9256211,
+        "split": 2,
+        "start": 53216,
+        "stop": 53472
+      },
+      {
+        "episode": 12,
+        "seed": 9256212,
+        "split": 2,
+        "start": 53472,
+        "stop": 53728
+      },
+      {
+        "episode": 13,
+        "seed": 9256213,
+        "split": 2,
+        "start": 53728,
+        "stop": 53984
+      },
+      {
+        "episode": 14,
+        "seed": 9256214,
+        "split": 2,
+        "start": 53984,
+        "stop": 54240
+      },
+      {
+        "episode": 15,
+        "seed": 9256215,
+        "split": 2,
+        "start": 54240,
+        "stop": 54496
+      },
+      {
+        "episode": 16,
+        "seed": 9256216,
+        "split": 2,
+        "start": 54496,
+        "stop": 54752
+      },
+      {
+        "episode": 17,
+        "seed": 9256217,
+        "split": 2,
+        "start": 54752,
+        "stop": 55008
+      },
+      {
+        "episode": 18,
+        "seed": 9256218,
+        "split": 2,
+        "start": 55008,
+        "stop": 55264
+      },
+      {
+        "episode": 19,
+        "seed": 9256219,
+        "split": 2,
+        "start": 55264,
+        "stop": 55520
+      },
+      {
+        "episode": 20,
+        "seed": 9256220,
+        "split": 2,
+        "start": 55520,
+        "stop": 55776
+      },
+      {
+        "episode": 21,
+        "seed": 9256221,
+        "split": 2,
+        "start": 55776,
+        "stop": 56032
+      },
+      {
+        "episode": 22,
+        "seed": 9256222,
+        "split": 2,
+        "start": 56032,
+        "stop": 56288
+      },
+      {
+        "episode": 23,
+        "seed": 9256223,
+        "split": 2,
+        "start": 56288,
+        "stop": 56544
+      },
+      {
+        "episode": 24,
+        "seed": 9256224,
+        "split": 2,
+        "start": 56544,
+        "stop": 56800
+      },
+      {
+        "episode": 25,
+        "seed": 9256225,
+        "split": 2,
+        "start": 56800,
+        "stop": 57056
+      },
+      {
+        "episode": 26,
+        "seed": 9256226,
+        "split": 2,
+        "start": 57056,
+        "stop": 57312
+      },
+      {
+        "episode": 27,
+        "seed": 9256227,
+        "split": 2,
+        "start": 57312,
+        "stop": 57568
+      },
+      {
+        "episode": 28,
+        "seed": 9256228,
+        "split": 2,
+        "start": 57568,
+        "stop": 57824
+      },
+      {
+        "episode": 29,
+        "seed": 9256229,
+        "split": 2,
+        "start": 57824,
+        "stop": 58080
+      },
+      {
+        "episode": 30,
+        "seed": 9256230,
+        "split": 2,
+        "start": 58080,
+        "stop": 58336
+      },
+      {
+        "episode": 31,
+        "seed": 9256231,
+        "split": 2,
+        "start": 58336,
+        "stop": 58592
+      },
+      {
+        "episode": 0,
+        "seed": 9256300,
+        "split": 3,
+        "start": 58592,
+        "stop": 58904
+      },
+      {
+        "episode": 1,
+        "seed": 9256301,
+        "split": 3,
+        "start": 58904,
+        "stop": 59216
+      },
+      {
+        "episode": 2,
+        "seed": 9256302,
+        "split": 3,
+        "start": 59216,
+        "stop": 59528
+      },
+      {
+        "episode": 3,
+        "seed": 9256303,
+        "split": 3,
+        "start": 59528,
+        "stop": 59840
+      }
+    ],
+    "source_processed_sha256": "8b3f150d75e643a1197dd5338884866fb8365b67c71bac2c55440d83f5b172ec",
+    "split_episodes": [
+      [
+        0,
+        1024,
+        0
+      ],
+      [
+        1024,
+        2048,
+        0
+      ],
+      [
+        2048,
+        3072,
+        0
+      ],
+      [
+        3072,
+        4096,
+        0
+      ],
+      [
+        4096,
+        5120,
+        0
+      ],
+      [
+        5120,
+        6144,
+        0
+      ],
+      [
+        6144,
+        7168,
+        0
+      ],
+      [
+        7168,
+        8192,
+        0
+      ],
+      [
+        8192,
+        9216,
+        0
+      ],
+      [
+        9216,
+        10240,
+        0
+      ],
+      [
+        10240,
+        11264,
+        0
+      ],
+      [
+        11264,
+        12288,
+        0
+      ],
+      [
+        12288,
+        13312,
+        0
+      ],
+      [
+        13312,
+        14336,
+        0
+      ],
+      [
+        14336,
+        15360,
+        0
+      ],
+      [
+        15360,
+        16384,
+        0
+      ],
+      [
+        16384,
+        17408,
+        0
+      ],
+      [
+        17408,
+        18432,
+        0
+      ],
+      [
+        18432,
+        19456,
+        0
+      ],
+      [
+        19456,
+        20480,
+        0
+      ],
+      [
+        20480,
+        21504,
+        0
+      ],
+      [
+        21504,
+        22528,
+        0
+      ],
+      [
+        22528,
+        23552,
+        0
+      ],
+      [
+        23552,
+        24576,
+        0
+      ],
+      [
+        24576,
+        25600,
+        0
+      ],
+      [
+        25600,
+        26624,
+        0
+      ],
+      [
+        26624,
+        27648,
+        0
+      ],
+      [
+        27648,
+        28672,
+        0
+      ],
+      [
+        28672,
+        29696,
+        0
+      ],
+      [
+        29696,
+        30720,
+        0
+      ],
+      [
+        30720,
+        31744,
+        0
+      ],
+      [
+        31744,
+        32768,
+        0
+      ],
+      [
+        32768,
+        33792,
+        0
+      ],
+      [
+        33792,
+        34816,
+        0
+      ],
+      [
+        34816,
+        35840,
+        0
+      ],
+      [
+        35840,
+        36864,
+        0
+      ],
+      [
+        36864,
+        37888,
+        0
+      ],
+      [
+        37888,
+        38912,
+        0
+      ],
+      [
+        38912,
+        39936,
+        0
+      ],
+      [
+        39936,
+        40960,
+        0
+      ],
+      [
+        40960,
+        41984,
+        0
+      ],
+      [
+        41984,
+        43008,
+        0
+      ],
+      [
+        43008,
+        44032,
+        0
+      ],
+      [
+        44032,
+        45056,
+        0
+      ],
+      [
+        45056,
+        46080,
+        0
+      ],
+      [
+        46080,
+        47104,
+        0
+      ],
+      [
+        47104,
+        48128,
+        0
+      ],
+      [
+        48128,
+        49152,
+        0
+      ],
+      [
+        49152,
+        49464,
+        1
+      ],
+      [
+        49464,
+        49776,
+        1
+      ],
+      [
+        49776,
+        50088,
+        1
+      ],
+      [
+        50088,
+        50400,
+        1
+      ],
+      [
+        50400,
+        50656,
+        2
+      ],
+      [
+        50656,
+        50912,
+        2
+      ],
+      [
+        50912,
+        51168,
+        2
+      ],
+      [
+        51168,
+        51424,
+        2
+      ],
+      [
+        51424,
+        51680,
+        2
+      ],
+      [
+        51680,
+        51936,
+        2
+      ],
+      [
+        51936,
+        52192,
+        2
+      ],
+      [
+        52192,
+        52448,
+        2
+      ],
+      [
+        52448,
+        52704,
+        2
+      ],
+      [
+        52704,
+        52960,
+        2
+      ],
+      [
+        52960,
+        53216,
+        2
+      ],
+      [
+        53216,
+        53472,
+        2
+      ],
+      [
+        53472,
+        53728,
+        2
+      ],
+      [
+        53728,
+        53984,
+        2
+      ],
+      [
+        53984,
+        54240,
+        2
+      ],
+      [
+        54240,
+        54496,
+        2
+      ],
+      [
+        54496,
+        54752,
+        2
+      ],
+      [
+        54752,
+        55008,
+        2
+      ],
+      [
+        55008,
+        55264,
+        2
+      ],
+      [
+        55264,
+        55520,
+        2
+      ],
+      [
+        55520,
+        55776,
+        2
+      ],
+      [
+        55776,
+        56032,
+        2
+      ],
+      [
+        56032,
+        56288,
+        2
+      ],
+      [
+        56288,
+        56544,
+        2
+      ],
+      [
+        56544,
+        56800,
+        2
+      ],
+      [
+        56800,
+        57056,
+        2
+      ],
+      [
+        57056,
+        57312,
+        2
+      ],
+      [
+        57312,
+        57568,
+        2
+      ],
+      [
+        57568,
+        57824,
+        2
+      ],
+      [
+        57824,
+        58080,
+        2
+      ],
+      [
+        58080,
+        58336,
+        2
+      ],
+      [
+        58336,
+        58592,
+        2
+      ],
+      [
+        58592,
+        58904,
+        3
+      ],
+      [
+        58904,
+        59216,
+        3
+      ],
+      [
+        59216,
+        59528,
+        3
+      ],
+      [
+        59528,
+        59840,
+        3
+      ]
+    ],
+    "training_scaling_reused": true,
+    "units": [
+      "arbitrary units"
+    ]
+  },
+  {
+    "background_status": "independent new synthetic seeds",
+    "bounds": [
+      0,
+      49152,
+      50400,
+      58592,
+      59840
+    ],
+    "configuration": "synthetic256",
+    "extension_blocks": [
+      [
+        58592,
+        58904
+      ],
+      [
+        58904,
+        59216
+      ],
+      [
+        59216,
+        59528
+      ],
+      [
+        59528,
+        59840
+      ]
+    ],
+    "interval_seconds": 300,
+    "old_test_overlap_rows": 0,
+    "primary_channels": [
+      "signal"
+    ],
+    "seed": 43,
+    "seeds": [
+      {
+        "episode": 0,
+        "seed": 9256100,
+        "split": 1,
+        "start": 49152,
+        "stop": 49464
+      },
+      {
+        "episode": 1,
+        "seed": 9256101,
+        "split": 1,
+        "start": 49464,
+        "stop": 49776
+      },
+      {
+        "episode": 2,
+        "seed": 9256102,
+        "split": 1,
+        "start": 49776,
+        "stop": 50088
+      },
+      {
+        "episode": 3,
+        "seed": 9256103,
+        "split": 1,
+        "start": 50088,
+        "stop": 50400
+      },
+      {
+        "episode": 0,
+        "seed": 9256200,
+        "split": 2,
+        "start": 50400,
+        "stop": 50656
+      },
+      {
+        "episode": 1,
+        "seed": 9256201,
+        "split": 2,
+        "start": 50656,
+        "stop": 50912
+      },
+      {
+        "episode": 2,
+        "seed": 9256202,
+        "split": 2,
+        "start": 50912,
+        "stop": 51168
+      },
+      {
+        "episode": 3,
+        "seed": 9256203,
+        "split": 2,
+        "start": 51168,
+        "stop": 51424
+      },
+      {
+        "episode": 4,
+        "seed": 9256204,
+        "split": 2,
+        "start": 51424,
+        "stop": 51680
+      },
+      {
+        "episode": 5,
+        "seed": 9256205,
+        "split": 2,
+        "start": 51680,
+        "stop": 51936
+      },
+      {
+        "episode": 6,
+        "seed": 9256206,
+        "split": 2,
+        "start": 51936,
+        "stop": 52192
+      },
+      {
+        "episode": 7,
+        "seed": 9256207,
+        "split": 2,
+        "start": 52192,
+        "stop": 52448
+      },
+      {
+        "episode": 8,
+        "seed": 9256208,
+        "split": 2,
+        "start": 52448,
+        "stop": 52704
+      },
+      {
+        "episode": 9,
+        "seed": 9256209,
+        "split": 2,
+        "start": 52704,
+        "stop": 52960
+      },
+      {
+        "episode": 10,
+        "seed": 9256210,
+        "split": 2,
+        "start": 52960,
+        "stop": 53216
+      },
+      {
+        "episode": 11,
+        "seed": 9256211,
+        "split": 2,
+        "start": 53216,
+        "stop": 53472
+      },
+      {
+        "episode": 12,
+        "seed": 9256212,
+        "split": 2,
+        "start": 53472,
+        "stop": 53728
+      },
+      {
+        "episode": 13,
+        "seed": 9256213,
+        "split": 2,
+        "start": 53728,
+        "stop": 53984
+      },
+      {
+        "episode": 14,
+        "seed": 9256214,
+        "split": 2,
+        "start": 53984,
+        "stop": 54240
+      },
+      {
+        "episode": 15,
+        "seed": 9256215,
+        "split": 2,
+        "start": 54240,
+        "stop": 54496
+      },
+      {
+        "episode": 16,
+        "seed": 9256216,
+        "split": 2,
+        "start": 54496,
+        "stop": 54752
+      },
+      {
+        "episode": 17,
+        "seed": 9256217,
+        "split": 2,
+        "start": 54752,
+        "stop": 55008
+      },
+      {
+        "episode": 18,
+        "seed": 9256218,
+        "split": 2,
+        "start": 55008,
+        "stop": 55264
+      },
+      {
+        "episode": 19,
+        "seed": 9256219,
+        "split": 2,
+        "start": 55264,
+        "stop": 55520
+      },
+      {
+        "episode": 20,
+        "seed": 9256220,
+        "split": 2,
+        "start": 55520,
+        "stop": 55776
+      },
+      {
+        "episode": 21,
+        "seed": 9256221,
+        "split": 2,
+        "start": 55776,
+        "stop": 56032
+      },
+      {
+        "episode": 22,
+        "seed": 9256222,
+        "split": 2,
+        "start": 56032,
+        "stop": 56288
+      },
+      {
+        "episode": 23,
+        "seed": 9256223,
+        "split": 2,
+        "start": 56288,
+        "stop": 56544
+      },
+      {
+        "episode": 24,
+        "seed": 9256224,
+        "split": 2,
+        "start": 56544,
+        "stop": 56800
+      },
+      {
+        "episode": 25,
+        "seed": 9256225,
+        "split": 2,
+        "start": 56800,
+        "stop": 57056
+      },
+      {
+        "episode": 26,
+        "seed": 9256226,
+        "split": 2,
+        "start": 57056,
+        "stop": 57312
+      },
+      {
+        "episode": 27,
+        "seed": 9256227,
+        "split": 2,
+        "start": 57312,
+        "stop": 57568
+      },
+      {
+        "episode": 28,
+        "seed": 9256228,
+        "split": 2,
+        "start": 57568,
+        "stop": 57824
+      },
+      {
+        "episode": 29,
+        "seed": 9256229,
+        "split": 2,
+        "start": 57824,
+        "stop": 58080
+      },
+      {
+        "episode": 30,
+        "seed": 9256230,
+        "split": 2,
+        "start": 58080,
+        "stop": 58336
+      },
+      {
+        "episode": 31,
+        "seed": 9256231,
+        "split": 2,
+        "start": 58336,
+        "stop": 58592
+      },
+      {
+        "episode": 0,
+        "seed": 9256300,
+        "split": 3,
+        "start": 58592,
+        "stop": 58904
+      },
+      {
+        "episode": 1,
+        "seed": 9256301,
+        "split": 3,
+        "start": 58904,
+        "stop": 59216
+      },
+      {
+        "episode": 2,
+        "seed": 9256302,
+        "split": 3,
+        "start": 59216,
+        "stop": 59528
+      },
+      {
+        "episode": 3,
+        "seed": 9256303,
+        "split": 3,
+        "start": 59528,
+        "stop": 59840
+      }
+    ],
+    "source_processed_sha256": "8b3f150d75e643a1197dd5338884866fb8365b67c71bac2c55440d83f5b172ec",
+    "split_episodes": [
+      [
+        0,
+        1024,
+        0
+      ],
+      [
+        1024,
+        2048,
+        0
+      ],
+      [
+        2048,
+        3072,
+        0
+      ],
+      [
+        3072,
+        4096,
+        0
+      ],
+      [
+        4096,
+        5120,
+        0
+      ],
+      [
+        5120,
+        6144,
+        0
+      ],
+      [
+        6144,
+        7168,
+        0
+      ],
+      [
+        7168,
+        8192,
+        0
+      ],
+      [
+        8192,
+        9216,
+        0
+      ],
+      [
+        9216,
+        10240,
+        0
+      ],
+      [
+        10240,
+        11264,
+        0
+      ],
+      [
+        11264,
+        12288,
+        0
+      ],
+      [
+        12288,
+        13312,
+        0
+      ],
+      [
+        13312,
+        14336,
+        0
+      ],
+      [
+        14336,
+        15360,
+        0
+      ],
+      [
+        15360,
+        16384,
+        0
+      ],
+      [
+        16384,
+        17408,
+        0
+      ],
+      [
+        17408,
+        18432,
+        0
+      ],
+      [
+        18432,
+        19456,
+        0
+      ],
+      [
+        19456,
+        20480,
+        0
+      ],
+      [
+        20480,
+        21504,
+        0
+      ],
+      [
+        21504,
+        22528,
+        0
+      ],
+      [
+        22528,
+        23552,
+        0
+      ],
+      [
+        23552,
+        24576,
+        0
+      ],
+      [
+        24576,
+        25600,
+        0
+      ],
+      [
+        25600,
+        26624,
+        0
+      ],
+      [
+        26624,
+        27648,
+        0
+      ],
+      [
+        27648,
+        28672,
+        0
+      ],
+      [
+        28672,
+        29696,
+        0
+      ],
+      [
+        29696,
+        30720,
+        0
+      ],
+      [
+        30720,
+        31744,
+        0
+      ],
+      [
+        31744,
+        32768,
+        0
+      ],
+      [
+        32768,
+        33792,
+        0
+      ],
+      [
+        33792,
+        34816,
+        0
+      ],
+      [
+        34816,
+        35840,
+        0
+      ],
+      [
+        35840,
+        36864,
+        0
+      ],
+      [
+        36864,
+        37888,
+        0
+      ],
+      [
+        37888,
+        38912,
+        0
+      ],
+      [
+        38912,
+        39936,
+        0
+      ],
+      [
+        39936,
+        40960,
+        0
+      ],
+      [
+        40960,
+        41984,
+        0
+      ],
+      [
+        41984,
+        43008,
+        0
+      ],
+      [
+        43008,
+        44032,
+        0
+      ],
+      [
+        44032,
+        45056,
+        0
+      ],
+      [
+        45056,
+        46080,
+        0
+      ],
+      [
+        46080,
+        47104,
+        0
+      ],
+      [
+        47104,
+        48128,
+        0
+      ],
+      [
+        48128,
+        49152,
+        0
+      ],
+      [
+        49152,
+        49464,
+        1
+      ],
+      [
+        49464,
+        49776,
+        1
+      ],
+      [
+        49776,
+        50088,
+        1
+      ],
+      [
+        50088,
+        50400,
+        1
+      ],
+      [
+        50400,
+        50656,
+        2
+      ],
+      [
+        50656,
+        50912,
+        2
+      ],
+      [
+        50912,
+        51168,
+        2
+      ],
+      [
+        51168,
+        51424,
+        2
+      ],
+      [
+        51424,
+        51680,
+        2
+      ],
+      [
+        51680,
+        51936,
+        2
+      ],
+      [
+        51936,
+        52192,
+        2
+      ],
+      [
+        52192,
+        52448,
+        2
+      ],
+      [
+        52448,
+        52704,
+        2
+      ],
+      [
+        52704,
+        52960,
+        2
+      ],
+      [
+        52960,
+        53216,
+        2
+      ],
+      [
+        53216,
+        53472,
+        2
+      ],
+      [
+        53472,
+        53728,
+        2
+      ],
+      [
+        53728,
+        53984,
+        2
+      ],
+      [
+        53984,
+        54240,
+        2
+      ],
+      [
+        54240,
+        54496,
+        2
+      ],
+      [
+        54496,
+        54752,
+        2
+      ],
+      [
+        54752,
+        55008,
+        2
+      ],
+      [
+        55008,
+        55264,
+        2
+      ],
+      [
+        55264,
+        55520,
+        2
+      ],
+      [
+        55520,
+        55776,
+        2
+      ],
+      [
+        55776,
+        56032,
+        2
+      ],
+      [
+        56032,
+        56288,
+        2
+      ],
+      [
+        56288,
+        56544,
+        2
+      ],
+      [
+        56544,
+        56800,
+        2
+      ],
+      [
+        56800,
+        57056,
+        2
+      ],
+      [
+        57056,
+        57312,
+        2
+      ],
+      [
+        57312,
+        57568,
+        2
+      ],
+      [
+        57568,
+        57824,
+        2
+      ],
+      [
+        57824,
+        58080,
+        2
+      ],
+      [
+        58080,
+        58336,
+        2
+      ],
+      [
+        58336,
+        58592,
+        2
+      ],
+      [
+        58592,
+        58904,
+        3
+      ],
+      [
+        58904,
+        59216,
+        3
+      ],
+      [
+        59216,
+        59528,
+        3
+      ],
+      [
+        59528,
+        59840,
+        3
+      ]
+    ],
+    "training_scaling_reused": true,
+    "units": [
+      "arbitrary units"
+    ]
+  },
+  {
+    "background_status": "independent new synthetic seeds",
+    "bounds": [
+      0,
+      49152,
+      50400,
+      58592,
+      59840
+    ],
+    "configuration": "synthetic64",
+    "extension_blocks": [
+      [
+        58592,
+        58904
+      ],
+      [
+        58904,
+        59216
+      ],
+      [
+        59216,
+        59528
+      ],
+      [
+        59528,
+        59840
+      ]
+    ],
+    "interval_seconds": 300,
+    "old_test_overlap_rows": 0,
+    "primary_channels": [
+      "signal"
+    ],
+    "seed": 17,
+    "seeds": [
+      {
+        "episode": 0,
+        "seed": 9064100,
+        "split": 1,
+        "start": 49152,
+        "stop": 49464
+      },
+      {
+        "episode": 1,
+        "seed": 9064101,
+        "split": 1,
+        "start": 49464,
+        "stop": 49776
+      },
+      {
+        "episode": 2,
+        "seed": 9064102,
+        "split": 1,
+        "start": 49776,
+        "stop": 50088
+      },
+      {
+        "episode": 3,
+        "seed": 9064103,
+        "split": 1,
+        "start": 50088,
+        "stop": 50400
+      },
+      {
+        "episode": 0,
+        "seed": 9064200,
+        "split": 2,
+        "start": 50400,
+        "stop": 50656
+      },
+      {
+        "episode": 1,
+        "seed": 9064201,
+        "split": 2,
+        "start": 50656,
+        "stop": 50912
+      },
+      {
+        "episode": 2,
+        "seed": 9064202,
+        "split": 2,
+        "start": 50912,
+        "stop": 51168
+      },
+      {
+        "episode": 3,
+        "seed": 9064203,
+        "split": 2,
+        "start": 51168,
+        "stop": 51424
+      },
+      {
+        "episode": 4,
+        "seed": 9064204,
+        "split": 2,
+        "start": 51424,
+        "stop": 51680
+      },
+      {
+        "episode": 5,
+        "seed": 9064205,
+        "split": 2,
+        "start": 51680,
+        "stop": 51936
+      },
+      {
+        "episode": 6,
+        "seed": 9064206,
+        "split": 2,
+        "start": 51936,
+        "stop": 52192
+      },
+      {
+        "episode": 7,
+        "seed": 9064207,
+        "split": 2,
+        "start": 52192,
+        "stop": 52448
+      },
+      {
+        "episode": 8,
+        "seed": 9064208,
+        "split": 2,
+        "start": 52448,
+        "stop": 52704
+      },
+      {
+        "episode": 9,
+        "seed": 9064209,
+        "split": 2,
+        "start": 52704,
+        "stop": 52960
+      },
+      {
+        "episode": 10,
+        "seed": 9064210,
+        "split": 2,
+        "start": 52960,
+        "stop": 53216
+      },
+      {
+        "episode": 11,
+        "seed": 9064211,
+        "split": 2,
+        "start": 53216,
+        "stop": 53472
+      },
+      {
+        "episode": 12,
+        "seed": 9064212,
+        "split": 2,
+        "start": 53472,
+        "stop": 53728
+      },
+      {
+        "episode": 13,
+        "seed": 9064213,
+        "split": 2,
+        "start": 53728,
+        "stop": 53984
+      },
+      {
+        "episode": 14,
+        "seed": 9064214,
+        "split": 2,
+        "start": 53984,
+        "stop": 54240
+      },
+      {
+        "episode": 15,
+        "seed": 9064215,
+        "split": 2,
+        "start": 54240,
+        "stop": 54496
+      },
+      {
+        "episode": 16,
+        "seed": 9064216,
+        "split": 2,
+        "start": 54496,
+        "stop": 54752
+      },
+      {
+        "episode": 17,
+        "seed": 9064217,
+        "split": 2,
+        "start": 54752,
+        "stop": 55008
+      },
+      {
+        "episode": 18,
+        "seed": 9064218,
+        "split": 2,
+        "start": 55008,
+        "stop": 55264
+      },
+      {
+        "episode": 19,
+        "seed": 9064219,
+        "split": 2,
+        "start": 55264,
+        "stop": 55520
+      },
+      {
+        "episode": 20,
+        "seed": 9064220,
+        "split": 2,
+        "start": 55520,
+        "stop": 55776
+      },
+      {
+        "episode": 21,
+        "seed": 9064221,
+        "split": 2,
+        "start": 55776,
+        "stop": 56032
+      },
+      {
+        "episode": 22,
+        "seed": 9064222,
+        "split": 2,
+        "start": 56032,
+        "stop": 56288
+      },
+      {
+        "episode": 23,
+        "seed": 9064223,
+        "split": 2,
+        "start": 56288,
+        "stop": 56544
+      },
+      {
+        "episode": 24,
+        "seed": 9064224,
+        "split": 2,
+        "start": 56544,
+        "stop": 56800
+      },
+      {
+        "episode": 25,
+        "seed": 9064225,
+        "split": 2,
+        "start": 56800,
+        "stop": 57056
+      },
+      {
+        "episode": 26,
+        "seed": 9064226,
+        "split": 2,
+        "start": 57056,
+        "stop": 57312
+      },
+      {
+        "episode": 27,
+        "seed": 9064227,
+        "split": 2,
+        "start": 57312,
+        "stop": 57568
+      },
+      {
+        "episode": 28,
+        "seed": 9064228,
+        "split": 2,
+        "start": 57568,
+        "stop": 57824
+      },
+      {
+        "episode": 29,
+        "seed": 9064229,
+        "split": 2,
+        "start": 57824,
+        "stop": 58080
+      },
+      {
+        "episode": 30,
+        "seed": 9064230,
+        "split": 2,
+        "start": 58080,
+        "stop": 58336
+      },
+      {
+        "episode": 31,
+        "seed": 9064231,
+        "split": 2,
+        "start": 58336,
+        "stop": 58592
+      },
+      {
+        "episode": 0,
+        "seed": 9064300,
+        "split": 3,
+        "start": 58592,
+        "stop": 58904
+      },
+      {
+        "episode": 1,
+        "seed": 9064301,
+        "split": 3,
+        "start": 58904,
+        "stop": 59216
+      },
+      {
+        "episode": 2,
+        "seed": 9064302,
+        "split": 3,
+        "start": 59216,
+        "stop": 59528
+      },
+      {
+        "episode": 3,
+        "seed": 9064303,
+        "split": 3,
+        "start": 59528,
+        "stop": 59840
+      }
+    ],
+    "source_processed_sha256": "cb711c33eb21b9bc0b195363a2bdbd77db6ed3948efc3678cb2871aed9492c95",
+    "split_episodes": [
+      [
+        0,
+        1024,
+        0
+      ],
+      [
+        1024,
+        2048,
+        0
+      ],
+      [
+        2048,
+        3072,
+        0
+      ],
+      [
+        3072,
+        4096,
+        0
+      ],
+      [
+        4096,
+        5120,
+        0
+      ],
+      [
+        5120,
+        6144,
+        0
+      ],
+      [
+        6144,
+        7168,
+        0
+      ],
+      [
+        7168,
+        8192,
+        0
+      ],
+      [
+        8192,
+        9216,
+        0
+      ],
+      [
+        9216,
+        10240,
+        0
+      ],
+      [
+        10240,
+        11264,
+        0
+      ],
+      [
+        11264,
+        12288,
+        0
+      ],
+      [
+        12288,
+        13312,
+        0
+      ],
+      [
+        13312,
+        14336,
+        0
+      ],
+      [
+        14336,
+        15360,
+        0
+      ],
+      [
+        15360,
+        16384,
+        0
+      ],
+      [
+        16384,
+        17408,
+        0
+      ],
+      [
+        17408,
+        18432,
+        0
+      ],
+      [
+        18432,
+        19456,
+        0
+      ],
+      [
+        19456,
+        20480,
+        0
+      ],
+      [
+        20480,
+        21504,
+        0
+      ],
+      [
+        21504,
+        22528,
+        0
+      ],
+      [
+        22528,
+        23552,
+        0
+      ],
+      [
+        23552,
+        24576,
+        0
+      ],
+      [
+        24576,
+        25600,
+        0
+      ],
+      [
+        25600,
+        26624,
+        0
+      ],
+      [
+        26624,
+        27648,
+        0
+      ],
+      [
+        27648,
+        28672,
+        0
+      ],
+      [
+        28672,
+        29696,
+        0
+      ],
+      [
+        29696,
+        30720,
+        0
+      ],
+      [
+        30720,
+        31744,
+        0
+      ],
+      [
+        31744,
+        32768,
+        0
+      ],
+      [
+        32768,
+        33792,
+        0
+      ],
+      [
+        33792,
+        34816,
+        0
+      ],
+      [
+        34816,
+        35840,
+        0
+      ],
+      [
+        35840,
+        36864,
+        0
+      ],
+      [
+        36864,
+        37888,
+        0
+      ],
+      [
+        37888,
+        38912,
+        0
+      ],
+      [
+        38912,
+        39936,
+        0
+      ],
+      [
+        39936,
+        40960,
+        0
+      ],
+      [
+        40960,
+        41984,
+        0
+      ],
+      [
+        41984,
+        43008,
+        0
+      ],
+      [
+        43008,
+        44032,
+        0
+      ],
+      [
+        44032,
+        45056,
+        0
+      ],
+      [
+        45056,
+        46080,
+        0
+      ],
+      [
+        46080,
+        47104,
+        0
+      ],
+      [
+        47104,
+        48128,
+        0
+      ],
+      [
+        48128,
+        49152,
+        0
+      ],
+      [
+        49152,
+        49464,
+        1
+      ],
+      [
+        49464,
+        49776,
+        1
+      ],
+      [
+        49776,
+        50088,
+        1
+      ],
+      [
+        50088,
+        50400,
+        1
+      ],
+      [
+        50400,
+        50656,
+        2
+      ],
+      [
+        50656,
+        50912,
+        2
+      ],
+      [
+        50912,
+        51168,
+        2
+      ],
+      [
+        51168,
+        51424,
+        2
+      ],
+      [
+        51424,
+        51680,
+        2
+      ],
+      [
+        51680,
+        51936,
+        2
+      ],
+      [
+        51936,
+        52192,
+        2
+      ],
+      [
+        52192,
+        52448,
+        2
+      ],
+      [
+        52448,
+        52704,
+        2
+      ],
+      [
+        52704,
+        52960,
+        2
+      ],
+      [
+        52960,
+        53216,
+        2
+      ],
+      [
+        53216,
+        53472,
+        2
+      ],
+      [
+        53472,
+        53728,
+        2
+      ],
+      [
+        53728,
+        53984,
+        2
+      ],
+      [
+        53984,
+        54240,
+        2
+      ],
+      [
+        54240,
+        54496,
+        2
+      ],
+      [
+        54496,
+        54752,
+        2
+      ],
+      [
+        54752,
+        55008,
+        2
+      ],
+      [
+        55008,
+        55264,
+        2
+      ],
+      [
+        55264,
+        55520,
+        2
+      ],
+      [
+        55520,
+        55776,
+        2
+      ],
+      [
+        55776,
+        56032,
+        2
+      ],
+      [
+        56032,
+        56288,
+        2
+      ],
+      [
+        56288,
+        56544,
+        2
+      ],
+      [
+        56544,
+        56800,
+        2
+      ],
+      [
+        56800,
+        57056,
+        2
+      ],
+      [
+        57056,
+        57312,
+        2
+      ],
+      [
+        57312,
+        57568,
+        2
+      ],
+      [
+        57568,
+        57824,
+        2
+      ],
+      [
+        57824,
+        58080,
+        2
+      ],
+      [
+        58080,
+        58336,
+        2
+      ],
+      [
+        58336,
+        58592,
+        2
+      ],
+      [
+        58592,
+        58904,
+        3
+      ],
+      [
+        58904,
+        59216,
+        3
+      ],
+      [
+        59216,
+        59528,
+        3
+      ],
+      [
+        59528,
+        59840,
+        3
+      ]
+    ],
+    "training_scaling_reused": true,
+    "units": [
+      "arbitrary units"
+    ]
+  },
+  {
+    "background_status": "independent new synthetic seeds",
+    "bounds": [
+      0,
+      49152,
+      50400,
+      58592,
+      59840
+    ],
+    "configuration": "synthetic64",
+    "extension_blocks": [
+      [
+        58592,
+        58904
+      ],
+      [
+        58904,
+        59216
+      ],
+      [
+        59216,
+        59528
+      ],
+      [
+        59528,
+        59840
+      ]
+    ],
+    "interval_seconds": 300,
+    "old_test_overlap_rows": 0,
+    "primary_channels": [
+      "signal"
+    ],
+    "seed": 29,
+    "seeds": [
+      {
+        "episode": 0,
+        "seed": 9064100,
+        "split": 1,
+        "start": 49152,
+        "stop": 49464
+      },
+      {
+        "episode": 1,
+        "seed": 9064101,
+        "split": 1,
+        "start": 49464,
+        "stop": 49776
+      },
+      {
+        "episode": 2,
+        "seed": 9064102,
+        "split": 1,
+        "start": 49776,
+        "stop": 50088
+      },
+      {
+        "episode": 3,
+        "seed": 9064103,
+        "split": 1,
+        "start": 50088,
+        "stop": 50400
+      },
+      {
+        "episode": 0,
+        "seed": 9064200,
+        "split": 2,
+        "start": 50400,
+        "stop": 50656
+      },
+      {
+        "episode": 1,
+        "seed": 9064201,
+        "split": 2,
+        "start": 50656,
+        "stop": 50912
+      },
+      {
+        "episode": 2,
+        "seed": 9064202,
+        "split": 2,
+        "start": 50912,
+        "stop": 51168
+      },
+      {
+        "episode": 3,
+        "seed": 9064203,
+        "split": 2,
+        "start": 51168,
+        "stop": 51424
+      },
+      {
+        "episode": 4,
+        "seed": 9064204,
+        "split": 2,
+        "start": 51424,
+        "stop": 51680
+      },
+      {
+        "episode": 5,
+        "seed": 9064205,
+        "split": 2,
+        "start": 51680,
+        "stop": 51936
+      },
+      {
+        "episode": 6,
+        "seed": 9064206,
+        "split": 2,
+        "start": 51936,
+        "stop": 52192
+      },
+      {
+        "episode": 7,
+        "seed": 9064207,
+        "split": 2,
+        "start": 52192,
+        "stop": 52448
+      },
+      {
+        "episode": 8,
+        "seed": 9064208,
+        "split": 2,
+        "start": 52448,
+        "stop": 52704
+      },
+      {
+        "episode": 9,
+        "seed": 9064209,
+        "split": 2,
+        "start": 52704,
+        "stop": 52960
+      },
+      {
+        "episode": 10,
+        "seed": 9064210,
+        "split": 2,
+        "start": 52960,
+        "stop": 53216
+      },
+      {
+        "episode": 11,
+        "seed": 9064211,
+        "split": 2,
+        "start": 53216,
+        "stop": 53472
+      },
+      {
+        "episode": 12,
+        "seed": 9064212,
+        "split": 2,
+        "start": 53472,
+        "stop": 53728
+      },
+      {
+        "episode": 13,
+        "seed": 9064213,
+        "split": 2,
+        "start": 53728,
+        "stop": 53984
+      },
+      {
+        "episode": 14,
+        "seed": 9064214,
+        "split": 2,
+        "start": 53984,
+        "stop": 54240
+      },
+      {
+        "episode": 15,
+        "seed": 9064215,
+        "split": 2,
+        "start": 54240,
+        "stop": 54496
+      },
+      {
+        "episode": 16,
+        "seed": 9064216,
+        "split": 2,
+        "start": 54496,
+        "stop": 54752
+      },
+      {
+        "episode": 17,
+        "seed": 9064217,
+        "split": 2,
+        "start": 54752,
+        "stop": 55008
+      },
+      {
+        "episode": 18,
+        "seed": 9064218,
+        "split": 2,
+        "start": 55008,
+        "stop": 55264
+      },
+      {
+        "episode": 19,
+        "seed": 9064219,
+        "split": 2,
+        "start": 55264,
+        "stop": 55520
+      },
+      {
+        "episode": 20,
+        "seed": 9064220,
+        "split": 2,
+        "start": 55520,
+        "stop": 55776
+      },
+      {
+        "episode": 21,
+        "seed": 9064221,
+        "split": 2,
+        "start": 55776,
+        "stop": 56032
+      },
+      {
+        "episode": 22,
+        "seed": 9064222,
+        "split": 2,
+        "start": 56032,
+        "stop": 56288
+      },
+      {
+        "episode": 23,
+        "seed": 9064223,
+        "split": 2,
+        "start": 56288,
+        "stop": 56544
+      },
+      {
+        "episode": 24,
+        "seed": 9064224,
+        "split": 2,
+        "start": 56544,
+        "stop": 56800
+      },
+      {
+        "episode": 25,
+        "seed": 9064225,
+        "split": 2,
+        "start": 56800,
+        "stop": 57056
+      },
+      {
+        "episode": 26,
+        "seed": 9064226,
+        "split": 2,
+        "start": 57056,
+        "stop": 57312
+      },
+      {
+        "episode": 27,
+        "seed": 9064227,
+        "split": 2,
+        "start": 57312,
+        "stop": 57568
+      },
+      {
+        "episode": 28,
+        "seed": 9064228,
+        "split": 2,
+        "start": 57568,
+        "stop": 57824
+      },
+      {
+        "episode": 29,
+        "seed": 9064229,
+        "split": 2,
+        "start": 57824,
+        "stop": 58080
+      },
+      {
+        "episode": 30,
+        "seed": 9064230,
+        "split": 2,
+        "start": 58080,
+        "stop": 58336
+      },
+      {
+        "episode": 31,
+        "seed": 9064231,
+        "split": 2,
+        "start": 58336,
+        "stop": 58592
+      },
+      {
+        "episode": 0,
+        "seed": 9064300,
+        "split": 3,
+        "start": 58592,
+        "stop": 58904
+      },
+      {
+        "episode": 1,
+        "seed": 9064301,
+        "split": 3,
+        "start": 58904,
+        "stop": 59216
+      },
+      {
+        "episode": 2,
+        "seed": 9064302,
+        "split": 3,
+        "start": 59216,
+        "stop": 59528
+      },
+      {
+        "episode": 3,
+        "seed": 9064303,
+        "split": 3,
+        "start": 59528,
+        "stop": 59840
+      }
+    ],
+    "source_processed_sha256": "cb711c33eb21b9bc0b195363a2bdbd77db6ed3948efc3678cb2871aed9492c95",
+    "split_episodes": [
+      [
+        0,
+        1024,
+        0
+      ],
+      [
+        1024,
+        2048,
+        0
+      ],
+      [
+        2048,
+        3072,
+        0
+      ],
+      [
+        3072,
+        4096,
+        0
+      ],
+      [
+        4096,
+        5120,
+        0
+      ],
+      [
+        5120,
+        6144,
+        0
+      ],
+      [
+        6144,
+        7168,
+        0
+      ],
+      [
+        7168,
+        8192,
+        0
+      ],
+      [
+        8192,
+        9216,
+        0
+      ],
+      [
+        9216,
+        10240,
+        0
+      ],
+      [
+        10240,
+        11264,
+        0
+      ],
+      [
+        11264,
+        12288,
+        0
+      ],
+      [
+        12288,
+        13312,
+        0
+      ],
+      [
+        13312,
+        14336,
+        0
+      ],
+      [
+        14336,
+        15360,
+        0
+      ],
+      [
+        15360,
+        16384,
+        0
+      ],
+      [
+        16384,
+        17408,
+        0
+      ],
+      [
+        17408,
+        18432,
+        0
+      ],
+      [
+        18432,
+        19456,
+        0
+      ],
+      [
+        19456,
+        20480,
+        0
+      ],
+      [
+        20480,
+        21504,
+        0
+      ],
+      [
+        21504,
+        22528,
+        0
+      ],
+      [
+        22528,
+        23552,
+        0
+      ],
+      [
+        23552,
+        24576,
+        0
+      ],
+      [
+        24576,
+        25600,
+        0
+      ],
+      [
+        25600,
+        26624,
+        0
+      ],
+      [
+        26624,
+        27648,
+        0
+      ],
+      [
+        27648,
+        28672,
+        0
+      ],
+      [
+        28672,
+        29696,
+        0
+      ],
+      [
+        29696,
+        30720,
+        0
+      ],
+      [
+        30720,
+        31744,
+        0
+      ],
+      [
+        31744,
+        32768,
+        0
+      ],
+      [
+        32768,
+        33792,
+        0
+      ],
+      [
+        33792,
+        34816,
+        0
+      ],
+      [
+        34816,
+        35840,
+        0
+      ],
+      [
+        35840,
+        36864,
+        0
+      ],
+      [
+        36864,
+        37888,
+        0
+      ],
+      [
+        37888,
+        38912,
+        0
+      ],
+      [
+        38912,
+        39936,
+        0
+      ],
+      [
+        39936,
+        40960,
+        0
+      ],
+      [
+        40960,
+        41984,
+        0
+      ],
+      [
+        41984,
+        43008,
+        0
+      ],
+      [
+        43008,
+        44032,
+        0
+      ],
+      [
+        44032,
+        45056,
+        0
+      ],
+      [
+        45056,
+        46080,
+        0
+      ],
+      [
+        46080,
+        47104,
+        0
+      ],
+      [
+        47104,
+        48128,
+        0
+      ],
+      [
+        48128,
+        49152,
+        0
+      ],
+      [
+        49152,
+        49464,
+        1
+      ],
+      [
+        49464,
+        49776,
+        1
+      ],
+      [
+        49776,
+        50088,
+        1
+      ],
+      [
+        50088,
+        50400,
+        1
+      ],
+      [
+        50400,
+        50656,
+        2
+      ],
+      [
+        50656,
+        50912,
+        2
+      ],
+      [
+        50912,
+        51168,
+        2
+      ],
+      [
+        51168,
+        51424,
+        2
+      ],
+      [
+        51424,
+        51680,
+        2
+      ],
+      [
+        51680,
+        51936,
+        2
+      ],
+      [
+        51936,
+        52192,
+        2
+      ],
+      [
+        52192,
+        52448,
+        2
+      ],
+      [
+        52448,
+        52704,
+        2
+      ],
+      [
+        52704,
+        52960,
+        2
+      ],
+      [
+        52960,
+        53216,
+        2
+      ],
+      [
+        53216,
+        53472,
+        2
+      ],
+      [
+        53472,
+        53728,
+        2
+      ],
+      [
+        53728,
+        53984,
+        2
+      ],
+      [
+        53984,
+        54240,
+        2
+      ],
+      [
+        54240,
+        54496,
+        2
+      ],
+      [
+        54496,
+        54752,
+        2
+      ],
+      [
+        54752,
+        55008,
+        2
+      ],
+      [
+        55008,
+        55264,
+        2
+      ],
+      [
+        55264,
+        55520,
+        2
+      ],
+      [
+        55520,
+        55776,
+        2
+      ],
+      [
+        55776,
+        56032,
+        2
+      ],
+      [
+        56032,
+        56288,
+        2
+      ],
+      [
+        56288,
+        56544,
+        2
+      ],
+      [
+        56544,
+        56800,
+        2
+      ],
+      [
+        56800,
+        57056,
+        2
+      ],
+      [
+        57056,
+        57312,
+        2
+      ],
+      [
+        57312,
+        57568,
+        2
+      ],
+      [
+        57568,
+        57824,
+        2
+      ],
+      [
+        57824,
+        58080,
+        2
+      ],
+      [
+        58080,
+        58336,
+        2
+      ],
+      [
+        58336,
+        58592,
+        2
+      ],
+      [
+        58592,
+        58904,
+        3
+      ],
+      [
+        58904,
+        59216,
+        3
+      ],
+      [
+        59216,
+        59528,
+        3
+      ],
+      [
+        59528,
+        59840,
+        3
+      ]
+    ],
+    "training_scaling_reused": true,
+    "units": [
+      "arbitrary units"
+    ]
+  },
+  {
+    "background_status": "independent new synthetic seeds",
+    "bounds": [
+      0,
+      49152,
+      50400,
+      58592,
+      59840
+    ],
+    "configuration": "synthetic64",
+    "extension_blocks": [
+      [
+        58592,
+        58904
+      ],
+      [
+        58904,
+        59216
+      ],
+      [
+        59216,
+        59528
+      ],
+      [
+        59528,
+        59840
+      ]
+    ],
+    "interval_seconds": 300,
+    "old_test_overlap_rows": 0,
+    "primary_channels": [
+      "signal"
+    ],
+    "seed": 43,
+    "seeds": [
+      {
+        "episode": 0,
+        "seed": 9064100,
+        "split": 1,
+        "start": 49152,
+        "stop": 49464
+      },
+      {
+        "episode": 1,
+        "seed": 9064101,
+        "split": 1,
+        "start": 49464,
+        "stop": 49776
+      },
+      {
+        "episode": 2,
+        "seed": 9064102,
+        "split": 1,
+        "start": 49776,
+        "stop": 50088
+      },
+      {
+        "episode": 3,
+        "seed": 9064103,
+        "split": 1,
+        "start": 50088,
+        "stop": 50400
+      },
+      {
+        "episode": 0,
+        "seed": 9064200,
+        "split": 2,
+        "start": 50400,
+        "stop": 50656
+      },
+      {
+        "episode": 1,
+        "seed": 9064201,
+        "split": 2,
+        "start": 50656,
+        "stop": 50912
+      },
+      {
+        "episode": 2,
+        "seed": 9064202,
+        "split": 2,
+        "start": 50912,
+        "stop": 51168
+      },
+      {
+        "episode": 3,
+        "seed": 9064203,
+        "split": 2,
+        "start": 51168,
+        "stop": 51424
+      },
+      {
+        "episode": 4,
+        "seed": 9064204,
+        "split": 2,
+        "start": 51424,
+        "stop": 51680
+      },
+      {
+        "episode": 5,
+        "seed": 9064205,
+        "split": 2,
+        "start": 51680,
+        "stop": 51936
+      },
+      {
+        "episode": 6,
+        "seed": 9064206,
+        "split": 2,
+        "start": 51936,
+        "stop": 52192
+      },
+      {
+        "episode": 7,
+        "seed": 9064207,
+        "split": 2,
+        "start": 52192,
+        "stop": 52448
+      },
+      {
+        "episode": 8,
+        "seed": 9064208,
+        "split": 2,
+        "start": 52448,
+        "stop": 52704
+      },
+      {
+        "episode": 9,
+        "seed": 9064209,
+        "split": 2,
+        "start": 52704,
+        "stop": 52960
+      },
+      {
+        "episode": 10,
+        "seed": 9064210,
+        "split": 2,
+        "start": 52960,
+        "stop": 53216
+      },
+      {
+        "episode": 11,
+        "seed": 9064211,
+        "split": 2,
+        "start": 53216,
+        "stop": 53472
+      },
+      {
+        "episode": 12,
+        "seed": 9064212,
+        "split": 2,
+        "start": 53472,
+        "stop": 53728
+      },
+      {
+        "episode": 13,
+        "seed": 9064213,
+        "split": 2,
+        "start": 53728,
+        "stop": 53984
+      },
+      {
+        "episode": 14,
+        "seed": 9064214,
+        "split": 2,
+        "start": 53984,
+        "stop": 54240
+      },
+      {
+        "episode": 15,
+        "seed": 9064215,
+        "split": 2,
+        "start": 54240,
+        "stop": 54496
+      },
+      {
+        "episode": 16,
+        "seed": 9064216,
+        "split": 2,
+        "start": 54496,
+        "stop": 54752
+      },
+      {
+        "episode": 17,
+        "seed": 9064217,
+        "split": 2,
+        "start": 54752,
+        "stop": 55008
+      },
+      {
+        "episode": 18,
+        "seed": 9064218,
+        "split": 2,
+        "start": 55008,
+        "stop": 55264
+      },
+      {
+        "episode": 19,
+        "seed": 9064219,
+        "split": 2,
+        "start": 55264,
+        "stop": 55520
+      },
+      {
+        "episode": 20,
+        "seed": 9064220,
+        "split": 2,
+        "start": 55520,
+        "stop": 55776
+      },
+      {
+        "episode": 21,
+        "seed": 9064221,
+        "split": 2,
+        "start": 55776,
+        "stop": 56032
+      },
+      {
+        "episode": 22,
+        "seed": 9064222,
+        "split": 2,
+        "start": 56032,
+        "stop": 56288
+      },
+      {
+        "episode": 23,
+        "seed": 9064223,
+        "split": 2,
+        "start": 56288,
+        "stop": 56544
+      },
+      {
+        "episode": 24,
+        "seed": 9064224,
+        "split": 2,
+        "start": 56544,
+        "stop": 56800
+      },
+      {
+        "episode": 25,
+        "seed": 9064225,
+        "split": 2,
+        "start": 56800,
+        "stop": 57056
+      },
+      {
+        "episode": 26,
+        "seed": 9064226,
+        "split": 2,
+        "start": 57056,
+        "stop": 57312
+      },
+      {
+        "episode": 27,
+        "seed": 9064227,
+        "split": 2,
+        "start": 57312,
+        "stop": 57568
+      },
+      {
+        "episode": 28,
+        "seed": 9064228,
+        "split": 2,
+        "start": 57568,
+        "stop": 57824
+      },
+      {
+        "episode": 29,
+        "seed": 9064229,
+        "split": 2,
+        "start": 57824,
+        "stop": 58080
+      },
+      {
+        "episode": 30,
+        "seed": 9064230,
+        "split": 2,
+        "start": 58080,
+        "stop": 58336
+      },
+      {
+        "episode": 31,
+        "seed": 9064231,
+        "split": 2,
+        "start": 58336,
+        "stop": 58592
+      },
+      {
+        "episode": 0,
+        "seed": 9064300,
+        "split": 3,
+        "start": 58592,
+        "stop": 58904
+      },
+      {
+        "episode": 1,
+        "seed": 9064301,
+        "split": 3,
+        "start": 58904,
+        "stop": 59216
+      },
+      {
+        "episode": 2,
+        "seed": 9064302,
+        "split": 3,
+        "start": 59216,
+        "stop": 59528
+      },
+      {
+        "episode": 3,
+        "seed": 9064303,
+        "split": 3,
+        "start": 59528,
+        "stop": 59840
+      }
+    ],
+    "source_processed_sha256": "cb711c33eb21b9bc0b195363a2bdbd77db6ed3948efc3678cb2871aed9492c95",
+    "split_episodes": [
+      [
+        0,
+        1024,
+        0
+      ],
+      [
+        1024,
+        2048,
+        0
+      ],
+      [
+        2048,
+        3072,
+        0
+      ],
+      [
+        3072,
+        4096,
+        0
+      ],
+      [
+        4096,
+        5120,
+        0
+      ],
+      [
+        5120,
+        6144,
+        0
+      ],
+      [
+        6144,
+        7168,
+        0
+      ],
+      [
+        7168,
+        8192,
+        0
+      ],
+      [
+        8192,
+        9216,
+        0
+      ],
+      [
+        9216,
+        10240,
+        0
+      ],
+      [
+        10240,
+        11264,
+        0
+      ],
+      [
+        11264,
+        12288,
+        0
+      ],
+      [
+        12288,
+        13312,
+        0
+      ],
+      [
+        13312,
+        14336,
+        0
+      ],
+      [
+        14336,
+        15360,
+        0
+      ],
+      [
+        15360,
+        16384,
+        0
+      ],
+      [
+        16384,
+        17408,
+        0
+      ],
+      [
+        17408,
+        18432,
+        0
+      ],
+      [
+        18432,
+        19456,
+        0
+      ],
+      [
+        19456,
+        20480,
+        0
+      ],
+      [
+        20480,
+        21504,
+        0
+      ],
+      [
+        21504,
+        22528,
+        0
+      ],
+      [
+        22528,
+        23552,
+        0
+      ],
+      [
+        23552,
+        24576,
+        0
+      ],
+      [
+        24576,
+        25600,
+        0
+      ],
+      [
+        25600,
+        26624,
+        0
+      ],
+      [
+        26624,
+        27648,
+        0
+      ],
+      [
+        27648,
+        28672,
+        0
+      ],
+      [
+        28672,
+        29696,
+        0
+      ],
+      [
+        29696,
+        30720,
+        0
+      ],
+      [
+        30720,
+        31744,
+        0
+      ],
+      [
+        31744,
+        32768,
+        0
+      ],
+      [
+        32768,
+        33792,
+        0
+      ],
+      [
+        33792,
+        34816,
+        0
+      ],
+      [
+        34816,
+        35840,
+        0
+      ],
+      [
+        35840,
+        36864,
+        0
+      ],
+      [
+        36864,
+        37888,
+        0
+      ],
+      [
+        37888,
+        38912,
+        0
+      ],
+      [
+        38912,
+        39936,
+        0
+      ],
+      [
+        39936,
+        40960,
+        0
+      ],
+      [
+        40960,
+        41984,
+        0
+      ],
+      [
+        41984,
+        43008,
+        0
+      ],
+      [
+        43008,
+        44032,
+        0
+      ],
+      [
+        44032,
+        45056,
+        0
+      ],
+      [
+        45056,
+        46080,
+        0
+      ],
+      [
+        46080,
+        47104,
+        0
+      ],
+      [
+        47104,
+        48128,
+        0
+      ],
+      [
+        48128,
+        49152,
+        0
+      ],
+      [
+        49152,
+        49464,
+        1
+      ],
+      [
+        49464,
+        49776,
+        1
+      ],
+      [
+        49776,
+        50088,
+        1
+      ],
+      [
+        50088,
+        50400,
+        1
+      ],
+      [
+        50400,
+        50656,
+        2
+      ],
+      [
+        50656,
+        50912,
+        2
+      ],
+      [
+        50912,
+        51168,
+        2
+      ],
+      [
+        51168,
+        51424,
+        2
+      ],
+      [
+        51424,
+        51680,
+        2
+      ],
+      [
+        51680,
+        51936,
+        2
+      ],
+      [
+        51936,
+        52192,
+        2
+      ],
+      [
+        52192,
+        52448,
+        2
+      ],
+      [
+        52448,
+        52704,
+        2
+      ],
+      [
+        52704,
+        52960,
+        2
+      ],
+      [
+        52960,
+        53216,
+        2
+      ],
+      [
+        53216,
+        53472,
+        2
+      ],
+      [
+        53472,
+        53728,
+        2
+      ],
+      [
+        53728,
+        53984,
+        2
+      ],
+      [
+        53984,
+        54240,
+        2
+      ],
+      [
+        54240,
+        54496,
+        2
+      ],
+      [
+        54496,
+        54752,
+        2
+      ],
+      [
+        54752,
+        55008,
+        2
+      ],
+      [
+        55008,
+        55264,
+        2
+      ],
+      [
+        55264,
+        55520,
+        2
+      ],
+      [
+        55520,
+        55776,
+        2
+      ],
+      [
+        55776,
+        56032,
+        2
+      ],
+      [
+        56032,
+        56288,
+        2
+      ],
+      [
+        56288,
+        56544,
+        2
+      ],
+      [
+        56544,
+        56800,
+        2
+      ],
+      [
+        56800,
+        57056,
+        2
+      ],
+      [
+        57056,
+        57312,
+        2
+      ],
+      [
+        57312,
+        57568,
+        2
+      ],
+      [
+        57568,
+        57824,
+        2
+      ],
+      [
+        57824,
+        58080,
+        2
+      ],
+      [
+        58080,
+        58336,
+        2
+      ],
+      [
+        58336,
+        58592,
+        2
+      ],
+      [
+        58592,
+        58904,
+        3
+      ],
+      [
+        58904,
+        59216,
+        3
+      ],
+      [
+        59216,
+        59528,
+        3
+      ],
+      [
+        59528,
+        59840,
+        3
+      ]
+    ],
+    "training_scaling_reused": true,
+    "units": [
+      "arbitrary units"
+    ]
+  }
+]

@@ -1,0 +1,118 @@
+{
+  "accepted_artifact_manifest_sha256": "6f9d33e0d89edf521119bc45ee84e957a4af7e94f413a5bdb81a39f39ccb7114",
+  "copied_MiB": 48.641014099121094,
+  "copied_files": 979,
+  "elapsed_CPU_reporting_seconds": 88.57301006600028,
+  "numerical_comparison": "verify_extension_artifact compares all primary summary values, accepted prediction hashes, rank calibration, secondary consistency and source hashes; PDF page limit is checked.",
+  "rendering_note": "PDF byte hashes can vary with metadata/fonts; the accepted PDF was separately rendered and visually inspected.",
+  "scope": "Fresh copy of only Git-indexed project files; deleted derived TeX/figures/PDF/dashboard before regeneration. No raw datasets, checkpoints, measurement tensors or caches copied.",
+  "status": "passed",
+  "steps": [
+    {
+      "command": [
+        "python3",
+        "scripts/pack_extension.py",
+        "verify"
+      ],
+      "elapsed_seconds": 0.5577687810000498,
+      "output_sha256": "9e06a89d00b3243da349aed243b3e58e2024057c83e384fdad1d5a1499f3cf83",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/manage_git_results.py",
+        "restore"
+      ],
+      "elapsed_seconds": 0.15134310699795606,
+      "output_sha256": "42c2d1e5649d8eafe5544f5a2c5d6c1bcfeca78ae4f1824c4904aa4aaf70ead2",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/extension_report.py"
+      ],
+      "elapsed_seconds": 51.23500525399868,
+      "output_sha256": "fd41504bf0b0e31ac9540d245c44701a0e849f6628bbf7cbee509926088c4391",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/extension_stratified.py"
+      ],
+      "elapsed_seconds": 7.9474830879989895,
+      "output_sha256": "7d44b1f8290828be28476108872477ddca0fd5e82137a273455ec66daf10c7d5",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/extension_multiscale.py",
+        "--report-only"
+      ],
+      "elapsed_seconds": 10.647435050996137,
+      "output_sha256": "8828e589894eb2c11444bf3e8286403bcfc0c4165ac697a9719bb4ef7cf1e195",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/extension_completion.py"
+      ],
+      "elapsed_seconds": 0.766302188996633,
+      "output_sha256": "a9032616d601b3215d6bea8d72195e36c704f525286daee5b97e53f321883f33",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/extension_figures.py"
+      ],
+      "elapsed_seconds": 11.162494465002965,
+      "output_sha256": "eb065701aae90da66b85d226952573c94e1288ed8c349767d62552826004af46",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/extension_writeup.py"
+      ],
+      "elapsed_seconds": 0.9730202710052254,
+      "output_sha256": "d282e5338aa4a373a83738231a4ee26a260d2c321cc12241d3c6e7f65d565269",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/build_extension_dashboard.py"
+      ],
+      "elapsed_seconds": 0.1646986370033119,
+      "output_sha256": "9fc1550b92ce1b8d10a288428f71163fb3f7ff6582306e9cf6049ca8e126071f",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "latexmk",
+        "-cd",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "manuscript/paper.tex"
+      ],
+      "elapsed_seconds": 1.6227744339994388,
+      "output_sha256": "691a996a4b7eadaad1812d736245f0c4908d25d45df891f6caae37e90e755295",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/verify_extension_artifact.py"
+      ],
+      "elapsed_seconds": 3.3441553939992446,
+      "output_sha256": "0457456542afd4a019338df3ba1174107599b556c6b8b83be2b97cb5c9814c70",
+      "returncode": 0
+    }
+  ]
+}

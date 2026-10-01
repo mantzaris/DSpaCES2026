@@ -1,0 +1,116 @@
+[
+  {
+    "drop_ties_support": 1.0,
+    "kind": "permutation",
+    "q": 3,
+    "support": 1.0,
+    "tau": 1,
+    "tied_fraction": 0.0,
+    "valid_templates_mean": 46.0,
+    "window": 48
+  },
+  {
+    "drop_ties_support": 1.0,
+    "kind": "permutation",
+    "q": 3,
+    "support": 1.0,
+    "tau": 1,
+    "tied_fraction": 0.0,
+    "valid_templates_mean": 94.0,
+    "window": 96
+  },
+  {
+    "drop_ties_support": 1.0,
+    "kind": "permutation",
+    "q": 3,
+    "support": 1.0,
+    "tau": 2,
+    "tied_fraction": 0.0,
+    "valid_templates_mean": 44.0,
+    "window": 48
+  },
+  {
+    "drop_ties_support": 1.0,
+    "kind": "permutation",
+    "q": 3,
+    "support": 1.0,
+    "tau": 2,
+    "tied_fraction": 0.0,
+    "valid_templates_mean": 92.0,
+    "window": 96
+  },
+  {
+    "drop_ties_support": 0.0,
+    "kind": "permutation",
+    "q": 4,
+    "support": 0.0,
+    "tau": 1,
+    "tied_fraction": 0.0,
+    "valid_templates_mean": 45.0,
+    "window": 48
+  },
+  {
+    "drop_ties_support": 0.0,
+    "kind": "permutation",
+    "q": 4,
+    "support": 0.0,
+    "tau": 1,
+    "tied_fraction": 0.0,
+    "valid_templates_mean": 93.0,
+    "window": 96
+  },
+  {
+    "A_mean": 8.3828125,
+    "B_mean": 31.287109375,
+    "censored_fraction": 0.0078125,
+    "delta": 0.1,
+    "kind": "sample",
+    "support": 0.7705078125,
+    "window": 48
+  },
+  {
+    "A_mean": 26.7568359375,
+    "B_mean": 100.724609375,
+    "censored_fraction": 0.0,
+    "delta": 0.1,
+    "kind": "sample",
+    "support": 1.0,
+    "window": 96
+  },
+  {
+    "A_mean": 53.833984375,
+    "B_mean": 111.0537109375,
+    "censored_fraction": 0.0,
+    "delta": 0.2,
+    "kind": "sample",
+    "support": 1.0,
+    "window": 48
+  },
+  {
+    "A_mean": 174.1865234375,
+    "B_mean": 361.7861328125,
+    "censored_fraction": 0.0,
+    "delta": 0.2,
+    "kind": "sample",
+    "support": 1.0,
+    "window": 96
+  },
+  {
+    "A_mean": 138.1318359375,
+    "B_mean": 214.9765625,
+    "censored_fraction": 0.0,
+    "delta": 0.3,
+    "kind": "sample",
+    "support": 1.0,
+    "window": 48
+  },
+  {
+    "A_mean": 447.5830078125,
+    "B_mean": 702.78515625,
+    "censored_fraction": 0.0,
+    "delta": 0.3,
+    "kind": "sample",
+    "support": 1.0,
+    "window": 96
+  }
+]

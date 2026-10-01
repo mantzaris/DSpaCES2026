@@ -1,0 +1,154 @@
+\subsection{Primary comparisons and incremental benefit}
+Table~\ref{tab:main} reports all scheduled events; Fig.~\ref{fig:performance}
+adds paired block intervals. RQ1 has a mixed answer. Synthetic diffusion S
+has lower recall than SB by -0.099 [-0.174, -0.034]; its
+IoU difference is -0.010 [-0.017, -0.003].
+Intel diffusion S/SB recall is 0.213/0.481, but their background
+exceedances are 0.218/0.372.
+PEMS bootstrap S appears stronger than SB at nominal alpha
+(0.528 versus 0.005 recall), with background rates
+0.301 versus 0.000.
+Under the descriptive test-control cap .10, corresponding recalls become
+0.069 and 0.264, at attainable rates
+0.026 and 0.064.
+Thus a nominal-threshold ranking is not an isolated test of feature information.
+The retrospective analysis does not validate a deployable threshold.
+
+For RQ3, synthetic bootstrap T/TB recall is 0.401/0.532,
+with paired difference -0.131 [-0.313, +0.054]; unconditional IoU is
+0.093/0.239.
+Intel bootstrap T instead exceeds TB by +0.389 [+0.264, +0.523]
+recall, but their achieved background rates differ. PE and SE are not interchangeable:
+Intel bootstrap PE/SE recall is 0.310/0.380,
+with IoU 0.022/0.073.
+Switching Intel T to diffusion yields recall 0.060 and background
+exceedance 0.288. PEMS temporal contrasts have wide
+block intervals. These results do not establish a universal entropy ordering.
+
+For RQ4, synthetic bootstrap ST improves on S by
++0.123 [+0.028, +0.230] recall, but ST minus T is
++0.008 [-0.085, +0.127]. Their primary localization rules differ;
+fixed-rule alternatives are retained to distinguish feature and ranking effects.
+The direct incremental comparison BST minus B is
++0.003 [+0.000, +0.008] recall for synthetic bootstrap.
+The other five dataset/reference combinations have zero mean recall change at
+this operating point. This is not equivalence: different feature information
+can be suppressed by a maximum and its recalibrated threshold.
+Synthetic bootstrap BST minus B IoU is +0.008 [+0.000, +0.017].
+Both use the same combined localization rule. A saved maximum-dominance audit
+shows that conventional components usually determine the final scan maximum.
+The retained causal GDN adaptation has synthetic/Intel/PEMS recall
+0.514/0.139/0.157, with background rates
+0.135/0.436/0.038.
+PEMS bootstrap raw residuals reach 0.264 recall at
+0.077 background exceedance. These additional
+detectors retain their disclosed support and information-access differences.
+For bootstrap T, conditional versus unconditional IoU is
+0.231/0.093 on synthetic,
+0.195/0.076 on Intel and
+0.038/0.015 on PEMS.
+Mean best-overlap candidate-group IoU is
+0.284/0.413/0.325,
+an oracle library diagnostic rather than an upper bound on every sensor ranking.
+\input{generated-v2/main-table.tex}
+
+\begin{figure*}[!tb]\centering\includegraphics[width=\textwidth]{performance.pdf}
+\caption{Operational performance and unadjusted paired 95\% whole-block intervals. IoU assigns zero to missed events. Equal nominal alpha does not imply equal achieved background rates; four real recording blocks give limited precision.}\label{fig:performance}\end{figure*}
+
+\subsection{Information captured and mechanism dependence}
+RQ2 is affirmative as an information distinction, not a superiority claim.
+In 64 aligned simulations, joint row permutation changes the evaluated
+correlation matrix by at most $1.3\times10^{-15}$ (rounded upward).
+Mean PE changes from 0.964 to 0.989,
+SE from 0.586 to 1.115,
+and ACF1 from 0.845 to -0.016; spatial entropy is unchanged.
+Conversely, copying lowers mean spatial entropy from 0.877
+to 0.134, while mean PE changes only from
+0.964 to 0.965.
+Offsets, gains, sign changes, quantization, replay, periodic interference,
+irregularity, legitimate transitions and dropout remain separate diagnostic cases.
+\emph{These deliberately constructed experiments are not the primary benchmark.}
+
+In the heterogeneous synthetic benchmark, bootstrap T/TB recall on flatlining
+is 0.741/0.241;
+for independent noise it is 0.463/1.000.
+These are mechanism-specific operational results, not calibrated guarantees at
+identical false-alert rates. A rolling window crossing a flatline onset can
+remain measurable; a wholly constant window correctly abstains.
+The artifact reports paired mechanism, severity, duration, measured-direction
+and affected-support strata. Direction is the measured lagged change, not a
+fault-name label or deviation from reference expectation. The first scheduled
+in-event decision is already 11 samples late. Short events can therefore be
+missed before adequate window evidence becomes available.
+
+\begin{figure*}[!tb]\centering\includegraphics[width=\textwidth]{traces.pdf}
+\caption{First prespecified synthetic copy episode: common forecast draws supply all bands. The first affected sensor and the best-overlap candidate group are chosen for illustration only, using injection labels; they are not a detection/localization rule. Shading marks the 12-row injection.}\label{fig:traces}\end{figure*}
+
+\subsection{Reference fidelity, support and calibration}
+For RQ5, the shared-support audit in Table~\ref{tab:fidelity} distinguishes
+reference defects from feature limits. Synthetic64 diffusion spatial-entropy
+coverage is 0.453
+versus 0.740 for bootstrap;
+Intel values are 0.083 and
+1.000, on only
+6.000 common spatial units per audit issuance on average.
+Intel diffusion has better raw energy score
+(6.336 versus 7.234),
+yet its sample-entropy coverage is 0.000
+versus 0.953 for bootstrap.
+Good raw marginal behavior does not ensure a faithful temporal functional.
+No consistent generative-reference improvement is established, and this compact
+long-lead model does not represent all generative approaches.
+\input{generated-v2/fidelity-table.tex}
+
+RQ6 exposes distinct operational and statistical limitations (Fig.~\ref{fig:availability}).
+Intel S group/window eligibility is 0.017 under bootstrap
+and 0.049 under diffusion; T eligibility is
+0.541 and 0.633.
+Per-sensor support avoids simultaneous complete rows across a group, but
+availability alone does not guarantee calibrated detection. Recalibrating
+on common feature support can also change achieved rates: Intel bootstrap
+common-support B background exceedance is 0.551,
+compared with 0.000 operationally. Varying support and nonexchangeable
+calibration/test distributions remain unresolved by nominal rank calibration.
+
+Development selects $q=3$ throughout, delay 1 for synthetic and 2 for both real
+datasets; $q=4$ loses support at these short windows. Sample tolerance and group
+fraction are saved per configuration. At W96, scale 2 can retain sufficient
+templates, whereas scale 4 cannot meet the declared 30-template minimum;
+W24 is unsupported for the primary temporal entropies. We report these as
+limited multiscale support diagnostics; a separately frozen scale-2 detector
+sensitivity is reported below.
+
+\begin{figure*}[!tb]\centering\includegraphics[width=\textwidth]{availability.pdf}
+\caption{Top: operational eligible-group fraction. Middle: untouched-background exceedance at nominal alpha .10. Bottom: development-only support after independent added missingness, W96; spatial is group support, PE/SE per-sensor support. These different denominators are intentional and explicit.}\label{fig:availability}\end{figure*}
+
+The seed-17, separately calibrated W48/W96 and 51-versus-52-reference-draw
+support sensitivity completed 5 of five configurations.
+Across completed configurations, the largest absolute recall change caused
+by the support-rounding correction is 0.000. Window-specific thresholds
+and results are retained separately; the 120-step forecast lead is held fixed.
+
+The separately frozen, exploratory seed-17 scale-2 comparison keeps W96's
+physical history, d=24 and both references. All temporal measurements use the
+same two-row averages; spatial measurements remain on the original grid.
+Bootstrap T recall changes (scale 2 minus 1, paired block intervals) are
+-0.093 [-0.231, +0.069], -0.069 [-0.458, +0.333] and
+-0.333 [-0.722, -0.028] for synthetic, Intel and PEMS. Corresponding TB
+changes are -0.074 [-0.245, +0.042], +0.264 [+0.000, +0.750] and
+-0.153 [-0.278, -0.028]. Full PE/SE, localization, support and achieved
+background rates accompany these separately calibrated comparisons in the
+artifact. Scale-1 calibration ranks reproduce the independent W96 audit;
+S/SB scores are unchanged across scales. This reused-data sensitivity does
+not select a new primary scale.
+
+A post-hoc CPU estimator check uses 128 independent unit-variance
+Gaussian AR(1) realizations. For independent continuous observations, PE's
+between-realization SD is 0.023 at W48 and 0.009 at W96.
+With fixed sample-entropy tolerance .2, finite supported fractions are
+0.086 and 1.000; conditional means therefore require caution.
+At $\rho=.8$, quantization to .5-unit steps yields tied-template fraction
+0.653. Stable-tie PE eligibility is
+0.008, versus 0.758 after discarding ties.
+This demonstrates sensitivity of the quality/support decision, not a reason
+to reinterpret arbitrary tied ordering as confident dynamics.

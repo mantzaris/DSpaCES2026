@@ -1,0 +1,63 @@
+{
+  "authorization": "budget-authorization.json: user explicitly authorized up to eight cumulative hours",
+  "complete": [
+    "15 primary configurations",
+    "paired reference fidelity for five configurations",
+    "development missingness support",
+    "three isolated pipeline/CPU-GPU kernel benchmarks",
+    "five window/support sensitivity configurations",
+    "five calibrated scale-1/2 configurations"
+  ],
+  "components": {
+    "final_audit_seconds": 39.645372439175844,
+    "integration_tests_seconds": 8.6,
+    "multiscale_attempt_seconds": 838.0523098446429,
+    "multiscale_validation_seconds": 6.345180403441191,
+    "original_seconds": 10088.092477,
+    "pilot_seconds": 11.266732389107347,
+    "primary_attempt_seconds": 3744.224142100662,
+    "window_attempt_seconds": 640.1434432044625
+  },
+  "guard_snapshot_reconciliation_seconds": 8.599993550273211,
+  "limit_seconds": 28800.0,
+  "multiscale_runs": [
+    "intel-17",
+    "pems-17",
+    "synthetic128-17",
+    "synthetic256-17",
+    "synthetic64-17"
+  ],
+  "note": "Includes original work, pilots, numerical CUDA checks, failed attempts and accepted experiment stages. The original four-hour guard stopped with 0.57-second check granularity; subsequent work was explicitly authorized. The final reconstructed ledger includes the earlier 8.6-second CUDA integration check whose local record was absent from the remote ledger-helper directory during the last multiscale attempt; historical guard snapshots are retained unchanged. This reconciliation remains well inside the eight-hour allowance. CPU reporting/rendering/provenance I/O are outside GPU experiment-stage wall time. This is not Pod rental uptime. Isolated timing excludes ingestion/loading/disk output/calibration lookup/dashboard.",
+  "original_four_hour_stop": {
+    "cumulative_seconds": 14400.566514145583,
+    "elapsed_seconds": 508.73778490163386,
+    "limit_seconds": 14400.0
+  },
+  "primary_runs": [
+    "intel-17",
+    "intel-29",
+    "intel-43",
+    "pems-17",
+    "pems-29",
+    "pems-43",
+    "synthetic128-17",
+    "synthetic128-29",
+    "synthetic128-43",
+    "synthetic256-17",
+    "synthetic256-29",
+    "synthetic256-43",
+    "synthetic64-17",
+    "synthetic64-29",
+    "synthetic64-43"
+  ],
+  "status": "completed authorized comparisons",
+  "total_recorded_seconds": 15376.369657381492,
+  "unfinished": [],
+  "window_support_runs": [
+    "intel-17",
+    "pems-17",
+    "synthetic128-17",
+    "synthetic256-17",
+    "synthetic64-17"
+  ]
+}

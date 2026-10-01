@@ -1,0 +1,136 @@
+{
+  "background_status": "blocks excluded from original primary and six-unit fidelity audit; whole release previously available",
+  "bounds": [
+    0,
+    31276,
+    39096,
+    44308,
+    52128
+  ],
+  "extension_blocks": [
+    [
+      45868,
+      46180
+    ],
+    [
+      46492,
+      46804
+    ],
+    [
+      47116,
+      47428
+    ],
+    [
+      47740,
+      48052
+    ]
+  ],
+  "interval_seconds": 300,
+  "old_test_overlap_rows": 0,
+  "original_fidelity_intervals": [
+    [
+      44308,
+      44476
+    ],
+    [
+      44476,
+      44644
+    ],
+    [
+      44644,
+      44812
+    ],
+    [
+      44812,
+      44980
+    ],
+    [
+      44980,
+      45148
+    ],
+    [
+      45148,
+      45316
+    ]
+  ],
+  "original_primary_blocks": [
+    [
+      44308,
+      44620
+    ],
+    [
+      44932,
+      45244
+    ],
+    [
+      45556,
+      45868
+    ],
+    [
+      46180,
+      46492
+    ],
+    [
+      46804,
+      47116
+    ],
+    [
+      47428,
+      47740
+    ],
+    [
+      48364,
+      48676
+    ],
+    [
+      48988,
+      49300
+    ],
+    [
+      49612,
+      49924
+    ],
+    [
+      50236,
+      50548
+    ],
+    [
+      50860,
+      51172
+    ],
+    [
+      51796,
+      52108
+    ]
+  ],
+  "primary_channels": [
+    "speed"
+  ],
+  "source_processed_sha256": "bc51433e2f80c74766c65cee21f5dd50005fadda19e82de7ac6e6dd287f7c306",
+  "split_episodes": [
+    [
+      0,
+      31276,
+      0
+    ],
+    [
+      31276,
+      39096,
+      1
+    ],
+    [
+      39096,
+      44308,
+      2
+    ],
+    [
+      44308,
+      52128,
+      3
+    ]
+  ],
+  "training_scaling_reused": true,
+  "units": [
+    "mph"
+  ]
+}

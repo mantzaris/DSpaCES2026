@@ -1,4 +1,4 @@
-"""Pack/restore lossless result JSON and check the size of the Git index.
+"""Pack/restore lossless result files and check the size of the Git index.
 
 The manifest lists selected result files; original files stay on disk. This
 script never trains models, changes branches, stages files or pushes to Git.
@@ -72,7 +72,7 @@ def main():
             temp=path.with_suffix(path.suffix+'.restore-tmp');temp.write_bytes(original);temp.replace(path)
     if args.action=='pack':
         manifest_path.write_text(json.dumps(manifest,indent=2,sort_keys=True)+'\n')
-    print(f"{args.action}: {len(manifest['compressed_results'])} exact-byte JSON results in {root.name}")
+    print(f"{args.action}: {len(manifest['compressed_results'])} exact-byte results in {root.name}")
 
 
 if __name__=='__main__':main()

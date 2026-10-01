@@ -1,227 +1,199 @@
-# IoT entropy reference study
+# Spatial and Temporal Entropy for IoT Fault Detection
 
-Research for IEEE DSpaCES 2026 by Alexander V. Mantzaris and James H. Korris.
-The study tests local correlation-spectrum entropy against non-entropic
-synchronization features using the **same** conditional joint references,
-spatial groups, calibration units and controlled injections. The hypothesis of
-an entropy advantage is not assumed. All project files belong in this directory.
+Comparative research for IEEE DSpaCES 2026 by Alexander V. Mantzaris and
+James H. Korris. The extension separates feature family, reference model,
+estimator support, calibration and localization. Neither entropy nor diffusion
+is required to win.
 
-The submission artifact is [manuscript/paper.pdf](manuscript/paper.pdf).
-Its source is [manuscript/paper.tex](manuscript/paper.tex), with numerical tables
-and figures generated from saved results. Author affiliations and corresponding
-email were not supplied and are not invented. The user owns the final repository
-push and workshop submission; this workflow does neither.
+Read [the manuscript](manuscript/paper.pdf), [findings](docs/extension-findings.md),
+[the frozen protocol](docs/extension-protocol.md), and
+[the audit amendment](docs/extension-audit-amendment.md).
+The original study remains in `experiments/full`, the original `results/`
+files, and revision `b900da1b`. Its [README](docs/original-study-readme.md)
+describes the original pipeline. Current source is `manuscript/extension.tex`,
+included by `manuscript/paper.tex`.
+The original removed/shuffled-topology ablations are retained in v1; the
+frozen temporal extension fixes the physical/proximity graph to compare features.
 
-## Inspect the results and replay
+All 15 primary extension runs completed: 360 new fault realizations in 20
+source blocks, three training seeds, one synthetic benchmark (64/128/256-node
+configurations), Intel Lab and PEMS-BAY. The main comparisons show no consistent
+overall entropy or diffusion advantage. Temporal entropy captures some changes
+that spatial covariance cannot, but conventional temporal statistics can also
+do so. Both real-background extensions are exploratory reuse with semi-synthetic
+faults, not validation against verified native failures.
 
-After a fresh clone, restore the losslessly compressed numerical JSON files:
+The user explicitly raised the cumulative GPU experiment allowance to eight
+hours after the original four-hour stop. The original stop is preserved in the
+ledger; completed stages and actual time are recorded in
+`experiments/extension-v2/completion.json`. The separately frozen
+[scale-2 sensitivity](docs/extension-multiscale-protocol.md) reuses seed-17 episodes
+and references and is exploratory. No infrastructure was provisioned, and
+nothing was submitted or pushed. Affiliations and corresponding email were not supplied.
+
+## Rebuild results, figures, paper and dashboard without a GPU
+
+Run from this directory. Python dependencies are declared in `pyproject.toml`;
+`environment/requirements.lock.txt` records the CUDA experiment environment.
+The tested CPU reporting versions are in `environment/reporting-environment.json`.
+IEEEtran and its bibliography style are vendored. LaTeX commands need `latexmk`,
+`pdflatex` and BibTeX; figure export uses Ghostscript to subset embedded fonts
+without rasterizing the plots. Original full-font PDFs remain local.
 
 ```bash
-python3 scripts/manage_git_results.py restore
+export PYTHONPATH=src
+export OPENBLAS_NUM_THREADS=1
+python3 scripts/pack_extension.py verify
+python3 scripts/extension_report.py
+python3 scripts/extension_stratified.py
+python3 scripts/extension_multiscale.py --report-only
+python3 scripts/extension_completion.py
+python3 scripts/extension_figures.py
+python3 scripts/extension_writeup.py
+python3 scripts/build_extension_dashboard.py
+latexmk -cd -pdf -interaction=nonstopmode -halt-on-error manuscript/paper.tex
+python3 scripts/verify_extension_artifact.py
 ```
 
-This uses only the Python standard library and verifies every restored byte
-against `git-storage.json`. Existing local results are left in place.
+These commands use committed predictions, calibration, support summaries,
+compact replays and diagnostics. They do not need the raw datasets, neural
+checkpoints or full generated trajectories. Numerical results are reproducible;
+PDF byte hashes can differ with fonts, TeX version and embedded timestamps.
+Large numerical JSON/CSV results are stored losslessly as `.gz`; project readers
+load them directly, and regeneration retains readable local exports.
+Before rebuilding the preserved v1 pipeline, run
+`python3 scripts/manage_git_results.py restore`; it restores original JSON and
+CSV bytes and verifies their hashes. Existing local originals are retained.
+To rerun the standalone CPU mathematical diagnostics:
 
-The completed primary experiment does **not establish a consistent entropy
-advantage** in detection and localization. At nominal per-issuance alpha 0.10:
+```bash
+python3 scripts/extension_diagnostics.py
+python3 scripts/extension_estimator_stability.py
+python3 -m pytest tests -q
+```
 
-| Dataset | Diffusion H recall | Diffusion S recall | H localization IoU | H untouched exceedance |
-|---|---:|---:|---:|---:|
-| Synthetic | 0.326 | 0.315 | 0.017 | 0.240 |
-| Intel Lab | 0.106 | 0.250 | 0.009 | 0.308 |
-| PEMS-BAY | 0.139 | 0.181 | 0.006 | 0.032 |
+The 20-test suite passed on the A6000; locally 18 passed and two CUDA checks
+were skipped. Core checks cover entropy bounds, derivatives, row-permutation
+invariance, explicit sample-pair counting, ties/gaps/flatlines, leakage, rank
+calibration, event matching and localization. Optimized aggregation agrees
+with the unbatched definition. No point-adjusted event metrics are used.
 
-These are 360 scheduled injections nested in 56 source blocks, evaluated with
-three training seeds. Localization gives misses zero credit. Intel's sparse
-common-row support and limited calibration resolution are material limitations.
-Equal nominal thresholds did not achieve equal background rates. The separate
-`results/retrospective_budgets.json` compares empirical budgets using reused
-untouched test controls; it is explicitly retrospective, not a deployment
-calibration guarantee. Native alerts are not adjudicated physical failures.
-
-
-`results/summary.json` contains all 30 detector/reference combinations, whole
-recording-block intervals, seed variability, conditional/unconditional
-localization, missed counts, empirical background rates and event prevalence.
-`event_metrics.csv.gz` preserves every event, seed and nominal alpha.
-`cross_dataset_summary.csv` contrasts equal weighting of the three primary
-datasets with event-pooled scores; `cross_dataset_weighting.json` defines those
-weights. Synthetic node counts remain configurations of one dataset.
-`paired_comparisons.json` resamples the same recording blocks in each contrast.
-`direction-paired-comparisons.json` and the standalone `directional-performance`
-figure provide paired intervals within measured entropy-increase/decrease
-strata, including source-block counts.
-`experiments/full/score-*/predictions.npz` retains scores, rank values, node
-rankings and eligibility; the event and group definitions are adjacent JSON.
-
-The saved browser replay remains available in this local working directory.
-Its generated `dashboard/data/` exports are excluded from Git. On a fresh clone,
-retrieve the heavy artifacts as described below, then run `iot-entropy dashboard`
-to regenerate those exports. Serve the replay from this directory:
+Serve the dashboard:
 
 ```bash
 python3 -m http.server 8766 --bind 127.0.0.1 --directory dashboard
 ```
 
-Open `http://127.0.0.1:8766`. Select a recording, observation, group or heatmap
-cell. The linked graph, traces and evidence show the same saved sample ensemble.
-The browser has no external service dependency. A local HTTP server is needed
-because replay cases are loaded as JSON. `dashboard/schema.json` describes the
-sensor/group/event/frame records. `dashboard/validation/` records the browser
-interaction check; the rendered screenshot remains local. Calibration ranks are not physical
-fault probabilities; native real recordings have unknown causes.
+Open `http://127.0.0.1:8766`. The three prespecified replay cases include stable
+physical layouts, distinct correlation overlays, temporal evidence, reference
+bands, actual changes, reference departures, quality and support counts,
+forecast issuance, model version and rank p-values. Full trace views are
+retrospective; the heatmap and coordination summaries stop at the selected time.
+The original interface is retained as `dashboard/spatial-v1.html`; its data
+exports require the original reconstruction procedure. Browser validation is
+recorded in `dashboard/validation/extension-check.json`. There are no external
+browser services.
 
-## Reproduce on CUDA
+## Artifact schema and storage
 
-The recorded execution uses Python 3.12, PyTorch 2.8.0 with CUDA 12.8, and an
-NVIDIA RTX A6000. `environment/gpu-inspection.json`, `experiments/benchmark.json`
-and the environment lock record hardware, driver and software. Use Python 3.11+
-for the source package; use Python 3.12 for the recorded dependency lock.
-Commands below run from `iot-entropy`.
+`experiments/extension-v2/<configuration>-<seed>/` contains:
 
-```bash
-python3.12 -m venv --system-site-packages .venv
-source .venv/bin/activate
-.venv/bin/python -m pip install -r environment/requirements.lock.txt
-.venv/bin/python -m pip install --no-build-isolation --no-deps -e .
+- `configuration.json`, `data-lineage.json`, `events.json` and `status.json`;
+- development parameters/selection records and `calibration.npz`;
+- `predictions.npz`: scores, stored rank p-values, availability and three
+  localization alternatives for every episode, decision and detector;
+- compressed group, support, timing, reference and fidelity records.
 
-iot-entropy acquire
-iot-entropy prepare
-iot-entropy synthetic --device cuda
-PYTHONPATH=src .venv/bin/python -m pytest -q
+Predictions use `rankings_unique[ranking_index]` to recover rankings. Only the
+**development-selected localization budget** is retained in Git; unused ranks
+13–24 (or 7–24 for Intel) remain in full local/remote originals. All score,
+calibration, availability and used-rank entries are preserved exactly. The
+compact primary prediction files total about 8.4 MiB. `packaging.json` records
+checksums and the reversible dictionary encoding. Do not overwrite these
+accepted compact archives with an indiscriminate remote download.
 
-PYTHONPATH=src .venv/bin/python scripts/pilot.py
-iot-entropy train
-iot-entropy score
-PYTHONPATH=src .venv/bin/python scripts/finish_gpu.py
-PYTHONPATH=src .venv/bin/python scripts/compress_replays.py
+`results/extension-v2/` holds complete event metrics, paired whole-block intervals,
+mechanism/severity/duration/direction/support strata, operating points, fidelity,
+window sensitivities, diagnostic arrays and compressed replay cases. In event
+rows, `tp/fp/fn` are event counts while `precision/recall/f1/iou` are sensor
+localization metrics; summary `recall` means event recall. Missed events receive
+zero unconditional localization. Conditional metrics are separately named.
+Common feature support is within a reference; the separate paired-fidelity
+audit uses support shared across references. Retrospective rate caps reuse test
+controls and must not be interpreted as prospectively validated thresholds.
+Stratified paired estimates weight represented blocks equally; they need not
+equal subtraction of the event-weighted descriptive proportions in each stratum.
 
-iot-entropy evaluate
-PYTHONPATH=src .venv/bin/python scripts/operating_points.py
-PYTHONPATH=src .venv/bin/python scripts/calibration_diagnostic.py
-iot-entropy figures
-iot-entropy dashboard
-iot-entropy paper
-PYTHONPATH=src .venv/bin/python scripts/audit_artifacts.py
-```
+`experiments/extension-v2/multiscale/` preserves the separately calibrated
+W96 scale-1/2 sensitivity, both references, nine feature families, seed 17.
+Its compact ranks store each family's declared primary localization rule;
+the main experiment retains all three alternatives. Scale 1 is checked against
+the independent W96/ceil52 audit. Scale 2 uses 48 complete two-row bins and the
+same physical 24-row change lag. Coarse-grid PE/ACF/Theiler lags double in
+physical time; scale 4 remains an insufficient-support diagnostic.
 
-Activate `.venv` or invoke `.venv/bin/iot-entropy` in place of `iot-entropy`.
-`latexmk`, `pdflatex` and BibTeX are needed for the final command. The official
-IEEEtran class and bibliography style are vendored with their license/source.
-The smoke configuration is in `configs/smoke.json`; a quick scoring integration
-check with existing full checkpoints is
-`PYTHONPATH=src .venv/bin/python scripts/score_all.py --smoke --dataset synthetic64 --seed 17`.
-The training smoke/pilot writes separately under `experiments/pilot`.
-The final audit verifies raw and processed data, checkpoint and replay hashes,
-identical fault manifests, every saved calibration rank, and the recorded
-runtime ceiling. It writes `experiments/artifact-manifest.json` with source and
-publication-artifact checksums. The publication was rendered locally; its
-separate reporting environment is recorded in
-`environment/reporting-environment.json`.
-`experiments/validation/` also records all 11 passing CUDA checks and report
-regeneration under the locked Python 3.12 environment. The latter can be rerun
-with `PYTHONPATH=src .venv/bin/python scripts/verify_reporting_environment.py`;
-it regenerates the same numerical tables with environment-specific graphics.
-`iot-entropy features`, `calibrate`, and `score --dataset NAME --seed SEED`
-expose individual stages. Full scoring includes development selection and
-calibration before test work; a separate `calibrate` invocation is optional.
+Full raw data, checkpoints, generated draws and per-sensor measurement tensors
+are ignored. Existing local files are retained. Remote heavy artifacts remain
+under `/workspace/iot-entropy/` on the configured Pod:
 
-`configs/full.json` freezes the full experiment. The configured four-hour
-ceiling sums completed GPU-stage wall times, including sampling, feature
-calculation and serialization, the pilot and the scoring smoke check. Initial
-data acquisition/preparation and validation were not separately timed and are
-outside this recorded stage total. It is not pod rental uptime or an estimate of
-utilization-weighted GPU kernel hours. No infrastructure is provisioned.
-Completed run directories are resumable. To intentionally rerun a completed
-experiment, archive its outputs and use a fresh project working copy; do not
-mix new configurations with old completion markers. Fixed random seeds do not
-promise bitwise equality across different CUDA/library versions.
+- `experiments/full/checkpoints/` and original training manifests;
+- `experiments/extension-v2/cache/<configuration>-<seed>/*.npy`;
+- `experiments/extension-v2/cache/*-backgrounds.npz` (new CUDA simulations);
+- `experiments/extension-v2/<configuration>-<seed>/measurements.npz`.
 
-## Data and provenance
+The reference manifests hash every saved joint draw; the heavy-artifact manifest
+hashes measurements, backgrounds and checkpoints. Use the configured
+`scripts/ssh-gpu.sh` and selective `rsync` over the direct SSH connection to
+retrieve these if needed. No credentials or private key contents are committed.
+The ordinary Git artifact is sufficient to regenerate the published analysis.
 
-Exactly three primary datasets are used: one independently simulated spatial
-benchmark with 64/128/256-node configurations, Intel Berkeley Lab, and the
-original DCRNN PEMS-BAY release. `data/manifests/` contains original URLs,
-checksums, timestamps, raw-to-processed transformations, coverage, split bounds
-and simulation seeds. `data.py` downloads original Intel files and the DCRNN
-authors' linked HDF5 file and graph metadata; it never substitutes datasets.
+## Reproduce the CUDA experiments
 
-Intel uses last-observed whole rows in right-labeled two-minute bins, with no
-interpolation. The pre-test availability audit excludes its terminal sustained
-humidity collapse after March 23, 2004; `intel_full.npz` preserves the complete
-original span as an auxiliary view of the same dataset. All 54 motes remain.
-Primary channels are temperature/humidity. PEMS retains all 325 sensors and
-the supplied road-distance graph. Its release actually spans January–June
-2017; the timestamp gap is masked. Original upstream per-value imputation
-lineage is unavailable. Real data are nominal, not certified fault-free.
+Use the existing configured CUDA device; these commands do not provision one.
+The original pipeline's acquisition, preprocessing and training commands are
+in [the preserved README](docs/original-study-readme.md). Dataset manifests
+record original URLs, units, hashes and chronological boundaries. Use the
+recorded Python 3.12 / torch 2.8.0+cu128 environment for closest reproducibility.
 
-All quantitative real-data faults are **controlled injections into held-out
-recordings**. They are not confirmed field failures. Correlations use common
-observed rows separately by channel. Missing and constant windows abstain;
-flatline alerts are reported as a separate quality hybrid. Per-issuance
-calibration has a finite-sample guarantee under exchangeability, which is not
-asserted for the real streams. Disjoint real blocks are resampling units, not
-proof of independence. Their untouched alerts are empirical background
-exceedances, not adjudicated false physical-fault alarms.
-
-## Artifact locations and recovery
-
-- `docs/`: frozen protocol, coverage amendments, original-source literature
-  verification, venue rules, proofs and equation-to-code checks.
-- `src/iot_entropy/`: acquisition, stochastic benchmark, joint graph diffusion,
-  measurements, calibration, baselines, evaluation, plotting and replay export.
-- `experiments/full/`: training logs, checkpoint hashes, calibration, predictions,
-  replay sources and reference feature draws; `unscreened/` isolates its models.
-- `experiments/sensitivity/`: graph, sample count, coverage/PSD estimator,
-  persistent-history and longer-window global/local sensitivities.
-- `experiments/selected-ensembles/`: raw joint diffusion/bootstrap draws for
-  selected replay observations, validated against their original feature arrays.
-- `results/`: reproducible statistical summaries and complete event metrics.
-- `manuscript/`: IEEE LaTeX, verified BibTeX, generated PDF/SVG figures and PDF.
-
-Raw/processed data, checkpoints, generated samples, full replay sources and
-dashboard data exports are mirrored locally but ignored by Git. PNG previews
-and the downloaded IEEEtran ZIP also remain local. Git retains code, manifests,
-compact saved predictions/calibration, numerical results, PDF/SVG publication
-figures, the compiled paper, and the IEEE class/style with their notices.
-Larger JSON results are committed as lossless `.json.gz` archives listed in
-`git-storage.json`. On the supplied pod,
-the matching files are at `/workspace/iot-entropy/` with identical relative
-paths. In particular, checkpoints are
-`experiments/full/checkpoints/{dataset}-{kind}-{graph}-{seed}.pt` and
-`experiments/full/unscreened/checkpoints/…`. Checksums in the run manifests
-identify them. Their continued remote availability depends on the user's pod;
-the local mirror is the durable handoff. They can also be regenerated by the
-commands above.
-
-After regenerating results, refresh the compressed copies and check the staged
-project size before committing:
+A rerun must use a separate project copy: retain its accepted extension directory
+under an archival name before creating fresh outputs. Do not mix new settings
+with old completion markers. For example, in that separate copy:
 
 ```bash
-python3 scripts/manage_git_results.py pack
-git add -- .
-python3 scripts/manage_git_results.py check
+mv experiments/extension-v2 experiments/extension-v2-accepted
+mkdir experiments/extension-v2
+cp experiments/extension-v2-accepted/original-study.json experiments/extension-v2/
+cp experiments/extension-v2-accepted/budget-authorization.json experiments/extension-v2/
+PYTHONPATH=src .venv/bin/python scripts/extension_pilot.py
+PYTHONPATH=src .venv/bin/python scripts/extension_run.py
+PYTHONPATH=src .venv/bin/python scripts/extension_final_audits.py
+PYTHONPATH=src .venv/bin/python scripts/extension_window_support.py
+PYTHONPATH=src .venv/bin/python scripts/validate_extension.py --cuda
+PYTHONPATH=src .venv/bin/python scripts/extension_multiscale.py
+PYTHONPATH=src .venv/bin/python scripts/extension_completion.py
+PYTHONPATH=src .venv/bin/python scripts/extension_observability.py
+PYTHONPATH=src .venv/bin/python scripts/extension_replay_export.py
 ```
 
-The check rejects tracked ignored files, any file above 5 MiB, or a project
-total above 50 MiB. It does not stage, commit or push. Existing historical
-experiment commit IDs remain recorded; `environment/git-history-map.json`
-maps them to the history with generated bulk removed.
+The runner loads the frozen original checkpoints and training normalizers.
+`--dataset NAME --seed INTEGER` selects a main run. New synthetic development,
+calibration and test simulations use independent predeclared seeds. CUDA and
+CPU RNGs need not generate the same simulation from the same integer seed:
+retained CUDA arrays and a cached-bootstrap byte-agreement check resolve this.
+CPU/GPU estimator checks use identical arrays. Fixed seeds do not guarantee
+bitwise equality across library versions.
 
-Expanded replay JSON is stored as lossless `.json.gz` to fit the local disk.
-`experiments/replay-compression.json` records compressed and original SHA-256
-hashes; compression verifies a full byte round trip before removing an expanded
-copy. Plotting and dashboard export read either form directly. No measurement
-precision is lost. `gzip -dc RECORD.json.gz` recovers the original JSON bytes.
+The cumulative guard includes recorded original work, pilot, failed/accepted
+primary attempts, CUDA validation and auxiliary GPU stages. The frozen primary
+configuration retains its original four-hour value; the explicit user
+authorization file raises the ceiling to eight hours. All runners use the
+same ledger. The original stop and subsequent authorized resume are retained.
+This allowance is a ceiling, not a requirement to spend the remaining time.
+CPU reporting, rendering and file checks are separate from GPU experiment-stage
+time, not a claim about Pod rental uptime.
 
-`scripts/pod.sh upload` synchronizes source to that directory;
-`scripts/pod.sh download` verifies/compresses completed replays, then retrieves
-data, experiments and environment records.
-`scripts/ssh-gpu.sh` reconnects to the user-provided endpoint using the explicitly
-authorized existing RSA key. The host-key file lives in ignored `.local/ssh/`;
-private keys are never copied into this project. These helpers do not change
-pod lifecycle or billing.
-
-Use `main` for this project's commits. Do not push: the user will perform the
-final push. Preserve sibling research projects in the repository.
+`docs/extension-equations.md` maps equations to code and saved evidence.
+`docs/extension-literature.md`, `docs/venue.md` and the preserved literature
+records provide verified primary sources. The venue limit is 10 pages including
+references; the verified deadline is October 15, 2026. Author review, missing
+contact metadata, final push and submission remain with the user.

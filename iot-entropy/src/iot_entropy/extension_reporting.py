@@ -37,6 +37,8 @@ def event_rows(directory: Path) -> tuple[list,list,list,list]:
     # NpzFile indexing decompresses on every access; cache arrays once.
     with np.load(directory/'predictions.npz') as archive:
         pred={key:archive[key] for key in archive.files}
+    if 'rankings' not in pred:
+        pred['rankings']=pred['rankings_unique'][pred['ranking_index']]
     with np.load(directory/'calibration.npz') as archive:
         cal={key:archive[key] for key in archive.files}
     status=read_json(directory/'status.json')
@@ -99,7 +101,11 @@ def event_rows(directory: Path) -> tuple[list,list,list,list]:
         lag=np.corrcoef(c[:-1][valid_pairs],c[1:][valid_pairs])[0,1] if valid_pairs.sum()>2 else np.nan
         diagnostics.append({'configuration':dataset,'seed':seed,'method':method,'n':len(c),
             'minimum_p':1/(len(c)+1),'all_abstained_units':int((~finite).sum()),
-            'calibration_availability':float(cal['availability'][:,mi].mean()),'lag1':lag})
+            'calibration_availability':float(cal['availability'][:,mi].mean()),'lag1':lag,
+            'calibration_finite_median':finite_median(c),
+            'calibration_finite_maximum':float(c[finite].max()) if finite.any() else None,
+            'test_control_score_median':finite_median(pred['scores'][controls,:,mi]),
+            'test_control_score_maximum':float(np.max(pred['scores'][controls,:,mi]))})
     return rows,curves,operating,diagnostics
 
 
@@ -122,6 +128,7 @@ def aggregate(frame: pd.DataFrame, curves: list) -> list:
             'availability':bootstrap_mean(blocks.availability.to_numpy()),
             'missed_event_seed_pairs':int(faults.fn.sum()),
             'background_exceedance':float(controls.scheduled_exceedance.mean()),
+            'background_exceedance_interval':bootstrap_mean(controls.groupby('block').scheduled_exceedance.mean().to_numpy()),
             'transition_exceedance':float(transitions.scheduled_exceedance.mean()),
             'background_alerts_per_day':float(controls.fp.sum()/controls.monitoring_seconds.sum()*86400),
             'median_delay_seconds':finite_median(faults.delay_seconds),
@@ -180,11 +187,19 @@ def build(root: Path) -> dict:
             single.append(gen+measure+observation);post.append(measure+observation)
         cost.append({'configuration':status['dataset'],'seed':status['seed'],'total_seconds':status['elapsed_seconds'],
             'peak_gpu_bytes':status['peak_gpu_bytes'],'shared_tick_median_seconds':np.median([t['seconds'] for t in ticks]),
+            'shared_tick_p95_seconds':np.quantile([t['seconds'] for t in ticks],.95),
             'amortized_episode_tick_seconds':np.median([t['seconds']/t['events'] for t in ticks]),
             'estimated_single_episode_seconds':np.median(single),
+            'estimated_single_episode_p95_seconds':np.quantile(single,.95),
             'estimated_post_observation_seconds':np.median(post),
-            'reference_generation_median_seconds':np.median(generation)})
-        lineage.append({'configuration':status['dataset'],'seed':status['seed'],**read_json(path/'data-lineage.json')})
+            'reference_generation_median_seconds':np.median(generation),
+            'reference_generation_p95_seconds':np.quantile(generation,.95)})
+        provenance=read_json(path/'data-lineage.json')
+        if status['dataset'] in ['intel','pems']:
+            provenance.update({'validation_status':'exploratory reused recording backgrounds',
+                               'prior_global_diagnostic_overlap':True,
+                               'audit_amendment':'docs/extension-audit-amendment.md'})
+        lineage.append({'configuration':status['dataset'],'seed':status['seed'],**provenance})
         print(path.name,flush=True)
     if not rows:raise RuntimeError('No accepted completed extension runs')
     frame=pd.DataFrame(rows)
@@ -192,8 +207,8 @@ def build(root: Path) -> dict:
     summary=aggregate(frame,curves); differences=paired(frame)
     write_json(out/'summary.json',summary);write_json(out/'paired.json',differences)
     write_json(out/'event-pr-curves.json',curves)
-    for filename,content in [('retrospective-operating-points.csv',operating),('calibration.csv',calibration),
-        ('support.csv.gz',support),('reference-fidelity.csv',fidelity),('multiscale.csv',multi),('cost.csv',cost)]:
+    for filename,content in [('retrospective-operating-points.csv.gz',operating),('calibration.csv.gz',calibration),
+        ('support.csv.gz',support),('reference-fidelity.csv.gz',fidelity),('multiscale.csv',multi),('cost.csv',cost)]:
         pd.DataFrame(content).to_csv(out/filename,index=False,compression='gzip' if filename.endswith('.gz') else None)
     write_json(out/'data-lineage.json',lineage)
     strata=[]
@@ -211,7 +226,7 @@ def build(root: Path) -> dict:
             'fault_realizations':int(len(fault[['configuration','event']].drop_duplicates())),
             'source_namespace':'experiments/extension-v2',
             'original_namespace':'experiments/full','original_revision':read_json(directory/'original-study.json')['original_revision'],
-            'inference':'exploratory paired block bootstrap; no equivalence test; reused Intel background',
+            'inference':'exploratory paired block bootstrap; no equivalence test; both real backgrounds were inspected in v1',
             'common_support':'Common feature group/window/channel support within each reference; operational reference contrasts retain model-specific support.'}
     write_json(out/'report-manifest.json',report)
     return report

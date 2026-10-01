@@ -1,0 +1,74 @@
+{
+  "abstract_and_conclusion_claims": [
+    {
+      "claim": "360 fault realizations, 20 blocks, three model seeds; exactly three primary datasets",
+      "evidence": [
+        "report-manifest.json",
+        "data-lineage.json"
+      ],
+      "status": "counted; sizes are configurations"
+    },
+    {
+      "claim": "Time-row permutation preserves the aligned correlation matrix; temporal entropy and ACF can change",
+      "evidence": [
+        "theory-checks.json",
+        "diagnostics.csv.gz",
+        "manuscript/extension.tex: order-invariance proof"
+      ],
+      "status": "proved and numerically checked; no rolling-trace invariance claim"
+    },
+    {
+      "claim": "Intel bootstrap T recall exceeds TB at the frozen nominal operating point",
+      "evidence": [
+        "summary.json",
+        "paired.json",
+        "retrospective-operating-points.csv.gz"
+      ],
+      "status": "observed with unequal background rates; exploratory"
+    },
+    {
+      "claim": "Only synthetic bootstrap BST increases mean recall over B in primary operational comparisons",
+      "evidence": [
+        "paired.json",
+        "maximum-dominance.json"
+      ],
+      "status": "all six dataset/reference pairs checked; no equivalence inference"
+    },
+    {
+      "claim": "No consistent overall entropy advantage",
+      "evidence": [
+        "paired.json",
+        "stratified-paired.csv.gz",
+        "observability-strata.csv.gz",
+        "retrospective-operating-points.csv.gz"
+      ],
+      "status": "mixed effects, limited recording blocks, feature/support/calibration distinctions retained"
+    },
+    {
+      "claim": "Diffusion has substantial entropy miscoverage without consistent overall improvement",
+      "evidence": [
+        "paired-reference-fidelity.json",
+        "reference-fidelity.csv.gz",
+        "paired.json"
+      ],
+      "status": "specific compact long-lead reference; common-support audit seed17"
+    },
+    {
+      "claim": "Conventional synthetic temporal localization is stronger in the evaluated setting",
+      "evidence": [
+        "paired.json"
+      ],
+      "status": "T minus TB IoU intervals below zero for both references"
+    },
+    {
+      "claim": "Both real-data extensions reuse inspected backgrounds and are semi-synthetic",
+      "evidence": [
+        "data-lineage.json",
+        "docs/extension-audit-amendment.md"
+      ],
+      "status": "expanded audit corrected the PEMS novelty qualification"
+    }
+  ],
+  "automated_numeric_assertions": true,
+  "scope": "Every empirical abstract/conclusion assertion is limited to completed saved results; no claim of equivalence, universal inferiority, verified native faults or novel entropy theorem."
+}

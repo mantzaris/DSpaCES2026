@@ -1,0 +1,163 @@
+{
+  "acf_lags": [
+    1,
+    2,
+    4
+  ],
+  "alert_stride": 12,
+  "authors": [
+    "Alexander V. Mantzaris",
+    "James H. Korris"
+  ],
+  "base_episodes": 4,
+  "batch_size": 8,
+  "bootstrap_repetitions": 1000,
+  "calibration_stride": 168,
+  "context": 48,
+  "control_seed_base": 98100,
+  "datasets": [
+    "synthetic64",
+    "synthetic128",
+    "synthetic256",
+    "intel",
+    "pems"
+  ],
+  "development_units": 4,
+  "diagnostic_seed": 830197,
+  "diffusion_steps": 100,
+  "durations": [
+    12,
+    48,
+    96
+  ],
+  "early_stopping_patience": 4,
+  "episode_length": 312,
+  "event_tolerance": 0,
+  "fault_seed_base": 97100,
+  "fault_sizes": [
+    6,
+    12
+  ],
+  "fault_types": [
+    "copy",
+    "common",
+    "decouple",
+    "noise",
+    "delay",
+    "drift",
+    "flatline",
+    "dropout",
+    "anticorrelated",
+    "mixed",
+    "matched_covariance",
+    "marginal_preserving"
+  ],
+  "gdn_hidden": 32,
+  "gdn_steps": 1800,
+  "gdn_topk": 15,
+  "generated_samples": 64,
+  "gpu_hour_budget": 4.0,
+  "group_merge_iou": 0.5,
+  "group_sizes": [
+    6,
+    12,
+    24
+  ],
+  "hidden": 24,
+  "layers": 3,
+  "learning_rate": 0.001,
+  "localization_budget": 12,
+  "localization_budgets": [
+    6,
+    12,
+    24
+  ],
+  "maximum_group_centers": 24,
+  "maximum_tied_fraction": 0.5,
+  "minimum_B": 20,
+  "minimum_sensor_coverage": 0.5,
+  "minimum_templates": 30,
+  "onset": 192,
+  "original_recorded_seconds": 10088.092477,
+  "original_revision": "b900da1bf4b3b4f1b8ab2310257af842de587562",
+  "pair_chunk": 512,
+  "permutation_candidates": [
+    [
+      3,
+      1
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      4,
+      1
+    ]
+  ],
+  "permutation_q": 3,
+  "permutation_tau": 1,
+  "primary_alpha": 0.1,
+  "reference_valid_fraction": 0.8,
+  "retrospective_rate_caps": [
+    0.05,
+    0.1,
+    0.2
+  ],
+  "sample_chunk": 16,
+  "sample_delta": 0.2,
+  "sample_r": 2,
+  "sample_theiler": 2,
+  "sample_tolerances": [
+    0.1,
+    0.2,
+    0.3
+  ],
+  "sampling_steps": 20,
+  "scales": [
+    1,
+    2,
+    4
+  ],
+  "secondary_alphas": [
+    0.05,
+    0.2
+  ],
+  "series_chunk": 1024,
+  "severities": [
+    0.6,
+    1.0
+  ],
+  "shrinkage": 0.05,
+  "shrinkage_candidates": [
+    0.0,
+    0.05,
+    0.1
+  ],
+  "split_fractions": [
+    0.6,
+    0.15,
+    0.1,
+    0.15
+  ],
+  "study": "spatial-temporal-comparison-v2",
+  "synthetic_graph_seed": 3107,
+  "synthetic_seed_base": 9000000,
+  "templates_per_pattern": 5,
+  "top_fraction": 0.5,
+  "top_fractions": [
+    0.25,
+    0.5
+  ],
+  "training_seeds": [
+    17,
+    29,
+    43
+  ],
+  "training_steps": 2400,
+  "validation_every": 200,
+  "windows": [
+    48,
+    96
+  ]
+}

@@ -205,3 +205,18 @@ def trajectory(samples: torch.Tensor, window_size: int, config: dict) -> dict:
     past = window(x[..., -window_size-lag:-lag], config)
     u = torch.stack((current['values'], current['values']-past['values']), -1)
     return {'u': u, 'current': current, 'past': past}
+
+
+def multiscale_trajectory(samples: torch.Tensor, window_size: int, scale: int,
+                          config: dict) -> dict:
+    """Same physical endpoints after left-aligned, complete-bin averaging.
+
+    Lags and Theiler exclusion in config are in coarse-grid units. Requiring
+    divisibility prevents a silently shifted decision time or change endpoint.
+    """
+    if samples.ndim == 3:
+        samples = samples[None]
+    if scale < 1 or any(v % scale for v in (samples.shape[1], window_size, window_size//4)):
+        raise ValueError('Target, window and change lag must align to complete bins')
+    coarse = coarse_grain(samples.permute(0, 2, 3, 1), scale).permute(0, 3, 1, 2)
+    return trajectory(coarse, window_size//scale, config)

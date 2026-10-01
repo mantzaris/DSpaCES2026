@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 from iot_entropy.extension import run
+from iot_entropy.extension_budget import components, authorized_hours
 from iot_entropy.utils import Budget, digest, write_json
 
 root=Path(__file__).resolve().parents[1]
@@ -16,13 +17,13 @@ config.update(json.loads((root/'configs/extension-v2.json').read_text()))
 directory=root/'experiments/extension-v2';directory.mkdir(exist_ok=True)
 pilot=json.loads((directory/'pilot.json').read_text())
 assert pilot['validation']['returncode']==0
-prior=config['original_recorded_seconds']+pilot['elapsed_seconds']
-prior+=sum(json.loads(p.read_text())['elapsed_seconds'] for p in directory.glob('*/attempt-*.json'))
-budget=Budget(config['gpu_hour_budget'],prior)
+prior=sum(components(root).values())
+ceiling=authorized_hours(root)
+budget=Budget(ceiling,prior)
 write_json(directory/'run-manifest.json',{'protocol_freeze_revision':'18b9c4a7',
     'protocol_sha256':digest(root/'docs/extension-protocol.md'),
     'config_sha256':digest(root/'configs/extension-v2.json'),
-    'previous_recorded_seconds':prior,'budget_hours':config['gpu_hour_budget'],
+    'previous_recorded_seconds':prior,'budget_hours':ceiling,
     'namespace':'extension-v2','original_namespace':'experiments/full',
     'priority':'all configurations at seed17, then29, then43'})
 try:
@@ -32,7 +33,7 @@ try:
             print(json.dumps(result),flush=True)
 finally:
     write_json(directory/'budget.json',{'cumulative_seconds':budget.elapsed,
-        'limit_seconds':config['gpu_hour_budget']*3600,
+        'limit_seconds':ceiling*3600,
         'original_seconds':config['original_recorded_seconds'],
         'pilot_seconds':pilot['elapsed_seconds'],
         'completed_runs':[p.parent.name for p in directory.glob('*/status.json')]})

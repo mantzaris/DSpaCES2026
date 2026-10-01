@@ -1,0 +1,1055 @@
+{
+  "device": "CPU float64",
+  "elapsed_seconds": 0.2995180639991304,
+  "independent_replicates": 128,
+  "interpretation": "SD is between independent finite estimates; support conditioning can bias the reported mean. No claim that the finite-window mean equals a population entropy rate.",
+  "process": "stationary unit-variance Gaussian AR(1), rho 0 or .8, 512-row burn-in",
+  "role": "post-hoc mathematical diagnostic, not primary validation or detector selection",
+  "rows": [
+    {
+      "PE": {
+        "finite_fraction": 1.0,
+        "mean": 0.9730562183034961,
+        "sd": 0.02256977621930222
+      },
+      "SE": {
+        "finite_fraction": 0.0859375,
+        "mean": 2.0447494798038317,
+        "sd": 0.31204751020298904
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 1.0,
+        "mean": 0.9730562183034961,
+        "sd": 0.02256977621930222
+      },
+      "mean_A": 1.4140625,
+      "mean_B": 12.2265625,
+      "q": 3,
+      "rho": 0.0,
+      "setting": "continuous",
+      "tau": 1,
+      "tie_policy_common_units": 128,
+      "tie_policy_mean_absolute_difference": 0.0,
+      "tied_template_fraction": 0.0,
+      "valid_PE_templates": 46.0,
+      "valid_SE_templates": 46.0,
+      "window": 48
+    },
+    {
+      "PE": {
+        "finite_fraction": 1.0,
+        "mean": 0.9775634799990234,
+        "sd": 0.017740273552547484
+      },
+      "SE": {
+        "finite_fraction": 0.0859375,
+        "mean": 2.0447494798038317,
+        "sd": 0.31204751020298904
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 1.0,
+        "mean": 0.9775634799990234,
+        "sd": 0.017740273552547484
+      },
+      "mean_A": 1.4140625,
+      "mean_B": 12.2265625,
+      "q": 3,
+      "rho": 0.0,
+      "setting": "continuous",
+      "tau": 2,
+      "tie_policy_common_units": 128,
+      "tie_policy_mean_absolute_difference": 0.0,
+      "tied_template_fraction": 0.0,
+      "valid_PE_templates": 44.0,
+      "valid_SE_templates": 46.0,
+      "window": 48
+    },
+    {
+      "PE": {
+        "finite_fraction": 0.0,
+        "mean": null,
+        "sd": null
+      },
+      "SE": {
+        "finite_fraction": 0.0859375,
+        "mean": 2.0447494798038317,
+        "sd": 0.31204751020298904
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 0.0,
+        "mean": null,
+        "sd": null
+      },
+      "mean_A": 1.4140625,
+      "mean_B": 12.2265625,
+      "q": 4,
+      "rho": 0.0,
+      "setting": "continuous",
+      "tau": 1,
+      "tie_policy_common_units": 0,
+      "tie_policy_mean_absolute_difference": null,
+      "tied_template_fraction": 0.0,
+      "valid_PE_templates": 45.0,
+      "valid_SE_templates": 46.0,
+      "window": 48
+    },
+    {
+      "PE": {
+        "finite_fraction": 1.0,
+        "mean": 0.9880566175622307,
+        "sd": 0.00886060561803119
+      },
+      "SE": {
+        "finite_fraction": 1.0,
+        "mean": 2.3138047454946964,
+        "sd": 0.42148420126132224
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 1.0,
+        "mean": 0.9880566175622307,
+        "sd": 0.00886060561803119
+      },
+      "mean_A": 5.8671875,
+      "mean_B": 53.703125,
+      "q": 3,
+      "rho": 0.0,
+      "setting": "continuous",
+      "tau": 1,
+      "tie_policy_common_units": 128,
+      "tie_policy_mean_absolute_difference": 0.0,
+      "tied_template_fraction": 0.0,
+      "valid_PE_templates": 94.0,
+      "valid_SE_templates": 94.0,
+      "window": 96
+    },
+    {
+      "PE": {
+        "finite_fraction": 1.0,
+        "mean": 0.9894002907127801,
+        "sd": 0.008716127009654793
+      },
+      "SE": {
+        "finite_fraction": 1.0,
+        "mean": 2.3138047454946964,
+        "sd": 0.42148420126132224
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 1.0,
+        "mean": 0.9894002907127801,
+        "sd": 0.008716127009654793
+      },
+      "mean_A": 5.8671875,
+      "mean_B": 53.703125,
+      "q": 3,
+      "rho": 0.0,
+      "setting": "continuous",
+      "tau": 2,
+      "tie_policy_common_units": 128,
+      "tie_policy_mean_absolute_difference": 0.0,
+      "tied_template_fraction": 0.0,
+      "valid_PE_templates": 92.0,
+      "valid_SE_templates": 94.0,
+      "window": 96
+    },
+    {
+      "PE": {
+        "finite_fraction": 0.0,
+        "mean": null,
+        "sd": null
+      },
+      "SE": {
+        "finite_fraction": 1.0,
+        "mean": 2.3138047454946964,
+        "sd": 0.42148420126132224
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 0.0,
+        "mean": null,
+        "sd": null
+      },
+      "mean_A": 5.8671875,
+      "mean_B": 53.703125,
+      "q": 4,
+      "rho": 0.0,
+      "setting": "continuous",
+      "tau": 1,
+      "tie_policy_common_units": 0,
+      "tie_policy_mean_absolute_difference": null,
+      "tied_template_fraction": 0.0,
+      "valid_PE_templates": 93.0,
+      "valid_SE_templates": 94.0,
+      "window": 96
+    },
+    {
+      "PE": {
+        "finite_fraction": 0.921875,
+        "mean": 0.9597236651167094,
+        "sd": 0.028834377142859618
+      },
+      "SE": {
+        "finite_fraction": 0.390625,
+        "mean": 1.9396613831558451,
+        "sd": 0.501278208073708
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 0.390625,
+        "mean": 0.9601195290994532,
+        "sd": 0.02894192184457718
+      },
+      "mean_A": 2.40625,
+      "mean_B": 18.6171875,
+      "q": 3,
+      "rho": 0.0,
+      "setting": "quantized_0.5",
+      "tau": 1,
+      "tie_policy_common_units": 50,
+      "tie_policy_mean_absolute_difference": 0.018606255806401028,
+      "tied_template_fraction": 0.38536006212234497,
+      "valid_PE_templates": 46.0,
+      "valid_SE_templates": 46.0,
+      "window": 48
+    },
+    {
+      "PE": {
+        "finite_fraction": 0.9140625,
+        "mean": 0.9598873843926442,
+        "sd": 0.027699206687886866
+      },
+      "SE": {
+        "finite_fraction": 0.390625,
+        "mean": 1.9396613831558451,
+        "sd": 0.501278208073708
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 0.3515625,
+        "mean": 0.9671601605395382,
+        "sd": 0.026269986196675674
+      },
+      "mean_A": 2.40625,
+      "mean_B": 18.6171875,
+      "q": 3,
+      "rho": 0.0,
+      "setting": "quantized_0.5",
+      "tau": 2,
+      "tie_policy_common_units": 45,
+      "tie_policy_mean_absolute_difference": 0.012881874150953827,
+      "tied_template_fraction": 0.37411221861839294,
+      "valid_PE_templates": 44.0,
+      "valid_SE_templates": 46.0,
+      "window": 48
+    },
+    {
+      "PE": {
+        "finite_fraction": 0.0,
+        "mean": null,
+        "sd": null
+      },
+      "SE": {
+        "finite_fraction": 0.390625,
+        "mean": 1.9396613831558451,
+        "sd": 0.501278208073708
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 0.0,
+        "mean": null,
+        "sd": null
+      },
+      "mean_A": 2.40625,
+      "mean_B": 18.6171875,
+      "q": 4,
+      "rho": 0.0,
+      "setting": "quantized_0.5",
+      "tau": 1,
+      "tie_policy_common_units": 0,
+      "tie_policy_mean_absolute_difference": null,
+      "tied_template_fraction": 0.6362847089767456,
+      "valid_PE_templates": 45.0,
+      "valid_SE_templates": 46.0,
+      "window": 48
+    },
+    {
+      "PE": {
+        "finite_fraction": 0.96875,
+        "mean": 0.973379880316481,
+        "sd": 0.015228943324890533
+      },
+      "SE": {
+        "finite_fraction": 0.9921875,
+        "mean": 2.068087558396235,
+        "sd": 0.2932394338098858
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 1.0,
+        "mean": 0.9799860856167812,
+        "sd": 0.015615352737853319
+      },
+      "mean_A": 11.0703125,
+      "mean_B": 82.8046875,
+      "q": 3,
+      "rho": 0.0,
+      "setting": "quantized_0.5",
+      "tau": 1,
+      "tie_policy_common_units": 124,
+      "tie_policy_mean_absolute_difference": 0.014851609964773601,
+      "tied_template_fraction": 0.3817320764064789,
+      "valid_PE_templates": 94.0,
+      "valid_SE_templates": 94.0,
+      "window": 96
+    },
+    {
+      "PE": {
+        "finite_fraction": 0.984375,
+        "mean": 0.9743139736394296,
+        "sd": 0.01437064832643513
+      },
+      "SE": {
+        "finite_fraction": 0.9921875,
+        "mean": 2.068087558396235,
+        "sd": 0.2932394338098858
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 1.0,
+        "mean": 0.9834754919186846,
+        "sd": 0.011227866804833904
+      },
+      "mean_A": 11.0703125,
+      "mean_B": 82.8046875,
+      "q": 3,
+      "rho": 0.0,
+      "setting": "quantized_0.5",
+      "tau": 2,
+      "tie_policy_common_units": 126,
+      "tie_policy_mean_absolute_difference": 0.014395777330627996,
+      "tied_template_fraction": 0.38060462474823,
+      "valid_PE_templates": 92.0,
+      "valid_SE_templates": 94.0,
+      "window": 96
+    },
+    {
+      "PE": {
+        "finite_fraction": 0.0,
+        "mean": null,
+        "sd": null
+      },
+      "SE": {
+        "finite_fraction": 0.9921875,
+        "mean": 2.068087558396235,
+        "sd": 0.2932394338098858
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 0.0,
+        "mean": null,
+        "sd": null
+      },
+      "mean_A": 11.0703125,
+      "mean_B": 82.8046875,
+      "q": 4,
+      "rho": 0.0,
+      "setting": "quantized_0.5",
+      "tau": 1,
+      "tie_policy_common_units": 0,
+      "tie_policy_mean_absolute_difference": null,
+      "tied_template_fraction": 0.6325604915618896,
+      "valid_PE_templates": 93.0,
+      "valid_SE_templates": 94.0,
+      "window": 96
+    },
+    {
+      "PE": {
+        "finite_fraction": 0.375,
+        "mean": 0.963398965955984,
+        "sd": 0.03040070930267873
+      },
+      "SE": {
+        "finite_fraction": 0.0078125,
+        "mean": 1.6094379124341003,
+        "sd": null
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 0.375,
+        "mean": 0.963398965955984,
+        "sd": 0.03040070930267873
+      },
+      "mean_A": 0.5703125,
+      "mean_B": 4.6796875,
+      "q": 3,
+      "rho": 0.0,
+      "setting": "missing_0.15",
+      "tau": 1,
+      "tie_policy_common_units": 48,
+      "tie_policy_mean_absolute_difference": 0.0,
+      "tied_template_fraction": 0.0,
+      "valid_PE_templates": 27.9921875,
+      "valid_SE_templates": 27.9921875,
+      "window": 48
+    },
+    {
+      "PE": {
+        "finite_fraction": 0.3125,
+        "mean": 0.9627695689630361,
+        "sd": 0.02522785384185696
+      },
+      "SE": {
+        "finite_fraction": 0.0078125,
+        "mean": 1.6094379124341003,
+        "sd": null
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 0.3125,
+        "mean": 0.9627695689630361,
+        "sd": 0.02522785384185696
+      },
+      "mean_A": 0.5703125,
+      "mean_B": 4.6796875,
+      "q": 3,
+      "rho": 0.0,
+      "setting": "missing_0.15",
+      "tau": 2,
+      "tie_policy_common_units": 40,
+      "tie_policy_mean_absolute_difference": 0.0,
+      "tied_template_fraction": 0.0,
+      "valid_PE_templates": 26.8359375,
+      "valid_SE_templates": 27.9921875,
+      "window": 48
+    },
+    {
+      "PE": {
+        "finite_fraction": 0.0,
+        "mean": null,
+        "sd": null
+      },
+      "SE": {
+        "finite_fraction": 0.0078125,
+        "mean": 1.6094379124341003,
+        "sd": null
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 0.0,
+        "mean": null,
+        "sd": null
+      },
+      "mean_A": 0.5703125,
+      "mean_B": 4.6796875,
+      "q": 4,
+      "rho": 0.0,
+      "setting": "missing_0.15",
+      "tau": 1,
+      "tie_policy_common_units": 0,
+      "tie_policy_mean_absolute_difference": null,
+      "tied_template_fraction": 0.0,
+      "valid_PE_templates": 23.296875,
+      "valid_SE_templates": 27.9921875,
+      "window": 48
+    },
+    {
+      "PE": {
+        "finite_fraction": 1.0,
+        "mean": 0.9810269498584672,
+        "sd": 0.012854580201898414
+      },
+      "SE": {
+        "finite_fraction": 0.3984375,
+        "mean": 2.321603749468457,
+        "sd": 0.5380257245583492
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 1.0,
+        "mean": 0.9810269498584672,
+        "sd": 0.012854580201898414
+      },
+      "mean_A": 2.109375,
+      "mean_B": 20.0625,
+      "q": 3,
+      "rho": 0.0,
+      "setting": "missing_0.15",
+      "tau": 1,
+      "tie_policy_common_units": 128,
+      "tie_policy_mean_absolute_difference": 0.0,
+      "tied_template_fraction": 0.0,
+      "valid_PE_templates": 57.0546875,
+      "valid_SE_templates": 57.0546875,
+      "window": 96
+    },
+    {
+      "PE": {
+        "finite_fraction": 1.0,
+        "mean": 0.9811088016794483,
+        "sd": 0.014176657838293038
+      },
+      "SE": {
+        "finite_fraction": 0.3984375,
+        "mean": 2.321603749468457,
+        "sd": 0.5380257245583492
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 1.0,
+        "mean": 0.9811088016794483,
+        "sd": 0.014176657838293038
+      },
+      "mean_A": 2.109375,
+      "mean_B": 20.0625,
+      "q": 3,
+      "rho": 0.0,
+      "setting": "missing_0.15",
+      "tau": 2,
+      "tie_policy_common_units": 128,
+      "tie_policy_mean_absolute_difference": 0.0,
+      "tied_template_fraction": 0.0,
+      "valid_PE_templates": 55.765625,
+      "valid_SE_templates": 57.0546875,
+      "window": 96
+    },
+    {
+      "PE": {
+        "finite_fraction": 0.0,
+        "mean": null,
+        "sd": null
+      },
+      "SE": {
+        "finite_fraction": 0.3984375,
+        "mean": 2.321603749468457,
+        "sd": 0.5380257245583492
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 0.0,
+        "mean": null,
+        "sd": null
+      },
+      "mean_A": 2.109375,
+      "mean_B": 20.0625,
+      "q": 4,
+      "rho": 0.0,
+      "setting": "missing_0.15",
+      "tau": 1,
+      "tie_policy_common_units": 0,
+      "tie_policy_mean_absolute_difference": null,
+      "tied_template_fraction": 0.0,
+      "valid_PE_templates": 47.859375,
+      "valid_SE_templates": 57.0546875,
+      "window": 96
+    },
+    {
+      "PE": {
+        "finite_fraction": 1.0,
+        "mean": 0.9569778476263929,
+        "sd": 0.025123578801481732
+      },
+      "SE": {
+        "finite_fraction": 0.59375,
+        "mean": 1.7207030161947368,
+        "sd": 0.4886275914755975
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 1.0,
+        "mean": 0.9569778476263929,
+        "sd": 0.025123578801481732
+      },
+      "mean_A": 4.3125,
+      "mean_B": 22.8515625,
+      "q": 3,
+      "rho": 0.8,
+      "setting": "continuous",
+      "tau": 1,
+      "tie_policy_common_units": 128,
+      "tie_policy_mean_absolute_difference": 0.0,
+      "tied_template_fraction": 0.0,
+      "valid_PE_templates": 46.0,
+      "valid_SE_templates": 46.0,
+      "window": 48
+    },
+    {
+      "PE": {
+        "finite_fraction": 1.0,
+        "mean": 0.9612551092484674,
+        "sd": 0.03153214610616557
+      },
+      "SE": {
+        "finite_fraction": 0.59375,
+        "mean": 1.7207030161947368,
+        "sd": 0.4886275914755975
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 1.0,
+        "mean": 0.9612551092484674,
+        "sd": 0.03153214610616557
+      },
+      "mean_A": 4.3125,
+      "mean_B": 22.8515625,
+      "q": 3,
+      "rho": 0.8,
+      "setting": "continuous",
+      "tau": 2,
+      "tie_policy_common_units": 128,
+      "tie_policy_mean_absolute_difference": 0.0,
+      "tied_template_fraction": 0.0,
+      "valid_PE_templates": 44.0,
+      "valid_SE_templates": 46.0,
+      "window": 48
+    },
+    {
+      "PE": {
+        "finite_fraction": 0.0,
+        "mean": null,
+        "sd": null
+      },
+      "SE": {
+        "finite_fraction": 0.59375,
+        "mean": 1.7207030161947368,
+        "sd": 0.4886275914755975
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 0.0,
+        "mean": null,
+        "sd": null
+      },
+      "mean_A": 4.3125,
+      "mean_B": 22.8515625,
+      "q": 4,
+      "rho": 0.8,
+      "setting": "continuous",
+      "tau": 1,
+      "tie_policy_common_units": 0,
+      "tie_policy_mean_absolute_difference": null,
+      "tied_template_fraction": 0.0,
+      "valid_PE_templates": 45.0,
+      "valid_SE_templates": 46.0,
+      "window": 48
+    },
+    {
+      "PE": {
+        "finite_fraction": 1.0,
+        "mean": 0.9671457082483483,
+        "sd": 0.016926150008892596
+      },
+      "SE": {
+        "finite_fraction": 1.0,
+        "mean": 1.773473909961376,
+        "sd": 0.2969071635354715
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 1.0,
+        "mean": 0.9671457082483483,
+        "sd": 0.016926150008892596
+      },
+      "mean_A": 17.1875,
+      "mean_B": 94.3828125,
+      "q": 3,
+      "rho": 0.8,
+      "setting": "continuous",
+      "tau": 1,
+      "tie_policy_common_units": 128,
+      "tie_policy_mean_absolute_difference": 0.0,
+      "tied_template_fraction": 0.0,
+      "valid_PE_templates": 94.0,
+      "valid_SE_templates": 94.0,
+      "window": 96
+    },
+    {
+      "PE": {
+        "finite_fraction": 1.0,
+        "mean": 0.9741185699503243,
+        "sd": 0.016052855136562343
+      },
+      "SE": {
+        "finite_fraction": 1.0,
+        "mean": 1.773473909961376,
+        "sd": 0.2969071635354715
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 1.0,
+        "mean": 0.9741185699503243,
+        "sd": 0.016052855136562343
+      },
+      "mean_A": 17.1875,
+      "mean_B": 94.3828125,
+      "q": 3,
+      "rho": 0.8,
+      "setting": "continuous",
+      "tau": 2,
+      "tie_policy_common_units": 128,
+      "tie_policy_mean_absolute_difference": 0.0,
+      "tied_template_fraction": 0.0,
+      "valid_PE_templates": 92.0,
+      "valid_SE_templates": 94.0,
+      "window": 96
+    },
+    {
+      "PE": {
+        "finite_fraction": 0.0,
+        "mean": null,
+        "sd": null
+      },
+      "SE": {
+        "finite_fraction": 1.0,
+        "mean": 1.773473909961376,
+        "sd": 0.2969071635354715
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 0.0,
+        "mean": null,
+        "sd": null
+      },
+      "mean_A": 17.1875,
+      "mean_B": 94.3828125,
+      "q": 4,
+      "rho": 0.8,
+      "setting": "continuous",
+      "tau": 1,
+      "tie_policy_common_units": 0,
+      "tie_policy_mean_absolute_difference": null,
+      "tied_template_fraction": 0.0,
+      "valid_PE_templates": 93.0,
+      "valid_SE_templates": 94.0,
+      "window": 96
+    },
+    {
+      "PE": {
+        "finite_fraction": 0.046875,
+        "mean": 0.9278686058316934,
+        "sd": 0.03647059638600101
+      },
+      "SE": {
+        "finite_fraction": 0.8984375,
+        "mean": 1.5258971925075442,
+        "sd": 0.3263682726672618
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 0.0,
+        "mean": null,
+        "sd": null
+      },
+      "mean_A": 7.5625,
+      "mean_B": 33.0546875,
+      "q": 3,
+      "rho": 0.8,
+      "setting": "quantized_0.5",
+      "tau": 1,
+      "tie_policy_common_units": 0,
+      "tie_policy_mean_absolute_difference": null,
+      "tied_template_fraction": 0.6717051267623901,
+      "valid_PE_templates": 46.0,
+      "valid_SE_templates": 46.0,
+      "window": 48
+    },
+    {
+      "PE": {
+        "finite_fraction": 0.4296875,
+        "mean": 0.9376402086543915,
+        "sd": 0.03750575118946979
+      },
+      "SE": {
+        "finite_fraction": 0.8984375,
+        "mean": 1.5258971925075442,
+        "sd": 0.3263682726672618
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 0.0234375,
+        "mean": 0.9336109510866016,
+        "sd": 0.04460941742717914
+      },
+      "mean_A": 7.5625,
+      "mean_B": 33.0546875,
+      "q": 3,
+      "rho": 0.8,
+      "setting": "quantized_0.5",
+      "tau": 2,
+      "tie_policy_common_units": 3,
+      "tie_policy_mean_absolute_difference": 0.026491184467255697,
+      "tied_template_fraction": 0.5383522510528564,
+      "valid_PE_templates": 44.0,
+      "valid_SE_templates": 46.0,
+      "window": 48
+    },
+    {
+      "PE": {
+        "finite_fraction": 0.0,
+        "mean": null,
+        "sd": null
+      },
+      "SE": {
+        "finite_fraction": 0.8984375,
+        "mean": 1.5258971925075442,
+        "sd": 0.3263682726672618
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 0.0,
+        "mean": null,
+        "sd": null
+      },
+      "mean_A": 7.5625,
+      "mean_B": 33.0546875,
+      "q": 4,
+      "rho": 0.8,
+      "setting": "quantized_0.5",
+      "tau": 1,
+      "tie_policy_common_units": 0,
+      "tie_policy_mean_absolute_difference": null,
+      "tied_template_fraction": 0.8809027671813965,
+      "valid_PE_templates": 45.0,
+      "valid_SE_templates": 46.0,
+      "window": 48
+    },
+    {
+      "PE": {
+        "finite_fraction": 0.0078125,
+        "mean": 0.9327172546869186,
+        "sd": null
+      },
+      "SE": {
+        "finite_fraction": 1.0,
+        "mean": 1.5366763895697022,
+        "sd": 0.18471229116519086
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 0.7578125,
+        "mean": 0.8930266346003471,
+        "sd": 0.05315862346561911
+      },
+      "mean_A": 31.0390625,
+      "mean_B": 139.1015625,
+      "q": 3,
+      "rho": 0.8,
+      "setting": "quantized_0.5",
+      "tau": 1,
+      "tie_policy_common_units": 1,
+      "tie_policy_mean_absolute_difference": 0.14028000427234577,
+      "tied_template_fraction": 0.6529254913330078,
+      "valid_PE_templates": 94.0,
+      "valid_SE_templates": 94.0,
+      "window": 96
+    },
+    {
+      "PE": {
+        "finite_fraction": 0.3828125,
+        "mean": 0.948137703190172,
+        "sd": 0.021561093965170502
+      },
+      "SE": {
+        "finite_fraction": 1.0,
+        "mean": 1.5366763895697022,
+        "sd": 0.18471229116519086
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 0.9609375,
+        "mean": 0.9326784682164801,
+        "sd": 0.04106848659276438
+      },
+      "mean_A": 31.0390625,
+      "mean_B": 139.1015625,
+      "q": 3,
+      "rho": 0.8,
+      "setting": "quantized_0.5",
+      "tau": 2,
+      "tie_policy_common_units": 49,
+      "tie_policy_mean_absolute_difference": 0.026195422436531394,
+      "tied_template_fraction": 0.5339673757553101,
+      "valid_PE_templates": 92.0,
+      "valid_SE_templates": 94.0,
+      "window": 96
+    },
+    {
+      "PE": {
+        "finite_fraction": 0.0,
+        "mean": null,
+        "sd": null
+      },
+      "SE": {
+        "finite_fraction": 1.0,
+        "mean": 1.5366763895697022,
+        "sd": 0.18471229116519086
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 0.0,
+        "mean": null,
+        "sd": null
+      },
+      "mean_A": 31.0390625,
+      "mean_B": 139.1015625,
+      "q": 4,
+      "rho": 0.8,
+      "setting": "quantized_0.5",
+      "tau": 1,
+      "tie_policy_common_units": 0,
+      "tie_policy_mean_absolute_difference": null,
+      "tied_template_fraction": 0.8699597120285034,
+      "valid_PE_templates": 93.0,
+      "valid_SE_templates": 94.0,
+      "window": 96
+    },
+    {
+      "PE": {
+        "finite_fraction": 0.34375,
+        "mean": 0.9501284383206984,
+        "sd": 0.03648198913297018
+      },
+      "SE": {
+        "finite_fraction": 0.0703125,
+        "mean": 1.6523830314958674,
+        "sd": 0.43406213673123656
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 0.34375,
+        "mean": 0.9501284383206984,
+        "sd": 0.03648198913297018
+      },
+      "mean_A": 1.78125,
+      "mean_B": 8.9609375,
+      "q": 3,
+      "rho": 0.8,
+      "setting": "missing_0.15",
+      "tau": 1,
+      "tie_policy_common_units": 44,
+      "tie_policy_mean_absolute_difference": 0.0,
+      "tied_template_fraction": 0.0,
+      "valid_PE_templates": 27.9921875,
+      "valid_SE_templates": 27.9921875,
+      "window": 48
+    },
+    {
+      "PE": {
+        "finite_fraction": 0.34375,
+        "mean": 0.9569153868581194,
+        "sd": 0.04033081461146366
+      },
+      "SE": {
+        "finite_fraction": 0.0703125,
+        "mean": 1.6523830314958674,
+        "sd": 0.43406213673123656
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 0.34375,
+        "mean": 0.9569153868581194,
+        "sd": 0.04033081461146366
+      },
+      "mean_A": 1.78125,
+      "mean_B": 8.9609375,
+      "q": 3,
+      "rho": 0.8,
+      "setting": "missing_0.15",
+      "tau": 2,
+      "tie_policy_common_units": 44,
+      "tie_policy_mean_absolute_difference": 0.0,
+      "tied_template_fraction": 0.0,
+      "valid_PE_templates": 26.8671875,
+      "valid_SE_templates": 27.9921875,
+      "window": 48
+    },
+    {
+      "PE": {
+        "finite_fraction": 0.0,
+        "mean": null,
+        "sd": null
+      },
+      "SE": {
+        "finite_fraction": 0.0703125,
+        "mean": 1.6523830314958674,
+        "sd": 0.43406213673123656
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 0.0,
+        "mean": null,
+        "sd": null
+      },
+      "mean_A": 1.78125,
+      "mean_B": 8.9609375,
+      "q": 4,
+      "rho": 0.8,
+      "setting": "missing_0.15",
+      "tau": 1,
+      "tie_policy_common_units": 0,
+      "tie_policy_mean_absolute_difference": null,
+      "tied_template_fraction": 0.0,
+      "valid_PE_templates": 23.1484375,
+      "valid_SE_templates": 27.9921875,
+      "window": 48
+    },
+    {
+      "PE": {
+        "finite_fraction": 1.0,
+        "mean": 0.9575861651810363,
+        "sd": 0.023254167668423885
+      },
+      "SE": {
+        "finite_fraction": 0.890625,
+        "mean": 1.7942700293270726,
+        "sd": 0.47529888378457463
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 1.0,
+        "mean": 0.9575861651810363,
+        "sd": 0.023254167668423885
+      },
+      "mean_A": 6.9296875,
+      "mean_B": 36.203125,
+      "q": 3,
+      "rho": 0.8,
+      "setting": "missing_0.15",
+      "tau": 1,
+      "tie_policy_common_units": 128,
+      "tie_policy_mean_absolute_difference": 0.0,
+      "tied_template_fraction": 0.0,
+      "valid_PE_templates": 56.9765625,
+      "valid_SE_templates": 56.9765625,
+      "window": 96
+    },
+    {
+      "PE": {
+        "finite_fraction": 1.0,
+        "mean": 0.9637575289444402,
+        "sd": 0.023947733717025098
+      },
+      "SE": {
+        "finite_fraction": 0.890625,
+        "mean": 1.7942700293270726,
+        "sd": 0.47529888378457463
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 1.0,
+        "mean": 0.9637575289444402,
+        "sd": 0.023947733717025098
+      },
+      "mean_A": 6.9296875,
+      "mean_B": 36.203125,
+      "q": 3,
+      "rho": 0.8,
+      "setting": "missing_0.15",
+      "tau": 2,
+      "tie_policy_common_units": 128,
+      "tie_policy_mean_absolute_difference": 0.0,
+      "tied_template_fraction": 0.0,
+      "valid_PE_templates": 55.9296875,
+      "valid_SE_templates": 56.9765625,
+      "window": 96
+    },
+    {
+      "PE": {
+        "finite_fraction": 0.0,
+        "mean": null,
+        "sd": null
+      },
+      "SE": {
+        "finite_fraction": 0.890625,
+        "mean": 1.7942700293270726,
+        "sd": 0.47529888378457463
+      },
+      "drop_ties_PE": {
+        "finite_fraction": 0.0,
+        "mean": null,
+        "sd": null
+      },
+      "mean_A": 6.9296875,
+      "mean_B": 36.203125,
+      "q": 4,
+      "rho": 0.8,
+      "setting": "missing_0.15",
+      "tau": 1,
+      "tie_policy_common_units": 0,
+      "tie_policy_mean_absolute_difference": null,
+      "tied_template_fraction": 0.0,
+      "valid_PE_templates": 47.5859375,
+      "valid_SE_templates": 56.9765625,
+      "window": 96
+    }
+  ],
+  "seed": 830297
+}

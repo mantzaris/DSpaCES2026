@@ -1,0 +1,98 @@
+[
+  {
+    "dataset": "synthetic64",
+    "peak_gpu_bytes": 734412288,
+    "pipeline_generation_seconds": 0.001987835392355919,
+    "pipeline_measure_score_seconds": 0.17770609445869923,
+    "pipeline_total_seconds": 0.17958871647715569,
+    "reference": "bootstrap",
+    "timed_repetitions": 3,
+    "timing_scope": "isolated single observed episode; both windows, all feature families; includes masks/extraction/scoring/localization; excludes model/data loading",
+    "warmup_repetitions": 1
+  },
+  {
+    "dataset": "synthetic64",
+    "peak_gpu_bytes": 734412288,
+    "pipeline_generation_seconds": 0.19203360006213188,
+    "pipeline_measure_score_seconds": 0.17816096916794777,
+    "pipeline_total_seconds": 0.37016376107931137,
+    "reference": "diffusion",
+    "timed_repetitions": 3,
+    "timing_scope": "isolated single observed episode; both windows, all feature families; includes masks/extraction/scoring/localization; excludes model/data loading",
+    "warmup_repetitions": 1
+  },
+  {
+    "B": 16,
+    "cpu_float64": 0.15851746313273907,
+    "dataset": "synthetic64",
+    "gpu_float32": 0.014468979090452194,
+    "kernel": "all temporal features plus endpoints",
+    "maximum_absolute_error": 1.9795309114112314e-07,
+    "speedup_scope": "statistical kernel only; not an end-to-end pipeline speedup",
+    "window": 96
+  },
+  {
+    "dataset": "intel",
+    "peak_gpu_bytes": 1537049088,
+    "pipeline_generation_seconds": 0.0014053676277399063,
+    "pipeline_measure_score_seconds": 0.17217477597296238,
+    "pipeline_total_seconds": 0.17369908094406128,
+    "reference": "bootstrap",
+    "timed_repetitions": 3,
+    "timing_scope": "isolated single observed episode; both windows, all feature families; includes masks/extraction/scoring/localization; excludes model/data loading",
+    "warmup_repetitions": 1
+  },
+  {
+    "dataset": "intel",
+    "peak_gpu_bytes": 1535541760,
+    "pipeline_generation_seconds": 0.16687330976128578,
+    "pipeline_measure_score_seconds": 0.17195838503539562,
+    "pipeline_total_seconds": 0.3384112846106291,
+    "reference": "diffusion",
+    "timed_repetitions": 3,
+    "timing_scope": "isolated single observed episode; both windows, all feature families; includes masks/extraction/scoring/localization; excludes model/data loading",
+    "warmup_repetitions": 1
+  },
+  {
+    "B": 16,
+    "cpu_float64": 0.22922330535948277,
+    "dataset": "intel",
+    "gpu_float32": 0.01695641130208969,
+    "kernel": "all temporal features plus endpoints",
+    "maximum_absolute_error": 1.7723811951420032e-07,
+    "speedup_scope": "statistical kernel only; not an end-to-end pipeline speedup",
+    "window": 96
+  },
+  {
+    "dataset": "pems",
+    "peak_gpu_bytes": 752020992,
+    "pipeline_generation_seconds": 0.0053769443184137344,
+    "pipeline_measure_score_seconds": 0.2526998333632946,
+    "pipeline_total_seconds": 0.25807677768170834,
+    "reference": "bootstrap",
+    "timed_repetitions": 3,
+    "timing_scope": "isolated single observed episode; both windows, all feature families; includes masks/extraction/scoring/localization; excludes model/data loading",
+    "warmup_repetitions": 1
+  },
+  {
+    "dataset": "pems",
+    "peak_gpu_bytes": 752040448,
+    "pipeline_generation_seconds": 0.9136384632438421,
+    "pipeline_measure_score_seconds": 0.249637795612216,
+    "pipeline_total_seconds": 1.1636881940066814,
+    "reference": "diffusion",
+    "timed_repetitions": 3,
+    "timing_scope": "isolated single observed episode; both windows, all feature families; includes masks/extraction/scoring/localization; excludes model/data loading",
+    "warmup_repetitions": 1
+  },
+  {
+    "B": 16,
+    "cpu_float64": 0.72414705529809,
+    "dataset": "pems",
+    "gpu_float32": 0.034595707431435585,
+    "kernel": "all temporal features plus endpoints",
+    "maximum_absolute_error": 1.9983999999251267e-07,
+    "speedup_scope": "statistical kernel only; not an end-to-end pipeline speedup",
+    "window": 96
+  }
+]

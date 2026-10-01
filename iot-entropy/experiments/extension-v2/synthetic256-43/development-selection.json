@@ -1,0 +1,43 @@
+{
+  "choices": [
+    {
+      "budget": 6,
+      "fraction": 0.25,
+      "mean_iou": 0.13163183630095393
+    },
+    {
+      "budget": 12,
+      "fraction": 0.25,
+      "mean_iou": 0.14980277980757523
+    },
+    {
+      "budget": 24,
+      "fraction": 0.25,
+      "mean_iou": 0.0973552296413482
+    },
+    {
+      "budget": 6,
+      "fraction": 0.5,
+      "mean_iou": 0.13310242453624807
+    },
+    {
+      "budget": 12,
+      "fraction": 0.5,
+      "mean_iou": 0.14980277980757523
+    },
+    {
+      "budget": 24,
+      "fraction": 0.5,
+      "mean_iou": 0.09700113928725784
+    }
+  ],
+  "indices": [
+    49200,
+    49512,
+    49824,
+    50136
+  ],
+  "selected_budget": 12,
+  "selected_fraction": 0.25,
+  "selection": "pooled development localization across T/TB/ST/B/BST and both references"
+}

@@ -19,16 +19,14 @@ from iot_entropy.experiment import load_models
 from iot_entropy.temporal import trajectory, window, coarse_grain
 from iot_entropy.entropy import window_features
 from iot_entropy.utils import Budget, synchronize, write_json, digest
+from iot_entropy.extension_budget import components, authorized_hours
 
 root=Path(__file__).resolve().parents[1]
 namespace=root/'experiments/extension-v2'
 out=root/'results/extension-v2';out.mkdir(parents=True,exist_ok=True)
 config=json.loads((root/'configs/full.json').read_text());config.update(json.loads((root/'configs/extension-v2.json').read_text()))
-authority=namespace/'budget-authorization.json'
-ceiling=json.loads(authority.read_text())['gpu_hour_budget'] if authority.exists() else config['gpu_hour_budget']
-prior=config['original_recorded_seconds']+json.loads((namespace/'pilot.json').read_text())['elapsed_seconds']+8.60
-prior+=sum(json.loads(p.read_text())['elapsed_seconds'] for p in namespace.glob('*/attempt-*.json'))
-prior+=sum(json.loads(p.read_text())['elapsed_seconds'] for p in namespace.glob('audit-attempt-*.json'))
+ceiling=authorized_hours(root)
+prior=sum(components(root).values())
 budget=Budget(ceiling,prior)
 attempt=namespace/f'audit-attempt-{len(list(namespace.glob("audit-attempt-*.json")))}.json'
 torch.set_num_threads(4);started=time.monotonic();fid=[];missing=[];bench=[];lineage=[]

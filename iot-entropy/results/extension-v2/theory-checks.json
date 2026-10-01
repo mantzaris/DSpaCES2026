@@ -1,0 +1,67 @@
+{
+  "device": "cpu float64",
+  "diagnostic_not_primary": true,
+  "elapsed_seconds": 7.835417812995729,
+  "joint_permutation_max_R_error": 1.2212453270876722e-15,
+  "matched_H_unshrunk": [
+    0.9609640474436812,
+    0.8609640474436813
+  ],
+  "matched_leading_concentration": 0.4,
+  "matched_signed_correlation": 0.2,
+  "matched_summary_matrices": [
+    [
+      [
+        1.0,
+        0.2,
+        0.2,
+        0.2
+      ],
+      [
+        0.2,
+        1.0,
+        0.2,
+        0.2
+      ],
+      [
+        0.2,
+        0.2,
+        1.0,
+        0.2
+      ],
+      [
+        0.2,
+        0.2,
+        0.2,
+        1.0
+      ]
+    ],
+    [
+      [
+        1.0,
+        0.6,
+        0.0,
+        0.0
+      ],
+      [
+        0.6,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.6
+      ],
+      [
+        0.0,
+        0.0,
+        0.6,
+        1.0
+      ]
+    ]
+  ],
+  "replicates": 64
+}

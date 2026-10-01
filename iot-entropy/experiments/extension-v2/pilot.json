@@ -1,0 +1,89 @@
+{
+  "device": "NVIDIA RTX A6000",
+  "elapsed_seconds": 11.266732389107347,
+  "profiles": [
+    {
+      "dataset": "synthetic64",
+      "reference": {
+        "bootstrap": {
+          "finite_temporal_fraction": [
+            0.99969482421875,
+            1.0
+          ],
+          "generation_seconds": 0.019506055861711502,
+          "measurement_seconds": 0.4675097484141588,
+          "peak_gpu_bytes": 607038976,
+          "spatial_eligible_fraction": 0.9999999403953552
+        },
+        "diffusion": {
+          "finite_temporal_fraction": [
+            0.9209839105606079,
+            0.997912585735321
+          ],
+          "generation_seconds": 0.5632192641496658,
+          "measurement_seconds": 0.0669851116836071,
+          "peak_gpu_bytes": 607038976,
+          "spatial_eligible_fraction": 0.9999999403953552
+        }
+      },
+      "target_start": 49200
+    },
+    {
+      "dataset": "intel",
+      "reference": {
+        "bootstrap": {
+          "finite_temporal_fraction": [
+            0.7625506520271301,
+            0.8086950182914734
+          ],
+          "generation_seconds": 0.01637747697532177,
+          "measurement_seconds": 0.1435977090150118,
+          "peak_gpu_bytes": 1264865280,
+          "spatial_eligible_fraction": 0.03258928656578064
+        },
+        "diffusion": {
+          "finite_temporal_fraction": [
+            0.8237774968147278,
+            0.8842881917953491
+          ],
+          "generation_seconds": 0.19865885563194752,
+          "measurement_seconds": 0.08009449765086174,
+          "peak_gpu_bytes": 1264865280,
+          "spatial_eligible_fraction": 0.04285714402794838
+        }
+      },
+      "target_start": 10830
+    },
+    {
+      "dataset": "pems",
+      "reference": {
+        "bootstrap": {
+          "finite_temporal_fraction": [
+            0.9873244762420654,
+            0.9945048093795776
+          ],
+          "generation_seconds": 0.06256281398236752,
+          "measurement_seconds": 0.15893462300300598,
+          "peak_gpu_bytes": 594848768,
+          "spatial_eligible_fraction": 0.8351212739944458
+        },
+        "diffusion": {
+          "finite_temporal_fraction": [
+            0.9278196692466736,
+            0.9843389391899109
+          ],
+          "generation_seconds": 0.9710882510989904,
+          "measurement_seconds": 0.17666720412671566,
+          "peak_gpu_bytes": 594848768,
+          "spatial_eligible_fraction": 0.8432835340499878
+        }
+      },
+      "target_start": 31324
+    }
+  ],
+  "torch": "2.8.0+cu128",
+  "validation": {
+    "output": ".................                                                        [100%]\n17 passed in 4.99s\n",
+    "returncode": 0
+  }
+}

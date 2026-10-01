@@ -18,17 +18,17 @@ from iot_entropy.features import Scan
 from iot_entropy.calibration import rank_pvalues
 from iot_entropy.evaluation import alert_intervals, match_events
 from iot_entropy.utils import Budget, synchronize, write_json
+from iot_entropy.extension_budget import components, authorized_hours
 
 root=Path(__file__).resolve().parents[1];namespace=root/'experiments/extension-v2'
 config=json.loads((root/'configs/full.json').read_text());config.update(json.loads((root/'configs/extension-v2.json').read_text()))
-auth=namespace/'budget-authorization.json';ceiling=json.loads(auth.read_text())['gpu_hour_budget'] if auth.exists() else config['gpu_hour_budget']
-prior=config['original_recorded_seconds']+json.loads((namespace/'pilot.json').read_text())['elapsed_seconds']+8.6
-prior+=sum(json.loads(p.read_text())['elapsed_seconds'] for p in namespace.glob('*/attempt-*.json'))
-prior+=sum(json.loads(p.read_text())['elapsed_seconds'] for p in namespace.glob('audit-attempt-*.json'))
-prior+=sum(json.loads(p.read_text())['elapsed_seconds'] for p in namespace.glob('window-attempt-*.json'))
+ceiling=authorized_hours(root)
+prior=sum(components(root).values())
 budget=Budget(ceiling,prior);started=time.monotonic()
 attempt=namespace/f'window-attempt-{len(list(namespace.glob("window-attempt-*.json")))}.json'
-torch.set_num_threads(4);rows=[];rounding=[]
+torch.set_num_threads(4);rows=[]
+rounding_path=root/'results/extension-v2/reference-support-rounding.json'
+rounding=json.loads(rounding_path.read_text()) if rounding_path.exists() else []
 try:
  with torch.no_grad():
   for name in config['datasets']:

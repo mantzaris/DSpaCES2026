@@ -1,0 +1,122 @@
+{
+  "background_status": "reused inspected real recordings",
+  "bounds": [
+    0,
+    10782,
+    13477,
+    15274,
+    17970
+  ],
+  "extension_blocks": [
+    [
+      15274,
+      15586
+    ],
+    [
+      15586,
+      15898
+    ],
+    [
+      15898,
+      16210
+    ],
+    [
+      16210,
+      16522
+    ]
+  ],
+  "interval_seconds": 120,
+  "old_test_overlap_rows": 1248,
+  "original_fidelity_intervals": [
+    [
+      15274,
+      15442
+    ],
+    [
+      15442,
+      15610
+    ],
+    [
+      15610,
+      15778
+    ],
+    [
+      15778,
+      15946
+    ],
+    [
+      15946,
+      16114
+    ],
+    [
+      16114,
+      16282
+    ]
+  ],
+  "original_primary_blocks": [
+    [
+      15274,
+      15586
+    ],
+    [
+      15586,
+      15898
+    ],
+    [
+      15898,
+      16210
+    ],
+    [
+      16210,
+      16522
+    ],
+    [
+      16522,
+      16834
+    ],
+    [
+      16834,
+      17146
+    ],
+    [
+      17146,
+      17458
+    ],
+    [
+      17458,
+      17770
+    ]
+  ],
+  "primary_channels": [
+    "temperature",
+    "humidity"
+  ],
+  "source_processed_sha256": "b68fb7e9fe6f2fa2c64a48e2cd92d8c641cd3d0cc741f62b7e6c9678848559aa",
+  "split_episodes": [
+    [
+      0,
+      10782,
+      0
+    ],
+    [
+      10782,
+      13477,
+      1
+    ],
+    [
+      13477,
+      15274,
+      2
+    ],
+    [
+      15274,
+      17970,
+      3
+    ]
+  ],
+  "training_scaling_reused": true,
+  "units": [
+    "degC",
+    "percent RH"
+  ]
+}

@@ -575,6 +575,94 @@
       "original": "results/summary.json",
       "original_bytes": 224286,
       "original_sha256": "c3245f6cb835020ed84723386e0ee437f38660c3b982de5cf0a285cde0248e2b"
+    },
+    {
+      "archive": "results/ablations.csv.gz",
+      "archive_bytes": 10597,
+      "archive_sha256": "616ecfe662b46fc9d0cea3db6b801e2140b3ecf259d9efe686b8cfc5a73cad92",
+      "original": "results/ablations.csv",
+      "original_bytes": 86023,
+      "original_sha256": "de8b24accab7246730391b3d9fee42adce32edc2df6380aacd0e33eafccf32b6"
+    },
+    {
+      "archive": "results/calibration_diagnostics.csv.gz",
+      "archive_bytes": 8019,
+      "archive_sha256": "11b808312592e74afa673afcdee83d4525fe57243c96a36777692b2cc501ce1a",
+      "original": "results/calibration_diagnostics.csv",
+      "original_bytes": 57380,
+      "original_sha256": "db7c0f4456393f158b1cbbaa9e69ba04fb3151c7e7972453a14316f148edb72a"
+    },
+    {
+      "archive": "results/delay_with_computation.csv.gz",
+      "archive_bytes": 14668,
+      "archive_sha256": "88e073fd1d4aa5acea4d1fe7f7ef33e6949e7d928ec7210f3ad9347ca97bac78",
+      "original": "results/delay_with_computation.csv",
+      "original_bytes": 274795,
+      "original_sha256": "dcbf545d98e8eed46c794c996cedac4ab6ee6fb38bba021e20a87ee94fc0d4e6"
+    },
+    {
+      "archive": "results/fidelity.csv.gz",
+      "archive_bytes": 24385,
+      "archive_sha256": "284ddb9fa6cbb77db291d4bcd9c30110f38d45e386c2d482dfecaba082d05191",
+      "original": "results/fidelity.csv",
+      "original_bytes": 102365,
+      "original_sha256": "78f4cbdda6b7f1f3c3e8b3f1acc933a4d226c224d340d4af973ca0795274cef0"
+    },
+    {
+      "archive": "results/group_window_ablations.csv.gz",
+      "archive_bytes": 44867,
+      "archive_sha256": "2bf222c3ce055584da365b650bbeaeb5d7ea153f607e7bb69dc84507aaaa7aa1",
+      "original": "results/group_window_ablations.csv",
+      "original_bytes": 757287,
+      "original_sha256": "61ad3cfaf9c76760a3b51380253f616700aa5b5e93406251c31301812c1dc748"
+    },
+    {
+      "archive": "results/method_comparison.csv.gz",
+      "archive_bytes": 19886,
+      "archive_sha256": "f9766cc13568412ea873a9d7de7b59b824881c53dba3765eda7b3a5349f886fb",
+      "original": "results/method_comparison.csv",
+      "original_bytes": 79382,
+      "original_sha256": "87d3ae9ef9d1bebb38da742da863f24fa8f6b9ba5bfdd8404f3676d3c9a13c79"
+    },
+    {
+      "archive": "results/retrospective_operating_curves.csv.gz",
+      "archive_bytes": 86259,
+      "archive_sha256": "02c3625b657a993eb545b9f137902873d018842ab4e96e8397b28d41a9c725d9",
+      "original": "results/retrospective_operating_curves.csv",
+      "original_bytes": 521200,
+      "original_sha256": "2b68809294d792af2f47c25f5bc84287a712ea8b080a5da53c679a22240892a5"
+    },
+    {
+      "archive": "results/runtime.csv.gz",
+      "archive_bytes": 46022,
+      "archive_sha256": "34860c94516482414d2833e935fcc289b552bd9cd7b442eb84d49253b87f2428",
+      "original": "results/runtime.csv",
+      "original_bytes": 393527,
+      "original_sha256": "157e47c5c6e01534091e8ee4673a6b74460134dbc3fa7733d533ff5d4a4cb4cc"
+    },
+    {
+      "archive": "results/sample_count_metrics.csv.gz",
+      "archive_bytes": 9177,
+      "archive_sha256": "934afdd77f73406e70a1c728f245645a46faf04afcde22b563ccd7d68e9dfc89",
+      "original": "results/sample_count_metrics.csv",
+      "original_bytes": 272804,
+      "original_sha256": "842c127be3a15290668f3bee9349ddbb8f08bf826635cb0ab14462ed08c8685b"
+    },
+    {
+      "archive": "results/stratified_metrics.csv.gz",
+      "archive_bytes": 51059,
+      "archive_sha256": "59be9d223078628b5a663026f711156f322b05450c3a05529524a1aba801c04b",
+      "original": "results/stratified_metrics.csv",
+      "original_bytes": 718833,
+      "original_sha256": "85275be2c399a51afeb3db800e170f33a0b5048c64066d6fdd2d4df8c8c3bfa1"
+    },
+    {
+      "archive": "results/topology_metrics.csv.gz",
+      "archive_bytes": 6395,
+      "archive_sha256": "d9405bb1aa6ee2709d2ff1d57874ae15598b6073bb3469d1b1e0a57efef338aa",
+      "original": "results/topology_metrics.csv",
+      "original_bytes": 31252,
+      "original_sha256": "2689fa20cbc3cfc2fd59ce58db3a01d5fd26724cf24c1e9ca8aca09cc33a64d9"
     }
   ],
   "format_version": 1,

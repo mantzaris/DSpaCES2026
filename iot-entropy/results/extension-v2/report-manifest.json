@@ -1,0 +1,29 @@
+{
+  "common_support": "Common feature group/window/channel support within each reference; operational reference contrasts retain model-specific support.",
+  "complete": true,
+  "completed_runs": [
+    "intel-17",
+    "intel-29",
+    "intel-43",
+    "pems-17",
+    "pems-29",
+    "pems-43",
+    "synthetic128-17",
+    "synthetic128-29",
+    "synthetic128-43",
+    "synthetic256-17",
+    "synthetic256-29",
+    "synthetic256-43",
+    "synthetic64-17",
+    "synthetic64-29",
+    "synthetic64-43"
+  ],
+  "expected_runs": 15,
+  "fault_realizations": 360,
+  "independent_primary_datasets": 3,
+  "inference": "exploratory paired block bootstrap; no equivalence test; both real backgrounds were inspected in v1",
+  "original_namespace": "experiments/full",
+  "original_revision": "b900da1bf4b3b4f1b8ab2310257af842de587562",
+  "recording_or_simulation_blocks": 20,
+  "source_namespace": "experiments/extension-v2"
+}

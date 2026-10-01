@@ -1,0 +1,23 @@
+[
+  {
+    "bootstrap_byte_agreement": true,
+    "dataset": "synthetic64",
+    "device": "CUDA generation; retained arrays permit CPU analysis",
+    "path": "experiments/extension-v2/cache/synthetic64-backgrounds.npz",
+    "sha256": "4196bafd64b4cad0918136cc04893efb485b16da072935e7604fdd4bd285d079"
+  },
+  {
+    "bootstrap_byte_agreement": true,
+    "dataset": "synthetic128",
+    "device": "CUDA generation; retained arrays permit CPU analysis",
+    "path": "experiments/extension-v2/cache/synthetic128-backgrounds.npz",
+    "sha256": "49c15aa88789d6c9c7302fb4ad279f7e093eb012518b91dfa787c308c30b8544"
+  },
+  {
+    "bootstrap_byte_agreement": true,
+    "dataset": "synthetic256",
+    "device": "CUDA generation; retained arrays permit CPU analysis",
+    "path": "experiments/extension-v2/cache/synthetic256-backgrounds.npz",
+    "sha256": "b74dcae3b27a3ffb6c310dbb63799a1f4e3cc407295afa9af8196d3aa736b288"
+  }
+]

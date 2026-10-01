@@ -1,0 +1,137 @@
+[
+  {
+    "configuration": "intel",
+    "localization_budget": 6,
+    "permutation_q": 3,
+    "permutation_tau": 2,
+    "sample_delta": 0.2,
+    "seed": 17,
+    "top_fraction": 0.25
+  },
+  {
+    "configuration": "intel",
+    "localization_budget": 6,
+    "permutation_q": 3,
+    "permutation_tau": 2,
+    "sample_delta": 0.2,
+    "seed": 29,
+    "top_fraction": 0.25
+  },
+  {
+    "configuration": "intel",
+    "localization_budget": 6,
+    "permutation_q": 3,
+    "permutation_tau": 2,
+    "sample_delta": 0.2,
+    "seed": 43,
+    "top_fraction": 0.5
+  },
+  {
+    "configuration": "pems",
+    "localization_budget": 12,
+    "permutation_q": 3,
+    "permutation_tau": 2,
+    "sample_delta": 0.3,
+    "seed": 17,
+    "top_fraction": 0.25
+  },
+  {
+    "configuration": "pems",
+    "localization_budget": 12,
+    "permutation_q": 3,
+    "permutation_tau": 2,
+    "sample_delta": 0.3,
+    "seed": 29,
+    "top_fraction": 0.5
+  },
+  {
+    "configuration": "pems",
+    "localization_budget": 12,
+    "permutation_q": 3,
+    "permutation_tau": 2,
+    "sample_delta": 0.3,
+    "seed": 43,
+    "top_fraction": 0.5
+  },
+  {
+    "configuration": "synthetic128",
+    "localization_budget": 12,
+    "permutation_q": 3,
+    "permutation_tau": 1,
+    "sample_delta": 0.3,
+    "seed": 17,
+    "top_fraction": 0.5
+  },
+  {
+    "configuration": "synthetic128",
+    "localization_budget": 12,
+    "permutation_q": 3,
+    "permutation_tau": 1,
+    "sample_delta": 0.3,
+    "seed": 29,
+    "top_fraction": 0.5
+  },
+  {
+    "configuration": "synthetic128",
+    "localization_budget": 12,
+    "permutation_q": 3,
+    "permutation_tau": 1,
+    "sample_delta": 0.3,
+    "seed": 43,
+    "top_fraction": 0.25
+  },
+  {
+    "configuration": "synthetic256",
+    "localization_budget": 12,
+    "permutation_q": 3,
+    "permutation_tau": 1,
+    "sample_delta": 0.2,
+    "seed": 17,
+    "top_fraction": 0.25
+  },
+  {
+    "configuration": "synthetic256",
+    "localization_budget": 12,
+    "permutation_q": 3,
+    "permutation_tau": 1,
+    "sample_delta": 0.2,
+    "seed": 29,
+    "top_fraction": 0.25
+  },
+  {
+    "configuration": "synthetic256",
+    "localization_budget": 12,
+    "permutation_q": 3,
+    "permutation_tau": 1,
+    "sample_delta": 0.2,
+    "seed": 43,
+    "top_fraction": 0.25
+  },
+  {
+    "configuration": "synthetic64",
+    "localization_budget": 12,
+    "permutation_q": 3,
+    "permutation_tau": 1,
+    "sample_delta": 0.2,
+    "seed": 17,
+    "top_fraction": 0.25
+  },
+  {
+    "configuration": "synthetic64",
+    "localization_budget": 12,
+    "permutation_q": 3,
+    "permutation_tau": 1,
+    "sample_delta": 0.2,
+    "seed": 29,
+    "top_fraction": 0.5
+  },
+  {
+    "configuration": "synthetic64",
+    "localization_budget": 12,
+    "permutation_q": 3,
+    "permutation_tau": 1,
+    "sample_delta": 0.2,
+    "seed": 43,
+    "top_fraction": 0.5
+  }
+]

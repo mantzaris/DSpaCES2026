@@ -1,0 +1,17 @@
+{
+  "availability_note": "Exact valid-group counts; CPU/GPU means may differ by a float32 ulp.",
+  "complete": true,
+  "dataset": "synthetic128",
+  "elapsed_seconds": 137.0492552034557,
+  "parent_configuration_sha256": "403d493d93b1b7701b5efd967e7499fead16b4f2a8af56a8dcb266730e672c23",
+  "parent_events_sha256": "3e83f3c339c449d8a1e3e58615e321126e647671008bc630f1f6d0e09716a033",
+  "predictions_sha256": "97bd3058bc1c0e14176cfe14b3deee1e9c82a7c93269999e5d5fc57d6e91f464",
+  "protocol_revision": "bd04b4e1",
+  "protocol_sha256": "baf3606864bc162e5613c4b749c94be566be90f77eac37ab3522991353adcdf1",
+  "scale1_exact_pvalues_and_valid_counts": true,
+  "scale1_max_calibration_error": 0.0,
+  "scale1_max_score_error": 0.0,
+  "seed": 17,
+  "specification_sha256": "e9a56fd8d4d33ef5ab3410f27313b23b1be4b9f5211050876992f5580291f112",
+  "unchanged_spatial_families": true
+}

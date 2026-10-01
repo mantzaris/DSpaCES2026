@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-m",
+    "pytest",
+    "-q",
+    "tests",
+    "--disable-warnings"
+  ],
+  "device": "CPU",
+  "elapsed_seconds": 1.9977214259997709,
+  "passed": 18,
+  "returncode": 0,
+  "scope": "Mathematical, numerical, leakage, event, localization, aggregation and multiscale endpoint checks",
+  "skipped": 2,
+  "stderr": "",
+  "stdout": "......s............s                                                     [100%]\n18 passed, 2 skipped, 6 warnings in 1.55s\n"
+}

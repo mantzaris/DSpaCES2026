@@ -1,0 +1,23 @@
+[
+  {
+    "bytes": 1495400,
+    "dataset": "synthetic64",
+    "file": "data/extension/synthetic64.json",
+    "sha256": "876e2b27cc798cbd76391086f08e1a8c5de1625ac4c60801c846656ed5b5b356",
+    "source": "results/extension-v2/replays/synthetic64.json.gz"
+  },
+  {
+    "bytes": 1072819,
+    "dataset": "intel",
+    "file": "data/extension/intel.json",
+    "sha256": "2f271d59d6538f23fbe594a098ff8760dce42fbd917bfb3ff0a6b36e726187d3",
+    "source": "results/extension-v2/replays/intel.json.gz"
+  },
+  {
+    "bytes": 4390229,
+    "dataset": "pems",
+    "file": "data/extension/pems.json",
+    "sha256": "2f5dac530fec7feb7ed7915c8e96368b4da015d0a7e6591cfd3c08e1926ffed3",
+    "source": "results/extension-v2/replays/pems.json.gz"
+  }
+]

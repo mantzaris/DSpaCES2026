@@ -95,6 +95,27 @@ def test_null_rank_and_temporal_support():
     assert values[3] == 0 and values[5] == pytest.approx(1)
 
 
+def test_multiscale_physical_endpoints_and_missing_bins():
+    import json
+    from pathlib import Path
+    from iot_entropy.temporal import multiscale_trajectory, trajectory, window
+    config = json.loads((Path(__file__).parents[1]/'configs/extension-v2.json').read_text())
+    x = torch.tensor(np.random.default_rng(194).normal(size=(2, 120, 3, 1)), dtype=torch.float64)
+    x[0, 25, 0, 0] = float('nan')
+    result = multiscale_trajectory(x, 96, 2, config)
+    # Explicit endpoint-by-endpoint bins, independent of the full-target helper.
+    current = x[:, -96:].permute(0, 2, 3, 1).reshape(2, 3, 1, 48, 2).mean(-1)
+    past = x[:, -120:-24].permute(0, 2, 3, 1).reshape(2, 3, 1, 48, 2).mean(-1)
+    assert torch.isnan(current[0, 0, 0, 0]) and torch.isnan(past[0, 0, 0, 12])
+    expected = torch.stack((window(current, config)['values'],
+                           window(current, config)['values']-window(past, config)['values']), -1)
+    assert torch.allclose(result['u'], expected, equal_nan=True)
+    assert torch.allclose(multiscale_trajectory(x, 96, 1, config)['u'],
+                          trajectory(x, 96, config)['u'], equal_nan=True)
+    with pytest.raises(ValueError):
+        multiscale_trajectory(x[:, :-1], 96, 2, config)
+
+
 @pytest.mark.skipif(not torch.cuda.is_available(), reason='CUDA not available')
 def test_cpu_gpu_counts_and_values():
     rng = np.random.default_rng(113)

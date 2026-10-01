@@ -1,0 +1,272 @@
+[
+  {
+    "BST_larger_fraction": 0.0019230769230769232,
+    "configuration": "intel",
+    "equal_maximum_fraction": 0.9980769230769231,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "bootstrap",
+    "seed": 17
+  },
+  {
+    "BST_larger_fraction": 0.0,
+    "configuration": "intel",
+    "equal_maximum_fraction": 1.0,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "diffusion",
+    "seed": 17
+  },
+  {
+    "BST_larger_fraction": 0.0009615384615384616,
+    "configuration": "intel",
+    "equal_maximum_fraction": 0.9990384615384615,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "bootstrap",
+    "seed": 29
+  },
+  {
+    "BST_larger_fraction": 0.0,
+    "configuration": "intel",
+    "equal_maximum_fraction": 1.0,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "diffusion",
+    "seed": 29
+  },
+  {
+    "BST_larger_fraction": 0.0009615384615384616,
+    "configuration": "intel",
+    "equal_maximum_fraction": 0.9990384615384615,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "bootstrap",
+    "seed": 43
+  },
+  {
+    "BST_larger_fraction": 0.0,
+    "configuration": "intel",
+    "equal_maximum_fraction": 1.0,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "diffusion",
+    "seed": 43
+  },
+  {
+    "BST_larger_fraction": 0.0,
+    "configuration": "pems",
+    "equal_maximum_fraction": 1.0,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "bootstrap",
+    "seed": 17
+  },
+  {
+    "BST_larger_fraction": 0.0009615384615384616,
+    "configuration": "pems",
+    "equal_maximum_fraction": 0.9990384615384615,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "diffusion",
+    "seed": 17
+  },
+  {
+    "BST_larger_fraction": 0.0,
+    "configuration": "pems",
+    "equal_maximum_fraction": 1.0,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "bootstrap",
+    "seed": 29
+  },
+  {
+    "BST_larger_fraction": 0.0009615384615384616,
+    "configuration": "pems",
+    "equal_maximum_fraction": 0.9990384615384615,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "diffusion",
+    "seed": 29
+  },
+  {
+    "BST_larger_fraction": 0.0,
+    "configuration": "pems",
+    "equal_maximum_fraction": 1.0,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "bootstrap",
+    "seed": 43
+  },
+  {
+    "BST_larger_fraction": 0.022115384615384617,
+    "configuration": "pems",
+    "equal_maximum_fraction": 0.9778846153846154,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "diffusion",
+    "seed": 43
+  },
+  {
+    "BST_larger_fraction": 0.026923076923076925,
+    "configuration": "synthetic128",
+    "equal_maximum_fraction": 0.9730769230769231,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "bootstrap",
+    "seed": 17
+  },
+  {
+    "BST_larger_fraction": 0.0,
+    "configuration": "synthetic128",
+    "equal_maximum_fraction": 1.0,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "diffusion",
+    "seed": 17
+  },
+  {
+    "BST_larger_fraction": 0.01826923076923077,
+    "configuration": "synthetic128",
+    "equal_maximum_fraction": 0.9817307692307692,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "bootstrap",
+    "seed": 29
+  },
+  {
+    "BST_larger_fraction": 0.0,
+    "configuration": "synthetic128",
+    "equal_maximum_fraction": 1.0,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "diffusion",
+    "seed": 29
+  },
+  {
+    "BST_larger_fraction": 0.03942307692307692,
+    "configuration": "synthetic128",
+    "equal_maximum_fraction": 0.9605769230769231,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "bootstrap",
+    "seed": 43
+  },
+  {
+    "BST_larger_fraction": 0.0,
+    "configuration": "synthetic128",
+    "equal_maximum_fraction": 1.0,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "diffusion",
+    "seed": 43
+  },
+  {
+    "BST_larger_fraction": 0.0125,
+    "configuration": "synthetic256",
+    "equal_maximum_fraction": 0.9875,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "bootstrap",
+    "seed": 17
+  },
+  {
+    "BST_larger_fraction": 0.0,
+    "configuration": "synthetic256",
+    "equal_maximum_fraction": 1.0,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "diffusion",
+    "seed": 17
+  },
+  {
+    "BST_larger_fraction": 0.05384615384615385,
+    "configuration": "synthetic256",
+    "equal_maximum_fraction": 0.9461538461538461,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "bootstrap",
+    "seed": 29
+  },
+  {
+    "BST_larger_fraction": 0.0,
+    "configuration": "synthetic256",
+    "equal_maximum_fraction": 1.0,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "diffusion",
+    "seed": 29
+  },
+  {
+    "BST_larger_fraction": 0.011538461538461539,
+    "configuration": "synthetic256",
+    "equal_maximum_fraction": 0.9884615384615385,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "bootstrap",
+    "seed": 43
+  },
+  {
+    "BST_larger_fraction": 0.0,
+    "configuration": "synthetic256",
+    "equal_maximum_fraction": 1.0,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "diffusion",
+    "seed": 43
+  },
+  {
+    "BST_larger_fraction": 0.01826923076923077,
+    "configuration": "synthetic64",
+    "equal_maximum_fraction": 0.9817307692307692,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "bootstrap",
+    "seed": 17
+  },
+  {
+    "BST_larger_fraction": 0.0,
+    "configuration": "synthetic64",
+    "equal_maximum_fraction": 1.0,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "diffusion",
+    "seed": 17
+  },
+  {
+    "BST_larger_fraction": 0.013461538461538462,
+    "configuration": "synthetic64",
+    "equal_maximum_fraction": 0.9865384615384616,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "bootstrap",
+    "seed": 29
+  },
+  {
+    "BST_larger_fraction": 0.0,
+    "configuration": "synthetic64",
+    "equal_maximum_fraction": 1.0,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "diffusion",
+    "seed": 29
+  },
+  {
+    "BST_larger_fraction": 0.015384615384615385,
+    "configuration": "synthetic64",
+    "equal_maximum_fraction": 0.9846153846153847,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "bootstrap",
+    "seed": 43
+  },
+  {
+    "BST_larger_fraction": 0.0,
+    "configuration": "synthetic64",
+    "equal_maximum_fraction": 1.0,
+    "interpretation": "same raw scan maximum need not imply equal information or practical equivalence",
+    "jointly_valid_scheduled_units": 1040,
+    "reference": "diffusion",
+    "seed": 43
+  }
+]

@@ -1,0 +1,24 @@
+Isolated generation-to-score medians for synthetic64, Intel and PEMS are
+0.180,
+0.174 and
+0.258 seconds for bootstrap, versus
+0.370,
+0.338 and
+1.164 for diffusion on the RTX A6000.
+They include generation, masks, both windows, feature extraction, scoring and
+localization; they exclude GDN, acquisition, loading, disk output, rank lookup and
+dashboard rendering. They are not a production end-to-end speedup claim.
+Peak allocated memory in these isolated runs is at most
+1.43 GiB. The PEMS temporal kernel takes
+0.724 seconds on CPU float64 versus
+0.035 on GPU float32, transfer excluded;
+precision and hardware both differ. Maximum CPU/GPU absolute disagreement
+across the benchmark is below $2.0\times10^{-7}$.
+The cumulative GPU-stage ledger, including the original study, validation and
+failed attempts, records 4.271 hours within the explicitly
+authorized eight-hour ceiling. All primary, window/support, scale-2 and
+fidelity/timing comparisons completed. The earlier four-hour stop is preserved;
+CPU reporting and rendering are outside this experiment-stage ledger.
+
+\begin{figure*}[!tb]\centering\includegraphics[width=\textwidth]{dashboard_cost.pdf}
+\caption{Intel replay localization display (orange outlines: injected sensors, for evaluation only) and isolated generation-to-score timing. The example is the first prespecified copy trial, not a selected success. Timing excludes loading, acquisition and presentation.}\label{fig:dashboard-cost}\end{figure*}

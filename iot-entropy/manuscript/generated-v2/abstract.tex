@@ -1,0 +1,17 @@
+Spatial covariance and within-sensor temporal order describe different aspects
+of IoT behavior. We compare local correlation-spectrum, permutation and sample
+entropy with conventional spatial and temporal statistics under joint block-bootstrap
+and graph-conditioned diffusion references. A frozen extension evaluates
+360 fault realizations on 20 simulation/recording blocks with three model seeds,
+using one synthetic benchmark and two semi-synthetic real-data benchmarks.
+Aligned diagnostics verify that time reordering can preserve covariance while
+changing temporal entropy; autocorrelation also detects this distinction.
+Results depend on support, reference and calibration. On Intel, bootstrap temporal
+entropy achieves recall 0.389 versus 0.000 for the conventional temporal
+scan, with respective background exceedance 0.103 and 0.000.
+Adding entropy to the conventional combined scan increases synthetic bootstrap
+recall by 0.003; other dataset/reference combinations show no recall increase.
+Shared-support fidelity exposes substantial diffusion entropy miscoverage.
+No consistent overall advantage is established for either entropy or the
+generative reference. These exploratory results distinguish feature information
+from estimator availability and decision performance, without claiming equivalence.

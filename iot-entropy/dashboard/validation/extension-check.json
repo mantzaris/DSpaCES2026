@@ -1,0 +1,44 @@
+{
+  "checks": [
+    {
+      "dataset": "synthetic64",
+      "time": 9,
+      "group": 70,
+      "frames": 13,
+      "channels": 1,
+      "quality": "MeasurementActual changeDeparture of changeSpatial entropyincrease · 0.1380.168 entropy unitsPermutationincrease · 0.0171.307 MAD unitsSampledecrease · -0.036-0.349 MAD unitsACF1decrease · -0.037-4.682 MAD unitsVariancedecrease · -0.070-0.352 MAD unitsValid templatesPE 94SE 94Sample pairsA 252B 528QualityTied fraction 0.000see support and gaps",
+      "provenance": "Forecast issued: 2020-01-02 16:35:00 · Observed: 2020-01-03 02:35:00 · source timezone unspecified. Reference: diffusion, spatial-temporal-v2, checkpoint 1ac1ef337547. Raw channel: signal (arbitrary units). PE q=3, τ=1; SampEn r=2, δ=0.2 training scale, Theiler=2. Calibration n=32, smallest rank p=0.030.",
+      "p": 0.727,
+      "rawRows": 48,
+      "selectedNode": 1,
+      "edge": "Sensors 7–9: observed r=0.264, reference r=0.873, departure=-0.609. Overlay is measured correlation, not a physical edge or cause."
+    },
+    {
+      "dataset": "intel",
+      "time": 9,
+      "group": 206,
+      "frames": 13,
+      "channels": 2,
+      "quality": "MeasurementActual changeDeparture of changeSpatial entropyunavailable · unavailableunavailable entropy unitsPermutationunavailable · unavailableunavailable MAD unitsSampleunavailable · unavailableunavailable MAD unitsACF1unavailable · unavailableunavailable MAD unitsVarianceunavailable · unavailableunavailable MAD unitsValid templatesPE 0SE 0Sample pairsA 0B 0QualityTied fraction unavailablesee support and gaps",
+      "provenance": "Forecast issued: 2004-03-20 11:18:00 · Observed: 2004-03-20 15:18:00 · source timezone unspecified. Reference: diffusion, spatial-temporal-v2, checkpoint 194606b84c53. Raw channel: temperature (degC). PE q=3, τ=2; SampEn r=2, δ=0.2 training scale, Theiler=2. Calibration n=10, smallest rank p=0.091.",
+      "p": 0.455,
+      "rawRows": 48,
+      "selectedNode": 1,
+      "edge": "no overlay above display threshold"
+    },
+    {
+      "dataset": "pems",
+      "time": 9,
+      "group": 86,
+      "frames": 13,
+      "channels": 1,
+      "quality": "MeasurementActual changeDeparture of changeSpatial entropyincrease · 0.002-0.045 entropy unitsPermutationincrease · 0.007-0.184 MAD unitsSampledecrease · -0.114-2.125 MAD unitsACF1decrease · -0.050-0.124 MAD unitsVariancedecrease · -0.0980.345 MAD unitsValid templatesPE 92SE 94Sample pairsA 1543B 1762QualityTied fraction 0.185see support and gaps",
+      "provenance": "Forecast issued: 2017-06-09 19:15:00 · Observed: 2017-06-10 05:15:00 · source timezone unspecified. Reference: diffusion, spatial-temporal-v2, checkpoint f51e90aeb930. Raw channel: speed (mph). PE q=3, τ=2; SampEn r=2, δ=0.3 training scale, Theiler=2. Calibration n=31, smallest rank p=0.031.",
+      "p": 0.469,
+      "rawRows": 48,
+      "selectedNode": 1,
+      "edge": "Sensors 401811–403412: observed r=-0.068, reference r=0.217, departure=-0.285. Overlay is measured correlation, not a physical edge or cause."
+    }
+  ],
+  "errors": []
+}
