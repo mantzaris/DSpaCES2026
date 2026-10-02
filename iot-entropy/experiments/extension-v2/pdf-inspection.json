@@ -1,17 +1,19 @@
 {
   "overfull_boxes": false,
   "pages": 10,
-  "pdf_sha256": "60187afba514adb4e7eca9ea5eb94bd3ce042f25a6b877ac9d8ff47b7f59a7f2",
+  "pdf_sha256": "016d4bf8a46b7772c01e955023000d414344ed63a5cc5b84a5cefa139b78fa64",
+  "previous_pdf_sha256": "60187afba514adb4e7eca9ea5eb94bd3ce042f25a6b877ac9d8ff47b7f59a7f2",
   "render_command": "pdftoppm -r 110 -png manuscript/paper.pdf .local/pdf-v2/page",
   "screenshots_policy": "Rendered pages remain local; regenerate from the committed PDF.",
+  "standalone_compile_audit": "experiments/extension-v2/standalone-manuscript.json",
   "status": "inspected",
   "undefined_references": false,
-  "utc": "2026-10-01T03:14:00.208298+00:00",
+  "utc": "2026-10-02T18:18:11.776478+00:00",
   "visual_review": [
-    "All ten rendered pages inspected",
-    "Readable column-width diagrams, plots and numerical tables",
-    "No clipped equations, overlapping labels or missing glyphs observed",
-    "Named authors retained; AI disclosure present; references included within ten pages",
-    "Final bibliography columns balanced using the IEEEtran hook"
+    "All ten pages rendered after source consolidation; pages 1-9 match the prior inspected renders pixel for pixel",
+    "Page 10 visually inspected before and after; only word spacing on one conclusion line differs",
+    "Extracted text and line breaks are unchanged throughout all ten pages",
+    "No clipped equations, overlapping labels, missing glyphs, overfull boxes or undefined references observed",
+    "Named authors, AI disclosure, references and IEEE bibliography balance retained within ten pages"
   ]
 }

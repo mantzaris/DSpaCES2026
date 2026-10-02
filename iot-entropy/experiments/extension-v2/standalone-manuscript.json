@@ -1,0 +1,88 @@
+{
+  "baseline_git_revision": "f1a7662d47599eb2a1cace7c5de9f27f02410022",
+  "baseline_pdf_sha256": "60187afba514adb4e7eca9ea5eb94bd3ce042f25a6b877ac9d8ff47b7f59a7f2",
+  "checks": {
+    "latex_content_unchanged_ignoring_whitespace_and_generator_markers": true,
+    "layout_text_identical_to_baseline": true,
+    "no_input_include_or_subfile_commands": true,
+    "overfull_boxes": false,
+    "results_regeneration_idempotent": true,
+    "undefined_references": false
+  },
+  "isolated_compile": {
+    "command": [
+      "latexmk",
+      "-cd",
+      "-pdf",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "paper.tex"
+    ],
+    "copied_inputs": [
+      "paper.tex",
+      "references.bib",
+      "IEEEtran.cls",
+      "IEEEtran.bst",
+      "figures-v2/*.pdf"
+    ],
+    "elapsed_seconds": 1.6719994059822056,
+    "project_tex_files": [
+      "paper.tex"
+    ],
+    "returncode": 0,
+    "system_dependencies": "Standard LaTeX packages and fonts remain required."
+  },
+  "pages": 10,
+  "paper_pdf_sha256": "016d4bf8a46b7772c01e955023000d414344ed63a5cc5b84a5cefa139b78fa64",
+  "paper_source_sha256": "83f0471520d60f0ae5c69c8b0b52239f5c961ce7cf8f30b84214173febf5465a",
+  "render_comparison": {
+    "dpi": 110,
+    "pages": [
+      {
+        "page": 1,
+        "pixels_identical": true
+      },
+      {
+        "page": 2,
+        "pixels_identical": true
+      },
+      {
+        "page": 3,
+        "pixels_identical": true
+      },
+      {
+        "page": 4,
+        "pixels_identical": true
+      },
+      {
+        "page": 5,
+        "pixels_identical": true
+      },
+      {
+        "page": 6,
+        "pixels_identical": true
+      },
+      {
+        "page": 7,
+        "pixels_identical": true
+      },
+      {
+        "page": 8,
+        "pixels_identical": true
+      },
+      {
+        "page": 9,
+        "pixels_identical": true
+      },
+      {
+        "page": 10,
+        "pixels_identical": false
+      }
+    ],
+    "rendered_images": "Local only; regenerate from the PDFs.",
+    "visual_inspection": "Pages 1-9 are pixel-identical to the previously inspected PDF. Page 10 was inspected before and after: only word spacing on one conclusion line differs; text and line breaks are unchanged."
+  },
+  "scope": "Manuscript source consolidation only; no experiment reruns.",
+  "status": "passed",
+  "utc": "2026-10-02T18:18:11.776478+00:00"
+}

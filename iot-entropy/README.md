@@ -10,8 +10,10 @@ Read [the manuscript](manuscript/paper.pdf), [findings](docs/extension-findings.
 [the audit amendment](docs/extension-audit-amendment.md).
 The original study remains in `experiments/full`, the original `results/`
 files, and revision `b900da1b`. Its [README](docs/original-study-readme.md)
-describes the original pipeline. Current source is `manuscript/extension.tex`,
-included by `manuscript/paper.tex`.
+describes the original pipeline. The complete, editable LaTeX source is
+`manuscript/paper.tex`: all sections and tables are inline. Only
+`manuscript/references.bib` and the figures remain external content; compilation
+does not load any other manuscript `.tex` files.
 The original removed/shuffled-topology ablations are retained in v1; the
 frozen temporal extension fixes the physical/proximity graph to compare features.
 
@@ -39,6 +41,13 @@ The tested CPU reporting versions are in `environment/reporting-environment.json
 IEEEtran and its bibliography style are vendored. LaTeX commands need `latexmk`,
 `pdflatex` and BibTeX; figure export uses Ghostscript to subset embedded fonts
 without rasterizing the plots. Original full-font PDFs remain local.
+
+For manuscript edits, edit `manuscript/paper.tex` and run the `latexmk` command
+below. The results regeneration command `scripts/extension_writeup.py` refreshes
+only the four blocks marked `% BEGIN GENERATED` / `% END GENERATED` in that
+file, preserving the surrounding prose. Edit numerical prose in that script
+to retain it across results regeneration. The files in `manuscript/generated-v2/`
+are intermediate generation outputs, not dependencies for compiling the paper.
 
 ```bash
 export PYTHONPATH=src

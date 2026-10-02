@@ -1,6 +1,6 @@
 """Portable numerical/provenance audit; raw data and CUDA are not required."""
 from pathlib import Path
-import argparse,hashlib,json,subprocess
+import argparse,hashlib,json,re,subprocess
 import numpy as np
 from iot_entropy.calibration import rank_pvalues
 from iot_entropy.extension_reporting import read_json
@@ -99,12 +99,14 @@ assert read_json(ns/'multiscale-validation.json')['returncode']==0
 assert read_json(ns/'cpu-validation.json')['returncode']==0
 pdfinfo=subprocess.check_output(['pdfinfo',str(root/'manuscript/paper.pdf')],text=True)
 pages=int(next(s for s in pdfinfo.splitlines() if s.startswith('Pages:')).split()[-1]);assert pages<=10
+paper_source=(root/'manuscript/paper.tex').read_text()
+assert not re.search(r'\\(?:input|include|subfile)\b',paper_source),'Manuscript must be self-contained LaTeX'
 log=root/'manuscript/paper.log'
 if log.exists():assert 'Overfull' not in log.read_text() and 'undefined' not in log.read_text()
 manifest_path=ns/'artifact-manifest.json'
 sources=[*root.glob('src/iot_entropy/*'),*root.glob('scripts/*'),*root.glob('tests/*.py'),
          *root.glob('configs/*.json'),*root.glob('docs/extension*.md'),root/'docs/venue.md',
-         root/'README.md',root/'pyproject.toml',root/'manuscript/extension.tex',root/'manuscript/paper.tex',
+         root/'README.md',root/'pyproject.toml',root/'manuscript/paper.tex',
          root/'manuscript/references.bib',root/'environment/requirements.lock.txt']
 source_hashes={str(p.relative_to(root)):digest(p) for p in sources if p.is_file()}
 if args.write_manifest:

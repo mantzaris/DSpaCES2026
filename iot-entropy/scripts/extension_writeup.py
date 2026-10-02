@@ -1,7 +1,8 @@
-"""Generate numerical manuscript prose and its claim ledger from frozen outputs."""
+"""Refresh inline numerical content in paper.tex and its frozen-results ledger."""
 from pathlib import Path
 import json
 import math
+import re
 import numpy as np
 import pandas as pd
 from iot_entropy.extension_reporting import read_json
@@ -106,7 +107,7 @@ For bootstrap T, conditional versus unconditional IoU is
 Mean best-overlap candidate-group IoU is
 {v('synthetic','bootstrap/T','oracle_iou')}/{v('intel','bootstrap/T','oracle_iou')}/{v('pems','bootstrap/T','oracle_iou')},
 an oracle library diagnostic rather than an upper bound on every sensor ranking.
-\input{{generated-v2/main-table.tex}}
+{(dest/'main-table.tex').read_text().rstrip()}
 '''
 results+=figure('performance','Operational performance and unadjusted paired 95\% whole-block intervals. IoU assigns zero to missed events. Equal nominal alpha does not imply equal achieved background rates; four real recording blocks give limited precision.','performance')
 results+=rf'''
@@ -153,7 +154,7 @@ versus {n(fid.loc[('intel','bootstrap'),'sample_96_coverage90'])} for bootstrap.
 Good raw marginal behavior does not ensure a faithful temporal functional.
 No consistent generative-reference improvement is established, and this compact
 long-lead model does not represent all generative approaches.
-\input{{generated-v2/fidelity-table.tex}}
+{(dest/'fidelity-table.tex').read_text().rstrip()}
 
 RQ6 exposes distinct operational and statistical limitations (Fig.~\ref{{fig:availability}}).
 Intel S group/window eligibility is {v('intel','bootstrap/S','availability')} under bootstrap
@@ -272,7 +273,7 @@ compute+=figure('dashboard_cost','Intel replay localization display (orange outl
 (dest/'compute.tex').write_text(compute)
 claims=[
  {'claim':'360 fault realizations, 20 blocks, three model seeds; exactly three primary datasets','evidence':['report-manifest.json','data-lineage.json'],'status':'counted; sizes are configurations'},
- {'claim':'Time-row permutation preserves the aligned correlation matrix; temporal entropy and ACF can change','evidence':['theory-checks.json','diagnostics.csv.gz','manuscript/extension.tex: order-invariance proof'],'status':'proved and numerically checked; no rolling-trace invariance claim'},
+ {'claim':'Time-row permutation preserves the aligned correlation matrix; temporal entropy and ACF can change','evidence':['theory-checks.json','diagnostics.csv.gz','manuscript/paper.tex: order-invariance proof'],'status':'proved and numerically checked; no rolling-trace invariance claim'},
  {'claim':'Intel bootstrap T recall exceeds TB at the frozen nominal operating point','evidence':['summary.json','paired.json','retrospective-operating-points.csv.gz'],'status':'observed with unequal background rates; exploratory'},
  {'claim':'Only synthetic bootstrap BST increases mean recall over B in primary operational comparisons','evidence':['paired.json','maximum-dominance.json'],'status':'all six dataset/reference pairs checked; no equivalence inference'},
  {'claim':'No consistent overall entropy advantage','evidence':['paired.json','stratified-paired.csv.gz','observability-strata.csv.gz','retrospective-operating-points.csv.gz'],'status':'mixed effects, limited recording blocks, feature/support/calibration distinctions retained'},
@@ -390,4 +391,20 @@ is preserved; affiliations and email were not supplied. Nothing was submitted
 or pushed. See docs/venue.md for primary policy sources and access limitations.
 '''
 (root/'docs/extension-findings.md').write_text(findings)
-print({'generated':['abstract.tex','results.tex','conclusion.tex'],'claims':len(claims)})
+
+# paper.tex is the editable manuscript, with numerical blocks refreshed in place.
+# Comments mark generated content; LaTeX needs no other manuscript .tex files.
+paper=root/'manuscript/paper.tex'
+source=paper.read_text()
+for name,content in [('abstract',abstract),('results',results),('compute',compute),('conclusion',conclusion)]:
+    begin=f'% BEGIN GENERATED: {name}'
+    end=f'% END GENERATED: {name}'
+    pattern=rf'^{re.escape(begin)}\n.*?^{re.escape(end)}$'
+    source,count=re.subn(pattern,lambda _:begin+'\n'+content.rstrip()+'\n'+end,
+                         source,flags=re.MULTILINE|re.DOTALL)
+    if count!=1:
+        raise ValueError(f'Expected exactly one generated {name} block in paper.tex; found {count}')
+if re.search(r'\\(?:input|include|subfile)\b',source):
+    raise ValueError('paper.tex must contain all manuscript LaTeX inline')
+paper.write_text(source)
+print({'generated':['paper.tex','abstract.tex','results.tex','compute.tex','conclusion.tex'],'claims':len(claims)})
