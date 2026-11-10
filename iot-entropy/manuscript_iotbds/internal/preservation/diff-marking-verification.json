@@ -1,0 +1,19 @@
+{
+  "all_passed": true,
+  "checks": {
+    "abstract_findings_wording_removed": true,
+    "abstract_findings_wording_added": true,
+    "entire_requested_sentence_marked_added": true,
+    "clusting_marked_removed": true,
+    "clustering_marked_added": true,
+    "nonmonotonically_marked_removed": true,
+    "nonmonotonic_marked_added": true,
+    "computation_phrase_marked_removed": true,
+    "computation_phrase_marked_added": true,
+    "acknowledgment_heading_marked_removed": true,
+    "authors_marked_removed_in_appendix": true,
+    "anonymous_author_marked_added": true
+  },
+  "diff_source_sha256": "1d07e5d887a539acd07aefada21dd250aba148d26960101148b896428a08d0c4",
+  "scope": "Source-level latexdiff marking confirmation; PDF readability is checked separately."
+}

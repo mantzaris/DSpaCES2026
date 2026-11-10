@@ -1,0 +1,9 @@
+Anonymous Regular Paper source package
+
+Run in this directory:
+  latexmk -pdf -interaction=nonstopmode -halt-on-error paper.tex
+
+Needs pdflatex, BibTeX, latexmk and the standard TeX Live packages
+newtxtext/newtxmath, booktabs, graphicx, microtype, hyperref and T1 fonts.
+Official unmodified llncs.cls v2.25 and splncs04.bst are supplied.
+Output: paper.pdf. No files outside this directory are needed.

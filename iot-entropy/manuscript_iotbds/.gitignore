@@ -1,0 +1,8 @@
+# Local tool installation and reproducible build/render caches.
+internal/python/
+internal/build/
+internal/render-first/
+internal/render-final/
+internal/render-diff/*.png
+internal/package-check/
+*.log

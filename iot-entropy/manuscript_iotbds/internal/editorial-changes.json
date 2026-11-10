@@ -1,0 +1,32 @@
+[
+  {
+    "location": "Introduction",
+    "before": "homogeneous clusting",
+    "after": "homogeneous clustering",
+    "reason": "User-requested spelling correction."
+  },
+  {
+    "location": "Abstract",
+    "before": "The findings set complementary measurement capabilities",
+    "after": "The findings characterize complementary measurement capabilities",
+    "reason": "User-requested language correction."
+  },
+  {
+    "location": "Experimental Design and Evaluation: Alert evaluation",
+    "before": "make recall nonmonotonically",
+    "after": "make recall nonmonotonic",
+    "reason": "User-requested grammatical correction."
+  },
+  {
+    "location": "Experimental Design and Evaluation: Alert evaluation",
+    "before": "Computation time is measured as a different source",
+    "after": "Computation time is reported separately",
+    "reason": "User-requested clarification, preserving the distinction between computation time and detection delay."
+  },
+  {
+    "location": "Abstract",
+    "before": "Missing data analysis helps explain observed performance differences.",
+    "after": "Missing data analysis helps explain observed performance differences. Adding entropy to conventional features yields limited incremental benefit, and neither entropy nor the evaluated diffusion reference provides a consistent overall advantage.",
+    "reason": "User-requested balanced summary of the existing overall finding; no new results or evidence."
+  }
+]

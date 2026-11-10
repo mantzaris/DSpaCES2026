@@ -1,0 +1,29 @@
+{
+  "comparison": "Every final/diff page rendered at 108dpi; exact RGB pixel comparison",
+  "diff_pages": 22,
+  "differences": [
+    {
+      "page": 7,
+      "difference_bbox_pixels": [
+        202,
+        734,
+        723,
+        871
+      ]
+    },
+    {
+      "page": 20,
+      "difference_bbox_pixels": [
+        201,
+        435,
+        473,
+        452
+      ]
+    },
+    {
+      "page": 22,
+      "appendix": true
+    }
+  ],
+  "unchanged_pages": 19
+}

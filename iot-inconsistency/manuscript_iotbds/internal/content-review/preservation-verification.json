@@ -1,0 +1,88 @@
+{
+  "all_passed": true,
+  "checks": {
+    "title_unchanged": true,
+    "keyword_terms_unchanged": true,
+    "numerical_macros_exact": true,
+    "baseline_all_nonfloat_wording_and_math_original": true,
+    "final_all_nonfloat_wording_and_math_only_recorded_edits": true,
+    "baseline_all_original_captions_retained": true,
+    "final_all_captions_only_recorded_edits": true,
+    "additional_captions_only_shared_continuation_labels": true,
+    "baseline_table_cells_and_semantic_coordinates_exact": true,
+    "final_table_cells_and_semantic_coordinates_exact": true,
+    "equations_E1_through_E12_exact": true,
+    "E_prefix_and_explicit_E2_E5_E6_references_preserved": true,
+    "all_original_citation_keys_and_order_retained_in_baseline": true,
+    "final_citations_only_original_and_explicit_recorded_additions": true,
+    "all_19_original_bibliographic_records_exact": true,
+    "original_local_source_matches_frozen_copy": true,
+    "entire_original_paper_directory_unchanged": true,
+    "all_six_original_figure_PDFs_byte_identical": true,
+    "all_protected_repo_and_entropy_files_unchanged": true
+  },
+  "numerical_macro_count": 23,
+  "table_value_count": 232,
+  "equation_count": 12,
+  "original_caption_count": 13,
+  "baseline_additional_caption_texts": {
+    "Continued.": 2
+  },
+  "final_additional_caption_texts": {
+    "Continued.": 2
+  },
+  "edit_match_evidence": [
+    {
+      "location": "Gaussian reference and measurement units",
+      "before_occurrences": 1,
+      "reason": "Correct singular article before plural noun."
+    },
+    {
+      "location": "Datasets, independence and candidates",
+      "before_occurrences": 1,
+      "reason": "Correct singular article in plural configuration list."
+    },
+    {
+      "location": "Calibration, review and repair",
+      "before_occurrences": 1,
+      "reason": "Correct subject-verb agreement; preserve counts and failures."
+    },
+    {
+      "location": "Ablations and adverse conditions",
+      "before_occurrences": 1,
+      "reason": "Correct subject-verb agreement."
+    },
+    {
+      "location": "Ablations and adverse conditions",
+      "before_occurrences": 1,
+      "reason": "Restore missing clause separator without changing the caution."
+    },
+    {
+      "location": "Stress table caption",
+      "before_occurrences": 1,
+      "reason": "Correct malformed top-one terminology; source results and other prose use top one."
+    },
+    {
+      "location": "Related Work",
+      "before_occurrences": 1,
+      "reason": "Neutral third-person account of the public predecessor; retain comparison."
+    },
+    {
+      "location": "Disclosure heading",
+      "before_occurrences": 1,
+      "reason": "Preserve required AI transparency outside identifying acknowledgments."
+    },
+    {
+      "location": "Disclosure body",
+      "before_occurrences": 1,
+      "reason": "Preserve recorded software/grammar assistance and author-responsibility statement; correct comma/agreement; attribute official tool and disclose current observed preparation work. No model version, prior generated section or verification history is invented."
+    }
+  ],
+  "bibliography_additional_keys": [],
+  "protected_files_count": 2476,
+  "altered_protected_files": [],
+  "source_sha256": "8182cf934a8b138ef00906902071567bd7066612690d6da2e9b8ab5205b07722",
+  "baseline_sha256": "51c9470451157d070b334c6b22dd2efc6a9d361ae4cb164ae69e20ee9da84d7e",
+  "final_sha256": "92cb707ca4e3ce49df211ddbc4a13b17ba457863a55442fa5c0855120994b022",
+  "limitations": "Semantic/source checks supplement PDF rendering and visual review; this does not rerun experiments or validate scientific outcomes."
+}

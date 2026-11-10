@@ -1,0 +1,110 @@
+{
+  "source": "iot-inconsistency/paper/main.tex",
+  "build_inputs": [
+    "figures/graph_flow/architecture.pdf",
+    "figures/graph_flow/performance.pdf",
+    "figures/graph_flow/confidence.pdf",
+    "figures/graph_flow/repair.pdf",
+    "figures/graph_flow/equations.pdf",
+    "figures/graph_flow/network.pdf"
+  ],
+  "external_tex_inputs": [],
+  "bibliography": "19 embedded bibitems; external .bib files inactive",
+  "explicit_equation_references": [
+    "(E2)",
+    "(E6)",
+    "(E5)"
+  ],
+  "equation_numbering": "E1\u2013E12; E6/E7 are the two rows of the marginal-density/log-ratio align",
+  "visible_identity_locations": [
+    {
+      "line": 6,
+      "text": "  pdfauthor={Alexander V. Mantzaris and James H. Korris}"
+    },
+    {
+      "line": 40,
+      "text": "\\IEEEauthorblockN{Alexander V. Mantzaris}"
+    },
+    {
+      "line": 44,
+      "text": "University of Central Florida\\\\"
+    },
+    {
+      "line": 46,
+      "text": "alexander.mantzaris@ucf.edu"
+    },
+    {
+      "line": 49,
+      "text": "\\IEEEauthorblockN{James H. Korris}"
+    },
+    {
+      "line": 51,
+      "text": "Creative Technologies Inc.\\\\"
+    },
+    {
+      "line": 53,
+      "text": "james.korris@cretecinc.com"
+    }
+  ],
+  "ai_disclosure_original": "OpenAI Codex assisted with developing the software, and grammar checking. The authors takes responsibility for the research design, verification of results, references, manuscript and final content.",
+  "minimal_proofreading_candidates": [
+    {
+      "before": "a non-diagonal affine transformations",
+      "after": "non-diagonal affine transformations",
+      "source_line": 224,
+      "reason": "singular article/plural noun mismatch"
+    },
+    {
+      "before": "and a 64 channel nonlinear configurations",
+      "after": "and 64 channel nonlinear configurations",
+      "source_line": 238,
+      "reason": "singular article/plural noun mismatch"
+    },
+    {
+      "before": "123 accepted repairs has",
+      "after": "123 accepted repairs have",
+      "source_line": 371,
+      "reason": "subject\u2013verb agreement"
+    },
+    {
+      "before": "member log ratios is averaged",
+      "after": "member log ratios are averaged",
+      "source_line": 430,
+      "reason": "subject\u2013verb agreement"
+    },
+    {
+      "before": "Cross type counts are saved reading alarms",
+      "after": "Cross type counts are saved; reading alarms",
+      "source_line": 434,
+      "reason": "missing sentence separator"
+    },
+    {
+      "before": "top k-one rates",
+      "after": "top-one rates",
+      "source_line": 438,
+      "reason": "malformed top-one terminology; surrounding prose and underlying top-one endpoint agree"
+    },
+    {
+      "before": "The authors takes responsibility",
+      "after": "The authors take responsibility",
+      "source_line": 518,
+      "reason": "subject\u2013verb agreement"
+    },
+    {
+      "before": "software, and grammar checking",
+      "after": "software and grammar checking",
+      "source_line": 518,
+      "reason": "unnecessary comma in two-item coordination"
+    }
+  ],
+  "anonymity_candidate": {
+    "before": "Our earlier procedure tested repairs",
+    "after": "The earlier procedure tested repairs",
+    "reason": "neutral third-person reference to earlier procedure"
+  },
+  "scientific_cautions": "No clear scientific error found in source-only audit. Do not treat this as a new validation of experiments. Keep graph associations separate from causality, ratio scores from physical failure probabilities, directional H1 from practical margin, and detection gains from confidence/repair failures. Preserve H2 inconclusive/H3 unestablished wording.",
+  "awkward_but_not_clear_error": [
+    "proposing service",
+    "support human views"
+  ]
+}

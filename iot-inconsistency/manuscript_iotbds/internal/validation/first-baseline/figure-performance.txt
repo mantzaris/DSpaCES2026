@@ -1,0 +1,83 @@
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+Recall
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+Precision
+S32N  n = 10,240
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+Recall
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+Precision
+Intel  n = 10,560
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+Recall
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+Precision
+SKAB  n = 2,560
+0.0
+0.2
+0.4
+Flow ratio AP minus comparator AP
+S32L
+S32N
+S64N
+Intel
+SKAB
+Macro
+PCA
+0.00
+0.02
+0.04
+Flow ratio AP minus comparator AP
+S32L
+S32N
+S64N
+Intel
+SKAB
+Macro
+Same-flow NLL
+−0.1
+0.0
+0.1
+0.2
+Flow ratio AP minus comparator AP
+S32L
+S32N
+S64N
+Intel
+SKAB
+Macro
+PPCA + corruption
+Flow + corruption
+PCA
+Same-flow NLL
+PPCA + corruption

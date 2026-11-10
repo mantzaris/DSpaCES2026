@@ -1,0 +1,47 @@
+0.00
+0.02
+0.04
+0.06
+0.08
+Family-macro AP difference
+Same-flow NLL
+PPCA + same q
+Deterministic plug-in
+Own history
+(a) Contribution of each component
+102
+103
+Prior draws per model
+10−2
+10−1
+100
+95th percentile score change
+(b) Repeated sampling seeds
+S32L
+S32N
+S64N
+Intel
+SKAB
+102
+103
+Prior draws per model
+102
+3 × 101
+4 × 101
+6 × 101
+GPU scorer time (ms)
+(c) Development scoring cost
+S32L
+S32N
+S64N
+Intel
+SKAB
+10−1
+100
+101
+102
+Wall time per window (ms)
+(d) Operational inference cost
+Ratio + repair
+NLL
+PCA

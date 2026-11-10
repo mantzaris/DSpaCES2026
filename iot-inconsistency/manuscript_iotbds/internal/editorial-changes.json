@@ -1,0 +1,65 @@
+[
+  {
+    "category": "editorial",
+    "location": "Gaussian reference and measurement units",
+    "before": "a non-diagonal affine transformations",
+    "after": "non-diagonal affine transformations",
+    "reason": "Correct singular article before plural noun."
+  },
+  {
+    "category": "editorial",
+    "location": "Datasets, independence and candidates",
+    "before": "and a 64 channel nonlinear configurations",
+    "after": "and 64 channel nonlinear configurations",
+    "reason": "Correct singular article in plural configuration list."
+  },
+  {
+    "category": "editorial",
+    "location": "Calibration, review and repair",
+    "before": "123 accepted repairs has",
+    "after": "123 accepted repairs have",
+    "reason": "Correct subject-verb agreement; preserve counts and failures."
+  },
+  {
+    "category": "editorial",
+    "location": "Ablations and adverse conditions",
+    "before": "member log ratios is averaged",
+    "after": "member log ratios are averaged",
+    "reason": "Correct subject-verb agreement."
+  },
+  {
+    "category": "editorial",
+    "location": "Ablations and adverse conditions",
+    "before": "Cross type counts are saved reading alarms",
+    "after": "Cross type counts are saved; reading alarms",
+    "reason": "Restore missing clause separator without changing the caution."
+  },
+  {
+    "category": "editorial",
+    "location": "Stress table caption",
+    "before": "primary-target top k-one rates",
+    "after": "primary-target top-one rates",
+    "reason": "Correct malformed top-one terminology; source results and other prose use top one."
+  },
+  {
+    "category": "anonymity",
+    "location": "Related Work",
+    "before": "Our earlier procedure tested repairs",
+    "after": "The earlier procedure tested repairs",
+    "reason": "Neutral third-person account of the public predecessor; retain comparison."
+  },
+  {
+    "category": "disclosure",
+    "location": "Disclosure heading",
+    "before": "\\section*{Acknowledgment}",
+    "after": "\\section*{AI disclosure}",
+    "reason": "Preserve required AI transparency outside identifying acknowledgments."
+  },
+  {
+    "category": "disclosure",
+    "location": "Disclosure body",
+    "before": "OpenAI Codex assisted with developing the software, and grammar checking. The authors takes responsibility for the research design, verification of results, references, manuscript and final content.",
+    "after": "OpenAI Codex\\footnote{OpenAI, Codex: \\url{https://openai.com/codex/} (accessed November 10, 2026).} assisted with developing the software and grammar checking. It also assisted with the present manuscript's LaTeX conversion, anonymization and proofreading. The authors take responsibility for the research design, verification of results, references, manuscript and final content.",
+    "reason": "Preserve recorded software/grammar assistance and author-responsibility statement; correct comma/agreement; attribute official tool and disclose current observed preparation work. No model version, prior generated section or verification history is invented."
+  }
+]

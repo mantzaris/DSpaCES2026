@@ -1,0 +1,47 @@
+{
+  "pages": 22,
+  "characters": {
+    "pdftotext_nfkc_nonwhitespace": 44508,
+    "pymupdf_nfkc_nonwhitespace": 44503,
+    "figure_adjusted_rendered_estimate": 38103,
+    "adjustment_formula": "44503 full-PDF - 9123 extracted figure-font + 2723 original figures once = 38103",
+    "invisible_figure_extraction_surplus": 6400,
+    "absolute_difference": 5,
+    "relative_difference_percent": 0.011233935472274647,
+    "pdftotext_raw_nonwhitespace": 44508,
+    "pymupdf_raw_nonwhitespace": 44328,
+    "pdftotext_replacement_characters": 0,
+    "pymupdf_replacement_characters": 0,
+    "raw_and_adjusted_estimates_within_10000_50000": true,
+    "distance_to_50000_using_larger_estimate": 5492
+  },
+  "figure_minimum_pt": 6.162420272827148,
+  "all_figure_spans_at_least_6_pt": true,
+  "anonymity": {
+    "visible_body_identity_candidates": [],
+    "public_dataset_link_exemptions": [
+      {
+        "match": "https://github.com/waico/SKAB\",",
+        "context": "24798583984375, 481.5880126953125, 260.24298095703125)\", \"uri\": \"https://github.com/waico/SKAB\", \"id\": \"\"}, {\"page\": 22, \"kind\": 2, \"xref\": 388, \"from\": \"Rect(149.95799255371094, 26",
+        "reason": "Public SKAB dataset repository preserved from the source bibliography; not a paper-author repository."
+      },
+      {
+        "match": "https://github.com/waico/SKAB\",",
+        "context": "20599365234375, 217.85299682617188, 270.3809814453125)\", \"uri\": \"https://github.com/waico/SKAB\", \"id\": \"\"}, {\"page\": 22, \"kind\": 2, \"xref\": 376, \"from\": \"Rect(322.83599853515625, 29",
+        "reason": "Public SKAB dataset repository preserved from the source bibliography; not a paper-author repository."
+      }
+    ],
+    "ordinary_third_person_reference_name_hits_exempt": [],
+    "other_reference_identity_candidates": [],
+    "metadata_and_structural_identity_candidates": [],
+    "blank_author_metadata": true,
+    "bookmarks": 1,
+    "non_link_annotations": 0,
+    "embedded_attachments": 0,
+    "form_widgets": 0,
+    "javascript_launch_attachment_or_form_objects": 0,
+    "internal_links": 29,
+    "external_links": 21,
+    "identity_expected_in_baseline": false
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "checks": {
+    "title_exact": true,
+    "four_requested_replacements_each_occur_exactly_once": true,
+    "requested_abstract_sentence_added_exactly_once": true,
+    "remaining_abstract_words_exact": true,
+    "keyword_terms_exact": true,
+    "scientific_body_and_math_exact_except_three_requested_corrections": true,
+    "comparison_baseline_abstract_preserves_original_wording": true,
+    "comparison_baseline_body_preserves_original_wording": true,
+    "main_table_120_values_same_semantic_coordinates": true,
+    "fidelity_table_48_values_same_semantic_coordinates": true,
+    "ai_disclosure_body_exact": true,
+    "citations_order_and_keys_exact": true,
+    "bibliography_bytes_exact": true,
+    "local_source_tex_matches_frozen_snapshot": true,
+    "all_source_files_and_paths_unchanged": true,
+    "all_six_figure_assets_byte_identical": true
+  },
+  "all_passed": true,
+  "scope": "Frozen current local source versus anonymous Springer source; no experiment rerun.",
+  "expected_wording_changes": [
+    "Author names/affiliations/emails replaced by Anonymous Author(s); institute empty.",
+    "PDF author metadata cleared.",
+    "Acknowledgment and AI disclosure heading changed to AI disclosure.",
+    "User-requested four language corrections and one balanced-overall-finding sentence in the abstract."
+  ],
+  "authorized_language_replacements": [
+    {
+      "location": "scientific body",
+      "before": "homogeneous clusting",
+      "after": "homogeneous clustering",
+      "source_before_occurrences": 1,
+      "final_before_occurrences": 0,
+      "final_after_occurrences": 1
+    },
+    {
+      "location": "scientific body",
+      "before": "make recall nonmonotonically",
+      "after": "make recall nonmonotonic",
+      "source_before_occurrences": 1,
+      "final_before_occurrences": 0,
+      "final_after_occurrences": 1
+    },
+    {
+      "location": "scientific body",
+      "before": "Computation time is measured as a different source",
+      "after": "Computation time is reported separately",
+      "source_before_occurrences": 1,
+      "final_before_occurrences": 0,
+      "final_after_occurrences": 1
+    },
+    {
+      "location": "abstract",
+      "before": "The findings set complementary measurement capabilities",
+      "after": "The findings characterize complementary measurement capabilities",
+      "source_before_occurrences": 1,
+      "final_before_occurrences": 0,
+      "final_after_occurrences": 1
+    }
+  ],
+  "authorized_abstract_addition": "Adding entropy to conventional features yields limited incremental benefit, and neither entropy nor the evaluated diffusion reference provides a consistent overall advantage.",
+  "layout_only_normalizations": [
+    "Springer class/packages, native proposition/proof, keywords, bibliography style.",
+    "Float types/placement and figure includegraphics layout.",
+    "Main table split by dataset; repeated headers, reference labels and family labels.",
+    "Fidelity table split by metric; repeated headers and row labels.",
+    "Existing negative equation row spacing removed."
+  ],
+  "limitations": "This verifies TeX wording and values; rendered glyphs, clipping, PDF anonymity, and diff visibility require separate PDF inspection.",
+  "source_sha256": "c5a56fc28689dfd484fd97357dbef48ec8d53d0a4cbc6134f1db0705bf221515",
+  "converted_sha256": "087a653da7d40721a33adf35d1bd3c7ac0f44d73d2d60f34c5a99a743104eef9"
+}

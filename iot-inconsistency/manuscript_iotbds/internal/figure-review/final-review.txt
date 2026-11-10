@@ -1,0 +1,47 @@
+Independent final-PDF visual review, 2026-11-10.
+
+Reviewed every final page 12–22 at full resolution through the root-rendered
+internal/render-final/page-NN.png files. Root separately reviews pages1–11.
+
+Page12: confidence table4 has two readable aligned panels; all observed failures,
+calibration qualifications and AP comparisons are visible. No clipping.
+Pages13–14: Fig3 uses two upright dataset columns, followed by the SKAB column.
+All nine panels, reliability insets, risk counts, axes/ticks and original shared
+legend are retained. Continuation number remains Fig3. No cutoff or overlap.
+Page15: repair table5 readable; all three repair panels and their full shared
+legend fit with the original caption. Values, prior trajectories and intervals
+are visible. No clipping.
+Page16: stress table6 readable, corrected top-one caption clear; numerical audit
+paragraphs and negative qualifications fit. No unidentified placeholders.
+Pages17–18: Fig5 panels(a)/(b), then(c)/(d), are upright and readable including
+logarithmic superscripts and shared dataset legend. Continuation stays Fig5.
+Page19: runtime table7 and graph/operator section readable; no overflow.
+Page20: network case figure6 contains all sensors, arrows, source labels, lags,
+correlations, score/ESS, legend and caption. No identifying author information.
+Page21: discussion, conclusion and AI disclosure readable. Tool attribution
+footnote fits inside the margin. First two bibliography items render correctly.
+Page22: remaining bibliography entries readable and complete; no late floats.
+
+No identifying names, affiliations, personal links or email addresses were
+visible in reviewed pages, apart from ordinary scholarly reference authors and
+public dataset/tool URLs. No blocking visual defect found. Layout retains
+necessary whitespace around continued figures to keep all labels readable.
+
+Final PDF SHA-256 at visual review:
+87d10ba28e9c91f4d885bd2bb27a6e6c8449b1357c3346da00758f286daba276
+
+Diff visual review after disclosure overflow fix:
+Reviewed changed diff pages12,16,21,23 at full resolution. Page12 clearly marks
+has→have and is→are grammar corrections; values and intervals remain readable.
+Page16 marks top k-one→top-one in the table caption, and the inserted semicolon
+in body prose. Page21 marks Acknowledgment→AI disclosure, the author-verb
+correction, punctuation deletion and added account of conversion/anonymization/
+proofreading assistance. The new attribution footnote is clear; its URL is
+uncolored but is contained within the visibly added footnote. No overflow or
+clipping remains. Page23 presents all suppressed names/affiliations/emails and
+PDF author metadata as red deletions, the anonymous name as a blue addition,
+and describes mechanical normalization/bibliography preservation transparently.
+No whole-paper diff noise or missing expected changes observed on these pages.
+
+Diff PDF SHA-256 at visual review:
+7f9183802d3f42a1d66a079ea1c6f5973cdcd48f4ba997719c254d66d3f27768

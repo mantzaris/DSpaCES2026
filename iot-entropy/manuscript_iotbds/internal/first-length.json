@@ -1,0 +1,5 @@
+{
+  "stage": "first prose-preserving anonymous Springer conversion; table reflow complete, wide-figure readability not yet corrected",
+  "method": "pdftotext -layout; NFKC Unicode normalization; count non-whitespace code points including page numbers and all extracted figure text",
+  "non_whitespace_characters": 42019
+}

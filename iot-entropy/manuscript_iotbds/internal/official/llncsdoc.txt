@@ -1,0 +1,531 @@
+Instructions for Using Springer’s llncs Class for
+     Computer Science Proceedings Papers
+                    llncs, Version 2.25, September 3, 2026
+
+
+
+                                        Table of Contents
+
+
+1    Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      1
+2    Why Instructions Matter . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                 2
+3    Key Principles for Authors . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                  2
+4    Best Practice Guidelines for LATEX Manuscripts . . . . . . . . . . . . . . . . . . . .                                  2
+5    Installation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    5
+6    Working with the llncs Document Class . . . . . . . . . . . . . . . . . . . . . . . . .                                 5
+     6.1 General Information . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                   5
+     6.2 How to Use the llncs Document Class . . . . . . . . . . . . . . . . . . . . . .                                     5
+7    How to Code the Header of Your Paper . . . . . . . . . . . . . . . . . . . . . . . . . . .                              6
+     7.1 Title . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     6
+     7.2 Author(s) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .           6
+     7.3 Affiliations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .          7
+     7.4 Format the Header . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                   7
+     7.5 Abstract and Keywords . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                       7
+8    How to Code the Body of Your Paper . . . . . . . . . . . . . . . . . . . . . . . . . . . .                              8
+     8.1 General Rules . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .             8
+     8.2 Special Math Characters . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                       8
+9    Theorems, Definitions, and Proofs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                       8
+     9.1 Predefined Theorem-Like Environments . . . . . . . . . . . . . . . . . . . . . .                                    8
+     9.2 User-Defined Theorem-Like Environments . . . . . . . . . . . . . . . . . . . .                                      9
+10   Accessibility . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    10
+11   Credits and Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                      10
+12   References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     11
+13   Submission Checklist . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .             12
+14   Conclusion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     12
+15   Contact Information . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .            12
+
+
+1     Introduction
+This document is designed to help you prepare your paper in a way that min-
+imizes typesetting delays and ensures the best possible final product across all
+delivery formats. Adhering to these instructions will streamline the publishing
+process and help to deliver your work efficiently and accurately.
+                                    Instructions for Using Springer’s llncs Class   2
+
+2       Why Instructions Matter
+
+While LATEX offers immense flexibility, its open-source nature and potential for
+custom implementations can create challenges in a standardized publishing work-
+flow. The typesetting processes rely on automated systems and a consistent for-
+mat to deliver high-quality products. As your manuscript will go through the
+process for making various output formats like web/print PDFs, XML, e-Pub,
+the deviations from these instructions can lead to significant delays and increased
+publishing costs. By adhering to the recommendations mentioned here, you will
+help us to:
+    •   maintain quality,
+    •   ensure consistency,
+    •   ensure content integrity,
+    •   reduce errors.
+
+
+3       Key Principles for Authors
+    • Focus on Content, Not Formatting: Focus on the clarity and accuracy of
+      your content. Avoid spending excessive time on intricate formatting details.
+      Our typesetting team will apply the Proceedings style specifications during
+      the typesetting process.
+    • Simple, Clean, and Consistent: Use standard LaTeX packages and com-
+      mands whenever possible. Avoid custom macros and complex formatting
+      tricks.
+    • Adherence to Proceedings Style: Familiarize yourself with the specific
+      style specifications of the Proceedings to which you are submitting.
+    • Collaboration: Understand that your manuscript will be transformed into
+      multiple formats. Your cooperation in following these instructions is greatly
+      appreciated.
+
+
+4       Best Practice Guidelines for LATEX Manuscripts
+Please note that observing the following details in creating your manuscript will
+promote smooth production of your work:
+
+    • Please ensure your LATEX file can be compiled without errors in a recent
+      version of LATEX. We recommend uploading the manuscript to Overleaf (free
+      service) and running the compiler there.
+    • Please avoid including multiple levels of linked sub-files. Well-organized file
+      structure and clear file names improve handling enormously.
+    • Please avoid macro packages which change standard layout and enumeration
+      settings, such as fancyhdr, a4wide, enumerate, and enumitem. These
+      will have to be replaced with standard settings during production.
+                                Instructions for Using Springer’s llncs Class   3
+
+ • The use of \def is not recommended. Instead, please replace all instances
+   with the appropriate \newcommand. This prevents existing commands be-
+   ing inadvertently replaced, producing unexpected errors (more explanation
+   below).
+ • Please use standard LATEX commands consistently for character emphasis,
+   such as \mathbb, \mathcal, or \mathfrak and avoid including additional
+   font-related packages such as bbm, dsfonts, eucal, mathrsfs, mathabx,
+   and mathtools.
+ • The \text{...} command is recommended for text in math environments
+   rather than \mbox or \hbox constructions.
+ • Please do not use color for emphasis in running text, particularly not the
+   xcolor package (see below for further explanation). As an exception, color
+   may be used for highlighting syntax in code listings.
+ • Images should always be separated from the text (using proper \includegraphics
+   commands), must have a caption and must be referenced in the text. Please
+   do not use wrapfigure or subfigure.
+ • Please note that where tikz or xy packages (or similar ones creating
+   diagram-like structures) are used, the output cannot be created on the fly
+   for all publication formats produced, but only for PDF. For all other for-
+   mats, the output has to be included as an image instead (see further details
+   below).
+ • Please do not use \pageref, as this will lead to dead links in some output
+   formats, since page orientation is only valid for the PDF (see explanations
+   below).
+ • Please avoid linking back to the manuscript from the bibliography, and do
+   not include footnotes in the bibliography.
+
+
+Why are we asking you to observe these restrictions?
+We are publishing and distributing your work not only in PDF, but also in other
+digital/online versions such as html and epub, which are based on XML, the
+industry standard for data exchange. Using XML as a basis allows us to provide
+data to other specific interfaces such as Braille machines as well as indexing,
+abstracting and library services. Satisfying all the requirements of these formats
+dictates many of the above restrictions, as these are produced from the LATEX
+version. The functions and packages that are not recommended in the guidelines
+above may work in the PDF output, but not beyond that. Although the name
+PDF (Portable Document Format) suggests portability, it actually depends on
+the output medium: a professional postscript printer might not produce the
+same result as a local printer at home or at a department. A prime example of
+the limitations is that not all aspects of the page-oriented PDF output can be
+mirrored in other formats. This often requires the source to be adapted to allow
+all output formats to be produced from it.
+                                Instructions for Using Springer’s llncs Class   4
+
+Examples:
+ • Constructs such as
+                   $X+nY=0 \quad\hbox{for all $n>0$}$
+     will not work properly and need to be replaced manually; instead use
+
+                      $X+nY=0 \text{ for all } n>0$
+     to avoid nesting math environments. Note that the \text command also
+     adds proper horizontal spacing.
+ •   The command \r is already predefined as an internal command in TEX; if
+     you want to define the set of real numbers and use, e.g., \def\r{\mathbb{R}},
+     this internal command is overwritten. If you use \newcommand{\r}{\mathbb{R}}
+     for the same purpose, it will result in an error stating that \r is already
+     defined. To avoid this, you could use \newcommand{\R}{\mathbb{R}}
+     which would work well, but of course all instances of \r in your document
+     need to be replaced by \R. Avoid using \renewcommand.
+ •   Commands such as \enlargethispage or \pagebreak, etc. only work
+     with a fixed output page size which is not valid for all formats. Such com-
+     mands are then either ignored or produce strange breaks.
+ •   Using too many fonts can produce errors in some output formats due to a
+     restriction on the number of fonts that can be used simultaneously. Hence,
+     please consider carefully which fonts are really needed and use these consis-
+     tently in your manuscript. Also, please do not use fonts that have no proper
+     postscript version as these cannot be handled by professional printers. Avoid
+     the set of so-called Type 3 Postscript fonts, which sometimes occur in specific
+     packages or in figures, as their characters will be omitted in the output. To
+     check whether the document includes such Type 3 fonts, refer to the fonts
+     tab in “Document Properties” in Adobe’s Acrobat Reader: this will list all
+     fonts used and whether these are Type 1, True Type (both of which are ok),
+     or Type 3.
+ •   Colors are problematic with regard to accessibility (lack of sufficient contrast
+     between colors) and for other output formats, as colors cannot be freely
+     integrated there. Such passages have to be embedded as images, which in
+     turn will reduce readability. If, nevertheless, specific colors need to be defined,
+     please include CMYK definitions of these colors as - depending on the output
+     - some output drivers such as professional printers cannot deal with RGB
+     colors. E.g.,
+     \definecolor{ultramarine}{RGB}{1,1,1}
+     %%\definecolor{ultramarine}{cmyk}{0,0,0,1}
+
+     \textcolor{ultramarine}{Colored text}
+ • For typesetting algorithms, please use either the algorithms2e package or
+   ONE of the (algpseudocode OR algcompatible OR algorithmic)
+   packages to typeset algorithm bodies and the algorithm package for cap-
+   tioning the algorithm.
+                                  Instructions for Using Springer’s llncs Class   5
+
+    • If you use the newtxmath package, do NOT include the amsmath package
+      separately.
+    • Please try to avoid the tikz, xy, and pstricks packages if possible. These
+      graphs/figures cannot be rendered in our other output formats, therefore can
+      only be included there as rendered image files of a fixed resolution.
+    • Caution with packages which embed page-like structures within layout ele-
+      ments, such as multicol or minipage (sometimes used to create specific
+      layout within \mbox or \parbox). These can cause significant problems for
+      some output formats or can only be rendered as images.
+
+
+5      Installation
+Copy llncs.cls to a directory that is searched by LATEX, e.g. either your
+texmf tree or the local work directory with your main LATEX file.
+
+
+6      Working with the llncs Document Class
+6.1     General Information
+
+The llncs class is an extension of the standard LATEX article class. There-
+fore, you may use all article commands in your manuscript.
+    If you are already familiar with LATEX, the llncs class should not give you
+any major difficulties. It basically adjusts the layout to the required standard,
+defining styles and spacing of headings and captions and setting the printing area
+to 122 mm horizontally by 193 mm vertically. To keep the layout consistent, we
+kindly ask you to refrain from using any LATEX or TEX command that modifies
+these settings (e.g., \textheight, \vspace, baselinestretch).
+    In addition to defining the general layout, the llncs document class provides
+some special commands for typesetting the contribution header, i.e. the title,
+authors, affiliations, abstract, and additional metadata. These special commands
+are described in Sect. 7.
+    For a more detailed description of how to prepare your text, illustrations, and
+references, see the Instructions for Authors of Papers to be Published in Springer
+Computer Science Proceedings.
+
+
+6.2     How to Use the llncs Document Class
+The llncs class is invoked by replacing article by llncs in the first line of
+your LATEX document:
+
+\documentclass{llncs}
+%
+\begin{document}
+  <Your contribution>
+\end{document}
+                                                Instructions for Using Springer’s llncs Class   6
+
+                 If your file is already coded with LATEX, you can easily adapt it to the llncs
+                 document class by replacing
+                 \documentclass{article}
+                 with
+                 \documentclass{llncs}
+
+
+                 7      How to Code the Header of Your Paper
+                 7.1    Title
+        \title Please code the title of your contribution as follows:
+
+                 \title{<Your contribution title>}
+              Capitalize the first word of the title and all following words except articles,
+              conjunctions, or prepositions that are four letters or less in length. Long titles
+              that run over multiple lines can be wrapped explicitly with \\. Titles have no
+              end punctuation.
+      \fnmsep     If you need two or more footnotes, please separate them with \fnmsep (i.e.
+              footnote mark separator).
+\titlerunning     If a long title does not fit in the single line of the running head, a warning
+              is generated. You can specify an abbreviated title for the running head with the
+              command
+                 \titlerunning{<Your abbreviated contribution title>}
+    \subtitle An optional subtitle may also be added:
+
+                 \subtitle{<subtitle of your contribution>}
+
+                 7.2    Author(s)
+       \author The name(s) of the author(s) are specified by:
+
+                 \author{<author(s) name(s)>}
+               The given name(s) should always be followed by the family name(s). Authors
+               who have more than one family name should indicate which part of their
+               name represents the family name(s), for example by using non-breaking spaces
+               Jos\’{e} Martinez˜Perez or curly braces Jos\’{e} {Martinez Perez}.
+          \and If there is more than one author, please separate them by \and. This ensures
+               that the correct punctuation is inserted according to the number of authors.
+         \inst     Numbers referring to different addresses or affiliations should be attached to
+               each author with the \inst{<number>} command. If an author is affiliated
+               with multiple institutions, the numbers should be separated by a comma, for
+               example \inst{2,3}.
+      \orcidID     ORCID identifiers can be included with
+                                                 Instructions for Using Springer’s llncs Class   7
+
+                 \orcidID{<ORCID identifier>}
+\authorrunning       As given name(s) are to be shortened to initials in the running heads, speci-
+                 fying an abbreviated author list with the optional command
+                 \authorrunning{<abbreviated author list>}
+                 might add some clarity about the correct representation of author names, in the
+                 running heads as well as in the author index.
+
+                 7.3   Affiliations
+    \institute Addresses of institutes, companies, etc., should be given in \institute.
+          \and   Multiple affiliations are separated by \and, which automatically assures cor-
+                 rect numbering:
+                 \institute{<name of an institute>
+                 \and <name of the next institute>
+                 \and <name of the next institute>}
+         \email Inside \institute you can use
+                 \email{<email address>}
+           \url and
+                 \url{<url>}
+                 to provide author email addresses and Web pages. If multiple authors have the
+                 same affiliation, please check that the order of email addresses matches the se-
+                 quence of (affiliated) author names.
+                     Please note that if email addresses are given in your paper we assume you
+                 are giving us your consent to publish them and they will also be included in the
+                 online version.
+
+                 7.4   Format the Header
+    \maketitle The command \maketitle formats the header of your paper.
+
+
+                 7.5   Abstract and Keywords
+ abstract (env.) The abstract is coded as follows:
+                 \begin{abstract}
+                 <Text of the summary of your paper>
+                 \end{abstract}
+     \keywords Keywords should be specified inside the abstract environment. Please capi-
+          \and talize the first letter of each keyword and again separate them with \and:
+                 \keywords{First keyword \and Second keyword \and Third keyword}
+                 The keyword separator will then be properly rendered as a middle dot.
+                                                          Instructions for Using Springer’s llncs Class   8
+
+                       8     How to Code the Body of Your Paper
+
+                       8.1   General Rules
+                       From a technical point of view, the llncs document class does not require
+                       any specific LATEX coding in the body of your paper. You can simply use the
+                       commands provided by the “article” document class. For more information about
+                       what will be done with your manuscript before publication, please refer to the
+                       Instructions for Authors of Papers to be Published in Springer Computer Science
+                       Proceedings.
+
+
+                       8.2   Special Math Characters
+                       The llncs document class supports some additional special characters:
+
+                                      \grole     yields     >
+                                                            <        \getsto     yields   ←
+                                                                                          →
+                                      \lid       yields     <        \gid        yields   >
+                                                            =                             =
+                       If you need blackboard bold characters, i.e. for sets of numbers, please load the
+                       related AMS-TEXfonts. If for some reason this is not possible, you can also use
+                       the following commands from the llncs class:
+
+                                      \bbbc   yields C                 \bbbf     yields IF
+                                      \bbbh   yields IH                \bbbk     yields IK
+                                      \bbbm   yields IM                \bbbn     yields IN
+                                      \bbbp   yields IP                \bbbq     yields Q
+                                      \bbbr   yields IR                \bbbs     yields S
+                                      \bbbt   yields T                 \bbbz     yields ZZ
+                                      \bbbone yields 1l
+
+                       Please note that all these characters are only available in math mode.
+
+
+                       9     Theorems, Definitions, and Proofs
+
+                       9.1   Predefined Theorem-Like Environments
+  corollary   (env.)   Several theorem-like environments are predefined in the llncs document class.
+ definition   (env.)   The following environments have a bold run-in heading, while the text that
+      lemma   (env.)   follows is in italics:
+proposition   (env.)
+    theorem   (env.)   \begin{corollary}           <text>       \end{corollary}
+                       \begin{definition}          <text>       \end{definition}
+                       \begin{lemma}               <text>       \end{lemma}
+                       \begin{proposition}         <text>       \end{proposition}
+                       \begin{theorem}             <text>       \end{theorem}
+                                                     Instructions for Using Springer’s llncs Class   9
+
+      case   (env.)      Other theorem-like environments render the text in roman, while the run-in
+conjecture   (env.)   heading is bold as well:
+   example   (env.)
+                      \begin{case}               <text>    \end{case}
+  exercise   (env.)
+                      \begin{conjecture}         <text>    \end{conjecture}
+      note   (env.)
+                      \begin{example}            <text>    \end{example}
+   problem   (env.)
+                      \begin{exercise}           <text>    \end{exercise}
+  property   (env.)
+                      \begin{note}               <text>    \end{note}
+  question   (env.)
+                      \begin{problem}            <text>    \end{problem}
+    remark   (env.)
+                      \begin{property}           <text>    \end{property}
+  solution   (env.)
+                      \begin{question}           <text>    \end{question}
+                      \begin{remark}             <text>    \end{remark}
+                      \begin{solution}           <text>    \end{solution}
+    claim (env.) Finally, there are also two unnumbered environments that have the run-in head-
+    proof (env.) ing in italics and the text in upright roman.
+                      \begin{claim}              <text> \end{claim}
+                      \begin{proof}              <text> \end{proof}
+             \qed Proofs may contain an eye-catching square, which can be inserted with \qed)
+                      before the environment ends.
+
+                      9.2   User-Defined Theorem-Like Environments
+ \spnewtheorem We have enhanced the standard \newtheorem command and slightly changed
+                      its syntax to get two new commands \spnewtheorem and \spnewtheorem*
+                      that now can be used to define additional environments. They require two ad-
+                      ditional arguments, namely the font style of the label and the font style of the
+                      text of the new environment:
+                      \spnewtheorem{<env_nam>}[<num_like>]{<caption>}{<cap_font>}{<body_font>}
+                      For example,
+                      \spnewtheorem{maintheorem}[theorem]{Main Theorem}{\bfseries}{\itshape}
+                      will create a main theorem environment that is numbered together with the pre-
+                      defined theorem. The sharing of the default counter ([theorem]) is desired. If
+                      you omit the optional second argument of \spnewtheorem, a separate counter
+                      for your new environment is used throughout your document.
+                          In combination with the class option envcountsect the \spnewtheorem
+                      command also supports the syntax:
+                      \spnewtheorem{<env_nam>}{<caption>}[<within>]{<cap_font>}{<body_font>}
+               With the parameter <within>, you can control the sectioning element that
+               resets the theorem counters. If you specify, for example, subsection, the newly
+               defined environment is numbered subsectionwise.
+\spnewtheorem*     If you wish to add an unnumbered environment, please use the syntax
+                      \spnewtheorem*{<env_nam>}{<caption>}{<cap_font>}{<body_font>}
+                                             Instructions for Using Springer’s llncs Class   10
+
+              10     Accessibility
+
+              In accordance with the EU Accessibility Act and our commitment to Acces-
+              sibility at Springer Nature, your publication will need to be accessible to all
+              readers. Your content has to adhere to the Web Content Accessibility Guide-
+              lines (WCAG) that Springer Nature follows in regard to the (technical) layout
+              and the presentation of the electronic versions. According to these guidelines,
+              textual substitutes are required for non-text content, such as figures. As these
+              texts are actual content, we request that alternative texts (also known as alt
+              texts) are submitted with your final manuscript.
+                  Alternative text is a brief and objective description of the content of an
+              image and/or of the purpose it serves in a digital format. Alt text is crucial
+              for individuals using screen reader technology, as well as for those trying to
+              comprehend the content of an image if it doesn’t load.
+                  Alt text is not the same as a caption, which typically provides information
+              that is not already in the visual element itself.
+                  Requirements for Figures: When differentiating elements in charts and
+              graphs, do not just change the color, please do also change shapes and patterns,
+              or provide other visual differentiation like direct segment labels.
+                  In LaTeX you may insert your alternative texts into your manuscript using
+              the \Description command in a figure environment as follows.
+                  For regular numbered figures:
+              \begin{figure}
+              \centering
+              \includegraphics{imagename}
+              \Description{...}
+              \caption{Caption text of figure.}
+              \label{figlabel}
+              \end{figure}
+
+                   For any unnumbered/inline figures:
+              \begin{figure}
+              \includegraphics{imagename}
+              \Description{...}
+              \end{figure}
+
+                  Alternative Text Assistant. Springer Nature offers an Alternative Text
+              Assistant, a tool designed to assist you in writing alternative texts. Generally,
+              editors will automatically receive a link to this tool. Editors are requested to
+              forward a link to the chapter authors (description included in the tool).
+
+
+              11     Credits and Acknowledgments
+
+credits (env.) Credits and acknowledgments should be placed at the end of the paper, just
+                                                  Instructions for Using Springer’s llncs Class   11
+
+               before the references. Please use the credits environment to make sure that
+               both text and run-in headings are printed in small font size.
+      \ackname     There are two possible \subsubsection headings to provide such state-
+  \discintname ments: “Acknowledgments” and “Disclosure of Interests”. The \ackname and
+               \discintname macros are used to generate the correct run-in titles.
+                   General acknowledgments can be provided in the (optional) paragraph “Ac-
+               knowledgments”, which is followed by the (mandatory) paragraph “Disclosure
+               of Interests”, where any competing interests of the authors are to be declared.
+
+                 12     References
+                 There are three options for citing references:
+                  – Arabic numbers, i.e. [1], [3–5], [4–6,9],
+                  – labels, i.e. [CE1], [AB1,XY2],
+                  – author/year system (Smith et al. 2000), (Miller 1999a, 12; Brown 2018).
+                 We prefer citations with Arabic numbers, i.e. the usage of \bibitem without
+citeauthoryear an optional parameter. If you want to use the author/year system, you can use
+                 the class option citeauthoryear, i.e.
+                 \documentclass[citeauthoryear]{llncs}
+                 Please note that this option does not automatically change your citations to the
+                 author/year style. It basically redefines the \bibitem command to take the
+                 publication year as an optional parameter that is displayed instead of an Arabic
+                 number. Author name(s) and, if necessary, parentheses are to be typed manually.
+                 If your reference reads
+                 \bibitem[2016]{vdaalst:2016}
+                 van der Aalst, W.: Process Mining, 2nd ed. Springer, Heidelberg (2016)
+                 and is cited as follows:
+                 ...is shown by van der Aalst (\cite{vdaalst:2016})
+                 the resulting text will be:
+                      “. . . is shown by van der Aalst (2016).”
+  splncs04.bst     We encourage you to use BibTEX for typesetting your references. For for-
+                matting the bibliography according to Springer’s standard (for mathematics,
+                physical sciences, and computer science), please use the bibliography style file
+                splncs04.bst that comes with the llncs document class. You simply need to
+                add \bibliographystyle{splncs04} to your document. DOIs should be
+                provided in the doi field of your .bib database. BibTEX will then automatically
+                add them to your references.
+           \doi    If you do not use BibTEX, you can include a DOI with the \doi command:
+                 \doi{<DOI>}
+                 The DOI will be expanded to the URL https://doi.org/<DOI> in accor-
+                 dance with the CrossRef guidelines.
+                                 Instructions for Using Springer’s llncs Class    12
+
+13     Submission Checklist
+
+Before submitting your paper, please ensure that you have:
+ •   Compiled your LaTeX source files without errors or warnings.
+ •   Included all necessary files (.tex, .bib, .ind, image files, macro definitions).
+ •   Provided a PDF version of your manuscript.
+ •   Checked that all floating figures and tables have captions and are referenced
+     in the text.
+ •   Verified that all hyperlinks and cross-references within your manuscript are
+     accurate and functional.
+ •   Provided alt-text for all images.
+ •   Removed any unnecessary packages or custom macros.
+ •   Followed all the guidelines outlined in this document.
+ •   Included a README file in case any non-standard LaTeX usage or depen-
+     dencies.
+
+
+14     Conclusion
+
+Always adhere to the provided template and style guide. This includes using
+the correct environments, commands, and formatting for all elements of your
+manuscript. If you are unsure about how to format a specific element, consult
+the template documentation or contact the editorial office for clarification. By
+following these guidelines, you can help us ensure a smooth and efficient pub-
+lishing process and deliver your work to the widest possible audience in a timely
+and accurate manner. Thank you for your cooperation.
+
+
+15     Contact Information
+We appreciate your cooperation in following the above guidelines. If you have any
+questions or concerns, please do not hesitate to contact the editor or typesetting
+team. We are here to help you prepare your manuscript for publication.
+If you cannot find the answer you need, please contact texsupport@straive.com.
+

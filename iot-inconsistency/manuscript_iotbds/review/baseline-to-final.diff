@@ -1,0 +1,97 @@
+--- original-wording-springer-baseline
++++ anonymous-main.tex
+@@ -7,7 +7,7 @@
+ \usepackage[hidelinks]{hyperref}
+ \hypersetup{
+   pdftitle={Evaluating Graph-Conditioned Generative AI for IoT Sensor Fault Detection and Repair},
+-  pdfauthor={Alexander V. Mantzaris and James H. Korris}
++  pdfauthor={}
+ }
+ \newcommand{\E}{\mathbb{E}}
+ \newcommand{\1}{\mathbf{1}}
+@@ -40,14 +40,8 @@
+ % END GENERATED graph_flow/numbers.tex
+ \title{Evaluating Graph-Conditioned Generative AI for IoT Sensor Fault Detection and Repair}
+ 
+-\author{Alexander V. Mantzaris\inst{1} \and James H. Korris\inst{2}}
+-\institute{School of Data, Mathematical and Statistical Sciences\\
+-University of Central Florida\\
+-Orlando, FL, USA\\
+-\email{alexander.mantzaris@ucf.edu}
+-\and Creative Technologies Inc.\\
+-Hollywood, CA, USA\\
+-\email{james.korris@cretecinc.com}}
++\author{Anonymous Author(s)}
++\institute{}
+ 
+ \begin{document}
+ \maketitle
+@@ -75,7 +69,7 @@
+ 
+ Likelihood ratios for distributional anomalies have substantial precedent~\cite{ratio}. Bayesian sensor diagnosis predates neural flows~\cite{bayesfault}, and particle filtering integrates uncertain latent system states when assessing sensor fault explanations~\cite{wright}. A flow prior combined with a structured noise likelihood has also been used for inverse recovery~\cite{whang} (these are close  predecessors). Our study evaluates a particular combination of masked graph context, normalized short block corruption channels, marginal likelihood comparison and weighted repair. 
+ 
+-CSDI and PriSTI generate conditional imputations~\cite{csdi,pristi}. ImDiffusion uses diffusion imputation for anomaly detection~\cite{imdiffusion}, and GDN uses graph based forecast deviations~\cite{gdn}. We retain GDN and documented diffusion comparators. Our earlier procedure tested repairs against excluded witness measurements. The present conditional likelihood method does not inherit that independence claim. A source comparison matrix records implementation differences.
++CSDI and PriSTI generate conditional imputations~\cite{csdi,pristi}. ImDiffusion uses diffusion imputation for anomaly detection~\cite{imdiffusion}, and GDN uses graph based forecast deviations~\cite{gdn}. We retain GDN and documented diffusion comparators. The earlier procedure tested repairs against excluded witness measurements. The present conditional likelihood method does not inherit that independence claim. A source comparison matrix records implementation differences.
+ 
+ 
+ 
+@@ -214,7 +208,7 @@
+ $\Sigma-\Sigma(\Sigma+R)^{-1}\Sigma$.
+ For the affine channels in (E5), the fault density instead uses mean $H_k\mu$ and covariance $H_k\Sigma H_k^T+R_k$. Conditional PPCA evaluates these Gaussian integrals and posterior mixture weights exactly, providing a baseline with the same fault assumptions but without neural sampling.
+ 
+-Changing units should not change the score when both models are transformed consistently. Under an invertible change $u=g(y)$, both densities acquire the factor $|\det Dg^{-1}(u)|$, which cancels in their ratio. This property concerns the same distributions described differently, retraining models or changing corruption assumptions can change the results. Numerical checks include a non-diagonal affine transformations.
++Changing units should not change the score when both models are transformed consistently. Under an invertible change $u=g(y)$, both densities acquire the factor $|\det Dg^{-1}(u)|$, which cancels in their ratio. This property concerns the same distributions described differently, retraining models or changing corruption assumptions can change the results. Numerical checks include non-diagonal affine transformations.
+ 
+ \subsection{Limits of fault identification}
+ Two sensors can agree and still leave the cause uncertain. If both measure $x_t$, a genuine process change of $a_t$ produces $(x_t+a_t,x_t+a_t)$. The same readings arise if the process stays unchanged but both sensors acquire an additive fault $a_t$. With identical available observations and context, no detector can distinguish these explanations without additional information. Our stress study stores both scenarios with identical observations and different latent truth. Their ambiguity is known from construction, labeling these cases does not establish that the detector recognizes ambiguity immediately.
+@@ -228,7 +222,7 @@
+ \section{Experimental Protocol}
+ 
+ \subsection{Datasets, independence and candidates}
+-Table~\ref{tab:data} summarizes the evaluated sensor intervals. S32L, S32N and S64N are 32 channel linear, 32 channel nonlinear and a 64 channel nonlinear configurations of one coupled simulator, not independent datasets. New test trajectories separately record the physical process, uncorrupted noisy measurements and injected faults. The last two of twelve final trajectories use the predefined operating regime change.
++Table~\ref{tab:data} summarizes the evaluated sensor intervals. S32L, S32N and S64N are 32 channel linear, 32 channel nonlinear and 64 channel nonlinear configurations of one coupled simulator, not independent datasets. New test trajectories separately record the physical process, uncorrupted noisy measurements and injected faults. The last two of twelve final trajectories use the predefined operating regime change.
+ 
+ Intel provides 48 channels from twelve sensor nodes measuring temperature, humidity, light and voltage~\cite{intel}. Completed five minute bins retain missing values without interpolation, chronological splits and gaps are preserved. SKAB has eight sensor/process channels split by experiment~\cite{skab}. Native process events are evaluated separately, controlled faults use only reference windows without these events. Scaling uses training data, and physical source groups remain static.
+ 
+@@ -371,7 +365,7 @@
+ 
+ Synthetic repairs provide a positive result, the flow policy accepts useful corrections without observed failures. S64N accepts 125 of 320 cases, compared with no PCA recommendations and 129 for PPCA. PPCA overall achieves greater coverage. Zero observed failures does not establish zero population risk, particularly with dependent blocks. Intel abstains throughout, leaving recommendation risk undefined.
+ 
+-On SKAB, 123 accepted repairs has 24 harmful failures, risk 0.195 with block interval [0.000, 0.400], versus 0.371 for PCA and 0.183 for PPCA. Observed risk is lower than PCA's, but exceeds the calibration target; H3 remains unestablished. Matched PPCA also has lower CRPS and energy score throughout (Table~\ref{tab:repair}), while wider flow intervals do not ensure reliable real-data coverage. Successful and failed examples (Figure~\ref{fig:repair}) make these trade-offs inspectable. The framework therefore distinguishes detection gains from repair quality and decision reliability. Calibrated probabilities reflect the designed injection prevalence, not operational physical failure probabilities.
++On SKAB, 123 accepted repairs have 24 harmful failures, risk 0.195 with block interval [0.000, 0.400], versus 0.371 for PCA and 0.183 for PPCA. Observed risk is lower than PCA's, but exceeds the calibration target; H3 remains unestablished. Matched PPCA also has lower CRPS and energy score throughout (Table~\ref{tab:repair}), while wider flow intervals do not ensure reliable real-data coverage. Successful and failed examples (Figure~\ref{fig:repair}) make these trade-offs inspectable. The framework therefore distinguishes detection gains from repair quality and decision reliability. Calibrated probabilities reflect the designed injection prevalence, not operational physical failure probabilities.
+ 
+ \begin{table}[!tbp]
+ \centering
+@@ -455,15 +449,15 @@
+ 
+ 
+ \subsection{Ablations and adverse conditions}
+-Graph context contributes a clear detection gain, macro AP improves by 0.053 [+0.028, +0.077] over own history alone. Integration adds 0.003 [-0.007, +0.020] over replacing generated references with their prior mean, leaving its additional benefit inconclusive. Family macro AP is 0.427 for one member and 0.468 when member log ratios is averaged instead of mixing densities. All 'leave one corruption channel out' results are retained without revising the fault prior after testing, scale sensitivity uses development results.
++Graph context contributes a clear detection gain, macro AP improves by 0.053 [+0.028, +0.077] over own history alone. Integration adds 0.003 [-0.007, +0.020] over replacing generated references with their prior mean, leaving its additional benefit inconclusive. Family macro AP is 0.427 for one member and 0.468 when member log ratios are averaged instead of mixing densities. All 'leave one corruption channel out' results are retained without revising the fault prior after testing, scale sensitivity uses development results.
+ 
+ The audits expose numerical limits alongside these gains. Even at 2048 draws per member, SKAB's 95th percentile repeated seed score change is 0.952, so this finite reference does not establish exact integration. Low-ESS cases retain detection scores but abstain from repair. Missing support affects attribution (Table~\ref{tab:stress}). With multiple faults, selecting another faulty sensor can lower original target top one accuracy without being incorrect. When half the other S32N sources are corrupted, AP across all true targets is 0.946, under the changed fault prevalence. Canonicalizing known copies preserves scores exactly in every registered copy case.
+ 
+-Direct residuals provide a separate association diagnostic, achieving mean edge localization AP of 0.977 across twelve S32N cases with half the associations changed. Reading and association alarms can coincide or both remain silent. Cross type counts are saved reading alarms do not prove false edges. The physical change counterexample clarifies an unavoidable ambiguity, identical readings can reflect a process change or shared sensor faults. All twelve S32N physical change cases trigger reading alarms at 0.10. On 224 native SKAB windows, including 78 process-event windows, AP is 0.536 for the ratio, 0.546 for NLL and 0.499 for PCA. These results assess process detection, not sensor fault diagnosis.
+-
+-\begin{table}[!tbp]
+-\centering
+-\caption{Registered stress diagnostics on twelve source windows per configuration. First three columns give primary-target top k-one rates. The last gives measurement alarms within a graph-only error affecting half the stored associations. This is cross-type confusion, not association diagnosis.}
++Direct residuals provide a separate association diagnostic, achieving mean edge localization AP of 0.977 across twelve S32N cases with half the associations changed. Reading and association alarms can coincide or both remain silent. Cross type counts are saved; reading alarms do not prove false edges. The physical change counterexample clarifies an unavoidable ambiguity, identical readings can reflect a process change or shared sensor faults. All twelve S32N physical change cases trigger reading alarms at 0.10. On 224 native SKAB windows, including 78 process-event windows, AP is 0.536 for the ratio, 0.546 for NLL and 0.499 for PCA. These results assess process detection, not sensor fault diagnosis.
++
++\begin{table}[!tbp]
++\centering
++\caption{Registered stress diagnostics on twelve source windows per configuration. First three columns give primary-target top-one rates. The last gives measurement alarms within a graph-only error affecting half the stored associations. This is cross-type confusion, not association diagnosis.}
+ \label{tab:stress}
+ \small
+ \begin{tabular}{lrrrr}
+@@ -554,8 +548,8 @@
+ \section{Conclusion}
+ This work connects generative AI to a complete sensor-review workflow, generating plausible readings, testing fault explanations, proposing corrections and presenting traceable graph evidence. The evaluation establishes detection gains over PCA and same-model likelihood while identifying remaining confidence and repair challenges. Its contribution combines measured improvements with a reproducible framework for investigating when generative sensor diagnosis can support trustworthy decisions.
+ 
+-\section*{Acknowledgment}
+-OpenAI Codex assisted with developing the software, and grammar checking. The authors takes responsibility for the research design, verification of results, references, manuscript and final content.
++\section*{AI disclosure}
++OpenAI Codex\footnote{OpenAI, Codex: \url{https://openai.com/codex/} (accessed November 10, 2026).} assisted with developing the software and grammar checking. It also assisted with the present manuscript's LaTeX conversion, anonymization and proofreading. The authors take responsibility for the research design, verification of results, references, manuscript and final content.
+ 
+ 
+ \bibliographystyle{splncs04}

@@ -1,0 +1,789 @@
+{
+  "pdf": "paper.pdf",
+  "pdf_sha256": "87d10ba28e9c91f4d885bd2bb27a6e6c8449b1357c3346da00758f286daba276",
+  "pages": 22,
+  "role": "submission",
+  "method": "Extract PDF text using pdftotext and PyMuPDF; Unicode NFKC normalizes ligatures; count code points with str.isspace()==False. Raw totals include all pages, captions, tables, references, extracted figure text and page numbers. Also calculate a rendered estimate by subtracting all figure-font text spans from the PyMuPDF full-document total and adding the six original figure assets' text exactly once: this corrects invisible text retained by repeated clipped-PDF inclusion.",
+  "count_is_estimate_not_conference_certified": true,
+  "characters": {
+    "pdftotext_nfkc_nonwhitespace": 44508,
+    "pymupdf_nfkc_nonwhitespace": 44503,
+    "figure_adjusted_rendered_estimate": 38103,
+    "adjustment_formula": "44503 full-PDF - 9123 extracted figure-font + 2723 original figures once = 38103",
+    "invisible_figure_extraction_surplus": 6400,
+    "absolute_difference": 5,
+    "relative_difference_percent": 0.011233935472274647,
+    "pdftotext_raw_nonwhitespace": 44508,
+    "pymupdf_raw_nonwhitespace": 44328,
+    "pdftotext_replacement_characters": 0,
+    "pymupdf_replacement_characters": 0,
+    "raw_and_adjusted_estimates_within_10000_50000": true,
+    "distance_to_50000_using_larger_estimate": 5492
+  },
+  "pages_at_or_below_intended_25_page_full_publication_target": true,
+  "page_measurements": [
+    {
+      "page": 1,
+      "chars_nfkc": 2352,
+      "width_pt": 612.0,
+      "height_pt": 792.0,
+      "figure_text_chars_nfkc": 0,
+      "figure_min_font_pt": null,
+      "figure_max_font_pt": null
+    },
+    {
+      "page": 2,
+      "chars_nfkc": 2564,
+      "width_pt": 612.0,
+      "height_pt": 792.0,
+      "figure_text_chars_nfkc": 0,
+      "figure_min_font_pt": null,
+      "figure_max_font_pt": null
+    },
+    {
+      "page": 3,
+      "chars_nfkc": 1926,
+      "width_pt": 612.0,
+      "height_pt": 792.0,
+      "figure_text_chars_nfkc": 0,
+      "figure_min_font_pt": null,
+      "figure_max_font_pt": null
+    },
+    {
+      "page": 4,
+      "chars_nfkc": 1736,
+      "width_pt": 612.0,
+      "height_pt": 792.0,
+      "figure_text_chars_nfkc": 332,
+      "figure_min_font_pt": 6.802159786224365,
+      "figure_max_font_pt": 6.802159786224365
+    },
+    {
+      "page": 5,
+      "chars_nfkc": 1588,
+      "width_pt": 612.0,
+      "height_pt": 792.0,
+      "figure_text_chars_nfkc": 0,
+      "figure_min_font_pt": null,
+      "figure_max_font_pt": null
+    },
+    {
+      "page": 6,
+      "chars_nfkc": 2085,
+      "width_pt": 612.0,
+      "height_pt": 792.0,
+      "figure_text_chars_nfkc": 0,
+      "figure_min_font_pt": null,
+      "figure_max_font_pt": null
+    },
+    {
+      "page": 7,
+      "chars_nfkc": 2682,
+      "width_pt": 612.0,
+      "height_pt": 792.0,
+      "figure_text_chars_nfkc": 0,
+      "figure_min_font_pt": null,
+      "figure_max_font_pt": null
+    },
+    {
+      "page": 8,
+      "chars_nfkc": 2568,
+      "width_pt": 612.0,
+      "height_pt": 792.0,
+      "figure_text_chars_nfkc": 0,
+      "figure_min_font_pt": null,
+      "figure_max_font_pt": null
+    },
+    {
+      "page": 9,
+      "chars_nfkc": 2244,
+      "width_pt": 612.0,
+      "height_pt": 792.0,
+      "figure_text_chars_nfkc": 0,
+      "figure_min_font_pt": null,
+      "figure_max_font_pt": null
+    },
+    {
+      "page": 10,
+      "chars_nfkc": 2052,
+      "width_pt": 612.0,
+      "height_pt": 792.0,
+      "figure_text_chars_nfkc": 0,
+      "figure_min_font_pt": null,
+      "figure_max_font_pt": null
+    },
+    {
+      "page": 11,
+      "chars_nfkc": 2937,
+      "width_pt": 612.0,
+      "height_pt": 792.0,
+      "figure_text_chars_nfkc": 2742,
+      "figure_min_font_pt": 6.919149875640869,
+      "figure_max_font_pt": 9.757080078125
+    },
+    {
+      "page": 12,
+      "chars_nfkc": 2179,
+      "width_pt": 612.0,
+      "height_pt": 792.0,
+      "figure_text_chars_nfkc": 0,
+      "figure_min_font_pt": null,
+      "figure_max_font_pt": null
+    },
+    {
+      "page": 13,
+      "chars_nfkc": 3221,
+      "width_pt": 612.0,
+      "height_pt": 792.0,
+      "figure_text_chars_nfkc": 2992,
+      "figure_min_font_pt": 6.162420272827148,
+      "figure_max_font_pt": 9.787590026855469
+    },
+    {
+      "page": 14,
+      "chars_nfkc": 781,
+      "width_pt": 612.0,
+      "height_pt": 792.0,
+      "figure_text_chars_nfkc": 765,
+      "figure_min_font_pt": 6.207479953765869,
+      "figure_max_font_pt": 9.311220169067383
+    },
+    {
+      "page": 15,
+      "chars_nfkc": 1766,
+      "width_pt": 612.0,
+      "height_pt": 792.0,
+      "figure_text_chars_nfkc": 985,
+      "figure_min_font_pt": 6.614649772644043,
+      "figure_max_font_pt": 9.000449180603027
+    },
+    {
+      "page": 16,
+      "chars_nfkc": 2532,
+      "width_pt": 612.0,
+      "height_pt": 792.0,
+      "figure_text_chars_nfkc": 0,
+      "figure_min_font_pt": null,
+      "figure_max_font_pt": null
+    },
+    {
+      "page": 17,
+      "chars_nfkc": 824,
+      "width_pt": 612.0,
+      "height_pt": 792.0,
+      "figure_text_chars_nfkc": 569,
+      "figure_min_font_pt": 6.185024738311768,
+      "figure_max_font_pt": 13.537079811096191
+    },
+    {
+      "page": 18,
+      "chars_nfkc": 534,
+      "width_pt": 612.0,
+      "height_pt": 792.0,
+      "figure_text_chars_nfkc": 518,
+      "figure_min_font_pt": 7.150373935699463,
+      "figure_max_font_pt": 13.537079811096191
+    },
+    {
+      "page": 19,
+      "chars_nfkc": 2332,
+      "width_pt": 612.0,
+      "height_pt": 792.0,
+      "figure_text_chars_nfkc": 0,
+      "figure_min_font_pt": null,
+      "figure_max_font_pt": null
+    },
+    {
+      "page": 20,
+      "chars_nfkc": 431,
+      "width_pt": 612.0,
+      "height_pt": 792.0,
+      "figure_text_chars_nfkc": 220,
+      "figure_min_font_pt": 9.292269706726074,
+      "figure_max_font_pt": 10.007060050964355
+    },
+    {
+      "page": 21,
+      "chars_nfkc": 2329,
+      "width_pt": 612.0,
+      "height_pt": 792.0,
+      "figure_text_chars_nfkc": 0,
+      "figure_min_font_pt": null,
+      "figure_max_font_pt": null
+    },
+    {
+      "page": 22,
+      "chars_nfkc": 2840,
+      "width_pt": 612.0,
+      "height_pt": 792.0,
+      "figure_text_chars_nfkc": 0,
+      "figure_min_font_pt": null,
+      "figure_max_font_pt": null
+    }
+  ],
+  "figures": [
+    {
+      "file": "figures/graph_flow/architecture.pdf",
+      "sha256": "989a48b4879737890ab5738c7f1f24f159b52d0c2732845750c2047b24ec941e",
+      "pages": 1,
+      "pymupdf_chars_nfkc": 332,
+      "pdftotext_chars_nfkc": 332,
+      "fonts": [
+        "DejaVuSans"
+      ],
+      "embedded_raster_images": [],
+      "original_min_font_pt": 8.0
+    },
+    {
+      "file": "figures/graph_flow/performance.pdf",
+      "sha256": "c5821ffa67fe281b1386de282337f3267af1a0f1d74c1f9e403e62b04d7dcb9a",
+      "pages": 1,
+      "pymupdf_chars_nfkc": 460,
+      "pdftotext_chars_nfkc": 460,
+      "fonts": [
+        "DejaVuSans"
+      ],
+      "embedded_raster_images": [],
+      "original_min_font_pt": 7.0
+    },
+    {
+      "file": "figures/graph_flow/confidence.pdf",
+      "sha256": "5a2c0348802c6ec53b353023dfde5745171827e0d86e0fb4ea3efa6017576c12",
+      "pages": 1,
+      "pymupdf_chars_nfkc": 1031,
+      "pdftotext_chars_nfkc": 1031,
+      "fonts": [
+        "DejaVuSans"
+      ],
+      "embedded_raster_images": [],
+      "original_min_font_pt": 6.0
+    },
+    {
+      "file": "figures/graph_flow/repair.pdf",
+      "sha256": "3eb572734ec3d6185421cbe67d1313bc6e556e7511c094ba35ddb7b14a78be37",
+      "pages": 1,
+      "pymupdf_chars_nfkc": 265,
+      "pdftotext_chars_nfkc": 265,
+      "fonts": [
+        "DejaVuSans"
+      ],
+      "embedded_raster_images": [],
+      "original_min_font_pt": 7.0
+    },
+    {
+      "file": "figures/graph_flow/equations.pdf",
+      "sha256": "7809cd2b6e8d16fff312007b8fca91a7e8439ac919dd2fc1f10d99c81a191b38",
+      "pages": 1,
+      "pymupdf_chars_nfkc": 415,
+      "pdftotext_chars_nfkc": 415,
+      "fonts": [
+        "DejaVuSans"
+      ],
+      "embedded_raster_images": [],
+      "original_min_font_pt": 4.900000095367432
+    },
+    {
+      "file": "figures/graph_flow/network.pdf",
+      "sha256": "bcfe2ef5cb3be9545d334a4c98fcf8ba5c8a65439116e09ca91205f78fc09a81",
+      "pages": 1,
+      "pymupdf_chars_nfkc": 220,
+      "pdftotext_chars_nfkc": 220,
+      "fonts": [
+        "DejaVuSans"
+      ],
+      "embedded_raster_images": [],
+      "original_min_font_pt": 6.5
+    }
+  ],
+  "figure_text_coverage": {
+    "classification": "Rendered text spans whose fonts match the original six figure assets; these fonts are distinct from manuscript fonts in this conversion.",
+    "fonts": [
+      "DejaVuSans"
+    ],
+    "original_total_nonwhitespace": 2723,
+    "full_pdf_extracted_figure_text_including_invisible_clipped_objects": 9123,
+    "original_character_multiset_missing_from_rendered": {},
+    "rendered_character_multiset_extra": {
+      "i": 299,
+      "s": 163,
+      "t": 229,
+      "o": 269,
+      "r": 278,
+      "y": 26,
+      "+": 23,
+      "u": 105,
+      "c": 200,
+      "e": 376,
+      "a": 296,
+      "g": 27,
+      "b": 43,
+      "l": 210,
+      "m": 83,
+      "d": 83,
+      "G": 1,
+      "p": 99,
+      "h": 12,
+      "F": 46,
+      "n": 214,
+      "N": 56,
+      "v": 50,
+      "f": 56,
+      "w": 79,
+      "3": 99,
+      "M": 21,
+      "=": 16,
+      "2": 233,
+      ",": 96,
+      "1": 195,
+      "8": 66,
+      "0": 767,
+      "4": 132,
+      "R": 37,
+      "C": 61,
+      "q": 9,
+      "B": 24,
+      "(": 19,
+      "x": 10,
+      ")": 19,
+      "L": 53,
+      ".": 476,
+      "6": 114,
+      "P": 120,
+      "S": 119,
+      "I": 27,
+      "5": 102,
+      "K": 23,
+      "A": 105,
+      "-": 29,
+      "\u2212": 14,
+      "7": 19,
+      "9": 28,
+      "E": 16,
+      "V": 6,
+      "O": 7,
+      "W": 6,
+      "%": 3,
+      "D": 2,
+      "\u00d7": 3,
+      "U": 1
+    },
+    "warning": "Multiset coverage is a diagnostic, not proof of correct panel order, clipping, or glyph identity. Visual inspection remains necessary. Cropped PDF reuse can retain invisible text objects in extraction.",
+    "separate_crop_geometry_verification": {
+      "performance": {
+        "all_text_spans_covered_once": true,
+        "coverage_problems": [],
+        "parts": [
+          {
+            "part": 1,
+            "top_left_bbox_bp": [
+              0,
+              0,
+              166,
+              133
+            ],
+            "graphicx_viewport_bp": [
+              0.0,
+              160.50375,
+              166.0,
+              293.50375
+            ],
+            "width_fraction": 0.48,
+            "min_final_font_pt": 6.999867151807229,
+            "proof_page": 1
+          },
+          {
+            "part": 2,
+            "top_left_bbox_bp": [
+              169,
+              0,
+              335,
+              133
+            ],
+            "graphicx_viewport_bp": [
+              169.0,
+              160.50375,
+              335.0,
+              293.50375
+            ],
+            "width_fraction": 0.48,
+            "min_final_font_pt": 6.999867151807229,
+            "proof_page": 1
+          },
+          {
+            "part": 3,
+            "top_left_bbox_bp": [
+              337,
+              0,
+              504.94623,
+              133
+            ],
+            "graphicx_viewport_bp": [
+              337.0,
+              160.50375,
+              504.94623,
+              293.50375
+            ],
+            "width_fraction": 0.48,
+            "min_final_font_pt": 6.918749811770112,
+            "proof_page": 1
+          },
+          {
+            "part": 4,
+            "top_left_bbox_bp": [
+              0,
+              134,
+              166,
+              269
+            ],
+            "graphicx_viewport_bp": [
+              0.0,
+              24.50375,
+              166.0,
+              159.50375
+            ],
+            "width_fraction": 0.48,
+            "min_final_font_pt": 6.999867151807229,
+            "proof_page": 1
+          },
+          {
+            "part": 5,
+            "top_left_bbox_bp": [
+              169,
+              134,
+              335,
+              269
+            ],
+            "graphicx_viewport_bp": [
+              169.0,
+              24.50375,
+              335.0,
+              159.50375
+            ],
+            "width_fraction": 0.48,
+            "min_final_font_pt": 6.999867151807229,
+            "proof_page": 1
+          },
+          {
+            "part": 6,
+            "top_left_bbox_bp": [
+              337,
+              134,
+              504.94623,
+              269
+            ],
+            "graphicx_viewport_bp": [
+              337.0,
+              24.50375,
+              504.94623,
+              159.50375
+            ],
+            "width_fraction": 0.48,
+            "min_final_font_pt": 6.918749811770112,
+            "proof_page": 1
+          },
+          {
+            "part": 7,
+            "top_left_bbox_bp": [
+              93,
+              276,
+              412,
+              290
+            ],
+            "graphicx_viewport_bp": [
+              93.0,
+              3.50375,
+              412.0,
+              17.50375
+            ],
+            "width_fraction": 1,
+            "min_final_font_pt": 7.588675203761755,
+            "proof_page": 1
+          }
+        ],
+        "source_images": 0,
+        "author_metadata": "",
+        "attachments": 0
+      },
+      "repair": {
+        "all_text_spans_covered_once": true,
+        "coverage_problems": [],
+        "parts": [
+          {
+            "part": 1,
+            "top_left_bbox_bp": [
+              0,
+              0,
+              166,
+              135
+            ],
+            "graphicx_viewport_bp": [
+              0.0,
+              21.70375,
+              166.0,
+              156.70375
+            ],
+            "width_fraction": 0.48,
+            "min_final_font_pt": 6.999867151807229,
+            "proof_page": 1
+          },
+          {
+            "part": 2,
+            "top_left_bbox_bp": [
+              167,
+              0,
+              338,
+              135
+            ],
+            "graphicx_viewport_bp": [
+              167.0,
+              21.70375,
+              338.0,
+              156.70375
+            ],
+            "width_fraction": 0.48,
+            "min_final_font_pt": 6.79519267368421,
+            "proof_page": 1
+          },
+          {
+            "part": 3,
+            "top_left_bbox_bp": [
+              339,
+              0,
+              506.11939,
+              135
+            ],
+            "graphicx_viewport_bp": [
+              339.0,
+              21.70375,
+              506.11939,
+              156.70375
+            ],
+            "width_fraction": 0.48,
+            "min_final_font_pt": 6.9529810227287205,
+            "proof_page": 1
+          },
+          {
+            "part": 4,
+            "top_left_bbox_bp": [
+              70,
+              139,
+              436,
+              154
+            ],
+            "graphicx_viewport_bp": [
+              70.0,
+              2.70375,
+              436.0,
+              17.70375
+            ],
+            "width_fraction": 1,
+            "min_final_font_pt": 6.614173196721311,
+            "proof_page": 1
+          }
+        ],
+        "source_images": 0,
+        "author_metadata": "",
+        "attachments": 0
+      },
+      "confidence": {
+        "all_text_spans_covered_once": true,
+        "coverage_problems": [],
+        "parts": [
+          {
+            "part": 1,
+            "top_left_bbox_bp": [
+              0,
+              0,
+              165,
+              343
+            ],
+            "graphicx_viewport_bp": [
+              0.0,
+              22.50375,
+              165.0,
+              365.50375
+            ],
+            "width_fraction": 0.49,
+            "min_final_font_pt": 6.162004265454547,
+            "proof_page": 1
+          },
+          {
+            "part": 2,
+            "top_left_bbox_bp": [
+              169,
+              0,
+              334,
+              343
+            ],
+            "graphicx_viewport_bp": [
+              169.0,
+              22.50375,
+              334.0,
+              365.50375
+            ],
+            "width_fraction": 0.49,
+            "min_final_font_pt": 6.162004265454547,
+            "proof_page": 1
+          },
+          {
+            "part": 3,
+            "top_left_bbox_bp": [
+              338,
+              0,
+              501.79749,
+              343
+            ],
+            "graphicx_viewport_bp": [
+              338.0,
+              22.50375,
+              501.79749,
+              365.50375
+            ],
+            "width_fraction": 0.49,
+            "min_final_font_pt": 6.207242270928573,
+            "proof_page": 2
+          },
+          {
+            "part": 4,
+            "top_left_bbox_bp": [
+              92,
+              348,
+              410,
+              363
+            ],
+            "graphicx_viewport_bp": [
+              92.0,
+              2.50375,
+              410.0,
+              17.50375
+            ],
+            "width_fraction": 1,
+            "min_final_font_pt": 7.612538962264152,
+            "proof_page": 1
+          }
+        ],
+        "source_images": 0,
+        "author_metadata": "",
+        "attachments": 0
+      },
+      "equations": {
+        "all_text_spans_covered_once": true,
+        "coverage_problems": [],
+        "parts": [
+          {
+            "part": 1,
+            "top_left_bbox_bp": [
+              0,
+              0,
+              274,
+              134
+            ],
+            "graphicx_viewport_bp": [
+              0.0,
+              137.78513,
+              274.0,
+              271.78513
+            ],
+            "width_fraction": 1,
+            "min_final_font_pt": 8.834990474452555,
+            "proof_page": 1
+          },
+          {
+            "part": 2,
+            "top_left_bbox_bp": [
+              275,
+              0,
+              504.94062,
+              134
+            ],
+            "graphicx_viewport_bp": [
+              275.0,
+              137.78513,
+              504.94062,
+              271.78513
+            ],
+            "width_fraction": 1,
+            "min_final_font_pt": 7.369516555972628,
+            "proof_page": 1
+          },
+          {
+            "part": 3,
+            "top_left_bbox_bp": [
+              37,
+              138,
+              274,
+              271.78513
+            ],
+            "graphicx_viewport_bp": [
+              37.0,
+              -0.0,
+              274.0,
+              133.78513
+            ],
+            "width_fraction": 1,
+            "min_final_font_pt": 7.150005088525784,
+            "proof_page": 2
+          },
+          {
+            "part": 4,
+            "top_left_bbox_bp": [
+              275,
+              138,
+              504.94062,
+              271.78513
+            ],
+            "graphicx_viewport_bp": [
+              275.0,
+              -0.0,
+              504.94062,
+              133.78513
+            ],
+            "width_fraction": 1,
+            "min_final_font_pt": 7.369516555972628,
+            "proof_page": 2
+          }
+        ],
+        "source_images": 0,
+        "author_metadata": "",
+        "attachments": 0
+      }
+    },
+    "all_figure_spans_at_least_6_pt": true
+  },
+  "anonymity": {
+    "visible_body_identity_candidates": [],
+    "public_dataset_link_exemptions": [
+      {
+        "match": "https://github.com/waico/SKAB\",",
+        "context": "24798583984375, 481.5880126953125, 260.24298095703125)\", \"uri\": \"https://github.com/waico/SKAB\", \"id\": \"\"}, {\"page\": 22, \"kind\": 2, \"xref\": 388, \"from\": \"Rect(149.95799255371094, 26",
+        "reason": "Public SKAB dataset repository preserved from the source bibliography; not a paper-author repository."
+      },
+      {
+        "match": "https://github.com/waico/SKAB\",",
+        "context": "20599365234375, 217.85299682617188, 270.3809814453125)\", \"uri\": \"https://github.com/waico/SKAB\", \"id\": \"\"}, {\"page\": 22, \"kind\": 2, \"xref\": 376, \"from\": \"Rect(322.83599853515625, 29",
+        "reason": "Public SKAB dataset repository preserved from the source bibliography; not a paper-author repository."
+      }
+    ],
+    "ordinary_third_person_reference_name_hits_exempt": [],
+    "other_reference_identity_candidates": [],
+    "metadata_and_structural_identity_candidates": [],
+    "blank_author_metadata": true,
+    "bookmarks": 1,
+    "non_link_annotations": 0,
+    "embedded_attachments": 0,
+    "form_widgets": 0,
+    "javascript_launch_attachment_or_form_objects": 0,
+    "internal_links": 29,
+    "external_links": 21,
+    "identity_expected_in_baseline": false
+  },
+  "limitations": [
+    "Rendered character counts include mathematical glyphs as extracted; glyph-to-Unicode maps, super/subscripts, accents and mathematical operators can differ by engine.",
+    "NFKC expands fi/fl ligatures and some compatibility characters; it is a reproducible convention, not a conference counting algorithm.",
+    "Line-break hyphens and page numbers are retained conservatively. Reading order does not affect total characters.",
+    "Raw PDF extraction includes invisible clipped-out text from repeated figure inclusion; raw totals therefore conservatively overcount. The adjusted estimate replaces all extracted figure-font text with the six original assets counted once. This depends on every original panel being visibly preserved once; the separate crop geometry checks and full-page visual review establish that premise.",
+    "All six original graph-flow figures were checked for embedded rasters; the saved figure records expose any raster that needs independent visual text inspection.",
+    "Font sizes are PDF text-span measurements; rotated/superscript labels and scaling can affect interpretation. Visual inspection is still required.",
+    "Identity matches are candidates requiring context; necessary cited-author surnames in ordinary bibliography entries are not authorship declarations. Intel Berkeley is a public dataset name, and the source's github.com/waico/SKAB link is a dataset citation rather than an author identity."
+  ]
+}

@@ -1,0 +1,31 @@
+Active graph-flow figures reviewed on 2026-11-10.
+
+All six original PDF assets were rendered at 144 dpi and visually inspected.
+No author, affiliation, email, personal repository URL, identifying bookmark or
+other attribution was present. All are vector drawings/text without embedded
+raster images. Metadata has no author identity; no attachments were found.
+
+Architecture and network are readable as full 122mm width upright figures.
+Performance, confidence, repair and equations need larger panels. Recommended
+upright panel arrangements and source-coordinate crops are recorded in
+crop-recommendations.json and recommended-includes.tex. Every original text
+span is fully within exactly one crop. Every panel, plotted value, axis, tick,
+label and common legend was visually checked in the original and reflow proofs.
+Source PDFs are untouched; these are proofs only, not replacement assets.
+
+Performance has six panels in two columns and three rows with one legend;
+repair has two panels above one centered panel with one legend. Both fit one
+Springer page including their captions. Confidence occupies two pages to keep
+its reliability/risk inset text readable; preserve each dataset's vertical
+three-panel relationship. Equations occupies two pages for generous typography,
+including the smaller logarithmic superscripts. A continuation caption is a
+mechanical layout addition and must be recorded equally in comparison baseline.
+
+Lowest letter size in recommended layouts: architecture6.80pt, network9.29pt,
+performance6.92pt, confidence6.16pt, repair6.61pt, equations7.15pt.
+
+Repeated PDF clipping may cause extraction of invisible text outside each crop.
+Do not count raw source commands. A figure-adjusted rendered count can subtract
+all extracted figure-font text and add original figure text once, provided
+continuation captions and any repeated visible legends are counted separately.
+No legend is repeated in these recommended proofs.

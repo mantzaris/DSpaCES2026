@@ -1,0 +1,2967 @@
+Evaluating Graph-Conditioned Generative AI for IoT
+Sensor Fault Detection and Repair
+Anonymous Author(s)
+
+Abstract. A temperature sensor reporting a sudden rise may indicate overheating
+or a faulty reading. Operators need to identify which measurements to rely on. We
+present a graph-conditioned generative AI method for locating inconsistent readings
+and proposing service. A neural normalizing flow uses sensor history and related
+measurements to generate plausible trajectories on GPUs. The method compares
+normal readings with explicit bias, drift, noise and stuck-sensor explanations,
+producing fault scores and weighted repair distributions. Controlled evaluation on
+a synthetic family, Intel Berkeley and SKAB separates detection, confidence and
+repair quality. The score improves mean average precision over PCA and even over
+the same flow’s likelihood, with both paired primary intervals above zero. The
+smaller gain misses the declared practical margin, benefits over matched Gaussian
+models remain inconclusive, and supervised trees perform better. Calibration
+and repair failures restrict operational claims. Versioned graph evidence and an
+annotated sensor network support human views. This research provides an audited,
+reproducible framework for assessing generative fault diagnosis, identifying
+detection gains and exposing reliability limitations that anomaly rankings alone
+would not reveal.
+Keywords: sensor data quality · conditional generation · fault localization ·
+likelihood ratio · repair uncertainty
+
+1
+
+Introduction
+
+Distributed sensors provide the measurements used by digital twins and shared data
+spaces. When several temperature sensors rise together, they may be reporting a genuine
+process change. Conversely, a sensor stuck at an ordinary value may be faulty. Operators
+therefore need more than an anomaly alert, they need to identify questionable readings
+and assess whether proposed corrections are needed.
+We use generative AI to compare two explanations for each sensor interval, the
+recorded measurements are plausible, or a measurement fault has altered them. A
+graph conditioned flow generates possible reference trajectories from sensor history
+and related measurements. Evaluating these trajectories under specified corruption
+mechanisms produces a likelihood-ratio fault score and weighted repair distribution.
+Supporting sensors provide context, graph edges describe predictive associations without
+establishing causation.
+H1 tests whether integrating these generated explanations improves sensor-interval
+average precision over development selected PCA and ordinary negative log likelihood
+from the same flow. H2 compares neural and Gaussian or probabilistic PCA models using
+
+identical corruption assumptions. H3 evaluates useful repair coverage under a separately
+selected policy aiming at a controlled failure rate. Repair is a secondary endpoint.
+The results support H1 in the three-family comparison while exposing limitations
+in confidence and repair reliability. The methodological value lies in separating these
+outcomes through matched baselines, numerical audits and tests of missing targets,
+unseen faults and corrupted context. The previous diffusion method is rerun on shared
+cases. Fresh synthetic trajectories provide new tests, injections into previously examined
+real recordings assess controlled fault behavior without establishing generalization to
+untouched situations.
+
+2
+
+Related Work
+
+PCA residuals are established monitoring tools [8]. Probabilistic PCA and its mixture
+extension supply normalized distributions, generation and uncertainty [15,14]. Neural
+benefits must therefore be measured against these probabilistic repair alternatives. GANF
+combines recurrence, learned graphs and flows for anomaly detection [3]. MTGFlow
+studies dynamic graphs and entity-specific densities [19]. Recent work examines departures in conditional-flow latent dynamics [1]. We use unchanged author GANF
+classes with documented evaluation adapters. Our affine couplings follow established
+constructions [5]. Neither graph conditioning nor invertibility is new here.
+Likelihood ratios for distributional anomalies have substantial precedent [12].
+Bayesian sensor diagnosis predates neural flows [11], and particle filtering integrates
+uncertain latent system states when assessing sensor fault explanations [17]. A flow
+prior combined with a structured noise likelihood has also been used for inverse recovery [16] (these are close predecessors). Our study evaluates a particular combination of
+masked graph context, normalized short block corruption channels, marginal likelihood
+comparison and weighted repair.
+CSDI and PriSTI generate conditional imputations [13,10]. ImDiffusion uses diffusion
+imputation for anomaly detection [2], and GDN uses graph based forecast deviations [4].
+We retain GDN and documented diffusion comparators. The earlier procedure tested
+repairs against excluded witness measurements. The present conditional likelihood
+method does not inherit that independence claim. A source comparison matrix records
+implementation differences.
+
+3
+3.1
+
+Conditional Fault Explanations
+Sensor intervals and supporting context
+
+Each sensor’s recent readings are assessed against its history and related sensors. Every
+32 steps, we examine a 64 step window and test each channel’s final eight observations.
+Candidate ℎ identifies the target block, with values 𝑦 ℎ ∈ R𝐷ℎ and 𝐷 ℎ = 8. The variable
+𝑧 ℎ represents a possible uncorrupted, but still noisy, version. All eight values must be
+available. Incomplete blocks are flagged and assigned a common lowest score, retaining
+their faults as misses (missing targets are not zeros).
+
+The context 𝐶ℎ contains the information used to generate reference readings. To
+prevent copying the tested measurements, we hide the same eight-step interval in every
+channel from the target’s physical source before computing features or graph messages.
+Earlier readings remain available. Training medians and interquartile scales normalize
+channels, missing context is masked, and duplicate measurements are represented once.
+With latent draws fixed, altering hidden values or copies must leave the context and
+generated samples unchanged, the target likelihood may change.
+The frozen graph 𝐺 identifies supporting channels through predictive associations
+selected using training and development data. Edges record direction, lag, units, training
+correlation and development support. Up to three incoming channels from distinct other
+sources provide context. A shared gated recurrent unit summarizes histories, channel
+embeddings identify sensors, and available graph messages are averaged. These inputs
+form 𝑐 ℎ = Encoder 𝜓 (𝐶ℎ , 𝐺). Only information available at the decision time is used.
+Lags and recurrent steps count observations, whose elapsed durations can differ in
+irregular recordings.
+3.2
+
+Neural density and actual generation
+
+An invertible conditional flow maps a target block to a standard normal latent vector.
+With 𝑓 𝜃 denoting the forward map,
+log 𝑝 𝜃 (𝑦 ℎ | 𝑐 ℎ ) = log 𝑝 0 ( 𝑓 𝜃 (𝑦 ℎ ; 𝑐 ℎ )) + log det
+
+𝜕 𝑓𝜃
+.
+𝜕𝑦 ℎ
+
+(E1)
+
+The conditioner is fixed when this target Jacobian is evaluated. Alternating affine couplings
+have triangular Jacobians and bounded neural log scales. A conditional location and
+scale transform precedes them. Generation applies the inverse on the GPU,
+𝜖 ℎ(𝑚) ∼ N (0, 𝐼),
+
+𝑧 ℎ(𝑚) = 𝑓 𝜃−1 (𝜖 ℎ(𝑚) ; 𝑐 ℎ ).
+
+(E2)
+
+These are numerical sensor trajectories. They enter both the fault score and the repair
+calculation below. The reference training objective is
+Ldensity = −
+
+𝑁
+1 Õ
+log 𝑝 𝜃 (𝑦 ℎ | 𝑐 ℎ ).
+𝑁 ℎ=1
+
+(E3)
+
+Reference denotes the declared training population, not certified correct instrumentation.
+Saved records contain masks, contexts, latent draws, generated intervals and model
+hashes for representative production cases.
+3.3
+
+Normalized corruption channels
+
+The normal explanation uses the flow density directly,
+𝑝 normal,ℎ (𝑦 ℎ | 𝐶ℎ , 𝐺) = 𝑝 𝜃 (𝑦 ℎ | 𝑐 ℎ ).
+
+(E4)
+
+History + sources
+Target block masked
+
+Graph + temporal
+Frozen associations
+
+Neural inverse flow
+3 models + normal latent draws
+
+Recorded interval
+8 completed values
+
+Corruption channel q
+Bias/drift/noise/stuck
+
+Generated reference intervals
+M = 32, 128 or 2048 per model
+
+Normal flow density
+pθ(y | context)
+
+Fault density
+Mean q over draws
+
+Log ratio + weighted repair
+Calibration → Neo4j → operator
+
+Fig. 1. Executed dataflow. The recorded target reaches density and corruption evaluation but is
+removed from the generation context. Generated trajectories directly enter the marginal fault
+density and the weighted repair. Graph persistence stores evidence references after numerical
+scoring.
+
+The fault explanation uses a normalized mixture
+𝑞 𝜙 (𝑦 | 𝑧) =
+
+4
+Õ
+
+𝜋 𝑘 N (𝑦; 𝐻 𝑘 𝑧, 𝑅 𝑘 ),
+
+𝜋 𝑘 = 14 .
+
+(E5)
+
+𝑘=1
+
+For bias, drift and excess noise, 𝐻 𝑘 = 𝐼. For a stuck reading, 𝐻 𝑘 = 1𝑒𝑇1 , so the uncertain
+stuck level is centered on the first generated reference value. Let 𝑠 ∈ {1, 2} be the
+development-selected scale and 𝑟 = 0.25 the fixed noise floor. The covariances are
+𝑅bias = 𝑠2 11𝑇 + 𝑟 2 𝐼,
+𝑅noise = 𝑠2 𝐼,
+
+𝑅drift = 𝑠2 𝑡𝑡𝑇 + 𝑟 2 𝐼,
+
+𝑅stuck = 𝑠2 11𝑇 + 𝑟 2 𝐼.
+
+Here 𝑡 is the actual target timestamp ramp rescaled to [−1, 1]. Bias and drift amplitudes
+are shared across the block. Independent amplitudes at every coordinate would be
+different models. Positive floors make each covariance positive definite. Cholesky based
+determinants and quadratic forms produce correct Gaussian densities. Dropout is an
+availability event and is not represented by a numeric corruption density.
+The marginal fault density and log ratio are
+∫
+𝑝 fault,ℎ (𝑦 ℎ | 𝑐 ℎ ) =
+𝑞 𝜙 (𝑦 ℎ | 𝑧) 𝑝 𝜃 (𝑧 | 𝑐 ℎ ) 𝑑𝑧,
+(E6)
+𝑆 ℎ = log 𝑝 fault,ℎ (𝑦 ℎ | 𝑐 ℎ ) − log 𝑝 𝜃 (𝑦 ℎ | 𝑐 ℎ ).
+
+(E7)
+
+Positive 𝑆 ℎ favors the declared fault model. It is not itself a calibrated probability or
+proof of sensor failure. With generated trajectories from (E2),
+"
+#
+𝑀
+Õ
+1
+(𝑚)
+𝑆bℎ = log
+𝑞 𝜙 (𝑦 ℎ | 𝑧 ℎ ) − log 𝑝 𝜃 (𝑦 ℎ | 𝑐 ℎ ).
+(E8)
+𝑀 𝑚=1
+We use stable log-sum-exp arithmetic. The logarithm of the average density is essential.
+Averaging log densities or taking the best generation does not implement this integral.
+
+The density estimate is unbiased under independent prior sampling, but its logarithm
+generally has downward bias.
+For 𝐸 equally weighted trained models with 𝑀 samples each,
+
+
+𝑆bℎ,𝐸 = LME𝑒,𝑚 log 𝑞 𝜙 (𝑦 ℎ | 𝑧 ℎ(𝑒,𝑚) )
+
+
+− LME𝑒 log 𝑝 𝜃𝑒 (𝑦 ℎ | 𝑐 ℎ ) ,
+
+(E9)
+
+Í
+where LME(𝑎 1 , . . . , 𝑎 𝑛 ) = log( 𝑖 exp(𝑎 𝑖 )/𝑛). The ordinary flow comparator is the
+negative second term’s underlying mixture log density, using exactly the same checkpoints.
+An average of member log ratios is a separately labeled ablation.
+
+3.4
+
+Repair distribution and numerical adequacy
+
+Bayes’ rule under the fault explanation gives
+𝑝(𝑧 | 𝑦 ℎ , 𝑐 ℎ , 𝐻1,ℎ ) =
+
+𝑞 𝜙 (𝑦 ℎ | 𝑧) 𝑝 𝜃 (𝑧 | 𝑐 ℎ )
+.
+𝑝 fault,ℎ (𝑦 ℎ | 𝑐 ℎ )
+
+(E10)
+
+For a uniform ensemble, we normalize 𝑞 𝜙 (𝑦 ℎ | 𝑧 ℎ(𝑒,𝑚) ) over all generated members and
+samples to obtain weights 𝑤𝑒,𝑚 . Weighted means evaluate squared-error repair, and
+weighted medians and marginal quantiles are also kept. The reference truth never chooses
+a sample. A mean need not preserve a physical mode.
+! −1
+ESSℎ =
+
+Õ
+
+2
+𝑤𝑒,𝑚
+
+.
+
+(E11)
+
+𝑒,𝑚
+
+An ESS below 16 prevents a repair recommendation but leaves the detection score in
+the evaluated population. Low ESS identifies poor importance sampling resolution, not
+necessarily large physical uncertainty. Repeated sampling seeds and a finite draw grid
+diagnose this limitation separately from differences between trained models.
+We apply a proposed action to the full evaluated window. With normalized squared
+loss 𝐿 summed over observed cells and divided by eight, reference 𝑦★𝑗, acceptance 𝑎 𝑗
+and useful-improvement threshold 𝛿 = 0.01,
+Δ 𝑗 = 𝐿 (𝑦 𝑗 , 𝑦★𝑗) − 𝐿(repair 𝑗 , 𝑦★𝑗),
+𝐹 𝑗 = 1{wrong target or Δ 𝑗 ≤ 𝛿},
+Í
+Í
+𝑗 𝑎𝑗
+𝑗 𝑎 𝑗 𝐹𝑗
+Coverage =
+, Risk = Í
+.
+𝑛
+𝑗 𝑎𝑗
+
+(E12)
+
+A ’wrong target action’ includes damage to previously correct measurements. Harmful
+edits have Δ 𝑗 < 0. No accepted action gives zero coverage and undefined risk. On real
+datasets the repair reference is the pre-injection recording, not unknown physical truth.
+
+4
+4.1
+
+Mathematical Checks and Limits
+Probability checks and false alarms
+
+To compare normal and faulty readings, both explanations must assign total probability
+one to the same target space. In (E6), the nonnegative integrand allows
+us to integrate
+∫
+over 𝑦 first. Each corruption channel integrates to one, leaving 𝑝 𝜃 (𝑧 | 𝑐) 𝑑𝑧 = 1.
+The resulting fault model is therefore a valid density. Both explanations use the same
+continuous approximation for quantized readings. Suppose the normal model exactly
+describes normal measurements and the fault model assigns no probability to regions
+excluded by the normal model. Then
+∫
+E 𝐻0 [exp(𝑆 ℎ ) | 𝑐 ℎ ] =
+
+𝑝 fault (𝑦 | 𝑐 ℎ ) 𝑑𝑦 = 1.
+
+Markov’s inequality gives Pr 𝐻0 (𝑆 ℎ ≥ log(1/𝛼) | 𝑐 ℎ ) ≤ 𝛼: under these assumptions, a
+fixed candidate exceeds this threshold with probability at most 𝛼. Learned models can
+violate the assumptions through density error, corrupted context or distribution shift.
+Searching across many candidates also increases opportunities for false alarms, so the
+largest score does not inherit this bound. Averaging valid ratios with fixed nonnegative
+weights summing to one preserves the expectation, observation dependent weights require
+separate justification. We therefore calibrate the actual maximum score used by the alarm
+procedure.
+
+4.2
+
+Gaussian reference and measurement units
+
+A Gaussian example provides an exact answer against which to check the implementation.
+Let reference readings follow 𝑧 ∼ N (𝜇, Σ) and let independent corruption add 𝜂 ∼
+N (0, 𝑅). The recorded values 𝑦 = 𝑧 + 𝜂 then follow N (𝜇, Σ + 𝑅). Comparing this fault
+density with the normal density gives
+𝑆 = − 12 log
+
+|Σ + 𝑅| 1
++ 2 (𝑦 − 𝜇)𝑇 [Σ−1 − (Σ + 𝑅) −1 ] (𝑦 − 𝜇).
+|Σ|
+
+The corresponding repair distribution has mean 𝜇 + Σ(Σ + 𝑅) −1 (𝑦 − 𝜇) and covariance
+Σ − Σ(Σ + 𝑅) −1 Σ. For the affine channels in (E5), the fault density instead uses mean 𝐻 𝑘 𝜇
+and covariance 𝐻 𝑘 Σ𝐻𝑇𝑘 + 𝑅 𝑘 . Conditional PPCA evaluates these Gaussian integrals and
+posterior mixture weights exactly, providing a baseline with the same fault assumptions
+but without neural sampling.
+Changing units should not change the score when both models are transformed
+consistently. Under an invertible change 𝑢 = 𝑔(𝑦), both densities acquire the factor
+| det 𝐷𝑔 −1 (𝑢)|, which cancels in their ratio. This property concerns the same distributions
+described differently, retraining models or changing corruption assumptions can change
+the results. Numerical checks include non-diagonal affine transformations.
+
+4.3
+
+Limits of fault identification
+
+Two sensors can agree and still leave the cause uncertain. If both measure 𝑥 𝑡 , a
+genuine process change of 𝑎 𝑡 produces (𝑥 𝑡 + 𝑎 𝑡 , 𝑥 𝑡 + 𝑎 𝑡 ). The same readings arise if the
+process stays unchanged but both sensors acquire an additive fault 𝑎 𝑡 . With identical
+available observations and context, no detector can distinguish these explanations without
+additional information. Our stress study stores both scenarios with identical observations
+and different latent truth. Their ambiguity is known from construction, labeling these
+cases does not establish that the detector recognizes ambiguity immediately.
+
+5
+5.1
+
+Experimental Protocol
+Datasets, independence and candidates
+
+Table 1 summarizes the evaluated sensor intervals. S32L, S32N and S64N are 32 channel
+linear, 32 channel nonlinear and 64 channel nonlinear configurations of one coupled
+simulator, not independent datasets. New test trajectories separately record the physical
+process, uncorrupted noisy measurements and injected faults. The last two of twelve final
+trajectories use the predefined operating regime change.
+Intel provides 48 channels from twelve sensor nodes measuring temperature, humidity,
+light and voltage [7]. Completed five minute bins retain missing values without interpolation, chronological splits and gaps are preserved. SKAB has eight sensor/process channels
+split by experiment [9]. Native process events are evaluated separately, controlled faults
+use only reference windows without these events. Scaling uses training data, and physical
+source groups remain static.
+All real partitions informed the earlier study, new injections therefore test familiar
+recordings, not untouched environments. Test observations remain excluded from training.
+Earlier synthetic training, development and calibration sources are reused, preserving the
+previous comparator’s training opportunity.
+Each reference window, sampled by source block, produces one unchanged copy and
+four fault copies. Development and calibration use bias, drift, excess noise and stuck
+readings. Each final reference receives two known family faults and two ’held out family
+faults’, the latter rotate across spike, scale, replay and delay. Severities are newly sampled
+from the fixed range. Fault labels require a change in an observed target value. Wholly
+unobservable injections are recorded as availability outcomes. Primary injections leave
+other physical sources unchanged, but their original recordings may still contain faults.
+5.2
+
+Development selection and comparators
+
+Matched comparisons test what drives detection gains, fault scoring, neural modeling
+or labeled fault examples. The flow grid combines width/layer pairs (32, 4) and (64, 6)
+with context lengths 32 and 56. Each fit uses 600 AdamW steps, batches of 128, learning
+rate 0.001 and weight decay 0.0001. Normal development likelihood selects checkpoints
+and capacity. Three fixed seeds form one density mixture ensemble, not three ensemble
+repetitions. S32N and SKAB learning curves use one quarter, one half and all training
+blocks, (Table 7 reports model and training sizes).
+
+Table 1. Evaluated populations. Blocks gives training/final source counts. Candidates are sensor
+intervals. Eligibility requires all eight target observations, intervals with missing readings remain
+in the primary evaluation.
+Config. Channels Blocks Cases Candidates Faults Eligible
+S32L
+S32N
+S64N
+Intel
+SKAB
+
+32 12/12
+32 12/12
+64 12/12
+48 14/6
+8 7/10
+
+320
+320
+320
+220
+320
+
+10,240
+10,240
+20,480
+10,560
+2,560
+
+256
+256
+256
+138
+255
+
+100.0%
+100.0%
+100.0%
+65.0%
+100.0%
+
+Development selects corruption scale 1 or 2 and sampling budget 𝑀 ∈ {32, 128, 512,
+2048}. We choose the smallest budget with a 95th-percentile absolute score difference at
+most 0.25 and rank correlation at least 0.98 against 2048 draws, defaulting to 2048 if
+needed. These checks assess numerical stability without guaranteeing exact integration.
+Separate sampling seeds test repeatability. All choices, data hashes and numerical source
+hashes are frozen before final scoring.
+The identical flow’s negative log likelihood isolates the scoring contribution. PCA
+compares current-only and four-lag reconstructions, with valid ranks from 2, 4, 8
+and 16 selected by development candidate AP. Scores average target-channel squared
+residuals across eight steps, window maxima and full residual norms are stored separately.
+Conditional PPCA and two component mixture PPCA test neural modeling against
+Gaussian alternatives with identical graph context and 𝑞 𝜙 . Normal development likelihood
+selects ranks 2, 4 or 8. All channel PPCA is reported separately. Missing context
+is marginalized during evaluation but mean filled during fitting, a limitation when
+missingness is informative.
+GANF uses the authors’ unchanged recurrent, graph and autoregressive flow classes
+at a pinned revision, widths 16 and 32, ten graph optimization iterations and forty steps
+per iteration. The adapter excludes missing target losses and same source adjacency,
+aggregating the final eight coordinate densities. GANF can use preceding target readings
+within that interval and fills missing context without a mask. We report remaining
+acyclicity residuals rather than assuming exact convergence. MTGFlow was inspected
+but not run within budget.
+A gradient boosted classifier tests the value of explicit fault labels, using shape,
+earlier history, PCA residual and availability features. It trains on the four development
+fault types injected into training windows. The earlier diffusion witness, GDN, backbone
+residual and documented DiffAD adaptation [18] are rerun on shared manifests. The
+witness retains its top-four screen, ignored candidates receive a score floor, keeping
+excluded faults as misses. Earlier window level results remain archived separately.
+5.3
+
+Confidence and decision policy
+
+Three disjoint sets of whole calibration blocks separate probability estimation, alarm
+calibration and repair selection. Labeled blocks fit each comparator’s logistic probability
+calibration using a robustly scaled score and scorable indicator. Normal blocks calibrate
+
+each window’s maximum candidate score. For 𝑛 normal calibration windows,
+Í
+1 + 𝑛𝑏=1 1{𝑆max,𝑏 ≥ 𝑆max,new }
+𝑝 window =
+.
+𝑛+1
+The minimum 1/(𝑛 + 1) limits attainable alarm levels; dependence and distribution shift
+further restrict guarantees.
+Remaining blocks select a repair probability threshold, maximizing coverage over a
+fixed grid subject to ten or more actions and a one-sided 95% Wilson failure upper bound
+≤ 0.10. If none qualifies, the policy abstains. Under dependence, this is a calibration
+diagnostic, not a deployment guarantee. Test failures and harmful repairs are reported.
+Marginal CRPS, interval coverage and width, and joint energy score assess repair
+distributions [6]. Flow energy estimates use 512 weighted sample pairs.
+5.4
+
+Endpoints and uncertainty
+
+Primary AP measures fault ranking across all sensor intervals, including clean windows
+and unaffected candidates. For comparator 𝑏, the registered contrast is
+Õ
+Δ𝑏 = 13
+(APratio,d − AP𝑏,𝑑 ),
+𝑑 ∈ {synthetic,Intel,SKAB}
+
+The three synthetic configurations are averaged first, giving each dataset family equal
+weight. The practical improvement margin is 0.02 absolute AP. Directional H1 requires
+positive evidence against both PCA and same flow NLL.
+Uncertainty uses 1000 paired whole block bootstrap replicates, resampling synthetic
+trajectories, Intel time blocks and SKAB experiments while retaining correlated candidates and injected copies. Paired 32-channel synthetic seeds share draws. Individual
+97.5% intervals for the two primary contrasts support a Bonferroni simultaneous 95%
+statement. Dataset intervals are descriptive, few real blocks limit stability. Training
+seeds are not independent test subjects. Secondary metrics assess localization, window
+detection, calibration, review precision, repairs and measured costs.
+
+6
+6.1
+
+Results
+Primary comparison and neural contribution
+
+Across 1,500 cases and 54,080 candidate intervals, the generative fault score achieves
+family macro AP of 0.438, compared with 0.307 for PCA and 0.423 for same-flow NLL.
+Paired gains are +0.131 [+0.093, +0.147] and +0.015 [+0.005, +0.027], respectively.
+Both simultaneous primary intervals are positive, supporting directional H1 under the
+locked protocol. The comparison with the identical flow demonstrates the added detection
+value of explicit fault explanations. Its smaller gain remains below the chosen 0.02
+practical margin. Improvements over PCA extend to S64N and both real data families,
+with SKAB contributing most of the macro gain. This identifies settings where the
+generative testing framework improves fault ranking. PCA remains stronger in both
+
+Table 2. Sensor-interval average precision over the full candidate population. The synthetic
+configurations form one family in the macro-average. All methods use identical cases and
+complete-target eligibility.
+Method
+
+S32L S32N S64N Intel SKAB Macro
+
+Flow + corruption
+PCA residual
+Same-flow NLL
+Graph PPCA + corruption
+Mixture PPCA + corruption
+All-channel PPCA + corruption
+Official GANF
+Supervised trees
+Legacy diffusion witness
+GDN residual
+Diffusion residual
+DiffAD adaptation
+
+0.589
+0.680
+0.588
+0.654
+0.654
+0.722
+0.532
+0.708
+0.494
+0.305
+0.665
+0.482
+
+0.633
+0.659
+0.632
+0.629
+0.626
+0.697
+0.473
+0.700
+0.632
+0.416
+0.623
+0.443
+
+0.608
+0.541
+0.600
+0.594
+0.584
+0.474
+0.290
+0.641
+0.449
+0.429
+0.439
+0.299
+
+0.075
+0.018
+0.058
+0.032
+0.028
+0.019
+0.015
+0.366
+0.014
+0.024
+0.016
+0.029
+
+0.628
+0.275
+0.604
+0.494
+0.473
+0.394
+0.230
+0.686
+0.188
+0.265
+0.379
+0.481
+
+0.438
+0.307
+0.423
+0.384
+0.374
+0.348
+0.225
+0.578
+0.242
+0.224
+0.324
+0.306
+
+Table 3. Known and held-out fault families, each pooled with clean windows. Entries give
+flow-ratio AP / PCA AP. Held-out mechanisms were absent from channel modeling and classifier
+development.
+Config.
+S32L
+S32N
+S64N
+Intel
+SKAB
+
+Known
+
+Held out
+
+0.785/0.918
+0.888/0.928
+0.875/0.795
+0.095/0.018
+0.790/0.318
+
+0.371/0.471
+0.365/0.411
+0.325/0.282
+0.035/0.013
+0.420/0.208
+
+32-channel synthetic settings, with negative paired intervals for the ratio. Intel’s absolute
+performance remains limited: only 65.0% of target blocks are eligible, and 37 changed
+targets remain unscorable misses.
+The ratio improves the point estimate over matched PPCA by +0.054 [-0.007, +0.082].
+H2 remains inconclusive because this and the mixture-PPCA interval span zero. Gaussian
+controls are particularly effective in the linear setting. Supervised trees lead every
+configuration, with a macro advantage of 0.140 and ratio-minus-tree interval [-0.169,
+-0.114], providing a strong benchmark when labeled faults are available. GANF and rerun
+legacy methods broaden the comparison (Table 2). Top-one ratio attribution is 0.660 on
+S32N, 0.065 on Intel and 0.631 on SKAB. Although held-out mechanisms substantially
+reduce AP, the ratio retains its advantage over PCA in S64N and both real-data families
+(Table 3).
+6.2
+
+Calibration, review and repair
+
+The ratio improves Brier score over PCA in all synthetic configurations and SKAB,
+supporting improved probability prediction on these datasets. Intel exposes a calibration
+
+0.80.8
+0.8
+
+0.60.6
+
+1.0
+
+0.60.6
+0.6
+0.40.4
+0.4
+
+0.20.2
+0.2
+
+0.00.0
+0.00.0 0.20.2 0.40.4 0.60.6 0.80.8 1.01.0
+
+Intel n = 10,560
+S32N
+n =n10,240
+S32N
+= 10,240
+
+0.80.8
+0.8
+
+0.40.4
+0.4
+
+0.20.2
+
+Recall
+Recall
+
+PCA
+PCA
+1.0
+SKAB n = 2,560
+
+SKAB
+SKAB
+n=
+n 2,560
+= 2,560
+Intel n = 10,560
+
+1.01.0
+1.0
+
+0.60.6
+0.6
+
+0.40.4
+
+S32N n = 10,240
+
+Intel
+Intel
+n=
+n 10,560
+= 10,560
+S32N n = 10,240
+
+Precision
+Precision
+Precision
+
+0.80.8
+
+Precision
+Precision
+
+1.01.0
+1.0
+
+Precision
+Precision
+Precision
+
+S32N
+S32N
+n=
+n 10,240
+= 10,240
+1.01.0
+
+0.20.2
+0.2
+
+0.00.0
+0.0
+0.00.0 0.20.2 0.40.4 0.60.6 0.80.8 1.01.0
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+
+Intel n = 10,560
+
+Recall
+Recall
+Recall
+
+Same-flow
+Same-flow
+NLL
+NLL
+PCA1.0
+
+0.00.0
+0.0
+0.00.0 0.20.2 0.40.4 0.60.6 0.80.
+0.0
+0.2
+0.4
+0.6
+0.
+
+SKAB n = 2,560
+
+Recall
+Recall
+Recall
+
+PPCA
+PPCA
++ corruption
++ corruptio
+Same-flow NLL
+
+Same-flow NLL
+PCAPCA
+S32L
+
+2L
+
+S32N
+
+2N
+
+S64N
+
+4N
+
+Intel
+
+tel
+
+SKAB
+
+AB
+
+cro
+0.00
+
+Macro
+0.02
+0.0 0.0
+
+PCA
+S32L
+S32L
+S32L
+S32N
+S32N
+S32N
+S64N
+S64N
+S64N
+Intel
+IntelIntel
+SKAB
+SKAB
+SKAB
+
+Recall
+Recall
+Recall
+
+Precision
+
+Precision
+Precision
+
+Precision
+
+Precision
+Precision
+
+Recall
+Recall
+Recall
+
+Precision
+
+Precision
+
+Intel
+n =n 10,560
+SKAB
+n=
+S32L
+S32L
+S32L
+S32L
+S32L
+S32L
+Intel
+= 10,560
+SKAB
+n 2,560
+= 2,560
+1.0
+S32L
+S32L
+0.8
+0.8
+0.8
+1.0 1.0
+1.0 1.0
+1.0
+S32N
+S32N
+S32N
+S32N
+S32N
+S32N
+S32N
+S32N
+0.8
+0.6
+0.6
+0.6
+0.8
+0.8
+S64N
+S64N
+S64N
+S64N
+S64N
+S64N
+0.8
+0.8
+0.8
+S64N
+S64N
+0.6
+0.6
+0.6
+0.4
+0.4
+0.4
+Intel
+Intel
+Intel
+Intel
+Intel
+Intel
+0.6
+0.6
+0.6
+Intel
+Intel
+0.4
+SKAB
+SKAB
+SKAB
+SKAB
+SKAB
+SKAB
+0.4
+0.4
+0.2
+0.2
+0.2
+0.4
+0.4
+0.4
+SKAB
+SKAB
+0.2
+0.2
+0.2
+Macro
+Macro
+Macro
+Macro
+Macro
+Macro
+0.2
+0.2
+0.2
+0.0
+0.0
+0.0
+Macro
+Macro
+0.0 0.8
+0.0
+0.2
+0.4
+0.6
+1.00.0
+0.2
+0.60.00
+0.8
+1.0
+0.0
+0.2
+0.4 −0.1
+0.6
+0.0
+0.20.0
+0.2
+0.40.40.4 0.0
+0.00
+0.02
+0.02
+0.04
+0.04
+−0.1 0.8
+0.00.01.0 0.10.1
+0.
+0.0
+0.0
+0.0
+0.0
+0.0
+0.2
+0.4
+0.00
+0.02
+0.04
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+Flow
+Flow
+ratio
+ratio
+AP
+AP
+minus
+minus
+comparator
+comparator
+AP
+AP
+Flow
+Flow
+ratio
+ratio
+AP
+AP
+minus
+minus
+comparator
+comparator
+AP
+AP
+Flow
+Flow
+ratio
+ratio
+AP
+AP
+minus
+minus
+comparat
+compa
+Recall
+Recall
+Recall
+.0 0.00.2 0.20.4 0.40.6 0.60.8 0.81.0 1.0
+0.0 0.00.2 0.20.4 0.40.6 0.6 0.8 0.8 1.0 1.0
+0.0 0.0 0.20.2 0.40.4 0.60.6 0.80.8 1.01.0
+Flow ratio AP minus comparator AP
+Flow ratio AP minus compa
+Recall
+Recall
+
+Same-flow NLL
+PCAPCA
+
+Flow
+Flow
++ corruption
++ corruption
+PPCA + corruption
+Same-flow
+Same-flow
+NLL
+S32LNLL
+
+S32N
+S64N
+Intel
+SKAB
+
+Macro
+Macro
+Macro
+Macro
+0.04
+−0.1
+0.0
+0.1
+0.2
+0.4 0.020.02
+0.00
+0.2 0.2 0.0 0.4 0.4 0.2
+0.000.00
+0.04
+0.04
+
++PPCA
+corruption
+Same-flow
+Same-flow
+NLLNLLPPCAPPCA
++ corruption
++ corruption
+PCA
+
+Flow + corruption
+PPCA
++ corruption
+PPCA
++ corruption
+S32L
+
+S32L
+S32L
+
+S32N
+
+S32N
+S32N
+
+S64N
+
+S64N
+S64N
+
+Intel
+
+Intel
+Intel
+
+SKAB
+
+SKAB
+SKAB
+
+Macro
+
+Macro
+Macro
+
+0.02
+
+0.04
+−0.1
+
+Same-flow
+
+0.0
+
+0.1
+
+−0.1
+0.2
+
+0.0
+
+0.1
+
+0.2
+
+−0.1
+0.0
+0.1
+0.2
+ow ratio AP minus comparator AP
+Flow ratio AP minus comparator AP
+Flow
+ratio
+AP minus
+AP minus
+Flow
+ratio AP
+minusFlow
+comparator
+APminus
+Flow ratio
+AP minus comparator AP
+owFlow
+ratioratio
+AP minus
+comparator
+AP AP comparator
+Flow
+ratio
+AP
+comparator
+AP AP
+ratio
+AP AP
+minus
+comparator
+APAP
+AP minus
+comparator
+Flow
+ratio
+AP minus
+comparator
+Flow
+ratio
+comparator
+PCA
+
+Same-flow NLL
+PPCA + corruption
++ corruption Flow PCA
+PCA
+Same-flow
+FlowFlow
++ corruption
+Same-flow
+NLLNLL
++ corruption
+PCA
+
+PPCA
++ corruption
+PPCA
++ corruption
+Same-flow
+NLL
+
+PPCA + corruption
+
+Fig. 2. Sensor-interval precision–recall curves and paired AP differences. All configurations
+contribute to the three-family macro contrast. Dataset intervals are 95%. The two primary macro
+intervals are 97.5% individually.
+
+Table 4. Flow ratio confidence and selected repair policy on final cases. Alarms use the separately
+calibrated window maximum at level 0.10. Repair counts cover all evaluation cases. A dash denotes
+undefined risk because no action was accepted.
+Config. Brier Log loss Min. 𝑝 False alarms
+S32L
+S32N
+S64N
+Intel
+SKAB
+
+0.012
+0.012
+0.007
+0.068
+0.053
+
+0.066
+0.065
+0.037
+0.441
+0.276
+
+0.027
+0.027
+0.027
+0.059
+0.026
+
+6/64
+10/64
+4/64
+79/82
+3/65
+
+Config. Recall Repairs Failed Harmful
+S32L
+S32N
+S64N
+Intel
+SKAB
+
+0.590
+0.691
+0.648
+0.993
+0.463
+
+122
+134
+125
+0
+123
+
+0/122
+0/134
+0/125
+–
+24/123
+
+0
+0
+0
+0
+24
+
+limit: Brier score is 0.068 with block interval [0.054, 0.082], versus PCA’s 0.017. Its
+minimum window p-value of 0.059 cannot resolve 1% or 5% alarm alpha levels. At level
+0.10, 79 of 82 unchanged cases alarm, so improved AP does not establish usable Intel
+alarms. Normal cases include injections that changed no observed coordinate.
+Synthetic repairs provide a positive result, the flow policy accepts useful corrections
+without observed failures. S64N accepts 125 of 320 cases, compared with no PCA
+recommendations and 129 for PPCA. PPCA overall achieves greater coverage. Zero
+observed failures does not establish zero population risk, particularly with dependent
+blocks. Intel abstains throughout, leaving recommendation risk undefined.
+On SKAB, 123 accepted repairs have 24 harmful failures, risk 0.195 with block
+interval [0.000, 0.400], versus 0.371 for PCA and 0.183 for PPCA. Observed risk is lower
+than PCA’s, but exceeds the calibration target; H3 remains unestablished. Matched PPCA
+also has lower CRPS and energy score throughout (Table 5), while wider flow intervals
+do not ensure reliable real-data coverage. Successful and failed examples (Figure 4)
+make these trade-offs inspectable. The framework therefore distinguishes detection gains
+from repair quality and decision reliability. Calibrated probabilities reflect the designed
+injection prevalence, not operational physical failure probabilities.
+6.3
+
+Ablations and adverse conditions
+
+Graph context contributes a clear detection gain, macro AP improves by 0.053 [+0.028,
++0.077] over own history alone. Integration adds 0.003 [-0.007, +0.020] over replacing
+generated references with their prior mean, leaving its additional benefit inconclusive.
+Family macro AP is 0.427 for one member and 0.468 when member log ratios are
+averaged instead of mixing densities. All ’leave one corruption channel out’ results are
+retained without revising the fault prior after testing, scale sensitivity uses development
+results.
+
+Intel reliability
+
+0.0
+0.0
+
+0.2
+
+0.4
+
+1.00
+
+probability
+0.00
+0.00 0.25
+0.25
+
+0.00
+0.50
+0.50
+
+0.75
+0.75
+
+1.0
+10,240
+10,240candidates
+candidates
+
+1.0
+10,560
+10,560candidates
+candidates
+
+10,560 candidates
+
+0.5
+0.5
+
+0.0
+0.0
+
+0.0
+0.0 0.75
+0.50
+
+Fitted
+Fittedfault
+faultprobability
+probability
+
+1.0
+1.0
+
+0.0
+0.0 0.8
+0.6
+
+0.25
+
+0.75
+0.75 Fitted
+1.00
+1.00fault
+
+Fitted
+Fittedfault
+faultprobability
+probability
+
+Review precision
+
+0.5
+
+Review precision
+precision
+Review
+
+1.0
+
+0.2
+0.2
+
+Candidate review coverage
+
+0.4
+0.4
+
+0.5
+
+0.0
+0.0
+
+0.6
+0.6
+
+0.2
+
+0.8
+0.8
+
+0.4
+
+1.0
+1.0
+
+1.0
+1.0
+
+0.5
+0.5
+
+0.0
+0.0
+0.6
+0.8
+1.0
+0.0
+0.0 0.2
+0.2 0.4
+0.4
+
+Candidate review coverage
+
+Candidate
+Candidatereview
+reviewcoverage
+coverage
+
+0.25
+
+Fitted
+1.00
+1.00
+
+0.8
+0.8
+
+0.5
+0.5
+
+0.0
+0.0
+0.50
+
+0.75
+
+1.00
+
+fault probability
+0.00
+0.00 0.25
+0.25
+
+0.50
+0.50
+
+0.75
+0.7
+
+2,560 candidates
+
+2,560
+2,560candidate
+candidate
+
+0.0
+0.0
+
+1936,
+1936,411,
+411,43,
+43,23,
+23,10
+10
+4,
+4,7,
+7,3,
+3,4,
+4,119
+119
+
+Fitted
+Fittedfault
+faultprobabil
+probab
+
+0.5
+
+0.6
+0.6
+
+0.2
+
+1.0
+1.0
+
+1.0
+1.0
+
+0.5
+0.5
+
+0.00.6
+0.40.0
+
+0.0
+0.0
+
+0.8
+
+0.2
+0.2
+
+1.0
+
+0.4
+0.4
+
+Candidate review coverage
+
+Candidate
+Candidatereview
+reviewcoverage
+coverage
+
+0.6
+0.6
+
+0
+
+Candidate
+Candidatereview
+reviewcove
+cov
+
+0.0
+0.0
+
+0.2
+
+0.4
+
+0.5
+0.5
+
+0.0
+0.0
+
+0.0
+0.2
+0.4
+0.6 0.0
+0.8 0.2
+1.0 0.4
+
+0.5
+
+0.0
+
+0.6
+0.60.0 0.8
+0.80.2 1.0
+1.00.4
+
+1.0
+1.0
+Max actions
+Flow 12 PCA 220
+PPCA 220
+
+1.0
+
+Max
+Maxactions
+actions
+Flow
+Flow12
+12 PCA
+PCA220
+220
+PPCA
+PPCA
+220
+220
+0.5
+
+0.5
+0.5
+
+0.0
+0.0
+0.0 0.8
+0.2
+0.2 1.0
+0.4
+0.4
+0.60.0
+
+0.0
+
+0.6
+0.6 0.0
+0.8
+0.8
+
+1.0
+1.0
+0.2
+
+Repair
+Repair failure
+failure rate
+rate
+
+0.5
+
+1.0
+
+Max
+Maxactions
+actions
+Flow
+Flow320
+320 PCA
+PCA320
+320
+PPCA
+PPCA320
+320
+
+Repair
+Repair failure
+failure rate
+rate
+
+Repair failure
+failure rate
+rate
+Repair
+
+Max actions
+1.0
+1.0
+Flow 320 PCA 320
+PPCA 320
+
+Repair failure rate
+
+320 evaluation cases
+220 evaluation cases
+320 evaluation cases
+320
+320evaluation
+evaluationcases
+cases
+220
+220evaluation
+evaluationcases
+cases
+320
+320evaluation
+evaluationca
+ca
+
+1.0
+
+Repair failure rate
+
+Review precision
+
+10,240 candidates
+1.0
+
+0.00
+0.50
+0.50
+
+0.0
+
+Fault
+Fault frequency
+frequency
+
+1.00
+
+Fitted fault probability
+0.00
+0.00 0.25
+0.25
+
+0.5
+0.5
+
+Review
+Review precision
+precision
+
+0.0
+0.50 0.0
+0.75
+
+0.0
+
+Fault frequency
+
+0.5
+0.5
+
+9393,
+9393,233,
+233,105,
+105,50,
+50,65
+65
+53,
+53,48,
+48,35,
+35,56,
+56,522
+522
+0.5
+
+Review precision
+
+0.25
+
+Fault
+Fault frequency
+frequency
+
+0.0
+
+10048,
+10048,23,
+23,17,
+17,6,
+6,44
+0,
+0,2,
+2,2,
+2,3,
+3,135
+135
+0.5
+
+Review
+Review precision
+precision
+
+0.5
+
+0.00
+
+Repair failure rate
+
+SKAB reliability
+
+1.0
+1.0
+Counts in successive 0.1 bins
+Counts in successive 0.1 bins
+Counts in successive 0.1 bins
+S32N
+S32Nreliability
+reliability
+Intel
+Intelreliability
+reliability 1936, 411, 43, 23, 10
+SKAB
+SKABreliability
+reliability
+10048, 23, 17, 6, 4
+9393, 233, 105, 50, 65
+0, 2, 2, 3, 135
+53,
+48,
+35,
+56,
+522
+4, 7, 3, 4, 119 1.0
+1.0
+1.0 Counts
+1.0
+1.0 Counts
+1.0 Counts
+Countsininsuccessive
+successive0.1
+0.1bins
+bins
+Countsininsuccessive
+successive0.1
+0.1bins
+bins
+Countsininsuccessive
+successive0.1
+0.1bins
+bins
+
+Fault frequency
+
+1.0
+
+Fault frequency
+frequency
+Fault
+
+Fault frequency
+
+S32N reliability
+
+0.4
+
+Max actions
+Flow 267 PCA 320
+PPCA 320
+
+1.0
+1.0
+
+Max
+Ma
+Flow
+Flow267
+267 P
+PP
+P
+
+0.5
+0.5
+
+0.0
+0.0
+0.0
+0.0
+0.6
+
+0.2
+0.2
+0.8
+
+0.4
+0.4
+1.0
+
+0.6
+0.6
+
+0
+
+All-case
+All-caserepair
+repaircoverage
+coverage
+All-case
+All-caserepair
+repaircoverage
+coverage
+All-case
+All-caserepair
+repaircover
+cove
+All-case repair coverage
+All-case repair coverage
+All-case repair coverage
+Flow + corruption
+
+Flow
+Flow
+++corruption
+corruption
+PCA
+PCA
+PCA
+Same-flow
+NLL
+
+Same-flow
+Same-flow
+NLL
+NLL
+PPCA + corruption
+
+Fig. 3. Reliability, review precision and repair risk. Reliability insets count successive bins, five
+per line. Risk insets count actions at maximum coverage. Curves are threshold sweeps. Table 4
+gives calibration-selected actions. Zero coverage has undefined risk.
+
+PPCA
+PPCA++corruption
+corruption
+
+y
+
+Intel reliability
+Counts in successive 0.1 bins
+9393, 233, 105, 50, 65
+53, 48, 35, 56, 522
+
+0.5
+
+0.0
+
+1.00
+
+0.00
+
+ility
+
+0.50
+
+0.75
+
+Counts in successive 0.1 bins
+1936, 411, 43, 23, 10
+4, 7, 3, 4, 119
+
+0.5
+
+0.0
+
+1.00
+
+0.00
+
+0.5
+
+0.0
+0.0
+
+0.2
+
+0.4
+
+0.6
+
+0.8
+
+0.0
+
+1.0
+
+0.0
+
+Repair failure rate
+
+1.0
+
+rage
+
+w + corruption
+
+0.0
+0.2
+
+0.4
+
+0.6
+
+0.8
+
+All-case repair coverage
+PCA
+
+Same-flow NLL
+
+0.4
+
+0.6
+
+0.8
+
+1.0
+
+320 evaluation cases
+
+Max actions
+Flow 12 PCA 220
+PPCA 220
+
+0.0
+
+0.2
+
+Candidate review coverage
+
+1.0
+
+0.5
+
+1.00
+
+0.5
+
+220 evaluation cases
+
+x actions
+PCA 320
+PPCA 320
+
+0.75
+
+1.0
+
+Candidate review coverage
+
+ases
+
+0.50
+
+2,560 candidates
+Review precision
+
+Review precision
+
+10,560 candidates
+
+1.0
+
+0.25
+
+Fitted fault probability
+
+1.0
+
+verage
+
+0.8
+
+0.25
+
+1.0
+
+Fitted fault probability
+
+tes
+
+0.8
+
+Fault frequency
+
+1.0
+
+1.0
+
+Repair failure rate
+
+75
+
+Fault frequency
+
+s
+
+SKAB reliability
+
+1.0
+
+Max actions
+Flow 267 PCA 320
+PPCA 320
+
+0.5
+
+0.0
+0.0
+
+0.2
+
+0.4
+
+0.6
+
+0.8
+
+All-case repair coverage
+PPCA + corruption
+
+Fig. 3. Continued.
+
+1.0
+
+Table 5. Oracle-target repair distributions on eligible injected faults. Width and scores use trainingnormalized measurement units. Interval coverage is measured for nominal 90% marginal intervals.
+Lower CRPS and energy score are better.
+Config. Prior CRPS Coverage Width Energy
+S32L
+S32L
+S32N
+S32N
+S64N
+S64N
+Intel
+Intel
+SKAB
+SKAB
+
+ded
+
+0.157
+0.024
+0.039
+0.027
+0.084
+0.069
+3.494
+0.827
+0.391
+0.267
+
+0.930
+0.961
+0.975
+0.909
+0.912
+0.875
+0.399
+0.344
+0.775
+0.778
+
+1.328
+0.169
+0.341
+0.167
+0.488
+0.329
+1.154
+0.232
+1.202
+0.602
+
+Correct
+attribution
+Correct
+attribution
+
+600 600
+
+V
+V
+
+220
+220
+
+2.482.48
+
+V
+
+V
+
+lux
+
+lux
+
+240
+240
+
+2.502.50
+
+700 700
+
+200
+200
+
+2.462.46
+
+500 500
+S 12684.6,
+ESS ESS
+94.694.6
+S 12684.6,
+400 400
+2
+
+0
+
+4
+
+2
+
+4
+
+180
+180
+
+ESSESS
+91.8
+2.442.44S -5.9,
+S -5.9,
+91.8
+6
+
+0
+
+6
+
+2 2
+
+0
+
+Elapsed
+timetime
+(s) (s)
+Elapsed
+
+Incorrect attribution
+Correct attribution
+
+Offline reference
+
+Prior Recorded
+draws
+
+V
+
+VV
+
+lux
+
+V
+
+Elapsed
+time
+(s)
+Elapsed
+time
+(s)
+
+6
+
+Weighted
+mean
+and
+90%band
+band
+Weighted
+mean
+and
+90%
+
+220
+200
+
+2.46
+180
+
+S 31.8, ESS 1.0
+S -5.9, ESS 91.8
+0
+2
+0
+2
+
+180
+S 31.8, ESS 1.0
+
+4
+
+4
+
+Elapsed
+time (s)
+(s)
+Elapsed time
+
+Weighted
+mean and 90% band
+Offline reference
+Prior draws
+
+6
+
+6
+
+0
+
+22
+
+44
+
+Elapsed
+Elapsedtime
+time(s)
+(s)
+
+240
+
+2.48
+200
+
+2.44
+
+00
+
+Low sampling resolution
+
+220
+2.50
+
+6
+
+6 6
+
+Incorrect attribution
+
+2.50
+800
+
+6
+
+4 4
+
+Prior
+draws
+Prior
+draws
+
+240
+2.52
+
+2.48700
+
+SS
+31.8,
+ESS
+31.8,
+ESS1.0
+1.0
+
+Elapsed
+time
+(s)(s)
+Elapsed
+time
+
+Recorded
+Offline
+reference
+Recorded
+Offline
+reference
+Low sampling
+resolution
+
+2.52
+900
+
+600
+2.46
+500
+2.44 S -5.9, ESS 91.8
+400 S 12684.6, ESS 94.6
+0
+2
+4
+0
+2
+4
+
+Low
+Lowsampling
+samplingresolut
+resolu
+
+2.522.52
+
+800 800
+
+0
+
+0.468
+0.081
+0.129
+0.092
+0.285
+0.238
+9.905
+2.454
+1.249
+0.877
+
+Incorrect
+attribution
+Incorrect
+attribution
+
+900 900
+
+bution
+
+me (s)
+
+Flow
+PPCA
+Flow
+PPCA
+Flow
+PPCA
+Flow
+PPCA
+Flow
+PPCA
+
+2
+
+4
+
+Elapsed time (s)
+Weighted mean and 90% band
+
+Fig. 4. Cases chosen by frozen success, failure and numerical-adequacy rules. Gray trajectories are
+GPU generations. Blue bands are weighted 90% marginal intervals. Reference truth is only for
+offline evaluation. Low ESS limits repair reliability. Case IDs and hashes are distributed with the
+figure.
+
+6
+
+Table 6. Registered stress diagnostics on twelve source windows per configuration. First three
+columns give primary-target top-one rates. The last gives measurement alarms within a graph-only
+error affecting half the stored associations. This is cross-type confusion, not association diagnosis.
+Config. Single Half missing Half faulty Graph alarm
+S32L
+S32N
+S64N
+Intel
+SKAB
+
+1.000
+1.000
+1.000
+0.083
+0.833
+
+1.000
+0.917
+0.750
+0.250
+0.750
+
+0.000
+0.000
+0.083
+0.167
+0.167
+
+0.083
+1.000
+1.000
+0.750
+0.250
+
+The audits expose numerical limits alongside these gains. Even at 2048 draws per
+member, SKAB’s 95th percentile repeated seed score change is 0.952, so this finite
+reference does not establish exact integration. Low-ESS cases retain detection scores but
+abstain from repair. Missing support affects attribution (Table 6). With multiple faults,
+selecting another faulty sensor can lower original target top one accuracy without being
+incorrect. When half the other S32N sources are corrupted, AP across all true targets
+is 0.946, under the changed fault prevalence. Canonicalizing known copies preserves
+scores exactly in every registered copy case.
+Direct residuals provide a separate association diagnostic, achieving mean edge
+localization AP of 0.977 across twelve S32N cases with half the associations changed.
+Reading and association alarms can coincide or both remain silent. Cross type counts are
+saved; reading alarms do not prove false edges. The physical change counterexample
+clarifies an unavoidable ambiguity, identical readings can reflect a process change or
+shared sensor faults. All twelve S32N physical change cases trigger reading alarms at
+0.10. On 224 native SKAB windows, including 78 process-event windows, AP is 0.536
+for the ratio, 0.546 for NLL and 0.499 for PCA. These results assess process detection,
+not sensor fault diagnosis.
+
+6.4
+
+Numerical evidence and computation
+
+The implementation passes eight scalar-reference check groups and forty local tests.
+Eighteen flow checks cover inverse/Jacobian agreement, Gaussian integrals and posteriors,
+normalized corruption, units, mixture arithmetic, masking, missingness, source copies,
+chunking and repair damage. A GPU pilot trained a 22,048-parameter flow on Gaussian
+simulations, changing validation NLL from 10.669 to 5.722 in 9.69 seconds.
+The production audit reconstructs 107,620 calibration and final scores from saved
+component integrals, with maximum discrepancy 9.09 × 10−13 . Independent NumPy
+corruption densities and GPU model/draw replay check 30 full generation bundles.
+Maximum generation, normal density, corruption density and ratio discrepancies are 0,
+0, 9.12 × 10−12 and 3.95 × 10−12 . Weighted posterior means agree within 1.97 × 10−12 ;
+analytic and autograd Jacobian determinants agree within 3.55×10−15 for a trained model.
+Together, these checks link reported scores and repairs to the implemented equations,
+predictive quality is assessed through the benchmarks.
+
+Same-flow NLL
+
+PPCA + same q
+
+Deterministic plug-in
+
+Own history
+0.00
+
+0.04
+
+0.06
+
+0.08
+
+(b) Repe
+100
+
+10−1
+
+10−2
+102
+
+0.06
+
+0.08
+
+10−1
+
+10
+
+2
+
+per model
+
+6 × 101
+
+Intel
+SKAB
+
+4 × 101
+3 × 101
+
+102
+
+10−2
+
+103
+
+Prior draws per model
+
+10
+
+2
+
+103
+
+Prior draws per model
+Fig. 5. Equation contributions
+computational costs. inference
+The plugin replaces
+integration by the
+(d)andOperational
+cost
+generated prior mean. Repeated seeds use fixed development cases. Panel (c) includes offline
+distribution
+102metrics. Panel (d) measures operational scoring and repair without truth-dependent
+Ratio + repair
+metrics.
+
+Wall time per window (ms)
+
+103
+
+S32L
+S32N
+S64N
+
+10
+
+NLL
+PCA
+
+1
+
+100
+10−1
+S32L
+
+S32N
+
+S64N
+
+Intel
+
+SKAB
+
+Wall time per window (ms)
+
+100
+
+(b) Repeated sampling seeds
+
+P difference
+
+t scoring cost
+
+Prio
+
+(c) Development scoring cost
+
+GPU scorer time (ms)
+
+95th percentile score change
+
+Family-macro AP difference
+
+each component
+
+4
+
+0.02
+
+95th percentile score change
+
+(a) Contribution of each component
+
+(d) Opera
+102
+101
+100
+10−1
+S32L
+
+S32N
+
+PPCA + same q
+
+Deterministic plug-in
+
+Own history
+0.00
+
+0.04
+
+0.06
+
+0.08
+
+100
+
+10−1
+
+10−2
+
+1
+
+0.08
+
+(b)
+sampling
+seeds
+(c)Repeated
+Development
+scoring
+cost
+S32L
+S32N
+S64N
+
+100 2
+10
+
+6 × 101
+10−1
+4 × 101
+
+22
+10
+10
+
+1033
+10
+
+Priordraws
+drawsper
+permodel
+model
+Prior
+
+Wall time per window (ms)
+
+103
+
+Intel
+SKAB
+
+3 × 101
+10−2
+
+P difference
+
+t scoring cost
+
+P
+
+(d) Operational inference cost
+102
+
+Ratio + repair
+NLL
+PCA
+
+101
+100
+10−1
+S32L
+
+S32N
+
+S64N
+
+per model
+
+Fig. 5. Continued.
+
+Intel
+
+SKAB
+
+Wall time per window (ms)
+
+0.06
+
+scorer time
+95thGPU
+percentile
+score(ms)
+change
+
+Family-macro AP difference
+
+each component
+
+4
+
+0.02
+
+95th percentile score ch
+
+Same-flow NLL
+
+(d) Op
+102
+101
+100
+10−1
+S32L
+
+S
+
+Table 7. Selected model size, training intervals and operational latency on the RTX PRO 4500.
+Times are medians of seven warm full window calls including repair summaries. Loading and
+offline truth metrics are excluded.
+Config. Params (k) Train 𝑁
+S32L
+S32N
+S64N
+Intel
+SKAB
+
+𝑀 Ratio (ms)
+
+96.9 11904 32
+96.9 11904 32
+97.4 23808 128
+97.2 5072 32
+96.5 3272 2048
+
+22.3
+22.7
+23.0
+22.5
+112.5
+
+The study completed 70 neural fits, including the Gaussian pilot, in 10.8 recorded
+fitting minutes, excluding data preparation, Gaussian-baseline fitting, scoring and evaluation. Selected flows contain 96,512 to 97,408 parameters per member; peak allocation
+across registered neural fits is 0.49 GiB. Training the three selected members takes 34.5
+to 36.9 seconds per configuration. Operational scoring, repair summaries and evidence
+transfer take 22.3 to 112.5 milliseconds per window (Table 7). Same flow NLL takes 9.3
+to 10.5 milliseconds, versus 0.10 to 0.15 for PCA. PCA and PPCA run on the CPU. GANF
+acyclicity residuals of 1.53e-05 to 0.00776 record incomplete convergence within budget.
+Neural computation uses float32 and score arithmetic float64, without mixed precision.
+Independent replay exposed a float32 SciPy ensemble reduction, explicit promotion
+corrected the audit without changing predictions, models or the locked protocol. The
+failed audit and correction remain available.
+
+7
+
+Graph Evidence and Operator Review
+
+Versioned Neo4j records make detection and repair evidence traceable across sensors,
+physical sources, windows, associations, models, fault hypotheses, generations, scores
+and repairs. Large arrays use content addressed files. Observations remain immutable,
+accept, reject and defer decisions are stored separately without automatically applying
+repairs.
+A conventional 2-dimensional network presents named sensors and directed edges
+annotated with lag and training correlation. Red outlines identify disputed intervals, blue
+outlines supporting sources, and amber dashed edges separately assessed association
+disputes. Details show observed and generated trajectories, weighted repair intervals, ESS,
+benchmark probability and abstention. Reading scores do not establish per-edge certainty.
+The 23 saved cases cover first correct and incorrect attributions, inadequate sampling,
+constructed ambiguity and association review. Repeated Neo4j exports preserve entity
+counts. Automated browser checks verify evidence loading, node/edge selection, generated
+curves, hidden-by-default evaluation truth, artifact downloads, decision persistence and
+unchanged observations. These checks provide reproducible validation of the review
+interface; operator effectiveness remains to be evaluated.
+
+C11
+sensor_11
+
+C19
+sensor_19
+
+lag 1 samples
+|r train| 0.99
+lag 1 samples
+|r train| 0.99
+lag 1 samples
+|r train| 0.99
+
+C15
+sensor_15
+
+lag 2 samples
+|r train| 0.99
+
+C7
+
+C23
+
+sensor_07
+
+sensor_23
+
+Disputed C15 S 12684.6 ESS 94.6
+Disputed reading
+Allowed context
+
+Predictive edge
+
+Fig. 6. Saved S32N sensor network case with a topology-selected neighborhood. Gray arrows
+denote predictive associations, blue outlines mark conditioning sources, and red marks the disputed
+interval. Its score does not certify individual edges.
+
+8
+
+Discussion
+
+Generated alternatives connect fault detection to proposed corrections and inspectable
+graph evidence. Across three dataset families, macro AP increases by 0.131 over PCA
+and 0.015 over same-flow likelihood, with both primary intervals above zero. Supporting
+sensors improve detection over own history alone. SKAB drives most of the PCA gain,
+and the likelihood gain remains below the 0.02 practical margin.
+Separate evaluation of ranking, confidence and repair shows where detection gains
+support useful actions. Synthetic repairs are beneficial without observed failures, but
+poor Intel calibration and harmful SKAB recommendations prevent dependable deployment claims. Matched Gaussian and mean-replacement controls leave neural and
+integration benefits unresolved; supervised trees perform better with labeled faults. These
+comparisons guide confidence calibration, repair selection and abstention.
+The findings concern controlled faults in short, complete intervals. Missing measurements, simultaneous failures, irregular timing and process-versus-fault ambiguity limit
+generalization.
+
+9
+
+Conclusion
+
+This work connects generative AI to a complete sensor-review workflow, generating
+plausible readings, testing fault explanations, proposing corrections and presenting
+traceable graph evidence. The evaluation establishes detection gains over PCA and
+same-model likelihood while identifying remaining confidence and repair challenges.
+Its contribution combines measured improvements with a reproducible framework for
+investigating when generative sensor diagnosis can support trustworthy decisions.
+
+AI disclosure
+OpenAI Codex1 assisted with developing the software and grammar checking. It also
+assisted with the present manuscript’s LaTeX conversion, anonymization and proofreading.
+The authors take responsibility for the research design, verification of results, references,
+manuscript and final content.
+
+References
+1. Baumgartner, D., de Souza da Silva, E., Urteaga, I.: Anomaly detection in time-series via
+inductive biases in the latent space of conditional normalizing flows. In: Proceedings of
+the 42nd Conference on Uncertainty in Artificial Intelligence. Proceedings of Machine
+Learning Research, vol. 337, pp. 448–468 (2026), https://proceedings.mlr.press/
+v337/baumgartner26a.html
+2. Chen, Y., Zhang, C., Ma, M., Liu, Y., Ding, R., Li, B., He, S., Rajmohan, S., Lin, Q.,
+Zhang, D.: ImDiffusion: Imputed diffusion models for multivariate time series anomaly
+detection. Proceedings of the VLDB Endowment 17(3), 359–372 (2023). https://doi.
+org/10.14778/3632093.3632101
+1 OpenAI, Codex: https://openai.com/codex/ (accessed November 10, 2026).
+
+3. Dai, E., Chen, J.: Graph-augmented normalizing flows for anomaly detection of multiple time
+series. In: International Conference on Learning Representations (2022)
+4. Deng, A., Hooi, B.: Graph neural network-based anomaly detection in multivariate time series.
+Proceedings of the AAAI Conference on Artificial Intelligence 35(5), 4027–4035 (2021)
+5. Dinh, L., Sohl-Dickstein, J., Bengio, S.: Density estimation using Real NVP. In: International
+Conference on Learning Representations (2017)
+6. Gneiting, T., Raftery, A.E.: Strictly proper scoring rules, prediction, and estimation. Journal
+of the American Statistical Association 102(477), 359–378 (2007)
+7. Intel Berkeley Research Lab: Intel lab data (2004), https://db.csail.mit.edu/labdata/
+labdata.html, accessed: September 30, 2026
+8. Jackson, J.E., Mudholkar, G.S.: Control procedures for residuals associated with principal
+component analysis. Technometrics 21(3), 341–349 (1979)
+9. Katser, I.D., Kozitsin, V.O.: Skoltech anomaly benchmark (SKAB) (2020), https://github.
+com/waico/SKAB
+10. Liu, M., Huang, H., Feng, H., Sun, L., Du, B., Fu, Y.: PriSTI: A conditional diffusion
+framework for spatiotemporal imputation. In: 2023 IEEE 39th International Conference on
+Data Engineering (ICDE). pp. 1927–1939 (2023). https://doi.org/10.1109/ICDE55515.
+2023.00150
+11. Mehranbod, N., Soroush, M., Panjapornpon, C.: A method of sensor fault detection and
+identification. Journal of Process Control 15(3), 321–339 (2005)
+12. Ren, J., Liu, P.J., Fertig, E., Snoek, J., Poplin, R., DePristo, M.A., Dillon, J.V., Lakshminarayanan, B.: Likelihood ratios for out-of-distribution detection. In: Advances in Neural
+Information Processing Systems. vol. 32 (2019)
+13. Tashiro, Y., Song, J., Song, Y., Ermon, S.: CSDI: Conditional score-based diffusion models for
+probabilistic time series imputation. In: Advances in Neural Information Processing Systems.
+vol. 34, pp. 24804–24816 (2021)
+14. Tipping, M.E., Bishop, C.M.: Mixtures of probabilistic principal component analysers. Neural
+Computation 11(2), 443–482 (1999)
+15. Tipping, M.E., Bishop, C.M.: Probabilistic principal component analysis. Journal of the Royal
+Statistical Society, Series B 61(3), 611–622 (1999)
+16. Whang, J., Lei, Q., Dimakis, A.G.: Solving inverse problems with a flow-based noise model.
+In: Proceedings of the 38th International Conference on Machine Learning. Proceedings of
+Machine Learning Research, vol. 139, pp. 11146–11157 (2021), https://proceedings.
+mlr.press/v139/whang21a.html
+17. Wright, M.A., Horowitz, R.: Particle-filter-enabled real-time sensor fault detection without a
+model of faults. In: 2017 IEEE 56th Annual Conference on Decision and Control (CDC). pp.
+5757–5763 (2017)
+18. Xiao, C., Gou, Z., Tai, W., Zhang, K., Zhou, F.: Imputation-based time-series anomaly
+detection with conditional weight-incremental diffusion models. In: Proceedings of the 29th
+ACM SIGKDD Conference on Knowledge Discovery and Data Mining. pp. 2742–2751 (2023).
+https://doi.org/10.1145/3580305.3599391
+19. Zhou, Q., Chen, J., Liu, H., He, S., Meng, W.: Detecting multivariate time series anomalies
+with zero known label. Proceedings of the AAAI Conference on Artificial Intelligence 37(4),
+4963–4971 (2023). https://doi.org/10.1609/aaai.v37i4.25623
+

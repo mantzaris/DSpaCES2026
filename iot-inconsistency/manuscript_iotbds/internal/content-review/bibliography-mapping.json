@@ -1,0 +1,267 @@
+{
+  "source": "iot-inconsistency/paper/main.tex embedded thebibliography",
+  "source_sha256": "8182cf934a8b138ef00906902071567bd7066612690d6da2e9b8ab5205b07722",
+  "embedded_sha256": "961afd558d6e50ddf6a5e631a19327159bf0ad0312613f509bfbe0b3a15da1ef",
+  "citation_keys": [
+    "pca",
+    "ppca",
+    "mppca",
+    "ganf",
+    "mtgflow",
+    "latentflow",
+    "realnvp",
+    "ratio",
+    "bayesfault",
+    "wright",
+    "whang",
+    "csdi",
+    "pristi",
+    "imdiffusion",
+    "gdn",
+    "intel",
+    "skab",
+    "diffad",
+    "crps"
+  ],
+  "all_19_cited_keys_preserved": true,
+  "entries": [
+    {
+      "key": "pca",
+      "bibtex_type": "article",
+      "fields": {
+        "author": "Jackson, J. E. and Mudholkar, G. S.",
+        "title": "Control procedures for residuals associated with principal component analysis",
+        "journal": "Technometrics",
+        "volume": "21",
+        "number": "3",
+        "pages": "341--349",
+        "year": "1979"
+      }
+    },
+    {
+      "key": "ppca",
+      "bibtex_type": "article",
+      "fields": {
+        "author": "Tipping, M. E. and Bishop, C. M.",
+        "title": "Probabilistic principal component analysis",
+        "journal": "Journal of the Royal Statistical Society, Series B",
+        "volume": "61",
+        "number": "3",
+        "pages": "611--622",
+        "year": "1999"
+      }
+    },
+    {
+      "key": "mppca",
+      "bibtex_type": "article",
+      "fields": {
+        "author": "Tipping, M. E. and Bishop, C. M.",
+        "title": "Mixtures of probabilistic principal component analysers",
+        "journal": "Neural Computation",
+        "volume": "11",
+        "number": "2",
+        "pages": "443--482",
+        "year": "1999"
+      }
+    },
+    {
+      "key": "ganf",
+      "bibtex_type": "inproceedings",
+      "fields": {
+        "author": "Dai, E. and Chen, J.",
+        "title": "Graph-augmented normalizing flows for anomaly detection of multiple time series",
+        "booktitle": "International Conference on Learning Representations",
+        "year": "2022"
+      }
+    },
+    {
+      "key": "mtgflow",
+      "bibtex_type": "article",
+      "fields": {
+        "author": "Zhou, Q. and Chen, J. and Liu, H. and He, S. and Meng, W.",
+        "title": "Detecting multivariate time series anomalies with zero known label",
+        "journal": "Proceedings of the AAAI Conference on Artificial Intelligence",
+        "volume": "37",
+        "number": "4",
+        "year": "2023",
+        "pages": "4963--4971",
+        "doi": "10.1609/aaai.v37i4.25623"
+      }
+    },
+    {
+      "key": "latentflow",
+      "bibtex_type": "inproceedings",
+      "fields": {
+        "author": "Baumgartner, D. and de Souza da Silva, E. and Urteaga, I.",
+        "title": "Anomaly detection in time-series via inductive biases in the latent space of conditional normalizing flows",
+        "booktitle": "Proceedings of the 42nd Conference on Uncertainty in Artificial Intelligence",
+        "series": "Proceedings of Machine Learning Research",
+        "volume": "337",
+        "year": "2026",
+        "pages": "448--468",
+        "url": "https://proceedings.mlr.press/v337/baumgartner26a.html"
+      }
+    },
+    {
+      "key": "realnvp",
+      "bibtex_type": "inproceedings",
+      "fields": {
+        "author": "Dinh, L. and Sohl-Dickstein, J. and Bengio, S.",
+        "title": "Density estimation using {Real NVP}",
+        "booktitle": "International Conference on Learning Representations",
+        "year": "2017"
+      }
+    },
+    {
+      "key": "ratio",
+      "bibtex_type": "inproceedings",
+      "fields": {
+        "author": "Ren, J. and Liu, P. J. and Fertig, E. and Snoek, J. and Poplin, R. and DePristo, M. A. and Dillon, J. V. and Lakshminarayanan, B.",
+        "title": "Likelihood ratios for out-of-distribution detection",
+        "booktitle": "Advances in Neural Information Processing Systems",
+        "volume": "32",
+        "year": "2019"
+      }
+    },
+    {
+      "key": "bayesfault",
+      "bibtex_type": "article",
+      "fields": {
+        "author": "Mehranbod, N. and Soroush, M. and Panjapornpon, C.",
+        "title": "A method of sensor fault detection and identification",
+        "journal": "Journal of Process Control",
+        "volume": "15",
+        "number": "3",
+        "pages": "321--339",
+        "year": "2005"
+      }
+    },
+    {
+      "key": "wright",
+      "bibtex_type": "inproceedings",
+      "fields": {
+        "author": "Wright, M. A. and Horowitz, R.",
+        "title": "Particle-filter-enabled real-time sensor fault detection without a model of faults",
+        "booktitle": "2017 IEEE 56th Annual Conference on Decision and Control (CDC)",
+        "year": "2017",
+        "pages": "5757--5763"
+      }
+    },
+    {
+      "key": "whang",
+      "bibtex_type": "inproceedings",
+      "fields": {
+        "author": "Whang, J. and Lei, Q. and Dimakis, A. G.",
+        "title": "Solving inverse problems with a flow-based noise model",
+        "booktitle": "Proceedings of the 38th International Conference on Machine Learning",
+        "series": "Proceedings of Machine Learning Research",
+        "volume": "139",
+        "year": "2021",
+        "pages": "11146--11157",
+        "url": "https://proceedings.mlr.press/v139/whang21a.html"
+      }
+    },
+    {
+      "key": "csdi",
+      "bibtex_type": "inproceedings",
+      "fields": {
+        "author": "Tashiro, Y. and Song, J. and Song, Y. and Ermon, S.",
+        "title": "{CSDI}: Conditional score-based diffusion models for probabilistic time series imputation",
+        "booktitle": "Advances in Neural Information Processing Systems",
+        "volume": "34",
+        "year": "2021",
+        "pages": "24804--24816"
+      }
+    },
+    {
+      "key": "pristi",
+      "bibtex_type": "inproceedings",
+      "fields": {
+        "author": "Liu, M. and Huang, H. and Feng, H. and Sun, L. and Du, B. and Fu, Y.",
+        "title": "{PriSTI}: A conditional diffusion framework for spatiotemporal imputation",
+        "booktitle": "2023 IEEE 39th International Conference on Data Engineering (ICDE)",
+        "year": "2023",
+        "pages": "1927--1939",
+        "doi": "10.1109/ICDE55515.2023.00150"
+      }
+    },
+    {
+      "key": "imdiffusion",
+      "bibtex_type": "article",
+      "fields": {
+        "author": "Chen, Y. and Zhang, C. and Ma, M. and Liu, Y. and Ding, R. and Li, B. and He, S. and Rajmohan, S. and Lin, Q. and Zhang, D.",
+        "title": "{ImDiffusion}: Imputed diffusion models for multivariate time series anomaly detection",
+        "journal": "Proceedings of the VLDB Endowment",
+        "volume": "17",
+        "number": "3",
+        "pages": "359--372",
+        "year": "2023",
+        "doi": "10.14778/3632093.3632101"
+      }
+    },
+    {
+      "key": "gdn",
+      "bibtex_type": "article",
+      "fields": {
+        "author": "Deng, A. and Hooi, B.",
+        "title": "Graph neural network-based anomaly detection in multivariate time series",
+        "journal": "Proceedings of the AAAI Conference on Artificial Intelligence",
+        "volume": "35",
+        "number": "5",
+        "year": "2021",
+        "pages": "4027--4035"
+      }
+    },
+    {
+      "key": "intel",
+      "bibtex_type": "misc",
+      "fields": {
+        "author": "{Intel Berkeley Research Lab}",
+        "title": "Intel lab data",
+        "year": "2004",
+        "note": "Accessed: September 30, 2026",
+        "url": "https://db.csail.mit.edu/labdata/labdata.html"
+      }
+    },
+    {
+      "key": "skab",
+      "bibtex_type": "misc",
+      "fields": {
+        "author": "Katser, I. D. and Kozitsin, V. O.",
+        "title": "Skoltech anomaly benchmark ({SKAB})",
+        "year": "2020",
+        "url": "https://github.com/waico/SKAB"
+      }
+    },
+    {
+      "key": "diffad",
+      "bibtex_type": "inproceedings",
+      "fields": {
+        "author": "Xiao, C. and Gou, Z. and Tai, W. and Zhang, K. and Zhou, F.",
+        "title": "Imputation-based time-series anomaly detection with conditional weight-incremental diffusion models",
+        "booktitle": "Proceedings of the 29th ACM SIGKDD Conference on Knowledge Discovery and Data Mining",
+        "year": "2023",
+        "pages": "2742--2751",
+        "doi": "10.1145/3580305.3599391"
+      }
+    },
+    {
+      "key": "crps",
+      "bibtex_type": "article",
+      "fields": {
+        "author": "Gneiting, T. and Raftery, A. E.",
+        "title": "Strictly proper scoring rules, prediction, and estimation",
+        "journal": "Journal of the American Statistical Association",
+        "volume": "102",
+        "number": "477",
+        "pages": "359--378",
+        "year": "2007"
+      }
+    }
+  ],
+  "mechanical_notes": [
+    "Author initials were retained as supplied; no full names invented.",
+    "mtgflow and gdn encoded as article records because the embedded source supplies Proceedings of AAAI volume and issue. This permits splncs04 to retain both rather than discard the issue as it does for inproceedings volume-plus-number. Venue text, authors, title, year, volume, issue and pages are unchanged.",
+    "All original field contents preserved; official style determines punctuation, sorting and name order. No external bibliography file was used as input."
+  ]
+}

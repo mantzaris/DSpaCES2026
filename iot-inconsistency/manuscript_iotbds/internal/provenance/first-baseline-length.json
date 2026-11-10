@@ -1,0 +1,6 @@
+{
+  "stage": "Original-wording Springer baseline before any anonymity or editorial changes; first table reflow, wide figures still full-width",
+  "method": "pdftotext -layout; Unicode NFKC; count non-whitespace code points including all extracted figure/reference/table/caption text",
+  "non_whitespace_characters": 38130,
+  "pages": 18
+}

@@ -1,0 +1,101 @@
+{
+  "pages": 22,
+  "characters": {
+    "pdftotext_nfkc_nonwhitespace": 44563,
+    "pymupdf_nfkc_nonwhitespace": 44558,
+    "figure_adjusted_rendered_estimate": 38158,
+    "adjustment_formula": "44558 full-PDF - 9123 extracted figure-font + 2723 original figures once = 38158",
+    "invisible_figure_extraction_surplus": 6400,
+    "absolute_difference": 5,
+    "relative_difference_percent": 0.011220070462042502,
+    "pdftotext_raw_nonwhitespace": 44563,
+    "pymupdf_raw_nonwhitespace": 44383,
+    "pdftotext_replacement_characters": 0,
+    "pymupdf_replacement_characters": 0,
+    "raw_and_adjusted_estimates_within_10000_50000": true,
+    "distance_to_50000_using_larger_estimate": 5437
+  },
+  "figure_minimum_pt": 6.162420272827148,
+  "all_figure_spans_at_least_6_pt": true,
+  "anonymity": {
+    "visible_body_identity_candidates": [
+      {
+        "match": "Alexander",
+        "context": "oT           Sensor Fault Detection and Repair                   Alexander V. Mantzaris1 and James H. Korris2                      1 School of Data, Mathematic"
+      },
+      {
+        "match": "Mantzaris",
+        "context": "Sensor Fault Detection and Repair                   Alexander V. Mantzaris1 and James H. Korris2                      1 School of Data, Mathematical and Statis"
+      },
+      {
+        "match": "Korris",
+        "context": "nd Repair                   Alexander V. Mantzaris1 and James H. Korris2                      1 School of Data, Mathematical and Statistical Sciences       "
+      },
+      {
+        "match": "University of Central Florida",
+        "context": "matical and Statistical Sciences                                 University of Central Florida                                     Orlando, FL, USA                        alexande"
+      },
+      {
+        "match": "Orlando",
+        "context": "niversity of Central Florida                                     Orlando, FL, USA                        alexander.mantzaris@ucf.edu                         "
+      },
+      {
+        "match": "alexander",
+        "context": "                         Orlando, FL, USA                        alexander.mantzaris@ucf.edu                                  2 Creative Technologies Inc.     "
+      },
+      {
+        "match": ".mantzaris@ucf.edu",
+        "context": "                Orlando, FL, USA                        alexander.mantzaris@ucf.edu                                  2 Creative Technologies Inc.                       "
+      },
+      {
+        "match": "Creative Technologies",
+        "context": "  alexander.mantzaris@ucf.edu                                  2 Creative Technologies Inc.                                 Hollywood, CA, USA                         jame"
+      },
+      {
+        "match": "Hollywood",
+        "context": "    2 Creative Technologies Inc.                                 Hollywood, CA, USA                         james.korris@cretecinc.com          Abstract. A tem"
+      },
+      {
+        "match": "james.korris@cretecinc.com",
+        "context": "                      Hollywood, CA, USA                         james.korris@cretecinc.com          Abstract. A temperature sensor reporting a sudden rise may indicate overhea"
+      }
+    ],
+    "public_dataset_link_exemptions": [
+      {
+        "match": "https://github.com/waico/SKAB\",",
+        "context": "33001708984375, 481.5880126953125, 238.32501220703125)\", \"uri\": \"https://github.com/waico/SKAB\", \"id\": \"\"}, {\"page\": 22, \"kind\": 2, \"xref\": 384, \"from\": \"Rect(149.95799255371094, 23",
+        "reason": "Public SKAB dataset repository preserved from the source bibliography; not a paper-author repository."
+      },
+      {
+        "match": "https://github.com/waico/SKAB\",",
+        "context": "28900146484375, 217.85299682617188, 248.4630126953125)\", \"uri\": \"https://github.com/waico/SKAB\", \"id\": \"\"}, {\"page\": 22, \"kind\": 2, \"xref\": 372, \"from\": \"Rect(322.83599853515625, 27",
+        "reason": "Public SKAB dataset repository preserved from the source bibliography; not a paper-author repository."
+      }
+    ],
+    "ordinary_third_person_reference_name_hits_exempt": [],
+    "other_reference_identity_candidates": [],
+    "metadata_and_structural_identity_candidates": [
+      {
+        "match": "Alexander",
+        "context": "rative AI for IoT Sensor Fault Detection and Repair\", \"author\": \"Alexander V. Mantzaris and James H. Korris\", \"subject\": \"\", \"keywords\": \"\", \"creator\": \"LaTeX "
+      },
+      {
+        "match": "Mantzaris",
+        "context": " IoT Sensor Fault Detection and Repair\", \"author\": \"Alexander V. Mantzaris and James H. Korris\", \"subject\": \"\", \"keywords\": \"\", \"creator\": \"LaTeX with hyperref"
+      },
+      {
+        "match": "Korris",
+        "context": "tion and Repair\", \"author\": \"Alexander V. Mantzaris and James H. Korris\", \"subject\": \"\", \"keywords\": \"\", \"creator\": \"LaTeX with hyperref\", \"producer\": \"pdfT"
+      }
+    ],
+    "blank_author_metadata": false,
+    "bookmarks": 1,
+    "non_link_annotations": 0,
+    "embedded_attachments": 0,
+    "form_widgets": 0,
+    "javascript_launch_attachment_or_form_objects": 0,
+    "internal_links": 28,
+    "external_links": 20,
+    "identity_expected_in_baseline": true
+  }
+}
