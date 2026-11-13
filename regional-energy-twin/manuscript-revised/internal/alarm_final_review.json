@@ -1,0 +1,90 @@
+{
+  "status": "pass",
+  "scope": "Read-only final audit of saved-score analysis, generated Table III, manuscript interpretation, and supporting plot. No GPU or new replay.",
+  "input_hashes_match_analysis_manifest": true,
+  "source_sha256": "6dd9f77eb2c93d65221bb0931089bada922578c32c05b1b8b645296c1c2441e0",
+  "manuscript_sha256_at_review": "f23361aeb96f87df87c3235d5617e4efcfb14d12ab1f8a511422d6a9bfa5183e",
+  "figure_sha256": "d48f0993e845dfd55e34f90b429eac815bf0133621bc133f84be98a936b9bcdd",
+  "independent_rechecks": [
+    "Python source parses",
+    "all historical input hashes match",
+    "normalized score reconstructed for every saved method including M3_fixed",
+    "strict score > 1 exactly reproduces all saved alarm flags",
+    "all M0-M4 frozen operating points reproduce",
+    "matched thresholds derive solely from 384 controls",
+    "tie counts and actual rates reproduce",
+    "96 event maxima use lags 0 through 6 inclusive",
+    "threshold curves are monotone"
+  ],
+  "policy_independence": {
+    "verified": true,
+    "reason": "replay_shock.py acquisition uses calibration trigger and revealed probe innovations before inference. qmacro/qfine/joint are applied only to subsequent alarm logging. Next-update prediction state uses M0 inference output, not alarm flags. ProbePolicy receives its separate trigger, not alarm decision thresholds.",
+    "source_locations": [
+      "scripts/replay_shock.py:40",
+      "scripts/replay_shock.py:88",
+      "scripts/replay_shock.py:132",
+      "scripts/replay_shock.py:201",
+      "src/evidence_fusion/shock_access.py:67"
+    ]
+  },
+  "window_correction": {
+    "published_B": "lags 0-5; preserved original counts",
+    "published_C": "lags 0-6; preserved original counts",
+    "new_sweep": "lags 0-6 inclusive",
+    "original_B_detection_M0_M1_M2_M3_M4": [
+      37,
+      17,
+      33,
+      29,
+      42
+    ],
+    "recomputed_B_frozen_detection_M0_M1_M2_M3_M4": [
+      43,
+      17,
+      35,
+      31,
+      42
+    ],
+    "current_maintext_distinguishes_windows": true
+  },
+  "control_alarm_counts_M0_M1_M2_M3_M4": [
+    36,
+    15,
+    25,
+    30,
+    41
+  ],
+  "matched_control_counts": [
+    7,
+    19,
+    38
+  ],
+  "control_denominator": 384,
+  "event_denominator": 96,
+  "actual_false_alarm_percent": [
+    1.8229166666666667,
+    4.947916666666667,
+    9.895833333333334
+  ],
+  "finite_sample_resolution_percentage_points": 0.2604166666666667,
+  "threshold_ties": "Strict > excludes tied threshold scores. Each selected real threshold has one equal control. Toy test verifies larger tie blocks. No randomization or interpolation.",
+  "localization": "No arbitrary-threshold localization is claimed; saved maxima and original alarmed-ID lists do not identify newly crossing affected groups.",
+  "maintext_assessment": "Table III, caption and surrounding text give correct denominators, actual common rates, window correction, unchanged acquisitions and retrospective limitations. No claim of a validated revised policy, reliable calibration or statistical equivalence.",
+  "visual_assessment": {
+    "render": "internal/alarm_final_review.png",
+    "result": "Pass: readable axes explicitly distinguish per-update control false alarms from per-event detection; circle and open-triangle legends distinguish recomputed lag-0-6 frozen points from published lag-0-5 counts. All five methods visible; no clipping or overlap. Legend does not cover data curves. Supporting figure, not an additional main-paper figure."
+  },
+  "remaining_qualifications": [
+    "Development controls reused for descriptive thresholds; no chronological validation.",
+    "Eight shared backgrounds across four weeks constrain inference; no independence-based significance claim.",
+    "Detection curve is not a localization curve."
+  ],
+  "files_written_this_audit": [
+    "internal/alarm_final_review.json",
+    "internal/alarm_final_review.png"
+  ],
+  "gpu_used": false,
+  "new_replay": false,
+  "analysis_seconds": 0.1739734149959986,
+  "execution_note": "Initial shell python alias was Python 2 and failed at import before accessing outputs; reran this saved-output audit successfully with python3."
+}

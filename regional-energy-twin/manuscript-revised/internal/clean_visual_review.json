@@ -1,0 +1,81 @@
+{
+  "reviewed_utc": "2026-11-10T23:20:32.292477+00:00",
+  "reviewer": "Primary Codex agent, every page visually inspected",
+  "pdf": "regional_twin_study.pdf",
+  "pdf_sha256": "6169e4805a12b657ea4d766903a40709c776487c7988e05f5a8a1d9d66a5357f",
+  "page_count": 10,
+  "pages": [
+    {
+      "page": 1,
+      "status": "pass",
+      "observation": "Title unchanged; confirmed two-author block and emails fit; abstract unchanged and legible.",
+      "render": "internal/render-clean/page-01.png",
+      "render_sha256": "a5e9cfb0b27e28047d0651e5ffb43aba97549db325f1e80fd3ead1e1443a6a61"
+    },
+    {
+      "page": 2,
+      "status": "pass",
+      "observation": "Introduction, literature and data protocol fit; no clipping of model equations.",
+      "render": "internal/render-clean/page-02.png",
+      "render_sha256": "8c0ba99a4d7c01fcd246f70366282319d811934d0065f52887bd4bee890b760b"
+    },
+    {
+      "page": 3,
+      "status": "pass",
+      "observation": "Definitions, mathematical proof, evidence replacement and restart limitation fit.",
+      "render": "internal/render-clean/page-03.png",
+      "render_sha256": "c72c6886c5433554e20d8b43106da6635fa2b7b3b88c0d4cc4a70b6c759dfa05"
+    },
+    {
+      "page": 4,
+      "status": "pass",
+      "observation": "Original Figure 1 and method table readable; observability equations and proof fit.",
+      "render": "internal/render-clean/page-04.png",
+      "render_sha256": "d643e5f393d55f4d33894d0786aa9198eae7cf041705a26b2f66b3d127b21b1d"
+    },
+    {
+      "page": 5,
+      "status": "pass",
+      "observation": "Gate equation, provenance and distinct calibration procedures readable; no overlap.",
+      "render": "internal/render-clean/page-05.png",
+      "render_sha256": "2dcc198be46d38319cc1e29e0d059841b64b7cde9f82ebb0a267f2ab9e7bf635"
+    },
+    {
+      "page": 6,
+      "status": "pass",
+      "observation": "Panel-specific detection windows explicit; macro-to-micro example and RQ1/RQ2 results legible.",
+      "render": "internal/render-clean/page-06.png",
+      "render_sha256": "b4b86f405cfae316ba2cc276e8c189e5279e2e79ebdf8360a82aad95875195bf"
+    },
+    {
+      "page": 7,
+      "status": "pass",
+      "observation": "Original principal rows preserved; matched-rate table, payload accounting and explanatory text fit.",
+      "render": "internal/render-clean/page-07.png",
+      "render_sha256": "6080c7f51995956d6777329264087909e441c260ffa97844ca9cdc9fad22c4f5"
+    },
+    {
+      "page": 8,
+      "status": "pass",
+      "observation": "Guidance table readable; Figure 2 post-event annotation and all curves legible; no overlap.",
+      "render": "internal/render-clean/page-08.png",
+      "render_sha256": "4be03b3839c44d583acceaf6ba3f709bfe31db709111ea6f417948699416af4c"
+    },
+    {
+      "page": 9,
+      "status": "pass",
+      "observation": "Paired-comparison plot readable; corrective results, timing and calibration limits visible.",
+      "render": "internal/render-clean/page-09.png",
+      "render_sha256": "c1cc7c44e6f76eec638f9735cce6abc6dd98c280dd05d37c48eacea82cb8d962"
+    },
+    {
+      "page": 10,
+      "status": "pass",
+      "observation": "Original acquisition diagram readable; conclusion and references fit with balanced final columns.",
+      "render": "internal/render-clean/page-10.png",
+      "render_sha256": "d76e3f2166edcb67d6c5de40fdfcb31dae600db164f17bc5d5b58be6dc696f79"
+    }
+  ],
+  "material_layout_issues": [],
+  "qualification": "Visual and compilation checks do not establish scientific calibration or submission certification."
+}

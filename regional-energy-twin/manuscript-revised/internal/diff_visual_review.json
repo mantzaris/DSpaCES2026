@@ -1,0 +1,123 @@
+{
+  "reviewed_utc": "2026-11-10T23:16:25.161895+00:00",
+  "reviewer": "Codex figure_annotation subagent: visual inspection of every supplied page render",
+  "marked_up": {
+    "pdf": "regional_twin_study_diff.pdf",
+    "pdf_sha256": "03af0be03565cf4cd6f2bd29476b0621657216d9bc4079b18d7988a497cb286b",
+    "page_count": 12,
+    "pages": [
+      {
+        "page": 1,
+        "status": "pass",
+        "observation": "Confirmed second author, affiliation and email now blue to identify the addition. Title and unchanged abstract fit; no clipping or overlap.",
+        "render": "internal/render-diff/page-01.png",
+        "render_sha256": "61b2bd3127022ecd8635a4f41b2177b2dfcb65aa917d632092829b45788d337c"
+      },
+      {
+        "page": 2,
+        "status": "pass",
+        "observation": "Contribution and related-work deletions are clear red strikeout. Added diagnostic limits and guidance are blue. No column overflow.",
+        "render": "internal/render-diff/page-02.png",
+        "render_sha256": "bfabfca9e6bbe1ed1d836294d2b0975f788e9bf35137e3e6cd7ae8a48619329a"
+      },
+      {
+        "page": 3,
+        "status": "pass",
+        "observation": "Definitions of synthetic groups, separator, formal coordinates, exposure and registered queries are legible. Equations and Proposition 1 fit.",
+        "render": "internal/render-diff/page-03.png",
+        "render_sha256": "d2796a5a3d56f27955fb4a3f8c5f1605bc42eec1d24146acb3f506c85210ff45"
+      },
+      {
+        "page": 4,
+        "status": "pass",
+        "observation": "Figure 1 and unchanged Table I are readable. Evidence-replacement equation and window-restart addition fit with no collision.",
+        "render": "internal/render-diff/page-04.png",
+        "render_sha256": "fde59077bfe87d52f2265a28a1558529c5b290ad2363105b74b7074cc59a422a"
+      },
+      {
+        "page": 5,
+        "status": "pass",
+        "observation": "Observability and threshold propositions remain readable. Gate-parameter provenance additions in blue are legible without equation overlap.",
+        "render": "internal/render-diff/page-05.png",
+        "render_sha256": "bb05a8d637c673484fde418d098beb45df75c1133ca1866ba25c0b40c49c3f42"
+      },
+      {
+        "page": 6,
+        "status": "pass",
+        "observation": "Calibration-segment correction and event-window correction are clearly marked. Denominators, model formulas and metrics prose fit.",
+        "render": "internal/render-diff/page-06.png",
+        "render_sha256": "59a604118af7b3b0a0e0ef6a4abbef4e9c59de3c7dad9dd21746be47f30c3537"
+      },
+      {
+        "page": 7,
+        "status": "pass",
+        "observation": "Original detection/localization and payload correction paragraphs are distinguishable in blue/red. Numeric text fits both columns.",
+        "render": "internal/render-diff/page-07.png",
+        "render_sha256": "e644e1ae30a7b7da187f2c914ab9416fa3c4f80636678ace4c3cc15b1a9c1ee9"
+      },
+      {
+        "page": 8,
+        "status": "pass",
+        "observation": "Table II caption changes are marked, and unchanged result rows are legible. Annotated Figure 2 is readable; post-event annotation does not hide the peak or falling curve. Caption edits fit.",
+        "render": "internal/render-diff/page-08.png",
+        "render_sha256": "db35d9d4fceeeb7cabd25458a259ece44155eea85ff2e5d266923d1ec00fbad0"
+      },
+      {
+        "page": 9,
+        "status": "pass",
+        "observation": "New Table III caption/header/body are entirely blue and legible. Old/new resource text and corrective diagnosis fit without clipping.",
+        "render": "internal/render-diff/page-09.png",
+        "render_sha256": "e617a631f4f038677b613e0e19408adcaf0e3e1eb23428078b725aa33e4912dd"
+      },
+      {
+        "page": 10,
+        "status": "pass",
+        "observation": "New findings/design-guidance Table IV is entirely blue and readable. Figure 3 and caption fit. Discussion deletions and replacements remain distinct.",
+        "render": "internal/render-diff/page-10.png",
+        "render_sha256": "26301fdea11b8a0a75d7a18e2942ae130e08b9081a1d2aa7fbffdc48a3243016"
+      },
+      {
+        "page": 11,
+        "status": "pass",
+        "observation": "Figure 4 is intact and readable. Calibration/validation/scale corrections and conclusion edits are legible.",
+        "render": "internal/render-diff/page-11.png",
+        "render_sha256": "c64ce4580ff2cd35213883e36f9cbb3a3bd88a388c65071c45f0a59570353517"
+      },
+      {
+        "page": 12,
+        "status": "pass",
+        "observation": "Conclusion continuation and all 13 references are readable. The short single-column ending is appropriate for the marked-up review document and has no clipped text.",
+        "render": "internal/render-diff/page-12.png",
+        "render_sha256": "abcbe43e2b6a262e18e71770c4f5669c748503334f889cbfcf45070e217577ec"
+      }
+    ]
+  },
+  "figure_comparison": {
+    "pdf": "figure_changes.pdf",
+    "pdf_sha256": "7278638eff66491a578ae6fb2d2b4e65686319be63593096fb2b921d16b657f7",
+    "page_count": 2,
+    "pages": [
+      {
+        "page": 1,
+        "status": "pass",
+        "observation": "Before Figure 2 comparison and explanation are readable; no clipping. Original peak remains visible and unannotated.",
+        "render": "internal/render-figures/page-1.png",
+        "render_sha256": "a7d5759bbfa52eabf14878c8f5c1135ca6596dbf915d9519781934fa5b7a8558"
+      },
+      {
+        "page": 2,
+        "status": "pass",
+        "observation": "After Figure 2 panel(d) annotation is readable and identifies the shared post-event spike; all plots/axes/legends fit. Technical-note cross-reference below fits.",
+        "render": "internal/render-figures/page-2.png",
+        "render_sha256": "28884a631c2caa65e6c85b33f3fadc3b7bb0685ffcb117d690feb7dc16718816"
+      }
+    ]
+  },
+  "material_layout_issues": [],
+  "qualifications": [
+    "Visual inspection establishes readability, not scientific correctness or PDF eXpress certification.",
+    "The 12-page marked-up PDF is supporting review material, not the 10-page clean submission."
+  ],
+  "final_reviewed_utc": "2026-11-10T23:20:32.292477+00:00",
+  "final_review_note": "Primary agent re-inspected final diff page 1 after coloring the added author blue. Renders of pages 2-12 are hash-identical to the pages inspected by the subagent. Both final figure-comparison pages re-inspected."
+}

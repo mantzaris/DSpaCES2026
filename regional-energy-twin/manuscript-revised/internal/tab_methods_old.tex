@@ -1,0 +1,20 @@
+\documentclass{article}
+\begin{document}
+\begin{table*}[!t]
+\caption{Interfaces for shock comparisons. All methods share the fitted model, 16 group sums and missingness masks. Attempts include missing readings. Fine access describes available evidence rather than model dimension.}
+\label{tab:methods}\centering
+\begin{tabular}{p{.14\textwidth}p{.25\textwidth}p{.26\textwidth}p{.25\textwidth}}
+\toprule
+Method & Additional observations & Acquisition rule & Comparison role\\
+\midrule
+M0 Aggregate & None & Aggregate change detector & Conditional household predictions\\
+M1 Probes & 41 fixed rotating probes & Same monitoring as M3 & Probe information control\\
+M2 Random & 41 probes + 168 random requests & Uniform selection without replacement & Matched observation budget\\
+M3 Gated & 41 probes + 168 extra requests & Threshold and hold. 42 explore, up to 126 target one group & Original adaptive policy\\
+M3b Ranked & Same 209 attempts & Highest positive score with unchanged exploration & Frozen ranking correction\\
+Fixed trace & M3 or M3b trace, delivered sequentially & No future acquisition decisions & Conventional retention under identical evidence\\
+M4 Full fine & All 4,194 household records & Streamed full access & Structured full information reference\\
+\bottomrule
+\end{tabular}
+\end{table*}
+\end{document}

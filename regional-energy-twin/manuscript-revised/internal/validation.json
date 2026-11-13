@@ -1,0 +1,36 @@
+{
+  "title_unchanged": true,
+  "abstract_verbatim": true,
+  "abstract_macros_unchanged": true,
+  "propositions_and_proofs_unchanged": true,
+  "original_result_table_unchanged": true,
+  "original_files_verified": 553,
+  "documents": {
+    "regional_twin_study": {
+      "pages": 10,
+      "pdf_sha256": "6169e4805a12b657ea4d766903a40709c776487c7988e05f5a8a1d9d66a5357f",
+      "warnings": [],
+      "font_inventory": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nSZZISG+NimbusRomNo9L-Regu            Type 1            Custom           yes yes no     100  0\nLREKMX+NimbusRomNo9L-MediItal        Type 1            Custom           yes yes no     102  0\nWSCXKC+NimbusRomNo9L-Medi            Type 1            Custom           yes yes no     103  0\nQEXVIH+NimbusRomNo9L-ReguItal        Type 1            Custom           yes yes no     126  0\nBRJZXV+CMMI10                        Type 1            Builtin          yes yes no     127  0\nZQGFHX+CMMI7                         Type 1            Builtin          yes yes no     128  0\nVYUYVH+CMR7                          Type 1            Builtin          yes yes no     129  0\nMQTYOV+CMR10                         Type 1            Builtin          yes yes no     130  0\nIGMLJD+CMSY7                         Type 1            Builtin          yes yes no     132  0\nHAUVKM+CMSY10                        Type 1            Builtin          yes yes no     135  0\nQDTWCG+MSBM10                        Type 1            Builtin          yes yes no     136  0\nGKSHQK+CMEX10                        Type 1            Builtin          yes yes no     171  0\nDejaVuSans                           CID TrueType      Identity-H       yes no  yes    174  0\nHWAJKK+CMMI5                         Type 1            Builtin          yes yes no     191  0\nDejaVuSans                           CID TrueType      Identity-H       yes no  yes    221  0\nDejaVuSans                           CID TrueType      Identity-H       yes no  yes    240  0\nDejaVuSans                           CID TrueType      Identity-H       yes no  yes    266  0\n"
+    },
+    "regional_twin_study_diff": {
+      "pages": 12,
+      "pdf_sha256": "03af0be03565cf4cd6f2bd29476b0621657216d9bc4079b18d7988a497cb286b",
+      "warnings": [],
+      "font_inventory": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nSZZISG+NimbusRomNo9L-Regu            Type 1            Custom           yes yes no     100  0\nLREKMX+NimbusRomNo9L-MediItal        Type 1            Custom           yes yes no     102  0\nWSCXKC+NimbusRomNo9L-Medi            Type 1            Custom           yes yes no     103  0\nXOZSWO+LASY6                         Type 1            Builtin          yes yes no     104  0\nQEXVIH+NimbusRomNo9L-ReguItal        Type 1            Custom           yes yes no     127  0\nBRJZXV+CMMI10                        Type 1            Builtin          yes yes no     149  0\nZQGFHX+CMMI7                         Type 1            Builtin          yes yes no     150  0\nVYUYVH+CMR7                          Type 1            Builtin          yes yes no     151  0\nMQTYOV+CMR10                         Type 1            Builtin          yes yes no     152  0\nIGMLJD+CMSY7                         Type 1            Builtin          yes yes no     154  0\nHAUVKM+CMSY10                        Type 1            Builtin          yes yes no     157  0\nQDTWCG+MSBM10                        Type 1            Builtin          yes yes no     158  0\nDejaVuSans                           CID TrueType      Identity-H       yes no  yes    171  0\nGKSHQK+CMEX10                        Type 1            Builtin          yes yes no     187  0\nHWAJKK+CMMI5                         Type 1            Builtin          yes yes no     190  0\nDejaVuSans                           CID TrueType      Identity-H       yes no  yes    220  0\nDejaVuSans                           CID TrueType      Identity-H       yes no  yes    245  0\nDejaVuSans                           CID TrueType      Identity-H       yes no  yes    268  0\n"
+    },
+    "figure_changes": {
+      "pages": 2,
+      "pdf_sha256": "7278638eff66491a578ae6fb2d2b4e65686319be63593096fb2b921d16b657f7",
+      "warnings": [],
+      "font_inventory": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nTAYRZF+CMBX12                        Type 1            Builtin          yes yes no      10  0\nQWMKOY+CMR10                         Type 1            Builtin          yes yes no      11  0\nNMXSMY+CMBX10                        Type 1            Builtin          yes yes no      12  0\nDejaVuSans                           CID TrueType      Identity-H       yes no  yes     16  0\nUGXGGO+CMTT10                        Type 1            Builtin          yes yes no      32  0\nDejaVuSans                           CID TrueType      Identity-H       yes no  yes     34  0\n"
+    }
+  },
+  "approved_author_block": true,
+  "latex_outputs_revision_local": true,
+  "visual_inspection": "Complete: clean 10/10 pages, marked-up 12/12 pages and figure comparison 2/2 pages, recorded with final PDF/render hashes.",
+  "gpu_used": false,
+  "visual_review_records": [
+    "internal/clean_visual_review.json",
+    "internal/diff_visual_review.json"
+  ]
+}

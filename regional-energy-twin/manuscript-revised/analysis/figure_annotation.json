@@ -1,0 +1,122 @@
+{
+  "purpose": "Figure 2(d) annotation only; all pre-existing curve coordinates, gate, probes and disturbance support preserved.",
+  "episode": "b00_cancel_exact_3.0",
+  "background_episode": "b00_none_0.0",
+  "onset_step": 11,
+  "duration_steps": 24,
+  "disturbance_end_hours": 12.0,
+  "later_peak_step": 38,
+  "later_peak_hours": 13.5,
+  "peak_shock_score": 24.14108145542005,
+  "peak_background_score": 24.14108145542005,
+  "peak_scores_equal": true,
+  "acquisition_gate": 13.433376677685528,
+  "annotation": "After event; both runs",
+  "input_sha256": {
+    "results/shock/figure_common_support.csv": "5f1d5b6ac0c6d5bbc96f31d6c15b8232dc65e0d7e6e84965d78e2e84775e9d52",
+    "results/acquisition/diagnostic/steps.csv.gz": "540c4d434354d0d0356c515d823b560081240e48bca7ab02560aa9d44fef0dfa",
+    "results/shock/calibration.json": "ec6b9b6d98d8eeeeb1f8958aa1901247f925945eef0aeb25a33b1df1b824e511",
+    "scripts/build_regional_study_results.py": "43b62f47937e2d0a13dccfa5c8e437b85bd9b46b34ea0907663b2e5265c43652"
+  },
+  "plotted_curves": [
+    {
+      "name": "regional observed sum",
+      "points": 48,
+      "x_sha256": "741a702eec0604a8122a031a7b3c48830584e8fa520c64cc78e124ed7b6315cd",
+      "y_sha256": "7fb94791bd87b2c9a1a66b1e4af76ccfd5be26a831a8b12163b2515a128e23bb"
+    },
+    {
+      "name": "positive household mean",
+      "points": 48,
+      "x_sha256": "741a702eec0604a8122a031a7b3c48830584e8fa520c64cc78e124ed7b6315cd",
+      "y_sha256": "594dd075af223bf715376336fe3346569d159cebcd816033d893d72436eac603"
+    },
+    {
+      "name": "negative household mean",
+      "points": 48,
+      "x_sha256": "741a702eec0604a8122a031a7b3c48830584e8fa520c64cc78e124ed7b6315cd",
+      "y_sha256": "4ba3373da091c35b79a2aec882ee20cce10a4fa57cc4a196cbe3517b99db3fea"
+    },
+    {
+      "name": "M0 forecast",
+      "points": 48,
+      "x_sha256": "6c22c53d1927d18577052f556907d99896d62e08f079ec6476a6772de4794411",
+      "y_sha256": "47160f1880929c1ad0c77e8f89cac808bb01c6573d2dc0bbd9712ba9bae81b6f"
+    },
+    {
+      "name": "M3 forecast",
+      "points": 48,
+      "x_sha256": "6c22c53d1927d18577052f556907d99896d62e08f079ec6476a6772de4794411",
+      "y_sha256": "559494dcc3a4c27d10057eb1a6ff94b9036cb5dc28c5ff85fcf085bb5e6163a5"
+    },
+    {
+      "name": "M4 forecast",
+      "points": 48,
+      "x_sha256": "6c22c53d1927d18577052f556907d99896d62e08f079ec6476a6772de4794411",
+      "y_sha256": "96e443733c44679376a8b111dbeb693ef0e13f4b1505634b0967c9b98ccabd2b"
+    },
+    {
+      "name": "observed forecast target",
+      "points": 48,
+      "x_sha256": "6c22c53d1927d18577052f556907d99896d62e08f079ec6476a6772de4794411",
+      "y_sha256": "3a910b0c72bdd9f12be8b94f4dc0b96e974676cbdfae5f02143cac6623683e3a"
+    },
+    {
+      "name": "shock maximum acquisition score",
+      "points": 48,
+      "x_sha256": "741a702eec0604a8122a031a7b3c48830584e8fa520c64cc78e124ed7b6315cd",
+      "y_sha256": "a18d9908a1fa37c9089d7c178432c38df1d955ba4c9108d5294509abf7616f03"
+    },
+    {
+      "name": "paired background maximum acquisition score",
+      "points": 48,
+      "x_sha256": "741a702eec0604a8122a031a7b3c48830584e8fa520c64cc78e124ed7b6315cd",
+      "y_sha256": "305da714580833b3ee1115ac5bbb317a523e9875585be2a8b2945429d6df0f45"
+    }
+  ],
+  "original_axis_limits": [
+    [
+      [
+        -6.725,
+        20.225
+      ],
+      [
+        423.0076007203315,
+        1694.1324017808656
+      ]
+    ],
+    [
+      [
+        -6.725,
+        20.225
+      ],
+      [
+        -0.006633099586714149,
+        0.6450200684408212
+      ]
+    ],
+    [
+      [
+        -6.725,
+        20.225
+      ],
+      [
+        0.08249205798097264,
+        0.6407760133185503
+      ]
+    ],
+    [
+      [
+        -6.725,
+        20.225
+      ],
+      [
+        -1.9333048028237656,
+        25.382718896288804
+      ]
+    ]
+  ],
+  "runtime_seconds": 1.975267021000036,
+  "gpu_work": false,
+  "original_source": "scripts/build_regional_study_results.py, Figure 2 block; reproduced without executing its hard-coded writers."
+}

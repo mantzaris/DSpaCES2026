@@ -1,0 +1,46 @@
+{
+  "purpose": "Minimal camera-ready revision; saved-output CPU analysis and document production",
+  "gpu_allocation_seconds": 0,
+  "gpu_inference_seconds": 0,
+  "new_model_fits": 0,
+  "new_replay_episodes": 0,
+  "raw_meter_data_read": false,
+  "sealed_outcomes_accessed": false,
+  "historical_ledgers_changed": false,
+  "runpod_commands_executed": false,
+  "historical_budget_reopened": false,
+  "measured_later_build_jobs": [
+    {
+      "utc": "2026-11-10T23:13:18.714041+00:00",
+      "command": "bash regional-energy-twin/manuscript-revised/build.sh",
+      "wall_seconds": 5.108627873996738,
+      "exit_code": 12,
+      "gpu_allocation_seconds": 0,
+      "purpose": "Saved-artifact checks, figure regeneration, clean/diff builds and page rendering"
+    },
+    {
+      "utc": "2026-11-10T23:17:33.366015+00:00",
+      "command": "revision-local latexmk -C then bash build.sh",
+      "wall_seconds": 6.006353808996209,
+      "exit_code": 12,
+      "gpu_allocation_seconds": 0,
+      "purpose": "Clean rebuild, saved-output checks, diff, figure comparison, render and package"
+    },
+    {
+      "utc": "2026-11-10T23:18:44.503403+00:00",
+      "command": "bash regional-energy-twin/manuscript-revised/build.sh",
+      "wall_seconds": 13.384109211001487,
+      "exit_code": 0,
+      "gpu_allocation_seconds": 0,
+      "purpose": "Complete clean-source rebuild following author-color correction in diff only"
+    }
+  ],
+  "measured_later_build_wall_seconds": 24.499090893994435,
+  "timing_limit": "Initial file inspection, initial saved-output checks and early local layout iterations were not comprehensively timed. The recorded duration is a measured subset, not an invented whole-session CPU total.",
+  "latest_individual_analysis_seconds": {
+    "provenance": 0.2901971550018061,
+    "alarm_sweep": 0.7551350749999983,
+    "figure_annotation": 1.975267021000036
+  },
+  "individual_duration_note": "These individual jobs occur inside the build; do not add them again to build wall time."
+}

@@ -1,0 +1,123 @@
+{
+  "timestamp_utc": "2026-11-10T23:18:31.631922+00:00",
+  "calibration": {
+    "update_origins_start": "2013-01-03 00:00:00",
+    "update_origins_end": "2013-01-04 23:30:00",
+    "calibration_updates": 96,
+    "excluded_alarm_startup_updates": 8,
+    "post_startup_alarm_updates": 88,
+    "retained_alarm_origins_start": "2013-01-03 04:00:00",
+    "warmup_start": "2013-01-02 12:30:00",
+    "last_six_hour_target": "2013-01-05 05:30:00",
+    "quantile": 0.98,
+    "quantile_interpolation": "NumPy default linear",
+    "trigger_from_saved_M1_scores": 13.433376677685528,
+    "saved_trigger": 13.433376677685528,
+    "saved_scores_are": "Second calibration pass. Same probe/reference path reproduces first-pass trigger quantile.",
+    "decay": 0.8,
+    "offset": 2.0,
+    "parameter_status": "Fixed heuristics in config and hard-coded executable behavior; no tuning study found.",
+    "interval_calibration": "90th percentile of absolute standardized forecast errors, separately by method/lead/query level, from all96 origins; household every16th finite entry. No eight-update interval exclusion."
+  },
+  "payload": {
+    "M3": {
+      "updates": 5376,
+      "attempts_per_update": 209,
+      "read_calls_per_update": 2,
+      "fine_attempts": 1123584,
+      "finite_returns": 1106434,
+      "fine_bytes": 18665472,
+      "summary_bytes": 3854592,
+      "total_bytes": 22520064,
+      "total_decimal_MB": 22.520064
+    },
+    "M4": {
+      "updates": 5376,
+      "attempts_per_update": 4194,
+      "read_calls_per_update": 1,
+      "fine_attempts": 22546944,
+      "finite_returns": 22204000,
+      "fine_bytes": 361095168,
+      "summary_bytes": 3854592,
+      "total_bytes": 364949760,
+      "total_decimal_MB": 364.94976
+    }
+  },
+  "fine_attempt_ratio_M4_over_M3": 20.066985645933013,
+  "fine_payload_ratio_M4_over_M3": 19.34562211981567,
+  "total_payload_ratio_M4_over_M3": 16.205538314633564,
+  "original_B_detection_window": {
+    "inclusive_lags": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "code": "scripts/analyze_shock.py:71 uses step < onset + 6",
+    "manuscript_mismatch": "Original prose says lags0..6 inclusive. Preserve original count table with corrected scope and keep the requested seven-instant sweep distinct."
+  },
+  "frozen_B": {
+    "M0": {
+      "detected": 37,
+      "localized": 20,
+      "demand_episodes": 96,
+      "alarmed_control_updates": 36,
+      "control_updates": 384,
+      "false_alarm_rate": 0.09375
+    },
+    "M1": {
+      "detected": 17,
+      "localized": 11,
+      "demand_episodes": 96,
+      "alarmed_control_updates": 15,
+      "control_updates": 384,
+      "false_alarm_rate": 0.0390625
+    },
+    "M2": {
+      "detected": 33,
+      "localized": 14,
+      "demand_episodes": 96,
+      "alarmed_control_updates": 25,
+      "control_updates": 384,
+      "false_alarm_rate": 0.06510416666666667
+    },
+    "M3": {
+      "detected": 29,
+      "localized": 15,
+      "demand_episodes": 96,
+      "alarmed_control_updates": 30,
+      "control_updates": 384,
+      "false_alarm_rate": 0.078125
+    },
+    "M4": {
+      "detected": 42,
+      "localized": 15,
+      "demand_episodes": 96,
+      "alarmed_control_updates": 41,
+      "control_updates": 384,
+      "false_alarm_rate": 0.10677083333333333
+    }
+  },
+  "coverage_A": {
+    "covered": 19,
+    "origins": 32,
+    "coverage": 0.59375
+  },
+  "coverage_B_M3": {
+    "coverage": 0.7213541666666666,
+    "width": 106.00846687243083,
+    "adjusted_coverage": 0.8411458333333333,
+    "adjusted_width": 149.30715197018685
+  },
+  "author_record": {
+    "documented": "Alexander V. Mantzaris; School of Data, Mathematical and Statistical Sciences; University of Central Florida; alexander.mantzaris@ucf.edu",
+    "second_author_documented": false,
+    "submission_receipt_found": false
+  },
+  "baseline_assessment": "Current source/PDF title, reported data scale, numeric findings and ambiguous payload sentence match the reviewer-described paper. Reviewer counts37/29/42 match original B analysis lags0..5, not source-prose lags0..6. No separate submitted regional PDF/receipt is available to certify upload identity.",
+  "seconds": 0.2901971550018061,
+  "gpu_used": false,
+  "raw_meter_values_read": false
+}
